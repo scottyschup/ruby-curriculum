@@ -20,7 +20,7 @@
 * Cleaning
   * Always clean dishes immediately.
   * Once a week, a pair is responsible for cleaning the kitchen.
-  * TODO: makeup cleaning schedule
+  * **TODO: makeup cleaning schedule**
 * Don't open the back door!
   * It triggers a burglar alarm; security company charges $200 for
     false alarms, which will be passed on to you :-)
@@ -61,7 +61,7 @@
 * Create a github issue, assigning it to app-academy.
 * We'll look at the issue and then come over.
 * We may tell you to writeup the solution and add it to the wiki.
-  * TODO: create a wiki page for each project's best bugs
+  * **TODO: create a wiki page for each project's best bugs**
 
 ## Code reviews
 **TODO: review**
