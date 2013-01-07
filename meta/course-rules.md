@@ -6,10 +6,10 @@ has a few simple rules.
 
 ## Course Fines
 
-When students break course rules, they will be assessed a spot fine. Fines
-(excepting forfeited deposits) are applied toward a pool that is distributed
-evenly to students after the course ends. Please see your deposit agreement
-for details.
+When students break course rules, they will be assessed a spot
+fine. Fines (excepting forfeited deposits) are applied toward a pool
+that is distributed evenly to students after the course ends. Please
+see your deposit agreement for details.
 
 ## Sole Arbiters of Course Rules
 
@@ -46,7 +46,7 @@ students who miss class $100/day. Students who accrue three or more
 unexcused absences may be required to leave the program, in which case
 their deposit will be forfeited.
 
-At our discretion, We may excuse pre-arranged absences in cases of
+At our discretion, we may excuse pre-arranged absences in cases of
 urgency.
 
 ## Tardiness
@@ -78,10 +78,11 @@ may be asked to leave the program.
 ## Classroom environment
 
 Maintaining a focused classroom environment is important for
-everyone. Outside of the course lunch hour, students are not allowed
-to use any electronic devices (cell phones, tablets, laptops, etc.)
-for personal use. This includes email, Facebook, Twitter, or Hacker
-News. Exceptions will be made for emergencies. The fine is $10.
+everyone. Outside of the course lunch hour and scheduled breaks,
+students are not allowed to use any electronic devices (cell phones,
+tablets, laptops, etc.)  for personal use. This includes email,
+Facebook, Twitter, or Hacker News. Exceptions will be made for
+emergencies. The fine is $10.
 
 ## Blogging
 
@@ -100,7 +101,7 @@ how quickly you have learned it to show employers.
 ## Collective responsibility
 
 When a student breaks the rules, we fine both the student and his/her
-pair. Each member of the pair is helping keep the other on task. We
+pair. Each member of the pair should help keep the other on task. We
 fine the pair $10 for a violation by their pair. Note that this
 includes tardiness fines.
 
