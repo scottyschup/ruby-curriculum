@@ -20,7 +20,7 @@ a project.
 
 [vimeo-demo]: http://vimeo.com/16395537
 
-## Questions
+## Pro Git Reading Guide
 ### ch1
 * What is version control?
 * What is a DVCS?
