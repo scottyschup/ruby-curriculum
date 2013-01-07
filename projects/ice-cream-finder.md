@@ -1,0 +1,18 @@
+# Ice Cream Finder
+Estimated time: 1.5hrs.
+
+Write a script that takes your current location and finds nearby ice
+cream shops. It should provide directions to walk there.
+
+You may want to use a number of Google APIs:
+
+* [Places API][places-api]: given a search string and a
+  latitude-longitude, finds and describes nearby matching locations.
+* [Geocoding API][geocoding-api]: given a text description of the current
+  location, returns a latitude and longitude.
+* [Directions API][directions-api]: given two addresses or lat/lngs,
+  returns a series of directions between the two places.
+
+[places-api]: https://developers.google.com/places/documentation/search
+[geocoding-api]: https://developers.google.com/maps/documentation/geocoding/
+[directions-api]: https://developers.google.com/maps/documentation/directions/
