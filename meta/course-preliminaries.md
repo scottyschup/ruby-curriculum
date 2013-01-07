@@ -114,17 +114,16 @@ We may have you writeup your problem and solution for the github wiki.
 * Fine for not completing the daily reflection is $10/day.
 
 ## Curriculum contributions
-**TODO: review**
-* Each day, make (at least) one contribution to the
-  curriculum. Potential contributions include:
+* Each day, you are required to make one contribution to the
+  curriculum (at least!). Potential contributions include:
   * Correcting typos
   * Clarifying exposition
   * Adding (quality) references
   * Writing an exercise
-* Fork the curriculum repo and make a commit
-  * Starting week two
-  * In week one, just email ned@ your contribution.
-* Fine for not completing contributions is $10
+* Fork the curriculum repo and make a commit; ask ruggeri to pull your
+  change.
+  * In week one, just email your contribution to
+    instructors@appacademy.io.
 
 ## Assessments
 * Assessments are intended to give you early feedback so you know
