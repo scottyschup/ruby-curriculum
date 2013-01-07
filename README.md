@@ -2,7 +2,7 @@
 
 ## Ruby basics
 ### w1d1
-+ [Introductions](ruby-curriculum/blob/master/meta/intro-lecture.md)
++ [Course Preliminaries](ruby-curriculum/blob/master/meta/course-preliminaries.md)
 + Primitive Ruby types (common methods)
   + [Array](ruby-curriculum/blob/master/language-basics/data-structures/array.md)
   + [String](ruby-curriculum/blob/master/language-basics/data-structures/string.md)
