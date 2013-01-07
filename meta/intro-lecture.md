@@ -1,8 +1,7 @@
 # Intro Lecture
 
 ## Deductions
-* Deposit deduction rules
-  * TODO: email this to students
+* [Deposit deduction rules](course-rules.md)
 
 ## Building logistics
 * office open 24/7
