@@ -4,23 +4,30 @@
 ### w1d1
 + [Course Preliminaries](ruby-curriculum/blob/master/meta/course-preliminaries.md)
 + Primitive Ruby types (common methods)
-  + [Array][array]
-  + [String][string]
-  + [Hash][hash]
-  + [Enumerable][enumerable]
-  + [Object][object]
+  + [Array][array] ([wiki][wiki-array])
+  + [String][string] ([wiki][wiki-string])
+  + [Hash][hash] ([wiki][wiki-hash])
+  + [Enumerable][enumerable] ([wiki][wiki-enumerable])
+  + [Object][object] ([wiki][wiki-object])
 + Debugging
-  + [pry and debugger][pry-and-debugger]
-  + [common error messages][common-error-messages]
+  + [pry and debugger][pry-and-debugger] ([wiki][wiki-pry-and-debugger])
+  + [common error messages][common-error-messages] ([wiki][wiki-common-error-messages])
 + **Project**: In Words (ex #15) from [Test First Ruby][test-first-ruby]
 
 [array]: ruby-curriculum/blob/master/language-basics/data-structures/array.md
+[wiki-array]: ruby-curriculum/wiki/Array:-questions
 [string]: ruby-curriculum/blob/master/language-basics/data-structures/string.md
+[wiki-string]: ruby-curriculum/wiki/String:-questions
 [hash]: ruby-curriculum/blob/master/language-basics/data-structures/hash.md
+[wiki-hash]: ruby-curriculum/wiki/Hash:-questions
 [enumerable]: ruby-curriculum/blob/master/language-basics/data-structures/enumerable.md
+[wiki-enumerable]: ruby-curriculum/wiki/Enumerable:-questions
 [object]: ruby-curriculum/blob/master/language-basics/data-structures/object.md
+[wiki-object]: ruby-curriculum/wiki/Object:-questions
 [pry-and-debugger]: ruby-curriculum/blob/master/debugging/debugger.md
+[wiki-pry-and-debugger]: ruby-curriculum/wiki/Pry-and-debugger:-questions
 [common-error-messages]: ruby-curriculum/blob/master/debugging/common-exceptions.md
+[wiki-common-error-messages]: ruby-curriculum/wiki/Error-messages:-questions
 
 [test-first-ruby]: https://github.com/alexch/learn_ruby
 
