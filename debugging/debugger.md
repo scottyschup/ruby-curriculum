@@ -105,12 +105,12 @@ should be.
 ### Pay technical debt
 
 If you encounter buggy code that is poorly decomposed into methods
-*fix the design now*. You're going to want to fix the design
+**fix the design now**. You're going to want to fix the design
 eventually anyway; refactoring will probably create new bugs to fix,
 so you might as well deal with this bug at the same time.
 
 More importantly, good code is the gift that keeps on giving. If this
-code is broken today, it's safe to assume that it will bit you in the
+code is broken today, it's safe to assume that it will bite you in the
 ass with another bug a few days from now, too. And every time you come
 back to this code, you'll be fighting its poor design as you try to
 deal with it. Try to fix it now once and for all.
