@@ -56,7 +56,7 @@
 [pass-by-reference]: ruby-curriculum/blob/master/language-basics/pass-by-reference.md
 [wiki-pass-by-reference]: ruby-curriculum/wiki/Pass-by-reference:-questions
 
-[microblogger]: ruby-curriculum/blob/master/http://tutorials.jumpstartlab.com/projects/microblogger.html
+[microblogger]: http://tutorials.jumpstartlab.com/projects/microblogger.html
 
 ### w1d3
 + [Blocks][blocks] ([wiki][wiki-blocks])
