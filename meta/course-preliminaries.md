@@ -45,7 +45,9 @@
 
 ## Pairing
 
-Please read [how to pair](pair-programming.md).
+Almost 100% of project time is spent in pairs; pairs are assigned by
+us each morning. Read [how to pair](pair-programming.md) so that you
+pair effectively.
 
 ## Lectures
 * Lectures are in the form of github pages and screencasts.
