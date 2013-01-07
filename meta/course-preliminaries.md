@@ -11,7 +11,8 @@
   * Closest gyms are Crunch Fitness and YMCA.
 * Wireless
   * Temporarily use Eucharist network. Password is "We give thanks".
-  * Don't torrent files, or none of us can use the internet.
+  * Don't torrent files (or anything else bandwidth intensive), or
+    none of us can use the internet.
 * When garbage fills, tie up bag and bring downstairs.
   * Do NOT throw loose garbage into curbside bins.
   * Remember to tie up all garbage before placing in the curbside
@@ -27,8 +28,8 @@
 
 ## Schedule
 * 09:00am-11:00am: Instruction
-  * 09:00am-09:15am: Review wiki answers
-  * 09:15am-09:40am: Q&A session
+  * 09:00am-09:15am: Review wiki Q&A
+  * 09:15am-09:40am: Live Q&A session
 * 11:00am-11:15am: Break
 * 11:15am-12:30pm: Instruction
 * 12:30pm-01:30pm: Lunch

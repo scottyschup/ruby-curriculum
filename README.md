@@ -32,22 +32,31 @@
 [test-first-ruby]: https://github.com/alexch/learn_ruby
 
 ### w1d2
-+ [Iteration][iteration]
-+ [Methods][methods]
-+ [Symbols and Strings][symbols-and-strings]
-+ [Input/Output][input-output]
-+ [Coding style][coding-style]
-+ [Classes][classes]
-+ [Pass by reference][pass-by-reference]
++ [Iteration][iteration] ([wiki][wiki-iteration])
++ [Methods][methods] ([wiki][wiki-methods])
++ [Symbols and Strings][symbols-and-strings] ([wiki][wiki-symbols-and-strings])
++ [Input/Output][input-output] ([wiki][wiki-input-output])
++ [Coding style][coding-style] ([wiki][wiki-coding-style])
++ [Classes][classes] ([wiki][wiki-classes])
++ [Pass by reference][pass-by-reference] ([wiki][wiki-pass-by-reference])
 + **Project**: [MicroBlogger][microblogger]
 
+
+
 [iteration]: ruby-curriculum/blob/master/language-basics/iteration.md
+[wiki-iteration]: ruby-curriculum/wiki/Iteration:-questions
 [methods]: ruby-curriculum/blob/master/language-basics/methods.md
+[wiki-methods]: ruby-curriculum/wiki/Methods:-questions
 [symbols-and-strings]: ruby-curriculum/blob/master/language-basics/symbols-and-strings.md
+[wiki-symbols-and-strings]: ruby-curriculum/wiki/Symbols-and-strings:-questions
 [input-output]: ruby-curriculum/blob/master/language-basics/io.md
+[wiki-input-output]: ruby-curriculum/wiki/Input-output:-questions
 [coding-style]: ruby-curriculum/blob/master/language-basics/coding-style.md
+[wiki-coding-style]: ruby-curriculum/wiki/Coding-style:-questions
 [classes]: ruby-curriculum/blob/master/language-basics/classes.md
+[wiki-classes]: ruby-curriculum/wiki/Classes:-questions
 [pass-by-reference]: ruby-curriculum/blob/master/language-basics/pass-by-reference.md
+[wiki-pass-by-reference]: ruby-curriculum/wiki/Pass-by-reference:-questions
 
 [microblogger]: ruby-curriculum/blob/master/http://tutorials.jumpstartlab.com/projects/microblogger.html
 
