@@ -79,13 +79,21 @@
 
 ## Basic design
 ### w1d5
-+ [DRY: Don't Repeat Yourself](ruby-curriculum/blob/master/basic-design/dry.md)
-+ [Choosing good names](ruby-curriculum/blob/master/basic-design/naming.md)
-+ [Method decomposition](ruby-curriculum/blob/master/basic-design/method-decomposition.md)
-+ [Refactoring and Code Smells](ruby-curriculum/blob/master/basic-design/refactoring.md)
++ [DRY: Don't Repeat Yourself][dry]
++ [Choosing good names][choosing-good-names]
++ [Method decomposition][method-decomposition]
++ [Refactoring and Code Smells][code-smells]
 + **Project**: Review old code.
-+ **Project**: [Mastermind](ruby-curriculum/blob/master/projects/mastermind.md)
-+ **Project**: [Hangman](ruby-curriculum/blob/master/projects/hangman.md)
++ **Project**: [Mastermind][mastermind]
++ **Project**: [Hangman][hangman]
+
+[dry]: ruby-curriculum/blob/master/basic-design/dry.md
+[choosing-good-names]: ruby-curriculum/blob/master/basic-design/naming.md
+[method-decomposition]: ruby-curriculum/blob/master/basic-design/method-decomposition.md
+[code-smells]: ruby-curriculum/blob/master/basic-design/refactoring.md
+
+[mastermind]: ruby-curriculum/blob/master/projects/mastermind.md
+[hangman]: ruby-curriculum/blob/master/projects/hangman.md
 
 ## Git
 ### w1d6-w1d7
