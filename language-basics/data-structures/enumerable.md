@@ -163,15 +163,16 @@ The methods `all?` and `none?` work similarly.
 
 Estimated time: 1hr
 
-* Write a method that takes an array of the integers from 1-10 and
-  returns an array with the array elements multiplied by two. Next,
-  change the method so named `my_tap` that takes an array and a block,
+* Write a method that takes an array of integers and returns an array
+  with the array elements multiplied by two.
+
+* Write a method named `my_each` that takes an array and a block,
   calls the block on every element of the array, and then returns the
   original array. I want to be able to write:
 
 ```ruby
 # puts twice
-[1,2,3].my_tap { |num| puts num }.my_tap { |num| puts num }
+[1,2,3].my_each { |num| puts num }.my_each { |num| puts num }
 ```
 
 * Write a method that finds the median of a given array of
