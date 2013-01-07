@@ -60,24 +60,44 @@ pair effectively.
 
 [course-wiki]: https://github.com/ruggeri/ruby-curriculum/wiki
 
-## Project questions
-**TODO: review**
-* Push your code to github.
-* Add app-academy as a collaborator.
-* Create a github issue, assigning it to app-academy.
-* We'll look at the issue and then come over.
-* We may tell you to writeup the solution and add it to the wiki.
-  * **TODO: create a wiki page for each project's best bugs**
+## Reporting difficulties with projects
+
+Instructors are here to help you get unstuck quickly, but we must
+balance that with the importance of learning to diagnose and solve
+your own problems.
+
+Requests for help should be made in the form of email (to
+instructors@appacademy.io), or (after week one) github issues
+(assigned to "App-Academy"). Your request should summarize the problem
+and error message (if any). If it is an email, it should link to a
+github gist containing your source code.
+
+An instructor will try to promptly come over to investigate and
+help. They will ask you to write up a description of the solution. If
+you emailed your problem, email us your description of the solution;
+if you created a github issue, comment on it and then close the issue.
+
+We may have you writeup your problem and solution for the github wiki.
 
 ## Code reviews
-**TODO: review**
-* After each assignment, we'll assign pairs to code review each others
-  work.
-* Your responsibility is to give feedback in how they could improve
-  their code. This includes not only errors, but style and anything
-  else that improves code quality.
-* This will help you keep in mind that good code is written so that it
-  can be read later: write readable code!
+* When we assign pairs, we also assign pairs of pairs that will review
+  each other's code.
+* Code review will be part of every student's assignment for the
+  evening.
+* Your responsibility is to give feedback in how to improve the
+  code. This includes not only errors, but style and anything else
+  that improves code quality.
+* In the first week, pairs will exchange their code through zip file
+  and email.
+* Reviewers should annotate the source code with their comments and
+  suggestions. They should email their comments back, copying
+  instructors@appacademy.io.
+* Beginning at the start of week two, students will email reviewers a
+  link to their github.
+* Reviewers will fork the github, create a branch named "review", and
+  commit their comments to this branch.
+* Reviewers should then email their github back, copying
+  instructors@appacademy.io.
 
 ## Daily reflection
 * Write a daily learning reflection each day.
