@@ -13,6 +13,7 @@
   + [pry and debugger][pry-and-debugger] ([wiki][wiki-pry-and-debugger])
   + [common error messages][common-error-messages] ([wiki][wiki-common-error-messages])
 + **Project**: In Words (ex #15) from [Test First Ruby][test-first-ruby]
++ **Project**: [Maze solver][maze-project]
 
 [array]: https://github.com/ruggeri/ruby-curriculum/blob/master/language-basics/data-structures/array.md
 [wiki-array]: https://github.com/ruggeri/ruby-curriculum/wiki/Array:-questions
@@ -30,6 +31,7 @@
 [wiki-common-error-messages]: https://github.com/ruggeri/ruby-curriculum/wiki/Error-messages:-questions
 
 [test-first-ruby]: https://github.com/alexch/learn_ruby
+[maze-project]: https://github.com/ruggeri/ruby-curriculum/blob/master/projects/maze-solver.md
 
 ### w1d2
 + [Iteration][iteration] ([wiki][wiki-iteration])
