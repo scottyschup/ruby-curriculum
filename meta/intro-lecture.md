@@ -24,10 +24,10 @@
   * Always clean dishes immediately.
   * Once a week, a pair is responsible for cleaning the kitchen.
   * TODO: makeup cleaning schedule
-  * TODO: hire maid
 * Don't open the back door
   * Triggers burglar alarm
   * $200 fine
+* Back office is for office use; please don't use it
 
 ## Schedule
 * 09:00am-11:00am: Instruction
@@ -140,10 +140,6 @@
     schedule.
   * Example: many students started the prepwork too late.
 
-* TODO: write script to make pairs
-  * Also to assign reviewing pairs.
 * TODO: describe pairing in a seperate document
   * Include requirement to give feedback to pair at the end of a
     pairing.
-
-* TODO: back office is for office use; don't go in it, please.
