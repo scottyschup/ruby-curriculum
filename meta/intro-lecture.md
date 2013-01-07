@@ -25,6 +25,9 @@
   * Once a week, a pair is responsible for cleaning the kitchen.
   * TODO: makeup cleaning schedule
   * TODO: hire maid
+* Don't open the back door
+  * Triggers burglar alarm
+  * $200 fine
 
 ## Schedule
 * 09:00am-11:00am: Instruction
@@ -143,5 +146,4 @@
   * Include requirement to give feedback to pair at the end of a
     pairing.
 
-* TODO: don't open back door; $200 fine.
 * TODO: back office is for office use; don't go in it, please.
