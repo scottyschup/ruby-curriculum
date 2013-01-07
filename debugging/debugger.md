@@ -104,8 +104,8 @@ should be.
 
 ### Pay technical debt
 
-If you encounter buggy code that is poorly decomposed into methods
-**fix the design now**. You're going to want to fix the design
+If you encounter buggy code that is poorly decomposed into methods,
+**fix the design immediately**. You're going to want to fix the design
 eventually anyway; refactoring will probably create new bugs to fix,
 so you might as well deal with this bug at the same time.
 
