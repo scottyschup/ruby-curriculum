@@ -310,7 +310,7 @@ Let's restart the REPL and run again:
 ```
 
 I used `c` (for `continue`) to tell the debugger to keep running the
-code; the code never told us to go back to the debugger, so it the
+code; the code never told us to go back to the debugger, so the
 method finished and returned `false`. Looks like we have more work to
 do.
 
@@ -351,6 +351,8 @@ return false
    12  end
    13
 ```
+
+Note that the `l` command is an alias for the `list` command.
 
 I add a breakpoint to line 9 with the `break` command. This tells the
 debugger to make sure to stop when I hit line 9. Since I know 2 is
