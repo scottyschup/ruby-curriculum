@@ -4,29 +4,26 @@
 * [Course rules](course-rules.md)
 
 ## Building logistics
-* office open 24/7
-* All students get keys to the office
-  * $20 deducted from deposit if you don't return yours
+* Office is open 24/7.
+* All students get keys to the office.
+  * $20 deducted from deposit if you don't return yours.
 * Shower
-  * Closest Gyms
-    * Crunch Fitness
-    * YMCA
+  * Closest gyms are Crunch Fitness and YMCA.
 * Wireless
-  * Network
-    * Temporarily use Eucharist network. Password is "We give thanks".
-  * Don't torrent files, or none of us can use the internet
-* When garbage fills, tie up bag and bring downstairs
-  * Do NOT throw loose garbage in bins.
-  * Remember to tie up all garbage; no one likes flies.
-  * TODO: acquire trashcans
+  * Temporarily use Eucharist network. Password is "We give thanks".
+  * Don't torrent files, or none of us can use the internet.
+* When garbage fills, tie up bag and bring downstairs.
+  * Do NOT throw loose garbage into curbside bins.
+  * Remember to tie up all garbage before placing in the curbside
+    bins; no one likes flies.
 * Cleaning
   * Always clean dishes immediately.
   * Once a week, a pair is responsible for cleaning the kitchen.
   * TODO: makeup cleaning schedule
-* Don't open the back door
-  * Triggers burglar alarm
-  * $200 fine
-* Back office is for office use; please don't use it
+* Don't open the back door!
+  * It triggers a burglar alarm; security company charges $200 for
+    false alarms, which will be passed on to you :-)
+* Back office is for office use; please don't use it.
 
 ## Schedule
 * 09:00am-11:00am: Instruction
