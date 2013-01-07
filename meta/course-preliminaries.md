@@ -37,20 +37,23 @@
 * 03:45pm-06:00pm: Instruction
   * 05:40pm-06:00pm: Readings and screencasts
 * Evenings:
-  * Finish assigned projects
-  * Finish readings
-  * Write daily reflection
-  * Submit questions to wiki by 9pm
+  * Finish assigned projects.
+  * Finish readings.
+  * Write daily reflection.
+  * Submit questions to wiki by 9pm.
+
+**TODO: when do students code review each other's projects?**
 
 ## Lectures
-* Lectures are in the form of github pages and screencasts
-* 20min to begin readings at the end of class
-  * Also to ask questions about readings
-* Complete readings after class
-* Submit questions to wiki by 9pm
-  * Will answer by 9am next day (often by 10pm same day)
-  * Feel free to offer answers to other questions on the wiki
-  * Note who asked the question, who answered
+* Lectures are in the form of github pages and screencasts.
+* 20min are reserved at the end of class to begin readings.
+  * Instructors will be on hand to answer questions.
+* Complete readings after class.
+* Submit questions to [wiki][course-wiki] by 9pm.
+  * Will answer by 9am next day (often by 10pm same day).
+  * Feel free to offer answers to other questions on the wiki.
+
+[course-wiki]: https://github.com/ruggeri/ruby-curriculum/wiki
 
 ## Project questions
 * Push your code to github.
