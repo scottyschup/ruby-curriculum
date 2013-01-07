@@ -41,8 +41,6 @@
 + [Pass by reference][pass-by-reference] ([wiki][wiki-pass-by-reference])
 + **Project**: [MicroBlogger][microblogger]
 
-
-
 [iteration]: ruby-curriculum/blob/master/language-basics/iteration.md
 [wiki-iteration]: ruby-curriculum/wiki/Iteration:-questions
 [methods]: ruby-curriculum/blob/master/language-basics/methods.md
@@ -61,9 +59,13 @@
 [microblogger]: ruby-curriculum/blob/master/http://tutorials.jumpstartlab.com/projects/microblogger.html
 
 ### w1d3
-+ [Blocks](ruby-curriculum/blob/master/language-basics/blocks.md)
-+ [Recursion](ruby-curriculum/blob/master/language-basics/recursion.md)
-+ [Scope in Ruby](ruby-curriculum/blob/master/language-basics/scope.md)
++ [Blocks][blocks]
++ [Recursion][recursion]
++ [Scope in Ruby][scope-in-ruby]
+
+[blocks]: ruby-curriculum/blob/master/language-basics/blocks.md
+[recursion]: ruby-curriculum/blob/master/language-basics/recursion.md
+[scope-in-ruby]: ruby-curriculum/blob/master/language-basics/scope.md
 
 ## Algorithms
 ### w1d4
