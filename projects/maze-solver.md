@@ -16,7 +16,7 @@ user.
 Make your program run as a command line script, taking in the name of
 a maze file on the command line.
 
-[maze1-soln]: maze1-soln.txt
+[maze1-soln]: mazes/maze1-soln.txt
 
 Your path through the maze should not be self-intersecting, of course.
 
