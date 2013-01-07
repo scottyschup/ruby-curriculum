@@ -72,7 +72,10 @@
 
 ## Algorithms
 ### w1d4
-+ [Intro data structures](ruby-curriculum/blob/master/intro-algorithms.md)
++ [Intro data structures][intro-data-structures] ([wiki][wiki-intro-data-structures])
+
+[intro-data-structures]: ruby-curriculum/blob/master/intro-algorithms.md
+[wiki-intro-data-structures]: ruby-curriculum/wiki/Intro-data-structures:-questions
 
 ## Basic design
 ### w1d5
