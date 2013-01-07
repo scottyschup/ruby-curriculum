@@ -61,14 +61,14 @@
 ### w1d3
 + [Blocks][blocks] ([wiki][wiki-blocks])
 + [Recursion][recursion] ([wiki][wiki-recursion])
-+ [Scope in Ruby][scope-in-ruby] ([wiki][wiki-scope-in-ruby])
++ [Scope][scope] ([wiki][wiki-scope])
 
 [blocks]: ruby-curriculum/blob/master/language-basics/blocks.md
 [wiki-blocks]: ruby-curriculum/wiki/Blocks:-questions
 [recursion]: ruby-curriculum/blob/master/language-basics/recursion.md
 [wiki-recursion]: ruby-curriculum/wiki/Recursion:-questions
-[scope-in-ruby]: ruby-curriculum/blob/master/language-basics/scope.md
-[wiki-scope-in-ruby]: ruby-curriculum/wiki/Scope:-questions
+[scope]: ruby-curriculum/blob/master/language-basics/scope.md
+[wiki-scope]: ruby-curriculum/wiki/Scope:-questions
 
 ## Algorithms
 ### w1d4
