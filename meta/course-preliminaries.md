@@ -43,6 +43,10 @@
   * Write daily reflection.
   * Submit questions to wiki by 9pm.
 
+## Pairing
+
+Please read [how to pair](pair-programming.md).
+
 ## Lectures
 * Lectures are in the form of github pages and screencasts.
 * 20min are reserved at the end of class to begin readings.
@@ -141,7 +145,3 @@
   * Make sure you start early, so that you don't get stuck behind
     schedule.
   * Example: many students started the prepwork too late.
-
-* **TODO: describe pairing in a seperate document**
-  * Include requirement to give feedback to pair at the end of a
-    pairing.
