@@ -43,8 +43,6 @@
   * Write daily reflection.
   * Submit questions to wiki by 9pm.
 
-**TODO: when do students code review each other's projects?**
-
 ## Lectures
 * Lectures are in the form of github pages and screencasts.
 * 20min are reserved at the end of class to begin readings.
@@ -57,6 +55,7 @@
 [course-wiki]: https://github.com/ruggeri/ruby-curriculum/wiki
 
 ## Project questions
+**TODO: review**
 * Push your code to github.
 * Add app-academy as a collaborator.
 * Create a github issue, assigning it to app-academy.
@@ -65,6 +64,7 @@
   * TODO: create a wiki page for each project's best bugs
 
 ## Code reviews
+**TODO: review**
 * After each assignment, we'll assign pairs to code review each others
   work.
 * Your responsibility is to give feedback in how they could improve
@@ -88,6 +88,7 @@
 * Fine for not completing the daily reflection is $10/day.
 
 ## Curriculum contributions
+**TODO: review**
 * Each day, make (at least) one contribution to the
   curriculum. Potential contributions include:
   * Correcting typos
@@ -100,8 +101,8 @@
 * Fine for not completing contributions is $10
 
 ## Assessments
-* Assessments are intended to give you early feedback to make sure you
-  are keeping up.
+* Assessments are intended to give you early feedback so you know
+  whether you are keeping up.
 * Assessments are given every Monday, in class. They take about an
   hour.
 * Assessments are done solo.
@@ -109,7 +110,7 @@
   sections of each reading and you'll be in good shape.
 * Students who fail two assessments may be asked to leave the program.
 
-## Guidelines
+## General advice
 * Push yourself hard
   * Previous course was very successful, most everyone got jobs, but
     keep in mind, average workweek was ~80hrs.
@@ -120,7 +121,8 @@
 * Greatest risk is that you fall behind and don't receive help
   promptly.
   * The course moves quickly and builds on previous material, you
-    can't afford to try and play catch-up.
+    can't afford to fall behind.
+  * If you start to fall behind, you need to take action quickly.
   * The best way to catch up is to find people to spend extra time
     working with. We'll try to help, but you also need to be
     proactive in this.
@@ -128,18 +130,18 @@
     until you catch up.
 * You need to ask questions
   * If an instructor writes a line of code you don't understand, you
-    _have_ to ask what it means.
+    *have* to ask what it means.
   * If an instructor explains something but it doesn't make sense, you
-    _have_ to say.
+    *have* to say so.
   * We'll try to make sure you understand what we teach, but we need
     your help, too.
-* Start work early
+* Start work early!
   * It's hard to estimate how long something may take; everyone works
     at a different pace.
   * Make sure you start early, so that you don't get stuck behind
     schedule.
   * Example: many students started the prepwork too late.
 
-* TODO: describe pairing in a seperate document
+* **TODO: describe pairing in a seperate document**
   * Include requirement to give feedback to pair at the end of a
     pairing.
