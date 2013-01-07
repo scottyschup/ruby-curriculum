@@ -32,14 +32,24 @@
 [test-first-ruby]: https://github.com/alexch/learn_ruby
 
 ### w1d2
-+ [Iteration](ruby-curriculum/blob/master/language-basics/iteration.md)
-+ [Methods](ruby-curriculum/blob/master/language-basics/methods.md)
-+ [Symbols and Strings](ruby-curriculum/blob/master/language-basics/symbols-and-strings.md)
-+ [Input/Output](ruby-curriculum/blob/master/language-basics/io.md)
-+ [Coding style](ruby-curriculum/blob/master/language-basics/coding-style.md)
-+ [Classes](ruby-curriculum/blob/master/language-basics/classes.md)
-+ [Pass by reference](ruby-curriculum/blob/master/language-basics/pass-by-reference.md)
-+ **Project**: [MicroBlogger](ruby-curriculum/blob/master/http://tutorials.jumpstartlab.com/projects/microblogger.html)
++ [Iteration][iteration]
++ [Methods][methods]
++ [Symbols and Strings][symbols-and-strings]
++ [Input/Output][input-output]
++ [Coding style][coding-style]
++ [Classes][classes]
++ [Pass by reference][pass-by-reference]
++ **Project**: [MicroBlogger][microblogger]
+
+[iteration]: ruby-curriculum/blob/master/language-basics/iteration.md
+[methods]: ruby-curriculum/blob/master/language-basics/methods.md
+[symbols-and-strings]: ruby-curriculum/blob/master/language-basics/symbols-and-strings.md
+[input-output]: ruby-curriculum/blob/master/language-basics/io.md
+[coding-style]: ruby-curriculum/blob/master/language-basics/coding-style.md
+[classes]: ruby-curriculum/blob/master/language-basics/classes.md
+[pass-by-reference]: ruby-curriculum/blob/master/language-basics/pass-by-reference.md
+
+[microblogger]: ruby-curriculum/blob/master/http://tutorials.jumpstartlab.com/projects/microblogger.html
 
 ### w1d3
 + [Blocks](ruby-curriculum/blob/master/language-basics/blocks.md)
