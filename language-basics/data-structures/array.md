@@ -250,7 +250,7 @@ variable with the singular form of the object.
 ```ruby
 fancy_car_brands = ["Maserati", "Porsche", "Tesla"]
 junk_models = ["Chevy Nova", "Ford Pinto"
-fancy_cars.each do |fancy_car_brand|
+fancy_car_brands.each do |fancy_car_brand|
   junk_models.each do |junk_model|
     puts "#{fancy_car_brand} would never make junk like the #{junk_model}"
   end
