@@ -24,7 +24,7 @@ organize data.
 
 *Trees* store data in a *hierarchy* of layers. An element, or *node*
 at each layer can have links to lower level nodes. One simple example
-is a filesystem:
+is a file system:
 
 * /
   * Users
@@ -96,7 +96,7 @@ nodes before deeper ones.
 ### Algorithm
 
 DFS and BFS are *algorithms*. An algorithm can be written in any
-langauge; we'll write Ruby methods that *implement* DFS and BFS
+language; we'll write Ruby methods that *implement* DFS and BFS
 shortly. What's the difference between an algorithm and a method? An
 algorithm is the idea, a process that solves a problem and could be
 written in any language. A method is the *implementation*, the actual
@@ -151,7 +151,7 @@ new knight moves.
 
 First, write a helper method, `move_tree`, that will build the move
 tree. Note that there may be many ways to get to the same position;
-make sure to include only one of these pathes. To do this, as you grow
+make sure to include only one of these paths. To do this, as you grow
 the tree, you'll need to keep track of positions you've already found
 a path to. Note that if you don't do this, you might get caught in a
 loop (you might otherwise move back and forth between two positions
@@ -175,7 +175,7 @@ child node for each possible move. For convenience, we may want to
 also store who moves next in the `TreeNode`'s `value` (maybe we could
 use a hash `{:grid => grid, :next_move => :x}`).
 
-The leaves of the tree are the winnning, losing, and drawing grids.
+The leaves of the tree are the winning, losing, and drawing grids.
 
 Let us define a *winning grid* for a player:
 

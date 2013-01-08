@@ -40,7 +40,7 @@ a project.
 * How do you use `git clone` to clone an existing repository?
   * For practice, clone the Rails repository on github
 
-**Comparing, adding, and commiting files**:
+**Comparing, adding, and committing files**:
 * How do you use `git status` to check the status of the files in your
   git repo?
 * How do you use `git diff` and `git diff --cached` to check what
@@ -141,7 +141,7 @@ return to Pro Git to read the following chapters on your own time:
 * A very helpful [reference][git-ref] of common git commands, targeted to
   beginners.
 * [Gitready][gitready]: a blog of tips for git beginners.
-* A [visual cheatsheet][git-cheatsheet] of how git commands move files
+* A [visual cheat-sheet][git-cheat-sheet] of how git commands move files
   between workspace, index, local and upstream (remote).
 * A blog post on [`git add -p`][git-add-p-post]; this lets you
   interactively add changes to files, for more granular commits.
