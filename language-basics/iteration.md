@@ -133,7 +133,7 @@ repeat...
 Let's search an array of numbers for a favorite number.
 
 ```ruby
-my_favorite_numer = 42
+my_favorite_number = 42
 numbers_to_search = [1, 5, 7, 42, 8, 42]
 
 i = 0

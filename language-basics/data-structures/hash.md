@@ -59,7 +59,7 @@ We add a new key and value to a hash like so:
 capitals = { 'New York' => 'Albany', 'California' => 'Sacramento' }
 capitals['Texas'] = 'Austin'
 
-puts element_symbols
+puts capitals
 # => { 'New York' => 'Albany', 'California' => 'Sacramento', 'Texas' => 'Austin' }
 ```
 
@@ -99,7 +99,7 @@ method:
 ```ruby
 capitals = { 'New York' => 'Albany', 'California' => 'Sacramento' }
 
-element_symbols.keys # => ['New York', 'California']
+capitals.keys # => ['New York', 'California']
 ```
 
 Notice that the return value of this method is an *array* of the
