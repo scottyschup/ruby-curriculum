@@ -452,8 +452,8 @@ is an object, even classes. Just like `Dog` objects are instances of
 the `Dog` class, the `Dog` class is an instance of Ruby's `Class`
 class.
 
-For clarity I've put in used `self` within `human_to_dog_ratios`; as
-mentioned before, you would normally omit this.
+For clarity I've used `self` explicitly within `human_to_dog_ratios`;
+as mentioned before, you would normally omit this.
 
 As mentioned, we can get a class object by using the `.class` method:
 
