@@ -347,13 +347,17 @@ Time estimate: 1.5hrs
 
 [wiki-bubble-sort]: http://en.wikipedia.org/wiki/bubble_sort
 
-* Given a string, print all the substrings.
-  * Next download a dictionary from [here](http://wordlist.sourceforge.net/)
-  * Read in the dictionary
+* Write a method `substrings` that will take a `String` and return an
+  array containing each of its substrings.
+* Your `substrings` method returns many strings that are not true
+  English words. Let's write a new method, `subwords` which will call
+  `substrings`, but then filter it and return just the English words.
+  * To do this, we'll need a dictionary, you can download one
+    [here](http://downloads.sourceforge.net/wordlist/12dicts-5.0.zip). Use
+    '2of12inf.txt'.
   * Learn how to read a file [here](io.md#opening-a-file).
   * You may need to use `String#chomp` to strip newline characters;
     see the [Input/Output](io.md) chapter for details
-  * Now print out only those substrings that are words
 
 ## Resources
 
