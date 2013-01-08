@@ -2,7 +2,7 @@
 
 ## Goals
 
-* Familairize yourself with the selected, important methods here.
+* Familiarize yourself with the selected, important methods here.
 * Know how to use string interpolation and to prefer it to
   concatenation.
 
@@ -176,7 +176,7 @@ Estimated time: 1hr
   * Write a version that will build the binary version.
   * Write a version that builds an octal version.
   * Write a version that creates a string for a given base.
-  * NB: 10.to_s(base) already does this, but try it for youreslf!
+  * NB: 10.to_s(base) already does this, but try it for yourself!
   
 * Implement a [Caesar cipher](http://en.wikipedia.org/wiki/Caesar_cipher).
   Example: `caesar("hello", 3) # => "khoor"`

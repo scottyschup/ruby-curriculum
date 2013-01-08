@@ -283,7 +283,7 @@ You can create arrays that hold different kinds of things:
 mish_mosh = ["Race cars", 42, { :name => "Gizmo", :species => "cat" }]
 ```
 
-These are called *heterogenous* arrays (from Greek for "different
+These are called *heterogeneous* arrays (from Greek for "different
 kinds"). Arrays like `mish_mosh` are a mess, because they contain a
 grab bag of unrelated items. You will seldom want to create an array
 like this; create arrays that have one kind of thing:
@@ -299,10 +299,10 @@ animals = [
 
 Collections of items should have some unifying principal: in the three
 arrays here every element is a cool thing, or a lucky number, or an
-animal. Collections with heterogenous types often lack a unifying
+animal. Collections with heterogeneous types often lack a unifying
 idea.
 
-Finally, heterogenous are difficult to work with because you never
+Finally, heterogeneous are difficult to work with because you never
 know what kind of object you might encounter in the array. Is it a
 `String` and you can call `.upcase` on it? Or is it a number; will it
 be safe to add to it? A hash?
@@ -337,7 +337,7 @@ end
 
 This is also called *monkey patching*, and it is often frowned upon
 to, after-the-fact, add new methods to a class. However, it is
-ocasionally useful and interesting to try out.
+occasionally useful and interesting to try out.
 
 ### Two sum
 

@@ -45,7 +45,7 @@ Every class inherits two methods: `inspect` and `to_s`.
 3.to_s # => "3"
 [1, 2, 3].to_s # => "[1, 2, 3]"
 "my_string".to_s # => "my_string" (already a string)
-nil.to_s # => "" (nil represented as nothing, or emptyness)
+nil.to_s # => "" (nil represented as nothing, or emptiness)
 ```
 
 `inspect` returns a debugging string that represents the Ruby
@@ -199,7 +199,7 @@ end
 
 There are a number of other equality operations, but this is the most
 important one. You can read a good
-[writeup by Skorks][skorks-on-equality].
+[write-up by Skorks][skorks-on-equality].
 
 [skorks-on-equality]: http://www.skorks.com/2009/09/ruby-equality-and-object-comparison/
 
