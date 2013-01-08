@@ -82,13 +82,15 @@ Estimated time: 5hrs
 * Write the following methods both recursively and iteratively
   * fibonacci
   * sum of an array
-  * binary search: bsearch(array, target)
+  * [binary search][wiki-binary-search]: bsearch(array, target)
   * exponent
-* make change (http://www.rubyquiz.com/quiz154.html)
+* RubyQuiz: [Make change](http://www.rubyquiz.com/quiz154.html)
   * Whenever we assign a Ruby Quiz, after solving it, make sure to
     look at a couple answers and make sure you understand them.
 
-Write two versions of exponent that use two different recursions:
+[wiki-binary-search]: http://en.wikipedia.org/wiki/Binary_search
+
+* Write two versions of exponent that use two different recursions:
 
 ```ruby
 exp(b, 0) = 1
@@ -98,7 +100,7 @@ exp(b, 0) = 1
 exp(b, 1) = b
 exp(b, n) = exp(b, floor(n / 2)) * exp(b, ceil(n / 2))
 ```
-Which one do you think runs more quickly?
+Which one do you think should run more quickly?
 
 * Implement a method, `merge_sort` that sorts an `Array`
   * if there is zero or one elements in the array, do nothing, it is

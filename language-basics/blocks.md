@@ -262,7 +262,7 @@ more verboselyy as:
 
 ## Exercises
 
-Estimated time: 3hrs
+Estimated time: 1hrs
 
 * Watch Peter talk about [it all][peter-youtube-blocks].
 * Implement new `Array` methods `my_map`, `my_each`, `my_inject`,
