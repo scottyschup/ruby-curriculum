@@ -171,8 +171,14 @@ Estimated time: 1hr
   original array. I want to be able to write:
 
 ```ruby
-# puts twice
-[1,2,3].my_each { |num| puts num }.my_each { |num| puts num }
+# calls my_each twice on the array, printing all the numbers twice.
+([1,2,3].my_each { |num| puts num }).my_each { |num| puts num }
+# => 1
+     2
+     3
+     1
+     2
+     3
 ```
 
 * Write a method that finds the median of a given array of
