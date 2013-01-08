@@ -6,11 +6,9 @@
 * [Max subarray][max-subarray]
 * [Anagrams][anagrams]
 * [Phone anagrams][phone-anagrams]
-* [Word chains][word-chains]
 
 [max-subarray]: http://www.rubyquiz.com/quiz131.html
 [anagrams]: http://www.rubyquiz.com/quiz112.html
-[word-chains]:  http://www.rubyquiz.com/quiz44.html
 [phone-anagrams]: http://www.rubyquiz.com/quiz20.html
 
 ## Medium bonus problems

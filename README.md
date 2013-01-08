@@ -42,6 +42,7 @@
 + [Classes][classes] ([wiki][wiki-classes])
 + [Pass by reference][pass-by-reference] ([wiki][wiki-pass-by-reference])
 + **Project**: [MicroBlogger][microblogger]
++ **Project**: [Word chains][word-chains]
 
 [iteration]: https://github.com/ruggeri/ruby-curriculum/blob/master/language-basics/iteration.md
 [wiki-iteration]: https://github.com/ruggeri/ruby-curriculum/wiki/Iteration:-questions
@@ -59,6 +60,7 @@
 [wiki-pass-by-reference]: https://github.com/ruggeri/ruby-curriculum/wiki/Pass-by-reference:-questions
 
 [microblogger]: http://tutorials.jumpstartlab.com/projects/microblogger.html
+[word-chains]:  http://www.rubyquiz.com/quiz44.html
 
 ### w1d3
 + [Blocks][blocks] ([wiki][wiki-blocks])
