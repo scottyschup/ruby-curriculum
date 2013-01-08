@@ -92,8 +92,8 @@ end
 ```
 
 No magic here; we just pass in a `Hash`, where the params are keyed by
-names. Notice, that when mering, the values in `options` will override
-the values in `defaults`. Of course, we use `Symbol`s for the
+names. Notice, that when merging, the values in `options` will
+override the values in `defaults`. Of course, we use `Symbol`s for the
 keys. Because this is so convenient, Ruby lets us remove the braces
 around this options hash:
 
