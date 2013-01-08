@@ -64,7 +64,7 @@ in order for a TDD developer to add an else branch to an existing if
 statement, the developer would first have to write a failing test case
 that motivates the branch. As a result, the automated tests resulting
 from TDD tend to be very thorough: they will detect any unexpected
-changes in the code's behaviour. This detects problems that can arise
+changes in the code's behavior. This detects problems that can arise
 where a change later in the development cycle unexpectedly alters
 other functionality.
 

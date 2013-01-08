@@ -48,7 +48,7 @@ concerns to the outside world. For instance, if we let a user call
 `start_engines`, now he needs to remember to later call
 `stop_engines`. This makes it harder to use our class.
 
-A good guiding priciple of OO design is: minimize the interfaces
+A good guiding principle of OO design is: minimize the interfaces
 between your classes; expose the least possible amount of state and
 behavior, and have a good reason for every piece of information that
 you expose.

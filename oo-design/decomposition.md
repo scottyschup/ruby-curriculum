@@ -93,7 +93,7 @@ are needed (we don't need a `FishTail`, `FishEye`, etc. classes here).
 
 Rule of thumb: a large class is >125 lines of code. Sometimes that's
 not a design mistake, but it's suspicious after that. 300+ lines is a
-behometh. You should start looking for ways to break down a class that
+behemoth. You should start looking for ways to break down a class that
 large.
 
 [1]: http://www.codinghorror.com/blog/2007/03/curlys-law-do-one-thing.html

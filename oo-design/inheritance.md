@@ -77,7 +77,7 @@ end
 ## Don't go crazy
 
 Don't introduce subclasses before you need them. In the example of
-`Employee`/`Manager` we were a little agressive; we could have had
+`Employee`/`Manager` we were a little aggressive; we could have had
 just one `Worker` class and a variable that held the `@wage` of the
 `Worker`.
 

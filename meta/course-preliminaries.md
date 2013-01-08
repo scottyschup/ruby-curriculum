@@ -80,7 +80,7 @@ help. They will ask you to write up a description of the solution. If
 you emailed your problem, email us your description of the solution;
 if you created a github issue, comment on it and then close the issue.
 
-We may have you writeup your problem and solution for the github wiki.
+We may have you write-up your problem and solution for the github wiki.
 
 ## Code reviews
 * When we assign pairs, we also assign pairs of pairs that will review
