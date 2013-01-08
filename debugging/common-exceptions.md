@@ -41,7 +41,7 @@ NameError: undefined local variable or method `favorite_nmber' for #<NumbersClas
 
 Here we've mistyped the method name; the error tells us the name
 `favorite_nmber` hasn't been defined. Ruby looks for either a local
-variable or a method. It tell you that it was looking for the method
+variable or a method. It tells you that it was looking for the method
 `favorite_nmber` defined on the NumbersClass.
 
 ### Uninitialized Constant
