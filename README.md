@@ -43,6 +43,8 @@
 + [Pass by reference][pass-by-reference] ([wiki][wiki-pass-by-reference])
 + **Project**: [MicroBlogger][microblogger]
 + **Project**: [Word chains][word-chains]
+  + Hint: first write a method `adjacent_words` which gives an array
+    of all words "one letter away".
 
 [iteration]: https://github.com/ruggeri/ruby-curriculum/blob/master/language-basics/iteration.md
 [wiki-iteration]: https://github.com/ruggeri/ruby-curriculum/wiki/Iteration:-questions
