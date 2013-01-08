@@ -120,7 +120,7 @@ Of course, the `Magazine` and `Book` classes may have their own
 methods in addition to the shared `editor` method.
 
 ## Calling a super method
-When overiding a method, it is common to call the original
+When overriding a method, it is common to call the original
 implementation. The most common method where this happens is
 `initialize`:
 

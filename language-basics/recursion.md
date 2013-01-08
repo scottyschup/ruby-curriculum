@@ -80,7 +80,7 @@ Estimated time: 5hrs
 
 * Test First Ruby XML parser
 * Write the following methods both recursively and iteratively
-  * fibonacci
+  * Fibonacci
   * sum of an array
   * [binary search][wiki-binary-search]: bsearch(array, target)
   * exponent

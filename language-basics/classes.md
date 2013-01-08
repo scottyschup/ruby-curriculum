@@ -133,7 +133,7 @@ jargon, we would say that classes combine *state* (data, fields) and
 Let's define a class to represent our cat. Ruby predefines many
 built-in classes (`String`, `Array`, `Hash`); by defining a class
 ourselves, we add a new object type which will represent a
-cat. *Instances* (an occurence of an object) of this `Cat` class
+cat. *Instances* (an occurrence of an object) of this `Cat` class
 represent individual cats. Two `Cat` instances will share the same set
 of attributes (state) and methods; they may contain different
 attribute values, however.
@@ -232,7 +232,7 @@ Object state is stored in *instance variables*. Instance variable
 names are prefixed with an at-symbol ('@'). Each object instance has
 its own separate copies of the instance variables. The variables are
 stored for the life of the object. Just like we store information in a
-Hash under a key, we can set and lookup data with an instance variable
+Hash under a key, we can set and look up data with an instance variable
 name.
 
 ```ruby
@@ -332,7 +332,7 @@ class Temperature
 Within `from_f` and `from_c` we would presumably construct a
 `Temperature` object with `new`, properly translating the temperature
 to the default scale. This lets the user avoid worrying whether `new`
-wants a fahrenheit or celsius argument.
+wants a Fahrenheit or Celsius argument.
 
 When we want to be clear whether a method `meow` or `new` is an
 instance or class method of `Cat`, we write `Cat#meow` and `Cat::new`
@@ -476,15 +476,15 @@ Dog.new # => calls `new` method on a Class instance: Dog
 Estimated time: 2.5hrs
 
 ### Students and Courses
-Write a set of coursees to model Students and Courses.
+Write a set of courses to model Students and Courses.
 
 * `Student#initialize` should take a first and last name.
 * `Student.name` should return the concatenation of the student's
   first and last name.
-* `Student#coursees` should return a list of the `Course`es in which
+* `Student#coursers` should return a list of the `Course`es in which
   the student is enrolled.
 * `Student#enroll` should take a `Course` object, add it to the
-   student's list of coursees, and update the `Course`'s list of
+   student's list of courses, and update the `Course`'s list of
    enrolled students.
 * `Student#course_load` should return a hash of departments to # of
   credits the student is taking in that department

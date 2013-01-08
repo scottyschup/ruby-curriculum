@@ -71,7 +71,7 @@ Other writer methods work similarly:
 
 ```ruby
 class Cat
-  attr_acessor :name
+  attr_accessor :name
 end
 
 my_cat = Cat.new

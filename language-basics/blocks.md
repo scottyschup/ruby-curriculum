@@ -123,7 +123,7 @@ end
 
 ## Avoid return inside a block
 
-Blocks implicity returns values like Ruby methods; the last value is
+Blocks implicitly returns values like Ruby methods; the last value is
 implicitly returned from the block.
 
 ```ruby
@@ -253,7 +253,7 @@ When an item is passed to the block slot, it will have the method
 `#to_proc` called on it. In the case of a `Proc`, this does
 nothing. In the case of a `Symbol`, this returns a `Proc` which calls
 a method on the `Proc`'s argument. So the above could be rewritten
-more verboselyy as:
+more verbosely as:
 
 ```ruby
 ["a", "b", "c"].map { |s| s.upcase }

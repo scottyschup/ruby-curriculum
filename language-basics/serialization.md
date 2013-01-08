@@ -28,7 +28,7 @@ data. Probably the most important in the web world is JSON:
 ```
 
 JSON supports a few primitive forms of data: numbers, strings, arrays
-and hashes. It is descended from JavasScript, and is commonly used as
+and hashes. It is descended from JavaScript, and is commonly used as
 the message format for web APIs. The format is pretty easy to read,
 but it's not essential that you be able to write JSON yourself; we'll
 see how to get Ruby to do that for us.
@@ -89,7 +89,7 @@ deserialization are sometimes used as a poor man's "clone".
 
 JSON is the dominant serialization technology on the web (XML is a
 close second); we'll write Rails apps which we can communicate with by
-sending and recieving JSON data.
+sending and receiving JSON data.
 
 In the world of client-side Ruby, YAML is the leader because of its
 better support for deserializing classes.

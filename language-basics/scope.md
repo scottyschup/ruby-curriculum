@@ -40,7 +40,7 @@ cat = {
 
 def extract_cat_age
   # creates a new local variable inside this method; won't add
-  # variable to global scoope; variable will be lost when method is
+  # variable to global scope; variable will be lost when method is
   # over
   
   cat_age = cat[:age]

@@ -55,7 +55,7 @@ If the calling method doesn't rescue (or *catch* or *handle*) an
 exception, it continues to *bubble up* the *call stack*. So the
 caller's caller gets a chance, then his caller, then...
 
-If no method throughout the entire callstack catches the exception,
+If no method throughout the entire call stack catches the exception,
 the exception is printed to the user and the program exits.
 
 ## Ensure
@@ -136,7 +136,7 @@ exception in that case. For instance, when writing `sqrt`, we can
 think ahead and recognize that negative numbers are a problem. So we
 add code to check this, and throw an exception.
 
-Likewise, durable code anticiaptes exceptions being thrown. It makes
+Likewise, durable code anticipates exceptions being thrown. It makes
 sure that exceptions are handled properly. It avoids the program
 crashing; it does everything possible so that the program may carry on
 in spite of the exception.
@@ -164,7 +164,7 @@ trying to imagine how that feature should work.
 Estimated time: 45min.
 
 * Go back to your Mastermind, Hangman, TreeNode, and Todo list
-  projects to harden your code, looking for places where you shuld
+  projects to harden your code, looking for places where you should
   throw exceptions, or rescue them.
 
 ## Resources

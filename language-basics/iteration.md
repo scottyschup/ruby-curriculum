@@ -217,7 +217,7 @@ using `#each`
 need an array index, though. In these cases, though, you can fall back
 on `each_with_index`.
 
-For example, say we want to find the indices of all the occurences of
+For example, say we want to find the indices of all the occurrences of
 my favorite number:
 
 ```ruby
@@ -228,7 +228,7 @@ favorite_indices = []
 
 i = 0
 while i < numbers.count
-  if numbers[i] == my_favorite_nmber
+  if numbers[i] == my_favorite_number
     favorite_indices << i
   end
   

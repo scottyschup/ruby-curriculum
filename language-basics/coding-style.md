@@ -6,7 +6,7 @@
   * Indent your code.
   * Limit lines to 80 chars.
   * Avoid long methods and nesting more than two levels deep.
-  * Don't overcomment.
+  * Don't over-comment.
 
 ## Style matters
 
@@ -58,7 +58,7 @@ class CrazyClass
 end
 ```
 
-Indent with *two spaces*, not with tabstops.
+Indent with *two spaces*, not with tab stops.
 [Set Sublime to do this][sublime-indenting] so that the tab button
 inserts two spaces.
 
@@ -120,7 +120,7 @@ while this
 Three levels deep is plenty deep already. Break this up into smaller
 methods of one or two levels each.
 
-## Avoid overcommenting
+## Avoid over-commenting
 
 **This**: "Good code is like a good joke: it needs no explanation."
 
@@ -152,7 +152,7 @@ Don't double space you're code; the extra space will look silly.
 Your methods should be short anyway, but it can be hard to follow many
 lines of code with no line breaks. This is a subtle thing, but my
 personal style is to add blank lines when I shift from one idea to
-another. It works like a pargraph that way. For instance:
+another. It works like a paragraph that way. For instance:
 
 ```ruby
 def my_method
