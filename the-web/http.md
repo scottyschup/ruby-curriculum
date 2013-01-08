@@ -37,7 +37,7 @@ the protocol version (http/1.1) and the *host*
 (en.wikipedia.org). This request will be routed through the internet
 to the host (a server for en.wikipedia.org), which will then fetch the
 resource (a GET request fetches a resource), and then send it back to
-the requestor.
+the requester.
 
 The response from the server is in blue and in green. The green part
 is the *body*, or meat of the response. This is the content that was
@@ -45,7 +45,7 @@ requested. Here, it's an HTML web page.
 
 The blue part consists of the *headers*; the headers are not part of
 the content proper, but they contain valuable information for the
-requestor. The most important one is the *status code* which tells the
+requester. The most important one is the *status code* which tells the
 client whether the request was successful. The status code is in the
 first line of the headers: "HTTP/1.1 200 OK". 200 is the "OK" status
 code; everything worked fine. Other common status codes are for a
@@ -167,7 +167,7 @@ the hash
 The Bing server will use the query string parameters to build its
 response to the GET request: presumably, it will treat the value keyed
 by "q" as the *query*. Once the server has generated the search
-results and the HTML response, it sends this back to the requestor.
+results and the HTML response, it sends this back to the requester.
 
 ## Exercises
 Estimated time: .25hrs

@@ -38,7 +38,7 @@ documents describe the HTTP requests you can make to the server, how
 to use them, and what they do.
 
 By using APIs your program can interact with the outside world. It
-could read tweets from Twiter, it could make posts to Reddit, etc.
+could read tweets from Twitter, it could make posts to Reddit, etc.
 
 [skillcrush]: http://www.skillcrush.com/terms/api.html
 [twitter-doc]: https://dev.twitter.com/docs/api/1.1/get/statuses/show/%3Aid
@@ -96,7 +96,7 @@ Likewise there are `RestClient.put` and `RestClient.delete`
 methods. They operate similarly.
 
 ## Formatting URLs
-It can be a pain to hardcode long URL strings into your code. This is
+It can be a pain to hard-code long URL strings into your code. This is
 particularly annoying if you need to update the values, or if you have
 query strings. In general, don't store encoded data like that: get
 Ruby to do the work for you.

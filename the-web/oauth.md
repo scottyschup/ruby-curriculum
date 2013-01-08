@@ -9,7 +9,7 @@ his name.
 
 Consider a application like Instagram which integrates with
 Facebook. One way to give Instagram the power to post photos to your
-wall would be to provide Instagram with your facebook username and
+wall would be to provide Instagram with your Facebook username and
 password.
 
 The average user may not be too keen on giving their password to any

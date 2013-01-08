@@ -6,7 +6,7 @@
 
 ## Authentication and Authorization
 How do we make sure that only appropriate users are allowed to take
-priviliged actions? For instance, only an adminitrator should be
+privileged actions? For instance, only an administrator should be
 allowed to delete posts from a web forum, perhaps.
 
 There are two parts of the problem. We use *authentication* (i.e.,
@@ -48,7 +48,7 @@ server will check this *token*; by issuing us a token, we avoid
 needing to submitting our username and password on every request.
 
 The proof is in the form of a cookie (ignore modhash for now; it's
-reddit specific). The cookie is listed in the body for redundancy; the
+Reddit specific). The cookie is listed in the body for redundancy; the
 part which tells us to save the cookie is found in the headers.
 
 ```ruby
@@ -80,7 +80,7 @@ this is necessary at a later date.
 
 ## Making an authorized request
 Let's now make a request requiring authorization. Let's get the
-details of the loged in user:
+details of the logged in user:
 
 ```ruby
 > RestClient.get("http://www.reddit.com/api/me.json")
