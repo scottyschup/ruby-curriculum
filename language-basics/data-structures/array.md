@@ -363,8 +363,8 @@ discs, to the final pile. If so, they win!
 ### Stock Picker
 
 Write a method that takes an array of stock prices (prices on days 0,
-1, ...), and outputs the most profitable pair of days on which to buy
-the stock, and then to sell the stock.
+1, ...), and outputs the most profitable pair of days on which to
+first buy the stock and then sell the stock.
 
 ## Resources
 * [Ruby Doc on Array](http://www.ruby-doc.org/core-1.9.3/Array.html)
