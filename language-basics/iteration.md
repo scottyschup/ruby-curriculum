@@ -144,6 +144,8 @@ while i < numbers_to_search.count
     puts "List contains favorite number!"
     break
   end
+
+  i += 1
 end
 ```
 
