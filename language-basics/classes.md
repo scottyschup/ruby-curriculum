@@ -379,8 +379,8 @@ end
 ```
 
 This is the preferred way to do things in Ruby. It can be confusing
-because it is not always clear that we want to call a variable
-(instead of using a variable), but the advantage is concision.
+because it is not always clear that we want to call a method (instead
+of using a variable), but the advantage is concision.
 
 ## Defining class methods
 
