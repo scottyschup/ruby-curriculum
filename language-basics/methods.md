@@ -97,6 +97,9 @@ swingers([
   ["Romeo", "Juliet"]
 ])
 ```
+**Bonus problem
+Make a swingers game that guarantees that all the couples end up with a different partner!
+
 
 ## Resources
 * [Wikipedia: Single Responsibility Principle](http://en.wikipedia.org/wiki/Single_responsibility_principle)
