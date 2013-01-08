@@ -88,7 +88,7 @@ rps("Scissors") # => "Paper, Win"
   with the couples mixed up. Assume that the first item in the couple
   array is a man, and the second item is a woman. Don't pair a person
   with someone of their own gender (sorry to ruin your fun). An
-  example input:
+  example run of the program:
 
 ```ruby
 swingers([
