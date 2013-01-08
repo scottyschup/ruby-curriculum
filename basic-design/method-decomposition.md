@@ -149,7 +149,7 @@ def swingers(couples)
 end
 ```
 
-**It reads like plain english; hiding away implementation details in
+**It reads like plain English; hiding away implementation details in
 helper methods.** If somebody looks at this code, they will
 immediately understand what is going on, even without reading the
 definitions of `split_couples` and `zip_couples`. This makes it a lot

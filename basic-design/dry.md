@@ -29,8 +29,8 @@ def process_business_address_form(fields)
 end
 ```
 
-See how we've repeated the bit that checks that the zipcode is valid?
-This is bad; if there was a bug with our zipcode validation, we'd have
+See how we've repeated the bit that checks that the zip code is valid?
+This is bad; if there was a bug with our zip code validation, we'd have
 to fix the code **in two places**. This is a pain, and we'll probably
 forget to fix the duplicated code everywhere, so it's also a source of
 bugs. For this reason, we want to find a way to eliminate the
@@ -54,7 +54,7 @@ end
 
 Breaking the duplicated code into a method has the side-effect of
 making the consumer/business methods shorter and more focused on the
-details of checking the form, rather than the details of zipcode
+details of checking the form, rather than the details of zip code
 validation.
 
 ## Flay

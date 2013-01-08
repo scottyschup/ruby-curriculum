@@ -66,7 +66,7 @@ letters, and classes start with upper case letters.
 ### NoMethodError
 
 This is similar to NameError; in fact it's a subclass. This is thrown
-when it's clear the user wanted to call a method (didn't try to lookup
+when it's clear the user wanted to call a method (didn't try to look up
 a variable) that doesn't exist:
 
 ```ruby
