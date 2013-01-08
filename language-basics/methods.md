@@ -93,8 +93,8 @@ rps("Scissors") # => "Paper, Win"
 
 ```ruby
 swingers([
-  ["Clyde", "Bonnie"]
-  ["Paris", "Helen"]
+  ["Clyde", "Bonnie"],
+  ["Paris", "Helen"],
   ["Romeo", "Juliet"]
 ])
 ```
