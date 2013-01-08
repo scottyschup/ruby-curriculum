@@ -21,6 +21,10 @@
   * Always clean dishes immediately.
   * Once a week, a pair is responsible for cleaning the kitchen.
   * **TODO: makeup cleaning schedule**
+* Lockup at night
+  * If you're the last one out, make sure to lock both the inner
+    office door and the outer door.
+  * Please also turn off all lights.
 * Don't open the back door!
   * It triggers a burglar alarm; security company charges $200 for
     false alarms, which will be passed on to you :-)
