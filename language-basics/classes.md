@@ -481,7 +481,7 @@ Write a set of courses to model Students and Courses.
 * `Student#initialize` should take a first and last name.
 * `Student.name` should return the concatenation of the student's
   first and last name.
-* `Student#coursers` should return a list of the `Course`es in which
+* `Student#courses` should return a list of the `Course`es in which
   the student is enrolled.
 * `Student#enroll` should take a `Course` object, add it to the
    student's list of courses, and update the `Course`'s list of
