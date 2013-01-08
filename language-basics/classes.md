@@ -229,7 +229,7 @@ about storing object state in instance variables first.
 ### Instance variables
 
 Object state is stored in *instance variables*. Instance variable
-names are prefixed with an ampersand ('@'). Each object instance has
+names are prefixed with an at-symbol ('@'). Each object instance has
 its own separate copies of the instance variables. The variables are
 stored for the life of the object. Just like we store information in a
 Hash under a key, we can set and lookup data with an instance variable
