@@ -128,23 +128,7 @@ capitals.has_key('France') # => false
 
 ## Exercises
 
-Estimated time: 1hr
-
-### Two sum
-
-Previously, we wrote a method that found if an array had a pair of
-elements that summed to zero. Let's improve our old version with one
-that uses a hash.
-
-One important difference between a hash and an array is that Hash's
-`has_key?` method is much faster than array's `include?`
-method. `Array#include?` works by going through every item in the
-array. `Hash#has_key?` works more like a phone book: it can more
-quickly jump to where the key/value combo would be.
-
-Can you use this fact to write a faster two sum solution?
-
-Test your two solutions on a large array of ~100,000 random elements.
+Estimated time: 30min
 
 ### Set
 
