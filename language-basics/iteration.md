@@ -20,7 +20,7 @@
 ## While loops
 
 The most primitive loop is the `while` loop. It repeats a block of
-code (not literraly a Ruby block, just a section of code) repeatedly
+code (not literally a Ruby block, just a section of code) repeatedly
 as long as a condition is true. For instance,
 
 ```ruby
@@ -186,7 +186,7 @@ of an index variable. This may not seem like a big deal, but every
 line of code you don't have to write is one less to debug.
 
 In particular, one of the most common programming errors is to forget
-to increment the index variable aech time:
+to increment the index variable each time:
 
 ```ruby
 i = 0
@@ -301,7 +301,7 @@ end
 
 Note, when you have two indices, `i` and `j` are conventional
 names. However, they are often the lazy way out: unclear, abstract
-index names are a major source of confusino and bugs. Here names like
+index names are a major source of confusion and bugs. Here names like
 `num1` and `num2` would make things clearer.
 
 *Avoid deep nesting*. Nested code should be split out into
