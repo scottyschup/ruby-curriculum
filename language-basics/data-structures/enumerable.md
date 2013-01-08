@@ -27,7 +27,7 @@ the `Enumerable` module.
 
 You've already seen this before! If you want a refresher, just look at
 the [Hash](hash.md) and [Array](array.md) pages. You'll want to use
-`each` when you want to run some blokc of code for each element in an
+`each` when you want to run some block of code for each element in an
 Array (or Hash).
 
 ### `map`
