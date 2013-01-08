@@ -181,5 +181,13 @@ Estimated time: 1hr
   of integers, return the average of the middle two items from the
   sorted array.
 
+* Use the `inject` method (`concatenate`) which takes in an `Array` of
+  `String`s, and which returns the concatenation of the strings.
+
+```ruby
+concatenate(["Yay ", "for ", "strings!"])
+# => "Yay for strings!"
+```
+
 ## Resources
 * [Ruby-Doc on Enumerable](http://ruby-doc.org/core-1.9.3/Enumerable.html)
