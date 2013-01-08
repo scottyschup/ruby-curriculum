@@ -139,7 +139,7 @@ instance:
 ```ruby
 ice_creams = "Bi-Rite, Humphrey Slocum, Mitchell's"
 ice_creams.split(", ")
-#=> ["Bi-Rite", "Humphrey Slocum", "Michell's"]
+#=> ["Bi-Rite", "Humphrey Slocum", "Mitchell's"]
 
 [1] pry(main)> motto = "We all scream for ice cream!"
 => "We all scream for ice cream!"
