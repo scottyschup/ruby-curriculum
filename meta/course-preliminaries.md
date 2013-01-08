@@ -32,15 +32,14 @@
 
 ## Schedule
 * 09:00am-11:00am: Instruction
-  * 09:00am-09:15am: Review wiki Q&A
-  * 09:15am-09:40am: Live Q&A session
+  * 09:00am-09:25am: Live Q&A session
 * 11:00am-11:15am: Break
 * 11:15am-12:30pm: Instruction
 * 12:30pm-01:30pm: Lunch
+* 01:30pm-02:00pm: Code review
 * 01:30pm-03:30pm: Instruction
 * 03:30pm-03:45pm: Break
 * 03:45pm-06:00pm: Instruction
-  * 05:40pm-06:00pm: Readings and screencasts
 * Evenings:
   * Finish assigned projects.
   * Finish readings.
