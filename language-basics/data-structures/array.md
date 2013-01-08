@@ -233,8 +233,8 @@ A common idiom in Ruby are pairs of *safe* and *unsafe* methods; the
 unsafe methods normally end in '!'. What it means to be unsafe varies
 from method to method, but often the unsafe version will modify the
 object, while the safe version will return a new value. Oftentimes the
-unsafe version is faster, because it only needs to modify an existin
-gobject. However, use the safe version as a default, and only use
+unsafe version is faster, because it only needs to modify an existing
+object. However, use the safe version as a default, and only use
 unsafe methods when you have a reason. Again, don't worry about speed
 until you see a performance problem in real life.
 
