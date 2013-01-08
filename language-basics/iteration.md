@@ -349,9 +349,9 @@ Time estimate: 1.5hrs
   * Next download a dictionary from [here](http://wordlist.sourceforge.net/)
   * Read in the dictionary
   * Learn how to read a file [here](io.md#opening-a-file).
-    * You'll have to split the file on 
-  * You may need to use String's chomp method.
-    * Now print out only those substrings that are words
+  * You may need to use `String#chomp` to strip newline characters;
+    see the [Input/Output](io.md) chapter for details
+  * Now print out only those substrings that are words
 
 ## Resources
 
