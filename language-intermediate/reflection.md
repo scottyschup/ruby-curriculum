@@ -36,7 +36,7 @@ class; private method protection is not enforced when using
 `#send`. We pass `#define_method` a method name, `:golem`, and a
 block, which will be the code to execute when the method is called.
 
-It is not an every-day occurence to use powerful features like this,
+It is not an every-day occurrence to use powerful features like this,
 but they do come in handy sometime. It is good to be able to
 understand them when they do come up. For instance, imagine a class
 `User`; say we want to send the `User` any of a number of emails.
@@ -60,7 +60,7 @@ end
 Imagine the tedium if there were 100 emails. We'd like to DRY this up:
 maybe there should be one `User#send_email` method which takes an
 email name. But how would it call the different `Mailer` methods? We
-might use refletion:
+might use reflection:
 
 ```ruby
 class User
@@ -75,7 +75,7 @@ u.send_email(:confirmation) # will call Mailer.confirmation_email...
 
 Techniques like this are called *metaprogramming*. Another common
 technique is to provide *macros*. A macro is a helper class method
-that is provided in a parent class or a module which the creater of a
+that is provided in a parent class or a module which the creator of a
 derived class uses to generate code.
 
 Here's an example similar in intent to the previous one, but done a

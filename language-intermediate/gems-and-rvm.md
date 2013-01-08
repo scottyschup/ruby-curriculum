@@ -9,13 +9,13 @@ methods to a web framework as large as Rails.
 Let's see how to find, install and use a gem.
 
 ## Finding gems
-Two main plaecs to look when searching for a gem are
+Two main places to look when searching for a gem are
 [RubyGems][ruby-gems] and [Ruby Toolbox][ruby-toolbox].
 
 [ruby-gems]: http://rubygems.org/
 [ruby-toolbox]: https://www.ruby-toolbox.com/
 
-I often just simply google around for what I want to do, read
+I often just simply Google around for what I want to do, read
 StackOverflow for suggestions, and then look at the gem's github repo
 to see if it's what I want.
 
@@ -54,7 +54,7 @@ ERROR:  While executing gem ... (Gem::FilePermissionError)
     You don't have write permissions into the /Library/Ruby/Gems/1.8 directory.
 ```
 
-This is because the builtin Ruby that comes with OS X installs gems in
+This is because the built-in Ruby that comes with OS X installs gems in
 a system directory where you need superuser permissions to create
 files. The usual answer to this problem is to prefix your command with
 `sudo`, which prompts you for your system password, and then executes
@@ -108,7 +108,7 @@ You'll need to read up on how to use your newly installed gem. The
 github often has examples that show you the most common methods and
 how they are used. Well documented libraries like RSpec have whole
 websites of [documentation][rspec-docs]. Documentation is normally
-linked to on the github page; else I do a quick google search.
+linked to on the github page; else I do a quick Google search.
 
 Documentation can often be spotty and incomplete. In that case, you'll
 have to explore the code itself (either on github, or a local clone of
