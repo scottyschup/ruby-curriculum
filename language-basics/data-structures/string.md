@@ -180,6 +180,15 @@ Estimated time: 1hr
   
 * Implement a [Caesar cipher](http://en.wikipedia.org/wiki/Caesar_cipher).
   Example: `caesar("hello", 3) # => "khoor"`
+  * Assume the text is all lower case letters.
+  * You'll probably want to map letters to numbers (so you can shift
+    them). You can do this mapping yourself, but you may also want to
+    use the [ASCII codes][wiki-ascii], which are accessible through
+    `String#each_byte`.
+  * Lastly, be careful of the letters at the end of the alphabet, like
+    `"z"`!
 
 ## Resources
 http://www.ruby-doc.org/core-1.9.3/String.html
+
+[wiki-ascii]: http://en.wikipedia.org/wiki/Ascii
