@@ -291,9 +291,13 @@ less than `y`. If `x` and `y` are equal, it returns `0`. If greater,
 [peter-youtube-blocks]: http://www.youtube.com/watch?v=VBC-G6hahWA
 
 ## Resources
-* [Robert Sosinski on blocks][sosinski-blocks]
-* [Skorks on procs and lambdas][skorks-blocks]
+* [Robert Sosinski on Blocks][sosinski-blocks]
+* [Skorks on Procs and Lambdas][skorks-blocks]
+* [Fizzbuzz written entirely with Procs][fizzbuzz-procs]
+  * [HN discussion on the above article][HN-fizzbuzz-procs]
 
 [sosinski-blocks]: http://www.robertsosinski.com/2008/12/21/understanding-ruby-blocks-procs-and-lambdas
 [skorks-blocks]: http://www.skorks.com/2010/05/ruby-procs-and-lambdas-and-the-difference-between-them/
 [so-spaceship]: http://stackoverflow.com/questions/827649/what-is-the-ruby-spaceship-operator
+[fizzbuzz-procs]: http://codon.com/programming-with-nothing
+[HN-fizzbuzz-procs]: http://news.ycombinator.com/item?id=3343205
