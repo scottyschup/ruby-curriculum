@@ -281,5 +281,7 @@ Estimated time: 1hrs
 
 ## Resources
 * [Robert Sosinski on blocks][sosinski-blocks]
+* [Skorks on procs and lambdas][skorks-blocks]
 
 [sosinski-blocks]: http://www.robertsosinski.com/2008/12/21/understanding-ruby-blocks-procs-and-lambdas
+[skorks-blocks]: [http://www.skorks.com/2010/05/ruby-procs-and-lambdas-and-the-difference-between-them/]
