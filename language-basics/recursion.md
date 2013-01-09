@@ -78,18 +78,10 @@ solution is more natural to your own mind.
 
 Estimated time: 5hrs
 
-* Test First Ruby XML parser
 * Write the following methods both recursively and iteratively
   * Fibonacci
   * sum of an array
   * [binary search][wiki-binary-search]: bsearch(array, target)
-  * exponent
-* RubyQuiz: [Make change](http://www.rubyquiz.com/quiz154.html)
-  * Whenever we assign a Ruby Quiz, after solving it, make sure to
-    look at a couple answers and make sure you understand them.
-
-[wiki-binary-search]: http://en.wikipedia.org/wiki/Binary_search
-
 * Write two versions of exponent that use two different recursions:
 
 ```ruby
@@ -102,22 +94,31 @@ exp(b, n) = exp(b, floor(n / 2)) * exp(b, ceil(n / 2))
 ```
 Which one do you think should run more quickly?
 
-* Implement a method, `merge_sort` that sorts an `Array`
-  * if there is zero or one elements in the array, do nothing, it is
-    already sorted
-  * else split the array in two
-    * the halves should be as near to equal in length as possible
-      * you may wish to use `take`/`drop`
-    * recursively sort each of these subarrays
-    * "merge" the two sorted subarrays into one
-      * use a while loop which runs as long as one of the subarray has
-        any elements
-      * if both subarrays still have elements
-        * compare the fronts of the subarrays
-        * `shift` the smaller of the two, `push`ing it into the merged
-          array
-      * else, just `shift` the element of the non-empty list and
-        `push` it into the merged array
+* The `#dup` method doesn't make a *deep copy*:
+
+```ruby
+robot_parts = [["nuts", "bolts", "washers"], ["capacitors", "resistors", "inductors"]]
+robot_parts_copy = robot_parts.dup
+
+# shouldn't modify robot_parts
+robot_parts_copy[1] << "LEDs"
+# wtf?
+robot_parts[1] # => ["capacitors", "resistors", "inductors"]
+```
+
+When we `dup` an `Array`, it creates a new array to hold the elements,
+but doesn't recursively `dup` any arrays contained therein. Using
+recursion and the `is_a?` method, write a new `deep_dup` method that
+will perform a deep duplication.
+
+* RubyQuiz: [Make change](http://www.rubyquiz.com/quiz154.html)
+  * Whenever we assign a Ruby Quiz, after solving it, make sure to
+    look at a couple answers and make sure you understand them.
+* Implement a method, [`merge_sort`][wiki-merge-sort] that sorts an `Array`.
+* Test First Ruby XML parser
+
+[wiki-binary-search]: http://en.wikipedia.org/wiki/Binary_search
+[wiki-merge-sort]: http://en.wikipedia.org/wiki/Merge_sort
 
 ## Resources
 
