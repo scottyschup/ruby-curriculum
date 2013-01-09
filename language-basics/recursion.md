@@ -152,7 +152,13 @@ robot_parts[1] # => ["capacitors", "resistors", "inductors", "LEDs"]
 When we `dup` an `Array`, it creates a new array to hold the elements,
 but doesn't recursively `dup` any arrays contained therein. Using
 recursion and the `is_a?` method, write a new `deep_dup` method that
-will perform a deep duplication.
+will perform a *deep* duplication.
+
+You may use `dup` in your `deep_dup` method, but it shouldn't be
+strictly necessary. It's okay to iterate over array elements using
+`each` for this one.
+
+You should be able to handle "mixed" arrays like `[1, [2], [3, [4]]]`.
 
 * Write a recursive and an iterative Fibonacci method. The method
   should take in an integer `n` and return the first `n` Fibonacci
@@ -162,8 +168,8 @@ will perform a deep duplication.
   able to do this just passing a single argument for the number of
   Fibonacci numbers requested.
 * Write a recursive [binary search][wiki-binary-search]:
-  `bsearch(array, target)`. Hint: you will probably want to use
-  subarrays.
+  `bsearch(array, target)`. **Note that binary search only works on
+  sorted arrays**. Hint: you will probably want to use subarrays.
 * RubyQuiz: [Make change](http://www.rubyquiz.com/quiz154.html)
   * Whenever we assign a Ruby Quiz, after solving it, make sure to
     look at a couple answers and make sure you understand them.
