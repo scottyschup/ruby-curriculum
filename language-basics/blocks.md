@@ -102,7 +102,7 @@ passed on to the block.
 
 ```ruby
 my_new_proc = Proc.new { |name| puts "Hello #{name}" }
-my_proc.call("Zimmy")
+my_new_proc.call("Zimmy")
 ```
 
 Takeaway: to store or use a block, it must first be turned into a
