@@ -555,15 +555,17 @@ And some extras:
 * Don't let a `Student` enroll in two classes that meet at the same time.
 
 ### Tic-Tac-Toe
-Write a Tic-Tac-Toe game.
+Let's write a Tic-Tac-Toe game!
 
 * The game should run in a master loop, called a *run loop*.
 * Each time around it should prompt both players for their move.
 * When someone wins, it should exit the loop.
+  * When checking for wins, you should be able to save some lines by
+    looping through the rows, columns, and diagonals.
 * Your tic tac toe game class should have a `#play` method that
   contains the loop, only returning when the game has completed.
 * You should have a class that represents a human player
-  (`HumanPlayer`), and another that is a computer player
+  (`HumanPlayer`), and another class for a computer player
   (`ComputerPlayer`).
 * You should be able to select 2, 1, or no human players.
 * Keep the computer AI simple: make a winning move if available; else
