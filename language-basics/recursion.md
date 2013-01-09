@@ -152,7 +152,9 @@ recursion and the `is_a?` method, write a new `deep_dup` method that
 will perform a deep duplication.
 
 * Write a recursive and an iterative Fibonacci method (method should
-  take in a number of Fibonacci numbers to return in an array).
+  take in an integer `n`, and return the first `n` Fibonacci numbers
+  in an array). Note: Recursion will be used in calculating the nth 
+  Fibonacci number, not for building/returning the array.
 * Write a recursive [binary search][wiki-binary-search]:
   `bsearch(array, target)`. Hint: you will probably want to use
   subarrays.
