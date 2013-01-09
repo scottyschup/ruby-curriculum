@@ -197,6 +197,21 @@ cat1.home_city = "San Francisco"
 In short, after you call `Cat.new`, your `Cat` should be fully setup
 and ready to go.
 
+### `initialize` != `run`
+
+Your `initialize` method should not do too much; it should merely set
+up the object so that it is ready to be used.
+
+In particular, students sometimes have their `initialize` method run
+an interactive program. For example, their `Game#initialize` method
+may not only initialize the game state, it may also start actually
+playing the game.
+
+That is too much to do inside the `initialize` method, and sort of
+abuses it. You may want to be able to create your `Game` object and
+test its initial configuration without running it yet. Instead, put
+logic like this in a method called `run` (or something similar).
+
 ### Instance Methods
 
 Instance methods define the behavior to be exhibited by instances of
