@@ -13,7 +13,7 @@
   + [pry and debugger][pry-and-debugger] ([wiki][wiki-pry-and-debugger])
   + [common error messages][common-error-messages] ([wiki][wiki-common-error-messages])
 + **Project**: In Words (ex #15) from [Test First Ruby][test-first-ruby]
-+ **Project**: [Maze solver][maze-project]
++ **Bonus project**: [Maze solver][maze-project]
 
 [array]: https://github.com/ruggeri/ruby-curriculum/blob/master/language-basics/data-structures/array.md
 [wiki-array]: https://github.com/ruggeri/ruby-curriculum/wiki/Array:-questions
@@ -42,7 +42,7 @@
 + [Classes][classes] ([wiki][wiki-classes])
 + [Pass by reference][pass-by-reference] ([wiki][wiki-pass-by-reference])
 + **Project**: [MicroBlogger][microblogger]
-+ **Project**: [Word chains][word-chains]
++ **Bonus project**: [Word chains][word-chains]
   + Hint: first write a method `adjacent_words` which gives an array
     of all words "one letter away".
 
