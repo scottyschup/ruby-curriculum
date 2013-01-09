@@ -42,9 +42,6 @@
 + [Classes][classes] ([wiki][wiki-classes])
 + [Pass by reference][pass-by-reference] ([wiki][wiki-pass-by-reference])
 + **Project**: [MicroBlogger][microblogger]
-+ **Bonus project**: [Word chains][word-chains]
-  + Hint: first write a method `adjacent_words` which gives an array
-    of all words "one letter away".
 
 [iteration]: https://github.com/ruggeri/ruby-curriculum/blob/master/language-basics/iteration.md
 [wiki-iteration]: https://github.com/ruggeri/ruby-curriculum/wiki/Iteration:-questions
@@ -62,12 +59,14 @@
 [wiki-pass-by-reference]: https://github.com/ruggeri/ruby-curriculum/wiki/Pass-by-reference:-questions
 
 [microblogger]: http://tutorials.jumpstartlab.com/projects/microblogger.html
-[word-chains]:  http://www.rubyquiz.com/quiz44.html
 
 ### w1d3
 + [Blocks][blocks] ([wiki][wiki-blocks])
 + [Recursion][recursion] ([wiki][wiki-recursion])
 + [Scope][scope] ([wiki][wiki-scope])
++ **Bonus project**: [Word chains][word-chains]
+  + Hint: first write a method `adjacent_words` which gives an array
+    of all words "one letter away".
 
 [blocks]: https://github.com/ruggeri/ruby-curriculum/blob/master/language-basics/blocks.md
 [wiki-blocks]: https://github.com/ruggeri/ruby-curriculum/wiki/Blocks:-questions
@@ -75,6 +74,7 @@
 [wiki-recursion]: https://github.com/ruggeri/ruby-curriculum/wiki/Recursion:-questions
 [scope]: https://github.com/ruggeri/ruby-curriculum/blob/master/language-basics/scope.md
 [wiki-scope]: https://github.com/ruggeri/ruby-curriculum/wiki/Scope:-questions
+[word-chains]:  http://www.rubyquiz.com/quiz44.html
 
 ## Algorithms
 ### w1d4
