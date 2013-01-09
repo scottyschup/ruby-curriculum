@@ -123,7 +123,10 @@ Estimated time: 5hrs
 * Write both a recursive and iterative version of sum of an array
 * Write two versions of exponent that use two different recursions:
 
-```ruby
+```
+# this is math, not Ruby methods. Lookup `floor`, `ceil` methods of
+# Float.
+
 exp(b, 0) = 1
 exp(b, n) = b * exp(b, n - 1)
 
