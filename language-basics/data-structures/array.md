@@ -342,7 +342,8 @@ occasionally useful and interesting to try out.
 ### Two sum
 
 Write a method that finds if an array of numbers has a pair that sums
-to zero.
+to zero. Be careful of the case of zero; there need to be two zeroes
+in the array to make a pair that sums to zero.
 
 ### Towers of Hanoi
 
