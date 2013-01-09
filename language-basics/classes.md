@@ -273,6 +273,12 @@ class Cat
 end
 ```
 
+These simple methods manipulate the instance variables. Note the
+difference between `@name` and `name`: the first directly accesses the
+instance variable, while the second calls a method that will then
+access that variable for us. Different ways to accomplish the same
+thing; but only the `name` method can be used outside the class.
+
 Because setter and getter methods are so common and tedious, Ruby
 gives us an easy way to define these:
 
@@ -293,6 +299,36 @@ class Cat
   # ...
 end
 ```
+
+Beware a common mistake:
+
+```ruby
+class Cat
+  attr_accessor :age, :location
+  
+  def age_on_year
+    # works
+    @age = age + 1
+    # won't change age
+    age = age + 1
+    # works again
+    self.age = age + 1
+  end
+```
+
+Each example first calls the `age` getter method and adds one. The
+first then sets the instance variable `@age` to this new value. The
+third calls the `age=` setter method, passing it the new age; the
+method then sets the instance variable for us.
+
+The second doesn't work. It creates a new *local* variable named
+`age`, and assigns it the new value. It doesn't modify the instance
+variable at all.
+
+In the second example, Ruby assumes that you want to create a variable
+named `age` when you use `=`; that is its default assumption. Only if
+you say `self.age` does it realize that you really want to call a
+method. So beware of this common mistake.
 
 ## Class and Instance methods
 
