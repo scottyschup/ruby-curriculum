@@ -78,11 +78,7 @@ solution is more natural to your own mind.
 
 Estimated time: 5hrs
 
-* Write the following methods both recursively and iteratively
-  * Fibonacci (method should take in a number of Fibonacci numbers to
-    return in an array)
-  * sum of an array
-  * [binary search][wiki-binary-search]: bsearch(array, target)
+* Write both a recursive and iterative version of sum of an array
 * Write two versions of exponent that use two different recursions:
 
 ```ruby
@@ -93,6 +89,7 @@ exp(b, 0) = 1
 exp(b, 1) = b
 exp(b, n) = exp(b, floor(n / 2)) * exp(b, ceil(n / 2))
 ```
+
 Which one do you think should run more quickly?
 
 * The `#dup` method doesn't make a *deep copy*:
@@ -112,6 +109,11 @@ but doesn't recursively `dup` any arrays contained therein. Using
 recursion and the `is_a?` method, write a new `deep_dup` method that
 will perform a deep duplication.
 
+* Write a recursive and an iterative Fibonacci method (method should
+  take in a number of Fibonacci numbers to return in an array).
+* Write a recursive [binary search][wiki-binary-search]:
+  `bsearch(array, target)`. Hint: you will probably want to use
+  subarrays.
 * RubyQuiz: [Make change](http://www.rubyquiz.com/quiz154.html)
   * Whenever we assign a Ruby Quiz, after solving it, make sure to
     look at a couple answers and make sure you understand them.
