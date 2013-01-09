@@ -1,7 +1,7 @@
 # Intro Lecture
 
 ## Course rules and deposit deductions
-* [Course rules](course-rules.txt)
+* [Course rules](course-rules.md)
 
 ## Building logistics
 * Office is open 24/7.
