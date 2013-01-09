@@ -77,6 +77,18 @@ NoMethodError: undefined method `my_fantasy_method' for "my string":String
 
 Again, Ruby tells us the method name it looked up, and the object.
 
+A particularly common error occurs when a variable is `nil` when we
+don't expect this
+
+```ruby
+[5] pry(main)> my_array[0] # what if my_array == nil?
+NoMethodError: undefined method `[]' for nil:NilClass
+        from: (pry):2:in `__pry__'
+```
+
+`nil` is an instance of the class `NilClass`, which doesn't have the
+method we want.
+
 ## ArgumentError: wrong number of arguments
 
 If we don't give a method the right number of arguments, we will get
