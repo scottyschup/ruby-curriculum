@@ -175,8 +175,9 @@ Estimated time: 1hr
   it.
   * Write a version that will build the binary version.
   * Write a version that builds an octal version.
-  * Write a version that creates a string for a given base.
-  * NB: 10.to_s(base) already does this, but try it for yourself!
+  * Write a version that creates a string for any given base <10.
+  * NB: 10.to_s(base) already does this, but try writing it for
+    yourself!
   
 * Implement a [Caesar cipher](http://en.wikipedia.org/wiki/Caesar_cipher).
   Example: `caesar("hello", 3) # => "khoor"`
