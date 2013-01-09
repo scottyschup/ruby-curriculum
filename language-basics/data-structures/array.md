@@ -360,6 +360,27 @@ and ask what pile to select a disc from, and where to put it.
 After each move, check to see if they have succeeded in moving all the
 discs, to the final pile. If so, they win!
 
+### Transpose
+
+To represent a *matrix*, or two-dimensional grid of numbers, we can
+write an array containing arrays which represent rows:
+
+```ruby
+matrix = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8]
+  ]
+
+row1 = matrix[0]
+row2 = matrix[1]
+row3 = matrix[2]
+```
+
+We could equivalently have stored the matrix as an array of
+columns. Write a method, `transpose`, which will convert between
+the row-oriented and column-oriented representations.
+
 ### Stock Picker
 
 Write a method that takes an array of stock prices (prices on days 0,
