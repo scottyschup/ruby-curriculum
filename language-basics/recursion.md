@@ -79,7 +79,8 @@ solution is more natural to your own mind.
 Estimated time: 5hrs
 
 * Write the following methods both recursively and iteratively
-  * Fibonacci
+  * Fibonacci (method should take in a number of Fibonacci numbers to
+    return in an array)
   * sum of an array
   * [binary search][wiki-binary-search]: bsearch(array, target)
 * Write two versions of exponent that use two different recursions:
