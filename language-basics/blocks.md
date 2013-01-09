@@ -293,7 +293,9 @@ less than `y`. If `x` and `y` are equal, it returns `0`. If greater,
 ## Resources
 * [Robert Sosinski on Blocks][sosinski-blocks]
 * [Skorks on Procs and Lambdas][skorks-blocks]
-* [Fizzbuzz written entirely with Procs][fizzbuzz-procs]
+
+## Extra Credit
+* Read [Fizzbuzz written entirely with Procs][fizzbuzz-procs]
   * [HN discussion on the above article][HN-fizzbuzz-procs]
 
 [sosinski-blocks]: http://www.robertsosinski.com/2008/12/21/understanding-ruby-blocks-procs-and-lambdas
