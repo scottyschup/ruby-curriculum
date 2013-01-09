@@ -266,12 +266,23 @@ Estimated time: 1hrs
 
 * Watch Peter talk about [it all][peter-youtube-blocks].
 * Implement new `Array` methods `my_map`, `my_each`, `my_inject`,
-  `my_select` and `my_sort` (taking a block to perform the
-  comparison). Do it by monkey-patching the `Array` class.
+  `my_select`. Do it by monkey-patching the `Array` class. Don't use
+  any of the original versions when writing these. If you want to use
+  `each` to define some of the others (good idea!), use your `my_each`
+  method.
+
+* Define your own `Array#my_sort`: it should take in a block to
+  perform the comparison:
 
 ```ruby
-[1, 3, 5].my_sort { |x, y| x.to_s < y.to_s }
+[1, 3, 5].my_sort { |num1, num2| num1 <=> num2 } #sort ascending
+[1, 3, 5].my_sort { |num1, num2| num2 <=> num1 } #sort descending
 ```
+
+`#<=>` (the *spaceship* method)
+[compares objects][so-spaceship]. `x.<=>(y)` returns `-1` if `x` is
+less than `y`. If `x` and `y` are equal, it returns `0`. If greater,
+`1`. You can define `<=>` on your own classes.
 
 * Write a method that takes some arguments and a block. It should call
   the block, passing the arguments. If the user doesn't supply the
@@ -285,3 +296,4 @@ Estimated time: 1hrs
 
 [sosinski-blocks]: http://www.robertsosinski.com/2008/12/21/understanding-ruby-blocks-procs-and-lambdas
 [skorks-blocks]: http://www.skorks.com/2010/05/ruby-procs-and-lambdas-and-the-difference-between-them/
+[so-spaceship]: http://stackoverflow.com/questions/827649/what-is-the-ruby-spaceship-operator
