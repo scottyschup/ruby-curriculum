@@ -143,7 +143,7 @@ robot_parts_copy = robot_parts.dup
 # shouldn't modify robot_parts
 robot_parts_copy[1] << "LEDs"
 # wtf?
-robot_parts[1] # => ["capacitors", "resistors", "inductors"]
+robot_parts[1] # => ["capacitors", "resistors", "inductors", "LEDs"]
 ```
 
 When we `dup` an `Array`, it creates a new array to hold the elements,
