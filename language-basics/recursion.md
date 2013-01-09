@@ -74,6 +74,48 @@ significantly more complicated. When choosing whether to solve a
 problem recursively or iteratively, you should think about which
 solution is more natural to your own mind.
 
+## Recursion and Infinite Loops
+
+Recursive calls must always make progress toward a base case. For
+instance, this is no good:
+
+```ruby
+def fibonacci(n)
+  case n
+  when 1
+    [1]
+  when 2
+    [1, 1]
+  else
+    # uh-oh. calls the same method!
+    fibonacci(n)
+  end
+end
+```
+
+This recursion will never terminate for `n > 2`; it will just call
+itself again and again. An infinite chain of recursive calls won't
+just spin forever like a normal loop:
+
+```ruby
+[2] pry(main)> fibonacci(1)
+=> [1]
+[3] pry(main)> fibonacci(2)
+=> [1, 1]
+[4] pry(main)> fibonacci(3)
+SystemStackError: stack level too deep
+        from: /Users/ruggeri/.rvm/gems/ruby-1.9.3-p194/gems/pry-0.9.10/lib/pry/pry_instance.rb:275
+```
+
+Each nested method call you make adds to the *stack* of open method
+calls; each time a method ends, the stack size decreases by one. The
+elements of the stack are called *stack frames*, and they contain the
+local variables used by that method.
+
+If you get caught in a recursive loop, the stack will grow infinitely
+until the system runs out of memory. This is called a *stack
+overflow*, and Ruby will tell you that the stack level got too deep.
+
 ## Exercises
 
 Estimated time: 5hrs
