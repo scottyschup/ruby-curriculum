@@ -186,8 +186,11 @@ Estimated time: 1hr
     them). You can do this mapping yourself, but you may also want to
     use the [ASCII codes][wiki-ascii], which are accessible through
     `String#each_byte`.
-  * Lastly, be careful of the letters at the end of the alphabet, like
-    `"z"`!
+    * You will probably also want to use `String#ord` and
+      `Fixnum#chr`.
+    * Important point: ASCII codes are all consecutive!
+    * Lastly, be careful of the letters at the end of the alphabet, like
+      `"z"`!
 
 ## Resources
 http://www.ruby-doc.org/core-1.9.3/String.html
