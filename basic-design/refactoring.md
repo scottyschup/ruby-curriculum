@@ -60,6 +60,8 @@ the public surface of the class; any change to the public surface will
 necessitate changes to interacting classes. Minimizing exposure will
 better enable change.
 
+**TODO: They don't know what coupling is yet!**
+
 Indecent exposure may result in coupling that is too tight. The more
 extensive your classes' interface, the more tightly other classes can
 latch on to it.
