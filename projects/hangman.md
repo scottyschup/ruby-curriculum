@@ -21,7 +21,7 @@ of the right length, and which match the currently known letters.
 
 Your computer should guess somewhat intelligently. First narrow the
 dictionary down to the set of possible words. A fair strategy is to
-guess the most frequent letter in the subset of posisble words.
+guess the most frequent letter in the subset of possible words.
 
 [wiki-hangman]: http://en.wikipedia.org/wiki/Hangman_(game)
 [dictionary-files]: http://wordlist.sourceforge.net/
