@@ -288,8 +288,11 @@ less than `y`. If `x` and `y` are equal, it returns `0`. If greater,
 * Write a method that takes some arguments and a block. It should call
   the block, passing the arguments. If the user doesn't supply the
   block, it should print out "NO BLOCK GIVEN!".
+  * To take possibly multiple arguments, check out the Ruby
+    [splat operator][splat-operator].
 
 [peter-youtube-blocks]: http://www.youtube.com/watch?v=VBC-G6hahWA
+[splat-operator]: http://kconrails.com/2010/12/22/rubys-splat-operator/
 
 ## Resources
 * [Robert Sosinski on Blocks][sosinski-blocks]
