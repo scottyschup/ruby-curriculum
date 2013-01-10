@@ -1,6 +1,6 @@
 # Hangman
 
-In this project, we write a program to play [Hagman][wiki-hangman].
+In this project, we write a program to play [Hangman][wiki-hangman].
 
 You should have two modes. In the first mode, the computer player
 should read in a [dictionary file][dictionary-files]. It should choose
