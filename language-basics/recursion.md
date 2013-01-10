@@ -174,7 +174,6 @@ You should be able to handle "mixed" arrays like `[1, [2], [3, [4]]]`.
   * Whenever we assign a Ruby Quiz, after solving it, make sure to
     look at a couple answers and make sure you understand them.
 * Implement a method, [`merge_sort`][wiki-merge-sort] that sorts an `Array`.
-* Test First Ruby XML parser
 
 [wiki-binary-search]: http://en.wikipedia.org/wiki/Binary_search
 [wiki-merge-sort]: http://en.wikipedia.org/wiki/Merge_sort

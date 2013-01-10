@@ -64,6 +64,7 @@
 + [Blocks][blocks] ([wiki][wiki-blocks])
 + [Recursion][recursion] ([wiki][wiki-recursion])
 + [Scope][scope] ([wiki][wiki-scope])
++ [Test First Ruby][test-first-ruby] XML parser
 + **Bonus project**: [Word chains][word-chains]
   + Hint: first write a method `adjacent_words` which gives an array
     of all words "one letter away".
@@ -75,6 +76,8 @@
 [scope]: https://github.com/ruggeri/ruby-curriculum/blob/master/language-basics/scope.md
 [wiki-scope]: https://github.com/ruggeri/ruby-curriculum/wiki/Scope:-questions
 [word-chains]:  http://www.rubyquiz.com/quiz44.html
+
+[test-first-ruby]: https://github.com/alexch/learn_ruby
 
 ## Basic design
 ### w1d4
