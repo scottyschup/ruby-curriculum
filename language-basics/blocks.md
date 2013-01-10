@@ -265,18 +265,19 @@ more verbosely as:
 Estimated time: 1hrs
 
 * Watch Peter talk about [it all][peter-youtube-blocks].
-* Implement new `Array` methods `my_map`, `my_each`, `my_inject`,
-  `my_select`. Do it by monkey-patching the `Array` class. Don't use
-  any of the original versions when writing these. If you want to use
-  `each` to define some of the others (good idea!), use your `my_each`
-  method.
+* Implement new `Array` methods `my_each`, `my_map`, `my_select`. Do
+  it by monkey-patching the `Array` class. Don't use any of the
+  original versions when writing these. If you want to use `each` to
+  define some of the others (good idea!), use your `my_each` method.
+* Implement a `my_inject` method. Your version shouldn't take an
+  optional starting argument; just use the first element.
 
-* Define your own `Array#my_sort`: it should take in a block to
+* Define your own `Array#my_sort!`: it should take in a block to
   perform the comparison:
 
 ```ruby
-[1, 3, 5].my_sort { |num1, num2| num1 <=> num2 } #sort ascending
-[1, 3, 5].my_sort { |num1, num2| num2 <=> num1 } #sort descending
+[1, 3, 5].my_sort! { |num1, num2| num1 <=> num2 } #sort ascending
+[1, 3, 5].my_sort! { |num1, num2| num2 <=> num1 } #sort descending
 ```
 
 `#<=>` (the *spaceship* method)
