@@ -113,14 +113,15 @@ but you should try them out on your projects going forward.
 [cane]: https://github.com/square/cane
 [reek]: https://github.com/troessner/reek
 
-## Exercises
+## Refactoring: From Good to Great
 
-* Watch Ben Orenstein's talk.
-  [Refactoring: From Good to Great][refactoring-talk].
+Watch Ben Orenstein's talk:
+[Refactoring: From Good to Great][refactoring-talk].
 
 [refactoring-talk]: http://www.confreaks.com/videos/1233-aloharuby2012-refactoring-from-good-to-great
 
 ## Resources
+
 
 * [Atwood's list of code smells][atwood-code-smells]
   * this is a pretty good list of smells
