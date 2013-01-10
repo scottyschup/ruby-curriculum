@@ -4,7 +4,7 @@ In this project, we write a program to play [Hangman][wiki-hangman].
 
 You should have two modes. In the first mode, the computer player
 should read in a [dictionary file][dictionary-files]. It should choose
-one randomly. Interaction should look something like so:
+a word randomly. Interaction should look something like so:
 
     Secret word: _____
     > h
@@ -15,13 +15,20 @@ one randomly. Interaction should look something like so:
     Secret word: h_ll_
 
 Next, write the program to let the user pick a word; they only need to
-put in how long it is. The computer should, using its dictionary,
-start guessing. It should try to be smart and guess letters in words
-of the right length, and which match the currently known letters.
+put in how long it is, not what the word is. The computer should,
+using its dictionary, start guessing. The human should tell the
+computer the positions (if any) where that letter occurs.
 
-Your computer should guess somewhat intelligently. First narrow the
-dictionary down to the set of possible words. A fair strategy is to
-guess the most frequent letter in the subset of possible words.
+The computer should try to be smart and guess letters from words of
+the right length, and which match the currently known letters. To do
+this, first narrow the dictionary down to the set of possible words. A
+fair strategy is to guess the most frequent letter in the subset of
+possible words.
+
+Make sure your game class (probably named `Hangman`) doesn't do too
+much. You should have `HumanPlayer` and `ComputerPlayer` classes; they
+should contain the logic both for (1) guessing letters and (2)
+confirming guesses.
 
 [wiki-hangman]: http://en.wikipedia.org/wiki/Hangman_(game)
 [dictionary-files]: http://wordlist.sourceforge.net/
