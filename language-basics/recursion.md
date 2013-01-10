@@ -169,7 +169,9 @@ You should be able to handle "mixed" arrays like `[1, [2], [3, [4]]]`.
   Fibonacci numbers requested.
 * Write a recursive [binary search][wiki-binary-search]:
   `bsearch(array, target)`. **Note that binary search only works on
-  sorted arrays**. Hint: you will probably want to use subarrays.
+  sorted arrays**. Make sure to return the location of the found
+  object (or -1 if not found!). Hint: you will probably want to use
+  subarrays.
 * RubyQuiz: [Make change](http://www.rubyquiz.com/quiz154.html)
   * Whenever we assign a Ruby Quiz, after solving it, make sure to
     look at a couple answers and make sure you understand them.
