@@ -328,8 +328,8 @@ end
 ## Exercises
 Time estimate: 1.5hrs
 
-* Loop through all the numbers <10,000, stopping when you encounter a
-  number that is (a) >250 and (b) divisible by 7. Print it down!
+* Loop through all the numbers, stopping when you encounter a number
+  that is (a) >250 and (b) divisible by 7. Print this number down!
 * Print out all the factors for each of the numbers 1 through 100.
 * Implement [Bubble sort][wiki-bubble-sort] in a method `#bubble_sort`
   that takes an `Array` and modifies it so that it is in sorted order.
