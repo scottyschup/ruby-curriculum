@@ -76,15 +76,8 @@
 [wiki-scope]: https://github.com/ruggeri/ruby-curriculum/wiki/Scope:-questions
 [word-chains]:  http://www.rubyquiz.com/quiz44.html
 
-## Algorithms
-### w1d4
-+ [Intro data structures][intro-data-structures] ([wiki][wiki-intro-data-structures])
-
-[intro-data-structures]: https://github.com/ruggeri/ruby-curriculum/blob/master/intro-algorithms.md
-[wiki-intro-data-structures]: https://github.com/ruggeri/ruby-curriculum/wiki/Intro-data-structures:-questions
-
 ## Basic design
-### w1d5
+### w1d4
 + [DRY: Don't Repeat Yourself][dry] ([wiki][wiki-dry])
 + [Choosing good names][naming] ([wiki][wiki-naming])
 + [Method decomposition][method-decomposition] ([wiki][wiki-method-decomposition])
@@ -104,6 +97,13 @@
 
 [mastermind]: https://github.com/ruggeri/ruby-curriculum/blob/master/projects/mastermind.md
 [hangman]: https://github.com/ruggeri/ruby-curriculum/blob/master/projects/hangman.md
+
+## Algorithms
+### w1d5
++ [Intro data structures][intro-data-structures] ([wiki][wiki-intro-data-structures])
+
+[intro-data-structures]: https://github.com/ruggeri/ruby-curriculum/blob/master/intro-algorithms.md
+[wiki-intro-data-structures]: https://github.com/ruggeri/ruby-curriculum/wiki/Intro-data-structures:-questions
 
 ## Git
 ### w1d6-w1d7
