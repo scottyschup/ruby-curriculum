@@ -162,7 +162,7 @@ You should be able to handle "mixed" arrays like `[1, [2], [3, [4]]]`.
 
 * Write a recursive and an iterative Fibonacci method. The method
   should take in an integer `n` and return the first `n` Fibonacci
-  numbers in an array).
+  numbers in an array.
   
   You shouldn't have to pass any arrays between methods; you should be
   able to do this just passing a single argument for the number of
