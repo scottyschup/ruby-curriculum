@@ -35,32 +35,29 @@ a project.
 ### ch2
 
 **Creating repos**:
-* How do you use `git init` to initialize a git repository in an
-  existing project?
+* How do you initialize a git repository in an existing project?
 * How do you use `git clone` to clone an existing repository?
   * For practice, clone the Rails repository on github
 
 **Comparing, adding, and committing files**:
 * How do you use `git status` to check the status of the files in your
   git repo?
-* How do you use `git diff` and `git diff --cached` to check what
-  staged and unstaged changes there are to files?
-  * What is the difference between the two?
-* How do you use `git add` to stage files for tracking by git?
+* How do you check what staged and unstaged changes there are to files?
+  * What is the difference between `git diff` and `git diff --cached`?
+* How do you stage files for tracking by git?
   * How do you stage a single file?
   * How do you stage all the files with outstanding changes in the
     repo? (`git add .`)
   * How do you stage files or chunks of files in patch mode? (`git add
     -p`)
-* How do you use `git commit` to make a commit once you have staged
-  files?
+* How do you make a commit once you have staged files?
 * How do you tell git to ignore certain files or directories? 
-* How do you use `git rm` to remove a file from your git repo?
+* How do you remove a file from your git repo?
 * Know how to use `git mv` instead of `mv` followed by `git rm` and
   `git add`.
-* How do you use `git commit --amend` to amend your previous commit?
-* How do you use `git reset` to unstage a staged file?
-  * How to unstage all the staged files
+* How do you amend your previous commit?
+* How do you unstage a staged file?
+  * How do you unstage all the staged files?
 * How do you "unmodify" a modified file using `git checkout`?
 
 **Viewing previous commits**:
@@ -72,21 +69,20 @@ a project.
 **Interacting with remotes**:
 * What is a remote repo?
   * For instance, github is a remote repository.
-* How do you list the remote repos (`git remote`)?
-* How do you add a remote repo (`git remote add`)?
-* How do you fetch data from a remote (`git fetch`)?
-* How do you push your changes to a remote (`git push`)?
+* How do you list the remote repos?
+* How do you add a remote repo?
+* How do you fetch data from a remote?
+* How do you push your changes to a remote?
   
 ### ch3
 * What is a branch?
-* How do you create a new branch (`git branch [name]`)?
-* How do you use `git checkout` to switch to another branch?
-* How do you list all the branches (`git branch`)?
+* How do you create a new branch?
+* How do you switch to another branch?
+* How do you list all the branches?
   * How is the current branch indicated?
 * What is the name of the default (or first) branch?
 * How does Git know what branch you are currently on?
-* How do you merge another branch into your current branch (`git
-  merge`)?
+* How do you merge another branch into your current branch?
 * What is a fast-forward merge?
 * What is the workflow of a merge conflict? (`merge` command, resolve
   conflicts, then `git commit`)
