@@ -2,9 +2,10 @@
 
 Sometimes, developers writing code notice that they've written
 something that might be useful to others. If they are nice people,
-they package that code up into a *gem* (also often called a *library*)
-and share it with the world. This can be anything from a few short
-methods to a web framework as large as Rails.
+they package that code up into a *gem* (also often called a *library*
+outside Ruby contexts) and share it with the world. This can be
+anything from a few short methods to a web framework as large as
+Rails.
 
 Let's see how to find, install and use a gem.
 
@@ -21,16 +22,17 @@ to see if it's what I want.
 
 On github you can see how many people have followed the repository,
 and how recently it has been updated. Gems that have >1k follows are
-mainstream and can be relied upon to be rock-solid and typically very
-well documented. Gems with more than 500 follows are fairly popular,
-but it may be harder to find answers to problems by searching
-around. Gems with less than 500 follows are not very popular, and
-might be poorly maintained.
+mainstream and can be relied upon to be pretty much rock-solid and
+typically very well documented. Gems with more than 500 follows are
+fairly popular, but it may be harder to find answers to problems by
+searching around. Gems with less than 500 follows are not very
+popular, and might be poorly maintained.
 
 ## Installing gems
 
 Let's check out [Awesome Print][awesome-print], a library that "pretty
-prints" Ruby output.
+prints" Ruby output (NB: pry already prettifies output, so
+awesome_print won't seem as awesome as if we were using irb).
 
 [awesome-print]: https://github.com/michaeldv/awesome_print
 
@@ -54,11 +56,12 @@ ERROR:  While executing gem ... (Gem::FilePermissionError)
     You don't have write permissions into the /Library/Ruby/Gems/1.8 directory.
 ```
 
-This is because the built-in Ruby that comes with OS X installs gems in
-a system directory where you need superuser permissions to create
+This is because the built-in Ruby that comes with OS X installs gems
+in a system directory where you need superuser permissions to create
 files. The usual answer to this problem is to prefix your command with
 `sudo`, which prompts you for your system password, and then executes
-your command as superuser.
+your command as superuser who has permissions to write in system (or
+any) directories.
 
 However, you should be using rvm, which obviates the need for (in
 fact, prohibits) the use `sudo` when installing gems. OS X comes with
@@ -69,9 +72,9 @@ a number of key gems.
 ### Installing rvm
 
 To install new versions of Ruby, we use a program called rvm (Ruby
-version manager). One nice thing about rvm it stores all the newly
-installed versions of Ruby and their gems in your own user directory
-(/Users/username/.rvm), so you never need to use `sudo`.
+version manager). One nice thing about rvm is that it stores all the
+newly installed versions of Ruby and their gems in your own user
+directory (/Users/username/.rvm), so you never need to use `sudo`.
 
 Installing rvm is easy. Simply run this command:
 
@@ -80,6 +83,10 @@ Installing rvm is easy. Simply run this command:
 The curl part downloads an installation script from the rvm
 website. It then pipes (`|`) the script into the `bash` interpreter,
 which runs it, downloading and installing rvm.
+
+NB: You may have to download XCode (free through the App Store). On
+Lion users may also have to install "Command Line Tools" inside of
+XCode.
 
 Now lets install a new version of Ruby:
 
