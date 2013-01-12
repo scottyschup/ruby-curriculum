@@ -60,9 +60,11 @@ files. The usual answer to this problem is to prefix your command with
 `sudo`, which prompts you for your system password, and then executes
 your command as superuser.
 
-However, you should be using rvm. OS X comes with Ruby 1.8.7, which is
-very out of date; the current version is 1.9.3. 1.8.7 misses a lot of
-features, and isn't any more supported by a number of key gems.
+However, you should be using rvm, which obviates the need for (in
+fact, prohibits) the use `sudo` when installing gems. OS X comes with
+Ruby 1.8.7, which is very out of date; the current version is
+1.9.3. 1.8.7 misses a lot of features, and isn't any more supported by
+a number of key gems.
 
 ### Installing rvm
 
