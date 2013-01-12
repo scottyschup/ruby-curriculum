@@ -112,7 +112,7 @@ Write a class named `TreeNode` which represents a node in a binary
 tree. It should have the following interface:
 
 * A `#parent` method to get the node's parent (if any)
-* Setters and getters for `left` and `right` child nodes
+* Setters and getters for the `left` and `right` child nodes
   * this should set the assigned `TreeNode`'s `parent`
   * it should also set the old child's (if any) `parent` to `nil`
 * Setter and getters for the node's `value`
@@ -122,7 +122,7 @@ tree. It should have the following interface:
   * Write this recursively
     * first check the value at this node
     * next recursively check left node
-    * next check the right node
+    * next recursively check the right node
 
 * Write a method `bfs` to implement breadth first search
   * You will use a local `Array` variable to implement this
