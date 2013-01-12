@@ -116,7 +116,7 @@
 ### w2d1
 + [Serialization](https://github.com/ruggeri/ruby-curriculum/blob/master/language-basics/serialization.md) (JSON and YAML)
 + [Gems and rvm](https://github.com/ruggeri/ruby-curriculum/blob/master/language-intermediate/gems-and-rvm.md)
-+ **Project**: [Git immersion](https://github.com/ruggeri/ruby-curriculum/blob/master/http://gitimmersion.com/)
++ **Project**: [Git immersion](http://gitimmersion.com/)
 + **Project**: [Todo list app](https://github.com/ruggeri/ruby-curriculum/blob/master/projects/todo-list.md)
 
 ### w2d2
