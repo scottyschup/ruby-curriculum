@@ -117,6 +117,8 @@
 + [Serialization](https://github.com/ruggeri/ruby-curriculum/blob/master/language-basics/serialization.md) (JSON and YAML)
 + [Gems and rvm](https://github.com/ruggeri/ruby-curriculum/blob/master/language-intermediate/gems-and-rvm.md)
 + **Project**: [Git immersion](http://gitimmersion.com/)
+  + **Project**: Do Hangman and Word chains again, using git this
+  time. Do not refer to your old code.
 + **Project**: [Todo list app](https://github.com/ruggeri/ruby-curriculum/blob/master/projects/todo-list.md)
 
 ### w2d2
