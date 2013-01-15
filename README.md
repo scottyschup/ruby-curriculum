@@ -119,7 +119,9 @@
 + **Project**: [Git immersion](http://gitimmersion.com/)
   + **Project**: Do Hangman and Word chains again, using git this
   time. Do not refer to your old code.
-+ **Project**: [Todo list app](https://github.com/ruggeri/ruby-curriculum/blob/master/projects/todo-list.md)
++ **Proejct**: [Minesweper][minesweeper]
+
+[minesweeper]: https://github.com/ruggeri/ruby-curriculum/blob/master/projects/minesweeper.md
 
 ### w2d2
 + [Class inheritance](https://github.com/ruggeri/ruby-curriculum/blob/master/language-basics/inheritance.md)
