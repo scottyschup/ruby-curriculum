@@ -1,0 +1,55 @@
+# Minesweeper
+
+Everyone remembers [Minesweeper][minesweeper-wiki], right? Let's build it!
+
+Support two grid sizes:
+
+* 9x9 board with 10 mines
+* 16x16 board with 40 mines (do this later)
+
+The user has two choices each turn.
+
+### Reveal
+
+First, he can choose a square to reveal. If it contains a bomb, game
+over. Otherwise, it will be revealed. If none of its neighbors
+contains a bomb, then all the adjacent neighbors are also revealed. If
+any of the neighbors have no adjacent bombs, they too are revealed. Et
+cetera.
+
+The "fringe" of the revealed area are squares all adjacent to a
+bomb. The fringed should be revealed, but should contain counts of how
+many adjacent bombs are nearby.
+
+If the square contained a bomb, game over.
+
+### Flag bomb
+
+The user may also flag a square as containing a bomb. The goal of the
+game is to flag all the bombs correctly; at this point the game ends.
+
+If a bomb is flagged incorrectly, it is not eligible to be revealed,
+even if it contains no adjacent bomb.
+
+### User interaction
+
+You decide how to display the current game state to the user. I
+recommend "*" for unexplored squares, " " for "interior" squares when
+exploring, and a one-digit number for "fringe" squares. I'd put an "F"
+for flagged spots.
+
+You decide how the user inputs his choice. I recommend a coordinate
+system. Perhaps they should prefix their choice with either "r" for
+reveal or "f" for flag.
+
+### Saving
+
+You should be able to save/load your minesweeper game to/from a
+file. Implement this functionality last.
+
+You may also wish to track the time it takes for the user to solve the
+game, keeping track of the ten best times. You may want to have some
+multiplier to account for the difference in difficulties between small
+and larger grids.
+
+[minesweeper-wiki]: http://en.wikipedia.org/wiki/Minesweeper_(Windows)
