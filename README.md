@@ -119,7 +119,7 @@
 + **Project**: [Git immersion](http://gitimmersion.com/)
   + **Project**: Do Hangman and Word chains again, using git this
   time. Do not refer to your old code.
-+ **Proejct**: [Minesweper][minesweeper]
++ **Project**: [Minesweeper][minesweeper]
 
 [minesweeper]: https://github.com/ruggeri/ruby-curriculum/blob/master/projects/minesweeper.md
 
