@@ -23,7 +23,7 @@ end
 Since we can't take the square root of a negative number, we *raise*
 an *exception* instead of returning an answer. When an exception is
 raised, the method stops executing. Instead of returning, an exception
-is thrown. The methods caller then gets a chance to handle the
+is thrown. The method's caller then gets a chance to handle the
 exception:
 
 ```ruby
@@ -48,8 +48,7 @@ If the user feeds in a negative number, `sqrt` will raise an
 exception. Because main has wrapped this code in a begin/rescue/end
 block, the exception will be *caught*. The code will jump to the
 rescue block that anticipates an `ArgumentError`. It will save the
-exception in the variable `e` (which we may use, but don't), then run
-the error handling code.
+exception in the variable `e`, then run the error handling code.
 
 If the calling method doesn't rescue (or *catch* or *handle*) an
 exception, it continues to *bubble up* the *call stack*. So the
@@ -108,7 +107,7 @@ types (perhaps to handle them differently), you can extend
 ```ruby
 class EngineStalledError < StandardError
 end
-class CollisionOccuredError < StandardError
+class CollisionOccurredError < StandardError
 end
 
 def drive_car
@@ -119,7 +118,7 @@ begin
   drive_car
 rescue EngineStalledError => e
   puts "Rescued from engine stalled!"
-rescue CollisionOccuredError => e
+rescue CollisionOccurredError => e
   puts "Rescued from collision!"
 ensure
   puts "Car stopped."
