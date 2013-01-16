@@ -123,6 +123,7 @@ tree. It should have the following interface:
     * first check the value at this node
     * next recursively check left node
     * next recursively check the right node
+  * If a node's value matches the target value, return the node.
 
 * Write a method `bfs` to implement breadth first search
   * You will use a local `Array` variable to implement this
@@ -135,6 +136,8 @@ tree. It should have the following interface:
     order
 
 * Improve your `TreeNode` to handle an arbitrary number of children
+* Improve your searches to optionally take a block that will return
+  true when an acceptable value is found.
 
 ### Knight's Travails
 
