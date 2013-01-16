@@ -27,16 +27,16 @@ at each layer can have links to lower level nodes. One simple example
 is a file system:
 
 * /
-  * Users
-    * ruggeri
-      * Desktop
-      * Documents
-      * Downloads
-    * patel
-      * Desktop
-      * Downloads
+    * Users
+        * ruggeri
+            * Desktop
+            * Documents
+            * Downloads
+        * patel
+            * Desktop
+            * Downloads
   * System
-    * Library
+        * Library
 
 The top-level *node* is called the *root*. Each node can hold a value:
 here the root holds '/'. The *children* of a node are the nodes one
