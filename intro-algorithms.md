@@ -113,8 +113,10 @@ tree. It should have the following interface:
 
 * A `#parent` method to get the node's parent (if any)
 * Setters and getters for the `left` and `right` child nodes
-  * this should set the assigned `TreeNode`'s `parent`
-  * it should also set the old child's (if any) `parent` to `nil`
+  * `parent_node.left = child_node` should also set the
+    `child_node.parent` to `parent_node`
+  * if there was a previous `left` child node that was replaced, the
+    original `left` child should have its parent reset to `nil`
 * Setter and getters for the node's `value`
 
 * Write a method `dfs` which takes a value to search for and performs
