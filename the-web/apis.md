@@ -62,7 +62,7 @@ object and create a Ruby Hash out of it:
 
 ```ruby
 > require 'json'
-> response = JSON.parse(RestClient.get("http://graph.facebook.com/kush.patel2"))
+> response = RestClient.get("http://graph.facebook.com/kush.patel2"))
 > kush = JSON.parse(response)
 > kush.class
 #=> Hash
