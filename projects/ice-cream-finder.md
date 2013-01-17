@@ -13,6 +13,18 @@ You may want to use a number of Google APIs:
 * [Directions API][directions-api]: given two addresses or lat/lngs,
   returns a series of directions between the two places.
 
+You may wish to use [Nokogiri][nokogiri] to strip out the HTML tags
+from Google Directions instructions:
+
+```ruby
+require 'nokogiri'
+parsed_html = Nokogiri::HTML("This is <b>bold</b> text!")
+parsed_html.text
+# => "This is bold text!"
+```
+
 [places-api]: https://developers.google.com/places/documentation/search
 [geocoding-api]: https://developers.google.com/maps/documentation/geocoding/
 [directions-api]: https://developers.google.com/maps/documentation/directions/
+
+[nokogiri]: http://nokogiri.org/
