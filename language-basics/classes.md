@@ -300,7 +300,8 @@ gives us an easy way to define these:
 ```ruby
 class Cat
   # attr_accessor is a class method that adds getters and setters
-  # for the age and location variables
+  # for the age and location variables. See more here:
+  #    http://stackoverflow.com/questions/5046831/why-use-rubys-attr-accessor-attr-reader-and-attr-writer
   attr_accessor :age, :location
 
   # attr_reader adds just a getter; looks like a cat shouldn't be
