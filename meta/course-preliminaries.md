@@ -31,14 +31,14 @@
 * Back office is for office use; please don't use it.
 
 ## Schedule
-* 09:00am-11:00am: Instruction
-  * 09:00am-09:25am: Live Q&A session
+* 09:00am-09:20am: Live Q&A
+* 09:20am-11:00am: Exercises & Projects
 * 11:00am-11:15am: Break
-* 11:15am-12:30pm: Instruction
+* 11:15am-12:30pm: Exercises & Projects
 * 12:30pm-01:30pm: Lunch
-* 01:30pm-03:30pm: Instruction
-  * 01:30pm-02:00pm: Code review 
+* 01:30pm-03:30pm: Exercises & Projects
 * 03:30pm-03:45pm: Break
+* 03:45pm-04:05pm: Live Q&A
 * 03:45pm-06:00pm: Instruction
 * Evenings:
   * Finish assigned projects.
