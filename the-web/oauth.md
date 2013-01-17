@@ -105,7 +105,7 @@ CONSUMER = OAuth::Consumer.new(
   CONSUMER_KEY, CONSUMER_SECRET, :site => "http://twitter.com")
 
 # ask the user to authorize the application
-def get_access_token
+def request_access_token
   # send user to twitter URL to authorize application
   request_token = CONSUMER.get_request_token
   puts "Go to this URL: #{request_token.authorize_url}"
@@ -119,7 +119,7 @@ def get_access_token
   # ask the oauth library to give us an access token, which will allow
   # us to make requests on behalf of this user
   access_token = request_token.get_access_token(
-      :oauth_verifier => oauth_verifier )
+      :oauth_verifier => oauth_verifier)
 end
 
 # fetch a user's timeline
@@ -128,6 +128,20 @@ def user_timeline(access_token)
   # requests in the same way as RestClient, except that these will be
   # authorized. The token takes care of the crypto for us :-)
   access_token.get("http://api.twitter.com/1.1/statuses/user_timeline.json").body
+end
+
+def get_token(token_file)
+  # We can serialize token to a file, so that future requests don't need
+  # to be reauthorized.
+
+  if File.exist?(token_file)
+    File.open(token_file) { |f| YAML.load(f) }
+  else
+    access_token = request_access_token
+    File.open(token_file, "w") { |f| YAML.dump(access_token, f) }
+
+    access_token
+  end
 end
 ```
 
