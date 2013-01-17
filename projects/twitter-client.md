@@ -2,7 +2,7 @@
 
 **TODO: Facebook project as well?**
 
-We'll use the [Twitter API](api-docs) to build a command line Twitter
+We'll use the [Twitter API][api-docs] to build a command line Twitter
 API.
 
 * Post a status
