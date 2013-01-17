@@ -14,7 +14,8 @@ You may want to use a number of Google APIs:
   returns a series of directions between the two places.
 
 You may wish to use [Nokogiri][nokogiri] to strip out the HTML tags
-from Google Directions instructions:
+from Google Directions instructions. Nokogiri parses HTML into Ruby
+objects that you can call methods on.
 
 ```ruby
 require 'nokogiri'
