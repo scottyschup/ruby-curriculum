@@ -90,6 +90,8 @@ We may have you write-up your problem and solution for the github wiki.
 * Your responsibility is to give feedback in how to improve the
   code. This includes not only errors, but style and anything else
   that improves code quality.
+* Code for review must be sent at class end (6PM). Don't send late
+  code for review, because your review-pair needs to go to sleep.
 * In the first week, pairs will exchange their code through zip file
   and email.
 * Reviewers should annotate the source code with their comments and
