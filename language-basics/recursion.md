@@ -150,9 +150,13 @@ robot_parts[1] # => ["capacitors", "resistors", "inductors", "LEDs"]
 ```
 
 When we `dup` an `Array`, it creates a new array to hold the elements,
-but doesn't recursively `dup` any arrays contained therein. Using
-recursion and the `is_a?` method, write a new `deep_dup` method that
-will perform a *deep* duplication.
+but doesn't recursively `dup` any arrays contained therein. So the
+`dup` method creates one new array, but just copies over references to
+the original interior arrays.
+
+**Using recursion and the `is_a?` method, write a new `deep_dup`
+method that will perform a "deep" duplication of the interior
+arrays.**
 
 You may use `dup` in your `deep_dup` method, but it shouldn't be
 strictly necessary. It's okay to iterate over array elements using
