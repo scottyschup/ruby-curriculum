@@ -29,7 +29,7 @@ only the data matters, the client and server typically communicate by
 passing around a simpler, data-oriented format like JSON or XML.
 
 Because no HTML is returned, there are no links to click. How do you
-know what requests to make to the server? For instance, how would know
+know what requests to make to the server? For instance, how would we know
 how to GET a tweet from Twitter?
 
 The answer is that API providers publish documentation describing how
