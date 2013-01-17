@@ -126,10 +126,24 @@ end
 def user_timeline(access_token)
   # the access token class has methods `get` and `post` to make
   # requests in the same way as RestClient, except that these will be
-  # authorized.
+  # authorized. The token takes care of the crypto for us :-)
   access_token.get("http://api.twitter.com/1.1/statuses/user_timeline.json").body
 end
 ```
+
+## Storing your credentials
+
+Your consumer secret should be kept secret; if other people get it,
+they will be able to pose as you and make requests in your name. For
+our purposes, this is no big deal, but you can imagine that Instagram
+would guard its Facebook API secrets closely (so that rivals or
+troublemakers can't spam their users).
+
+A standard way to do this is to store the key and secret in a separate
+ruby file, `secrets.rb`. This file *must not* be checked into the
+repo; the best way to do this is to add a `.gitignore` file to the
+repo that will filter out `secrets.rb`. When you push to a public
+github repo, you won't push your secrets along, too.
 
 ## Resources
 
