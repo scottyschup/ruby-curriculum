@@ -121,7 +121,7 @@ The point here is that HTTP is a way to communicate requests and
 responses. The methods of HTTP define what the user is requesting of
 the server. But it is ultimately the application code on the server
 which determines how the requests are processed. In particular: HTTP
-doesn't define how the request gets processed, that's will be our job
+doesn't define how the request gets processed; that will be our job
 as web developers.
 
 ## Request body and query string
