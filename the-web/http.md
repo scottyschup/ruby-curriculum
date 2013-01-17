@@ -176,7 +176,27 @@ Estimated time: .25hrs
 
 `nc` ("netcat") is the simplest, lowest-level program for
 communicating with a server. You give `nc` a hostname and port (`nc
-www.google.com 80`) and it opens a connection to that server. You can
-then type an HTTP request to the server. Use `nc` to make a GET
-request for the Google homepage. Follow the example given in the image
-above (you may need to change the 'http' to uppercase).
+www.google.com 80`) and it opens a connection to that server.
+
+You can then start writing an HTTP request in the console. Follow the
+format in the image above to make a request to Wikipedia, as well as
+another to Google.
+
+The server will know your request is complete when it sees a blank
+line. Observe the blank line at the end of the request portion in the
+example above; when you add one, the server should begin its response.
+
+Make sure to get the path part of the first request line right: look
+carefully at the example (`/wiki/Main_Page/`). You always must specify
+a path when making a request; the most basic path is `/`.
+
+When you query Google, you should know that it is picky about
+requests: it expects "HTTP/1.1" rather than "http/1.1".
+
+Note that you have to repeat the Host both on the command line where
+you invoke `nc` and within the request body. This is because `nc` uses
+the command line argument to look up the IP address of the machine to
+talk to. It can then establish a connection with this machine, but the
+machine may host many web services: for instance, the same machines
+may host both German and English Wikipedia. That's why we need to also
+include the Host within the request.
