@@ -361,7 +361,7 @@ and ask what pile to select a disc from, and where to put it.
 After each move, check to see if they have succeeded in moving all the
 discs, to the final pile. If so, they win!
 
-### Transpose
+### `my_transpose`
 
 To represent a *matrix*, or two-dimensional grid of numbers, we can
 write an array containing arrays which represent rows:
@@ -389,8 +389,8 @@ cols = [
   ]
 ```
 
-Write a method, `transpose`, which will convert between
-the row-oriented and column-oriented representations.
+Write a method, `my_transpose`, which will convert between the
+row-oriented and column-oriented representations.
 
 ### Stock Picker
 
