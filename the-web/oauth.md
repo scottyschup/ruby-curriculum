@@ -95,7 +95,9 @@ a pair of consumer keys and secrets. These will be used by our
 application to prove its identity. Let's begin setting up our app.
 
 ```ruby
+require 'launchy'
 require 'oauth'
+require 'yaml'
 
 # "consumer" in OAuth terminology means "client" in our discussion.
 CONSUMER_KEY = "consumer_key_from_service"
@@ -108,7 +110,10 @@ CONSUMER = OAuth::Consumer.new(
 def request_access_token
   # send user to twitter URL to authorize application
   request_token = CONSUMER.get_request_token
-  puts "Go to this URL: #{request_token.authorize_url}"
+  authorize_url = request_token.authorize_url
+  puts "Go to this URL: #{authorize_url}"
+  # launchy is a gem that opens a browser tab for us
+  Launchy.open(authorize_url)
 
   # because we don't use a redirect URL; user will receive an "out of
   # band" verification code that the application may exchange for a
