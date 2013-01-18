@@ -146,10 +146,9 @@
 + [TDD](https://github.com/ruggeri/ruby-curriculum/blob/master/rspec/intro-tdd.md)
 + [Whirlwind introduction to rspec](https://github.com/ruggeri/ruby-curriculum/blob/master/rspec/intro-rspec.md)
 + [Test doubles](https://github.com/ruggeri/ruby-curriculum/blob/master/rspec/test-doubles.md)
-+ **Project**: TDD TreeNode
-+ **Project**: [SalesEngine][sales-engine]
++ **Project**: [First TDD Projects][first-tdd-projects]
 
-[sales-engine]: http://tutorials.jumpstartlab.com/projects/sales_engine.html
+[first-tdd-projects]: https://github.com/ruggeri/ruby-curriculum/blob/master/projects/first-tdd-projects.md
 
 ### w2d6-w2d7
 + [Read additional git chapters](https://github.com/ruggeri/ruby-curriculum/blob/master/git.md)
