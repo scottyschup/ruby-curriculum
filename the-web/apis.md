@@ -117,4 +117,19 @@ Install the `addressable` gem, then you can use:
 The advantage to this is especially felt when updating query values;
 you won't have to futz with converting to URL encoding yourself.
 
+
+## SDK
+
+We've been talking about how your programs can make HTTP requests to a
+web service. Sometimes it is nice to deal with a higher level of
+abstraction that handles making those requests for us. For instance,
+there are gems like [Koala][koala-github] for Facebook or
+[twitter][twitter-github] that provide a Ruby interface to interact
+with those services. By using a library like this (often called a
+*software developer kit*) you can rely on someone else mastering the
+details of the API for you and instead interact with a clean Ruby
+interface.
+
 [wiki-api]: http://en.wikipedia.org/wiki/API#Web_APIs
+[koala-github]: https://github.com/arsduo/koala
+[twitter-github]: https://github.com/sferik/twitter
