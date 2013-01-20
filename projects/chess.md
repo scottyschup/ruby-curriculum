@@ -16,9 +16,13 @@ Some kind of `Game` class should keep track of who's move it is, as well
 as the board, etc.
 
 You should not "bake in" the logic to prompt for a move into the game
-class. You should first write a `HumanPlayer` class. **As a bonus**,
-write a `ComputerPlayer` class that will employ some rudimentary
-logic. Your first AI could just make a random (legal) move. Think of
-simple improvements upon this.
+class; those concerns should be separated. You will want to write a
+`HumanPlayer` class. Don't implement a `ComputerPlayer`, but your
+design should allow that to be easily added at a later date.
+
+**Note**: Do not concern yourself with tricky moves like "en
+passant". Likewise, don't implement castling, draws, or pawn
+promotion; if you finish early work on other things. You should handle
+check and check mate, however.
 
 [wiki-chess]: http://en.wikipedia.org/wiki/Chess
