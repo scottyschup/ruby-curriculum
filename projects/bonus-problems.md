@@ -18,9 +18,14 @@
   and then tries to decrypt the message. Assume that the encrypted
   message uses a [substitution cipher][wiki-sub-cipher]
 * Write a computer program to solve the n-rooks problem
-* Minesweeper
 * Dots and boxes
 * Reversi
+* Linked lists
+* Boggle
+* Lifo
+* 15 puzzle
+* Sudoku
+* Shapes, areas, perimiters
 
 [wiki-sub-cipher]: http://en.wikipedia.org/wiki/Substitution_cipher#Simple_substitution
 
