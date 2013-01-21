@@ -124,7 +124,7 @@ called. To do this, we use method expectations. Here's an example:
 ```ruby
 describe Order
   let(:customer) { double('customer') }
-  let(:product) { double('product', :cost => 5.99 }
+  let(:product) { double('product', :cost => 5.99) }
   subject(:order) { Order.new(customer, product) }
 
   it "subtracts item cost from customer account" do
@@ -174,8 +174,8 @@ in real life, with a real `Customer` object, our
 `#debit_account`. What spec is supposed to catch this error?
 
 The problem here is a mismatch in the interface expected by `Customer`
-and the interface provioded by `Order`. This kind of error won't be
-caught by a unit test, because the purpose of unit tets is to test
+and the interface provided by `Order`. This kind of error won't be
+caught by a unit test, because the purpose of unit test is to test
 classes in isolation.
 
 We need a higher level of testing that's intended to verify that
