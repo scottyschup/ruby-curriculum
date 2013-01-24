@@ -36,10 +36,10 @@
 * 11:00am-11:15am: Break
 * 11:15am-12:30pm: Exercises & Projects
 * 12:30pm-01:30pm: Lunch
-* 01:30pm-03:30pm: Exercises & Projects
-* 03:30pm-03:45pm: Break
-* 03:45pm-04:05pm: Live Q&A
-* 03:45pm-06:00pm: Instruction
+* 01:30pm-04:00pm: Exercises & Projects
+* 04:00pm-04:15pm: Break
+* 04:15pm-04:30pm: Live Q&A
+* 04:30pm-06:00pm: Instruction
 * Evenings:
   * Finish assigned projects.
   * Finish readings.
