@@ -69,18 +69,10 @@ Instructors are here to help you get unstuck quickly, but we must
 balance that with the importance of learning to diagnose and solve
 your own problems.
 
-Requests for help should be made in the form of email (to
-instructors@appacademy.io), or (after week one) github issues
-(assigned to "App-Academy"). Your request should summarize the problem
-and error message (if any). If it is an email, it should link to a
-github gist containing your source code.
-
-An instructor will try to promptly come over to investigate and
-help. They will ask you to write up a description of the solution. If
-you emailed your problem, email us your description of the solution;
-if you created a github issue, comment on it and then close the issue.
-
-We may have you write-up your problem and solution for the github wiki.
+If you are stuck, you should send an email to
+`questions@appacademy.io` describing your problem. You should describe
+your problem and copy the relevant source code. You should also inform
+others of your solution.
 
 ## Code reviews
 * When we assign pairs, we also assign pairs of pairs that will review
