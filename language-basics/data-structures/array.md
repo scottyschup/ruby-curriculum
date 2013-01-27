@@ -90,6 +90,11 @@ of the shifting.
 Likewise, if you modify items in an array you are iterating through,
 you are asking for pain and confusing errors. Don't do it.
 
+One alterantive to delete multiple elements of an array without
+iteration is [`#delete_if`][rdoc-delete-if].
+
+[rdoc-delete-if]: http://www.ruby-doc.org/core-1.9.3/Array.html#method-i-delete_if
+
 ## Setting and adding elements
 
 You can set the element at an index like so:
