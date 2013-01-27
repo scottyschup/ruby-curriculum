@@ -65,6 +65,31 @@ end
 #         I like aeroplanes!
 ```
 
+### Don't modify array while iterating
+
+**You must never modify an array while iterating through it**; strange
+things will happen. An analogous `while` iteration through the loop
+might help explain the problem:
+
+```ruby
+array = [0, 1, 2, 3]
+i = 0
+while i < array.count
+  array.delete_at(i)
+  i += 1
+end
+```
+
+You may think this will delete all elements in the array. But take it
+one step at a time. The first time through the loop, `array[0]` is
+deleted, and everything in the array shifts over one position; `array
+== [1, 2, 3]`. `i` is then incremented; we next try to delete
+`array[1]`. But this is not the element `1`, but instead `2` because
+of the shifting.
+
+Likewise, if you modify items in an array you are iterating through,
+you are asking for pain and confusing errors. Don't do it.
+
 ## Setting and adding elements
 
 You can set the element at an index like so:
