@@ -12,6 +12,8 @@
 [anagrams]: http://www.rubyquiz.com/quiz112.html
 [phone-anagrams]: http://www.rubyquiz.com/quiz20.html
 
+* Turn a date in a string (8/6/86) format into an age (26yrs, 2 mo)...
+
 ## Medium bonus problems
 
 * Write a program that takes in an encrypted message and a word list
@@ -26,8 +28,20 @@
 * 15 puzzle
 * Sudoku
 * Shapes, areas, perimiters
+* SQL Todo
 
 [wiki-sub-cipher]: http://en.wikipedia.org/wiki/Substitution_cipher#Simple_substitution
+
+## Web
+* URL Shortner
+* Rails Tutorial
+* Basecamp clone
+* DBC Flashcards?
+* Battleship
+* Kush problem domains email
+
+## JavaScript
+* Pong in Canvas
 
 ## More problems
 
