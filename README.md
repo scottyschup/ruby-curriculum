@@ -19,7 +19,7 @@
 
 [course-preliminaries]: https://github.com/ruggeri/ruby-curriculum/blob/master/meta/course-preliminaries.md
 [daily-requiements]: https://github.com/ruggeri/ruby-curriculum/blob/master/meta/daily-requirements.md
-[first-day-instructions]: https://github.com/ruggeri/ruby-curriculum/blob/master/first-day-instructions.md
+[first-day-instructions]: https://github.com/ruggeri/ruby-curriculum/blob/master/meta/first-day-instructions.md
 [array]: https://github.com/ruggeri/ruby-curriculum/blob/master/language-basics/data-structures/array.md
 [string]: https://github.com/ruggeri/ruby-curriculum/blob/master/language-basics/data-structures/string.md
 [hash]: https://github.com/ruggeri/ruby-curriculum/blob/master/language-basics/data-structures/hash.md
