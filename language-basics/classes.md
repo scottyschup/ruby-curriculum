@@ -369,25 +369,55 @@ variables; there is no object to get the instance variables from.
 
 A common use of class methods is to create new objects (this is what
 `new` does); methods that create new objects are called *factory
-methods*. You should have seen this in the Temperature exercise from
-Test First Ruby.
+methods*. Here's an example:
 
 ```ruby
-class Temperature
-  def self.from_f(f_temp)
+class Asteroid
+  # initialize a new asteroid
+  def initialize(x_coord, y_coord, velocity)
+    # ...
   end
   
-  def self.from_c(c_temp)
+  # helper class method; doesn't need to be called on an Asteroid
+  # object
+  
+  def random_velocity(max_speed)
+    speed = max_speed * rand()
+    x_dir, y_dir = rand() * [1, -1].sample, rand() * [1, -1].sample
+
+    [x_dir * Math.sqrt(speed), y_dir * Math.sqrt(speed)]
   end
+  
+  # factory method
+  # create and return an asteroid with random location and direction
+  def self.randomAsteroid(max_x, max_y, max_speed)
+    # using unnecessary `return` for emphasis
+    return Asteroid.new(
+      max_x * rand(),
+      max_y * rand(),
+      random_speed # implicit `self` refers to the Asteroid class here
+    )
+  end
+  
+  def crashIntoPlanet(planet)
+    # should have hired Bruce Willis
+  end
+end
 ```
 
-Within `from_f` and `from_c` we would presumably construct a
-`Temperature` object with `new`, properly translating the temperature
-to the default scale. This lets the user avoid worrying whether `new`
-wants a Fahrenheit or Celsius argument.
+In this example, `Asteroid::randomAsteroid` is an example of a factory
+method. It is a class method that creates an `Asteroid`. Note that it
+is not called on an existing `Asteroid` instance. That makes sense
+since it's purpose is to *construct* a new `Asteroid`; it is not an
+*action* of an asteroid (like crashing into a planet is an action of
+an asteroid).
 
-When we want to be clear whether a method `meow` or `new` is an
-instance or class method of `Cat`, we write `Cat#meow` and `Cat::new`
+The `Asteroid::randomVelocity` method is not a factory method (at
+least not an `Asteroid` factory), but it is a class method.
+
+When we want to be clear whether a method `crashIntoPlanet` or
+`randomAsteroid` is an instance or class method of `Asteroid`, we
+write `Asteroid#crashIntoPlanet` and `Asteroid::randomAsteroid`
 respectively.
 
 ## self
