@@ -1,4 +1,6 @@
 # Code reviews
+**TODO**: demo a code review for them. didn't show them how to do one.
+
 * When we assign pairs, we also assign pairs of pairs that will review
   each other's code.
 * Code review will be part of every student's assignment for the
