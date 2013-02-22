@@ -3,7 +3,7 @@
 ## Ruby basics
 ### w1d1
 + [Course Preliminaries][course-preliminaries]
-+ [Daily requiements][daily-requiements]
++ [Daily requirements][daily-requiements]
 + [First day instructions][first-day-instructions]
 + Primitive Ruby types (common methods)
   + [Array][array]
