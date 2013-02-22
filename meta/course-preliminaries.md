@@ -10,20 +10,28 @@
 * Shower
   * Closest gyms are Crunch Fitness and YMCA.
 * Wireless
-  * Temporarily use Eucharist network. Password is "We give thanks".
+  * AppAcademy and AppAcademy 2.0 (pass: `go_internet_go`).
   * Don't torrent files (or anything else bandwidth intensive), or
     none of us can use the internet.
+  * Don't stream music off the network; listen to music stored on your
+    device or over the cell network if you want to listen to music on
+    solo days.
 * When garbage fills, tie up bag and bring downstairs.
   * Do NOT throw loose garbage into curbside bins.
+  * Do NOT throw loose garbage into bins without bags.
   * Remember to tie up all garbage before placing in the curbside
     bins; no one likes flies.
 * Cleaning
   * Always clean dishes immediately.
-  * Once a week, a pair is responsible for cleaning the kitchen.
+  * We are all responsible for cleaning the kitchen. There is no maid
+    for this.
   * **TODO: makeup cleaning schedule**
 * Lockup at night
-  * If you're the last one out, make sure to lock both the inner
-    office door and the outer door.
+  * After 6:30PM, make sure that when you leave to lock both inner and
+    outer doors.
+  * Do this even if people are still here; otherwise the homeless
+    sleep in the stairwell.
+  * It also reminds people to lock the door.
   * Please also turn off all lights.
 * Don't open the back door!
   * It triggers a burglar alarm; security company charges $200 for
@@ -31,20 +39,16 @@
 * Back office is for office use; please don't use it.
 
 ## Schedule
-* 09:00am-09:20am: Live Q&A
-* 09:20am-11:00am: Exercises & Projects
-* 11:00am-11:15am: Break
-* 11:15am-12:30pm: Exercises & Projects
-* 12:30pm-01:30pm: Lunch
-* 01:30pm-04:00pm: Exercises & Projects
-* 04:00pm-04:15pm: Break
-* 04:15pm-04:30pm: Live Q&A
-* 04:30pm-06:00pm: Instruction
+* Lecture begins at 9:00am.
+* Lunch is one hour, starting between 12:00 and 12:30 depending on
+  project.
+* Two fifteen minute breaks each day.
+    * Morning break is often used to extend lunch.
+    * Afternoon break taken ~3:45PM.
 * Evenings:
-  * Finish assigned projects.
-  * Finish readings.
-  * Write daily reflection.
-  * Submit questions to wiki by 9pm.
+    * Finish assigned projects.
+    * Finish readings.
+    * Write daily reflection.
 
 ## Pairing
 
@@ -53,26 +57,28 @@ us each morning. Read [how to pair](pair-programming.md) so that you
 pair effectively.
 
 ## Lectures
-* Lectures are in the form of github pages and screencasts.
-* 20min are reserved at the end of class to begin readings.
-  * Instructors will be on hand to answer questions.
-* Complete readings after class.
-* Submit questions to [wiki][course-wiki] by 9pm.
-  * Will answer by 9am next day (often by 10pm same day).
-  * Feel free to offer answers to other questions on the wiki.
+* Instead of forma lectures, we have readings to be completed after
+  class.
+* We will occasionally have code demos.
+* At the beginning of each day, we will have a Q&A session.
+* You are required to submit (at least) two Q&A questions the evening
+  before to questions@appacademy.io.
 
-[course-wiki]: https://github.com/ruggeri/ruby-curriculum/wiki
+## Curriculum contributions
+* Each day, you are required to submit two material contributions to
+  the curriculum.
+    * (1) Additional explanatory text,
+    * (2) new (high quality) references,
+    * (3) writing an exercise
+    * Spelling and typographical corrections are welcome, but don't
+      count toward your quota.
+* You may modify our curriculum directly on github by clicking on the
+  'edit' button.
+* The text is formatted in [Markdown][markdown]; read up on that so
+  your contributions are formatted correctly.
+    * Make sure you are signed in as the proper user when editing.
 
-## Reporting difficulties with projects
-
-Instructors are here to help you get unstuck quickly, but we must
-balance that with the importance of learning to diagnose and solve
-your own problems.
-
-If you are stuck, you should send an email to
-`questions@appacademy.io` describing your problem. You should describe
-your problem and copy the relevant source code. You should also inform
-others of your solution.
+[markdown]: http://daringfireball.net/projects/markdown/syntax
 
 ## Code reviews
 * When we assign pairs, we also assign pairs of pairs that will review
@@ -84,8 +90,8 @@ others of your solution.
   that improves code quality.
 * Code for review must be sent at class end (6PM). Don't send late
   code for review, because your review-pair needs to go to sleep.
-* In the first week, pairs will exchange their code through zip file
-  and email.
+* In the first week, pairs exchange their code through zip file and
+  email.
 * Reviewers should annotate the source code with their comments and
   suggestions. They should email their comments back, copying
   instructors@appacademy.io.
@@ -109,18 +115,6 @@ others of your solution.
     have a detailed record of what you have learned and how quickly
     you have learned it to show employers.
 * Fine for not completing the daily reflection is $10/day.
-
-## Curriculum contributions
-* Each day, you are required to make one contribution to the
-  curriculum (at least!). Potential contributions include:
-  * Correcting typos
-  * Clarifying exposition
-  * Adding (quality) references
-  * Writing an exercise
-* Fork the curriculum repo and make a commit; ask ruggeri to pull your
-  change.
-  * In week one, just email your contribution to
-    instructors@appacademy.io.
 
 ## Assessments
 * Assessments are intended to give you early feedback so you know
