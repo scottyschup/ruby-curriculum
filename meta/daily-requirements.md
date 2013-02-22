@@ -12,7 +12,7 @@
 
 ## Readings and Q&A
 
-* Instead of forma lectures, we have readings to be completed after
+* Instead of formal lectures, we have readings to be completed after
   class.
 * We will occasionally have code demos.
 * At the beginning of each day, we will have a Q&A session.
@@ -22,10 +22,10 @@
 ## Curriculum contributions
 
 * Each day, you are required to submit two material contributions to
-  the curriculum.
-    * (1) Additional explanatory text,
-    * (2) new (high quality) references,
-    * (3) writing an exercise
+  the curriculum. Accepted contributions include:
+    * Additional explanatory text,
+    * new (high quality) references,
+    * writing an exercise
     * Spelling and typographical corrections are welcome, but don't
       count toward your quota.
 * You may modify our curriculum directly on github by clicking on the
