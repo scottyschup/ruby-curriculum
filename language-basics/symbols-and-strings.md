@@ -46,18 +46,36 @@ you aren't representing data that should be input or output.
 
 It is common that you may have a method which takes many arguments; it
 can be tedious (and error-prone) to remember the order of these many
-options. Moreover, many of them may have defaults.
+options. Moreover, many of them may have defaults values, so a number
+of these may be optional.
 
 As you know, Ruby method arguments are *positional*; they must be
 provided in the correct order. But Ruby also has a means to let you
 pass arguments by *name*. An example is more easily understood:
 
 ```ruby
+def brittle_format_url(scheme, host, path, query_values)
+  # ...
+end
+
 # have to remember to supply arguments in order
 # no defaults. ugh.
 brittle_format_url("http", "www.google.com", "/search", {
     :search_query => "mitt romney, how many sons?"
   })
+
+def better_format_url(options = {})
+  defaults = {
+    :scheme => "http",
+    :path => "/",
+    :query_hash => {}
+  }
+  
+  options = defaults.merge(options)
+  
+  query_string = format_query_string(options[:query_hash])
+  "#{options[:scheme]}://#{options[:path]}?#{query_string}"
+end
 
 better_format_url({
     :scheme => "http",
@@ -73,39 +91,24 @@ better_format_url({:host => "www.nytimes.com"})
 ```
 
 Hopefully it is clear that the `better_format_url` is more convenient
-and flexible. How do we do something like this? Let's first show what
-the method might look like:
+and flexible. There's no magic to it: we just pass in a `Hash`, where
+the params are keyed by names. Notice, that when merging, the values
+in `options` will override the values in `defaults`. Of course, we use
+`Symbol`s for the keys.
 
-```ruby
-def better_format_url(options = {})
-  defaults = {
-    :scheme => "http",
-    :path => "/",
-    :query_hash => {}
-  }
-  
-  options = defaults.merge(options)
-  
-  query_string = format_query_string(options[:query_hash])
-  "#{options[:scheme]}://#{options[:path]}?#{query_string}"
-end
-```
-
-No magic here; we just pass in a `Hash`, where the params are keyed by
-names. Notice, that when merging, the values in `options` will
-override the values in `defaults`. Of course, we use `Symbol`s for the
-keys. Because this is so convenient, Ruby lets us remove the braces
-around this options hash:
+Because this is so convenient, Ruby lets us remove the braces around
+this options hash:
 
 ```Ruby
 # look Ma, no braces
 better_format(:scheme => "https", :host => "api.facebook.com")
+# => better_format({ :scheme => "https", ... })
 ```
 
-After all of the normal, positional arguments, we can put in the `key
-=> value` pairs, separated by commas. Ruby will collect these into a
-`Hash`, then pass this to the method as the last argument. Another
-example:
+Methods may take a mix of positional and optional arguments. After all
+of the positional arguments, we can put in the `key => value` pairs,
+separated by commas. Ruby will collect these into a `Hash`, then pass
+this to the method as the last argument. Another example:
 
 ```ruby
 def do_something(required_arg1, required_arg2, options = {})
