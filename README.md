@@ -2,7 +2,8 @@
 
 ## Ruby basics
 ### w1d1
-+ [Course Preliminaries](https://github.com/ruggeri/ruby-curriculum/blob/master/meta/course-preliminaries.md)
++ [Course Preliminaries][course-preliminaries]
++ [Daily requiements][daily-requiements]
 + [First day instructions][first-day-instructions]
 + Primitive Ruby types (common methods)
   + [Array][array] ([wiki][wiki-array])
@@ -16,6 +17,8 @@
 + **Project**: In Words (ex #15) from [Test First Ruby][test-first-ruby]
 + **Bonus project**: [Maze solver][maze-project]
 
+[course-preliminaries]: https://github.com/ruggeri/ruby-curriculum/blob/master/meta/course-preliminaries.md
+[daily-requiements]: https://github.com/ruggeri/ruby-curriculum/blob/master/meta/daily-requirements.md
 [first-day-instructions]: https://github.com/ruggeri/ruby-curriculum/blob/master/first-day-instructions.md
 [array]: https://github.com/ruggeri/ruby-curriculum/blob/master/language-basics/data-structures/array.md
 [wiki-array]: https://github.com/ruggeri/ruby-curriculum/wiki/Array:-questions
