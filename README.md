@@ -34,7 +34,7 @@
 ### w1d2
 + [Iteration][iteration]
 + [Methods][methods]
-+ [Symbols and Strings][symbols-and-strings]
++ [Symbols, Strings, and Option Hashes][symbols-and-strings]
 + [Input/Output][input-output]
 + [Coding style][coding-style]
 + [Classes][classes]
