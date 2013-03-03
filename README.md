@@ -17,9 +17,9 @@
 + **Project**: In Words (ex #15) from [Test First Ruby][test-first-ruby]
 + **Bonus project**: [Maze solver][maze-project]
 
-[course-preliminaries]: https://github.com/appacademy/ruby-curriculum/blob/master/meta/course-preliminaries.md
-[daily-requiements]: https://github.com/appacademy/ruby-curriculum/blob/master/meta/daily-requirements.md
-[first-day-instructions]: https://github.com/appacademy/ruby-curriculum/blob/master/meta/first-day-instructions.md
+[course-preliminaries]: https://github.com/appacademy/meta/blob/master/course-preliminaries.md
+[daily-requiements]: https://github.com/appacademy/meta/blob/master/daily-requirements.md
+[first-day-instructions]: https://github.com/appacademy/meta/blob/master/first-day-instructions.md
 [array]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/data-structures/array.md
 [string]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/data-structures/string.md
 [hash]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/data-structures/hash.md
