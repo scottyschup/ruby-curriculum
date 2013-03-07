@@ -98,8 +98,8 @@ swingers([
 ])
 ```
 
-* Bonus problem: make a version of the swingers game that guarantees*
-  *that all the couples end up with a different partner!
+* Bonus problem: make a version of the swingers game that *guarantees*
+  that all the couples end up with a different partner!
 
 ## Resources
 * [Wikipedia: Single Responsibility Principle](http://en.wikipedia.org/wiki/Single_responsibility_principle)
