@@ -5,7 +5,7 @@ time. You will make mistakes. Skilled and unskilled developers write a
 similar number of bugs. The difference is that skilled developers are
 able to quickly identify and fix bugs.
 
-A rule of thumb is that it takes it takes 10x as long to debug code as
+A rule of thumb is that it takes 10x as long to debug code as
 to write it. Master debugging and you master programming.
 
 ## Write code that's testable
