@@ -76,8 +76,8 @@ all the elements in an array:
 
 ```ruby
 nums = [1, 2, 3, 4, 5]
-nums.inject(0) do |acc, element|
-  acc + element
+nums.inject(0) do |accum, element| #accum is initially set to 0, the method argument
+  accum + element
 end
 
 # Write a method that takes nums and, using inject, returns the
