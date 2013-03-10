@@ -117,7 +117,7 @@ TypeError: String can't be coerced into Fixnum
 ```
 
 Here, we try to add a `String` to a number (`Fixnum` is the standard
-integer class). The method `+` works by first trying to turning its
+integer class). The method `+` works by first trying to turn its
 argument into a `Fixnum`, then adding it. A `String` cannot be turned
 into a `Fixnum` (coerced), so the method complains.
 
