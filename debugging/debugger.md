@@ -225,7 +225,7 @@ Let's kick the debugger off by calling the method:
 (rdb:1)
 ```
 
-`debugger` pauses the execution of the method and drops us intro the
+`debugger` pauses the execution of the method and drops us into the
 *debugger*. The debugger lets us step through our code one line at a
 time, testing the result along the way. The debugger prompt looks like
 `(rdb:1)`; you can see I gave it the `list` command, which will list
