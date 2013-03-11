@@ -181,7 +181,7 @@ base. For instance, `num_to_s(123, 10) == "123"` and `num_to_s(4, 2)
 You should not call the built in `to_s` yourself. To get around this
 restriction you might either:
 
-* Have a gian `case`/`when` switch (ugly; no!)
+* Have a giant `case`/`when` switch (ugly; no!)
 * Create a `Hash` where the keys are digit numbers and the values are
   the digit strings (for bases > 10 this will involve some characters;
   hex digits go up to `'f'`).
