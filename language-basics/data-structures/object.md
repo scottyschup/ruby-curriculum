@@ -180,7 +180,7 @@ The proper thing for `Fraction` to do is to know that 3/6 is equal to
 1/2. But Ruby doesn't know this without you telling it. Instead, it
 will do the only thing it knows how; it will ask whether the two
 `Fraction` objects are the same *object*, which is not true: they're
-two different objects with represent the same fractional value.
+two different objects which represent the same fractional value.
 
 We can rebuild him... we have the technology:
 
