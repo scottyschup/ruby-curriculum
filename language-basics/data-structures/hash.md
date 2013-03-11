@@ -137,15 +137,20 @@ Ruby provides a class named `Set`. You can read all about it in the
 a `Hash` as if it were a `Set`.  Like so:
 
 ```ruby
-set_add_el({}, :x) == {:x => true}
-set_add_el({:x => true}, :x) == {:x => true} # don't re-add
-set_remove_el({:x => true}, :x) == {}
-set_list_els({:x => true, :y => true}) == [:x, :y]
-set_member?({:x => true}, :x) == true
-set_union({:x => true}, {:y => true}) == {:x => true, :y => true}
-set_intersection
+set_add_el({}, :x) # => {:x => true}
+set_add_el({:x => true}, :x) # => {:x => true} # don't re-add
+set_remove_el({:x => true}, :x) # => {}
+set_list_els({:x => true, :y => true}) # => [:x, :y]
+set_member?({:x => true}, :x) # => true
+set_union({:x => true}, {:y => true}) # => {:x => true, :y => true}
+set_intersection # I'm not going to tell you how the last two work
 set_minus
 ```
+
+We could have defined a class named `Set`, and these methods would
+have been instance methods. We don't define a new class here because I
+want you to see how you can do this with just methods, and hijack the
+Ruby `Hash` class to represent your set.
 
 [ruby-doc]: http://www.ruby-doc.org/stdlib-1.9.3/libdoc/set/rdoc/Set.html
 
