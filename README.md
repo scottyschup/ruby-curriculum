@@ -24,6 +24,8 @@
 + [Source files][source-files]
 + **Project**: In Words (ex #15) from [Test First Ruby][test-first-ruby]
 + **Bonus project**: [Maze solver][maze-project]
++ **Bonus project**: Use Ruby to solve the
+  [eight-queens problems][eight-queens]
 
 [array]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/data-structures/array.md
 [string]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/data-structures/string.md
@@ -36,6 +38,7 @@
 
 [test-first-ruby]: https://github.com/alexch/learn_ruby
 [maze-project]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/maze-solver.md
+[eight-queens]: http://en.wikipedia.org/wiki/Eight_queens_puzzle
 
 ### w1d2
 + [Iteration][iteration]
