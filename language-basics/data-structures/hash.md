@@ -152,7 +152,7 @@ set_list_els({:x => true, :y => true}) # => [:x, :y]
 set_member?({:x => true}, :x) # => true
 set_union({:x => true}, {:y => true}) # => {:x => true, :y => true}
 set_intersection # I'm not going to tell you how the last two work
-set_minus
+set_minus # Return all elements of the first array that are not in the second array, not vice versa
 ```
 
 Note: true is just used as a placeholder value. 
