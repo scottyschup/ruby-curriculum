@@ -189,13 +189,17 @@ restriction you might either:
 You will want to use the `%`, or modulus function; this finds the
 remainder when you divide by a number:
 
-    123 % 10 == 3
-    (123 / 10) % 10 == 2
-    (123 / 100) % 10 == 1
+    (123 / 10**0) % 10 == 3 # ones place
+    (123 / 10**1) % 10 == 2 # tens place
+    (123 / 10**2) % 10 == 1 # hundreds place
 
 Notice that `% 10` gives you the ones place, in decimal. Why? Then you
 can *shift* the ones place off by dividing by 10; this rounds down,
 leaving you with everything except the ones.
+
+The same logic applies for binary (base 2); but instead of the base
+being ten, you use two instead. Then you find the digits in the ones
+place, twos place, eights place, etc.
 
 ### Caesar cipher
 
