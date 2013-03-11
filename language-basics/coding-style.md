@@ -58,11 +58,9 @@ class CrazyClass
 end
 ```
 
-Indent with *two spaces*, not with tab stops.
-[Set Sublime to do this][sublime-indenting] so that the tab button
-inserts two spaces.
-
-[sublime-indenting]: http://www.sublimetext.com/docs/2/indentation.html
+Indent with *two spaces*, not with tab
+stops. [Set Textmate to do this by default][textmate-prefs], so
+that the tab button inserts two spaces.
 
 ## Keep Lines Short
 
@@ -82,8 +80,10 @@ class CrazyClass
 end
 ```
 
-Set Sublime to show a line (called a *rule*) at 80 columns
-(http://stackoverflow.com/a/11319526).
+Set Textmateto show a line (called a *rule*) at
+[80 columns][textmate-prefs].
+
+[textmate-prefs]: https://github.com/appacademy/dotfiles/blob/master/Global.tmProperties
 
 ### No trailing whitespace
 
@@ -91,9 +91,9 @@ This one's minor, but super easy to avoid.
 
 Trailing whitespace (extra spaces at the end of a line) screws up git
 diffs (we'll learn about those later) and looks unprofessional.
-Luckily, there's an [easy fix][easy-fix] for Sublime.
+Luckily, there's an [easy fix][easy-fix] for Textmate.
 
-[easy-fix]: https://github.com/SublimeText/TrailingSpaces
+[easy-fix]: https://github.com/vigetlabs/whitespace-tmbundle
 
 ## Avoid very long methods, deep nesting
 
