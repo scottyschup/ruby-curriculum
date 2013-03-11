@@ -172,13 +172,18 @@ Estimated time: 1hr
 
 ```ruby
 # calls my_each twice on the array, printing all the numbers twice.
-([1,2,3].my_each { |num| puts num }).my_each { |num| puts num }
+return_value = my_each([1, 2, 3]) do |num|
+  puts num
+  puts num
+end
 # => 1
      2
      3
      1
      2
      3
+
+p return_value # => [1, 2, 3]
 ```
 
 * Write a method that finds the median of a given array of
