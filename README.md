@@ -21,6 +21,7 @@
 + Debugging
   + [pry and debugger][pry-and-debugger]
   + [common error messages][common-error-messages]
++ [Source files][source-files]
 + **Project**: In Words (ex #15) from [Test First Ruby][test-first-ruby]
 + **Bonus project**: [Maze solver][maze-project]
 
@@ -31,6 +32,7 @@
 [object]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/data-structures/object.md
 [pry-and-debugger]: https://github.com/appacademy/ruby-curriculum/blob/master/debugging/debugger.md
 [common-error-messages]: https://github.com/appacademy/ruby-curriculum/blob/master/debugging/common-exceptions.md
+[source-files]: ./language-basics/source-files.md
 
 [test-first-ruby]: https://github.com/alexch/learn_ruby
 [maze-project]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/maze-solver.md
