@@ -145,6 +145,7 @@ Ruby provides a class named `Set`. You can read all about it in the
 a `Hash` as if it were a `Set`.  Like so:
 
 ```ruby
+# Note these should be safe methods (no !)
 set_add_el({}, :x) # => {:x => true}
 set_add_el({:x => true}, :x) # => {:x => true} # don't re-add
 set_remove_el({:x => true}, :x) # => {}
