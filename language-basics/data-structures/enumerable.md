@@ -196,8 +196,8 @@ familiarize yourself with blocks.
   of integers, return the average of the middle two items from the
   sorted array.
 
-* Use the `inject` method (`concatenate`) which takes in an `Array` of
-  `String`s, and which returns the concatenation of the strings.
+* Create a method that takes in an `Array` of `String`s and uses 
+  `inject` to return the concatenation of the strings.
 
 ```ruby
 concatenate(["Yay ", "for ", "strings!"])
