@@ -50,6 +50,15 @@ some_fruits[0..1]
 # => ["pear", "apple"]
 ```
 
+You can also use -1 as the end value of a `Range` to specify the last index of the array:
+
+```ruby
+example = [5, 3, 2, 1, 55]
+example[2..-1]
+# => [2, 1, 55] 
+```
+
+
 ## Accessing elements in order
 
 We can also use an *iterator* if we want to access all of the elements
@@ -90,7 +99,7 @@ of the shifting.
 Likewise, if you modify items in an array you are iterating through,
 you are asking for pain and confusing errors. Don't do it.
 
-One alterantive to delete multiple elements of an array without
+One alternative to delete multiple elements of an array without
 iteration is [`#delete_if`][rdoc-delete-if].
 
 [rdoc-delete-if]: http://www.ruby-doc.org/core-1.9.3/Array.html#method-i-delete_if
