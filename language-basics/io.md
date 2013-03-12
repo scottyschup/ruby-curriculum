@@ -154,7 +154,7 @@ f.close
 ```
 
 Because it is error-prone to rely on remembering to `#close` a file,
-prefer the block version of `::open`, `::read`, or `::foreach`
+prefer the block version of `::open`, `::foreach`, or `::read`
 whenever possible. These will all automatically `#close` the file.
 
 ## Standard Output and Input
