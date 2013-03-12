@@ -19,16 +19,13 @@
 
 ## While loops
 
-The most primitive loop is the `while` loop. It repeats a block of
-code (not literally a Ruby block, just a section of code) repeatedly
-as long as a condition is true. For instance,
-
+The most primitive loop is the `while` loop. It repeats a section of
+code repeatedly as long as a condition is true. For instance,
 ```ruby
 while true
   puts "Infinite loop!"
 end
 ```
-
 will spin round and around repeatedly, forever. Most loops eventually
 stop, however:
 
