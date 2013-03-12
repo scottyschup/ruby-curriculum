@@ -273,7 +273,7 @@ A range is exactly what it sounds like:
 (1..10)
 ```
 
-represents all the numbers from 1 through 10. We can iterate over
+represents all the numbers from 1 through 10. A range with two dots goes up to and includes the second number. A range with three dots excludes the seconds number. For example, (0..10) goes from 0 to 9, and does not include 10. We can iterate over
 ranges just like we iterated over arrays:
 
 ```ruby
