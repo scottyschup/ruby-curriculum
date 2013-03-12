@@ -109,6 +109,8 @@ of the shifting.
 Likewise, if you modify items in an array you are iterating through,
 you are asking for pain and confusing errors. Don't do it.
 
+If you want to change an array's value while iterating, consider the map function. 
+
 One alternative to delete multiple elements of an array without
 iteration is [`#delete_if`][rdoc-delete-if].
 
