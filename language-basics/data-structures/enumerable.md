@@ -172,8 +172,9 @@ Estimated time: 1hr
 
 ```ruby
 # calls my_each twice on the array, printing all the numbers twice.
-return_value = my_each([1, 2, 3]) do |num|
+return_value = [1, 2, 3].my_each do |num|
   puts num
+end.my_each do |num|
   puts num
 end
 # => 1
