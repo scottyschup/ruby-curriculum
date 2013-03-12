@@ -28,3 +28,4 @@ sure to find the *shortest path* through the maze.
 * Reading Files [progzoo]
 
 [progzoo]: http://progzoo.net/wiki/Ruby:Read_a_Text_File
+[wikipedia: maze shortest path]: http://en.wikipedia.org/wiki/Maze_solving_algorithm#Shortest_path_algorithm
