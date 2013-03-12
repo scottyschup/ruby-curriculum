@@ -184,6 +184,14 @@ ice_creams.split(", ")
 => ["We", "all", "scream", "for", "ice", "cream!"]
 ```
 
+## Nil converts to empty string
+
+```ruby
+nil.to_s 
+=> ""
+```
+
+
 ## Other Killer `String` Methods
 
 Read up on 'em all:
