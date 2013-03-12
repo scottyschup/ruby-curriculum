@@ -380,8 +380,7 @@ class Asteroid
   
   # helper class method; doesn't need to be called on an Asteroid
   # object
-  
-  def random_velocity(max_speed)
+  def self.random_velocity(max_speed)
     speed = max_speed * rand()
     x_dir, y_dir = rand() * [1, -1].sample, rand() * [1, -1].sample
 
@@ -395,7 +394,7 @@ class Asteroid
     return Asteroid.new(
       max_x * rand(),
       max_y * rand(),
-      random_speed # implicit `self` refers to the Asteroid class here
+      random_velocity(max_speed) # implicit `self` refers to the Asteroid class here
     )
   end
   
