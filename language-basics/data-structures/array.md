@@ -247,7 +247,6 @@ array.unshift(5)
 
 # Can you use a stack to reverse a string? You will need
 # `String#split` and `Array#join`.
-```
 
 ## Turning arrays to strings: join
 
