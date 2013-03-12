@@ -76,9 +76,11 @@ all the elements in an array:
 
 ```ruby
 nums = [1, 2, 3, 4, 5]
-nums.inject(0) do |accum, element| #accum is initially set to 0, the method argument
+nums.inject(0) do |accum, element| # accum is initially set to 0, the method argument
   accum + element
 end
+
+nums.inject(:+) # A cool shortcut that does the same as the above code. 
 
 # Write a method that takes nums and, using inject, returns the
 # product of all of the elements.
