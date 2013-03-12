@@ -161,7 +161,7 @@ a `Hash` as if it were a `Set`.  Like so:
 ```ruby
 # Note these should be safe methods (no !)
 set_add_el({}, :x) # => {:x => true}
-set_add_el({:x => true}, :x) # => {:x => true} # don't re-add. This should automatically work if the first method worked
+set_add_el({:x => true}, :x) # => {:x => true} # This should automatically work if the first method worked
 set_remove_el({:x => true}, :x) # => {}
 set_list_els({:x => true, :y => true}) # => [:x, :y]
 set_member?({:x => true}, :x) # => true
