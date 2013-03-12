@@ -41,6 +41,43 @@ want to use the opposite form of quotes:
 "I didn't know that!"
 ```
 
+## Multiline and Complex Quotes
+
+One of the issues with quotes (both of the single and double variety) is that
+they can make for some unwieldy code for other programmers to read and maintain.
+
+Two problems usually come hand in hand for complex blocks of text:
+* They may be large, spanning multiple lines
+* They may contain specific spacing, inner quotes, and escape characters
+
+```ruby
+stomach_contents = "Bacon 'ipsum dolor' sit amet venison\n fatback pig, prosciutto/pork belly jowl.\n
+Beef kielbasa leberkas, shank t-bone doner strip "steak" pork loin. Doner hamburger"
+```
+
+Yikes! The example above won't compute properly.
+
+We've placed double quotes around steak and double quotes around the entire string.
+Ruby inteprets this as two strings separated by an undefined variable, steak.
+
+Let's say we try single quotes to get the "steak" back in there.
+
+```ruby
+stomach_contents = 'Bacon 'ipsum dolor' sit amet venison\n fatback pig, prosciutto pork belly jowl.\n
+Beef kielbasa leberkas, shank t-bone doner strip "steak" pork loin. Doner hamburger'
+```
+
+Now we're getting bit by 'ipsum dolor'.
+Notice also, that, having enclosed the string in single quotes, we can no longer access escape characters.
+The "\n" will be interpreted as just that, and not a newline as we intend.
+
+These are common problems with complex strings! Not to fret; there are several solutions.
+
+(more to come)
+* %q
+* %Q
+* HEREDOC
+
 ## Interpolation
 
 It is very common to build up strings from other strings.
