@@ -40,6 +40,7 @@ Blocks are either wrapped in curly braces, or with a "do" and
   num * num
 end # => [1, 4, 9]
 ```
+Use braces for single-line blocks. *Always use do-end for longer blocks*.
 
 Blocks are passed to a method, but they do not appear in the list of
 arguments. They come after the closing parentheses, if there are any:
@@ -58,9 +59,6 @@ are wrapped in '|' (called *pipes*).
 Here `map` is going to call the block repeatedly; it will pass in each
 of the elements. Each time, the element (1, 2, or 3) will be *bound*
 to the `num` argument declared between the pipes.
-
-When should you use the braces, and when do-end? Use braces for short,
-single-line blocks. *Always use do-end for longer blocks*.
 
 ## Writing a method that takes a block
 
