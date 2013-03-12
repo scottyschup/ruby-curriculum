@@ -50,7 +50,7 @@ some_fruits[0..1]
 # => ["pear", "apple"]
 ```
 
-Using '...' can also be used to define a Range, but this leaves off the last element in the return array.
+Three periods - '...' - can also be used to define a Range, but this leaves off the last element in the return array.
 
 ```ruby
 example = [1, 2, 3, 4, 5]
