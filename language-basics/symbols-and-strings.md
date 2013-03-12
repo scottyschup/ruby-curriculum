@@ -21,7 +21,7 @@ format/interpolate, split, and otherwise manipulate text.
 aren't meant to be manipulated like text: there isn't a particularly
 easy way to concatenate `Symbol`s, or to split them on whitespace,
 etc. In fact, `Symbol`s can't be modified; they're
-*immutable*. `Symbol`s are used to represent names (key names, option
+[*immutable*][immutable-wiki]. `Symbol`s are used to represent names (key names, option
 names, method names) inside the Ruby interpreter; they aren't intended
 for input or output.
 
@@ -41,6 +41,8 @@ call to `map` where we ask `#even?` to be called on each element
 Because `Symbol`s start with a `:`, they are faster to type. They also
 make clear the intent of your program. You should use them whenever
 you aren't representing data that should be input or output.
+
+[immutable-wiki]:https://en.wikipedia.org/wiki/Immutable_object
 
 ## Option hashes
 
