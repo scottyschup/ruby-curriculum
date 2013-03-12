@@ -357,7 +357,7 @@ Time estimate: 1.5hrs
     '2of12inf.txt'.
   * Learn how to read a file [here](io.md#opening-a-file).
   * You may need to use `String#chomp` to strip newline characters;
-    see the [Input/Output](io.md) chapter for details
+    see the [Input/Output](io.md) chapter for details.
 
 ## Resources
 
