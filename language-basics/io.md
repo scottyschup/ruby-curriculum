@@ -13,7 +13,7 @@
 
 ## Standard IO
 
-The most basic IO methods are `Kernel#gets` and `Kernel#puts`:
+The most basic IO methods are [`Kernel#gets`](http://www.ruby-doc.org/core-2.0/IO.html) and [`Kernel#puts`](http://www.ruby-doc.org/core-2.0/IO.html):
 
 ```ruby
 input = gets
