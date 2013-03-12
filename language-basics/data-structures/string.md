@@ -224,11 +224,10 @@ base. For instance, `num_to_s(123, 10) == "123"` and `num_to_s(4, 2)
 == 100`. It should work for bases up to 16 (hexadecimal). 
 
 You can also think of writing numbers in bases like this. 
-
-8 in base 2 = 1000 = 2^3 * 1 + 2^2 * 0 + 2^1 * 0 + 2^0 * 0
-6 in base 2 = 110 = 2^2 * 1 + 2^1 * 1 + 2^0 * 0
-
-10 in base 3 = 101 = 1 * 3^2 + 0 * 3^1 + 1 * 3^0
+    123 in base 10 = 1*10^2 + 2*10^1 + 3*10^0
+    8 in base 2 = 1000 = 2^3*1 + 2^2*0 + 2^1*0 + 2^0*0
+    6 in base 2 = 110 = 2^2*1 + 2^1*1 + 2^0*0
+    10 in base 3 = 101 = 1*3^2 + 0*3^1 + 1*3^0
 
 You should not call the built in `to_s` yourself. To get around this         
 restriction you might either:
