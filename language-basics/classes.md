@@ -558,7 +558,7 @@ Dog.new # => calls `new` method on a Class instance: Dog
 Estimated time: 2.5hrs
 
 ### Students and Courses
-Write a set of courses to model Students and Courses.
+Write a set of classes to model Students and Courses.
 
 * `Student#initialize` should take a first and last name.
 * `Student.name` should return the concatenation of the student's
