@@ -132,9 +132,9 @@ File.open("cool-things.txt", "w") do |f|
 end
 ```
 
-Note: `"w"` mode will create a new file or truncate an existing file. If you wish
-append to an existing file, you will need to use `"a"`. For all more file mode 
-options check [here] (http://stackoverflow.com/questions/3682359/what-are-the-ruby-file-open-modes-and-options?answertab=votes#tab-top)
+Note: `"w"` mode will create a new file or overwrite an existing file. If you wish
+append to an existing file, you will need to use `"a"`. For more file mode options 
+check [here] (http://stackoverflow.com/questions/3682359/what-are-the-ruby-file-open-modes-and-options?answertab=votes#tab-top)
 
 ### Closing files
 
