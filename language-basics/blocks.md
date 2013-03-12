@@ -142,8 +142,8 @@ This will not merely return from the block, it will return from the
 context where the block was defined. Huh? What does that mean?
 
 The reason is not vital for you to know right now (so long as you know
-not to use return in blocks!); you can skip the following if you
-like. If you are curious, you may read on.
+not to use return in blocks!). You can skip the following if you
+like; if you are curious, you read on.
 
 ```ruby
 def wrap_block
