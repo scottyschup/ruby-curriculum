@@ -176,6 +176,8 @@ a data type that helps us solve problems that have LIFO features. One such
 problem is reverse polish calculation (remember the RPN calculator from Test
 First Ruby?):
 
+
+
 ```ruby
 # computes (1 (2 3 +) *)
 nums = []
@@ -186,6 +188,19 @@ nums << 3
 
 nums << (nums.pop) + (nums.pop)
 nums << (nums.pop) * (nums.pop)
+```
+## shift and unshift
+
+Shift and unshift are the opposite of pop and push, respectively. 
+
+Example:
+```ruby
+array = [1,2,3,4]
+array.shift
+# => [2,3,4]
+array.unshift(5)
+# => [5,2,3,4]
+```
 
 # Can you use a stack to reverse a string? You will need
 # `String#split` and `Array#join`.
