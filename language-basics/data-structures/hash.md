@@ -7,6 +7,7 @@
 * Know:
   * how to access a value by key
   * how to set a value for a key
+  * how to delete a key/value
 
 ## What's a Hash?
 
@@ -61,6 +62,18 @@ capitals['Texas'] = 'Austin'
 
 puts capitals
 # => { 'New York' => 'Albany', 'California' => 'Sacramento', 'Texas' => 'Austin' }
+```
+
+### `Hash#delete=`
+
+We can delete a key/value pair in a hash like so:
+
+```ruby
+capitals = { 'New York' => 'Albany', 'California' => 'Sacramento' }
+capitals.delete('California')
+
+puts capitals
+# => { 'New York' => 'Albany' }
 ```
 
 ### `Hash#merge`
