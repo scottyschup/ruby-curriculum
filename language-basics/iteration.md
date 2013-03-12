@@ -212,8 +212,6 @@ using `#each`
 
 ## each_with_index
 
-## each_with_index
-
 `each` is cleaner then `while`, but sometimes you also
 need the index of each element. In a while loop, you can do this by referencing the iterator:
 
