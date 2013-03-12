@@ -96,3 +96,9 @@ x != y # => !(x == y), will use the `#==` method
 So while `[]=` was a method, `+=` and `!=` are pure syntactic
 sugar. Ruby will translate them into code that calls `+` and `==`
 respectively.
+
+## Exercises
+Time estimate: 10 min
+
+* Add two of your own methods to the String class, shout and shout!, you know what to do. (take a string, and make it all caps)
+make sure one method is safe and the other is "dangerous!" 
