@@ -10,7 +10,7 @@
 * Know how to break out of a loop.
 * Know when you might want to use `Array#each_with_index` instead of
   `#each`.
-* Know how to use `Kernel#times` to execute a block multiple times.
+* Know how to use `Integer#times` to execute a block multiple times.
 * Know what a `Range` is.
   * Know how we can use a `Range` to iterate through a range of index
     values, without using `while`.
