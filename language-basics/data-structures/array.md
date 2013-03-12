@@ -458,7 +458,7 @@ and ask what pile to select a disc from, and where to put it.
 After each move, check to see if they have succeeded in moving all the
 discs, to the final pile. If so, they win!
 
-### `my_transpose`
+### My Transpose
 
 To represent a *matrix*, or two-dimensional grid of numbers, we can
 write an array containing arrays which represent rows:
