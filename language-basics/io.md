@@ -132,6 +132,9 @@ File.open("cool-things.txt", "w") do |f|
 end
 ```
 
+Note: `"w"` mode will create a new file or truncate an existing file. If you wish
+append to an existing file, you will need to use `"a"`. 
+
 ### Closing files
 
 The examples I've shown you have all automatically *closed* the file
