@@ -80,7 +80,7 @@ class CrazyClass
 end
 ```
 
-Set Textmateto show a line (called a *rule*) at
+Set Textmate to show a line (called a *rule*) at
 [80 columns][textmate-prefs].
 
 [textmate-prefs]: https://github.com/appacademy/dotfiles/blob/master/Global.tmProperties
