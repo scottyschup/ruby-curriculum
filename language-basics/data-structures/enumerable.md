@@ -182,10 +182,10 @@ end.my_each do |num|
   puts num
 end
 # => 1
-     2
-     3
      1
      2
+     2
+     3
      3
 
 p return_value # => [1, 2, 3]
