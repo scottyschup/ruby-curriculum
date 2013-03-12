@@ -177,6 +177,16 @@ have been instance methods. We don't define a new class here because I
 want you to see how you can do this with just methods, and hijack the
 Ruby `Hash` class to represent your set.
 
+### Hash offset
+
+Martha has created a hash with numeric symbols as keys with values. However, she realized everything is off by one letter.
+
+```ruby
+wrong_hash = { :a => banana, :b => cabbage, :c => dental_floss , :d => eel_sushi }
+```
+Write a program `hash_correct` that takes this wrong hash and returns the correct one.
+
+
 [ruby-doc]: http://www.ruby-doc.org/stdlib-1.9.3/libdoc/set/rdoc/Set.html
 
 ## Resources
