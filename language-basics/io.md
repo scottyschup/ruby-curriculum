@@ -113,7 +113,7 @@ end
 ```
 
 Finally, if you'd like to read the entire file into one long string,
-you may write
+you may write:
 
 ```ruby
 contents = File.read("movie-times.txt")
