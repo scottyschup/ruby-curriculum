@@ -167,7 +167,7 @@ CamelCase.
 Between the class name and the `end`, all methods defined in this
 block of code will be `Cat` methods.
 
-The `initialize` method is a little special. It is called when an
+The `initialize` method is special. It is called when an
 object is first created. To create a `Cat` object, we write:
 
 ```ruby
