@@ -1,5 +1,5 @@
 # Intro Ruby Topics
-
+# My commit - David Smith II
 ## Meta
 
 + [Course Preliminaries][course-preliminaries]
