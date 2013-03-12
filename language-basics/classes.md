@@ -78,7 +78,7 @@ cats = [{
 Now each object in the array is a hash representing a cat.
 
 Protip: don't proliferate variables. Having more variables means more
-things to keep track of an in sync: more possibility for
+things to keep track of and in sync: more possibility for
 errors. Example: in the aligned array example, we had three arrays
 stored in three variables. To delete a cat we need to remember to
 delete the field from each array. And if we forget to do so, the
