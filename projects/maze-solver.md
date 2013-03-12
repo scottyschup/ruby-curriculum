@@ -26,6 +26,5 @@ sure to find the *shortest path* through the maze.
 
 ## Resources
 * Reading Files [progzoo]
-* Comprehensive (very long) [debugger documentation][debugger-documentation]
 
 [progzoo]: http://progzoo.net/wiki/Ruby:Read_a_Text_File
