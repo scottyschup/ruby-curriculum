@@ -101,6 +101,8 @@ end
 The class method `File::open` opens a file. You pass a block, and the
 block will be called with `File` object passed in.
 
+If the file does not already exist, File.open will create a new file.
+
 To read data from a file, you can call `File#gets`, which works like
 `Kernel#gets`, but reads from the file, rather than console.
 
