@@ -210,6 +210,10 @@ For boring reasons, `for` is not recommended for use. You'll see
 plenty of Python code use `for` this way, but satisfy yourself with
 using `#each`
 
+* The iterator variable (*i.e.* `item` in the above `for` loop construct 
+example) is still bound after exiting the loop. This doesn't happen with `each`.
+[See this SO question](http://stackoverflow.com/questions/3294509/for-vs-each-in-ruby)
+
 ## each_with_index
 
 `each` is cleaner then `while`, but sometimes you also
