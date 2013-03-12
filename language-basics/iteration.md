@@ -212,12 +212,10 @@ using `#each`
 
 ## each_with_index
 
-`each` is preferable to `while` when you can use it; sometimes you
-need an array index, though. In these cases, though, you can fall back
-on `each_with_index`.
+## each_with_index
 
-For example, say we want to find the indices of all the occurrences of
-my favorite number:
+`each` is cleaner then `while`, but sometimes you also
+need the index of each element. In a while loop, you can do this by referencing the iterator:
 
 ```ruby
 my_favorite_number = 42
@@ -235,7 +233,7 @@ while i < numbers.count
 end
 ```
 
-There has to be a better way:
+Instead, you should use `each_with_index`:
 
 ```ruby
 my_favorite_number = 42
@@ -249,8 +247,8 @@ numbers.each_with_index do |number, index|
 end
 ```
 
-This lets us get access to the index, but avoids the nuisance (and
-bugs) of having to increment the index ourselves.
+`each_with_index` combines the simplicity of `each` with the ability to reference index.
+
 
 ## Iterating with times
 
