@@ -166,7 +166,7 @@ Estimated time: 1hr
 * Write a method that takes an array of integers and returns an array
   with the array elements multiplied by two.
 
-* Write a method named `my_each` that takes an array and a block,
+* Extend the Array class to include a method named `my_each` that takes a block,
   calls the block on every element of the array, and then returns the
   original array. I want to be able to write:
 
