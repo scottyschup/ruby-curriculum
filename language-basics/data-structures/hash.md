@@ -179,10 +179,10 @@ Ruby `Hash` class to represent your set.
 
 ### Hash offset
 
-Martha has created a hash with numeric symbols as keys with values. However, she realized everything is off by one letter.
+Martha has created a hash with letter symbols as keys to represent items that start with their keys. However, she realized everything is off by one letter.
 
 ```ruby
-wrong_hash = { :a => banana, :b => cabbage, :c => dental_floss , :d => eel_sushi }
+wrong_hash = { :a => "banana", :b => "cabbage", :c => "dental_floss", :d => "eel_sushi" }
 ```
 Write a program `hash_correct` that takes this wrong hash and returns the correct one.
 
