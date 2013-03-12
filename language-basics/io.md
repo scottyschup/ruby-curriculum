@@ -194,3 +194,7 @@ Estimated time: 3hrs
 * Write a program that prompts the user for a file name, reads that
   file, shuffles the lines, and saves it to the file
   "#{input_name}-shuffled.txt".
+
+## Resources
+
+* [Ruby IO Class](http://ruby-doc.org/core-2.0/IO.html#method-c-readlines)
