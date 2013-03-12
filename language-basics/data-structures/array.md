@@ -314,6 +314,17 @@ object. However, use the safe version as a default, and only use
 unsafe methods when you have a reason. Again, don't worry about speed
 until you see a performance problem in real life.
 
+##  Random (discrete uniform) sampling from arrays 
+
+This array.sample selects an element at random from the array where each element has equal probability of begin selected.  This does not alter the array.
+
+```ruby
+
+die = [1,2,3,4,5,6]
+roll1 = die.sample
+roll2 = die.sample
+```
+
 ## Naming arrays
 
 Array variable names are typically pluralized, to indicate that the
