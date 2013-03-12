@@ -64,7 +64,7 @@ puts capitals
 # => { 'New York' => 'Albany', 'California' => 'Sacramento', 'Texas' => 'Austin' }
 ```
 
-### `Hash#delete=`
+### `Hash#delete`
 
 We can delete a key/value pair in a hash like so:
 
