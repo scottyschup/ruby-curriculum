@@ -50,6 +50,16 @@ some_fruits[0..1]
 # => ["pear", "apple"]
 ```
 
+Using '...' can also be used to define a Range, but this leaves off the last element in the return array.
+
+```ruby
+example = [1, 2, 3, 4, 5]
+example[2..4]
+# => [3, 4, 5]
+example[2...4]
+# => [3, 4]
+```
+
 You can also use -1 as the end value of a `Range` to specify the last index of the array:
 
 ```ruby
@@ -316,7 +326,7 @@ until you see a performance problem in real life.
 
 ##  Random (discrete uniform) sampling from arrays 
 
-The `sample` method selects an element at random from the array where each element has equal probability of being selected.  This does not alter the array.
+The `sample` method selects an element at random from the array where each element has equal probability of begin selected.  This does not alter the array.
 
 ```ruby
 
