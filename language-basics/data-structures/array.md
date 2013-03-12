@@ -316,7 +316,7 @@ until you see a performance problem in real life.
 
 ##  Random (discrete uniform) sampling from arrays 
 
-This array.sample selects an element at random from the array where each element has equal probability of begin selected.  This does not alter the array.
+This `sample` selects an element at random from the array where each element has equal probability of begin selected.  This does not alter the array.
 
 ```ruby
 
