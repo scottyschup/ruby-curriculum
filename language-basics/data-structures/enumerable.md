@@ -82,6 +82,8 @@ end
 
 nums.inject(:+) # A cool shortcut that does the same as the above code. 
 
+nums.inject('') # Will set the accum value to an empty string.
+
 # Write a method that takes nums and, using inject, returns the
 # product of all of the elements.
 ```
