@@ -189,6 +189,28 @@ nums << 3
 nums << (nums.pop) + (nums.pop)
 nums << (nums.pop) * (nums.pop)
 ```
+
+## using array as a queue
+
+It is sometimes useful to use arrays in a first-in, first-out way (FIFO). Usually
+this is called "queue" and "dequeue". Using Array's `push` and
+`delete_at(0)`, we can treat an array like a [*queue*](http://en.wikipedia.org/wiki/Queue_(abstract_data_type)),
+a datatype that helps us solve problems with FIFO features.
+
+```ruby
+nums = []
+
+nums << 1
+nums << 2
+nums << 3
+
+nums.delete_at(0)
+# => 1
+
+nums
+# => [2, 3]
+```
+
 ## shift and unshift
 
 Shift and unshift are the opposite of pop and push, respectively. 
