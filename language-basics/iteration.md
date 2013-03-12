@@ -330,6 +330,8 @@ Time estimate: 1.5hrs
 * Print out all the factors for each of the numbers 1 through 100.
 * Implement [Bubble sort][wiki-bubble-sort] in a method `#bubble_sort`
   that takes an `Array` and modifies it so that it is in sorted order.
+  [Bubble sort visualization](https://www.youtube.com/watch?v=aXXWXz5rF64). 
+
 
 > Bubble sort, sometimes incorrectly referred to as sinking sort, is a
 > simple sorting algorithm that works by repeatedly stepping through
