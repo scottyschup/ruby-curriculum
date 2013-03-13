@@ -47,11 +47,18 @@ will be mixed. Let's give an example:
 
 ```ruby
 module Enumerable
-  def all?(proc, &blk)
+  def all?(explicit_proc, &implicit_proc)
+    if explicit_proc && implicit_proc
+      raise "pass either a proc argument or a block; not both!"
+    end
+
+    # proc should be set to whichever proc is non-null
+    prc = explicit_proc || implicit_proc
+
     # call each method, which Enumerable doesn't provide, but the
     # class should.
     each do |item|
-      return false unless yield(item)
+      return false unless prc.call(item)
     end
     
     true

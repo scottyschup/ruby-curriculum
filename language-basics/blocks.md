@@ -74,15 +74,15 @@ maybe(false) { puts "Goodbye!" } # doesn't run block
 Here's how we would define maybe:
 
 ```ruby
-def maybe(flag, &blk)
-  blk.call if flag
+def maybe(flag, &prc)
+  prc.call if flag
 end
 ```
 
-Notice the `&blk` argument? The ampersand is a special symbol that
-signifies that `blk` should hold a `Proc`. The block, if provided,
-gets turned into a `Proc`, which is then stored in the `blk` variable;
-if no block is provided, `blk` is set to `nil`.
+Notice the `&prc` argument? The ampersand is a special symbol that
+signifies that `prc` should hold a `Proc`. The block, if provided,
+gets turned into a `Proc`, which is then stored in the `prc` variable;
+if no block is provided, `prc` is set to `nil`.
 
 ```ruby
 def amp_makes_block_a_proc(&block)
@@ -113,7 +113,7 @@ my_new_proc.call("Zimmy")
 ```
 
 Takeaway: to store or use a block, it must first be turned into a
-`Proc`, either explicitly (`Proc::new`) or implicitly (`&blk`
+`Proc`, either explicitly (`Proc::new`) or implicitly (`&prc`
 variable).
 
 It may be worth noting that you can take multiple blocks by explicitly 
