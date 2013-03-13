@@ -26,7 +26,7 @@ We can also define factorial *recursively*:
     1! = 1
     n! = n * (n - 1)!
 
-The first equation is the base case: `1!` is, trivially, `1!`. For any
+The first equation is the base case: `1!` is, trivially, `1`. For any
 `n > 1`, we can use the second equation to break the problem into a
 smaller one.
 
