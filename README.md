@@ -64,7 +64,7 @@
 + [Blocks][blocks]
 + [Recursion][recursion]
 + [Scope][scope]
-+ [Test First Ruby][test-first-ruby] XML parser
++ **Project**: [Test First Ruby][test-first-ruby] XML parser
 + **Bonus project**: [Word chains][word-chains]
   + Hint: first write a method `adjacent_words` which gives an array
     of all words "one letter away".
