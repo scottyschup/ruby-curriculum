@@ -116,6 +116,26 @@ Takeaway: to store or use a block, it must first be turned into a
 `Proc`, either explicitly (`Proc::new`) or implicitly (`&blk`
 variable).
 
+It may be worth noting that you can take multiple blocks by explicitly 
+defining procs and then passing them into your method.
+
+```ruby
+proc_add_1 = Proc.new {|num| puts num + 1}
+proc_add_2 = Proc.new {|num| puts num + 2}
+
+def adding_method(array, proc1, proc2, &proc3)
+  proc1.call(array[0])
+  proc2.call(array[1])
+  proc3.call(array[2])
+end
+
+adding_method([1,1,1,], proc_add_1, proc_add_2) do 
+  |num| puts num + 3 
+  end
+  
+#=> 
+```
+
 ## yield
 
 Ruby has a special syntax which simplifies passing blocks. You may use
