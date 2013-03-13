@@ -197,4 +197,4 @@ Estimated time: 3hrs
 
 ## Resources
 
-* [Ruby IO Class](http://ruby-doc.org/core-2.0/IO.html#method-c-readlines)
+* [Ruby IO Class](http://ruby-doc.org/core-2.0/IO.html)
