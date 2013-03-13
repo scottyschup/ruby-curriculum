@@ -4,7 +4,7 @@
 
 * Know how to define a block, especially one that takes arguments.
 * Know how to write a method that takes a block.
-* Know the difference between [`Block`](http://ruby-doc.org/core-2.0/Block.html)s and [`Proc`](http://ruby-doc.org/core-2.0/Proc.html)s.
+* Know the difference between `Block`s and [`Proc`](http://ruby-doc.org/core-2.0/Proc.html)s.
 * Know not to return from a block.
 * Know what `#to_proc` and `&` are used for.
 
