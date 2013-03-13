@@ -130,7 +130,7 @@ end
 
 ## Avoid return inside a block
 
-Blocks implicitly returns values like Ruby methods; the last value is
+Blocks implicitly return values like Ruby methods; the last value is
 implicitly returned from the block.
 
 ```ruby
