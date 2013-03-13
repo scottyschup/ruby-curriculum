@@ -67,6 +67,21 @@ end
 fourth_power(2)
 ```
 
+## Global variables
+***note*** This last bit about global variables is not essential.
+So, while you shouldn't typically create global variables, you can do so with `$`.
+If you remember the trick to run a special `main()`-ish method in ruby: 
+
+```
+if __FILE__ == $PROGRAM_NAME
+  # Put "main" code here
+end
+```
+Here `$PROGRAM_NAME` is an example of a special global variable which has an ever expansive scope. 
+Even if you're loading in the contents of a library, you'll still have access to the `$`-globals.
+See [this link][rubyist-global-vars].
+[rubyist-global-vars]: http://www.rubyist.net/~slagell/ruby/globalvars.html
+
 ## Credit
 
 [Wikipedia: Scope][wiki-scope]
