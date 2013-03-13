@@ -23,7 +23,8 @@ easy way to concatenate `Symbol`s, or to split them on whitespace,
 etc. In fact, `Symbol`s can't be modified; they're
 [*immutable*][immutable-wiki]. `Symbol`s are used to represent names (key names, option
 names, method names) inside the Ruby interpreter; they aren't intended
-for input or output.
+for input or output. (If you want to generate a symbol from an input, you
+can call Ruby's handy #to_sym method on any string object.)
 
 ```ruby
 { :name => "Breakfast", :species => "Cat", :owner => "Devon" }
