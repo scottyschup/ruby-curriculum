@@ -1,6 +1,6 @@
 # Scope
 
-Scope is the context in which a variable name is valid and can be
+[Scope](http://en.wikipedia.org/wiki/Scope_(computer_science) is the context in which a variable name is valid and can be
 used.
 
 A name is *in scope* (accessible) if the name has been previously defined in the current method (called a
