@@ -130,6 +130,7 @@ Estimated time: .25hrs
 * Write a method `super_print` that takes a `String`. It should take
   optional parameters `:times`, `:upcase`, `:reverse`. Pick reasonable
   [defaults](http://stackoverflow.com/a/977546).
+    * Please note, the `:times` parameter's value should be an integer that the #times method will be called on.
 
 ## Resources
 
