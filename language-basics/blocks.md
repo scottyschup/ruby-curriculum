@@ -315,8 +315,9 @@ less than `y`. If `x` and `y` are equal, it returns `0`. If greater,
 `1`. You can define `<=>` on your own classes.
 
 * Write a method that takes some arguments and a block. It should call
-  the block, passing all the arguments to the block. If the user doesn't 
-  supply the block, it should print out "NO BLOCK GIVEN!".
+  the block, passing all the arguments to the block at once using the 
+  splat operator. If the user doesn't supply the block, it should print 
+  out "NO BLOCK GIVEN!".
   * To take possibly multiple arguments, check out the Ruby
     [splat operator][splat-operator].
 
