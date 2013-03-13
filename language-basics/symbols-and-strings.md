@@ -76,6 +76,11 @@ def better_format_url(options = {})
   
   options = defaults.merge(options)
   
+  # the query string is the part that comes after the '?' in a URL
+  # like http://bing.com/search?q=this+is+my+search
+  # this query string represents { :q => "this is my search }.
+  # I'm using a hypothetical method `format_query_string` to turn
+  # a hash to a query string.
   query_string = format_query_string(options[:query_hash])
   "#{options[:scheme]}://#{options[:path]}?#{query_string}"
 end
