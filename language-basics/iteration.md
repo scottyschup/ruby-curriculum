@@ -283,7 +283,7 @@ ranges just like we iterated over arrays:
 end
 ```
 
-Note that ranges cannot go from a smaller value to a larger value (i.e. 10..1)
+Note that ranges cannot go from a larger value to a smaller value (i.e. 10..1).
 
 ```ruby
 (10..1).each do |i|
@@ -291,6 +291,16 @@ Note that ranges cannot go from a smaller value to a larger value (i.e. 10..1)
 end
 # this example will not puts anything
 ```
+
+One alternative you can consider is using (-10..-1).abs:
+
+```ruby
+(-10..-1).to_a.reverse.each do |i|
+  puts i
+end
+```
+You can also use the downto method in `Integer`.
+
 
 ## Nesting loops
 
