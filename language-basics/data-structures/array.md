@@ -60,7 +60,7 @@ example[2...4]
 # => [3, 4]
 ```
 
-You can also use -1 as the end value of a `Range` to specify the last index of the array:
+You can also use -1 as the end value (-2 as the second to last value, etc.) of a `Range` to specify the last index of the array:
 
 ```ruby
 example = [5, 3, 2, 1, 55]
