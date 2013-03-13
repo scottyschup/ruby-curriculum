@@ -91,8 +91,6 @@ This is called an *idiom*; idioms are coding conventions that are
 commonly used. They are a good thing, because conventions we've seen
 before are easier to understand when we see them again.
 
-As the Japanese say, "the nail that sticks out gets hammered down."
-
 ### While without an index
 
 So far we've only seen `while` loops that loop through index
