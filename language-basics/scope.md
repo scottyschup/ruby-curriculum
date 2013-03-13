@@ -5,11 +5,8 @@ used.
 
 A name is *in scope* (accessible) if
 
-- the name has been previously defined in the current method (called a
-  *local variable*), OR
-- the name has been previously defined at the same or higher level of
-  the current method.
-- A new level starts whenever we begin a class, a method, or a block.
+A name is *in scope* (accessible) if the name has been previously defined in the current method (called a
+  *local variable*) or at a higher level of the current method. A new level starts whenever we begin a class, a method, or a block.
 
 We can't use a variable before it is defined:
 
