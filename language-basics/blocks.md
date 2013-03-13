@@ -133,7 +133,9 @@ adding_method([1,1,1,], proc_add_1, proc_add_2) do
   |num| puts num + 3 
   end
   
-#=> 
+#=> 2
+    3
+    4
 ```
 
 ## yield
