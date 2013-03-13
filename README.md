@@ -47,7 +47,8 @@
 + [Coding style][coding-style]
 + [Classes][classes]
 + [Pass by reference][pass-by-reference]
-+ **Project**: [MicroBlogger][microblogger]
++ **Project**: [MicroBlogger][microblogger] 
+  * Don't do the Klout part.
 
 [iteration]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/iteration.md
 [methods]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/methods.md
