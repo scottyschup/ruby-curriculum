@@ -325,6 +325,19 @@ object. However, use the safe version as a default, and only use
 unsafe methods when you have a reason. Again, don't worry about speed
 until you see a performance problem in real life.
 
+##  Access first and last elem in arrays
+
+The `first` method selects the first elem in the array. The `last` method selects the last elem in the array. This can be pretty useful.
+
+```ruby
+
+die = [1,2,3,4,5,6]
+die.first
+# => 1
+die.last
+# => 6
+```
+
 ##  Random (discrete uniform) sampling from arrays 
 
 The `sample` method selects an element at random from the array where each element has equal probability of begin selected.  This does not alter the array.
