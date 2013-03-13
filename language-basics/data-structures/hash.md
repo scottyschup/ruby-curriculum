@@ -77,6 +77,18 @@ puts capitals
 # => { 'New York' => 'Albany' }
 ```
 
+Or we can opt to use the Hash#delete_if method to iterate through the hash while 
+deleting everything that returns true for a given expression.
+
+```ruby
+test_hash = {'a' => 100, 'b' => 25}
+test_hash.delete_if {|key, value| value <= 50} 
+puts test_hash
+# => {'a'=>100}
+
+```
+
+
 ### `Hash#merge`
 
 We can also merge two hashes together:
