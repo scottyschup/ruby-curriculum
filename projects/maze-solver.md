@@ -26,7 +26,9 @@ sure to find the *shortest path* through the maze.
 
 ## Resources
 * Reading Files [progzoo]
+* Simple-ish explanation for computer pathfinding, start at "Starting the Search" heading [policyalmanac]
 * Wikipedia: maze shortest path [wikipedia]
 
 [progzoo]: http://progzoo.net/wiki/Ruby:Read_a_Text_File
+[policyalmanac]: http://www.policyalmanac.org/games/aStarTutorial.htm
 [wikipedia]: http://en.wikipedia.org/wiki/Maze_solving_algorithm#Shortest_path_algorithm
