@@ -92,7 +92,7 @@ end
 amp_makes_block_a_proc {|x| x+1}
 #=> Proc
 ```
-
+*unclear*
 What's the difference between a block and a `Proc`? A block is the
 Ruby code you write; Ruby then creates an object that will store your
 block so that you can call it later. You can create a `Proc` object
