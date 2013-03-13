@@ -302,8 +302,8 @@ You can also use the downto method in `Integer`.
 
 ## Nesting loops
 
-Loops can be placed inside each other, or *nested*. Here's some nested
-loops that prints out a times table:
+Loops can be placed inside each other, or *nested*. Here are some nested
+loops that print out a times table:
 
 ```ruby
 (1..10).each do |i|
