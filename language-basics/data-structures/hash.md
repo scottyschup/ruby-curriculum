@@ -186,6 +186,10 @@ wrong_hash = { :a => "banana", :b => "cabbage", :c => "dental_floss", :d => "eel
 ```
 Write a program `hash_correct` that takes this wrong hash and returns the correct one.
 
+### Counting with hashes!
+
+Experiment by writing a couple of short programs that will use Hashes to count objects by incrementing a key value.
+
 
 [ruby-doc]: http://www.ruby-doc.org/stdlib-1.9.3/libdoc/set/rdoc/Set.html
 
