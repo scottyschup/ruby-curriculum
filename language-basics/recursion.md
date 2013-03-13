@@ -113,7 +113,9 @@ elements of the stack are called *stack frames*, and they contain the
 local variables used by that method.
 
 If you get caught in a recursive loop, the stack will grow infinitely
-until the system runs out of memory. This is called a *stack
+until the system runs out of memory. This is because our methods depend 
+on some method closing to close themselves (*i.e.* the base case) in the
+Fibonnacci example. Running out of memory like this is called a *stack
 overflow*, and Ruby will tell you that the stack level got too deep.
 
 ## Exercises
