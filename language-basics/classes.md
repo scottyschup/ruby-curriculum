@@ -146,6 +146,8 @@ cat1 = Cat.new("Breakfast", 8, "San Francisco")
 cat2 = Cat.new("Earl", 2, "San Francisco")
 ```
 
+Helpful reference: http://www.railstips.org/blog/archives/2009/05/11/class-and-instance-methods-in-ruby/
+blog about Class and Instance Methods
 ### `initialize` and `new`
 
 Here's the start of our cat class:
