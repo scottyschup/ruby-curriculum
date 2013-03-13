@@ -79,7 +79,7 @@ if __FILE__ == $PROGRAM_NAME
 end
 ```
 Here `$PROGRAM_NAME` is an example of a special global variable which has an ever expansive scope. 
-'__FILE__' is the name of the file the code lives in.  See [this link][file]
+'__FILE__' is the name of the file the code lives in.  See [this link][file].
 Even if you're loading in the contents of a library, you'll still have access to the `$`-globals defined within it.
 See [this link][rubyist-global-vars].  
 [rubyist-global-vars]: http://www.rubyist.net/~slagell/ruby/globalvars.html
