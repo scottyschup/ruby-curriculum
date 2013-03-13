@@ -121,7 +121,8 @@ contents = File.read("movie-times.txt")
 
 To read the lines individually, use readlines
 ```ruby
-contents = File.readlines("movie-times.txt") ## gives an array, with each element representing a line of "movie-times.txt"
+contents = File.readlines("movie-times.txt") ## gives an array, 
+with each element representing a line of "movie-times.txt"
 ```
 
 
