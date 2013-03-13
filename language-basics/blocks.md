@@ -84,6 +84,15 @@ signifies that `blk` should hold a `Proc`. The block, if provided,
 gets turned into a `Proc`, which is then stored in the `blk` variable;
 if no block is provided, `blk` is set to `nil`.
 
+```ruby
+def amp_makes_block_a_proc(&block)
+  puts &block.class
+end
+
+amp_makes_block_a_proc {|x| x+1}
+#=> Proc
+```
+
 What's the difference between a block and a `Proc`? A block is the
 Ruby code you write; Ruby then creates an object that will store your
 block so that you can call it later. You can create a `Proc` object
