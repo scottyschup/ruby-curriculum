@@ -41,10 +41,10 @@ def go_home
 end
 ```
 
-See [this post][themorohoax] for more on this example and why you
+See [this post][eriwen.com] for a similar example and why you
 might want to do this.
 
-[themorohoax]: http://www.themomorohoax.com/2009/02/09/ruby-tip-return-early
+[eriwen.com]: http://www.eriwen.com/ruby/more-readable-conditionals/
 
 There are also methods that return nothing; we just use for their
 side-effects. When we say side-effect, we mean some sort of
