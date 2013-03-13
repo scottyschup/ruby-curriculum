@@ -12,8 +12,7 @@ We can't use a variable before it is defined:
 def pow(base, exponent)
   i = 0
   while i < exponent
-    # Error: result is being used before it has been defined.
-    result = result * base
+    result = result * base  # Error: result is being used before it has been defined.
 
     i += 1
   end
