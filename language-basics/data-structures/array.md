@@ -325,6 +325,15 @@ object. However, use the safe version as a default, and only use
 unsafe methods when you have a reason. Again, don't worry about speed
 until you see a performance problem in real life.
 
+## Shuffling an array
+
+To shuffle an array in random order, use the `shuffle` method:
+
+```ruby
+[1, 2, 3].shuffle
+# => [2, 1, 3]
+```
+
 ##  Access first and last elem in arrays
 
 The `first` method selects the first elem in the array. The `last` method selects the last elem in the array. This can be pretty useful.
