@@ -130,3 +130,7 @@ Estimated time: .25hrs
 * Write a method `super_print` that takes a `String`. It should take
   optional parameters `:times`, `:upcase`, `:reverse`. Pick reasonable
   [defaults](http://stackoverflow.com/a/977546).
+
+## Resources
+
+* [About.com on options](http://ruby.about.com/od/advancedruby/qt/opthash.htm)
