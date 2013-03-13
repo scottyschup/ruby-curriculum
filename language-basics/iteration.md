@@ -173,7 +173,7 @@ musicians.each do |musician|
 end
 ```
 
-Here, you are *iterating* over the elements of the array. The lines
+Here, you are *iterating* over the *elements* of the array. The lines
 between the do and end are the code block to repeat. For each element
 in the array, the `each` method sets the musician variable to the
 current element, then executes the code block.
@@ -214,7 +214,7 @@ example) is still bound after exiting the loop. This doesn't happen with `each`.
 
 ## each_with_index
 
-`each` is cleaner then `while`, but sometimes you also
+`each` is cleaner than `while`, but sometimes you also
 need the index of each element. In a while loop, you can do this by referencing the iterator:
 
 ```ruby
