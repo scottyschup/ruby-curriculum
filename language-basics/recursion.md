@@ -126,18 +126,22 @@ Estimated time: 5hrs
 * Write two versions of exponent that use two different recursions:
 
 ```
-# this is math, not Ruby methods. Lookup `floor`, `ceil` methods of
-# Float.
+# this is math, not Ruby methods.
 
+# recursion 1
 exp(b, 0) = 1
 exp(b, n) = b * exp(b, n - 1)
 
+# recursion 2
 exp(b, 0) = 1
-exp(b, 1) = b
-exp(b, n) = exp(b, floor(n / 2)) * exp(b, ceil(n / 2))
+exp(b, n) = exp(b, n / 2) ** 2             [for even n]
+exp(b, n) = b * (exp(b, (n - 1) / 2) ** 2) [for odd n]
 ```
 
-Which one do you think should run more quickly?
+If the `n == 256`, about how many recursive steps will we run in the
+first case? About how many in the second? Keep in mind that the first
+reduces the exponent by one for each recursion, while the second
+reduces it by half.
 
 * The `#dup` method doesn't make a *deep copy*:
 
@@ -176,7 +180,7 @@ You should be able to handle "mixed" arrays like `[1, [2], [3, [4]]]`.
 * Write a recursive [binary search][wiki-binary-search]:
   `bsearch(array, target)`. **Note that binary search only works on
   sorted arrays**. Make sure to return the location of the found
-  object (or -1 if not found!). Hint: you will probably want to use
+  object (or `nil` if not found!). Hint: you will probably want to use
   subarrays.
 * RubyQuiz: [Make change](http://www.rubyquiz.com/quiz154.html)
   * Whenever we assign a Ruby Quiz, after solving it, make sure to
