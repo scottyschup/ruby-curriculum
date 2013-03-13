@@ -265,6 +265,7 @@ end
 
 Again, you get to avoid an index variable.
 
+
 ## Range
 
 A range is exactly what it sounds like:
@@ -280,6 +281,15 @@ ranges just like we iterated over arrays:
 (1..10).each do |i|
   puts i * i
 end
+```
+
+Note that ranges cannot go from a smaller value to a larger value (i.e. 10..1)
+
+```ruby
+(10..1).each do |i|
+  puts i
+end
+# this example will not puts anything
 ```
 
 ## Nesting loops
