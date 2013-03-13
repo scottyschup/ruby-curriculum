@@ -175,8 +175,8 @@ end
 See how I separate the incrementing from the true "body" of the while
 loop? They're separate concerns, so I want to take a breath there.
 
-Likewise, a blank line before a new method. You should always have a
-blank line before methods.
+Likewise, you should always have a
+blank line before a method definition.
 
 As ever, your best guide is other people's code. Look especially at my
 code, since I'm the one who will bug you about it :-)
