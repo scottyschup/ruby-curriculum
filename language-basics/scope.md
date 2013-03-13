@@ -3,8 +3,6 @@
 Scope is the context in which a variable name is valid and can be
 used.
 
-A name is *in scope* (accessible) if
-
 A name is *in scope* (accessible) if the name has been previously defined in the current method (called a
   *local variable*) or at a higher level of the current method. A new level starts whenever we begin a class, a method, or a block.
 
