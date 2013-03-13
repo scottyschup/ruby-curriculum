@@ -62,6 +62,8 @@ better enable change.
 
 **TODO: They don't know what coupling is yet!**
 
+Here is an interesting analysis of [coupling][coupling-principles]:
+
 Indecent exposure may result in coupling that is too tight. The more
 extensive your classes' interface, the more tightly other classes can
 latch on to it.
@@ -69,6 +71,8 @@ latch on to it.
 A complicated interface can also signal a class that is doing too
 much. Probably there's an opportunity to break out responsibilities to
 other classes.
+
+[coupling-principles]:http://www.jasoncoffin.com/cohesion-and-coupling-principles-of-orthogonal-object-oriented-programming/
 
 **Speculative Generality**: Follow the principle of
 [YAGNI][wiki-yagni] ('You ain't gonna need it'). New devs often waste
