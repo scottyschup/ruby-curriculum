@@ -69,8 +69,7 @@ what the method returns. Names like `calculate_cosine` and
 `get_square_root` are overly verbose.
 
 **For methods that do have side-effects, try using a verb followed by
-a noun.** Describe what the method is doing, and to/with what. A
-couple good examples here are `print_document` and `deposit_funds`.
+a noun.** Describe what the method is doing, and to/with what. For example, `print_document` or `deposit_funds`.
 
 **Establish conventions for common operations** If there is a
 prevailing convention for a common operation, defer to it. If not,
