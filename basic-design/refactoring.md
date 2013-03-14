@@ -107,19 +107,6 @@ micromanage how other objects manage their responsibilities.
 your codebase. This is why we have version control (we'll learn about
 git soon!).
 
-## Cane + Reek
-
-Though the first line of defense against code smells (and the bugs
-they might indicate) should be a critical eye, there are a few code
-analysis tools that will point out potential areas of concern.
-
-We've seen Flay before; you also should try out [cane][cane] and
-[reek][reek]. I don't always agree with everything these tools say,
-but you should try them out on your projects going forward.
-
-[cane]: https://github.com/square/cane
-[reek]: https://github.com/troessner/reek
-
 ## Refactoring: From Good to Great
 
 Watch Ben Orenstein's talk:
