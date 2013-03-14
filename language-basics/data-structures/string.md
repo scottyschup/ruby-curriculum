@@ -73,6 +73,8 @@ The "\n" will be interpreted as just that, and not a newline as we intend.
 
 These are common problems with complex strings! Not to fret; there are several solutions.
 
+One classic way to handle ` " ` and ` ' ` and ` \ ` within strings is to make a double quoted string and use ` \ ` as an escape character.  Ex: ` "\"Pigs\" is double quoted, and this is a backslash \\" ` will print: "Pigs" is double quoted, and this is a backslash \"
+
 (more to come)
 * %q
 * %Q
