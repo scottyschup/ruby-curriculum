@@ -193,8 +193,14 @@ You should be able to handle "mixed" arrays like `[1, [2], [3, [4]]]`.
 [wiki-binary-search]: http://en.wikipedia.org/wiki/Binary_search
 [wiki-merge-sort]: http://en.wikipedia.org/wiki/Merge_sort
 
+## Additional Exercises
+
+* Consider the Tower of Hanoi problem. Starting with a stack of n discs, create a method that can solve the problem iteratively and another than can solve the problem figuratively.
+
 ## Resources
 
 * [Wikipedia: Recursion][wiki-recursion]
+* [The Bastards Book of Ruby: Recursion][bastard-recursion]
 
 [wiki-recursion]: http://en.wikipedia.org/wiki/Recursion_(computer_science)
+[bastard-recursion]: http://ruby.bastardsbook.com/chapters/recursion/
