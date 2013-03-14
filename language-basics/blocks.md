@@ -289,7 +289,8 @@ more verbosely as:
 [1, 2, 5].select { |i| i.odd? }
 ```
 
-## Exercises
+## Exercises 
+*Some lambda specific exercises would have been nice*
 
 Estimated time: 1hrs
 
