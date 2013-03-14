@@ -15,7 +15,8 @@ a word randomly. Interaction should look something like so:
     Secret word: h_ll_
 
 Next, write the program to let the user pick a word; they only need to
-put in how long it is, not what the word is. The computer should,
+put in how long it is, not what the word is. The human player shouldn't
+trust giving the word to the computer. The computer should,
 using its dictionary, start guessing. The human should tell the
 computer the positions (if any) where that letter occurs.
 
