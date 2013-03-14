@@ -149,8 +149,8 @@ def swingers(couples)
 end
 ```
 
-**It reads like plain English; hiding away implementation details in
-helper methods.** If somebody looks at this code, they will
+**It reads like plain English.** Hiding away our implementation details in well-named helper methods
+both reduced the length of 'swingers' and made its structure more transparent. If somebody looks at this code, they will
 immediately understand what is going on, even without reading the
 definitions of `split_couples` and `zip_couples`. This makes it a lot
 easier to understand code.
