@@ -108,6 +108,9 @@ frequently use macros (especially with Rails, where they are heavily
 used). If something seems like magical syntax and you wonder where it
 came from, you might be looking at a macro.
 
+Bear in mind that these methods are very powerful, and will happily 
+overwrite any methods in the Class, even if they already exist.
+
 ## `method_missing`
 When a method is called on an object, Ruby first looks for an existing
 method with that name. If no such method exists, then it calls the
