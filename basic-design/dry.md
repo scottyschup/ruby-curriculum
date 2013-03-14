@@ -60,10 +60,3 @@ validation.
 A good rule of thumb with DRY is that if you find yourself copying 
 and pasting code into other places, you should most likely refactor
 to avoid duplication.
-
-## Flay
-
-[Flay](https://github.com/seattlerb/flay) examines your codebase
-looking for structural similarities in code sections. It doesn't catch
-all refactorings you should make, but it has few false-positives. Try
-running it on code you write going forward.
