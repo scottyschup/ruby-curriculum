@@ -57,6 +57,10 @@ making the consumer/business methods shorter and more focused on the
 details of checking the form, rather than the details of zip code
 validation.
 
+A good rule of thumb with DRY is that if you find yourself copying 
+and pasting code into other places, you should most likely refactor
+to avoid duplication.
+
 ## Flay
 
 [Flay](https://github.com/seattlerb/flay) examines your codebase
