@@ -188,6 +188,11 @@ You should be able to handle "mixed" arrays like `[1, [2], [3, [4]]]`.
   * Start out by solving the problem for sensible currencies like
     `[25, 10, 5, 1]`. After solving merge sort, come back around to
     solve the problem for currencies like `[10, 7, 1]`.
+
+
+*For Ruby quiz it would have been nice if I had known the solution was also discussed on the same
+page as the problem, so I could have figure more of it out myself.*
+
 * Implement a method, [`merge_sort`][wiki-merge-sort] that sorts an `Array`.
 
 [wiki-binary-search]: http://en.wikipedia.org/wiki/Binary_search
