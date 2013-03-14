@@ -20,8 +20,8 @@ input:
 
 ```ruby  
 swingers([
-    ["Clyde", "Bonnie"]
-    ["Paris", "Helen"]
+    ["Clyde", "Bonnie"],
+    ["Paris", "Helen"],
     ["Romeo", "Juliet"]
   ])
 ```
