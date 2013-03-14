@@ -193,7 +193,8 @@ You should be able to handle "mixed" arrays like `[1, [2], [3, [4]]]`.
 *For Ruby quiz it would have been nice if I had known the solution was also discussed on the same
 page as the problem, so I could have figure more of it out myself.*
 
-* Implement a method, [`merge_sort`][wiki-merge-sort] that sorts an `Array`.
+* Implement a method, [`merge_sort`][wiki-merge-sort] that sorts an `Array`. Hint: The base case for
+  this sort is surprisingly simple. 
 
 [wiki-binary-search]: http://en.wikipedia.org/wiki/Binary_search
 [wiki-merge-sort]: http://en.wikipedia.org/wiki/Merge_sort
