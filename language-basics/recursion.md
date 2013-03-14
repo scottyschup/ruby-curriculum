@@ -196,6 +196,9 @@ You should be able to handle "mixed" arrays like `[1, [2], [3, [4]]]`.
 ## Additional Exercises
 
 * Consider the Tower of Hanoi problem. Starting with a stack of n discs, create a method that can solve the problem iteratively and another than can solve the problem figuratively.
+* Write a recursive function to calculate how many ways can you place n indistinguishable balls into k labeled boxes.
+* Write a recursive function to calculate how many ways can you place n labeled balls into k unlabled boxes such that no box is empty. See [Stirling numbers of the second kind] [Stirling].
+
 
 ## Resources
 
@@ -204,3 +207,4 @@ You should be able to handle "mixed" arrays like `[1, [2], [3, [4]]]`.
 
 [wiki-recursion]: http://en.wikipedia.org/wiki/Recursion_(computer_science)
 [bastard-recursion]: http://ruby.bastardsbook.com/chapters/recursion/
+[Stirling]: http://en.wikipedia.org/wiki/Stirling_numbers_of_the_second_kind
