@@ -198,7 +198,7 @@ You should be able to handle "mixed" arrays like `[1, [2], [3, [4]]]`.
 * Consider the Tower of Hanoi problem. Starting with a stack of n discs, create a method that can solve the problem iteratively and another than can solve the problem figuratively.
 * Write a recursive function to calculate how many ways can you place n indistinguishable balls into k labeled boxes.
 * Write a recursive function to calculate how many ways can you place n labeled balls into k unlabled boxes such that no box is empty. See [Stirling numbers of the second kind] [Stirling].
-* After you've already written your recursive fibonacci method, go check out this discussion (page 4) of recursion and the [Fibonnaci sequence][Fib-Recursion] 
+* After you've already written your recursive Fibonacci method, go check out this discussion (page 4) of recursion and the [Fibonnaci sequence][Fib-Recursion] 
 
 ## Resources
 
