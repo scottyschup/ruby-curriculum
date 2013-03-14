@@ -62,6 +62,8 @@ better enable change.
 
 **TODO: They don't know what coupling is yet!**
 
+[From the wiki page:][coupling-wiki] "Coupling (dependency) is the degree 
+to which each program module relies on each one of the other modules."
 Here is an interesting analysis of [coupling][coupling-principles]:
 
 Indecent exposure may result in coupling that is too tight. The more
@@ -73,6 +75,7 @@ much. Probably there's an opportunity to break out responsibilities to
 other classes.
 
 [coupling-principles]:http://www.jasoncoffin.com/cohesion-and-coupling-principles-of-orthogonal-object-oriented-programming/
+[coupling-wiki]:http://en.wikipedia.org/wiki/Coupling_(computer_programming)
 
 **Speculative Generality**: Follow the principle of
 [YAGNI][wiki-yagni] ('You ain't gonna need it'). New devs often waste
