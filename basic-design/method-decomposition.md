@@ -205,7 +205,7 @@ Second, `square` doesn't return anything useful; instead, it
 communicates by setting a global variable. That is unnecessarily
 convoluted; just give the answer back directly.
 
-A general guideline: avoid global state. Don't use global variables to
+A general guideline, avoid global state. Don't use global variables to
 get around passing in arguments or return values.
 
 ## Don't modify arguments
