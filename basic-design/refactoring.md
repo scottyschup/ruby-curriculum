@@ -122,6 +122,7 @@ Watch Ben Orenstein's talk:
 * [How to write unmaintainable code][unmaintainable-code]
   * this one is a super long list of smells; don't worry about reading
     it all; we've already covered the most important smells.
-
+* [Ruby Refactoring Cheatsheet][ghendry-refactoring]
 [atwood-code-smells]: http://www.codinghorror.com/blog/2006/05/code-smells.html
 [unmaintainable-code]: http://thc.org/root/phun/unmaintain.html
+[ghendry-refactoring]:http://ghendry.net/refactor.html
