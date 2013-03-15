@@ -86,6 +86,7 @@
 + **Project**: Review old code.
 + **Project**: [Mastermind][mastermind]
 + **Project**: [Hangman][hangman]
++ **Bonus Project**: [Write a simple version of Sokoban!!!](http://rubyquiz.com/quiz5.html)
 
 [dry]: https://github.com/appacademy/ruby-curriculum/blob/master/basic-design/dry.md
 [naming]: https://github.com/appacademy/ruby-curriculum/blob/master/basic-design/naming.md
