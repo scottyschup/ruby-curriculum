@@ -352,6 +352,15 @@ named `age` when you use `=`; that is its default assumption. Only if
 you say `self.age` does it realize that you really want to call a
 method. So beware of this common mistake.
 
+You can also create classes from `struct`, used for quickly
+building out classes that store variables and contain reader 
+and writer methods.
+
+```
+Class = struct.new(:name, :department, :period)
+algorithms = Class.new(“Algorithms 101”, Programming , 2)
+```
+
 ## Class and Instance methods
 
 We've mostly talked about instance methods; instance methods are
