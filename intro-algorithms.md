@@ -75,7 +75,7 @@ been visited yet. If it has, we try to visit the right child, if it
 exists and hasn't been visited yet. If all the children have been
 visited, then we move up one level and repeat.
 
-### Breadth first search ([BFS](http://en.wikipedia.org/wiki/Breadth-first_search))
+## Breadth first search ([BFS](http://en.wikipedia.org/wiki/Breadth-first_search))
 
 Breadth first search is an alternative to depth-first search.
 
@@ -93,7 +93,7 @@ children, etc.
 An advantage of breadth-first search is that it considers shallower
 nodes before deeper ones.
 
-### Algorithm
+## Algorithm
 
 DFS and BFS are *algorithms*. An algorithm can be written in any
 language; we'll write Ruby methods that *implement* DFS and BFS
