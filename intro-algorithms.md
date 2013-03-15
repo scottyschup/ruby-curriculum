@@ -98,9 +98,10 @@ nodes before deeper ones.
 DFS and BFS are *algorithms*. An algorithm can be written in any
 language; we'll write Ruby methods that *implement* DFS and BFS
 shortly. What's the difference between an algorithm and a method? An
-algorithm is the idea, a process that solves a problem and could be
-written in any language. A method is the *implementation*, the actual
-realization of the algorithm in Ruby code that can be run.
+algorithm is the *concept*, an unambiguous but unrealized version of a 
+process that solves a problem and which potentially could be written in any 
+language. A method is the *implementation*, a conversion of an algorithm 
+into Ruby code which can then be run.
 
 ## Exercises
 
