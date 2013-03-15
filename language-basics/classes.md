@@ -15,6 +15,8 @@
 
 *I feel that I would have benifited from more explanation of OO concepts, like patterns*
 
+*Didn't go over static variables*
+
 ## Packaging data in Hashes
 
 It's common to have sets of related data. For instance, a cat has a
