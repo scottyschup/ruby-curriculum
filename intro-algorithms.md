@@ -213,3 +213,4 @@ or BFS. That's okay; you'll have to figure out the proper recursion.
 
 * Wikipedia: [Data structure](http://en.wikipedia.org/wiki/Data_structure)
 * Wikipedia: [Algorithm](http://en.wikipedia.org/wiki/Algorithm)
+* Cool Ruby Algorithm Library: https://github.com/kanwei/algorithms
