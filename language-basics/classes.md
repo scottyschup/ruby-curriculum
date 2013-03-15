@@ -357,8 +357,8 @@ building out classes that store variables and contain reader
 and writer methods.
 
 ```
-Class = struct.new(:name, :department, :period)
-algorithms = Class.new(“Algorithms 101”, Programming , 2)
+Course = struct.new(:name, :department, :period)
+algorithms = Course.new(“Algorithms 101”, Programming , 2)
 ```
 
 ## Class and Instance methods
