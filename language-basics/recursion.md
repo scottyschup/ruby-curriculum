@@ -13,7 +13,9 @@ be divided again into still smaller subproblems.
 
 The subproblems keep getting smaller and smaller, until they are small
 enough to solve trivially and directly. These small subproblems are
-called *base cases*.
+called *base cases*. When designing a recursive method, remember that
+the base case will always be returned as part of the calculation for the
+next level up in the method.
 
 The factorial operation is one example of a problem that can be solved
 recursively. Recall that five factorial is:
