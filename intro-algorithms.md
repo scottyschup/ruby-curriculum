@@ -219,3 +219,4 @@ or BFS. That's okay; you'll have to figure out the proper recursion.
 * Wikipedia: [Algorithm](http://en.wikipedia.org/wiki/Algorithm)
 * Cool Ruby Algorithm Library: https://github.com/kanwei/algorithms
 * Wikipedia: [http://en.wikipedia.org/wiki/Minimax]
+* Depth First Youtube video [http://www.youtube.com/watch?v=CIm6RzdoPCI]
