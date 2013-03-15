@@ -8,6 +8,8 @@ principle as follows:
 
 In other words: don't repeat yourself!
 
+<center>![alt text](http://ardalis.com/files/media/image/WindowsLiveWriter/DRYDontRepeatYourselfMotivator_BA85/dontrepeatyourself_motivator_2.jpg "Don't Repeat Yourself, Don't Repeat Yourself")</center>
+
 The most common way to avoid repetition is to break duplicated code
 into methods.
 
@@ -60,3 +62,4 @@ validation.
 A good rule of thumb with DRY is that if you find yourself copying 
 and pasting code into other places, you should most likely refactor
 to avoid duplication.
+
