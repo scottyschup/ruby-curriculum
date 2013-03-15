@@ -22,7 +22,7 @@ Ruby provides an Array class which is a "linear" collection of
 elements. But there are other ways to represent collections and
 organize data.
 
-*Trees* store data in a *hierarchy* of layers. An element, or *node*
+[*Trees*][trees-wiki] store data in a *hierarchy* of layers. An element, or *node*
 at each layer can have links to lower level nodes. One simple example
 is a file system:
 
@@ -53,7 +53,9 @@ structure is a way of storing and organizing data in a computer so
 that it can be used efficiently. Depending on how you will use the
 data, different data structures may be appropriate.
 
-## Depth First Search (DFS)
+[trees-wiki][http://en.wikipedia.org/wiki/Tree_data_structure]
+
+## Depth First Search ([DFS][dfs-wiki])
 
 Given a tree, we may wish to enumerate all the values held by nodes in
 the tree. For instance, we may wish to go through the files/folders of
@@ -74,8 +76,9 @@ Each time, we try to visit the left child, if it exists and hasn't
 been visited yet. If it has, we try to visit the right child, if it
 exists and hasn't been visited yet. If all the children have been
 visited, then we move up one level and repeat.
+[dfs-wiki][http://en.wikipedia.org/wiki/Depth-first_search]
 
-### Breadth first search
+### Breadth first search ([BFS][bfs-wiki])
 
 Breadth first search is an alternative to depth-first search.
 
@@ -92,6 +95,7 @@ children, etc.
 
 An advantage of breadth-first search is that it considers shallower
 nodes before deeper ones.
+[bfs-wiki][http://en.wikipedia.org/wiki/Breadth-first_search]
 
 ### Algorithm
 
