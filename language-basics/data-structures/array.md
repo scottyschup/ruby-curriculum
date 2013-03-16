@@ -235,6 +235,8 @@ nums
 ## shift and unshift
 
 Shift and unshift are the opposite of pop and push, respectively. 
+Shift removes the first element from the array and returns that element.
+Unshift pushes a new element into the front of the array and returns the modified array. 
 
 Example:
 ```ruby
