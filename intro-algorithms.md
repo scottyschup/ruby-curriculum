@@ -173,6 +173,9 @@ construct the series of moves.
 
 ### Tic-tac-toe AI
 
+*You should have extended your TreeNode to have multiple children before
+you implement this.
+
 Extend your tic-tac-toe AI player so that is is unbeatable.
 
 You can imagine representing the possibilities of the game in a
@@ -201,14 +204,21 @@ You should write your AI so that it
 The crux of your task is in implementing a `is_winning_node?(node,
 player)`. Intuitively, this should check that every child (grid after
 opponent's move) has a child (grid after our next move) which
-`is_a_winning node?`.
+`is_a_winning node?`. To be clear, a winning node is one that absolutely
+wins, regardless of what your opponent plays.
 
 `is_losing_node?` should then be easy to define; none of the child
-nodes should be a winning node for the opponent.
+nodes should be a winning node for the opponent. If a move results in
+your opponent having a winning node, you must trim that move.
 
 Final note: since the kind of search we're doing to evaluate
 `is_winning_node?` is a little sophisticated, it doesn't fit under DFS
 or BFS. That's okay; you'll have to figure out the proper recursion.
+
+Another note: when building the game tree, if you do not trim it, it could
+take upwards of 10 minutes (if not more). Think of ways to reduce branching. For example,
+if there is a winning move one could make, there is no way they would choose
+any other move.
 
 ## References
 
