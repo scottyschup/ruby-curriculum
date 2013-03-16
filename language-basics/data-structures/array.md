@@ -242,7 +242,11 @@ Example:
 ```ruby
 array = [1,2,3,4]
 array.shift
+# => 1
+
+array
 # => [2,3,4]
+
 array.unshift(5)
 # => [5,2,3,4]
 ```
