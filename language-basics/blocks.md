@@ -292,12 +292,15 @@ more verbosely as:
 Note: In order to convert a symbol to a string you can use `#t_s' or `#to_sym`
 to go from string to symbol
 
+## Required video
+
+* Watch Peter talk about [it all][peter-youtube-blocks].
+
 ## Exercises 
 *Some lambda specific exercises would have been nice*
 
 Estimated time: 1hrs
 
-* Watch Peter talk about [it all][peter-youtube-blocks].
 * Implement new `Array` methods `my_each`, `my_map`, `my_select`. Do
   it by monkey-patching the `Array` class. Don't use any of the
   original versions when writing these. If you want to use `each` to
