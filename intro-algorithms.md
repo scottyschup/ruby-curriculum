@@ -144,7 +144,7 @@ tree. It should have the following interface:
 
 ### Knight's Travails
 
-Write a method, `knight_path(start, end)`, that finds a path for a
+Write a method, `knight_path(start, finish)`, that finds a path for a
 knight between two positions on a chess board.
 
 You can represent sequences of knight moves with a tree. Each
