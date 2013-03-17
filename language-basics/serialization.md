@@ -45,7 +45,7 @@ You can easily serialize basic Ruby objects to a JSON string:
 => {"a"=>"always", "b"=>"be", "c"=>"closing"}
 ```
 
-JSON doesn't do know how to serialize more complicated classes though:
+JSON doesn't know how to serialize more complicated classes though:
 
 ```ruby
 > Cat.new("Breakfast", 8, "San Francisco").to_json
