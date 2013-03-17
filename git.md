@@ -150,3 +150,4 @@ return to Pro Git to read the following chapters on your own time:
 [gitready]: http://gitready.com
 [git-cheatsheet]: http://www.ndpsoftware.com/git-cheatsheet.html
 [git-add-p-post]: http://johnkary.net/git-add-p-the-most-powerful-git-feature-youre-not-using-yet/
+[git-tutorial]: http://www.vogella.com/articles/Git/article.html
