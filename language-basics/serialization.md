@@ -61,6 +61,7 @@ will also be a pain to do the opposite translation.
 YAML is meant to solve the problem of saving custom classes.
 
 ```ruby
+> require 'yaml'
 [12] pry(main)> c = Cat.new("Breakfast", 8, "San Francisco")
 => #<Cat:0x007ff434926690 @age=8, @city="San Francisco", @name="Breakfast">
 [13] pry(main)> puts c.to_yaml
