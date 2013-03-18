@@ -3,7 +3,7 @@
 ## Goals
 
 * Know what serialization and persistence are.
-* Know how to transfer between a Ruby object and a (JSON)[http://en.wikipedia.org/wiki/JSON] or (YAML)[http://en.wikipedia.org/wiki/Yaml]
+* Know how to transfer between a Ruby object and a [JSON](http://en.wikipedia.org/wiki/JSON) or [YAML](http://en.wikipedia.org/wiki/Yaml)
   representation.
 * Know how to save these to a file you might read again later.
 
