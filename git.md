@@ -58,7 +58,7 @@ a project.
 * How do you amend your previous commit?
 * How do you unstage a staged file?
   * How do you unstage all the staged files?
-* How do you "unmodify" a modified file using `git checkout`?
+* How do you "unmodify" a modified file using `git checkout`? (`git checkout filename.rb`)
 
 **Viewing previous commits**:
 * How do you list the previous commits (`git log`)?
