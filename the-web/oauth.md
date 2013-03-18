@@ -18,8 +18,7 @@ do we limit Instagram to posting on the wall, and not messaging our
 friends, too? How could we revoke Instagram's access to our Facebook
 account short of changing our password?
 
-OAuth (and OAuth 2.0) is the authentication scheme that solves way
-these problems are solved.
+OAuth (and OAuth 2.0) is the authentication scheme that Facebook and many other top sites use to solve this problem.
 
 ## A solution: OAuth
 
