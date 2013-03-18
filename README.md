@@ -105,16 +105,18 @@
 ## Git
 ### w1d6-w1d7
 + [git](https://github.com/appacademy/ruby-curriculum/blob/master/git.md)
++ **Project**: [Git immersion](http://gitimmersion.com/)
+  + **Project**: Do Hangman and Word chains again, using git this
+  time. Do not refer to your old code.
 
 ## Language Basics II, OO Design
 ### w2d1
 + [Serialization](https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/serialization.md) (JSON and YAML)
 + [Gems and rvm](https://github.com/appacademy/ruby-curriculum/blob/master/language-intermediate/gems-and-rvm.md)
-+ **Project**: [Git immersion](http://gitimmersion.com/)
-  + **Project**: Do Hangman and Word chains again, using git this
-  time. Do not refer to your old code.
 + **Project**: [Minesweeper][minesweeper]
+    * Use git. Here's a [git summary][git-summary].
 
+[git-summary]: ./git-summary.md
 [minesweeper]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/minesweeper.md
 
 ### w2d2
