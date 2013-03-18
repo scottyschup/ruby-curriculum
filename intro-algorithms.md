@@ -171,6 +171,9 @@ In `knight_path`, build the tree, then perform a search for the target
 position. Assuming the target is reachable, use the `parent` chain to
 construct the series of moves.
 
+Be sure to make any changes to any search algorithm you previously
+created to make it compatible if you will have more than 2 children.
+
 ### Tic-tac-toe AI
 
 *You should have extended your TreeNode to have multiple children before
