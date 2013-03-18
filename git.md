@@ -47,7 +47,7 @@ a project.
 * How do you stage files for tracking by git?
   * How do you stage a single file?
   * How do you stage all the files with outstanding changes in the
-    repo? (`git add .`)
+    repo? (`git add .`), to remove deleted files from repository as well (`git add -A`)
   * How do you stage files or chunks of files in patch mode? (`git add
     -p`)
 * How do you make a commit once you have staged files?
