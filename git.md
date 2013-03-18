@@ -141,6 +141,7 @@ return to Pro Git to read the following chapters on your own time:
   between workspace, index, local and upstream (remote).
 * A blog post on [`git add -p`][git-add-p-post]; this lets you
   interactively add changes to files, for more granular commits.
+* [Try Git][try-git], interactive 15 minute git introduction by github and code school.
 
 [aa-dotfiles]: https://github.com/app-academy/aa-dotfiles
 [pro-git]: http://git-scm.com/book
@@ -151,3 +152,4 @@ return to Pro Git to read the following chapters on your own time:
 [git-cheatsheet]: http://www.ndpsoftware.com/git-cheatsheet.html
 [git-add-p-post]: http://johnkary.net/git-add-p-the-most-powerful-git-feature-youre-not-using-yet/
 [git-tutorial]: http://www.vogella.com/articles/Git/article.html
+[try-git]: http://try.github.com/
