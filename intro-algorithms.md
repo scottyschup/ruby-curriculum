@@ -227,3 +227,5 @@ any other move.
 * Cool Ruby Algorithm Library: https://github.com/kanwei/algorithms
 * Wikipedia: [http://en.wikipedia.org/wiki/Minimax]
 * Depth First Youtube video [http://www.youtube.com/watch?v=CIm6RzdoPCI]
+* One Tree To Rule Them All (great page/tutorial on tree structure!) [http://ruby.about.com/od/textadventure/ss/One-Tree-To-Rule-Them-All.htm]
+
