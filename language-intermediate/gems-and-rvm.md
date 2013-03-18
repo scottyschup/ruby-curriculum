@@ -42,9 +42,9 @@ awesome_print`. That's it!
 ## `sudo gem install` and rvm
 
 > **This section is OS X and Linux specific**. Windows users cannot
-> install rvm: it's only for *nix systems. In any case, I believe that
-> Windows users who have installed Ruby through RubyInstaller should
-> already be able to install gems without using `sudo` and are already
+> install rvm: it's only for *nix systems. However, 
+> Windows users who have installed Ruby through RubyInstaller can
+> already install gems without using `sudo` and are already
 > using an up-to-date Ruby.
 
 If you aren't using rvm, you will run into an error like
