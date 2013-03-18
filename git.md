@@ -155,3 +155,4 @@ return to Pro Git to read the following chapters on your own time:
 [git-tutorial]: http://www.vogella.com/articles/Git/article.html
 [try-git]: http://try.github.com/
 [commit-msgs]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
+[Branching-Strategies]: http://nvie.com/posts/a-successful-git-branching-model/
