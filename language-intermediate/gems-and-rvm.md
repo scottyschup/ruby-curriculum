@@ -128,7 +128,7 @@ the repo on your machine) to try to figure out how things work.
 **TODO: Code and documentation reading exercises**
 
 Resources:
-If you have any corrupt installs, or issues with installing on OSX,
+If you have any corrupt installs, or issues with installing / setting up RVM on OSX,
 this article might be helpful [how-to-install-rvm][rvm-install-article]:
 
 
