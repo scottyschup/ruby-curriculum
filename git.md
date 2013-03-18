@@ -137,7 +137,7 @@ return to Pro Git to read the following chapters on your own time:
 * A very helpful [reference][git-ref] of common git commands, targeted to
   beginners.
 * [Gitready][gitready]: a blog of tips for git beginners.
-* A [visual cheat-sheet][git-cheat-sheet] of how git commands move files
+* A [visual cheat-sheet][git-cheatsheet] of how git commands move files
   between workspace, index, local and upstream (remote).
 * A blog post on [`git add -p`][git-add-p-post]; this lets you
   interactively add changes to files, for more granular commits.
