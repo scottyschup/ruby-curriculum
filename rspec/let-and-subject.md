@@ -46,7 +46,7 @@ is the focus of the test, `let` defines helper objects. Also, there
 can only be one `subject` (if you call it again, the subject is
 overriden), whereas you can define many helper objects through `let`.
 
-```
+```ruby
 describe Robot do
   subject(:robot) { Robot.new }
   let(:light_item) { double("heavy_item", :weight => 1) }
