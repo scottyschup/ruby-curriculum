@@ -99,3 +99,4 @@ better support for deserializing classes.
 ## References
 
 * About.com: [YAML](http://ruby.about.com/od/advancedruby/ss/Serialization-In-Ruby-Yaml.htm)
+* About.com: [JSON Gem](http://ruby.about.com/od/tasks/a/The-Json-Gem.htm)
