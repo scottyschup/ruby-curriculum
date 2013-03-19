@@ -56,7 +56,7 @@ end
 ```
 
 Notice what we've done here: each `Minnow` or `Shark` keeps track of
-its own position. Stored information like a `Minnow`'s position is is
+its own position. Stored information like a `Minnow`'s position is
 called the *state* of an object. `Minnow`s and `Shark`s have their own
 way of doing things (they both `#swim` differently); this is called
 *behavior*.
