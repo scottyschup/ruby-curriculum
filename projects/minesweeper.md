@@ -24,7 +24,8 @@ many adjacent bombs are nearby.
 ### Flag bomb
 
 The user may also flag a square as containing a bomb. The goal of the
-game is to flag all the bombs correctly; at this point the game ends.
+game is to flag all the bombs correctly and reveal all the bomb-free
+squares; at this point the game ends.
 
 If a bomb is flagged incorrectly, it is not eligible to be revealed,
 even if it otherwise would be.
