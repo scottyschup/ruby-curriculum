@@ -72,7 +72,7 @@ reason about.
 ## Choosing the right level of granularity
 We've said that we should "look for the nouns" when deciding what
 classes to define. But how do we choose the nouns? In our Shark/Minnow
-problem, why is `Shark` and `Minnow` the right level of granularity,
+problem, why are `Shark` and `Minnow` the right level of granularity,
 and not an `Aquarium` class that is responsible for modeling both
 sharks and fishes?
 
