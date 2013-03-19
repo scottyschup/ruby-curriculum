@@ -76,6 +76,13 @@ Finally, there is the DELETE method; this is used to delete an
 existing resource; for instance, perhaps we lose a client, and want to
 delete the customer from our database.
 
+| Verbs | Use case |
+| ----- | -------- |
+| GET | Retrieves a resource (*no* side effects, *safe*) |
+| POST | Creates a new resource |
+| PUT | Modifies a resource |
+| DELETE | Deletes a resource |
+
 ### Method safety
 As we've mentioned, some of these HTTP methods are used to ask a
 server to create, modify, or delete data stored in the server's
@@ -124,6 +131,23 @@ which determines how the requests are processed. In particular: HTTP
 doesn't define how the request gets processed; that will be our job
 as web developers.
 
+## What's a URL?
+
+[URL][url] is an abbreviation for uniform requests locator, and is commonly known as your everyday web address. By now you've probably seen billions of them, but let's examine the technical parts that make up a URL.
+
+    scheme://host:port/path?query_string#fragment_id
+
+* The **scheme** tells us what protocol we would like to use. The two schemes we are interested in are `http` and `https`. [Https][http-secure] is the secure encrypted version of the http protocol. This is always required.
+* The **host** can be either a domain name `www.appacademy.io` or an IP address `107.21.218.20`. This is always required.
+* The **port** lets you specify the port of the web server you want to send this request to. This is optional and rarely used. By default `http` will use port 80 and `https` will use port 443. The Rails server you use on your local machine will likely use port 3000, in the form of `http://localhost:3000/`
+* The **path** is used to identify different resources on the server. Often it will mimic a directory structure `/users/1/posts/1234`. The path to request the root of a website is `/`.
+* The **query string** allows us to send additional information along with our request, in [URL encoded][url-encoding] key-value pairs. The start of the query string is signalled by the question mark `?animal=cat&color=brown`. Key-value pairs are separated by `&` ampersands.
+* The **fragment id** is the part after the `#` hash mark. It is used to identify the piece of the web page you want to jump to.
+
+[url]: http://en.wikipedia.org/wiki/Uniform_resource_locator
+[http-secure]: http://en.wikipedia.org/wiki/HTTP_Secure
+[url-encoding]: http://en.wikipedia.org/wiki/Percent-encoding
+
 ## Request body and query string
 When we make a POST or PUT request, we can upload content to the
 server by embedding it in the request's body. An example that might
@@ -168,6 +192,7 @@ The Bing server will use the query string parameters to build its
 response to the GET request: presumably, it will treat the value keyed
 by "q" as the *query*. Once the server has generated the search
 results and the HTML response, it sends this back to the requester.
+
 
 ## Exercises
 Estimated time: .25hrs
