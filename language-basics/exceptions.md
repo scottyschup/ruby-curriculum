@@ -162,8 +162,7 @@ trying to imagine how that feature should work.
 ## Exercises
 Estimated time: 45min.
 
-* Go back to your Mastermind, Hangman, TreeNode, and Todo list
-  projects to harden your code, looking for places where you should
+* Go back to your Mastermind, Hangman, and TreeNode projects to harden your code, looking for places where you should
   throw exceptions, or rescue them.
 
 ## Resources
