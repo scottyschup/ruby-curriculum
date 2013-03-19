@@ -19,7 +19,7 @@ class Airplane
 end
 ```
 
-All methods after the `private` keyword are private to the
+All methods after the [`private`](http://ruby-doc.org/core-2.0/Module.html#method-i-private) keyword are private to the
 class. Notice that we have indented the private code; this isn't
 required, but might help you remember that this code is private.
 
