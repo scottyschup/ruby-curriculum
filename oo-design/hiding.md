@@ -58,13 +58,3 @@ public, it won't be a disaster. Myself, I focus on catching cases
 where a method is obviously internal to the workings of the
 class. Robust code ready to release to the outside world should be
 checked for this, though.
-
-## Exercises
-Estimated time: 1.5hr.
-
-You broke down the following problems into objects previously
-(Decomposition into Objects), now describe the public methods for the
-classes you had defined.
-
-Show the monopoly problem to a TA to get their sign off on your
-design.
