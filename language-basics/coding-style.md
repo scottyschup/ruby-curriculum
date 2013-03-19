@@ -7,6 +7,8 @@
   * Limit lines to 80 chars.
   * Avoid long methods and nesting more than two levels deep.
   * Don't over-comment.
+* Use our Textmate config!
+    * https://github.com/appacademy/dotfiles/blob/master/Global.tmProperties
 
 ## Style matters
 
