@@ -84,7 +84,7 @@ original definition in `User`. This is done through the call of
 Calls to `super` are especially common when overriding `initialize`.
 
 ## Inheritance and Code Reuse
-Inheritance has allowed us to avoid duplicate the methods that are
+Inheritance has allowed us to avoid duplicating the methods that are
 common to `User` and `SuperUser`. Here's another example:
 
 ```ruby
