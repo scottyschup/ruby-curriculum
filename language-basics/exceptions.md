@@ -168,6 +168,6 @@ Estimated time: 45min.
 
 ## Resources
 * [Skorks on exceptions][skorks-exceptions]
-
+* [Ruby Patterns][Ruby-Patterns]
 [skorks-exceptions]: http://www.skorks.com/2009/09/ruby-exceptions-and-exception-handling/
-[Ruby Patterns]: https://github.com/adomokos/DesignPatterns-Ruby/
+[Ruby-Patterns]:       https://github.com/adomokos/DesignPatterns-Ruby/
