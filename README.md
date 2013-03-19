@@ -144,9 +144,14 @@
 + [TDD](https://github.com/appacademy/ruby-curriculum/blob/master/rspec/intro-tdd.md)
 + [Whirlwind introduction to rspec](https://github.com/appacademy/ruby-curriculum/blob/master/rspec/intro-rspec.md)
 + [Test doubles](https://github.com/appacademy/ruby-curriculum/blob/master/rspec/test-doubles.md)
++ [`subject` and `let`][subject-and-let]
++ **Prep**: read assessment00 and assessment01 spec files the the
+  night before.
+    * Learn what you don't know about those specs.
 + **Project**: [First TDD Projects][first-tdd-projects]
 
 [first-tdd-projects]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/first-tdd-projects.md
+[subject-and-let]: https://github.com/appacademy/ruby-curriculum/blob/master/rspec/let-and-subject.md
 
 ### w2d6-w2d7
 + [Read additional git chapters](https://github.com/appacademy/ruby-curriculum/blob/master/git.md)
