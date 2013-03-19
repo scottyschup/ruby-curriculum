@@ -30,7 +30,7 @@ that don't concern them (user just wants to `fly`, doesn't want to
 know how that happens).
 
 Instance variables cannot be accessed outside the class so they are
-always "private" by default. You can however use `attr_accessor` to
+always "private" by default. You can however use [`attr_accessor`](http://ruby-doc.org/core-2.0/Module.html#method-i-attr_accessor) to
 expose instance variables and allow people to get or set them.
 
 ## Shy Code
