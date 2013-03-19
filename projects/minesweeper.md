@@ -52,3 +52,5 @@ to solve the game, keeping track of the ten best times. You may want
 to keep separate lists for the different sizes.
 
 [minesweeper-wiki]: http://en.wikipedia.org/wiki/Minesweeper_(Windows)
+
+[minesweeper-images]: https://www.google.com/search?q=minesweeper&hl=en&source=lnms&tbm=isch&sa=X&ei=-YpIUbm4Ne3OigLqtoCQCA&ved=0CAoQ_AUoAQ&biw=1440&bih=718#imgrc=oVJxrNO_45jh2M%3A%3BDpsumKp3yEhDPM%3Bhttp%253A%252F%252Fimgsrv.worldstart.com%252Fct-images%252Fminesweeper_cheat.jpg%3Bhttp%253A%252F%252Fwww.worldstart.com%252Fminesweeper-secret%252F%3B400%3B287
