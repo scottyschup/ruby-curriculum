@@ -81,18 +81,18 @@ end
 
 Notice the `&prc` argument? The ampersand is a special symbol that
 signifies that `prc` should hold a `Proc`. The block, if provided,
-gets turned into a `Proc`, which is then stored in the `prc` variable;
-if no block is provided, `prc` is set to `nil`.
+gets turned into a `Proc` object, which is then stored in the `prc`
+variable; if no block is provided, `prc` is set to `nil`.
 
 ```ruby
-def amp_makes_block_a_proc(&block)
-  puts &block.class
+def amp_makes_block_a_proc(&prc)
+  puts &prc.class
 end
 
 amp_makes_block_a_proc {|x| x+1}
 #=> Proc
 ```
-*unclear*
+
 What's the difference between a block and a `Proc`? A block is the
 Ruby code you write; Ruby then creates an object that will store your
 block so that you can call it later, a `Proc`. You can create a `Proc` object
@@ -131,8 +131,7 @@ end
 
 adding_method([1,1,1,], proc_add_1, proc_add_2) do 
   |num| puts num + 3 
-  end
-  
+end
 #=> 2
     3
     4
