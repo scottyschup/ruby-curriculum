@@ -70,7 +70,7 @@ a project.
 * What is a remote repo?
   * For instance, github is a remote repository.
 * How do you list the remote repos?
-* How do you add a remote repo?
+* How do you add a remote repo? (`git remote add custom_repo_name https://github.com/appacademy/example.git`)
 * How do you fetch data from a remote?
 * How do you push your changes to a remote?
   
