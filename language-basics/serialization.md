@@ -54,7 +54,10 @@ JSON doesn't know how to serialize more complicated classes though:
 
 You can fix this somewhat by defining a `to_json` method on your
 classes, but that involves you writing custom serialization code. It
-will also be a pain to do the opposite translation.
+will also be a pain to do the opposite translation. Note: JSON can
+only parse objects that contain arrays and hashes. Strings and numbers
+must be converted inside a hash or array structure to be read as JSON
+input.
 
 ## YAML
 
