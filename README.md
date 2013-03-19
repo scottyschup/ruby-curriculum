@@ -115,9 +115,11 @@
 + [Gems and rvm](https://github.com/appacademy/ruby-curriculum/blob/master/language-intermediate/gems-and-rvm.md)
 + **Project**: [Minesweeper][minesweeper]
     * Use git. Here's a [git summary][git-summary].
+    * Reread the [code review chapter][code-review]
 
 [git-summary]: ./git-summary.md
 [minesweeper]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/minesweeper.md
+[code-review]: https://github.com/appacademy/meta/blob/master/code-reviews.md
 
 ### w2d2
 + [Class inheritance](https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/inheritance.md)
