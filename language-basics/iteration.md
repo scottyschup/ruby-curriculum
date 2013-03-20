@@ -138,6 +138,7 @@ while i < numbers_to_search.count
   if my_favorite_number == current_number
     puts "List contains favorite number!"
     break
+    # end the method once the break line is reached
   end
 
   i += 1
