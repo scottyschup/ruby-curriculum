@@ -82,9 +82,12 @@ together the login request and the wishlist request. Without the
 cookie, the server would have no way to differentiate this request
 from user ruggeri from another request from user patel.
 
-Once a cookie is set, it continues to be uploaded to the server on
-every request until it *expires*. It is common for this to be set to a
-date far in the future so that the cookie continues to be uploaded.
+Once a cookie is set, it continues to be uploaded to the server on every
+request until it *expires* or is cleared out by the user. It is common to set
+the cookie to expire on a date far in the future so that it continues to be
+uploaded. This is called a *permanent cookie*. If no expiration date is set the
+cookie will be deleted when the web browser closes. This is called a *session
+cookie*.
 
 ### Shopping carts
 
