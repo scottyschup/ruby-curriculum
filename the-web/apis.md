@@ -26,7 +26,7 @@ in the terminal.
 
 Because the page layout information encoded in HTML is unnecessary and
 only the data matters, the client and server typically communicate by
-passing around a simpler, data-oriented format like JSON or XML.
+passing around a simpler, data-oriented format like [JSON][wiki-JSON] or [XML][wiki-XML].
 
 Because no HTML is returned, there are no links to click. How do you
 know what requests to make to the server? For instance, how would we know
@@ -42,6 +42,8 @@ could read tweets from Twitter, it could make posts to Reddit, etc.
 
 [skillcrush]: http://www.skillcrush.com/terms/api.html
 [twitter-doc]: https://dev.twitter.com/docs/api/1.1/get/statuses/show/%3Aid
+[wiki-JSON]: http://en.wikipedia.org/wiki/JSON
+[wiki-XML]: http://en.wikipedia.org/wiki/Xml
 
 ## RestClient
 We've talked a lot about HTTP requests. But we haven't seen how to
