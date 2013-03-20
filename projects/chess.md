@@ -26,4 +26,12 @@ passant". Likewise, **don't implement castling, draws, or pawn
 promotion**; if you finish early work on other things. You should
 handle check and check mate, however.
 
+Here's a four-move sequence to get to checkmate from a starting board
+for your checkmate testing: 
+
+ * f2, f3
+ * e7, e5
+ * g2, g4
+ * d8, h4
+
 [wiki-chess]: http://en.wikipedia.org/wiki/Chess
