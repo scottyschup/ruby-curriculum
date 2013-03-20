@@ -124,6 +124,8 @@ overflow*, and Ruby will tell you that the stack level got too deep.
 
 Estimated time: 5hrs
 
+* Write a recursive method, `range`, that takes a start and an end and
+  returns an array of all numbers between.
 * Write both a recursive and iterative version of sum of an array
 * Write two versions of exponent that use two different recursions:
 
