@@ -37,6 +37,10 @@ the second test test first moves the robot, then tests its
 position. You can't use the `its` method for this, but we can refer to
 the robot explicitly through the name we gave it.
 
+**Note that `subject` is used outside of an `it` spec**. Neither
+`subject` nor `let` can be defined inside of a spec; they are defined
+outside specs and used within them.
+
 ## `let`
 
 `subject` lets us define the subject of our tests. Sometimes we also
