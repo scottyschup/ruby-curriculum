@@ -151,7 +151,7 @@
 + **Project**: [First TDD Projects][first-tdd-projects]
 
 [first-tdd-projects]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/first-tdd-projects.md
-[subject-and-let]: https://github.com/appacademy/ruby-curriculum/blob/master/rspec/let-and-subject.md
+[subject-and-let]: https://github.com/appacademy/ruby-curriculum/blob/master/rspec/subject-and-let.md
 
 ### w2d6-w2d7
 + [Read additional git chapters](https://github.com/appacademy/ruby-curriculum/blob/master/git.md)
