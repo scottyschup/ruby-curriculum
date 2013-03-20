@@ -85,4 +85,6 @@ A good guideline to follow is not to introduce a new subclass until
 (1) you are facing two different subclasses of the base class, and (2)
 the two subclasses have substantially different behavior. In short,
 don't use inheritance until it serves a purpose like keeping your code
-DRY or helping code organization.
+DRY or helping code organization. (Remember that the point of DRY is to 
+minimize errors, speed up the debugging process and make your code easier
+to change or add to in the future.)
