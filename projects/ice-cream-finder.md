@@ -13,6 +13,9 @@ You may want to use a number of Google APIs:
 * [Directions API][directions-api]: given two addresses or lat/lngs,
   returns a series of directions between the two places.
 
+**Use Addressable::URI**, described in the APIs chapter. Do not build query
+strings by hand! That is ugly and error-prone!
+
 You may wish to use [Nokogiri][nokogiri] to strip out the HTML tags
 from Google Directions instructions. Nokogiri parses HTML into Ruby
 objects that you can call methods on.
