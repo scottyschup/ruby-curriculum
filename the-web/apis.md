@@ -97,6 +97,9 @@ Here we're POSTing a cashcats submission to Reddit.
 Likewise there are `RestClient.put` and `RestClient.delete`
 methods. They operate similarly.
 
+Learn about RESTful web development:
+[stackoverflow]: http://stackoverflow.com/questions/671118/what-exactly-is-restful-programming
+
 ## Formatting URLs
 It can be a pain to hard-code long URL strings into your code. This is
 particularly annoying if you need to update the values, or if you have
@@ -136,6 +139,3 @@ interface.
 [koala-github]: https://github.com/arsduo/koala
 [twitter-github]: https://github.com/sferik/twitter
 
-
-Learn about RESTful web development:
-[stackoverflow]: http://stackoverflow.com/questions/671118/what-exactly-is-restful-programming
