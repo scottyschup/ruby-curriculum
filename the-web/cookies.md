@@ -2,7 +2,7 @@
 
 ## Goals
 * Know what "statelessness" means.
-* Know what how a cookie can store data on the client.
+* Know how a cookie can store data on the client.
 
 ## HTTP is stateless
 HTTP is *stateless*; each request that a client makes is independent
