@@ -61,7 +61,7 @@ a project.
 * How do you "unmodify" a modified file using `git checkout`? (`git checkout filename.rb`)
 
 **Viewing previous commits**:
-* How do you list the previous commits (`git log`)?
+* How do you list the previous commits (`git log`)? To view 'all' logs, e.g. view branches on remote repos (`git log --all`)
 * Your readings don't mention the `git show` command, but you may want
   to look into this command so that you can get more detail on prior
   commits.
