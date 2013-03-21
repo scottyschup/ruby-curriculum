@@ -136,7 +136,7 @@ as web developers.
 
     scheme://host:port/path?query_string#fragment_id
 
-* The **scheme** tells us what protocol we would like to use. The two schemes we are interested in are `http` and `https`. [Https][http-secure] is the secure encrypted version of the http protocol. This is always required.
+* The **scheme** tells us what protocol we would like to use. The two schemes we are interested in are `http` and `https`. [Https][http-secure] is the secure encrypted version of the http protocol.
 * The **host** can be either a domain name `www.appacademy.io` or an IP address `107.21.218.20`. This is always required.
 * The **port** lets you specify the port of the web server you want to send this request to. This is optional and rarely used. By default `http` will use port 80 and `https` will use port 443. The Rails server you use on your local machine will likely use port 3000, in the form of `http://localhost:3000/`
 * The **path** is used to identify different resources on the server. Often it will mimic a directory structure `/users/1/posts/1234`. The path to request the root of a website is `/`.
