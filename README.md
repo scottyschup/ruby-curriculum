@@ -138,6 +138,7 @@
 + [OAuth](https://github.com/appacademy/ruby-curriculum/blob/master/the-web/oauth.md)
 + **Project**: [Ice Cream Finder](https://github.com/appacademy/ruby-curriculum/blob/master/projects/ice-cream-finder.md)
 * **Project**: [Twitter Client](https://github.com/appacademy/ruby-curriculum/blob/master/projects/twitter-client.md)
+* **Project**: [BART Planner](https://github.com/appacademy/ruby-curriculum/blob/master/projects/bart-planner.md)
 
 ## RSpec
 ### w2d4-w2d5
