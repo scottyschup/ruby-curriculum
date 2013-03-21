@@ -97,8 +97,8 @@ Here we're POSTing a cashcats submission to Reddit.
 Likewise there are `RestClient.put` and `RestClient.delete`
 methods. They operate similarly.
 
-Learn about RESTful web development:
-http://stackoverflow.com/questions/671118/what-exactly-is-restful-programming
+Learn more about [RESTful][Restful-so] web development:
+[Restful-so]: http://stackoverflow.com/questions/671118/what-exactly-is-restful-programming
 
 ## Formatting URLs
 It can be a pain to hard-code long URL strings into your code. This is
