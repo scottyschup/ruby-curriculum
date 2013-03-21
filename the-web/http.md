@@ -106,7 +106,7 @@ complaints about this kind of thing.
 The solution was to only delete posts when `DELETE` is requested
 against "posts/1234"; googlebot will never do
 this. This solution removes the "?delete" part of the URL, so that the
-method action is expressed the by the HTTP verb and not duplicated
+method action is expressed by the HTTP verb and not duplicated
 within the URL.
 
 Of course, why did they let an unauthenticated user delete posts? :-)
