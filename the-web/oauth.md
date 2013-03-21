@@ -35,7 +35,7 @@ the client application. Here's roughly how it works:
    the application directs them to a special URL hosted by the
    service. This page displays the application name and what
    permissions will be granted. The user will have to be logged in to
-   the service, and can then clicks to authorize. For example,
+   the service, and then clicks to authorize. For example,
    Instagram redirects the user to a twitter.com page which asks
    whether the user would like to authorize Instagram to post status
    updates.
