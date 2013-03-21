@@ -10,7 +10,7 @@
 Skillcrush has a good [description][skillcrush] of what an API
 is. When humans use a browser to visit a website, the browser submits
 an HTTP request, and the server replies with HTML which represents the
-structure of the page to be displayed. The web browser than *renders*
+structure of the page to be displayed. The web browser then *renders*
 the HTML: it turns the HTML code into the graphics that are displayed
 on your screen. Users then interact with the page by clicking links or
 hitting buttons, making new HTTP requests which continue the cycle.
