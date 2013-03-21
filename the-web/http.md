@@ -103,9 +103,8 @@ the post. But then googlebot came along, crawled all the links on the
 page, and deleted all the posts. At the time, Google got a lot of
 complaints about this kind of thing.
 
-The solution was to only delete posts when `DELETE` is requested
-against "posts/1234"; googlebot will never do
-this. This solution removes the "?delete" part of the URL, so that the
+The solution was to have the googlebots only delete posts when `DELETE` is requested
+against "posts/1234" -- with the "?delete" stripped off.  The
 method action is expressed by the HTTP verb and not duplicated
 within the URL.
 
