@@ -24,8 +24,8 @@ etc. Think about how a Tweet object would relate to a User (for
 example, how a User would fetch all their related Tweet objects?)
 
 Extra Credit:
-Persist your Users and Tweets by saving the objects to a File. Load
-from said file everything you run your script.
+Persist your Users and Tweets by saving the objects to a file. Load
+from said file everytime you run your script.
 
 [api-docs]: https://dev.twitter.com/docs/api/1.1
 [oauth-github]: https://github.com/oauth/oauth-ruby
