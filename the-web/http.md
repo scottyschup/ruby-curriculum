@@ -211,7 +211,7 @@ line. Observe the blank line at the end of the request portion in the
 example above; when you add one, the server should begin its response.
 
 Make sure to get the path part of the first request line right: look
-carefully at the example (`/wiki/Main_Page/`). You always must specify
+carefully at the example (`/wiki/Main_Page`). You always must specify
 a path when making a request; the most basic path is `/`.
 
 When you query Google, you should know that it is picky about
