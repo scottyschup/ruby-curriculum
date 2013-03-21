@@ -45,7 +45,7 @@ Now that the server has authenticated us, it needs to give us a record
 of this authentication, so that we can give this proof to the server
 when we subsequently make API requests requiring authorization. The
 server will check this *token*; by issuing us a token, we avoid
-needing to submitting our username and password on every request.
+needing to submit our username and password on every request.
 
 The proof is in the form of a cookie (ignore modhash for now; it's
 Reddit specific). The cookie is listed in the body for redundancy; the
