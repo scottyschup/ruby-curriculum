@@ -31,6 +31,9 @@ last**; play with your classes in IRB to start.
   writing `user.statuses`.
 * To start, the only instance variable your `User` will need is a
   username.
+* You should be able to create a new `User` object with
+  `User.new("my_user_name")`.
+* You should be able to get `#followers` and `#followed_users`.
 
 ### `EndUser`
 
