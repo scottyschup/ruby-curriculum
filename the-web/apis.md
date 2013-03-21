@@ -135,3 +135,7 @@ interface.
 [wiki-api]: http://en.wikipedia.org/wiki/API#Web_APIs
 [koala-github]: https://github.com/arsduo/koala
 [twitter-github]: https://github.com/sferik/twitter
+
+
+Learn about RESTful web development:
+[stackoverflow]: http://stackoverflow.com/questions/671118/what-exactly-is-restful-programming
