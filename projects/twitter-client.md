@@ -33,6 +33,8 @@ You should make your program Object-oriented:
 
 ### `EndUser`
 
+#### Class methods
+
 * You should write a class `EndUser` which subclasses `User`.
 * `EndUser` should have a class method,
   `EndUser::login(username)`, which uses Launchy to prompt the
@@ -47,6 +49,11 @@ You should make your program Object-oriented:
 * `EndUser` should also have a class method
   `EndUser::current_user` which returns an `EndUser` instance with
   your name.
+    * You probably want to create a new `EndUser` and store it in a
+      `@@current_user` class variable after you `login`.
+
+#### Instance methods
+
 * `EndUser` should have an instance method, `timeline`, which gets
   your timeline.
 * `EndUser` should also have instance methods `dm(target_user,
