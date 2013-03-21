@@ -17,7 +17,7 @@ hitting buttons, making new HTTP requests which continue the cycle.
 
 A [Web API][wiki-api] (Application Programming Interface) is a
 different way of interacting with a web application that makes it easy
-for another computer program (a *client*) to interact with
+for another computer program (a *client*) to interact with the
 application. For instance, maybe you're writing a command line program
 to check your tweets on Twitter. A program like this doesn't need all
 the extra layout information that is contained in HTML; you just want
