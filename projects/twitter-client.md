@@ -14,7 +14,8 @@ Hint: you will eventually need to set your app to ask to both read and
 post on your users' behalf. This is a key benefit of OAuth: a
 gradation of permission levels.
 
-You will want to use the [OAuth gem][oauth-github].
+You will want to use the [OAuth gem][oauth-github]. Look at my example
+at the end of the [OAuth chapter][oauth-chapter].
 
 ## General architecture
 
@@ -29,3 +30,4 @@ from said file everytime you run your script.
 
 [api-docs]: https://dev.twitter.com/docs/api/1.1
 [oauth-github]: https://github.com/oauth/oauth-ruby
+[oauth-chapter]: ../the-web/oauth.md
