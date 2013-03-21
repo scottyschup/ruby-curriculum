@@ -68,7 +68,7 @@ a project.
 
 **Interacting with remotes**:
 * What is a remote repo?
-  * For instance, github is a remote repository.
+  * For instance, github is a remote repository.  But also, another folder on your computer that you have cloned from to another folder is a remote repository.
 * How do you list the remote repos?
 * How do you add a remote repo? (`git remote add custom_repo_name https://github.com/appacademy/example.git`)
 * How do you fetch data from a remote?
