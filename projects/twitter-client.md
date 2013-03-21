@@ -14,7 +14,8 @@ your application act on behalf of a user.
 
 ## General architecture
 
-You should make your program Object-oriented:
+You should make your program Object-oriented. **Do the user interaction
+last**; play with your classes in IRB to start.
 
 ### `Status`
 
