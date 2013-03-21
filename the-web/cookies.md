@@ -110,7 +110,7 @@ X has added an item to its cart, since there are no usernames.
 One solution would be to store the shopping cart in the user's
 cookie. Each time the user makes a request, he'll upload the cookie
 containing his shopping cart. Whenever he adds an item, the server
-will send the shopping cart cookie back, having first append one more
+will send the shopping cart cookie back, having first appended one more
 item to it.
 
 ### Advantages and disadvantages
