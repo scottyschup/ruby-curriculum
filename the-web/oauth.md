@@ -103,7 +103,7 @@ CONSUMER_KEY = "consumer_key_from_service"
 CONSUMER_SECRET = "consumer_secret_from_service"
 
 CONSUMER = OAuth::Consumer.new(
-  CONSUMER_KEY, CONSUMER_SECRET, :site => "http://twitter.com")
+  CONSUMER_KEY, CONSUMER_SECRET, :site => "https://twitter.com")
 
 # ask the user to authorize the application
 def request_access_token
