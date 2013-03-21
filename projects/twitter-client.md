@@ -42,6 +42,8 @@ You should make your program Object-oriented:
 * `EndUser::login` should store a class instance variable,
   `@@access_token`, after login. Other classes should be able to
   access this through a getter method `EndUser::access_token`.
+    * For instance, inside `User#statuses` we will need to use
+      `EndUser::access_token` to make the API call.
 * Most classes will probably want to use `EndUser::access_token`
   to communicate with the Twitter API.
 * Until the `EndUser` calls `login`, `EndUser::access_token` will
