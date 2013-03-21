@@ -7,7 +7,7 @@ we've discussed, the user gives his username and password to the
 application, which then logs in as the user and performs actions in
 his name.
 
-Consider a application like Instagram which integrates with
+Consider an application like Instagram which integrates with
 Facebook. One way to give Instagram the power to post photos to your
 wall would be to provide Instagram with your Facebook username and
 password.
