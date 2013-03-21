@@ -3,7 +3,7 @@
 ## The problem
 We've already seen how a client can authenticate with a server so that
 subsequent requests may be checked for authorization. In the scheme
-we've discussed, the user give his username and password to the
+we've discussed, the user gives his username and password to the
 application, which then logs in as the user and performs actions in
 his name.
 
