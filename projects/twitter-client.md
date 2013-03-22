@@ -65,6 +65,8 @@ last**; play with your classes in IRB to start.
 * `EndUser` should also have instance methods `dm(target_user,
   message)` and `tweet(message)`.
 
+NOTE: Set your twitter app to have read/write/dm access
+
 ## Extra Credit
 
 * Extend your `Status` class to add methods like `mentions` to extract
