@@ -161,7 +161,10 @@ A standard way to do this is to store the key and secret in a separate
 ruby file, `secrets.rb`. This file *must not* be checked into the
 repo; the best way to do this is to add a `.gitignore` file to the
 repo that will filter out `secrets.rb`. When you push to a public
-github repo, you won't push your secrets along, too.
+github repo, you won't push your secrets along, too. (Also note that 
+if you opt to create user login files to serialize your tokens, the files
+created from your tokens will also contain your key and secret. Be
+careful to exclude these from your public repository as well!
 
 ## Resources
 
