@@ -99,7 +99,10 @@ that only the "end user" can do.
 * You should add some new methods: `EndUser#post_status(status_text)`
   and `EndUSer#direct_message(other_user, text)`.
 
-NOTE: Set your twitter app to have read/write/dm access
+NOTE: Set your twitter app to have read/write/dm access. You can also 
+take a look at the Ruby Documentation for the [ULI::Parser][ULI::Parser] for info on
+converting strings (such as a tweet) into URL safe text.
+[ULI::Parser]: http://www.ruby-doc.org/stdlib-1.9.3/libdoc/uri/rdoc/URI/Parser.html
 
 ## Extra Credit
 
