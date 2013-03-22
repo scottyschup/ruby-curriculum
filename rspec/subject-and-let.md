@@ -67,3 +67,6 @@ describe Robot do
   end
 end
 ```
+
+An [example][dry-up-rspec] of using `let` inside of a spec.
+[dry-up-rspec]:http://benscheirman.com/2011/05/dry-up-your-rspec-files-with-subject-let-blocks/
