@@ -14,56 +14,90 @@ your application act on behalf of a user.
 
 ## General architecture
 
-You should make your program Object-oriented. **Do the user interaction
-last**; play with your classes in IRB to start.
+You should make your program Object-oriented. **Don't bother doing any
+UI**; we'll play with your classes in IRB.
+
+### `TwitterSession`
+
+Write a `TwitterSession` class that will hold your `CONSUMER_KEY`,
+`CONSUMER_SECRET`, and `CONSUMER` tokens in constants.
+
+Add a class method, `TwitterSession::access_token` which will, if the
+user has not authorized the app before, will use Launchy to get him to
+authorize the app. Store the returned token in a class variable
+`@@access_token`. On subsequent methods, return this without requiring
+the end user to reauthorize.
+
+```ruby
+TwitterSession.access_token # => first time kicks off auth
+TwitterSession.access_token # => second time just fetches from @@access_token
+```
+
+You may also want to use my trick from the OAuth chapter to first try to
+`YAML.load` the credentials from a file. The access key should be
+stored in an instance variable.
+
+You'll use `TwitterSession::auth_token` anytime you want to interact
+with the API.
 
 ### `Status`
 
 * Write a `Status` (Twitter's technical name for a tweet) class; a
-  `Status` belongs to a `User`; you should be able to get the user by
-  writing `status.user`.
-* To start, the instance variables you should store are the status
-  message and the user who tweeted it.
+  `Status` belongs to a `User`
+* You should be able to get the message: `status.text`
+* You should be able to get the tweeting `User` by writing
+  `status.user`.
+* You may want an initalizer `Status#initialize(author, message)` as
+  well as a class method `Status::parse(json)` which parses the JSON
+  returned from Twitter.
 
 ### `User`
 
-* Write a `User` class. You should be able to get the statuses by
-  writing `user.statuses`.
-* To start, the only instance variable your `User` will need is a
-  username.
+Even though there will be only one "end user" who is using your app at
+any time, there are many Twitter users out there for you to interact
+with. For instance, all my friends on Twitter have user accounts.
+
+* Write a `User` class.
+* You should be able to get their statuses by writing `user.timeline`.
+* You should be able to get their `#followers` and `#followed_users`.
+* To start, the only instance variable your `User` will need to store
+  is the username. Everything can be looked up from just a user name.
+* As before, it would
 * You should be able to create a new `User` object with
-  `User.new("my_user_name")`.
-* You should be able to get `#followers` and `#followed_users`.
+  `User.new("my_user_name")`. As with `Status`, you may also want a
+  class method `User::parse(json)` which creates a `User` from the
+  JSON returned from Twitter.
+* API requests for followers and followed users (Twitter calls them
+  friends) return an array of user ids.
+    * To lookup user data for a list of user ids, use the `GET
+      users/lookup` endpoint.
+    * You should have a `User::parse_many` to create an array of
+      `User`s from an array of ids. This will need to do the lookup
+      request.
 
 ### `EndUser`
+
+There are many users for you to interact with in the Twitter universe,
+but there's only one you! After you login and authorize, for that
+session, only you can post new Tweets or send direct messages. Let's
+make a class `EndUser` which subclasses `User`, but adds a few methods
+that only the "end user" can do.
 
 #### Class methods
 
 * You should write a class `EndUser` which subclasses `User`.
 * `EndUser` should have a class method,
-  `EndUser::login(username)`, which uses Launchy to prompt the
-  user to authorize the service.
-* `EndUser::login` should store a class instance variable,
-  `@@access_token`, after login. Other classes should be able to
-  access this through a getter method `EndUser::access_token`.
-    * For instance, inside `User#statuses` we will need to use
-      `EndUser::access_token` to make the API call.
-* Most classes will probably want to use `EndUser::access_token`
-  to communicate with the Twitter API.
-* Until the `EndUser` calls `login`, `EndUser::access_token` will
-  return `nil`, of course.
-* `EndUser` should also have a class method
-  `EndUser::current_user` which returns an `EndUser` instance with
-  your name.
-    * You probably want to create a new `EndUser` and store it in a
-      `@@current_user` class variable after you `login`.
+  `EndUser::set_user_name(user_name)` to set the end user's user
+  name. Use this to create an `EndUser` object and save it in the
+  `@@current_user` class variable.
+* The `EndUser::me` class method should return `@@current_user`.
 
 #### Instance methods
 
-* `EndUser` should have an instance method, `timeline`, which gets
-  your timeline.
-* `EndUser` should also have instance methods `dm(target_user,
-  message)` and `tweet(message)`.
+* Because `EndUser` is a `User`, things like `EndUser.me.followers`,
+  `EndUser.me.timeline` should still work.
+* You should add some new methods: `EndUser#post_status(status_text)`
+  and `EndUSer#direct_message(other_user, text)`.
 
 NOTE: Set your twitter app to have read/write/dm access
 
