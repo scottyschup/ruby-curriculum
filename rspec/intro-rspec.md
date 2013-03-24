@@ -35,7 +35,10 @@ is not very important to us**
 * `it`
   * How do you name examples?
   * What word shouldn't you use in example titles?
-  * What is a pending example? e.g. call `it "<should do something.. explanation string>"` without a block; or within its block, at the top line, call `pending "<expanation for pending>"`
+  * What is a pending example?
+    * They are examples you haven't gotten to writing yet, or need to fix bugs for
+    * e.g. call `it "<should do something.. explanation string>"` without a block.
+    * e.g. within `#it` block, at the top line, call `pending "<expanation for pending>"`
   * What parameters does it take?
 * What is the difference between `before(:each)` and `before(:all)`?
   * Which one should you use most of the time?
@@ -49,7 +52,8 @@ is not very important to us**
   * What objects are these methods available on?
   * What is a matcher?
 * What is the most common equality matcher?
-* Which is correct: `should_not ==` or `should !=`?  Never use `something.should != another`, it is interpreted by Ruby as `!(something.should == another)`
+* Which is correct: `should_not ==` or `should !=`?  
+  * Never use `something.should != another`, it is interpreted by Ruby as `!(something.should == another)`
 * How can you use `be_close` matcher to test if a value is within
   some?
 * How do you match a regular expression? use `#match` or `=~` operator
@@ -61,7 +65,7 @@ is not very important to us**
 * How can you specify that a return value should "be truthy" (not
   `false` or `nil`), rather than be the `true` value itself?
   * Use `==` to check truthy-ness
-  * Use #equals to check whether value *equals* true or false
+  * Use `#equals` to check whether value *equals* true or false
 * How do you test the value of `has_key?`, and other methods starting
   with `has_`?
 * What are generated descriptions?
