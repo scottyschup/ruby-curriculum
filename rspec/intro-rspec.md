@@ -51,6 +51,8 @@ is not very important to us**
 * `should`, `should_not`, matchers
   * What objects are these methods available on?
   * What is a matcher?
+  * [Read about][expect-syntax] the new `expect` syntax that rspec will be leaning towards
+[expect-syntax]: http://myronmars.to/n/dev-blog/2012/06/rspecs-new-expectation-syntax
 * What is the most common equality matcher?
 * Which is correct: `should_not ==` or `should !=`?  
   * Never use `something.should != another`, it is interpreted by Ruby as `!(something.should == another)`
