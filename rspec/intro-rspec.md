@@ -131,7 +131,7 @@ Read more about why `let` may be preferred [here][myron-on-let].
 
 ## Review Robot Spec
 
-Go back to the [robot spec][robot-spec] from the first exercise. Read
+Go back to the robot spec from the intro assessment. Read
 the spec file and make sure everything makes sense to you.
 
 ## Unit vs Integration Tests
