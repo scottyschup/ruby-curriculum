@@ -35,7 +35,7 @@ is not very important to us**
 * `it`
   * How do you name examples?
   * What word shouldn't you use in example titles?
-  * What is a pending example? e.g. call `it "<should do something.. explanation string>"` without a block; or within its block, at the top line, call `pending "<expanation for pending>"
+  * What is a pending example? e.g. call `it "<should do something.. explanation string>"` without a block; or within its block, at the top line, call `pending "<expanation for pending>"`
   * What parameters does it take?
 * What is the difference between `before(:each)` and `before(:all)`?
   * Which one should you use most of the time?
