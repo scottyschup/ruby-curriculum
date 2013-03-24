@@ -28,8 +28,8 @@ The `subject` method is passed a name for the subject (`:robot`), as
 well as a block which constructs the subject. You can do any necessary
 setup inside the block.
 
-The `#position` test uses `its`. `its` takes a method, which it then
-runs on the `subject`; the block says the returned value should be
+The `#position` test uses `its`, which takes a method, then
+runs on the `subject`, saying the returned value should be
 `[0, 0]`.
 
 Other tests need to do more than test the initial value. For instance,
