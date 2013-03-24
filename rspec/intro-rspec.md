@@ -40,6 +40,8 @@ is not very important to us**
 * What is the difference between `before(:each)` and `before(:all)`?
   * Which one should you use most of the time?
 * How do you share example groups?
+  * Use `shared_examples_for "general subject"` passing it a block with each general test
+  * Call these general tests in an applicable #describe block using `it_behaves_like "general subject"`
 
 ### Ch13
 
