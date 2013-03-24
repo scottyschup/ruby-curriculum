@@ -33,7 +33,7 @@ runs on the `subject`; the block says the returned value should be
 `[0, 0]`.
 
 Other tests need to do more than test the initial value. For instance,
-the second test test first moves the robot, then tests its
+the second test first moves the robot, then tests its
 position. You can't use the `its` method for this, but we can refer to
 the robot explicitly through the name we gave it.
 
