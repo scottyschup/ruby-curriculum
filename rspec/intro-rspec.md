@@ -60,6 +60,8 @@ is not very important to us**
   return a specific result?
 * How can you specify that a return value should "be truthy" (not
   `false` or `nil`), rather than be the `true` value itself?
+  * Use `==` to check truthy-ness
+  * Use #equals to check whether value *equals* true or false
 * How do you test the value of `has_key?`, and other methods starting
   with `has_`?
 * What are generated descriptions?
