@@ -57,7 +57,7 @@ is not very important to us**
 * Which is correct: `should_not ==` or `should !=`?  
   * Never use `something.should != another`, it is interpreted by Ruby as `!(something.should == another)`
 * How can you use `be_close` matcher to test if a value is within
-  some?
+  some range?
 * How do you match a regular expression? use `#match` or `=~` operator
 * How can you use `expect {...}.to change{...}` to express an event
   and an outcome?
