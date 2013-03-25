@@ -2,6 +2,8 @@
 
 * Re-do w1d1 Array exercises TDD.
     * That means writing specs alongside code.
+    * **Don't use your old code**.
+        * That wouldn't be TDD, right?
     * For Towers of Hanoi, focus on non-UI stuff first.
         * `#render`
         * `#move`
