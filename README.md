@@ -86,7 +86,6 @@
 + **Project**: Review old code.
 + **Project**: [Mastermind][mastermind]
 + **Project**: [Hangman][hangman]
-+ **Bonus Project**: [Write a simple version of Sokoban!!!](http://rubyquiz.com/quiz5.html)
 
 [dry]: https://github.com/appacademy/ruby-curriculum/blob/master/basic-design/dry.md
 [naming]: https://github.com/appacademy/ruby-curriculum/blob/master/basic-design/naming.md
@@ -129,18 +128,33 @@
 + [Information hiding/encapsulation](https://github.com/appacademy/ruby-curriculum/blob/master/oo-design/hiding.md)
 + **Project**: [Chess](https://github.com/appacademy/ruby-curriculum/blob/master/projects/chess.md)
 
-## The Web
 ### w2d3
+* Continue Chess.
+
+## The Web
+### w2d4
 + [HTTP](https://github.com/appacademy/ruby-curriculum/blob/master/the-web/http.md)
 + [APIs](https://github.com/appacademy/ruby-curriculum/blob/master/the-web/apis.md)
 + [Cookies](https://github.com/appacademy/ruby-curriculum/blob/master/the-web/cookies.md)
 + [Intro to authentication](https://github.com/appacademy/ruby-curriculum/blob/master/the-web/intro-auth.md)
 + [OAuth](https://github.com/appacademy/ruby-curriculum/blob/master/the-web/oauth.md)
-+ **Project**: [Ice Cream Finder](https://github.com/appacademy/ruby-curriculum/blob/master/projects/ice-cream-finder.md)
-* **Project**: [Twitter Client](https://github.com/appacademy/ruby-curriculum/blob/master/projects/twitter-client.md)
++ **Project**: [Ice Cream Finder][ice-cream-finder]
+* **Project**: [Twitter Client][twitter-client]
+
+[ice-cream-finder]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/ice-cream-finder.md
+[twitter-client]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/twitter-client.md
+
+## Solo
+### w2d5
+* **Project**: [Checkers][checkers-project]
+
+[checkers-project]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/checkers.md
+
+### w2d6-w2d7
++ [Read additional git chapters](https://github.com/appacademy/ruby-curriculum/blob/master/git.md)
 
 ## RSpec
-### w2d4-w2d5
+### w3d1-w3d2
 + [TDD](https://github.com/appacademy/ruby-curriculum/blob/master/rspec/intro-tdd.md)
 + [Whirlwind introduction to rspec](https://github.com/appacademy/ruby-curriculum/blob/master/rspec/intro-rspec.md)
 + [Test doubles](https://github.com/appacademy/ruby-curriculum/blob/master/rspec/test-doubles.md)
@@ -152,9 +166,6 @@
 
 [first-tdd-projects]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/first-tdd-projects.md
 [subject-and-let]: https://github.com/appacademy/ruby-curriculum/blob/master/rspec/subject-and-let.md
-
-### w2d6-w2d7
-+ [Read additional git chapters](https://github.com/appacademy/ruby-curriculum/blob/master/git.md)
 
 ## Additional Bonus Topics
 + [Modules](https://github.com/appacademy/ruby-curriculum/blob/master/language-intermediate/modules.md)
