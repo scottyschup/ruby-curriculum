@@ -1,7 +1,7 @@
 # Test Doubles
 
 ## A Preface of Great Interest
-When we write unit tests, we want each our specs to test just one
+When we write unit tests, we want each of our specs to test just one
 thing. This can be a little complicated when we write classes that
 interact with other classes. For example, imagine
 
