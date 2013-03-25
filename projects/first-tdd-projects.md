@@ -27,8 +27,13 @@
   method `place_piece(position, color)`.
     * In particular, don't add a run loop yet.
 * A challenge is to write your code in a way that is *testable*.
+* Make sure to break up your code into different source files.
+    * Make sure to break up your specs into different files.
+    * Rip off my [Rakefile][rakefile].
+    * Split up your code into lib/spec dirs.
 
 [reversi]: http://en.wikipedia.org/wiki/Reversi
+[rakefile]: https://github.com/appacademy/ruby-solutions-public/blob/master/w3d1/Rakefile
 
 ### Reversi TDD: Part II
 * Begin writing a run-loop.
