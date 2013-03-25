@@ -199,9 +199,10 @@ end
 
 There are a number of other equality operations, but this is the most
 important one. You can read a good
-[write-up by Skorks][skorks-on-equality].
+[write-up by Skorks][skorks-on-equality]. Also see [SO][so-equals].
 
 [skorks-on-equality]: http://www.skorks.com/2009/09/ruby-equality-and-object-comparison/
+[so-equals]: http://stackoverflow.com/questions/7156955/whats-the-difference-between-equal-eql-and/7157051#7157051
 
 ## Resources
 * [Ruby-Doc on Object](http://ruby-doc.org/core-1.9.3/Object.html)
