@@ -1,16 +1,15 @@
 # Test Driven Development
 
-* w1d1 exercises TDD
-    * Especially Towers of Hanoi
-* fibs
+* Re-do w1d1 Array exercises TDD.
+    * That means writing specs alongside code.
+    * For Towers of Hanoi, focus on non-UI stuff first.
+        * `#render`
+        * `#move`
+        * `#won?`
 * TreeNode TDD
-    * Implement `bfs` (not `dfs`) and make sure path returned is
-      shortest.
-    * You don't need to otherwise test that the nodes are searched in
-      any particular order; specs should test what is done, not how.
-* TicTacToe
-    * Use test doubles when testing `HumanPlayer` and
-      `ComputerPlayer`.
+    * Implement `bfs` and `dfs`.
+    * Test that nodes are visited in the right order.
+    * That is a sort of weird test
 * [SalesEngine][sales-engine]
 
 [sales-engine]: http://tutorials.jumpstartlab.com/projects/sales_engine.html
