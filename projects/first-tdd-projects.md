@@ -9,7 +9,10 @@
 * TreeNode TDD
     * Implement `bfs` and `dfs`.
     * Test that nodes are visited in the right order.
-    * That is a sort of weird test
+        * You can do this by checking that the various nodes in the tree
+          receive `#value` in the specified order.
+        * You will want to check out the [`#ordered` expectation][rspec-doc].
 * [SalesEngine][sales-engine]
 
+[rspec-doc]: https://www.relishapp.com/rspec/rspec-mocks/docs/message-expectations
 [sales-engine]: http://tutorials.jumpstartlab.com/projects/sales_engine.html
