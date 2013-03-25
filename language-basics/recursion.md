@@ -54,6 +54,22 @@ factorial(3)
 => 6
 ```
 
+## Inductive reasoning
+
+Recursion allows us to solve larger problems by breaking them up into
+smaller problems that we can solve. Reasoning about problems like this
+is called *inductive reasoning*.
+
+Here's an example. I know that if I can count to `n`, I can count to
+`n+1` by (a) first counting to `n` and (b) then counting one more,
+`n+1`. Since I know how to count to `1` (just say "one"; the base
+case), I know that I can count to any number.
+
+The key to applying inductive reasoning to solve problems is to (a)
+identify how you can grow a smaller solution into a bigger solution,
+and (b) identify base cases which will be the "foundation" of your
+tower of recursion.
+
 ## Recursion vs iteration
 
 Recursive methods can always be written *iteratively*: using loops
