@@ -131,6 +131,11 @@ end
 
 Read more about why `let` may be preferred [here][myron-on-let].
 
+## Reminders
+
+Don't use `!=`.  Rspec does not support `object.should != value`.  Instead use 
+`object.should_not == value`.
+
 ## RSpec is a DSL
 
 RSpec is a great example of a [DSL][dsl-wiki], or domain specific language. 
