@@ -133,8 +133,8 @@ Read more about why `let` may be preferred [here][myron-on-let].
 
 ## Reminders
 
-Don't use `!=`.  Rspec does not support `object.should != value`.  Instead use 
-`object.should_not == value`.
+Don't use `!=`.  Rspec does not support `actual.should != expected`.  Instead use 
+`actual.should_not == expected`.
 
 ## RSpec is a DSL
 
