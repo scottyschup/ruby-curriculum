@@ -131,6 +131,13 @@ end
 
 Read more about why `let` may be preferred [here][myron-on-let].
 
+## RSpec is a DSL
+
+RSpec is a great example of a [DSL][dsl-wiki], or domain specific language. 
+A DSL is a language which is dedicated to a particular problem domain. 
+So, RSpec is a language (or in this case, just a superset of ruby) which allows 
+for clearer expression in the testing domain.
+
 ## Review Robot Spec
 
 Go back to the robot spec from the intro assessment. Read
@@ -159,3 +166,4 @@ suite will have both unit and integration tests.
 [myron-on-let]: http://stackoverflow.com/a/5359979
 [robot-spec]: ../assessments/00_intro_assessment/robot_spec.rb
 [rspec-cheat-sheet]: https://gist.github.com/dnagir/663876
+[dsl-wiki]: https://en.wikipedia.org/wiki/Domain-specific_language
