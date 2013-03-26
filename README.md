@@ -47,7 +47,7 @@
 + [Coding style][coding-style]
 + [Classes][classes]
 + [Pass by reference][pass-by-reference]
-+ **Project**: [MicroBlogger][microblogger] 
++ **Project**: [MicroBlogger][microblogger]
   * Don't do the Klout part.
 
 [iteration]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/iteration.md
@@ -154,7 +154,7 @@
 + [Read additional git chapters](https://github.com/appacademy/ruby-curriculum/blob/master/git.md)
 
 ## RSpec
-### w3d1-w3d2
+### w3d1
 + [TDD](https://github.com/appacademy/ruby-curriculum/blob/master/rspec/intro-tdd.md)
 + [Whirlwind introduction to rspec](https://github.com/appacademy/ruby-curriculum/blob/master/rspec/intro-rspec.md)
 + [Test doubles](https://github.com/appacademy/ruby-curriculum/blob/master/rspec/test-doubles.md)
@@ -166,6 +166,11 @@
 
 [first-tdd-projects]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/first-tdd-projects.md
 [subject-and-let]: https://github.com/appacademy/ruby-curriculum/blob/master/rspec/subject-and-let.md
+
+### w3d2
++ **Project**: [Poker][poker-project]
+
+[poker-project]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/poker.md
 
 ## Additional Bonus Topics
 + [Modules](https://github.com/appacademy/ruby-curriculum/blob/master/language-intermediate/modules.md)
