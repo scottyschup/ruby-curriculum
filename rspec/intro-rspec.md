@@ -136,6 +136,10 @@ Read more about why `let` may be preferred [here][myron-on-let].
 Don't use `!=`.  Rspec does not support `actual.should != expected`.  Instead use 
 `actual.should_not == expected`.
 
+On predicate syntatic sugar: With all predicates, you can strip off the ? and tack 
+on a "be_" to make an expectation.  For example, `Array.empty?.should == true` is equivalent
+to `Array.should be_empty`. 
+
 ## RSpec is a DSL
 
 RSpec is a great example of a [DSL][dsl-wiki], or domain specific language. 
