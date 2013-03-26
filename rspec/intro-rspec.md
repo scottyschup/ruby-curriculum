@@ -149,6 +149,7 @@ suite will have both unit and integration tests.
 * The [RSpec docs][rspec-docs] have lots of useful tricks. Knowing
   RSpec well will let you write beautiful specs.
 * [Here's a good RSPEC resource][monkeyman], with lots of clear examples.
+* [Awesome RSpec cheet sheet][rspec-cheat-sheet] to review what you've read.
 
 [monkeyman]: http://rubydoc.info/gems/rspec-mocks/
 [codeschool-rspec]: http://rspec.codeschool.com/levels/1
