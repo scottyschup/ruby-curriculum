@@ -68,6 +68,8 @@ changes in the code's behavior. This detects problems that can arise
 where a change later in the development cycle unexpectedly alters
 other functionality.
 
+**TODO**: they didn't understand that the cycle is write a test, write some code, repeat.
+
 ## Further Resources:
 * [HN thread on TDD in the context of startups][hn-tdd-startups]
 
