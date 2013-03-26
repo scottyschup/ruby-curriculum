@@ -70,3 +70,34 @@ end
 
 An [example][dry-up-rspec] of using `let` inside of a spec.
 [dry-up-rspec]:http://benscheirman.com/2011/05/dry-up-your-rspec-files-with-subject-let-blocks/
+
+### `let` does not persist state
+
+You might read that `let` memoizes its return value. Memoization means that the
+first time the method is invoked, the return value is cached and that same
+value is returned every subsequent time the method is invoked within the same
+scope. Since every `it` or `its` block is a different scope, `let` does not
+persist state between those specs. Example:
+
+```ruby
+class Cat
+  attr_accessor :name
+
+  def initialize(name)
+    @name = name
+  end
+end
+
+describe "let" do
+  let(:cat) { Cat.new("Sennacy") }
+
+  it "returns something we can manipulate" do
+    cat.name = "Rocky"
+    cat.name.should == "Rocky"
+  end
+
+  it "does not persist state" do
+    cat.name.should == "Sennacy"
+  end
+end
+```
