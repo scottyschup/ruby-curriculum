@@ -3,9 +3,49 @@
 Modules are bundles of methods and constants. The only difference
 between a class and a module is that you can't instantiate a module.
 
-Aside: You won't write modules often unless if you're writing
+Aside: You won't write modules often unless you're writing
 libraries/frameworks/etc., but you will see them often, so it's going
 to help to know how they work.
+
+## Include vs. Extend
+
+To add the methods defined in your module as instance methods, use `include`. Use `extend` to add the module methods as class methods. Example:
+
+```ruby
+module Emotions
+  def delight
+    puts "Purrr..."
+  end
+end
+
+class Cat
+  include Emotions
+end
+
+Cat.new.delight # Purrr...
+Cat.delight # NoMethodError: undefined method `delight' for Cat:Class
+
+class Cat
+  extend Emotions
+end
+
+Cat.delight # Purrr...
+Cat.new.delight # NoMethodError: undefined method `delight' for #<Cat:0x007f8cc384f790>
+```
+
+Modules also offer initialize hooks that get called when the module is either included or extended.
+
+```ruby
+module Emotions
+  def self.included(base)
+    ...
+  end
+
+  def self.extended(base)
+    ...
+  end
+end
+```
 
 ## Mixins
 
