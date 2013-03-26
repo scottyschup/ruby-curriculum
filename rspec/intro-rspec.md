@@ -157,3 +157,4 @@ suite will have both unit and integration tests.
 [rspec-docs]: https://www.relishapp.com/rspec/rspec-core/v/2-4/docs
 [myron-on-let]: http://stackoverflow.com/a/5359979
 [robot-spec]: ../assessments/00_intro_assessment/robot_spec.rb
+[rspec-cheat-sheet] https://gist.github.com/dnagir/663876
