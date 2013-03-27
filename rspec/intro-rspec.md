@@ -140,6 +140,9 @@ On predicate syntatic sugar: With all predicates, you can strip off the ? and ta
 on a "be_" to make an expectation.  For example, `Array.empty?.should == true` is equivalent
 to `Array.should be_empty`. 
 
+Note that RSpec changes the tense of predicate `has_key?`, so your test should look 
+like `Hash.should have_key :key.
+
 ## RSpec is a DSL
 
 RSpec is a great example of a [DSL][dsl-wiki], or domain specific language. 
