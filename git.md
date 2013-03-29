@@ -76,7 +76,7 @@ a project.
   
 ### ch3
 * What is a branch?
-* How do you create a new branch?
+* How do you create a new branch? `git branch new_branch_name`, or switch to the new branch as you're creating it with `git checkout -b new_branch_name`
 * How do you switch to another branch?
 * How do you list all the branches?
   * How is the current branch indicated?
