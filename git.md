@@ -82,7 +82,7 @@ a project.
   * How is the current branch indicated?
 * What is the name of the default (or first) branch?
 * How does Git know what branch you are currently on?
-* How do you merge another branch into your current branch?
+* How do you merge another branch into your current branch? `git merge other_branch_name`
 * What is a fast-forward merge?
 * What is the workflow of a merge conflict? (`merge` command, resolve
   conflicts, then `git commit`)
