@@ -21,6 +21,7 @@
   + [pry and debugger][pry-and-debugger]
   + [common error messages][common-error-messages]
 + [Source files][source-files]
++ [Writing a Ruby Script][writing-a-script]
 + **Project**: In Words (ex #15) from [Test First Ruby][test-first-ruby]
 + **Bonus project**: [Maze solver][maze-project]
 + **Bonus project**: Use Ruby to solve the
@@ -34,6 +35,7 @@
 [pry-and-debugger]: https://github.com/appacademy/ruby-curriculum/blob/master/debugging/debugger.md
 [common-error-messages]: https://github.com/appacademy/ruby-curriculum/blob/master/debugging/common-exceptions.md
 [source-files]: ./language-basics/source-files.md
+[writing-a-script]: ./language-basics/writing-a-script.md
 
 [test-first-ruby]: https://github.com/alexch/learn_ruby
 [maze-project]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/maze-solver.md
