@@ -222,7 +222,7 @@ page as the problem, so I could have figure more of it out myself.*
 [wiki-merge-sort]: http://en.wikipedia.org/wiki/Merge_sort
 
 ## Additional Exercises
-
+** DO NOT DO THESE **
 * Consider the Tower of Hanoi problem. Starting with a stack of n discs, create a method that can solve the problem iteratively and another than can solve the problem figuratively.
 * Write a recursive function to calculate how many ways can you place n indistinguishable balls into k labeled boxes.
 * Write a recursive function to calculate how many ways can you place n labeled balls into k unlabled boxes such that no box is empty. See [Stirling numbers of the second kind] [Stirling].
