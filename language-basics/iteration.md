@@ -285,19 +285,32 @@ end
 Note that ranges cannot go from a larger value to a smaller value (i.e. 10..1).
 
 ```ruby
+(10..1).to_a
+=> []
+```
+
+```ruby
 (10..1).each do |i|
   puts i
 end
-# this example will not puts anything
+# this example will therfore not puts anything
 ```
 
-One alternative you can consider is using (-10..-1).abs:
+One alternative you can consider is to reverse the array with numbers:
 
 ```ruby
-(-10..-1).to_a.reverse.each do |i|
+(1..10).to_a.reverse.each do |i|
   puts i
 end
 ```
+
+Or you could use negative numbers and absolute them:
+
+```ruby
+(-10..-1).map(&:abs)
+=> [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+```
+
 You can also use the downto method in `Integer`.
 
 
