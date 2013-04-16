@@ -190,6 +190,8 @@ strictly necessary. It's okay to iterate over array elements using
 
 You should be able to handle "mixed" arrays like `[1, [2], [3, [4]]]`.
 
+(Exercises cont.)--------------------------------------------
+
 * Write a recursive and an iterative Fibonacci method. The method
   should take in an integer `n` and return the first `n` Fibonacci
   numbers in an array.
