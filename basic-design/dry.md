@@ -49,7 +49,7 @@ def process_business_address_form(fields)
   # more form processing
 end
 
-def valid_zip(zip)
+def valid_zip?(zip)
   zip =~ /[1-9][0-9]{4}/
 end
 ```
