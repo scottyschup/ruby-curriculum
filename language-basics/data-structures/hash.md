@@ -42,7 +42,7 @@ with array:
 ```ruby
 capitals = { 'New York' => 'Albany', 'California' => 'Sacramento' }
 
-elements.each do |state, capital|
+capitals.each do |state, capital|
   puts "#{capital} is the capital of #{state}"
 end
 
