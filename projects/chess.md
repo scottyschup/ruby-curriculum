@@ -13,7 +13,7 @@ them aware of other pieces on the board?
 
 You'll have to write logic that determines whether the game is won.
 
-Some kind of `Game` class should keep track of who's move it is, as well
+Some kind of `Game` class should keep track of whose move it is, as well
 as the board, etc.
 
 You should not "bake in" the logic to prompt for a move into the game
