@@ -117,6 +117,7 @@
 + **Project**: [Minesweeper][minesweeper]
     * Use git. Here's a [git summary][git-summary].
     * Reread the [code review chapter][code-review]
+    * [Code review NYC][code-review-nyc]
 
 [git-summary]: ./git-summary.md
 [minesweeper]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/minesweeper.md
