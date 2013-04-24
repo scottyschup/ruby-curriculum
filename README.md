@@ -121,6 +121,7 @@
 [git-summary]: ./git-summary.md
 [minesweeper]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/minesweeper.md
 [code-review]: https://github.com/appacademy/meta/blob/master/code-reviews.md
+[code-review-nyc]: https://github.com/appacademy/meta/blob/master/code-reviews-nyc.md
 
 ### w2d2
 + [Class inheritance](https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/inheritance.md)
