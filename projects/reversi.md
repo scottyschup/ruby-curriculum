@@ -14,7 +14,7 @@
     * Split up your code into lib/spec dirs.
 
 [reversi]: http://en.wikipedia.org/wiki/Reversi
-[rakefile]: https://github.com/appacademy/ruby-solutions-public/blob/master/w3d1/Rakefile
+[rakefile]: https://github.com/appacademy/solutions/blob/master/w3/w3d1-w3d2/Rakefile
 
 ## Reversi TDD: Part II
 * Begin writing a run-loop.
