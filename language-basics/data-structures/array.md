@@ -467,9 +467,15 @@ occasionally useful and interesting to try out.
 
 ### Two sum
 
-Write a method that finds if an array of numbers has a pair that sums
-to zero. Be careful of the case of zero; there need to be two zeroes
-in the array to make a pair that sums to zero.
+Write a new `Array#two_sum` method that finds all pairs of
+positions where the elements at those positions sum to zero.
+
+NB: ordering matters. I want each of the pairs to be sorted
+smaller index before bigger index. I want the array of pairs to be
+sorted "dictionary-wise":
+
+* [0, 2] before [2, 1] (smaller first elements come first)
+* [0, 1] before [0, 2] (then smaller second elements come first)
 
 ### Towers of Hanoi
 
