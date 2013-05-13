@@ -2,15 +2,16 @@
 ## Meta
 
 + [Course Preliminaries][course-preliminaries]
-+ [Daily requirements][daily-requiements]
++ [Daily requirements][daily-requirements]
 + [First day instructions][first-day-instructions]
 
 [course-preliminaries]: https://github.com/appacademy/meta/blob/master/course-preliminaries.md
-[daily-requiements]: https://github.com/appacademy/meta/blob/master/daily-requirements.md
+[daily-requirements]: https://github.com/appacademy/meta/blob/master/daily-requirements.md
 [first-day-instructions]: https://github.com/appacademy/meta/blob/master/first-day-instructions.md
 
 ## Ruby basics
 ### w1d1
++ [A note on Ruby versions][versions]
 + Primitive Ruby types (common methods)
   + [Array][array]
   + [String][string]
@@ -27,6 +28,7 @@
 + **Bonus project**: Use Ruby to solve the
   [eight-queens problems][eight-queens]
 
+[versions]: ./language-basics/versions.md
 [array]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/data-structures/array.md
 [string]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/data-structures/string.md
 [hash]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/data-structures/hash.md

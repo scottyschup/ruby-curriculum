@@ -77,12 +77,12 @@ puts capitals
 # => { 'New York' => 'Albany' }
 ```
 
-(Or we can opt to use the Hash#delete_if method to iterate through the hash while 
+(Or we can opt to use the Hash#delete_if method to iterate through the hash while
 deleting everything that returns true for a given expression.)
 
 ```ruby
 test_hash = {'a' => 100, 'b' => 25}
-test_hash.delete_if {|key, value| value <= 50} 
+test_hash.delete_if {|key, value| value <= 50}
 puts test_hash
 # => {'a'=>100}
 ```
@@ -109,7 +109,7 @@ ones in the calling Hash:
 h1 = {:a => 'apple', :b => 'bat'}
 h2 = {:b => 'bravo', :c => 'charlie'}
 
-h1.merge(h2) # => {:a => 'apple', :b => 'bravo', :c => 'charlie'}    
+h1.merge(h2) # => {:a => 'apple', :b => 'bravo', :c => 'charlie'}
 ```
 
 Note also that `merge` does not modify either of the hashes, it
@@ -157,21 +157,12 @@ Estimated time: 30min
 
 ### Set
 
-In Math a Set is an exlusive list of numbers. Examples are the best way to show this.
-
-{3,5,6} is a set. 
-{3,5,6,6} is not. 
-
-In a set, order does not matter. So, {5,3,6} is the same as the one above. So, you can see, the actual index or order of these numbers do not matter, as they would were they to be held in an array. 
-
-
 Ruby provides a class named `Set`. You can read all about it in the
-[ruby-doc][ruby-doc]. Let's make a set of methods that will manipulate
+[ruby-doc][ruby-doc]. Let's create a few methods that will manipulate
 a `Hash` as if it were a `Set`.  Like so:
 
 ```ruby
-# Note these should be safe methods (no !)
-set_add_el({}, :x) # => {:x => true}
+set_add_el({}, :x) # => make this return {:x => true}
 set_add_el({:x => true}, :x) # => {:x => true} # This should automatically work if the first method worked
 set_remove_el({:x => true}, :x) # => {}
 set_list_els({:x => true, :y => true}) # => [:x, :y]
@@ -181,7 +172,7 @@ set_intersection # I'm not going to tell you how the last two work
 set_minus # Return all elements of the first array that are not in the second array, not vice versa
 ```
 
-Note: true is just used as a placeholder value. 
+Note: true is just used as a placeholder value.
 
 We could have defined a class named `Set`, and these methods would
 have been instance methods. We don't define a new class here because I
