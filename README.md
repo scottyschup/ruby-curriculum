@@ -42,11 +42,14 @@
 [eight-queens]: http://en.wikipedia.org/wiki/Eight_queens_puzzle
 
 ### w1d2
-+ [Iteration][iteration]
 + [Methods][methods]
++ [DRY: Don't Repeat Yourself][dry]
++ [Coding style][coding-style]
++ [Method decomposition][method-decomposition]
++ [Choosing good names][naming]
++ [Iteration][iteration]
 + [Symbols, Strings, and Option Hashes][symbols-and-strings]
 + [Input/Output][input-output]
-+ [Coding style][coding-style]
 + [Classes][classes]
 + [Pass by reference][pass-by-reference]
 + **Project**: [MicroBlogger][microblogger]
@@ -59,6 +62,9 @@
 [coding-style]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/coding-style.md
 [classes]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/classes.md
 [pass-by-reference]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/pass-by-reference.md
+[dry]: https://github.com/appacademy/ruby-curriculum/blob/master/basic-design/dry.md
+[naming]: https://github.com/appacademy/ruby-curriculum/blob/master/basic-design/naming.md
+[method-decomposition]: https://github.com/appacademy/ruby-curriculum/blob/master/basic-design/method-decomposition.md
 
 [microblogger]: http://tutorials.jumpstartlab.com/projects/microblogger.html
 
@@ -81,17 +87,11 @@
 
 ## Basic design
 ### w1d4
-+ [DRY: Don't Repeat Yourself][dry]
-+ [Choosing good names][naming]
-+ [Method decomposition][method-decomposition]
 + [Refactoring and Code Smells][code-smells]
 + **Project**: Review old code.
 + **Project**: [Mastermind][mastermind]
 + **Project**: [Hangman][hangman]
 
-[dry]: https://github.com/appacademy/ruby-curriculum/blob/master/basic-design/dry.md
-[naming]: https://github.com/appacademy/ruby-curriculum/blob/master/basic-design/naming.md
-[method-decomposition]: https://github.com/appacademy/ruby-curriculum/blob/master/basic-design/method-decomposition.md
 [code-smells]: https://github.com/appacademy/ruby-curriculum/blob/master/basic-design/refactoring.md
 
 [mastermind]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/mastermind.md
