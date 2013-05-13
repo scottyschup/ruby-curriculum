@@ -100,8 +100,8 @@ understand. Otherwise, first save the result in a temporary variable,
 then interpolate that:
 
 ```ruby
-MURDER = "redrum".reverse.upcase
-"#{MURDER}! #{MURDER}!"
+murder = "redrum".reverse.upcase
+"#{murder}! #{murder}!"
 ```
 
 String interpolation can only be done with double quotes (""), and
