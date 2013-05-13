@@ -11,6 +11,7 @@
 
 ## Ruby basics
 ### w1d1
++ [Keyboard Shortcuts][keyboard-shortcuts]
 + [A note on Ruby versions][versions]
 + Primitive Ruby types (common methods)
   + [Array][array]
@@ -38,6 +39,7 @@
 [common-error-messages]: https://github.com/appacademy/ruby-curriculum/blob/master/debugging/common-exceptions.md
 [source-files]: ./language-basics/source-files.md
 [writing-a-script]: ./language-basics/writing-a-script.md
+[keyboard-shortcuts]: https://github.com/appacademy/ruby-curriculum/blob/master/shortcuts.md
 
 [test-first-ruby]: https://github.com/alexch/learn_ruby
 [maze-project]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/maze-solver.md
