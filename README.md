@@ -2,11 +2,11 @@
 ## Meta
 
 + [Course Preliminaries][course-preliminaries]
-+ [Daily requirements][daily-requiements]
++ [Daily requirements][daily-requirements]
 + [First day instructions][first-day-instructions]
 
 [course-preliminaries]: https://github.com/appacademy/meta/blob/master/course-preliminaries.md
-[daily-requiements]: https://github.com/appacademy/meta/blob/master/daily-requirements.md
+[daily-requirements]: https://github.com/appacademy/meta/blob/master/daily-requirements.md
 [first-day-instructions]: https://github.com/appacademy/meta/blob/master/first-day-instructions.md
 
 ## Ruby basics
