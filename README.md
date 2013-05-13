@@ -11,6 +11,7 @@
 
 ## Ruby basics
 ### w1d1
++ [A note on Ruby versions][versions]
 + Primitive Ruby types (common methods)
   + [Array][array]
   + [String][string]
@@ -27,6 +28,7 @@
 + **Bonus project**: Use Ruby to solve the
   [eight-queens problems][eight-queens]
 
+[versions]: ./language-basics/versions.md
 [array]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/data-structures/array.md
 [string]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/data-structures/string.md
 [hash]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/data-structures/hash.md
