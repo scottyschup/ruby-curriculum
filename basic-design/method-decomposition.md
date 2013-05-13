@@ -3,7 +3,8 @@
 ## Methods should be atomic
 
 **Each method should do one thing.** A method should do a single,
-atomic thing. This may be one line of code, or three, but rarely more
+atomic thing (we will often refer to this as the *Single Responsibility
+Principle*). This may be one line of code, or three, but rarely more
 than ten. **Methods should be short.** Let's take a look at an example
 of refactoring one long method into short, atomic methods.  We'll use
 an implementation of the swingers exercise we worked on in the
