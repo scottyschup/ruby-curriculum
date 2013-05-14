@@ -175,9 +175,9 @@ end
 ```
 
 Here, you are *iterating* over the *elements* of the array. The lines
-between the do and end are the code block to repeat. For each element
-in the array, the `each` method sets the musician variable to the
-current element, then executes the code block.
+between the `do` and `end` are the code block to repeat. For each
+element in the array, the `each` method sets the musician variable to
+the current element, then executes the code block.
 
 The biggest advantage of `each` is that you don't have to keep track
 of an index variable. This may not seem like a big deal, but every
@@ -195,7 +195,7 @@ while i < 5
 end
 ```
 
-### each vs for
+### `each` vs `for`
 
 Ruby also has a `for` loop construct:
 
@@ -207,13 +207,13 @@ end
 
 For boring reasons, `for` is not recommended for use. You'll see
 plenty of Python code use `for` this way, but satisfy yourself with
-using `#each`
+using `#each`.
 
 Boring reason: the iterator variable (*i.e.* `item` in the above `for` loop construct 
 example) is still bound after exiting the loop. This doesn't happen with `each`.
 [See this SO question.](http://stackoverflow.com/questions/3294509/for-vs-each-in-ruby)
 
-## each_with_index
+## `each_with_index`
 
 `each` is cleaner than `while`, but sometimes you also
 need the index of each element. In a while loop, you can do this by referencing the iterator:
@@ -273,8 +273,11 @@ A range is exactly what it sounds like:
 (1..10)
 ```
 
-represents all the numbers from 1 through 10. A range with two dots goes up to and includes the second number. A range with three dots excludes the seconds number. For example, (0...10) goes from 0 to 9, and does not include 10. We can iterate over
-ranges just like we iterated over arrays:
+This represents all the numbers from 1 through 10. A range with two
+dots goes up to and includes the second number. A range with three
+dots excludes the seconds number. For example, (0...10) goes from 0 to
+9, and does not include 10. We can iterate over ranges just like we
+iterated over arrays:
 
 ```ruby
 (1..10).each do |i|
@@ -293,10 +296,10 @@ Note that ranges cannot go from a larger value to a smaller value (i.e. 10..1).
 (10..1).each do |i|
   puts i
 end
-# this example will therfore not puts anything
+# this example will not print anything
 ```
 
-One alternative you can consider is to reverse the array with numbers:
+One alternative is to convert the range to an array and reverse it:
 
 ```ruby
 (1..10).to_a.reverse.each do |i|
@@ -304,15 +307,15 @@ One alternative you can consider is to reverse the array with numbers:
 end
 ```
 
-Or you could use negative numbers and absolute them:
+Or you could use negative numbers and make them absolute:
 
 ```ruby
 (-10..-1).map(&:abs)
 => [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
 ```
 
-You can also use the downto method in `Integer`.
-
+You can also use [`Integer#downto`](downto-doc).
+[downto-doc]: http://ruby-doc.org/core-1.9.3/Integer.html#method-i-downto
 
 ## Nesting loops
 
@@ -330,7 +333,7 @@ loops that print out a times table:
 end
 ```
 
-Note, when you have two indices, `i` and `j` are conventional
+Note: when you have two indices, `i` and `j` are conventional
 names. However, they are often the lazy way out: unclear, abstract
 index names are a major source of confusion and bugs. Here names like
 `num1` and `num2` would make things clearer.
