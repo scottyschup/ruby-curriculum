@@ -135,10 +135,17 @@ do_something(arg1, arg2, :option1 => value1, :option2 => value2)
 
 Estimated time: .25hrs
 
-* Write a method `super_print` that takes a `String`. It should take
-  optional parameters `:times`, `:upcase`, `:reverse`. Pick reasonable
-  [defaults](http://stackoverflow.com/a/977546).
-    * Please note, the `:times` parameter's value should be an integer that the #times method will be called on.
+Write a method `super_print` that takes a `String`. This method should
+take optional parameters `:times`, `:upcase`, and `:reverse` with
+reasonable [default values](http://stackoverflow.com/a/977546). For
+example:
+
+```ruby
+super_print("Hello")                                    #=> "Hello"
+super_print("Hello", :times => 3)                       #=> "Hello" 3x
+super_print("Hello", :upcase => true)                   #=> "HELLO"
+super_print("Hello", :upcase => true, :reverse => true) #=> "OLLEH"
+```
 
 ## Resources
 
