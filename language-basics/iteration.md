@@ -116,7 +116,7 @@ end
 ```
 
 This will loop through as many commands as the user enters, up until
-he instructs the program to quit.
+he or she instructs the program to quit.
 
 Notice that the "update" of `command` happens at the end of the
 `while` loop? This is a typical pattern; we check the condition,
