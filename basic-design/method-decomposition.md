@@ -187,7 +187,7 @@ Here's an example of something super terrible:
 # create a global i variable
 i = nil
 
-def square_than_add_two(num)
+def square_then_add_two(num)
   i = num
   square
 
