@@ -3,158 +3,163 @@
 ## Methods should be atomic
 
 **Each method should do one thing.** A method should do a single,
-atomic thing (we will often refer to this as the *Single Responsibility
-Principle*). This may be one line of code, or three, but rarely more
-than ten. **Methods should be short.** Let's take a look at an example
-of refactoring one long method into short, atomic methods.  We'll use
-an implementation of the swingers exercise we worked on in the
-[methods][methods] section.
+atomic thing (we will often refer to this as the *Single
+Responsibility Principle*). This may be one line of code, or three,
+but rarely more than ten. **Methods should be short.** Let's take a
+look at an example of refactoring one long method into short, atomic
+methods.  We'll use an implementation of the Mixology exercise we
+worked on in the [methods][methods] section.
 
 [methods]: ../language-basics/methods.md
 
 Here's the problem description in case you don't remember it:
 
-The method `swingers` should take an array of couples and return a new
-array with the couples mixed up. Assume that the first item in the
-couple array is a man, and the second item is a woman. An example
-input:
+The method `remix` should take an array of ingredient arrays (one
+alcohol, one mixer) and return the same type of data structure, with
+the ingredient pairs mixed up. Assume that the first item in the pair
+array is alcohol, and the second is a mixer. Don't pair an alcohol
+with an alcohol with or a mixer with a mixer. An example run of the
+program:
 
-```ruby  
-swingers([
-    ["Clyde", "Bonnie"],
-    ["Paris", "Helen"],
-    ["Romeo", "Juliet"]
-  ])
+```ruby
+remix([
+  ["rum", "coke"],
+  ["gin", "tonic"],
+  ["scotch", "soda"]
+])
+#=> [["rum, "tonic"], ["gin", "soda"], ["scotch", "coke"]]
 ```
 
 Here's an example of a one-method solution:
 
 ```ruby
-def swingers(couples)
-  men = []
-  women = []
+def remix(drinks)
+  alcohols = []
+  mixers = []
 
-  couples.each do |couple|
-    men << couple.first
-    women << couple.last
+  drinks.each do |drink|
+    alcohols << drink.first
+    mixers << drink.last
   end
 
-  men.shuffle!
-  women.shuffle!
+  alcohols.shuffle!
+  mixers.shuffle!
 
-  shuffled_couples = []
-  men.length.times do
-    shuffled_couples << [men.pop, women.pop]
+  remixed_drinks = []
+  alcohols.length.times do
+    remixed_drinks << [alcohols.pop, mixers.pop]
   end
 
-  shuffled_couples
+  remixed_drinks
 end
 ```
 
 Let's start breaking this method into smaller methods. What are the
 steps that we take in this one super long method?
 
-1. Split the couples into arrays of men and women
-2. Shuffle the men and women arrays
-3. Zip the two arrays into a (now shuffled) couples array
-4. Return the shuffled couples array
+1. Split the drinks into arrays of alcohols and mixers
+2. Shuffle the alcohol and mixer arrays
+3. Zip the two arrays into a (now remixed) drinks array
+4. Return the remixed drinks array
 
 Now that we've listed the atomic steps, it will be easy to split the
 method into smaller methods. Let's go step by step, and start by
-extracting the `split_couples` method:
+extracting the `split_ingredients` method:
 
 ```ruby
-def swingers(couples)
-  men, women = split_couples(couples)
-  
-  men.shuffle!
-  women.shuffle!
-  
-  shuffled_couples = []
+def remix(drinks)
+  alcohols, mixers = split_ingredients(drinks)
 
-  men.length.times do
-    shuffled_couples << [men.pop, women.pop]
+  alcohols.shuffle!
+  mixers.shuffle!
+
+  remixed_drinks = []
+
+  alcohols.length.times do
+    remixed_drinks << [alcohols.pop, mixers.pop]
   end
 
-  shuffled_couples
+  remixed_drinks
 end
 
-def split_couples(couples)
-  men = []
-  women = []
+def split_ingredients(drinks)
+  alcohols = []
+  mixers = []
 
-  couples.each do |couple|
-    men << couple.first
-    women << couple.last
+  drinks.each do |drink|
+    alcohols << drink.first
+    mixers << drink.last
   end
-  
-  [men, women]
+
+  [alcohols, mixers]
 end
 ```
 
 Notice that we're using parallel assignment (aka array destructuring),
-here: `split_couples` returns an array with `men` and `women`
-subarrays. We use parallel assignment to assign these subarrays to
-`men` and `women` variables that are local to the `swingers` method.
+here: `split_ingredients` returns an array with `alcohols` and
+`mixers` subarrays. We use parallel assignment to assign these
+subarrays to `alcohols` and `mixers` variables that are local to the
+`remix` method.
 
 Shuffle is already an atomic method, so no need to refactor that step.
-Let's extract a method to build the shuffled couples array.
+Let's extract a method to build the shuffled drinks array.
 
 ```ruby
-def swingers(couples)
-  men, women = split_couples(couples)
-  
-  men.shuffle!
-  women.shuffle!
-  
-  zip_couples(men, women)
+def remix(drinks)
+  alcohols, mixers = split_ingredients(drinks)
+
+  alcohols.shuffle!
+  mixers.shuffle!
+
+  combine_ingredients(alcohols, mixers)
 end
 
-def split_couples(couples)
-  men = []
-  women = []
-  
-  couples.each do |couple|
-    men << couple.first
-    women << couple.last
+def split_ingredients(drinks)
+  alcohols = []
+  mixers = []
+
+  drinks.each do |drink|
+    alcohols << drink.first
+    mixers << drink.last
    end
-   
-  [men, women]
+
+  [alcohols, mixers]
 end
 
-def zip_couples(men, women)
-  couples = []
-  
-  men.length.times do
-    couples << [men.pop, women.pop]
+def combine_ingredients(alcohols, mixers)
+  drinks = []
+
+  alcohols.length.times do
+    drinks << [alcohols.pop, mixers.pop]
   end
-  
-  couples
+
+  drinks
 end
 ```
 
-Notice that the return value of `zip_couples` is the
-`couples` array, so we no longer need to explicitly return
-`shuffled_couples` in the `swingers` method!
+Notice that the return value of `combine_ingredients` is the `drinks`
+array, so we no longer need to explicitly return `remixed_drinks` in
+the `remix` method!
 
-Take a look at the `swingers` method:
+Take a look at the `remix` method:
 
 ```ruby
-def swingers(couples)
-  men, women = split_couples(couples)
-  
-  men.shuffle!
-  women.shuffle!
-  
-  zip_couples(men, women)
+def remix(drinks)
+  alcohols, mixers = split_ingredients(drinks)
+
+  alcohols.shuffle!
+  mixers.shuffle!
+
+  combine_ingredients(alcohols, mixers)
 end
 ```
 
-**It reads like plain English.** Hiding away our implementation details in well-named helper methods
-both reduced the length of 'swingers' and made its structure more transparent. If somebody looks at this code, they will
-immediately understand what is going on, even without reading the
-definitions of `split_couples` and `zip_couples`. This makes it a lot
-easier to understand code.
+**It reads like plain English.** Hiding away our implementation
+details in well-named helper methods both reduced the length of
+`remix` and made its structure more transparent. If somebody looks at
+this code, they will immediately understand what is going on, even
+without reading the definitions of `split_ingredients` and
+`combine_ingredients`.  This makes it a lot easier to understand code.
 
 If they are interested in the implementation of a *specific action*,
 they know where to find it: localized to an atomic, helper method.
@@ -173,8 +178,8 @@ change any outside ("global") variables variables, or communicate
 outside except through the return value. Ruby is more flexible, but
 the majority of methods should be written in this style.
 
-Simply put: **the only way in should be the arguments, the only way out
-should be the return value**.
+Simply put: **the only way in should be the arguments, the only way
+out should be the return value**.
 
 Here's an example of something super terrible:
 
@@ -185,14 +190,14 @@ i = nil
 def square_than_add_two(num)
   i = num
   square
-  
+
   i = i + 2
 end
 
 def square
   # get global variable, square it, and reset
   i = i * i
-  
+
   nil
 end
 ```
@@ -217,11 +222,11 @@ instance:
 ```ruby
 def sum(array)
   result = 0
- 
+
   while array.length > 0
     result += array.pop
   end
- 
+
   result
 end
 ```
@@ -235,9 +240,9 @@ Instead do something like:
 ```ruby
 def sum(array)
   result = 0
- 
+
   array.each { |val| result += val }
-  
+
   result
 end
 ```
