@@ -189,7 +189,7 @@ ice_creams.split(", ")
 ## Nil converts to empty string
 
 ```ruby
-nil.to_s 
+nil.to_s
 => ""
 ```
 
@@ -220,42 +220,58 @@ Estimated time: 1hr
 
 ### Your own `to_s` method
 
-In this exercise, I'd like you to write a method `num_to_s(num,
-base)`, which will convert a number to a string in a different
-base. For instance, `num_to_s(123, 10) == "123"` and `num_to_s(4, 2)
-== 100`. It should work for bases up to 16 (hexadecimal). 
+In this exercise, you will define a method `num_to_s(num, base)`, which will
+return a string representing the original number in a different base (up to
+base 16).
 
-You can also think of writing numbers in bases like this. 
-    123 in base 10 = 1*10^2 + 2*10^1 + 3*10^0
-    
-    8 in base 2 = 1000 = 2^3*1 + 2^2*0 + 2^1*0 + 2^0*0
-    
-    6 in base 2 = 110 = 2^2*1 + 2^1*1 + 2^0*0
-    
-    10 in base 3 = 101 = 1*3^2 + 0*3^1 + 1*3^0
+To refresh your memory, a few common base systems:
 
-You should not call the built in `to_s` yourself. To get around this         
+|Base 10 (decimal)     |0|1|2|3|...|9|10|11|12|13|14|15
+|----------------------|---|---|---|---|---|---|---|---|---|---|---|---|
+|Base 2 (binary)       |0|1|10|11|...|1010|1011|1100|1101|1110|1111|10000|
+|Base 16 (hexadecimal) |0|1|2|3|...|9|A|B|C|D|E|F|
+
+Examples of strings `num_to_s(num, base)` should produce:
+
+```ruby
+num_to_s(5, 10) #=> "5"
+num_to_s(5, 2)  #=> "101"
+num_to_s(5, 16) #=> "5"
+
+num_to_s(234, 10) #=> "234"
+num_to_s(234, 2)  #=> "11101010"
+num_to_s(234, 16) #=> "EA"
+```
+
+Here's a more concrete example of how your method might arrive at the
+conversions above:
+
+```ruby
+num_to_s(234, 10) #=> "234"
+(234 / 1)   % 10 #=> 4
+(234 / 10)  % 10 #=> 3
+(234 / 100) % 10 #=> 2
+                     ^
+
+num_to_s(234, 2) #=> "11101010"
+(234 / 1)   % 2 #=> 0
+(234 / 2)   % 2 #=> 1
+(234 / 4)   % 2 #=> 0
+(234 / 8)   % 2 #=> 1
+(234 / 16)  % 2 #=> 0
+(234 / 32)  % 2 #=> 1
+(234 / 64)  % 2 #=> 1
+(234 / 128) % 2 #=> 1
+                    ^
+```
+
+You should not call the built in `to_s` yourself. To get around this
 restriction you might either:
 
 * Have a giant `case`/`when` switch (ugly; no!)
-* Create a `Hash` where the keys are digit numbers and the values are
-  the digit strings (for bases > 10 this will involve some characters;
-  hex digits go up to `'f'`).
-
-You will want to use the `%`, or modulus function; this finds the
-remainder when you divide by a number:
-
-    (123 / 10**0) % 10 == 3 # ones place
-    (123 / 10**1) % 10 == 2 # tens place
-    (123 / 10**2) % 10 == 1 # hundreds place
-
-Notice that `% 10` gives you the ones place, in decimal. Why? Then you
-can *shift* the ones place off by dividing by 10; this rounds down,
-leaving you with everything except the ones.
-
-The same logic applies for binary (base 2); but instead of the base
-being ten, you use two instead. Then you find the digits in the ones
-place, twos place, eights place, etc.
+* Create a `Hash` where the keys are digit numbers and the values are the digit
+  strings (for bases > 10 this will involve some characters; hex digits go up
+  to `'F'`).
 
 ### Caesar cipher
 
