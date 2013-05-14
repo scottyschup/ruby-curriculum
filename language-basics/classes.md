@@ -146,11 +146,12 @@ cat1 = Cat.new("Breakfast", 8, "San Francisco")
 cat2 = Cat.new("Earl", 2, "San Francisco")
 ```
 
-Helpful reference: http://www.railstips.org/blog/archives/2009/05/11/class-and-instance-methods-in-ruby/
-blog about Class and Instance Methods
+Further reading about class and instance methods:
+http://www.railstips.org/blog/archives/2009/05/11/class-and-instance-methods-in-ruby/
+
 ### `initialize` and `new`
 
-Here's the start of our cat class:
+Here's the start of our `Cat` class:
 
 ```ruby
 class Cat
@@ -183,7 +184,7 @@ to `initialize`.
 
 The `initialize` method is responsible for setting up the object. For
 `Cat`, we store the vital cat data. The `initialize` method should
-take enough arguments so that it can fully setup the initial state of
+take enough arguments so that it can fully set up the initial state of
 the `Cat` so that the `Cat` object we get back is fully functional and
 ready-to-go. Don't write code like this:
 
@@ -196,7 +197,7 @@ cat1.age = 8
 cat1.home_city = "San Francisco"
 ```
 
-In short, after you call `Cat.new`, your `Cat` should be fully setup
+In short, after you call `Cat.new`, your `Cat` should be fully set up
 and ready to go.
 
 ### `initialize` != `run`
@@ -246,7 +247,7 @@ about storing object state in instance variables first.
 ### Instance variables
 
 Object state is stored in *instance variables*. Instance variable
-names are prefixed with an at-symbol ('@'). Each object instance has
+names are prefixed with an at-symbol (`@`). Each object instance has
 its own separate copies of the instance variables. The variables are
 stored for the life of the object. Just like we store information in a
 Hash under a key, we can set and look up data with an instance variable
@@ -348,13 +349,13 @@ named `age` when you use `=`; that is its default assumption. Only if
 you say `self.age` does it realize that you really want to call a
 method. So beware of this common mistake.
 
-You can also create classes from `struct`, used for quickly
+You can also create classes from `Struct`, used for quickly
 building out classes that store variables and contain reader 
 and writer methods.
 
 ```
-Course = struct.new(:name, :department, :period)
-algorithms = Course.new(“Algorithms 101”, Programming , 2)
+Course = Struct.new(:name, :department, :period)
+algorithms = Course.new("Algorithms 101", "Programming", 2)
 ```
 
 ## Class and Instance methods
@@ -392,42 +393,42 @@ class Asteroid
   # helper class method; doesn't need to be called on an Asteroid
   # object
   def self.random_velocity(max_speed)
-    speed = max_speed * rand()
-    x_dir, y_dir = rand() * [1, -1].sample, rand() * [1, -1].sample
+    speed = max_speed * rand
+    x_dir, y_dir = rand * [1, -1].sample, rand * [1, -1].sample
 
     [x_dir * Math.sqrt(speed), y_dir * Math.sqrt(speed)]
   end
   
   # factory method
   # create and return an asteroid with random location and direction
-  def self.randomAsteroid(max_x, max_y, max_speed)
+  def self.random_asteroid(max_x, max_y, max_speed)
     # using unnecessary `return` for emphasis
     return Asteroid.new(
-      max_x * rand(),
-      max_y * rand(),
+      max_x * rand,
+      max_y * rand,
       random_velocity(max_speed) # implicit `self` refers to the Asteroid class here
     )
   end
   
-  def crashIntoPlanet(planet)
+  def crash_into_planet(planet)
     # should have hired Bruce Willis
   end
 end
 ```
 
-In this example, `Asteroid::randomAsteroid` is an example of a factory
-method. It is a class method that creates an `Asteroid`. Note that it
-is not called on an existing `Asteroid` instance. That makes sense
-since it's purpose is to *construct* a new `Asteroid`; it is not an
-*action* of an asteroid (like crashing into a planet is an action of
-an asteroid).
+In this example, `Asteroid::random_asteroid` is an example of a
+factory method. It is a class method that creates an `Asteroid`. Note
+that it is not called on an existing `Asteroid` instance. That makes
+sense since it's purpose is to *construct* a new `Asteroid`; it is not
+an *action* of an asteroid (like crashing into a planet is an action
+of an asteroid).
 
-The `Asteroid::randomVelocity` method is not a factory method (at
+The `Asteroid::random_velocity` method is not a factory method (at
 least not an `Asteroid` factory), but it is a class method.
 
-When we want to be clear whether a method `crashIntoPlanet` or
-`randomAsteroid` is an instance or class method of `Asteroid`, we
-write `Asteroid#crashIntoPlanet` and `Asteroid::randomAsteroid`
+When we want to be clear whether a method `crash_into_planet` or
+`random_asteroid` is an instance or class method of `Asteroid`, we
+write `Asteroid#crash_into_planet` and `Asteroid::random_asteroid`
 respectively.
 
 ## self
