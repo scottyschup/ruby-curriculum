@@ -21,10 +21,12 @@ format/interpolate, split, and otherwise manipulate text.
 aren't meant to be manipulated like text: there isn't a particularly
 easy way to concatenate `Symbol`s, or to split them on whitespace,
 etc. In fact, `Symbol`s can't be modified; they're
-[*immutable*][immutable-wiki]. `Symbol`s are used to represent names (key names, option
-names, method names) inside the Ruby interpreter; they aren't intended
-for input or output. (If you want to generate a symbol from an input, you
-can call Ruby's handy #to_sym method on any string object.)
+[*immutable*][immutable-wiki]. `Symbol`s are used to represent names
+(key names, option names, method names) inside the Ruby interpreter;
+they aren't intended for input or output. (If you want to generate a
+symbol from an input, you can call Ruby's handy #to_sym method on any
+string object. However, this is a super excellent way to introduce a
+memory leak so be sure you know what you're doing and why.)
 
 ```ruby
 { :name => "Breakfast", :species => "Cat", :owner => "Devon" }
