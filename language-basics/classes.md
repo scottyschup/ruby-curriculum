@@ -13,10 +13,6 @@
   * Know when we can/can't we access instance variables directly.
   * Know how to automatically create getters/setters.
 
-*I feel that I would have benifited from more explanation of OO concepts, like patterns*
-
-*Didn't go over static variables*
-
 ## Packaging data in Hashes
 
 It's common to have sets of related data. For instance, a cat has a
