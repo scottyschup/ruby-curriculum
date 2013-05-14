@@ -130,7 +130,10 @@ end
 
 do_something(arg1, arg2, :option1 => value1, :option2 => value2)
 ```
-Another example: this comes from a blog (http://blog.ethanvizitei.com/ by Ethan Vizitei)
+
+Another example: this comes from a blog (http://blog.ethanvizitei.com/
+by Ethan Vizitei).
+
 ```ruby
 class SweetPhone
   def ring!(options = {})
@@ -140,7 +143,6 @@ class SweetPhone
   end
 end
 ```
-
 
 ## Exercises
 
