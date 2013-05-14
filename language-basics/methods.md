@@ -83,23 +83,24 @@ rps("Scissors") # => "Scissors, Draw"
 rps("Scissors") # => "Paper, Win"
 ```
 
-* Implement a Swingers game. The method `swingers` should take an
-  array of couple arrays and return the same type of data structure,
-  with the couples mixed up. Assume that the first item in the couple
-  array is a man, and the second item is a woman. Don't pair a person
-  with someone of their own gender (sorry to ruin your fun). An
-  example run of the program:
+* Implement a Mixology game. The method `remix` should take an array
+  of ingredient arrays (one alcohol, one mixer) and return the same
+  type of data structure, with the ingredient pairs mixed up. Assume
+  that the first item in the pair array is alcohol, and the second is
+  a mixer. Don't pair an alcohol with an alcohol with or a mixer with
+  a mixer. An example run of the program:
 
 ```ruby
-swingers([
-  ["Clyde", "Bonnie"],
-  ["Paris", "Helen"],
-  ["Romeo", "Juliet"]
+remix([
+  ["rum", "coke"],
+  ["gin", "tonic"],
+  ["scotch", "soda"]
 ])
+#=> [["rum, "tonic"], ["gin", "soda"], ["scotch", "coke"]]
 ```
 
-* Bonus problem: make a version of the swingers game that *guarantees*
-  that all the couples end up with a different partner!
+* Bonus problem: make a version of the Mixology game that *guarantees*
+  that all the alcohols end up with a different mixer!
 
 ## Resources
 * [Wikipedia: Single Responsibility Principle](http://en.wikipedia.org/wiki/Single_responsibility_principle)
