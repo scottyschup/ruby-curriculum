@@ -158,7 +158,7 @@ class Cat
   def initialize(name, age, location)
     # save variables...
   end
-  
+
   # more methods here...
 end
 ```
@@ -224,7 +224,7 @@ methods, which is common to all instances of the class.
 ```ruby
 class Cat
   # ...
-  
+
   def speak
     puts "Meow!"
   end
@@ -282,7 +282,7 @@ class Cat
   def name
     @name
   end
-  
+
   # a *setter* method; method names that end with an '=' can be
   # used like this: `cat.name = "Fluffy II"`
   def name=(name)
@@ -314,7 +314,7 @@ class Cat
   def initialize(name, age, location)
     # ...
   end
-  
+
   # ...
 end
 ```
@@ -324,7 +324,7 @@ Beware a common mistake:
 ```ruby
 class Cat
   attr_accessor :age, :location
-  
+
   def age_on_year
     # works
     @age = age + 1
@@ -350,7 +350,7 @@ you say `self.age` does it realize that you really want to call a
 method. So beware of this common mistake.
 
 You can also create classes from `Struct`, used for quickly
-building out classes that store variables and contain reader 
+building out classes that store variables and contain reader
 and writer methods.
 
 ```
@@ -389,7 +389,7 @@ class Asteroid
   def initialize(x_coord, y_coord, velocity)
     # ...
   end
-  
+
   # helper class method; doesn't need to be called on an Asteroid
   # object
   def self.random_velocity(max_speed)
@@ -398,7 +398,7 @@ class Asteroid
 
     [x_dir * Math.sqrt(speed), y_dir * Math.sqrt(speed)]
   end
-  
+
   # factory method
   # create and return an asteroid with random location and direction
   def self.random_asteroid(max_x, max_y, max_speed)
@@ -409,7 +409,7 @@ class Asteroid
       random_velocity(max_speed) # implicit `self` refers to the Asteroid class here
     )
   end
-  
+
   def crash_into_planet(planet)
     # should have hired Bruce Willis
   end
@@ -440,11 +440,11 @@ class Cat
   def meow
     puts "Meow"
   end
-  
+
   def hiss
     puts "Hiss"
   end
-  
+
   def throw_fit
     # meow and hiss a lot
     self.meow
@@ -517,11 +517,11 @@ class Dog
   def self.dog_years_to_human_years(age)
     age / 7.0
   end
-  
+
   def self.human_years_to_dog_years(age)
     age * 7.0
   end
-  
+
   def self.human_to_dog_ratios
     # get the equivalent of one dog or human year in terms of the
     # other
@@ -569,16 +569,16 @@ Dog.new # => calls `new` method on a Class instance: Dog
 Estimated time: 2.5hrs
 
 ### Students and Courses
-Write a set of classes to model Students and Courses.
+Write a set of classes to model `Student`s and `Course`s.
 
 * `Student#initialize` should take a first and last name.
-* `Student.name` should return the concatenation of the student's
+* `Student#name` should return the concatenation of the student's
   first and last name.
-* `Student#courses` should return a list of the `Course`es in which
+* `Student#courses` should return a list of the `Course`s in which
   the student is enrolled.
 * `Student#enroll` should take a `Course` object, add it to the
-   student's list of courses, and update the `Course`'s list of
-   enrolled students.
+  student's list of courses, and update the `Course`'s list of
+  enrolled students.
 * `Student#course_load` should return a hash of departments to # of
   credits the student is taking in that department
 * `Course#initialize` should take the course name, department, and
@@ -590,11 +590,12 @@ Write a set of classes to model Students and Courses.
 And some extras:
 * Each course should also take a set of days of the week (`:mon`,
   `:tue`, ...), plus a time block (assume each day is broken into 8
-  consecutive time blocks). So a course could meet
-  `[:mon, :wed, :fri]` during block #1.
+  consecutive time blocks). So a course could meet `[:mon, :wed,
+  :fri]` during block #1.
 * Write a class method `Course::conflicts?` which takes two `Course`s
   and returns true if they conflict.
-* Don't let a `Student` enroll in two classes that meet at the same time.
+* Don't let a `Student` enroll in two classes that meet at the same
+  time.
 
 ### Tic-Tac-Toe
 Let's write a Tic-Tac-Toe game!
