@@ -296,7 +296,6 @@ to go from string to symbol
 * Watch Peter talk about [it all][peter-youtube-blocks].
 
 ## Exercises 
-*Some lambda specific exercises would have been nice*
 
 Estimated time: 1hrs
 
