@@ -316,17 +316,18 @@ Estimated time: 1hrs
 [1, 3, 5].my_sort! { |num1, num2| num2 <=> num1 } #sort descending
 ```
 
-`#<=>` (the *spaceship* method)
-[compares objects][so-spaceship]. `x.<=>(y)` returns `-1` if `x` is
-less than `y`. If `x` and `y` are equal, it returns `0`. If greater,
-`1`. You can define `<=>` on your own classes.
-
+  `#<=>` (the *spaceship* method)
+  [compares objects][so-spaceship]. `x.<=>(y)` returns `-1` if `x` is
+  less than `y`. If `x` and `y` are equal, it returns `0`. If greater,
+  `1`. You can define `<=>` on your own classes.
+  
+  **Don't use `my_each` for this one!**
 * Write a method that takes some arguments and a block. It should call
-  the block, passing all the arguments to the block at once using the 
-  splat operator. If the user doesn't supply the block, it should print 
-  out "NO BLOCK GIVEN!".
-  * To take possibly multiple arguments, check out the Ruby
-    [splat operator][splat-operator].
+  the block, passing all the arguments to the block at once using the
+  splat operator. If the user doesn't supply the block, it should
+  print out "NO BLOCK GIVEN!".
+    * To take possibly multiple arguments, check out the Ruby
+      [splat operator][splat-operator].
 
 [peter-youtube-blocks]: http://www.youtube.com/watch?v=VBC-G6hahWA
 [splat-operator]: http://kconrails.com/2010/12/22/rubys-splat-operator/
