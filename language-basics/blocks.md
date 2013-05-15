@@ -304,8 +304,10 @@ Estimated time: 1hrs
   original versions when writing these. If you want to use `each` to
   define some of the others (good idea!), use your `my_each` method.
 * Implement a `my_inject` method. Your version shouldn't take an
-  optional starting argument; just use the first element.
-
+  optional starting argument; just use the first element. Ruby's
+  `inject` is fancy (you can write `[1, 2, 3].inject(:+)` to shorten
+  up `[1, 2, 3].inject { |sum, num| sum + num }`), but focus on the
+  block (and not the symbol) version.
 * Define your own `Array#my_sort!`: it should take in a block to
   perform the comparison:
 
