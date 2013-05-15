@@ -76,10 +76,11 @@
 + [Blocks][blocks]
 + [Recursion][recursion]
 + [Scope][scope]
-+ **Project**: [Test First Ruby][test-first-ruby] XML parser   [method_missing][method_missing]
-+ **Bonus project**: [Word chains][word-chains]
++ **Project**: [Word chains][word-chains]
   + Hint: first write a method `adjacent_words` which gives an array
     of all words "one letter away".
++ **Project**: [Test First Ruby][test-first-ruby] XML parser   [method_missing][method_missing]
+
 
 [blocks]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/blocks.md
 [recursion]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/recursion.md
