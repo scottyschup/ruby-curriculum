@@ -202,7 +202,7 @@ You should be able to handle "mixed" arrays like `[1, [2], [3, [4]]]`.
   sorted arrays**. Make sure to return the location of the found
   object (or `nil` if not found!). Hint: you will probably want to use
   subarrays.
-* RubyQuiz: [Make change](http://www.rubyquiz.com/quiz154.html)
+* RubyQuiz: [Make change](http://www.rubyquiz.com/quiz154.html) [Or if rubyquiz is down](http://web.archive.org/web/20130215052843/http://rubyquiz.com/quiz154.html)
   * Whenever we assign a Ruby Quiz, after solving it, make sure to
     look at a couple answers and make sure you understand them.
   * Start out by solving the problem for sensible currencies like
