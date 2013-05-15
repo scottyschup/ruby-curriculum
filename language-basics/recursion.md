@@ -211,11 +211,6 @@ You should be able to handle "mixed" arrays like `[1, [2], [3, [4]]]`.
 * Implement a method, [`merge_sort`][wiki-merge-sort] that sorts an
   `Array`. Hint: The base case for this sort is surprisingly simple.
 * Write a method, `subsets`, that will return all subsets of an array.
-* Write a method, `subsequences`, that will return all subsequences of
-  an array.
-* Write a method, `levenshtein_distance` recursively. The Levenshtein
-  distance is the minimum number of letter additions/deletions/changes
-  to transform one word to another.
 
 [wiki-binary-search]: http://en.wikipedia.org/wiki/Binary_search
 [wiki-merge-sort]: http://en.wikipedia.org/wiki/Merge_sort
