@@ -3,7 +3,7 @@
 In this project, we write a program to play [Hangman][wiki-hangman].
 
 You should have two modes. In the first mode, the computer player
-should read in a [dictionary file][dictionary-files]. It should choose
+should read in a [dictionary file][dictionary]. It should choose
 a word randomly. Interaction should look something like so:
 
     Secret word: _____
@@ -32,4 +32,4 @@ should contain the logic both for (1) guessing letters and (2)
 confirming guesses.
 
 [wiki-hangman]: http://en.wikipedia.org/wiki/Hangman_(game)
-[dictionary-files]: http://wordlist.sourceforge.net/
+[dictionary]: https://github.com/appacademy/ruby-curriculum/blob/master/dictionary.txt

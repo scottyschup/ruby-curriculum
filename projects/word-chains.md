@@ -45,4 +45,9 @@ already collected the starting word, too.
 
 Good luck!
 
+
+[Dictionary file][dictionary]
+
+
+[dictionary]: https://github.com/appacademy/ruby-curriculum/blob/master/dictionary.txt
 [quiz]: http://www.rubyquiz.com/quiz44.html
