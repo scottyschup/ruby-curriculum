@@ -60,9 +60,7 @@ the public surface of the class; any change to the public surface will
 necessitate changes to interacting classes. Minimizing exposure will
 better enable change.
 
-**TODO: They don't know what coupling is yet!**
-
-[From the wiki page:][coupling-wiki] "Coupling (dependency) is the degree 
+[From the wiki page:][coupling-wiki] "Coupling (dependency) is the degree
 to which each program module relies on each one of the other modules."
 Here is an interesting analysis of [coupling][coupling-principles]:
 
@@ -73,6 +71,12 @@ latch on to it.
 A complicated interface can also signal a class that is doing too
 much. Probably there's an opportunity to break out responsibilities to
 other classes.
+
+We want to minimize the amount of coupling between our classes and
+objects. To understand how tightly coupled your classes are, ask yourself
+if you changed the internals of one class, would you have to change
+things in the other? If you do, you've likely coupled the two classes
+too tightly.
 
 [coupling-principles]:http://www.jasoncoffin.com/cohesion-and-coupling-principles-of-orthogonal-object-oriented-programming/
 [coupling-wiki]:http://en.wikipedia.org/wiki/Coupling_(computer_programming)
@@ -91,9 +95,6 @@ and concrete examples to think about; it's hard to make a perfect
 design for some hazy, poorly understood future. Don't solve *abstract*
 problems: wait until you have a *concrete* problem.
 
-When we study test driven development we'll learn a parallel rule:
-just write the bare minimum of code to pass tests.
-
 [wiki-yagni]: http://en.wikipedia.org/wiki/You_ain't_gonna_need_it
 
 **God object**: A god object is one that is very tightly connected to
@@ -101,11 +102,24 @@ all the other objects in the system. Good OO design results in classes
 that are lightly coupled. A good class delegates responsibility as
 necessary to other objects; it shouldn't need to know everything about
 what every other object is doing (omniscience), and it shouldn't
-micromanage how other objects manage their responsibilities.
+micromanage how other objects manage their responsibilities. Nothing
+in your program usually needs to even about the existence of
+everything else.
 
 **Dead code**: don't leave commented-out (or otherwise unused) code in
 your codebase. This is why we have version control (we'll learn about
-git soon!).
+git soon!). Clean up after yourself!
+
+## Clean Code
+
+Clean code is the mark of a good programmer. Getting things to work
+only gets you halfway. Making code clear and elegant (i.e. clean)
+will take you all the way home.
+
+Endeavor to write clean code. Pay attention to style. Pay attention
+to code organization. Pay attention to code smells. Refactor often
+and aggressively. Bask in the beauty of clean code. Take pride in
+it.
 
 ## Refactoring: From Good to Great
 
