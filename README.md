@@ -76,16 +76,13 @@
 + [Blocks][blocks]
 + [Recursion][recursion]
 + [Scope][scope]
-+ **Project**: [Word chains][word-chains]
-  + Hint: first write a method `adjacent_words` which gives an array
-    of all words "one letter away".
-+ **Project**: [Test First Ruby][test-first-ruby] XML parser   [method_missing][method_missing]
-
++ **project**: [Word chains][word-chains]
++ **Project**: [Test First Ruby][test-first-ruby] XML parser (use [method_missing][method_missing])
 
 [blocks]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/blocks.md
 [recursion]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/recursion.md
 [scope]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/scope.md
-[word-chains]:  http://www.rubyquiz.com/quiz44.html
+[word-chains]:  ./projects/word-chains.md
 
 [test-first-ruby]: https://github.com/alexch/learn_ruby
 [method_missing]: https://github.com/appacademy/ruby-curriculum/blob/master/language-intermediate/reflection.md#method_missing
@@ -112,8 +109,9 @@
 ### w1d6-w1d7
 + [git](https://github.com/appacademy/ruby-curriculum/blob/master/git.md)
 + **Project**: [Git immersion](http://gitimmersion.com/)
-  + **Project**: Do Hangman and Word chains again, using git this
++ **Project**: Do Hangman and Word chains again, using git this
   time. Do not refer to your old code.
++ Assessment Prep
 
 ## Language Basics II, OO Design
 ### w2d1
