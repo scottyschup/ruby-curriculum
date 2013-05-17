@@ -8,7 +8,7 @@ NB: You don't have to use recursion for this one.
 The general idea is this:
 
 * First, write a helper method `adjacent_words(word, dictionary)`.
-* Write a method `build_chain(start_word, end_word, dictionary)`. It
+* Write a method `find_chain(start_word, end_word, dictionary)`. It
   should:
 * Start with the starting word, add it to a set called
   `current_words`.
