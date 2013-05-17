@@ -102,8 +102,10 @@
 ## Algorithms
 ### w1d5
 + [Intro data structures][intro-data-structures]
++ **Project**: [Knight's Travails][knights-travails]
 
 [intro-data-structures]: https://github.com/appacademy/ruby-curriculum/blob/master/intro-algorithms.md
+[knights-travails]: ./projects/knights_travails.md
 
 ## Git
 ### w1d6-w1d7

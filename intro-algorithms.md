@@ -142,38 +142,6 @@ tree. It should have the following interface:
 * Improve your searches to optionally take a block that will return
   true when an acceptable value is found.
 
-### Knight's Travails
-
-Write a method, `knight_path(start, finish)`, that finds a path for a
-knight between two positions on a chess board.
-
-You can represent sequences of knight moves with a tree. Each
-parent-child connection represents one move. The root is the knight's
-starting position.
-
-So if the knight starts in the middle of the board (e.g., e4), the
-root node has eight children representing the eight possible moves and
-new knight moves.
-
-First, write a helper method, `move_tree`, that will build the move
-tree. Note that there may be many ways to get to the same position;
-make sure to include only one of these paths. To do this, as you grow
-the tree, you'll need to keep track of positions you've already found
-a path to. Note that if you don't do this, you might get caught in a
-loop (you might otherwise move back and forth between two positions
-infinitely).
-
-Of the many paths to a position, include only the shortest path (there
-may be many shortest paths; pick one). How will you make sure you
-never add a suboptimal path?
-
-In `knight_path`, build the tree, then perform a search for the target
-position. Assuming the target is reachable, use the `parent` chain to
-construct the series of moves.
-
-Be sure to make any changes to any search algorithm you previously
-created to make it compatible if you will have more than 2 children.
-
 ### Tic-tac-toe AI
 
 *You should have extended your TreeNode to have multiple children before
