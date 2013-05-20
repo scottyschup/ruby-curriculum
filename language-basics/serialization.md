@@ -98,9 +98,6 @@ sending and receiving JSON data.
 In the world of client-side Ruby, YAML is the leader because of its
 better support for deserializing classes.
 
-## Optional Exercise
-* Rubyquiz.com [Ruby Quiz on JSON](http://www.rubyquiz.com/quiz155.html)
-
 ## References
 
 * About.com: [YAML](http://ruby.about.com/od/advancedruby/ss/Serialization-In-Ruby-Yaml.htm)
