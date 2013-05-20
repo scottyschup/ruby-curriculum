@@ -97,6 +97,54 @@ So while `[]=` was a method, `+=` and `!=` are pure syntactic
 sugar. Ruby will translate them into code that calls `+` and `==`
 respectively.
 
+## The or trick
+
+The Ruby `||` operation does something called short
+circuiting:
+
+    true || this_code_is_not_run
+    false || this_code_will_be_run
+
+Ruby is sort of lazy; it won't evaluate the right side if the left
+side of `||` is already true. That makes sense, because regardless of
+what the right side is, the whole or statement will always be true.
+
+Ruby will return the first "truthy" value from the or:
+
+    (1 || 2) == 1
+    (nil || 5) == 5
+
+There's an "or trick" that uses `||=`:
+
+```ruby
+class MemoizedFibonacci
+  def initialize
+    @values = {}
+  end
+
+  def fib(n)
+    @values[n] ||= calculate_fib(n)
+    # expands to:
+    #     @values[n] = @values[n] || calculate_fib(n)
+    # if @values[n] is nil (not previously computed), will call
+    # `calculate_fib` and store the result for later reference.
+  end
+
+  private
+  def calculate_fib(n)
+    case n
+    when 0
+      0
+    when 1
+      1
+    else
+      fib(n - 1) + fib(n - 2)
+    end
+  end
+end
+```
+
+
 ## Exercises
 Time estimate: 10 min
 
