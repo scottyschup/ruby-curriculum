@@ -97,13 +97,3 @@ behemoth. You should start looking for ways to break down a class that
 large.
 
 [1]: http://www.codinghorror.com/blog/2007/03/curlys-law-do-one-thing.html
-
-## Exercises:
-* Estimated time: 1hr
-
-Given the following problem domains, break them into objects:
-
-* Chess
-* Monopoly
-* Forum
-* Twitter
