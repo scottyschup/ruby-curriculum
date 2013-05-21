@@ -160,10 +160,11 @@ because until you have a practical need for a feature, you're just
 trying to imagine how that feature should work.
 
 ## Exercises
-Estimated time: 45min.
+Estimated time: 30min.
 
-* Go back to your Mastermind, Hangman, and TreeNode projects to harden your code, looking for places where you should
-  throw exceptions, or rescue them.
+* Go back to your Mastermind, Hangman, and TreeNode projects to harden
+  your code, looking for places where you should throw exceptions, or
+  rescue them.
 
 ## Resources
 * [Skorks on exceptions][skorks-exceptions]
