@@ -83,6 +83,39 @@ ensure
 end
 ```
 
+## Retry
+
+A common response to an error is to try, try again.
+
+```ruby
+def prompt_name
+  puts "Please input a name:"
+  # split name on spaces
+  name_parts = gets.chomp.split
+  
+  if name_parts.count != 2
+    raise "Uh-oh, finnicky parsing!"
+  end
+  
+  name_parts
+end
+
+def echo_name
+  begin
+    fname, lname = prompt_name
+    
+    puts "Hello #{fname} of #{lname}"
+  rescue
+    puts "Please only use two names."
+    retry
+  end
+end
+```
+
+The `retry` keyword will cause Ruby to repeat the `begin` block from
+the beginning. It is useful for "looping" until an operation completes
+successfuly.
+
 ## Exception Hierarchy
 There are a number of predefined exception classes in Ruby. You can
 find them [here][exception-classes]. You should try to choose an
@@ -169,5 +202,6 @@ Estimated time: 30min.
 ## Resources
 * [Skorks on exceptions][skorks-exceptions]
 * [Ruby Patterns][Ruby-Patterns]
+
 [skorks-exceptions]: http://www.skorks.com/2009/09/ruby-exceptions-and-exception-handling/
-[Ruby-Patterns]:       https://github.com/adomokos/DesignPatterns-Ruby/
+[Ruby-Patterns]: https://github.com/adomokos/DesignPatterns-Ruby/
