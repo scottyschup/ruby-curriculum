@@ -165,6 +165,7 @@
 [poker-project]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/poker.md
 
 ### w2d6-w2d7
++ Finish [Poker][poker-project]
 + [Read additional git chapters](https://github.com/appacademy/ruby-curriculum/blob/master/git.md)
 
 ### w3d1
