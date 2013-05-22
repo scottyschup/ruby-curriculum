@@ -158,19 +158,18 @@
   night before.
     * Learn what you don't know about those specs.
 + **Project**: [First TDD Projects][first-tdd-projects]
-+ **Project**: [Reversi][reversi-project]
++ **Project**: [Poker][poker-project]
 
 [subject-and-let]: https://github.com/appacademy/ruby-curriculum/blob/master/rspec/subject-and-let.md
 [first-tdd-projects]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/first-tdd-projects.md
-[reversi-project]:https://github.com/appacademy/ruby-curriculum/blob/master/projects/reversi.md
+[poker-project]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/poker.md
 
 ### w2d6-w2d7
 + [Read additional git chapters](https://github.com/appacademy/ruby-curriculum/blob/master/git.md)
 
 ### w3d1
-+ **Project**: [Poker][poker-project]
-
-[poker-project]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/poker.md
++ **Project**: [Reversi][reversi-project]
+[reversi-project]:https://github.com/appacademy/ruby-curriculum/blob/master/projects/reversi.md
 
 ## The Web
 ### w3d2
