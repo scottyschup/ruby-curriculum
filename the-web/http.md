@@ -1,38 +1,42 @@
 # HTTP
-## Goals
+## Overview
 
-* What is a protocol? What is HTTP used for?
-* What are the parts of an HTTP request?
-  * The method?
-    * What are the basic methods?
-    * What is method safety?
-  * The URL?
-    * What are the scheme, host, path, and query string?
-  * The body?
-* What is a header?
-* What is the status code used to communicate?
-  * What is the success status code?
-  * What is a missing resource status code?
+* HTTP is a communication protocol commonly used on
+  the internet
+* It is a request-response protocol
+* It uses four basic methods (GET, POST, PUT, DELETE)
+  to issue requests
+* The URL encodes multiple pieces of data, mostly to
+  route the request properly
+* An HTTP request has two main parts: the headers and the body
+* An HTTP response has the same (headers and body)
+* HTTP status codes specify the result of a response
+* Responses usually include HTML or other data in the
+  response body
 
 ## What is HTTP?
 HTTP is the *HyperText Transfer Protocol*. Whenever you visit a
 webpage, your browser first issues an HTTP *request* for the page to
 the server, which then issues a *response* back to your computer
 containing the HTML and content.
+HTTP is a request-response protocol.
 
-A *protocol* is a system of digital message formats and rules for
-exchanging those messages. In particular, a protocol specifies the
-formats of the messages the *client* (usually your web browser) and
-*server* (a web server hosting the page) exchange. A protocol defines
-the structure of these exchanges.
+A *protocol* specifies the format and rules for exchanging
+messages. In this case, it's about specifying the rules between
+clients (usually a web browser) and servers (a web server hosting
+the page).
 
 Let's see an HTTP request get made, and its response. This request is
-made from the command line:
+made from the command line (as opposed to a browser):
 
 ![http request cycle](http://upload.wikimedia.org/wikipedia/commons/c/c6/Http_request_telnet_ubuntu.png)
 
-The part in red is the request; the user specifies a *method* (`GET`),
-the *resource* (or, in layman's terms, the "page": /wiki/Main_Page),
+That's a lot, but for now, let's just focus on the structure.
+The part in red is the request, and more specifically, the
+request headers.
+
+The user specifies a *method* (`GET`), a *resource* (or, in
+layman's terms, the "page": /wiki/Main_Page),
 the protocol version (http/1.1) and the *host*
 (en.wikipedia.org). This request will be routed through the internet
 to the host (a server for en.wikipedia.org), which will then fetch the
