@@ -143,30 +143,13 @@
 ### w2d3
 * Continue Chess.
 
-## The Web
 ### w2d4
-+ [HTTP](https://github.com/appacademy/ruby-curriculum/blob/master/the-web/http.md)
-+ [APIs](https://github.com/appacademy/ruby-curriculum/blob/master/the-web/apis.md)
-+ [Cookies](https://github.com/appacademy/ruby-curriculum/blob/master/the-web/cookies.md)
-+ [Intro to authentication](https://github.com/appacademy/ruby-curriculum/blob/master/the-web/intro-auth.md)
-+ [OAuth](https://github.com/appacademy/ruby-curriculum/blob/master/the-web/oauth.md)
-+ **Project**: [Ice Cream Finder][ice-cream-finder]
-* **Project**: [Twitter Client][twitter-client]
-
-[ice-cream-finder]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/ice-cream-finder.md
-[twitter-client]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/twitter-client.md
-
-## Solo
-### w2d5
-* **Project**: [Checkers][checkers-project]
+* **Solo Project**: [Checkers][checkers-project]
 
 [checkers-project]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/checkers.md
 
-### w2d6-w2d7
-+ [Read additional git chapters](https://github.com/appacademy/ruby-curriculum/blob/master/git.md)
-
 ## RSpec
-### w3d1
+### w2d5
 + [TDD](https://github.com/appacademy/ruby-curriculum/blob/master/rspec/intro-tdd.md)
 + [Whirlwind introduction to rspec](https://github.com/appacademy/ruby-curriculum/blob/master/rspec/intro-rspec.md)
 + [Test doubles](https://github.com/appacademy/ruby-curriculum/blob/master/rspec/test-doubles.md)
@@ -181,10 +164,26 @@
 [first-tdd-projects]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/first-tdd-projects.md
 [reversi-project]:https://github.com/appacademy/ruby-curriculum/blob/master/projects/reversi.md
 
-### w3d2
+### w2d6-w2d7
++ [Read additional git chapters](https://github.com/appacademy/ruby-curriculum/blob/master/git.md)
+
+### w3d1
 + **Project**: [Poker][poker-project]
 
 [poker-project]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/poker.md
+
+## The Web
+### w3d2
++ [HTTP](https://github.com/appacademy/ruby-curriculum/blob/master/the-web/http.md)
++ [APIs](https://github.com/appacademy/ruby-curriculum/blob/master/the-web/apis.md)
++ [Cookies](https://github.com/appacademy/ruby-curriculum/blob/master/the-web/cookies.md)
++ [Intro to authentication](https://github.com/appacademy/ruby-curriculum/blob/master/the-web/intro-auth.md)
++ [OAuth](https://github.com/appacademy/ruby-curriculum/blob/master/the-web/oauth.md)
++ **Project**: [Ice Cream Finder][ice-cream-finder]
+* **Project**: [Twitter Client][twitter-client]
+
+[ice-cream-finder]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/ice-cream-finder.md
+[twitter-client]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/twitter-client.md
 
 ## Additional Bonus Topics
 + [Modules](https://github.com/appacademy/ruby-curriculum/blob/master/language-intermediate/modules.md)
