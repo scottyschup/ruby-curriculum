@@ -168,12 +168,8 @@
 + Finish [Poker][poker-project]
 + [Read additional git chapters](https://github.com/appacademy/ruby-curriculum/blob/master/git.md)
 
-### w3d1
-+ **Project**: [Reversi][reversi-project]
-[reversi-project]:https://github.com/appacademy/ruby-curriculum/blob/master/projects/reversi.md
-
 ## The Web
-### w3d2
+### w3d1
 + [HTTP](https://github.com/appacademy/ruby-curriculum/blob/master/the-web/http.md)
 + [APIs](https://github.com/appacademy/ruby-curriculum/blob/master/the-web/apis.md)
 + [Cookies](https://github.com/appacademy/ruby-curriculum/blob/master/the-web/cookies.md)
