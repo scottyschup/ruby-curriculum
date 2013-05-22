@@ -144,8 +144,11 @@
 * Continue Chess.
 
 ### w2d4
+* Read [Chess solution][chess-solution] side-by-side with
+  your own code
 * **Solo Project**: [Checkers][checkers-project]
 
+[chess-solution]: https://github.com/appacademy/solutions/tree/master/w2/w2d2-w2d3/lib
 [checkers-project]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/checkers.md
 
 ## RSpec
