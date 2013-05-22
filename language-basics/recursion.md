@@ -1,9 +1,5 @@
 # Recursion
 
-## Goals
-
-* Know the difference between iteration and recursion.
-
 ## Recursive methods
 
 A *recursive* method is one that calls itself. Each time the method
@@ -81,7 +77,7 @@ def factorial(n)
   (1..n).each do |i|
     result *= i
   end
-  
+
   result
 end
 ```
@@ -131,10 +127,45 @@ elements of the stack are called *stack frames*, and they contain the
 local variables used by that method.
 
 If you get caught in a recursive loop, the stack will grow infinitely
-until the system runs out of memory. This is because our methods depend 
+until the system runs out of memory. This is because our methods depend
 on some method closing to close themselves (*i.e.* the base case) in the
 Fibonnacci example. Running out of memory like this is called a *stack
 overflow*, and Ruby will tell you that the stack level got too deep.
+
+## Strategies for Programming Recursively
+
+It helps to have a general strategy with which to tackle recursive
+problems.
+
+* Map out a recursive decomposition
+
+  Think about how the problem breaks down recursively. That is,
+  how will you reduce the problem size towards the base case.
+  It's sometimes helpful to even sketch it out.
+
+* Identify the base case(s)
+
+  The base case will be the case when the stack stops growing -
+  that is, when the chain of deferred operations will begin to
+  evaluate. What will your method return in the most trivial
+  of cases? Your recursive decomposition should be moving towards
+  that trivial case.
+
+* Think one level up from the base case
+
+  What will happen when you call your recursive method with a value
+  that will require a single recursive call - that is, with a value
+  one away from the base case. How will you have to manipulate
+  that value in order to return the right thing? Ensure your
+  manipulation generalizes.
+
+Other notes:
+
+* Ensure that your return values from any case (base case or
+  otherwise) are always of the same type. If you need an array
+  as the final return value then the intermediate return values
+  must also be arrays. Why? Because each of those intermediate values
+  are returning from the same method!
 
 ## Exercises
 
@@ -193,7 +224,7 @@ You should be able to handle "mixed" arrays like `[1, [2], [3, [4]]]`.
 * Write a recursive and an iterative Fibonacci method. The method
   should take in an integer `n` and return the first `n` Fibonacci
   numbers in an array.
-  
+
   You shouldn't have to pass any arrays between methods; you should be
   able to do this just passing a single argument for the number of
   Fibonacci numbers requested.
