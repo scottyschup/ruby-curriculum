@@ -45,6 +45,24 @@ Because `Symbol`s start with a `:`, they are faster to type. They also
 make clear the intent of your program. You should use them whenever
 you aren't representing data that should be input or output.
 
+#### Aside: On symbol memory leaks
+
+Up above, it was mentioned that aggresively using #to_sym could
+cause a memory leak. Why? Because unlike strings or most other
+objects, symbols in Ruby are never garbage collected. That is,
+with most objects in Ruby, when there are no more references to
+that object, the Ruby interpreter will delete them from memory
+and free up that memory to be used for other objects. But because
+symbols are used for things like method lookup and other Ruby
+internals, they are not garbage collected.
+
+Symbols can be very handy and in a lot of cases, they're exactly
+the tool for the job. They can be more memory efficient than
+strings and their use can indicate to a reader of your code that
+that concept in your code is static and immutable. But their
+use should be targeted or else you may expose yourself to the
+possibility of a nasty memory leak.
+
 [immutable-wiki]:https://en.wikipedia.org/wiki/Immutable_object
 
 ## Option hashes
@@ -75,9 +93,9 @@ def better_format_url(options = {})
     :path => "/",
     :query_hash => {}
   }
-  
+
   options = defaults.merge(options)
-  
+
   # the query string is the part that comes after the '?' in a URL
   # like http://bing.com/search?q=this+is+my+search
   # this query string represents { :q => "this is my search }.
@@ -124,7 +142,7 @@ this to the method as the last argument. Another example:
 def do_something(required_arg1, required_arg2, options = {})
   # it's typical to give a default value for options in case no
   # options are passed
-  
+
   # ...
 end
 
