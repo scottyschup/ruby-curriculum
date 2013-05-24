@@ -169,6 +169,9 @@
 
 ### w2d6-w2d7
 + Finish [Poker][poker-project]
++ Begin [SQL Curriculum W3D1][sql-curriculum] readings.
+
+[sql-curriculum]: https://github.com/appacademy/sql-curriculum
 
 ## Additional Bonus Topics
 + [Modules](https://github.com/appacademy/ruby-curriculum/blob/master/language-intermediate/modules.md)
