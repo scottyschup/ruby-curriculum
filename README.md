@@ -170,19 +170,6 @@
 ### w2d6-w2d7
 + Finish [Poker][poker-project]
 
-## The Web
-### w3d1
-+ [HTTP](https://github.com/appacademy/ruby-curriculum/blob/master/the-web/http.md)
-+ [APIs](https://github.com/appacademy/ruby-curriculum/blob/master/the-web/apis.md)
-+ [Cookies](https://github.com/appacademy/ruby-curriculum/blob/master/the-web/cookies.md)
-+ [Intro to authentication](https://github.com/appacademy/ruby-curriculum/blob/master/the-web/intro-auth.md)
-+ [OAuth](https://github.com/appacademy/ruby-curriculum/blob/master/the-web/oauth.md)
-+ **Project**: [Ice Cream Finder][ice-cream-finder]
-+ **Project**: [Twitter Client][twitter-client]
-
-[ice-cream-finder]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/ice-cream-finder.md
-[twitter-client]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/twitter-client.md
-
 ## Additional Bonus Topics
 + [Modules](https://github.com/appacademy/ruby-curriculum/blob/master/language-intermediate/modules.md)
 + [Reflection and Metaprogramming](https://github.com/appacademy/ruby-curriculum/blob/master/language-intermediate/reflection.md)
