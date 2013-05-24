@@ -169,7 +169,6 @@
 
 ### w2d6-w2d7
 + Finish [Poker][poker-project]
-+ [Read additional git chapters](https://github.com/appacademy/ruby-curriculum/blob/master/git.md)
 
 ## The Web
 ### w3d1
@@ -179,7 +178,7 @@
 + [Intro to authentication](https://github.com/appacademy/ruby-curriculum/blob/master/the-web/intro-auth.md)
 + [OAuth](https://github.com/appacademy/ruby-curriculum/blob/master/the-web/oauth.md)
 + **Project**: [Ice Cream Finder][ice-cream-finder]
-* **Project**: [Twitter Client][twitter-client]
++ **Project**: [Twitter Client][twitter-client]
 
 [ice-cream-finder]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/ice-cream-finder.md
 [twitter-client]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/twitter-client.md
