@@ -10,7 +10,7 @@ class Order
   def initialize(customer)
     @customer = customer
   end
-  
+
   def send_confirmation_email
     email(:to => @customer.email_address, :subject => "Order Confirmation", :body => self.summary)
   end
@@ -33,7 +33,7 @@ describe Order
     )
     Order.new(customer)
   end
-  
+
   it "should send email successfully" do
     lambda do
       subject.send_confirmation_email
@@ -143,21 +143,6 @@ Notice that we set the message expectation before we actually kick off
 the `#charge_customer` method. Expectations need to be set up in
 advance.
 
-## The RSpec Book
-
-**Readings from the RSpec Book**:
-
-* ch14.1-ch14.5: mock basics
-* ch14.6: lots of options, just skim
-* ch14.7-ch14.8
-  * ch14.7 is a little airy; read it all, but I think the parts on
-    isolation from dependencies, nondeterminism, and progress without
-    implemented dependencies are the most practical.
-  * The ch14.8 subsection "Absence of Coverage" mentions one problem
-    with mocks: that they don't test whether our mock object will
-    correspond to the real object we'll actually encounter at
-    runtime. More on this in the section on integration tests below.
-
 ## Integration tests
 Mocks let us write unit tests that isolate the functionality of a
 single class from other outside classes. This lets us live up to the
@@ -190,8 +175,6 @@ have both unit and integration tests. The unit tests are very specific
 and are meant to isolate logical problems within a class; the
 integration tests are larger in scope and are intended to check that
 objects interact properly.
-
-**TODO: how should they write integration tests?**
 
 ## Resources
 * The double facilities are provided in the submodule of RSpec called
