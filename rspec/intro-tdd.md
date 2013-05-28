@@ -1,76 +1,48 @@
-# Intro TDD
+# Test-Driven Development
 
-Selections from the [Wikipedia article on TDD][wiki-tdd]:
+A common development process is to write the application code and then
+later develop some test coverage on important parts of that code.
+*Test-driven development* reverses that process and dictates that tests,
+not application code, should be written first, and then application
+code should only be written to pass already written specs.
 
-> Test-driven development (TDD) is a software development process that
-relies on the repetition of a very short development cycle: first the
-developer writes an (initially failing) automated test case that
-defines a desired improvement or new function, then produces the
-minimum amount of code to pass that test and finally refactors the new
-code to acceptable standards.
->
-> There are various aspects to using test-driven development, for
-example the principles of "keep it simple, stupid" (KISS) and "You
-ain't gonna need it" (YAGNI). By focusing on writing only the code
-necessary to pass tests, designs can be cleaner and clearer than is
-often achieved by other methods.
+**Define functionality and write the specs first, then implement.**
 
-> **Write the tests first.** The tests should be written before the
-functionality that is being tested. This has been claimed to have many
-benefits. It helps ensure that the application is written for
-testability, as the developers must consider how to test the
-application from the outset, rather than worrying about it later. It
-also ensures that tests for every feature will be written.
-Additionally, writing the tests firsts drives a deeper and earlier
-understanding of the product requirements, ensures the effectiveness
-of the test code, and maintains a continual focus on the quality of
-the product.
+## Motivations for TDD
 
-> **First fail the test cases.** The idea is to ensure that the test
-really works and can catch an error. Once this is shown, the
-underlying functionality can be implemented.
+* Code written is guaranteed to be testable because you are writing
+the code specifically to pass a test
+* Developers avoid writing lots of extra functionality that is not
+included in the specs because they engage in the spec-writing
+process first (enforces YAGNI - "you ain't gonna need it")
+* Ensure you have excellent test coverage because no application code
+is written without already written tests
+* Tight development workflow (red, green, refactor) makes for happy,
+productive developers
+* Encourages a focus on modularity because the developer is forced
+to think about the application in small, testable chunks
+* Encourages a focus on a module's/class's public interface (i.e.
+on how the module will be used rather than on how it's implemented)
 
-> **Keep the unit small.** For TDD, a unit is most commonly defined as
-a class or group of related functions, often called a module. Keeping
-units relatively small is claimed to provide critical benefits,
-including: 1) Reduced Debugging Effort – When test failures are
-detected, having smaller units aids in tracking down errors. 2)
-Self-Documenting Tests – Small test cases have improved readability
-and facilitate rapid understandability.
+## Red, Green, Refactor
 
-> Test-driven development offers more than just simple validation of
-correctness, but can also drive the design of a program. By focusing
-on the test cases first, one must imagine how the functionality will
-be used by clients (in the first case, the test cases). So, the
-programmer is concerned with the interface before the implementation.
+**Red, Green, Refactor** describes the proper TDD workflow.
 
-> TDD can lead to more modularized, flexible, and extensible code.
-This effect often comes about because the methodology requires that
-the developers think of the software in terms of small units that can
-be written and tested independently and integrated together later.
-This leads to smaller, more focused classes, looser coupling, and
-cleaner interfaces. The use of the mock object design pattern also
-contributes to the overall modularization of the code because this
-pattern requires that the code be written so that modules can be
-switched easily between mock versions for unit testing and "real"
-versions for deployment. [Ed: Testing in general (even outside the TDD
-context) contributes significantly to code extensibility; a test suite
-gives you a safety net that ensures that none of your new changes
-break any of your old code.]
+1. **Red**: Write the tests and watch them fail (go red). It's
+important to ensure the tests initially fail so that you don't have
+false positives.
+2. **Green**: Write the (minimum amount of) code to make the tests
+pass (go green).
+3. **Refactor**: Refactor the code you just wrote. Your job is not
+over when the tests pass; you got it working, now make it clean.
 
-> Because no more code is written than necessary to pass a failing
-test case, automated tests tend to cover every code path. For example,
-in order for a TDD developer to add an else branch to an existing if
-statement, the developer would first have to write a failing test case
-that motivates the branch. As a result, the automated tests resulting
-from TDD tend to be very thorough: they will detect any unexpected
-changes in the code's behavior. This detects problems that can arise
-where a change later in the development cycle unexpectedly alters
-other functionality.
+Generally, TDD developers keep their Red, Green, Refactor loop pretty
+tight. They'll write a few related tests, then implement the
+functionality, then refactor, then repeat. You keep the units small.
 
-**TODO**: they didn't understand that the cycle is write a test, write some code, repeat.
 
 ## Further Resources:
+* [Wikipedia article on TDD][wiki-tdd]
 * [HN thread on TDD in the context of startups][hn-tdd-startups]
 
 [wiki-tdd]: http://en.wikipedia.org/wiki/Test-driven_development
