@@ -1,181 +1,174 @@
-# Intro RSpec
-## CodeSchool RSpec
-First watch the [CodeSchool rspec video][codeschool-rspec] and
-complete the exercises (click the red arrows on the left). They
-mention a lot of contrasts between RSpec and Test::Unit, but just
-ignore those, as we won't use Test::Unit (and neither do many other
-people).
+# Testing & RSpec
 
-You may also wish to read David Chelimsky's blog post
-[Introduction to RSpec][chelimsky-rspec-intro]. This covers a lot of
-the same info as CodeSchool, but it's worth seeing twice. The post is
-a bit old, so keep in mind the following errata:
+Thus far in our programs, the way we would figure out whether a method
+was working in the way we intended it to work was to test it out by hand
+in pry or debugger or with a script. This can be tedious, repetitive,
+and worst of all, it is a method vulnerable to both false positives and
+false negatives. A testing method you can't trust is no testing method
+at all.
 
-* `> spec user_spec.rb` should be `> rspec user_spec.rb`
-* `require 'user'` should be `require './user'`
-* `$ spec user_spec.rb --format specdoc` should be `$ rspec user_spec.rb --format doc`
+Enter ***automated testing***.
 
-## RSpec Book
-Next, read through ch12 (Code Examples) and ch13 (RSpec::Expectations)
-of the [RSpec Book][rspec-book]. This goes in much more detail about
-RSpec; make sure you know the answers to the questions below.
+Programmers realized that this state of testing was a serious problem in
+the development of complex applications and various means of  automated
+testing were developed to speed and smooth the testing process. The
+general idea across all testing frameworks was to allow developers to
+write code that would specify the behavior of a method or module or
+class. Developers could then simply run the test code against their
+application code and have confidence that their code worked as intended.
 
-**In ch13 you can skim ch13.5 which is about `have`; this bit of sugar
-is not very important to us**
+Joy to the world.
 
-### Ch12
-* `describe`
-  * What is an example group?
-  * How do you indicate what class the examples are for?
-* What is the `context` method?
-  * We usually `describe` a class or `method`, which is what we're
-    testing. `context` is to set up the context "preconditions" of a
-    group of tests. Since `describe` and `context` are aliases for
-    each other, it won't hurt if you get this wrong.
-* `it`
-  * How do you name examples?
-  * What word shouldn't you use in example titles?
-  * What is a pending example?
-    * They are examples you haven't gotten to writing yet, or need to fix bugs for
-    * e.g. call `it "<should do something.. explanation string>"` without a block.
-    * e.g. within `#it` block, at the top line, call `pending "<expanation for pending>"`
-  * What parameters does it take?
-* What is the difference between `before(:each)` and `before(:all)`?
-  * Which one should you use most of the time?
-* How do you share example groups?
-  * Use `shared_examples_for "general subject"` passing it a block with each general test
-  * Call these general tests in an applicable #describe block using `it_behaves_like "general subject"`
+## RSpec
 
-### Ch13
+Ruby has a particularly robust testing library in RSpec. RSpec is a
+domain-specific language made for testing. It has its own set of
+methods, syntax, and patterns that in the end are all Ruby code, but
+Ruby code built to support testing.
 
-* `should`, `should_not`, matchers
-  * What objects are these methods available on?
-  * What is a matcher?
-  * [Read about][expect-syntax] the new `expect` syntax that rspec will be leaning towards
-[expect-syntax]: http://myronmars.to/n/dev-blog/2012/06/rspecs-new-expectation-syntax
-* What is the most common equality matcher?
-* Which is correct: `should_not ==` or `should !=`?  
-  * Never use `something.should != another`, it is interpreted by Ruby as `!(something.should == another)`
-* How can you use `be_close` matcher to test if a value is within
-  some range?
-* How do you match a regular expression? use `#match` or `=~` operator
-* How can you use `expect {...}.to change{...}` to express an event
-  and an outcome?
-* How can you use `raise_error` to match an error?
-* How can you use `be_x` to set an expectation that a predicate should
-  return a specific result?
-* How can you specify that a return value should "be truthy" (not
-  `false` or `nil`), rather than be the `true` value itself?
-  * Use `==` to check truthy-ness
-  * Use `#equals` to check whether value *equals* true or false
-* How do you test the value of `has_key?`, and other methods starting
-  with `has_`?
-* What are generated descriptions?
-  * `it` and `specify` are aliases, why do we use one or the other?
-* What is the `subject` of an example?
-  * How do we set the `subject` and use this to write more concise
-    tests?
+You've seen what RSpec looks like already because all the specs for
+your assessments are written in RSpec.
 
-## Better Specs
+*NB: RSpec also happens to be the first important Ruby gem we've
+encountered. Gems are a Ruby-specific way of packaging and distributing
+Ruby libraries. We'll encounter many more gems, especially as we move
+into Rails.*
+
+## Why Test?
+
+Yes, making sure the dang thing actually works is important. But beyond
+the obvious, why take the time to write tests?
+
+1. To make sure the dang thing works
+
+  Yes, that's obvious, but dagnabit, it's important!
+
+2. Increase flexibility & reduce fear (of code)
+
+  You've written a whole bunch of functionality, multiple other
+  developers have worked on the code, you're deep into the project.
+  And then you realize you have to refactor big chunks of it. Without
+  automated tests, you'll be walking on eggshells, frightened of the
+  codebase and the various landmines that are surely laying in wait.
+
+  With tests, you can aggressively refactor with confidence. If
+  anything breaks, you'll know. And you'll know exactly what the
+  expectations are for the module you're refactoring, so as long as
+  it meets the specs, you're good.
+
+3. Make collaboration easier
+
+  Complex applications are built by teams of developers. It may be that
+  not all those developers will actually get the chance to talk to one
+  another (they're busy, they may live in different places, some of
+  them may have left the company, new people just joined, it's a
+  huge project, etc.).
+
+  Specs allow teams to have confidence that each module performs a
+  specific task and reduces the need for expensive coordination. The
+  specs themselves become an effective form of communication.
+
+4. Produce documentation
+
+  If the tests are written well, the tests can serve as documentation
+  for the codebase. Need to know what such and such module does?
+  Check out the specs. Related to easing collaboration.
+
+Lots more. Trust.
+
+## RSpec Syntax & Mechanics
+
+**TODO**
+
+File & folders
+  lib/ & spec/
+  hello.rb & hello_spec.rb
+
+Rake
+  Task runner
+  Rakefile
+  spec task
+    RSpec task
+
+Readings
+  Core: https://github.com/rspec/rspec-core
+  Expectations: https://github.com/rspec/rspec-expectations
+  Need additional on:
+    before, after
+      Setting up context
+    pending specs
+
+## What & How to Test
+
+**TODO**
+
+What to test
+  Key methods
+  Complex methods
+    Even better is to simplify the method
+  Encountered a bug or edge case, write a test
+  Private methods?
+    Test the public interface, not private methods
+    http://stackoverflow.com/questions/4154409/how-to-spec-a-private-method
 
 [Better Specs][better-specs] has lots of good advice for how to write
 good tests. You should ignore Rails specific parts (and we'll show you
 how to set up guard later), but 90% of the advice should already be
-useful.
+useful. You don't need to read all of this. It's just a good resource
+and you should skim through some sections.
 
+
+[rspec-cor]: https://github.com/rspec/rspec-core
+[rspec-expectations]: https://github.com/rspec/rspec-expectations
 [better-specs]: http://betterspecs.org/
 
-## More tips
+## Automating Automated Testing (Guard)
 
-RSpec is a moving target, and a couple handy features aren't mentioned
-in the book.
+So running `rake` every 45 seconds doesn't seem very automated.
+Thankfully, Guard exists. Guard is a library that watches files
+for modifications and runs specified tasks when watched files are
+modified.
 
-The RSpec Book shows you how to use `subject`, which is preferred to
-setting an instance variable in the `before` block. The book shows you
-how to access the `subject` inside an example. You can also give the
-subject a name for ease of readability.
+Guard works with RSpec quite nicely and their integration makes our
+tests truly automated.
 
-```ruby
-describe Person do
-  subject(:person) { Person.new(:birthdate => 19.years.ago }
-  
-  it { should be_eligible_to_vote }
-  specify { person.should be_eligible_to_vote }
-  
-  # we can write an expectation of the `#age` method's result with
-  # `its`.
-  its(:age) { should == 19 }
-end
-```
+Check out the [guard-rspec gem][guard-rspec] that takes care of
+all this for you.
 
-A final trick to avoid setting instance variables in the `before`
-block is to use `let`:
+[guard-rspec]: https://github.com/guard/guard-rspec
 
-```ruby
-describe Robot do
-  subject(:robot) { Robot.new }
-  let(:light_item) { double("heavy_item", :weight => 1) }
-  let(:max_weight_item) { double("max_weight_item", :weight => 250) }
-
-  describe "#pick_up" do
-    it "should not add item past maximum weight of 250" do
-      robot.pick_up(max_weight_item)
-
-      expect do
-        robot.pick_up(light_item)
-      end.to raise_error(ArgumentError)
-    end
-  end
-end
-```
-
-Read more about why `let` may be preferred [here][myron-on-let].
+You can use the Guardfile on the guard-rspec README in your own
+projects.
 
 ## Reminders
 
-Don't use `!=`.  Rspec does not support `actual.should != expected`.  Instead use 
-`actual.should_not == expected`.
+Don't use `!=`.  Rspec does not support `actual.should != expected`.
+Instead use `actual.should_not eq expected` or `expect(actual).to_not eq expected`.
 
-On predicate syntatic sugar: With all predicates, you can strip off the ? and tack 
+On predicate syntatic sugar: With all predicates, you can strip off the ? and tack
 on a "be_" to make an expectation.  For example, `Array.empty?.should == true` is equivalent
-to `Array.should be_empty`. 
+to `Array.should be_empty`.
 
-Note that RSpec changes the tense of predicate `has_key?`, so your test should look 
-like `Hash.should have_key :key.
+Note that RSpec changes the tense of predicate `has_key?`, so your test
+should look like `expect(Hash).to have_key :key`.
 
 ## RSpec is a DSL
 
-RSpec is a great example of a [DSL][dsl-wiki], or domain specific language. 
-A DSL is a language which is dedicated to a particular problem domain. 
-So, RSpec is a language (or in this case, just a superset of ruby) which allows 
-for clearer expression in the testing domain.
+RSpec is a great example of a [DSL][dsl-wiki], or domain specific
+language. A DSL is a language which is dedicated to a particular problem
+domain. So, RSpec is a language (or in this case, just a superset of
+Ruby) which allows for clearer expression in the testing domain.
 
 ## Review Robot Spec
 
 Go back to the robot spec from the intro assessment. Read
 the spec file and make sure everything makes sense to you.
 
-## Unit vs Integration Tests
-**TODO: this graph doesn't go here**
-The unit tests are very specific and are meant to isolate logical
-problems within a class; the integration tests are larger in scope and
-are intended to check that objects interact properly. A thorough test
-suite will have both unit and integration tests.
+## Additional Resources
 
-**TODO: show them how to setup guard**
+* The [RSpec docs][rspec-docs] are a good resource. Knowing
+  RSpec well will let you write beautiful specs. Note that the
+  RSpec docs are specs themselves.
 
-## Resources
-* The [RSpec docs][rspec-docs] have lots of useful tricks. Knowing
-  RSpec well will let you write beautiful specs.
-* [Here's a good RSPEC resource][monkeyman], with lots of clear examples.
-* [Awesome RSpec cheet sheet][rspec-cheat-sheet] to review what you've read.
-
-[monkeyman]: http://rubydoc.info/gems/rspec-mocks/
-[codeschool-rspec]: http://rspec.codeschool.com/levels/1
-[chelimsky-rspec-intro]: http://blog.davidchelimsky.net/2007/05/14/an-introduction-to-rspec-part-i/
-[rspec-book]: http://pragprog.com/book/achbd/the-rspec-book
 [rspec-docs]: https://www.relishapp.com/rspec/rspec-core/v/2-4/docs
-[myron-on-let]: http://stackoverflow.com/a/5359979
-[robot-spec]: ../assessments/00_intro_assessment/robot_spec.rb
-[rspec-cheat-sheet]: https://gist.github.com/dnagir/663876
 [dsl-wiki]: https://en.wikipedia.org/wiki/Domain-specific_language
