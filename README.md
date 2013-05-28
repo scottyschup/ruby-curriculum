@@ -178,9 +178,3 @@
 + [Modules](https://github.com/appacademy/ruby-curriculum/blob/master/language-intermediate/modules.md)
 + [Reflection and Metaprogramming](https://github.com/appacademy/ruby-curriculum/blob/master/language-intermediate/reflection.md)
 + [Regular Expressions](https://github.com/appacademy/ruby-curriculum/blob/master/regex.md)
-
-### Possible new chapters
-* require
-* What is a DSL?
-* command line tutorial
-* **TODO: Readings from Well Grounded Rubyist?**
