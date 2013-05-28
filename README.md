@@ -153,16 +153,17 @@
 
 ## RSpec
 ### w2d5
-+ [TDD](https://github.com/appacademy/ruby-curriculum/blob/master/rspec/intro-tdd.md)
-+ [Whirlwind introduction to rspec](https://github.com/appacademy/ruby-curriculum/blob/master/rspec/intro-rspec.md)
-+ [Test doubles](https://github.com/appacademy/ruby-curriculum/blob/master/rspec/test-doubles.md)
++ [Introduction to RSpec][intro-rspec]
++ [TDD][intro-tdd]
++ [Test doubles][test-doubles]
 + [`subject` and `let`][subject-and-let]
-+ **Prep**: read assessment00 and assessment01 spec files the the
-  night before.
-    * Learn what you don't know about those specs.
++ **Demo Reading**: read assessment00 and assessment01 spec files
 + **Project**: [First TDD Projects][first-tdd-projects]
 + **Solo Project**: [Poker][poker-project]
 
+[intro-rspec]: https://github.com/appacademy/ruby-curriculum/blob/master/rspec/intro-rspec.md
+[intro-tdd]: https://github.com/appacademy/ruby-curriculum/blob/master/rspec/intro-tdd.md
+[test-doubles]: https://github.com/appacademy/ruby-curriculum/blob/master/rspec/test-doubles.md
 [subject-and-let]: https://github.com/appacademy/ruby-curriculum/blob/master/rspec/subject-and-let.md
 [first-tdd-projects]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/first-tdd-projects.md
 [poker-project]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/poker.md
