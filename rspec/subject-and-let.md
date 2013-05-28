@@ -3,22 +3,18 @@
 ## `subject`
 
 To test a class, you will often want to instantiate an instance of the
-object to test it out. In this case, you may want to define a subject
+object to test it out. In this case, you may want to define a `subject`
 for your tests.
 
 ```ruby
 describe Robot do
   subject(:robot) { Robot.new }
-
-  describe "#position" do
-    # position starts at [0, 0]
-    its(:position) { should == [0, 0] }
-  end
+  its(:position) { should eq [0, 0] }
 
   describe "move methods" do
     it "moves left" do
       robot.move_left
-      robot.position.should == [-1, 0]
+      its(:position) { should eq [-1, 0] }
     end
   end
 end
@@ -30,16 +26,21 @@ setup inside the block.
 
 The `#position` test uses `its`, which takes a method and
 runs it on the `subject`, saying the returned value should be
-`[0, 0]`.
+`[0, 0]`. For attributes and simple methods, this `its` syntax can be
+much cleaner and is preferred.
+
+*NB: `its` operates exclusively on `subject`*
 
 Other tests need to do more than test the initial value. For instance,
 the second test first moves the robot, then tests its
 position. You can't use the `its` method for this, but we can refer to
 the robot explicitly through the name we gave it.
 
-**Note that `subject` is used outside of an `it` spec**. Neither
+**Note that `subject` is defined outside of an `it` spec**. Neither
 `subject` nor `let` can be defined inside of a spec; they are defined
 outside specs and used within them.
+
+*Use `subject` and `its` where possible.*
 
 ## `let`
 
@@ -68,16 +69,31 @@ describe Robot do
 end
 ```
 
-An [example][dry-up-rspec] of using `let` inside of a spec.
+`let` defines a method (e.g. `light_item`, `max_weight_item`) that runs
+the block provided once for each spec in which it is called.
+
+You may see that you have the option of using instance variables in a
+`before` block to declare objects accessible to specs, but we'll
+avoid defining instance variables in specs. Always prefer `let`.
+Here's a [SO post][stack-overflow-let] that clearly describes why
+that is.
+
+Here's a [blog post][dry-up-rspec] with some nice examples using `let` -
+note how the author uses it in conjunction with `subject` (some fancy
+and clean stuff).
+
+[stack-overflow-let]: http://stackoverflow.com/questions/5359558/when-to-use-rspec-let
 [dry-up-rspec]:http://benscheirman.com/2011/05/dry-up-your-rspec-files-with-subject-let-blocks/
 
 ### `let` does not persist state
 
-You might read that `let` memoizes its return value. Memoization means that the
-first time the method is invoked, the return value is cached and that same
-value is returned every subsequent time the method is invoked within the same
-scope. Since every `it` or `its` block is a different scope, `let` does not
-persist state between those specs. Example:
+You might read that `let` memoizes its return value. Memoization means
+that the first time the method is invoked, the return value is cached
+and that same value is returned every subsequent time the method is
+invoked within the same scope. Since every `it` or `its` block is a
+different scope, `let` does not persist state between those specs.
+
+An example:
 
 ```ruby
 class Cat
@@ -100,4 +116,6 @@ describe "let" do
     cat.name.should == "Sennacy"
   end
 end
+
+# => All specs pass
 ```
