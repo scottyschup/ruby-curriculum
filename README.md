@@ -154,15 +154,19 @@
 ## RSpec
 ### w2d5
 + [Introduction to RSpec][intro-rspec]
++ [RSpec Syntax][rspec-syntax]
 + [TDD][intro-tdd]
 + [Test doubles][test-doubles]
 + [`subject` and `let`][subject-and-let]
++ [guard-rspec][guard-rspec]
 + **Demo Reading**: read assessment00 and assessment01 spec files
 + **Project**: [First TDD Projects][first-tdd-projects]
 + **Solo Project**: [Poker][poker-project]
 
 [intro-rspec]: https://github.com/appacademy/ruby-curriculum/blob/master/rspec/intro-rspec.md
+[rspec-syntax]: https://github.com/appacademy/ruby-curriculum/blob/master/rspec/rspec-syntax.md
 [intro-tdd]: https://github.com/appacademy/ruby-curriculum/blob/master/rspec/intro-tdd.md
+[guard-rspec]: https://github.com/appacademy/ruby-curriculum/blob/master/rspec/guard-rspec.md
 [test-doubles]: https://github.com/appacademy/ruby-curriculum/blob/master/rspec/test-doubles.md
 [subject-and-let]: https://github.com/appacademy/ruby-curriculum/blob/master/rspec/subject-and-let.md
 [first-tdd-projects]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/first-tdd-projects.md
