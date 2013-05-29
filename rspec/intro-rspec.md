@@ -76,40 +76,33 @@ the obvious, why take the time to write tests?
 
 Lots more. Trust.
 
-## RSpec Syntax & Mechanics
+## What to Test
 
-**TODO**
+So what exactly should we test?
 
-File & folders
-  lib/ & spec/
-  hello.rb & hello_spec.rb
+**Test the public interface.**
 
-Rake
-  Task runner
-  Rakefile
-  spec task
-    RSpec task
+When you're trying to figure out what you should be testing, ask
+yourself, "What is (or will be) the public interface of the module
+or class I'm writing?" That is, what are the methods that the outside
+world will have access to and rely on?
 
-Readings
-  Core: https://github.com/rspec/rspec-core
-  Expectations: https://github.com/rspec/rspec-expectations
-  Need additional on:
-    before, after
-      Setting up context
-    pending specs
+Ideally, you'd have thorough test coverage on the entire public
+interface. When that's not possible, ensure that your tests cover
+the most important and/or complex parts of that interface - that is,
+the pieces that you need to make sure work as intended (and
+expected).
 
-## What & How to Test
+*What about private methods?*
 
-**TODO**
+Sometimes, you'll have some pretty complex private methods and you
+might be thinking, "Don't I want to test those?"
 
-What to test
-  Key methods
-  Complex methods
-    Even better is to simplify the method
-  Encountered a bug or edge case, write a test
-  Private methods?
-    Test the public interface, not private methods
-    http://stackoverflow.com/questions/4154409/how-to-spec-a-private-method
+The answer is no. Private methods should be supporting public methods,
+so if you test those public methods and they work as intended, then
+the private methods must be working too. Private methods are part of
+the implementation details; when we're testing, what we care about is
+behavior.
 
 [Better Specs][better-specs] has lots of good advice for how to write
 good tests. You should ignore Rails specific parts (and we'll show you
@@ -117,58 +110,15 @@ how to set up guard later), but 90% of the advice should already be
 useful. You don't need to read all of this. It's just a good resource
 and you should skim through some sections.
 
-
-[rspec-cor]: https://github.com/rspec/rspec-core
-[rspec-expectations]: https://github.com/rspec/rspec-expectations
 [better-specs]: http://betterspecs.org/
 
-## Automating Automated Testing (Guard)
+## Additional Notes
 
-So running `rake` every 45 seconds doesn't seem very automated.
-Thankfully, Guard exists. Guard is a library that watches files
-for modifications and runs specified tasks when watched files are
-modified.
-
-Guard works with RSpec quite nicely and their integration makes our
-tests truly automated.
-
-Check out the [guard-rspec gem][guard-rspec] that takes care of
-all this for you.
-
-[guard-rspec]: https://github.com/guard/guard-rspec
-
-You can use the Guardfile on the guard-rspec README in your own
-projects.
-
-## Reminders
-
-Don't use `!=`.  Rspec does not support `actual.should != expected`.
-Instead use `actual.should_not eq expected` or `expect(actual).to_not eq expected`.
-
-On predicate syntatic sugar: With all predicates, you can strip off the ? and tack
-on a "be_" to make an expectation.  For example, `Array.empty?.should == true` is equivalent
-to `Array.should be_empty`.
-
-Note that RSpec changes the tense of predicate `has_key?`, so your test
-should look like `expect(Hash).to have_key :key`.
-
-## RSpec is a DSL
+#### RSpec is a DSL
 
 RSpec is a great example of a [DSL][dsl-wiki], or domain specific
 language. A DSL is a language which is dedicated to a particular problem
 domain. So, RSpec is a language (or in this case, just a superset of
 Ruby) which allows for clearer expression in the testing domain.
 
-## Review Robot Spec
-
-Go back to the robot spec from the intro assessment. Read
-the spec file and make sure everything makes sense to you.
-
-## Additional Resources
-
-* The [RSpec docs][rspec-docs] are a good resource. Knowing
-  RSpec well will let you write beautiful specs. Note that the
-  RSpec docs are specs themselves.
-
-[rspec-docs]: https://www.relishapp.com/rspec/rspec-core/v/2-4/docs
 [dsl-wiki]: https://en.wikipedia.org/wiki/Domain-specific_language
