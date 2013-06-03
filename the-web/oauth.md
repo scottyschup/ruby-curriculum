@@ -27,7 +27,7 @@ the client application. Here's roughly how it works:
 
 1. The client application writer registers with the service provider;
    part of the registration involves selecting what permissions should
-   be granted. For instance, Instagram registers with Twitter,
+   be granted. For instance, Instagram registers with Facebook,
    specifying that Instagram should be authorized to post to a user's
    wall. The client receives some *keys*, or codes, from the service
    provider.
@@ -36,7 +36,7 @@ the client application. Here's roughly how it works:
    service. This page displays the application name and what
    permissions will be granted. The user will have to be logged in to
    the service, and then clicks to authorize. For example,
-   Instagram redirects the user to a twitter.com page which asks
+   Instagram redirects the user to a facebook.com page which asks
    whether the user would like to authorize Instagram to post status
    updates.
 3. If the user accepts, the service will redirect the user back to a
