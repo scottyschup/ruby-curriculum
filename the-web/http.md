@@ -154,7 +154,8 @@ as web developers.
 ## Request body and query string
 When we make a POST or PUT request, we can upload content to the
 server by embedding it in the request's body. An example that might
-create a new Judge entry for Joe Brown, a TV judge:
+create a new Judge entry for [Joe Brown][joe-brown], a TV judge:
+[joe-brown]: http://en.wikipedia.org/wiki/Joe_Brown_(judge)
 
 ```
 POST /judges HTTP/1.1
