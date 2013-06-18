@@ -149,7 +149,7 @@ course, avoid tricky code, but if you can't, document it.
 
 ## Add line breaks appropriately
 
-Don't double space you're code; the extra space will look silly.
+Don't double space your code; the extra space will look silly.
 
 Your methods should be short anyway, but it can be hard to follow many
 lines of code with no line breaks. This is a subtle thing, but my
