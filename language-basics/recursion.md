@@ -242,6 +242,14 @@ You should be able to handle "mixed" arrays like `[1, [2], [3, [4]]]`.
   `Array`. Hint: The base case for this sort is surprisingly simple.
 * Write a method, `subsets`, that will return all subsets of an array.
 
+```ruby
+subsets([]) # => [[]]
+subsets([1]) # => [[], [1]]
+subsets([1, 2]) # => [[], [1], [2], [1, 2]]
+# can also implement as an instance method
+```
+
+
 [wiki-binary-search]: http://en.wikipedia.org/wiki/Binary_search
 [wiki-merge-sort]: http://en.wikipedia.org/wiki/Merge_sort
 
