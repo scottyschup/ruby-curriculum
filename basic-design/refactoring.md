@@ -103,7 +103,7 @@ that are lightly coupled. A good class delegates responsibility as
 necessary to other objects; it shouldn't need to know everything about
 what every other object is doing (omniscience), and it shouldn't
 micromanage how other objects manage their responsibilities. Nothing
-in your program usually needs to even about the existence of
+in your program usually needs to even know about the existence of
 everything else.
 
 **Dead code**: don't leave commented-out (or otherwise unused) code in
