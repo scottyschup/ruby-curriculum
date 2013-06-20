@@ -193,6 +193,7 @@ Note that for recursion 2, you will need to square the results of
 `exp(b, n / 2)` and `(exp(b, (n - 1) / 2) `. Remember that you don't
 need to do anything special to square a number, just calculate the value 
 and multiply it by itself.
+
 If the `n == 256`, about how many recursive steps will we run in the
 first case? About how many in the second? Keep in mind that the first
 reduces the exponent by one for each recursion, while the second
