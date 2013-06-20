@@ -31,5 +31,7 @@ much. You should have `HumanPlayer` and `ComputerPlayer` classes; they
 should contain the logic both for (1) guessing letters and (2)
 confirming guesses.
 
+After you finish these two cases, refactor your code so that you can have computer vs computer or human vs human as well.
+
 [wiki-hangman]: http://en.wikipedia.org/wiki/Hangman_(game)
 [dictionary]: https://github.com/appacademy/ruby-curriculum/blob/master/dictionary.txt
