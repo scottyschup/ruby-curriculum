@@ -14,7 +14,7 @@ describe Robot do
   describe "move methods" do
     it "moves left" do
       robot.move_left
-      its(:position) { should eq [-1, 0] }
+      robot.position.should eq([-1, 0])
     end
   end
 end
