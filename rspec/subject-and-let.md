@@ -54,7 +54,7 @@ overriden), whereas you can define many helper objects through `let`.
 ```ruby
 describe Robot do
   subject(:robot) { Robot.new }
-  let(:light_item) { double("heavy_item", :weight => 1) }
+  let(:light_item) { double("light_item", :weight => 1) }
   let(:max_weight_item) { double("max_weight_item", :weight => 250) }
 
   describe "#pick_up" do
