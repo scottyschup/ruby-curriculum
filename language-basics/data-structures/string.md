@@ -228,7 +228,7 @@ To refresh your memory, a few common base systems:
 
 |Base 10 (decimal)     |0|1|2|3|...|9|10|11|12|13|14|15
 |----------------------|---|---|---|---|---|---|---|---|---|---|---|---|
-|Base 2 (binary)       |0|1|10|11|...|1010|1011|1100|1101|1110|1111|10000|
+|Base 2 (binary)       |0|1|10|11|...|1001|1010|1011|1100|1101|1110|1111|
 |Base 16 (hexadecimal) |0|1|2|3|...|9|A|B|C|D|E|F|
 
 Examples of strings `num_to_s(num, base)` should produce:
