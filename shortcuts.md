@@ -9,6 +9,8 @@ with these commands.
 
 ### Navigation
 * Show project drawer: `Ctl + Opt + Cmd + d`
+  * Note: A project is a folder which contains multiple related files. 
+    These shortcuts will be very useful when we get to Rails.
 * Go to file: `Cmd + t`
 * New tab: `Opt + Cmd + n`
 * Close tab: `Cmd + w`
