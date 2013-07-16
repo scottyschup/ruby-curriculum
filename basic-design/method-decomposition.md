@@ -231,7 +231,7 @@ def sum(array)
 end
 ```
 
-This destroys the caller's array. Did he expect this? If modification
+This destroys the caller's array. Did they expect this? If modification
 of the argument is essential to what you're doing, fine, but otherwise
 don't do something potentially unexpected and dangerous like this.
 
