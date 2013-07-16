@@ -85,7 +85,7 @@ rps("Scissors") # => "Paper, Win"
 
 * Implement a Mixology game. The method `remix` should take an array
   of ingredient arrays (one alcohol, one mixer) and return the same
-  type of data structure, with the ingredient pairs mixed up. Assume
+  type of data structure, with the ingredient pairs randomly mixed up. Assume
   that the first item in the pair array is alcohol, and the second is
   a mixer. Don't pair an alcohol with an alcohol with or a mixer with
   a mixer. An example run of the program:
