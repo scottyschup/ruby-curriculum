@@ -45,9 +45,11 @@ already collected the starting word, too.
 
 Good luck!
 
+## Dictionary File
 
-[Dictionary file][dictionary]
+[Click through][dictionary], hit the "RAW" button, and save the text
+file. Don't just save-as; tha will save an HTML version of the github
+page.
 
-
-[dictionary]: https://github.com/appacademy/ruby-curriculum/blob/master/dictionary.txt
 [quiz]: http://www.rubyquiz.com/quiz44.html
+[dictionary]: https://github.com/appacademy/ruby-curriculum/blob/master/dictionary.txt
