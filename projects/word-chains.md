@@ -3,7 +3,7 @@
 Read the [RubyQuiz][quiz]. It may be down, in which case use the
 WaybackMachine.
 
-NB: You don't have to use recursion for this one.
+*NB: You don't have to use recursion for this one.*
 
 The general idea is this:
 
