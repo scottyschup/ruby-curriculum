@@ -288,7 +288,7 @@ more verbosely as:
 [1, 2, 5].select { |i| i.odd? }
 ```
 
-Note: In order to convert a symbol to a string you can use `#t_s' or `#to_sym`
+Note: In order to convert a symbol to a string you can use `#to_s` or `#to_sym`
 to go from string to symbol
 
 ## Required video
