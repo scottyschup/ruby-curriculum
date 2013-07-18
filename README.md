@@ -75,33 +75,37 @@
 
 [microblogger]: http://tutorials.jumpstartlab.com/projects/microblogger.html
 
-### w1d3
-+ [Blocks][blocks]
-+ [Recursion][recursion]
-+ [Scope][scope]
-+ **Project**: [Word chains][word-chains]
-+ **Project**: [Test First Ruby][test-first-ruby] XML parser (use [method_missing][method_missing])
-
-[blocks]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/blocks.md
-[recursion]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/recursion.md
-[scope]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/scope.md
-[word-chains]:  ./projects/word-chains.md
-
-[test-first-ruby]: https://github.com/alexch/learn_ruby
-[method_missing]: https://github.com/appacademy/ruby-curriculum/blob/master/language-intermediate/reflection.md#method_missing
-
 ## Basic design
-### w1d4
+
+### w1d3
++ [Designing a Program][program-design]
 + [Refactoring and Code Smells][code-smells]
++ [Scope][scope]
 + **Project**: [Mastermind][mastermind]
 + **Project**: [Hangman][hangman]
 
+[program-design]: ./oo-design/desigining-a-program.md
 [code-smells]: https://github.com/appacademy/ruby-curriculum/blob/master/basic-design/refactoring.md
+[scope]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/scope.md
 
 [mastermind]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/mastermind.md
 [hangman]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/hangman.md
 
 ## Algorithms
+
+### w1d4
++ [Blocks][blocks]
++ [Recursion][recursion]
++ **Project**: [Word chains][word-chains]
++ **Project**: [Test First Ruby][test-first-ruby] XML parser (use [method_missing][method_missing])
+
+[blocks]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/blocks.md
+[recursion]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/recursion.md
+[word-chains]:  ./projects/word-chains.md
+
+[test-first-ruby]: https://github.com/alexch/learn_ruby
+[method_missing]: https://github.com/appacademy/ruby-curriculum/blob/master/language-intermediate/reflection.md#method_missing
+
 ### w1d5
 + [Intro data structures][intro-data-structures]
 + **Project**: [Knight's Travails][knights-travails]
