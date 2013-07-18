@@ -16,7 +16,7 @@ In this project, you'll implement the game [Mastermind][wiki-mastermind].
   * You decide how the user inputs his guess.
   * Maybe like so "RGBY" for red-green-blue-yellow
 * The computer should tell the player how many exact matches (right
-  color in right spot) and near matches (right color, wrong spot) he
+  color in right spot) and near matches (right color, wrong spot) he or she
   has.
 * Game ends when user guesses the code, or out of turns.
 
