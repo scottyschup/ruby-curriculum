@@ -79,7 +79,7 @@
 + [Blocks][blocks]
 + [Recursion][recursion]
 + [Scope][scope]
-+ **project**: [Word chains][word-chains]
++ **Project**: [Word chains][word-chains]
 + **Project**: [Test First Ruby][test-first-ruby] XML parser (use [method_missing][method_missing])
 
 [blocks]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/blocks.md
@@ -93,7 +93,6 @@
 ## Basic design
 ### w1d4
 + [Refactoring and Code Smells][code-smells]
-+ **Project**: Review old code.
 + **Project**: [Mastermind][mastermind]
 + **Project**: [Hangman][hangman]
 
