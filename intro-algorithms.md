@@ -140,7 +140,8 @@ tree. It should have the following interface:
 
 * Improve your `TreeNode` to handle an arbitrary number of children
 * Improve your searches to optionally take a block that will return
-  true when an acceptable value is found.
+  true when an acceptable value is found (i.e., find the first node 
+  that makes the block return true.)
 
 ## References
 
