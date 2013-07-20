@@ -84,7 +84,7 @@
 + **Project**: [Mastermind][mastermind]
 + **Project**: [Hangman][hangman]
 
-[program-design]: ./oo-design/desigining-a-program.md
+[program-design]: ./oo-design/designing-a-program.md
 [code-smells]: https://github.com/appacademy/ruby-curriculum/blob/master/basic-design/refactoring.md
 [scope]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/scope.md
 
