@@ -35,7 +35,7 @@ It's often helpful to start out with comments & pseudocode.
   
 ## Play Loops
 
-  * Games usually advance in turns until some "gave over" condition is
+  * Games usually advance in turns until some "game over" condition is
     met
   * `play` method should contain main game loop
   * Loop should contain logic for each game "round"
