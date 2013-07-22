@@ -11,7 +11,7 @@ The user has two choices each turn.
 
 ### Reveal
 
-First, he can choose a square to reveal. If it contains a bomb, game
+First, they can choose a square to reveal. If it contains a bomb, game
 over. Otherwise, it will be revealed. If none of its neighbors
 contains a bomb, then all the adjacent neighbors are also revealed. If
 any of the neighbors have no adjacent bombs, they too are revealed. Et
@@ -37,7 +37,7 @@ recommend `*` for unexplored squares, `_` for "interior" squares when
 exploring, and a one-digit number for "fringe" squares. I'd put an `F`
 for flagged spots.
 
-You decide how the user inputs his choice. I recommend a coordinate
+You decide how the user inputs their choice. I recommend a coordinate
 system. Perhaps they should prefix their choice with either "r" for
 reveal or "f" for flag.
 
