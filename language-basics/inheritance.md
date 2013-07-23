@@ -171,7 +171,7 @@ should set the employee's manager attribute and add the employee to
 the manager's employee list. Note that managers can be assigned to
 higher level managers, of course.
 
-Add a method, `calculate_bonus(multiplier)` to `Employee`. Employees
+Add a method, `bonus(multiplier)` to `Employee`. Employees
 should get a bonus like this
 
     bonus = employee salary * multiplier
