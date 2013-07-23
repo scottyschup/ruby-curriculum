@@ -45,7 +45,7 @@ The point of object orientation is to present a simple interface,
 abstracting away the details inside the method implementations. Code
 that is too permissive breaks those abstractions, leaking internal
 concerns to the outside world. For instance, if we let a user call
-`start_engines`, now he needs to remember to later call
+`start_engines`, now they need to remember to later call
 `stop_engines`. This makes it harder to use our class.
 
 A good guiding principle of OO design is: minimize the interfaces
