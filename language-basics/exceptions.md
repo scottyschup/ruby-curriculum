@@ -52,7 +52,7 @@ exception in the variable `e`, then run the error handling code.
 
 If the calling method doesn't rescue (or *catch* or *handle*) an
 exception, it continues to *bubble up* the *call stack*. So the
-caller's caller gets a chance, then his caller, then...
+caller's caller gets a chance, then their caller, then...
 
 If no method throughout the entire call stack catches the exception,
 the exception is printed to the user and the program exits.
