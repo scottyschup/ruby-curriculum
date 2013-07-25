@@ -202,7 +202,11 @@
 + [Modules][modules]
 + [Reflection and Metaprogramming][reflection]
 + [Regular Expressions][regex]
++ [load/require/require_relative][require]
++ [public/private/protected][privacy]
 
 [modules]: ./bonus/modules.md
 [reflection]: ./bonus/reflection.md
 [regex]: ./bonus/regex.md
+[require]: ./bonus/require.md
+[privacy]: ./bonus/privacy.md
