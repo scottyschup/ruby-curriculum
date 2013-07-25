@@ -1,67 +1,115 @@
 # Modules
 
-Modules are bundles of methods and constants. The only difference
-between a class and a module is that you can't instantiate a module.
+A Ruby **module** is like a class, except you don't instantiate a
+module. Modules consist of methods that can *mixed-in* to a Ruby
+class.
 
-Aside: You won't write modules often unless you're writing
-libraries/frameworks/etc., but you will see them often, so it's going
-to help to know how they work.
+In Ruby, we use a module to collect methods that may be mixed-in and
+shared by many classes to keep our code DRY.
 
-## Include vs. Extend
-
-To add the methods defined in your module as instance methods, use `include`. Use `extend` to add the module methods as class methods. Example:
+Let's see an example:
 
 ```ruby
-module Emotions
-  def delight
-    puts "Purrr..."
+module Greetable
+  def greet
+    "Hello, my name is #{name}"
   end
 end
 
-class Cat
-  include Emotions
+class Human
+  include Greetable
+  
+  def initialize(name)
+    @name = name
+  end
+  
+  def name
+    @name
+  end
 end
 
-Cat.new.delight # Purrr...
-Cat.delight # NoMethodError: undefined method `delight' for Cat:Class
-
-class Cat
-  extend Emotions
+class Robot
+  include Greetable
+  
+  def name
+    "Robot Model #2000
+  end
 end
-
-Cat.delight # Purrr...
-Cat.new.delight # NoMethodError: undefined method `delight' for #<Cat:0x007f8cc384f790>
 ```
 
-Modules also offer initialize hooks that get called when the module is either included or extended.
+We "mix-in" a module by using the `Class#include` method. This will
+take the methods defined in the module and make them available to
+instances of `Robot` and `Human`.
+
+Note that module methods may call methods of the class that they are
+mixed into. In this case, the `Greetable` module needs to access a
+`name` method. Both `Robot` and `Human` have `name` methods.
+
+The most famous module is `Enumerable`. All the various methods of
+`Enumerable` are defined in terms of an `each` method, which the class
+(be it `Array`, `Hash`, etc.) must define. I sometimes describe
+modules as "power packs", in that they extend the abilities of a
+class.
+
+### Include vs extend
+
+It is common to add mix-in a module to add instance methods to a
+class; we've used `include` to do this. You can also use the
+`Class#extend` method to mix-in module methods *as class
+methods*. Here's an example:
 
 ```ruby
-module Emotions
-  def self.included(base)
-    ...
+module Findable
+  def objects
+    @objects ||= {}
   end
 
-  def self.extended(base)
-    ...
+  def find(id)
+    objects[id]
+  end
+
+  def track(id, object)
+    objects[id] = object
   end
 end
+
+class Cat
+  extend Findable
+  
+  def initialize(name)
+    @name = name
+    Cat.track(@name, self)
+  end
+end
+
+Cat.new("Gizmo")
+Cat.find("Gizmo") # finds Gizmo Cat object
 ```
 
 ## Mixins
 
-Ruby doesn't support multiple inheritance. In other words, a class can
-only have one parent class. For example, `Array`'s parent class is
-`Object`, as is `Hash`'s. But what if we want to add functionality to
-both `Array` and `Hash`? They both already have parent classes, so we
-can't subclass them. Instead we *mix-in* a module. This is exactly
-what the Ruby standard library does with the `Enumerable`
-module. Let's see how we would write this:
+Ruby doesn't support multiple inheritance: a class can only have one
+parent class. Only a few languages do support multiple inheritance;
+you can read about the "Diamond problem" if you want to learn why.
+
+Ruby's answer to multiple inheritance is the ability to mix-in
+modules. If two classes should share methods, but it is not feasible
+for them to share a base class, we can instead factor the common
+methods out into a module and `include` this in both the classes.
+
+Again, the prototypical example is the `Enumerable` module:
 
 ```ruby
 module Enumerable
-  def map
-    ...
+  def map(&prc)
+    results = []
+
+    # notice how we need `each` to write `map`
+    self.each { |el| results << prc.call(el) }
+
+    results
   end
+
   ...
 end
 
@@ -79,45 +127,13 @@ end
 Now all of the methods in the `Enumerable` module (e.g., `map`) are
 mixed-in to Array and Hash.
 
-### The power of mixins
-
-Module methods can call methods that are not defined in the module
-itself, but are meant to be defined in the class in which the module
-will be mixed. Let's give an example:
-
-```ruby
-module Enumerable
-  def all?(explicit_proc, &implicit_proc)
-    if explicit_proc && implicit_proc
-      raise "pass either a proc argument or a block; not both!"
-    end
-
-    # proc should be set to whichever proc is non-null
-    prc = explicit_proc || implicit_proc
-
-    # call each method, which Enumerable doesn't provide, but the
-    # class should.
-    each do |item|
-      return false unless prc.call(item)
-    end
-    
-    true
-  end
-  
-  # many more methods written in terms of each
-end
-```
-
-This means that if the base class supports a single simple method,
-`each`, we can mix in `Enumerable` to get all these powerful methods
-like `all?`, `none?`, `map`, etc.
-
 ## Namespaces
 
-Namespaces prevent name collisions. Say you have a method `make_bacon`
-in file 'A.rb'. Later, you decide to define a method `make_bacon` in
-file 'B.rb'. If you're writing a program that `requires` both files,
-one is going to overwrite the other and you'll be in trouble.
+Modules have a second purpose: as **namespaces**. Namespaces prevent
+name collisions. Say you have a method `make_bacon` in file
+'A.rb'. Later, you decide to define a method `make_bacon` in file
+'B.rb'. If you're writing a program that `requires` both files, one is
+going to overwrite the other and you'll be in trouble.
 
 This is where modules come in; if you wrap the code in 'A.rb' and
 'B.rb' in modules, you won't have any difficulty. This is how 'A.rb'
@@ -157,9 +173,3 @@ It doesn't normally make sense to put your application code inside a
 module, but if you want to make your code widely available as a gem,
 you would want to wrap it in a module so as to minimize potential
 conflicts.
-
-## Resources
-
-* More on [include and extend][include-vs-extend]
-
-[include-vs-extend]: http://rubyquicktips.com/post/1133877859/include-vs-extend
