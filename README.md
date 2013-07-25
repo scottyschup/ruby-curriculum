@@ -201,12 +201,10 @@
 ## Additional Bonus Topics
 + [Modules][modules]
 + [Metaprogramming and Reflection][metaprogramming]
-+ [Regular Expressions][regex]
 + [load/require/require_relative][require]
 + [public/private/protected][privacy]
 
 [modules]: ./bonus/modules.md
 [metaprogramming]: ./bonus/metaprogramming.md
-[regex]: ./bonus/regex.md
 [require]: ./bonus/require.md
 [privacy]: ./bonus/privacy.md
