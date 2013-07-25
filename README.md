@@ -107,12 +107,12 @@
 + **Project**: [Word chains][word-chains]
 + **Project**: [Test First Ruby][test-first-ruby] XML parser (use [method_missing][method_missing])
 
-[blocks]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/blocks.md
-[recursion]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/recursion.md
-[word-chains]:  ./projects/word-chains.md
+[blocks]: ./w1d4/blocks.md
+[recursion]: ./w1d4/recursion.md
 
+[word-chains]:  ./projects/word-chains.md
 [test-first-ruby]: https://github.com/alexch/learn_ruby
-[method_missing]: https://github.com/appacademy/ruby-curriculum/blob/master/language-intermediate/reflection.md#method_missing
+[method_missing]: ./language-intermediate/reflection.md#method_missing
 
 ### w1d5
 + [Intro data structures][intro-data-structures]
