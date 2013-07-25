@@ -146,12 +146,20 @@
 [git-summary]: ./git-summary.md
 
 ### w2d2
-+ [Class inheritance](https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/inheritance.md)
-+ [Exceptions, error handling](https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/exceptions.md)
-+ [Decomposition into objects](https://github.com/appacademy/ruby-curriculum/blob/master/oo-design/decomposition.md)
-+ [Inheritance, Polymorphism and DRY](https://github.com/appacademy/ruby-curriculum/blob/master/oo-design/inheritance.md)
-+ [Information hiding/encapsulation](https://github.com/appacademy/ruby-curriculum/blob/master/oo-design/hiding.md)
-+ **Project**: [Chess](https://github.com/appacademy/ruby-curriculum/blob/master/projects/chess.md)
++ [Class inheritance][inheritance]
++ [Exceptions, error handling][errors]
++ [Decomposition into objects][object-decomposition]
++ [Inheritance, Polymorphism and DRY][inheritance-design]
++ [Information hiding/encapsulation][hiding]
++ **Project**: [Chess][chess]
+
+[inheritance]: ./w2d2/inheritance.md
+[errors]: ./w2d2/errors.md
+[object-decomposition]: ./w2d2/object-decomposition.md
+[inheritance-design]: ./w2d2/inheritance-design.md
+[hiding]: ./w2d2/hiding.md
+
+[chess]: ./projects/chess.md
 
 ### w2d3
 * Continue Chess.
