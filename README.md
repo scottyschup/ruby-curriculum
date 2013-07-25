@@ -201,6 +201,10 @@
 [sql-curriculum]: https://github.com/appacademy/sql-curriculum
 
 ## Additional Bonus Topics
-+ [Modules](https://github.com/appacademy/ruby-curriculum/blob/master/language-intermediate/modules.md)
-+ [Reflection and Metaprogramming](https://github.com/appacademy/ruby-curriculum/blob/master/language-intermediate/reflection.md)
-+ [Regular Expressions](https://github.com/appacademy/ruby-curriculum/blob/master/regex.md)
++ [Modules][modules]
++ [Reflection and Metaprogramming][reflection]
++ [Regular Expressions][regex]
+
+[modules]: ./bonus/modules.md
+[reflection]: ./bonus/reflection.md
+[regex]: ./bonus/regex.md
