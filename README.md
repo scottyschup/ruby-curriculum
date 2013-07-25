@@ -184,14 +184,15 @@
 + **Project**: [First TDD Projects][first-tdd-projects]
 + **Solo Project**: [Poker][poker-project]
 
-[intro-rspec]: https://github.com/appacademy/ruby-curriculum/blob/master/rspec/intro-rspec.md
-[rspec-syntax]: https://github.com/appacademy/ruby-curriculum/blob/master/rspec/rspec-syntax.md
-[intro-tdd]: https://github.com/appacademy/ruby-curriculum/blob/master/rspec/intro-tdd.md
-[guard-rspec]: https://github.com/appacademy/ruby-curriculum/blob/master/rspec/guard-rspec.md
-[test-doubles]: https://github.com/appacademy/ruby-curriculum/blob/master/rspec/test-doubles.md
-[subject-and-let]: https://github.com/appacademy/ruby-curriculum/blob/master/rspec/subject-and-let.md
-[first-tdd-projects]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/first-tdd-projects.md
-[poker-project]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/poker.md
+[intro-rspec]: ./w2d5/intro-rspec.md
+[rspec-syntax]: ./w2d5/rspec-syntax.md
+[intro-tdd]: ./w2d5/intro-tdd.md
+[test-doubles]: ./w2d5/test-doubles.md
+[subject-and-let]: ./w2d5/subject-and-let.md
+[guard-rspec]: ./w2d5/guard-rspec.md
+
+[first-tdd-projects]: ./projects/first-tdd-projects.md
+[poker-project]: ./projects/poker.md
 
 ### w2d6-w2d7
 + Finish [Poker][poker-project]
