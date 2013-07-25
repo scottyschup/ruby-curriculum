@@ -52,4 +52,4 @@ file. Don't just save-as; tha will save an HTML version of the github
 page.
 
 [quiz]: http://www.rubyquiz.com/quiz44.html
-[dictionary]: https://github.com/appacademy/ruby-curriculum/blob/master/dictionary.txt
+[dictionary]: ./dictionary.txt
