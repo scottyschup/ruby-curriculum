@@ -119,9 +119,9 @@
 + **Project**: [Knight's Travails][knights-travails]
 + **Project**: [Tic-Tac-Toe AI][tic-tac-toe-ai]
 
-[intro-data-structures]: https://github.com/appacademy/ruby-curriculum/blob/master/intro-algorithms.md
-[knights-travails]: ./projects/knights_travails.md
+[intro-data-structures]: ./w1d5/intro-algorithms.md
 
+[knights-travails]: ./projects/knights_travails.md
 [tic-tac-toe-ai]: ./projects/tic-tac-toe-ai.md
 
 ## Git
