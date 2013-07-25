@@ -1,4 +1,4 @@
-# Reflection
+# Metaprogramming and Reflection
 
 One of the powers of Ruby is *reflection* (also called
 *introspection*): the ability of the program to examine itself.
@@ -22,18 +22,20 @@ by name:
 We can even define new methods dynamically:
 
 ```ruby
-1.9.3p194 :002 > Object.send(:define_method, :golem) { puts "Golem says hi!" }
-=> #<Proc:0x007ff856092800@(irb):2 (lambda)>
-1.9.3p194 :003 > Object.golem
-1.9.3p194 :004 > Object.new.golem
-Golem says hi!
+[1] pry(main)> class Golem
+[1] pry(main)* end
+=> nil
+[2] pry(main)> Golem.send(:define_method, :greet) { puts "Golem says hello!" }
+=> #<Proc:0x007f96220258b8@(pry):3 (lambda)>
+[3] pry(main)> Golem.new.greet
+Golem says hello!
 => nil
 ```
 
-Here we use `Object#send` to cheat and get around the fact that we
-cannot call the private method `#define_method` from outside the
+Here we use `Class#send` to cheat and get around the fact that we
+cannot call the private method `Class#define_method` from outside the
 class; private method protection is not enforced when using
-`#send`. We pass `#define_method` a method name, `:golem`, and a
+`#send`. We pass `#define_method` a method name, `:greet`, and a
 block, which will be the code to execute when the method is called.
 
 It is not an every-day occurrence to use powerful features like this,
@@ -46,21 +48,21 @@ class User
   def send_welcome_email
     Mailer.welcome_email(self).deliver!
   end
-  
+
   def send_confirmation_email
     Mailer.confirmation_email(self).deliver!
   end
-  
+
   def send_threatening_email
     Mailer.threatening_email(self).delier!
   end
 end
 ```
 
-Imagine the tedium if there were 100 emails. We'd like to DRY this up:
-maybe there should be one `User#send_email` method which takes an
-email name. But how would it call the different `Mailer` methods? We
-might use reflection:
+Imagine the tedium if there were 20 different emails we could
+send. We'd like to DRY this up: maybe there should be one
+`User#send_email` method which takes an email name. But how would it
+call the different `Mailer` methods? We might use reflection:
 
 ```ruby
 class User
@@ -86,7 +88,7 @@ module Emailable
   # user calls this to register an email that may be sent
   def register_email(name)
     # we define a method named, e.g., `#send_confirmation_email`
-    self.send(:define_method, "send_#{name}_email") do
+    send(:define_method, "send_#{name}_email") do
       # `#send_confirmation_email` calls the appropriate `Mailer`
       # method
       Mailer.send("#{name}_email", self).deliver!
@@ -98,8 +100,12 @@ class User
   # add Emailable methods as class methods
   extend Emailable
 
-  # we can register as many emails as we like
+  # next line defines a `send_confirmation_email` method
   register_email(:confirmation)
+  
+  # some more...
+  register_email(:greeting)
+  register_email(:unsubscribe)
 end
 ```
 
@@ -108,10 +114,8 @@ frequently use macros (especially with Rails, where they are heavily
 used). If something seems like magical syntax and you wonder where it
 came from, you might be looking at a macro.
 
-Bear in mind that these methods are very powerful, and will happily 
-overwrite any methods in the Class, even if they already exist.
-
 ## `method_missing`
+
 When a method is called on an object, Ruby first looks for an existing
 method with that name. If no such method exists, then it calls the
 `Object#method_missing` method. It passes the method name (as a
@@ -133,8 +137,8 @@ end
 [:adfasdfa, :a, :b, :c]
 ```
 
-Rails, for instance, has an old (now *deprecated*, in the process of
-being phased out) way of finding objects:
+Rails, for instance, has a way of finding objects through
+`method_missing`:
 
 ```ruby
 Person.find_by_user_first_name_and_last_name("Ned", "Ruggeri")
@@ -147,31 +151,12 @@ method, and for `find_by*` methods, it then parses the method name and
 figures out how it should perform the search.
 
 In the case of these *dynamic finders*, this is the only way to write
-this functionality. However, overriding method_missing can result in
+this functionality. However, overriding `method_missing` can result in
 difficult to understand to code, and should not be your first resort
 when attempting metaprogramming.
 
-## the `method` method
-`Object#method` takes a name, and returns a `Method` object. Like
-other callable types (`Proc`, `Lambda`), `Method#call` can take
-arguments, and then execute the method; the method will the be called
-on the original object.
-
-```ruby
-1.9.3p194 :012 > plus_twelve = 12.method(:+)
-=> #<Method: Fixnum#+>
-1.9.3p194 :014 > plus_twelve.call(3)
-=> 15
-```
-
-We can now pass this like we might a proc object
-
-```ruby
-1.9.3p194 :019 > [1, 3, 5].map(&plus_twelve)
-=> [13, 15, 17]
-```
-
 ## Type introspection
+
 So far we focused on finding, defining, and calling methods at
 runtime. We can also find class information:
 
@@ -209,9 +194,11 @@ Okay, all classes are instances of a `Class` class.
 => Object
 ```
 
-Classes are types of `Module`s, which are `Object`s.
+Classes are types of `Module`s, which are `Object`s. In Ruby
+everything is an `Object`, even `Class`es!
 
 ## Type introspection for fun and profit
+
 Say we have written a method `perform_get` that fetches a resource
 over the internet. As a convenience to the user, we'd like
 `perform_get` to take either a `String`, which is the literal URL to
@@ -244,7 +231,6 @@ This is a quite common trick used by library writers to make their
 methods much more flexible. You may not write a method like this
 often, but as you grow more experienced, this kind of trick will come
 in handy from time to time.
-
 
 ## Exercises
 Estimate time: .25hrs
