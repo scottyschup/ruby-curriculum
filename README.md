@@ -1,7 +1,5 @@
 # Intro Ruby Topics
 
-[TODO](./TODO.md)
-
 ## Meta
 
 + [Course Preliminaries][course-preliminaries]
