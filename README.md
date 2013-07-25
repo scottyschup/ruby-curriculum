@@ -134,17 +134,16 @@
 
 ## Language Basics II, OO Design
 ### w2d1
-+ [Serialization](https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/serialization.md) (JSON and YAML)
-+ [Gems and rvm](https://github.com/appacademy/ruby-curriculum/blob/master/language-intermediate/gems-and-rvm.md)
++ [Serialization][serialization] (JSON and YAML)
++ [Gems and rvm][gems]
 + **Project**: [Minesweeper][minesweeper]
     * Use git. Here's a [git summary][git-summary].
-    * Reread the [code review chapter][code-review]
-    * [Code review NYC][code-review-nyc]
 
+[serialization]: ./w2d1/serialization.md
+[gems]: ./w2d1/gems-and-rvm.md
+
+[minesweeper]: ./projects/minesweeper.md
 [git-summary]: ./git-summary.md
-[minesweeper]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/minesweeper.md
-[code-review]: https://github.com/appacademy/meta/blob/master/code-reviews.md
-[code-review-nyc]: https://github.com/appacademy/meta/blob/master/code-reviews-nyc.md
 
 ### w2d2
 + [Class inheritance](https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/inheritance.md)
