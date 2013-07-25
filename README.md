@@ -92,12 +92,12 @@
 + **Project**: [Mastermind][mastermind]
 + **Project**: [Hangman][hangman]
 
-[program-design]: ./oo-design/designing-a-program.md
-[code-smells]: https://github.com/appacademy/ruby-curriculum/blob/master/basic-design/refactoring.md
-[scope]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/scope.md
+[program-design]: ./w1d3/designing-a-program.md
+[code-smells]: ./w1d3/refactoring.md
+[scope]: ./w1d3/scope.md
 
-[mastermind]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/mastermind.md
-[hangman]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/hangman.md
+[mastermind]: ./projects/mastermind.md
+[hangman]: ./projects/hangman.md
 
 ## Algorithms
 
