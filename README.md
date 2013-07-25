@@ -14,38 +14,43 @@
 
 ## Ruby basics
 ### w1d1
-+ [Keyboard Shortcuts][keyboard-shortcuts]
-+ [A note on Ruby versions][versions]
++ Tips/Tricks
+    + [Keyboard Shortcuts][keyboard-shortcuts]
+    + [A note on Ruby versions][versions]
 + Primitive Ruby types (common methods)
-  + [Array][array]
-  + [String][string]
-  + [Hash][hash]
-  + [Enumerable][enumerable]
-  + [Object][object]
+    + [Array][array]
+    + [String][string]
+    + [Hash][hash]
+    + [Enumerable][enumerable]
+    + [Object][object]
 + Debugging
-  + [pry and debugger][pry-and-debugger]
-  + [common error messages][common-error-messages]
-+ [Source files][source-files]
-+ [Writing a Ruby Script][writing-a-script]
+    + [pry and debugger][pry-and-debugger]
+    + [common error messages][common-error-messages]
++ Running/loading Ruby code
+    + [Source files][source-files]
+    + [Writing a Ruby Script][writing-a-script]
 + **Project**: In Words (ex #15) from [Test First Ruby][test-first-ruby]
 + **Bonus project**: [Maze solver][maze-project]
 + **Bonus project**: Use Ruby to solve the
-  [eight-queens problems][eight-queens]
+  [eight-queens problem][eight-queens].
 
-[versions]: ./language-basics/versions.md
-[array]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/data-structures/array.md
-[string]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/data-structures/string.md
-[hash]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/data-structures/hash.md
-[enumerable]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/data-structures/enumerable.md
-[object]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/data-structures/object.md
-[pry-and-debugger]: https://github.com/appacademy/ruby-curriculum/blob/master/debugging/debugger.md
-[common-error-messages]: https://github.com/appacademy/ruby-curriculum/blob/master/debugging/common-exceptions.md
-[source-files]: ./language-basics/source-files.md
-[writing-a-script]: ./language-basics/writing-a-script.md
+[array]: ./w1d1/data-structures/array.md
+[string]: ./w1d1/data-structures/string.md
+[hash]: ./w1d1/data-structures/hash.md
+[enumerable]: ./w1d1/data-structures/enumerable.md
+[object]: ./w1d1/data-structures/object.md
+
+[pry-and-debugger]: ./w1d1/debugging/debugger.md
+[common-error-messages]: ./w1d1/debugging/common-exceptions.md
+
+[source-files]: ./w1d1/running-ruby-code/source-files.md
+[writing-a-script]: ./w1d1/running-ruby-code/writing-a-script.md
+
+[versions]: ./w1d1/versions.md
 [keyboard-shortcuts]: https://github.com/appacademy/ruby-curriculum/blob/master/shortcuts.md
 
 [test-first-ruby]: https://github.com/alexch/learn_ruby
-[maze-project]: https://github.com/appacademy/ruby-curriculum/blob/master/projects/maze-solver.md
+[maze-project]: ./projects/maze-solver.md
 [eight-queens]: http://en.wikipedia.org/wiki/Eight_queens_puzzle
 
 ### w1d2
