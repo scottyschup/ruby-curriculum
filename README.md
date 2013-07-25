@@ -203,6 +203,8 @@
 + [Metaprogramming and Reflection][metaprogramming]
 + [load/require/require_relative][require]
 + [public/private/protected][privacy]
++ **TODO**: Class and instance variables
++ **TODO**: Hash and the various equal methods
 
 [modules]: ./bonus/modules.md
 [metaprogramming]: ./bonus/metaprogramming.md
