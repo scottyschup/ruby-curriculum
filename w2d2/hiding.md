@@ -1,4 +1,5 @@
 # Information hiding
+
 ## Private Methods
 
 In Ruby, we can mark specific methods in our classes as
@@ -19,9 +20,9 @@ class Airplane
 end
 ```
 
-All methods after the [`private`](http://ruby-doc.org/core-2.0/Module.html#method-i-private) keyword are private to the
-class. Notice that we have indented the private code; this isn't
-required, but might help you remember that this code is private.
+All methods after the [`private`][private-keyword] keyword are private
+to the class. Notice that we have indented the private code; this
+isn't required, but might help you remember that this code is private.
 
 What kind of methods should be `private`? Ones which users of the
 class should not call, either for safety reasons (user doesn't know
@@ -30,10 +31,12 @@ that don't concern them (user just wants to `fly`, doesn't want to
 know how that happens).
 
 Instance variables cannot be accessed outside the class so they are
-always "private" by default. You can however use [`attr_accessor`](http://ruby-doc.org/core-2.0/Module.html#method-i-attr_accessor) to
-expose instance variables and allow people to get or set them.
+always "private" by default. You can however use
+[`attr_accessor`][attr-accessor] to expose instance variables and
+allow people to get or set them.
 
 ## Shy Code
+
 We mentioned safety and a simple interface as reasons that you might
 want to create private methods. Also, you want to make it easy to
 change and extend your code. The more you expose to users of the class
@@ -58,3 +61,6 @@ public, it won't be a disaster. Myself, I focus on catching cases
 where a method is obviously internal to the workings of the
 class. Robust code ready to release to the outside world should be
 checked for this, though.
+
+[private-keyword]: http://ruby-doc.org/core-2.0/Module.html#method-i-private
+[attr-accessor]: http://ruby-doc.org/core-2.0/Module.html#method-i-attr_accessor
