@@ -34,6 +34,9 @@
 + **Bonus project**: Use Ruby to solve the
   [eight-queens problem][eight-queens].
 
+[keyboard-shortcuts]: ./w1d1/shortcuts.md
+[versions]: ./w1d1/versions.md
+
 [array]: ./w1d1/data-structures/array.md
 [string]: ./w1d1/data-structures/string.md
 [hash]: ./w1d1/data-structures/hash.md
@@ -45,9 +48,6 @@
 
 [source-files]: ./w1d1/running-ruby-code/source-files.md
 [writing-a-script]: ./w1d1/running-ruby-code/writing-a-script.md
-
-[versions]: ./w1d1/versions.md
-[keyboard-shortcuts]: https://github.com/appacademy/ruby-curriculum/blob/master/shortcuts.md
 
 [test-first-ruby]: https://github.com/alexch/learn_ruby
 [maze-project]: ./projects/maze-solver.md
