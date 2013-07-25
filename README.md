@@ -55,28 +55,31 @@
 
 ### w1d2
 + [Methods][methods]
-+ [DRY: Don't Repeat Yourself][dry]
-+ [Coding style][coding-style]
-+ [Method decomposition][method-decomposition]
-+ [Choosing good names][naming]
 + [Iteration][iteration]
 + [Symbols, Strings, and Option Hashes][symbols-and-strings]
 + [Input/Output][input-output]
++ Style
+    + [DRY: Don't Repeat Yourself][dry]
+    + [Coding style][coding-style]
+    + [Method decomposition][method-decomposition]
+    + [Choosing good names][naming]
 + [Classes][classes]
 + [Pass by reference][pass-by-reference]
 + **Project**: [MicroBlogger][microblogger]
   * Don't do the Klout part.
 
-[iteration]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/iteration.md
-[methods]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/methods.md
-[symbols-and-strings]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/symbols-and-strings.md
-[input-output]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/io.md
-[coding-style]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/coding-style.md
-[classes]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/classes.md
-[pass-by-reference]: https://github.com/appacademy/ruby-curriculum/blob/master/language-basics/pass-by-reference.md
-[dry]: https://github.com/appacademy/ruby-curriculum/blob/master/basic-design/dry.md
-[naming]: https://github.com/appacademy/ruby-curriculum/blob/master/basic-design/naming.md
-[method-decomposition]: https://github.com/appacademy/ruby-curriculum/blob/master/basic-design/method-decomposition.md
+[methods]: ./w1d2/methods.md
+[iteration]: ./w1d2/iteration.md
+[symbols-and-strings]: ./w1d2/symbols-and-strings.md
+[input-output]: ./w1d2/io.md
+
+[dry]: ./w1d2/style/dry.md
+[coding-style]: ./w1d2/style/coding-style.md
+[method-decomposition]: ./w1d2/style/method-decomposition.md
+[naming]: ./w1d2/style/naming.md
+
+[classes]: ./w1d2/classes.md
+[pass-by-reference]: ./w1d2/pass-by-reference.md
 
 [microblogger]: http://tutorials.jumpstartlab.com/projects/microblogger.html
 
