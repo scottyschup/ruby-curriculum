@@ -7,25 +7,21 @@ folders.
 Ruby gives us three means by which to manage dependencies among
 those files:
 
-  * `require`
-  * `require_relative`
-  * `load`
+* `require`
+* `require_relative`
+* `load`
 
 ## Why?
 
-*lib/board.rb*
-
-```
+```ruby
+# lib/board.rb
 class Board
   def initialize
     @grid = Array.new(10)
   end
 end
-```
 
-*lib/game.rb*
-
-```
+# lib/game.rb
 class Game
   def initialize
     @board = Board.new
@@ -35,21 +31,19 @@ end
 game = Game.new
 ```
 
-*in terminal*
-
 ```
 $ ruby lib/game.rb
 lib/game.rb:3:in `initialize': uninitialized constant Game::Board (NameError)
 ```
 
 Ruby doesn't know what `Board` is (because it's defined in another
-file) and so throws an error.
+file) and so throws an error. The problem is that the `game.rb` file
+does not tell Ruby that `board.rb` should be loaded:
 
 Well, we know how to deal with this:
 
-*lib/game.rb*
-
 ```
+# lib/game.rb
 require 'board'
 
 class Game
@@ -72,26 +66,26 @@ $ ruby lib/game.rb
 cannot load such file -- board (LoadError)
 ```
 
-?!!? What in the world? A `LoadError`?
+Huh? I thought we knew how to solve this problem? Why did we receive a
+`LoadError`?
 
 A `LoadError` is basically telling you that Ruby did not find the file
-that you told it to load.
+that you told it to load. Why not; `board.rb` is in the same directory
+as `game.rb`, after all...
 
-But `board.rb` is in the same directory. Shouldn't that be enough?
+This is not enough. The problem is Ruby's **load path**.
 
-Unfortunately, no. Why not? Because of Ruby's load path.
-
-## Ruby's Load Path `$:`
+## Ruby's Load Path: `$LOAD_PATH`
 
 Whenever you use a `require` statement, Ruby tries to find the
-specified file in its load path, which is a list of directories. Its
-specific purpose is to maintain the list of directories through which
-Ruby will search when a `require` or `load` statement is run by the
-interpreter.
+specified file in its **load path**, which is a list of
+directories. Its specific purpose is to maintain the list of
+directories through which Ruby will search when a `require` or `load`
+statement is run by the interpreter.
 
 The load path includes things like the files that make up Ruby's
 Standard Library as well as gems you have installed. You can always
-access it through the global variable `$:`.
+access it through the global variable `$LOAD_PATH`.
 
 The directory `'.'` (i.e. the current directory) is not in the load
 path. Funny enough, it used to be, but in Ruby 1.9.2, the
@@ -100,21 +94,38 @@ reasons. Oh well.
 
 So, what can we do?
 
-We have two options:
+We have three options:
 
-1. Use `require_relative`
-2. Add a folder to the load path with the `-I` flag
+0. Use an explicit path (like `./board`),
+1. Use `require_relative`,
+2. Or add a folder to the load path with the `-I` flag
+
+## Explicit paths
+
+Even if a file is not in a `$LOAD_PATH` directory, you can still load
+it if you give an explicit path to the file. For instance, you can
+write `require './board.rb'`, which will look for `board.rb` in the
+current directory (`.`).
+
+There is on problem: the current directory is **the directory you are
+running ruby from**. So if you run:
+
+    ruby lib/game.rb
+
+`require './board.rb'` will look inside the current directory for
+`board.rb`; which is outside `lib`.
+
+To fix this problem, we often use `require_relative`.
 
 ## `require_relative`
 
-`require_relative` is `require`'s sometimes more helpful brother.
-It does just what `require` does, but instead of looking up a file
-in the load path, it will use the current directory as its starting
-point.
-
-*lib/game.rb*
+`require_relative` is `require`'s sometimes more helpful brother.  It
+does just what `require` does, but instead of looking up a file in the
+load path, it will use the directory of the current source file as the
+starting point:
 
 ```
+# lib/game.rb
 require_relative `board`
 
 class Game
@@ -130,10 +141,15 @@ game = Game.new
 
 ```
 $ ruby lib/game.rb
-$
 ```
 
-Ah, wonderful. Everything worked without a hitch.
+Ah, wonderful. Everything worked without a hitch this time. Even
+though we launched Ruby outside `lib`, since `game.rb` lives in `lib`,
+it looked in `lib` for `board.rb`.
+
+Note that it is superfluous to add `./` with `require_relative`. Also
+note that neither `require` nor `require_relative` will force you to
+use the standard `.rb`; they'll add it for you.
 
 ## Add a folder to the load path `-I`
 
@@ -141,9 +157,8 @@ Another option we have it to add the current directory to the load
 path using the `-I` flag when we call the `ruby` or `irb` or `pry`
 commands in the terminal.
 
-*lib/game.rb*
-
 ```
+# lib/game.rb
 require `board`
 
 class Game
@@ -155,9 +170,7 @@ end
 game = Game.new
 ```
 
-*NB: Note the regular `require` statement.*
-
-*in terminal*
+**NB: Note the regular `require` statement.** Then we write:
 
 ```
 $ ruby -I lib lib/game.rb
@@ -183,6 +196,13 @@ $ ruby -I. my_file.rb  # Adds the current dir to the path
 $ pry -Ispec spec/file_spec.rb
 ```
 
+In general, `-I` is a poor alternative to `require_relative`. `-I` is
+typically used in other, stranger cases, where Ruby library code lives
+off the default `$LOAD_PATH`, but outside the current project.
+
+Use `require_relative` when your code wants to include other code you
+wrote from the same project.
+
 ## `load`
 
 Finally we come to `load`.
@@ -204,13 +224,12 @@ interpreter sees that the file has previously been required and
 does nothing. But if you use `load`, the updated file will be read
 in.
 
+**Never use `load` in source files**. `load` should only be used in
+the context of a REPL like pry or irb. There should never be a
+necessity to use `load` in a source file, since source files will not
+be dynamically modified and re-loaded during the duration of a
+running, production program. `load` is there for convenience when
+developing and debugging in the REPL.
+
 *NB: `require_relative`, as was mentioned before, works in exactly
 the same way as `require`.*
-
----
-
-**Misc.**
-
-Note that local variables defined at the bottom of files, regardless
-of whether they're read in using `require` or `load` will not be
-available in pry or irb.
