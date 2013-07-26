@@ -297,9 +297,9 @@ On predicate syntatic sugar: With all predicates, you can strip off the
 Note that RSpec changes the tense of predicate `has_key?`, so your test
 should look like `expect(Hash).to have_key :key`.
 
-## Review Robot Spec
+## Intro Assessment Spec
 
-Go back to the robot spec from the intro assessment. Read
+Go back to the spec from the intro assessment. Read
 the spec file and make sure everything makes sense to you.
 
 ## Additional Resources
