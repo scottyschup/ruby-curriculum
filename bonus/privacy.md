@@ -69,11 +69,30 @@ do?
 > thing = MyClass.new
  => #<MyClass:0x007fe2612ccae0>
 > thing.implicit_receiver
+Hello World
+ => nil
 
-
+> thing.explicit_receiver
+ NoMethodError: private method `private_thing' called for #<MyClass:0x007f9cfa064200>
 ```
-* no explicit receiver, even self!
-* okay if defined in superclass
+
+So not even `self` is okay as the explicit receiver! Note that private
+methods are inherited. So if we were to say:
+```
+class MyOtherClass < MyClass
+   def implicitly_inherited
+      private_thing
+   end
+end
+
+# in irb
+
+> thing2 = MyOtherClass.new
+> thing2.implicitly_inherited
+Hello World
+ => nil
+```
+
 
 ### `Protected`
 > * *Protected methods* can be invoked only by objects of the defining
