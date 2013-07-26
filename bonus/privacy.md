@@ -63,9 +63,12 @@ end
 ```
 
 What do you expect `#explicit_receiver` and `#implicit_receiver` to
-return?
+do?
 
-```ruby
+```
+> thing = MyClass.new
+ => #<MyClass:0x007fe2612ccae0>
+> thing.implicit_receiver
 
 
 ```
@@ -76,10 +79,44 @@ return?
 > * *Protected methods* can be invoked only by objects of the defining
 > class and its subclasses. Access is kept within the family.
 
+So protected methods can be called with an explicit receiver, so long
+as the caller is of the same class or subclasses.
 
-* can have explicit receiver so long as it has same class as self, or is superclass of self.
+```ruby
+class Dog
+  def hear_whistle(dog)
+    dog.whistle
+  end
+  def hear_woof(dog)
+    dog.woof
+  end
 
-### They're methods!
+  protected
+  def whistle
+    puts "whistle"
+  end
+end
+
+class Beagle < Dog
+  protected
+  def woof
+    puts "woof"
+  end
+end
+
+# in irb
+
+> dog = Dog.new
+> beagle = Beagle.new
+
+> beagle.hear_whistle(dog)
+whistle
+
+> dog.hear_woof(beagle)
+protected method `woof' called for #<Beagle:0x007fb3a1928518> (NoMethodError)
+```
+
+### Using Access Controls
 
 If you see this,
 
@@ -96,17 +133,21 @@ class Cat
 end
 ```
 
-and think that `#meow` is public. You will be surprised to find that:
+and think that `#meow` is public. You will be surprised to see:
 
 ```ruby
-> Cat.new.meow
+> cat = Cat.new
+ => #<Cat:0x007fe26094bae8>
+
+> cat.meow
 NoMethodError: private method `meow' called for #<Cat:0x007f9bda076278>
 ```
+#### They Act 'till the End of Scope!
 
 In the above example, both `thoughts` and `#meow` are private. This is
-because access modifiers like `private` continue until either the end
-of the class definition or another access modifier. So we would be
-better off putting in another access modifier like this:
+because access modifiers like `private` continue either until the end
+of the class definition or until they hit another access modifier. Thus
+we need to specify that `#meow` is public.
 
 ```ruby
 class Cat
@@ -122,8 +163,34 @@ class Cat
 end
 ```
 
-Or better yet, just defining `#meow` before `#thoughts` and the
-`private` keyword, as methods are public by default.
+#### Not Secure
+
+Note that these access modifiers are *not* for security. In fact,
+they're super easy to subvert. Check it out:
+
+```ruby
+class Cat
+   private
+   def meow
+      puts "meow"
+   end
+end
+
+# in irb:
+> cat = Cat.new
+
+> Cat.new.meow
+NoMethodError: private method `meow' called for #<Cat:0x007feafb40a1f8>
+
+> Cat.new.send(:meow)
+meow
+ => nil
+```
+
+We'll cover `#send` another day, but all you need to know is that it's
+easy to subvert the private access control. Instead of security, you
+should be using access controls to choose how users will interact with
+your classes.
 
 [ruby-from-other-lang]:http://www.ruby-lang.org/en/documentation/ruby-from-other-languages/
 
