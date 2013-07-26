@@ -1,6 +1,6 @@
 # RSpec Syntax & Mechanics
 
-RSpec is a distributed in a gem called 'rspec', which is actually a
+RSpec is distributed in a gem called 'rspec', which is actually a
 meta-gem that packages three other gems: rspec-core, rspec-expectations,
 and rspec-mocks. We'll spend most of our time on rspec-core and  rspec-
 expectations.
