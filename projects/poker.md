@@ -34,5 +34,5 @@ Classes you will want:
         * Whether they wish to fold, see, or raise.
 * Game
     * Holds the deck
-    * Keeps track of who's turn it is
+    * Keeps track of whose turn it is
     * Keeps track of the amount in the pot.
