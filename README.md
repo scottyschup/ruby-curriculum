@@ -180,7 +180,7 @@
 + [guard-rspec][guard-rspec]
 + **Demo Reading**: read assessment00 and assessment01 spec files
 + **Project**: [First TDD Projects][first-tdd-projects]
-+ **Solo Project**: [Poker][poker-project]
++ **Project**: [Poker][poker-project]
 
 [intro-rspec]: ./w2d5/intro-rspec.md
 [rspec-syntax]: ./w2d5/rspec-syntax.md
