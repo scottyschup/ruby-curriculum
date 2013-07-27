@@ -189,7 +189,7 @@ off by one letter.
 wrong_hash = { :a => "banana", :b => "cabbage", :c => "dental_floss", :d => "eel_sushi" }
 ```
 
-Write a program `hash_correct` that takes this wrong hash and returns
+Write a method `correct_hash` that takes this wrong hash and returns
 the correct one.
 
 [ruby-hash-doc]: http://www.ruby-doc.org/core-1.9.3/Hash.html
