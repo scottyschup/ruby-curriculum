@@ -234,9 +234,9 @@ runtime. We can also find class information:
 => true
 ```
 
-I commonly use `Object#class` to see what kind of thing I'm dealing
-with, so that I can then know what class to look up the documentation
-for.
+I commonly use `Object#class` when debugging or using pry to see what
+kind of thing I'm dealing with, so that I can then know what class to
+look up the documentation for.
 
 Here we can see that even classes are objects in Ruby:
 
@@ -245,7 +245,7 @@ Here we can see that even classes are objects in Ruby:
 => true
 ```
 
-Deep. Let's dig deeper
+Deep. Let's dig deeper:
 
 ```ruby
 1.9.3p194 :008 > Object.class
@@ -261,8 +261,11 @@ Okay, all classes are instances of a `Class` class.
 => Object
 ```
 
-Classes are types of `Module`s, which are `Object`s. In Ruby
-everything is an `Object`, even `Class`es!
+Classes are types of `Module`s (not important), which are
+`Object`s. In Ruby everything is an `Object`, even `Class`es!
+
+To summarize: `Object` is of type `Class`, which is a subclass of
+`Object` itself. Whoa!
 
 ## Type introspection for fun and profit
 
