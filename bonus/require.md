@@ -134,7 +134,7 @@ use the directory of the current source file as the starting point,
 rather than the current directory (sometimes called `$PWD`; present
 working directory) of the Ruby interpreter.
 
-```
+```ruby
 # lib/game.rb
 require_relative `board`
 
@@ -165,53 +165,75 @@ use the standard `.rb`; they'll add it for you.
 
 Another option we have it to add the current directory to the load
 path using the `-I` flag when we call the `ruby` or `irb` or `pry`
-commands in the terminal.
+commands in the terminal. Let's see a slightly different example:
 
-```
-# lib/game.rb
-require `board`
+```ruby
+# animal-kit/lib/animal.rb
 
-class Game
-  def initialize
-    @board = Board.new
+class Animal
+  def initialize(name, species)
+    @name, @species = name, species
   end
+
+  # ...
 end
 
-game = Game.new
+# animal-kit/lib/animal-kit.rb
+
+# a "meta file" that pulls in other `animal-kit` source files; the
+# user only needs to include this file to pull in everything else.
+require_relative "animal"
+require_relative "herbivore"
+require_relative "marsupial"
+
+# cat-tracker/lib/cat.rb
+
+# requires the Animal class from my animal-kit project
+require 'animal-kit' 
+
+class Cat < Animal
+  def initialize(name)
+    super(name, "Cattus Cattus")
+  end
+end
 ```
 
-**NB: Note the regular `require` statement.** Then we write:
+In this example, I have two separate projects. One is called
+`animal-kit`, and it is a framework that allows me to easily write
+`Animal` subclasses. I have another project, `cat-tracker`, which
+wants to use my `animal-kit` project.
+
+Note that the `animal-kit` project is not part of `cat-tracker` or
+vice versa. In particular, the code for the two projects is not likely
+to be packaged and shipped to the user together. We shouldn't use
+`relative_path` in `cat.rb`, because we don't know where the files of
+`animal-kit` may be.
+
+A reasonable solution to this problem would be to write an
+`animal-kit` gem and post it to the internet (Gems are typically
+stored on the site `http://rubygems.org/`). The user of the
+`cat-tracker` program could then `gem install animal-kit`. Then the
+`require 'animal-kit'` line will find the Gem.
+
+When just starting out, we may not want to do this. Another way is to
+add `animal-kit/lib` to the `$LOAD_PATH`. Then, when we require
+`animal-kit`, Ruby will look in the `animal-kit/lib` directory.
+
+We can add a directory to the `$LOAD_PATH` using the `-I` flag to
+Ruby/IRB/Pry:
 
 ```
-$ ruby -I lib lib/game.rb
-$
+$ ruby -I animal-kit/lib cat-tracker/lib/animal.rb
 ```
 
-Once again, everything goes off without a hitch.
-
-What happened here?
-
-The `-I` flag takes a single directory as an argument and
-adds it to the load path. Here, I added `lib` to the load
-path and so when the `require 'board'` statement was hit at the
-top of the game file, the interpreter had no problem finding it.
-
-The convention with the `-I` flag is actually to leave no space
-between the flag and the folder and so you may see the flag used
-like so (and you should use it this way too):
+A convention with the `-I` flag is actually to leave no space between
+the flag and the folder and so you may see the flag used like so:
 
 ```
-$ ruby -Ilib lib/game.rb
-$ ruby -I. my_file.rb  # Adds the current dir to the path
-$ pry -Ispec spec/file_spec.rb
+$ ruby -I./animal-kit/lib cat-tracker/lib/animal.rb
 ```
 
-In general, `-I` is a poor alternative to `require_relative`. `-I` is
-typically used in other, stranger cases, where Ruby library code lives
-off the default `$LOAD_PATH`, but outside the current project.
-
-Use `require_relative` when your code wants to include other code you
-wrote from the same project.
+This was a special case, but it shows us another way to require code.
 
 ## `load`
 
