@@ -143,10 +143,3 @@ class MemoizedFibonacci
   end
 end
 ```
-
-
-## Exercises
-Time estimate: 10 min
-
-* Add two of your own methods to the String class, shout and shout!
-each should take a string, and make it all caps, but how they return should be different... make sure one method is safe and the other is "dangerous!" 
