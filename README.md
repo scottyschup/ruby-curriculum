@@ -110,7 +110,7 @@
 
 [word-chains]:  ./projects/word-chains.md
 [test-first-ruby]: https://github.com/alexch/learn_ruby
-[method_missing]: ./language-intermediate/reflection.md#method_missing
+[method_missing]: ./bonus/metaprogramming.md#method_missing
 
 ### w1d5
 + [Intro data structures][intro-data-structures]
