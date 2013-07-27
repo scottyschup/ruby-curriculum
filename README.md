@@ -205,6 +205,8 @@
 + **TODO**: [public/private/protected][privacy]
 + **TODO**: Class and instance variables
 + **TODO**: Hash and the various equal methods
++ **TODO**: Write up Chess RSpec examples.
++ **TODO**: Write up how RSpec works document.
 
 [modules]: ./bonus/modules.md
 [metaprogramming]: ./bonus/metaprogramming.md
