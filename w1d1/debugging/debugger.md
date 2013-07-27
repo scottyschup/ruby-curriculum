@@ -623,8 +623,6 @@ by a system called Guard.
 When a bug is discovered, good practice is to write a new test that
 verifies we don't make that mistake again.
 
-**TODO**: film this debugging process.
-
 ## Resources
 * Pivotal Labs [cheatsheet]
 * Comprehensive (very long) [debugger documentation][debugger-documentation]

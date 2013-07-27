@@ -144,9 +144,6 @@ return to Pro Git to read the following chapters on your own time:
 * [Try Git][try-git], interactive 15 minute git introduction by github and code school.
 * A [note][commit-msgs] on writing good git commit messages.
 
-## TODO
-* **Write GIT chapter**
-
 [aa-dotfiles]: https://github.com/app-academy/aa-dotfiles
 [pro-git]: http://git-scm.com/book
 [ssh-guide]: https://help.github.com/articles/generating-ssh-keys

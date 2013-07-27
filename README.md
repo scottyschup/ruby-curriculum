@@ -129,6 +129,7 @@
 + **Project**: Do Hangman and Word chains again, using git this
   time. Do not refer to your old code.
 + Assessment Prep
++ **TODO**: cleanup these readings.
 
 ## Language Basics II, OO Design
 ### w2d1
@@ -208,6 +209,7 @@
 + **TODO**: Hash and the various equal methods
 + **TODO**: Write up Chess RSpec examples.
 + **TODO**: Write up how RSpec works document.
++ **TODO**: film debugging process
 
 [modules]: ./bonus/modules.md
 [metaprogramming]: ./bonus/metaprogramming.md
