@@ -54,7 +54,7 @@ class User
   end
 
   def send_threatening_email
-    Mailer.threatening_email(self).delier!
+    Mailer.threatening_email(self).deliver!
   end
 end
 ```
