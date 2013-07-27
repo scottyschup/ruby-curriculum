@@ -362,11 +362,10 @@ Time estimate: 1.5hrs
 
 * Loop through all the numbers, stopping when you encounter a number
   that is (a) >250 and (b) divisible by 7. Print this number down!
-* Print out all the factors for each of the numbers 1 through 100.
+* Write a method `factors` that prints out all the factors for an
+  input.
 * Implement [Bubble sort][wiki-bubble-sort] in a method `#bubble_sort`
   that takes an `Array` and modifies it so that it is in sorted order.
-  [Bubble sort visualization](https://www.youtube.com/watch?v=aXXWXz5rF64). 
-
 
 > Bubble sort, sometimes incorrectly referred to as sinking sort, is a
 > simple sorting algorithm that works by repeatedly stepping through
@@ -382,17 +381,20 @@ Time estimate: 1.5hrs
 [wiki-bubble-sort]: http://en.wikipedia.org/wiki/bubble_sort
 
 * Write a method `substrings` that will take a `String` and return an
-  array containing each of its substrings.
-  Example output: `substrings("cat") => ["c", "ca", "cat", "a", "at", "t"]`
+  array containing each of its substrings. Don't repeat substrings.
+  Example output: `substrings("cat") =>
+  ["c", "ca", "cat", "a", "at", "t"]`.
 * Your `substrings` method returns many strings that are not true
   English words. Let's write a new method, `subwords` which will call
   `substrings`, but then filter it and return just the English words.
   * To do this, we'll need a dictionary, you can download one
-    [here](http://downloads.sourceforge.net/wordlist/12dicts-5.0.zip). Use
-    '2of12inf.txt'.
-  * Learn how to read a file [here](io.md#opening-a-file).
+    [here][dictionary-file].
+  * Learn how to read a file [here][opening-a-file].
   * You may need to use `String#chomp` to strip newline characters;
     see the [Input/Output](io.md) chapter for details.
+
+[dictionary-file]: ../projects/dictionary.txt
+[opening-a-file]: ./io.md#opening-a-file
 
 ## Resources
 
