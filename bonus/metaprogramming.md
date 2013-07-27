@@ -75,10 +75,11 @@ u = User.new
 u.send_email(:confirmation) # will call Mailer.confirmation_email...
 ```
 
-Techniques like this are called *metaprogramming*. Another common
-technique is to provide *macros*. A macro is a helper class method
-that is provided in a parent class or a module which the creator of a
-derived class uses to generate code.
+Techniques like this are called *metaprogramming*. A related technique
+is to use *macros*. A macro is a method that writes other
+methods. Macros are typically helper class methods that are provided
+in a parent class or a module which the creator of a derived class
+uses to generate code.
 
 Here's an example similar in intent to the previous one, but done a
 little differently:
@@ -88,7 +89,7 @@ module Emailable
   # user calls this to register an email that may be sent
   def register_email(name)
     # we define a method named, e.g., `#send_confirmation_email`
-    send(:define_method, "send_#{name}_email") do
+    define_method("send_#{name}_email") do
       # `#send_confirmation_email` calls the appropriate `Mailer`
       # method
       Mailer.send("#{name}_email", self).deliver!
@@ -137,23 +138,89 @@ end
 [:adfasdfa, :a, :b, :c]
 ```
 
+Here's a simple example:
+
+```ruby
+class Cat
+  def say(anything)
+    puts anything
+  end
+
+  def method_missing(method_name)
+    method_name = method_name.to_s
+    if method_name.start_with?("say_")
+      text = method_name[("say_".length)..-1]
+
+      say(text)
+    else
+      # do the usual thing when a method is missing (i.e., raise an
+      # error)
+      super
+    end
+  end
+end
+
+earl = Cat.new
+earl.say_hello # puts "hello"
+earl.say_goodbye # puts "goodbye"
+```
+
+Using `method_missing`, we are able to "define" an infinite number of
+methods; we allow the user to call any method prefixed `say_` on a
+`Cat`. This is very powerful. However, overriding `method_missing` can
+result in difficult to understand/debug to code, and should not be
+your first resort when attempting metaprogramming. Only if you want
+this infinite expressability should you use `method_missing`; prefer a
+macro if the user just wants to define a small set of methods.
+
+`method_missing` is a cool trick, but I don't know that I've used it
+in any of my professional projects. I do know that understanding it
+helped me understand how Rails dynamic finders work.
+
+### An advanced example: dynamic finders
+
 Rails, for instance, has a way of finding objects through
 `method_missing`:
 
 ```ruby
-Person.find_by_user_first_name_and_last_name("Ned", "Ruggeri")
-Person.find_by_username_and_state("ruggeri", "California")
+User.find_by_first_name_and_last_name("Ned", "Ruggeri")
+User.find_by_username_and_state("ruggeri", "California")
 ```
 
 Rather than create a method for every single possible way to search
 (which is almost infinite), Rails overrides the `#method_missing`
-method, and for `find_by*` methods, it then parses the method name and
-figures out how it should perform the search.
+method, and for `find_by_*` methods, it then parses the method name and
+figures out how it should perform the search. Here's how it might do
+this:
 
-In the case of these *dynamic finders*, this is the only way to write
-this functionality. However, overriding `method_missing` can result in
-difficult to understand to code, and should not be your first resort
-when attempting metaprogramming.
+```ruby
+class User
+  def method_missing(method_name, *args)
+    method_name = method_name.to_s
+    if method_name.start_with?("find_by_")
+      # attributes_string is, e.g., "first_name_and_last_name"
+      attributes_string = method_name[("find_by_".length)..-1]
+
+      # attribute_names is, e.g., ["first_name", "last_name"]
+      attribute_names = attributes_string.split("_and_")
+
+      raise "unexpected # of arguments" unless attribute_names.length == args.length
+
+      search_conditions = {}
+      attribute_names.length.times do |i|
+        search_conditions[attribute_names[i]] = args[i]
+      end
+
+      # Imagine search takes a hash of search conditions and finds
+      # objects with the given properties.
+      self.search(search_conditions)
+    else
+      # complain about the missing method
+      super
+    end
+  end
+end
+```
 
 ## Type introspection
 
