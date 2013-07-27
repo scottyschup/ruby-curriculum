@@ -1,18 +1,16 @@
 # Modules
 
 A Ruby **module** is like a class, except you don't instantiate a
-module. Modules consist of methods that can *mixed-in* to a Ruby
-class.
-
-In Ruby, we use a module to collect methods that may be mixed-in and
-shared by many classes to keep our code DRY.
+module. Modules consist of methods that can *mixed in* to a Ruby
+class. In Ruby, we use a module to collect methods that may be
+mixed in and shared by many classes to keep our code DRY.
 
 Let's see an example:
 
 ```ruby
 module Greetable
   def greet
-    "Hello, my name is #{name}"
+    "Hello, my name is #{self.name}"
   end
 end
 
@@ -37,7 +35,7 @@ class Robot
 end
 ```
 
-We "mix-in" a module by using the `Class#include` method. This will
+We "mix in" a module by using the `#include` method. This will
 take the methods defined in the module and make them available to
 instances of `Robot` and `Human`.
 
@@ -53,10 +51,9 @@ class.
 
 ### Include vs extend
 
-It is common to mix-in a module to add instance methods to a
-class; we've used `include` to do this. You can also use the
-`Class#extend` method to mix-in module methods *as class
-methods*. Here's an example:
+It is common to mix in a module to add instance methods to a class;
+we've used `include` to do this. You can also use the `Class#extend`
+method to mix in module methods *as class methods*. Here's an example:
 
 ```ruby
 module Findable
@@ -86,13 +83,13 @@ Cat.new("Gizmo")
 Cat.find("Gizmo") # finds Gizmo Cat object
 ```
 
-## Mixins
+## Mixins vs Multiple Inheritance
 
 Ruby doesn't support multiple inheritance: a class can only have one
 parent class. Only a few languages do support multiple inheritance;
 you can read about the "Diamond problem" if you want to learn why.
 
-Ruby's answer to multiple inheritance is the ability to mix-in
+Ruby's answer to multiple inheritance is the ability to mix in
 modules. If two classes should share methods, but it is not feasible
 for them to share a base class, we can instead factor the common
 methods out into a module and `include` this in both the classes.
@@ -125,7 +122,7 @@ end
 ```
 
 Now all of the methods in the `Enumerable` module (e.g., `map`) are
-mixed-in to Array and Hash.
+mixed in to Array and Hash.
 
 ## Namespaces
 
