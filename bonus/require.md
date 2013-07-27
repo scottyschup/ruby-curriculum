@@ -262,6 +262,3 @@ necessity to use `load` in a source file, since source files will not
 be dynamically modified and re-loaded during the duration of a
 running, production program. `load` is there for convenience when
 developing and debugging in the REPL.
-
-*NB: `require_relative`, as was mentioned before, works in exactly
-the same way as `require`.*
