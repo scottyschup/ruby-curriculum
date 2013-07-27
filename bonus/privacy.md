@@ -1,30 +1,35 @@
 # Privacy
 
-## `Public`, `Private`, `Protected`.
+## `public`, `private`, `protected`.
 
-You may have seen the keywords `public`, `private`, and `protected`
-in class definitions like so:
+You may have seen the keywords `public`, `private`, and `protected` in
+class definitions like so:
 
 ```ruby
 class Cat
-   public
-   def meow
-      puts "meow"
-   end
+  public
+  def meow
+    puts "meow"
+  end
 
-   private
-   def thoughts
-      ...
-   end
+  # access control gets set until another access control statement is
+  # seen.
+  def other_public_method
+  end
 
-   protected
-   def clean
-      ...
-   end
+  private
+  def thoughts
+    ...
+  end
+
+  protected
+  def clean
+    ...
+  end
 end
 ```
 
-### `Public`
+### `public`
 
 From [Ruby-Doc][ruby-doc-protected] (on Access Control):
 
@@ -39,7 +44,7 @@ was public.
 ### `private`
 
 > * *private methods* cannot be called with an explicit
-> receiver. because you cannot specify an object when using them,
+> receiver. Because you cannot specify an object when using them,
 > private methods can be called only in the defining class. [...]
 
 Say we have some class with a private method `#private_thing`.
@@ -78,139 +83,85 @@ Hello World
 
 So not even `self` is okay as the explicit receiver! Note that private
 methods are inherited. So if we were to say:
+
 ```
 class MyOtherClass < MyClass
    def implicitly_inherited
       private_thing
    end
 end
+```
 
-# in irb
+Then, in irb:
 
+```
 > thing2 = MyOtherClass.new
 > thing2.implicitly_inherited
 Hello World
  => nil
 ```
 
+This differs somewhat from languages like C++/Java, where private
+methods are inaccessible to subclasses.
 
-### `Protected`
+### `protected`
+
 > * *Protected methods* can be invoked only by objects of the defining
 > class and its subclasses. Access is kept within the family.
 
 So protected methods can be called with an explicit receiver, so long
-as the caller is of the same class or subclasses.
+as the caller is of the same class.
 
 ```ruby
 class Dog
-  def hear_whistle(dog)
-    dog.whistle
+  def initialize
+    # dominance score is not explicitly observable
+    @secret_dominance_score = rand
   end
-  def hear_woof(dog)
-    dog.woof
+
+  def dominates?(other_dog)
+    self.secret_dominance_score > other_dog.secret_dominance_score
   end
 
   protected
-  def whistle
-    puts "whistle"
-  end
-end
-
-class Beagle < Dog
-  protected
-  def woof
-    puts "woof"
-  end
-end
-
-# in irb
-
-> dog = Dog.new
-> beagle = Beagle.new
-
-> beagle.hear_whistle(dog)
-whistle
-
-> dog.hear_woof(beagle)
-protected method `woof' called for #<Beagle:0x007fb3a1928518> (NoMethodError)
-```
-
-### Using Access Controls
-
-If you see this,
-
-```ruby
-class Cat
-   private
-   def thoughts
-      ...
-   end
-
-   def meow
-      puts "meow"
-   end
+  attr_reader :secret_dominance_score
 end
 ```
 
-and think that `#meow` is public. You will be surprised to see:
+This way members of the `Dog` class can access other dominance scores,
+but they are secret to everyone outside the `Dog` class.
 
-```ruby
-> cat = Cat.new
- => #<Cat:0x007fe26094bae8>
-
-> cat.meow
-NoMethodError: private method `meow' called for #<Cat:0x007f9bda076278>
-```
-#### They Act 'till the End of Scope!
-
-In the above example, both `thoughts` and `#meow` are private. This is
-because access modifiers like `private` continue either until the end
-of the class definition or until they hit another access modifier. Thus
-we need to specify that `#meow` is public.
-
-```ruby
-class Cat
-   private
-   def thoughts
-      ...
-   end
-
-   public
-   def meow
-      puts "meow"
-   end
-end
-```
-
-#### Not Secure
+## Access controls are not about security
 
 Note that these access modifiers are *not* for security. In fact,
 they're super easy to subvert. Check it out:
 
 ```ruby
 class Cat
-   private
-   def meow
-      puts "meow"
-   end
+  private
+  def meow
+    puts "meow"
+  end
 end
 
-# in irb:
-> cat = Cat.new
-
-> Cat.new.meow
-NoMethodError: private method `meow' called for #<Cat:0x007feafb40a1f8>
-
-> Cat.new.send(:meow)
-meow
- => nil
+cat = Cat.new
+cat.send(:meow) # => prints meow!
 ```
 
-We'll cover `#send` another day, but all you need to know is that it's
-easy to subvert the private access control. Instead of security, you
-should be using access controls to choose how users will interact with
-your classes.
+We'll cover `#send` another day; it allows you to pass in a symbol and
+string and call a method with that name. In particular, it ignores
+privacy levels.
 
-[ruby-from-other-lang]:http://www.ruby-lang.org/en/documentation/ruby-from-other-languages/
+All you need to know today is that it's easy to subvert the private
+access control. Instead of security, you should be using access
+controls to describe to other programmers reading your code:
 
-[ruby-doc-protected]: http://www.ruby-doc.org/docs/ProgrammingRuby/html/tut_classes.html
+0. What methods are the "interface" that they'll want to use, and what
+   are underlying details they may wish to ignore.
+1. What methods are "supported" and public, and which ones are liable
+   to change. Private methods, because they usually are focused on
+   internal details, often are removed or changed as the code
+   grows. There is typically a greater effort to continue to support
+   and not break the existing public interface.
+
+[ruby-doc-protected]: http://www.ruby-doc.org/docs/ProgrammingRuby/html/tut_classes.html#S4
