@@ -124,20 +124,3 @@ have to explore the code itself (either on github, or a local clone of
 the repo on your machine) to try to figure out how things work.
 
 [rspec-docs]: https://www.relishapp.com/rspec
-
-**TODO: Code and documentation reading exercises**
-
-Resources:
-If you have any corrupt installs, or issues with installing / setting up RVM on OSX,
-this article might be helpful [how-to-install-rvm][rvm-install-article]:
-
-
-example, if you get make error during install try:
-
-    rvm get head
-    rvm reinstall <gem>
-
-
-[rvm-install-article]:http://www.moncefbelyamani.com/how-to-install-xcode-homebrew-git-rvm-ruby-on-mac/
-
-
