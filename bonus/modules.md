@@ -53,7 +53,7 @@ class.
 
 ### Include vs extend
 
-It is common to add mix-in a module to add instance methods to a
+It is common to mix-in a module to add instance methods to a
 class; we've used `include` to do this. You can also use the
 `Class#extend` method to mix-in module methods *as class
 methods*. Here's an example:
