@@ -126,11 +126,12 @@ mixed in to Array and Hash.
 
 ## Namespaces
 
-Modules have a second purpose: as **namespaces**. Namespaces prevent
-name collisions. Say you have a method `make_bacon` in file
-'A.rb'. Later, you decide to define a method `make_bacon` in file
-'B.rb'. If you're writing a program that `requires` both files, one is
-going to overwrite the other and you'll be in trouble.
+Modules have a second, unrelated purpose: as
+**namespaces**. Namespaces prevent name collisions. Say you have a
+method `make_bacon` in file 'A.rb'. Later, you decide to define a
+method `make_bacon` in file 'B.rb'. If you're writing a program that
+`requires` both files, one `make_bacon` definition is going to
+overwrite the other and you'll be in trouble.
 
 This is where modules come in; if you wrap the code in 'A.rb' and
 'B.rb' in modules, you won't have any difficulty. This is how 'A.rb'
@@ -138,7 +139,7 @@ looks:
 
 ```ruby
 module A
-  def make_bacon
+  def self.make_bacon
     ...
   end
 end
@@ -148,7 +149,7 @@ end
 
 ```ruby
 module B
-  def make_bacon
+  def self.make_bacon
     ...
   end
 end
