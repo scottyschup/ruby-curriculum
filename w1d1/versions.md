@@ -9,3 +9,8 @@ You can verify your version in a shell with `ruby -v`.
 
 The default version for this course is currently [Ruby
 1.9.3](http://ruby-doc.org/core-1.9.3/).
+
+You can read setup instructions for OS X
+[here][ruby-setup-instructions].
+
+[ruby-setup-instructions]: https://github.com/appacademy/meta/blob/master/ruby-setup-instructions.md
