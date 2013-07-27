@@ -124,12 +124,15 @@
 
 ## Git
 ### w1d6-w1d7
-+ [git](https://github.com/appacademy/ruby-curriculum/blob/master/git.md)
-+ **Project**: [Git immersion](http://gitimmersion.com/)
++ [git][git]
++ **Project**: [Git immersion][git-immersion]
 + **Project**: Do Hangman and Word chains again, using git this
   time. Do not refer to your old code.
 + Assessment Prep
 + **TODO**: cleanup these readings.
+
+[git]: https://github.com/appacademy/ruby-curriculum/blob/master/git.md
+[git-immersion]: http://gitimmersion.com/
 
 ## Language Basics II, OO Design
 ### w2d1
@@ -161,12 +164,12 @@
 [chess]: ./projects/chess.md
 
 ### w2d3
-* Continue Chess.
++ Continue Chess.
 
 ### w2d4
-* Read [Chess solution][chess-solution] side-by-side with
-  your own code
-* **Solo Project**: [Checkers][checkers-project]
++ As ever, read solutions. But more than usual, read my
+  [Chess solution][chess-solution] side-by-side with your own code.
++ **Solo Project**: [Checkers][checkers-project]
 
 [chess-solution]: https://github.com/appacademy/solutions/tree/master/w2/w2d2-w2d3/lib
 [checkers-project]: ./projects/checkers.md
