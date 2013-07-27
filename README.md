@@ -199,10 +199,11 @@
 [sql-curriculum]: https://github.com/appacademy/sql-curriculum
 
 ## Additional Bonus Topics
++ **TODO**: schedule these on curriculum
 + [Modules][modules]
 + [Metaprogramming and Reflection][metaprogramming]
 + [load/require/require_relative][require]
-+ **TODO**: [public/private/protected][privacy]
++ [public/private/protected][privacy]
 + **TODO**: [Class instance variables][class-instance-variables]
 + **TODO**: Hash and the various equal methods
 + **TODO**: Write up Chess RSpec examples.
