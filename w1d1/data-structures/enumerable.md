@@ -193,7 +193,7 @@ end
 p return_value # => [1, 2, 3]
 ```
 
-NB: you may wish to check out the [blocks](../blocks.md) section to
+NB: you may wish to check out the [blocks](../../w1d4/blocks.md) section to
 familiarize yourself with blocks.
 
 * Write a method that finds the median of a given array of
