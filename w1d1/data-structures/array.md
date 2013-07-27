@@ -526,7 +526,8 @@ cols = [
 ```
 
 Write a method, `my_transpose`, which will convert between the
-row-oriented and column-oriented representations.
+row-oriented and column-oriented representations. You may assume
+square matrices for simplicity's sake.
 
 ### Stock Picker
 
