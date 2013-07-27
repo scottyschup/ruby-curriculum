@@ -11,7 +11,7 @@ those files:
 * `require_relative`
 * `load`
 
-## Why?
+## A simple example
 
 ```ruby
 # lib/board.rb
@@ -37,12 +37,13 @@ lib/game.rb:3:in `initialize': uninitialized constant Game::Board (NameError)
 ```
 
 Ruby doesn't know what `Board` is (because it's defined in another
-file) and so throws an error. The problem is that the `game.rb` file
-does not tell Ruby that `board.rb` should be loaded:
+file that is never loaded). Therefore, Ruby throws an error when it
+sees the n ame `Board` and doesn't know what that means. We need to
+instruct `lib/game.rb` to load `lib/board.rb`:
 
 Well, we know how to deal with this:
 
-```
+```ruby
 # lib/game.rb
 require 'board'
 
@@ -55,10 +56,8 @@ end
 game = Game.new
 ```
 
-A simple `require 'board'` statement at the top of *game.rb* should do
-the trick.
-
-*in terminal*
+A simple `require 'board'` statement at the top of `game.rb` should do
+the trick:
 
 ```
 $ ruby lib/game.rb
@@ -75,7 +74,7 @@ as `game.rb`, after all...
 
 This is not enough. The problem is Ruby's **load path**.
 
-## Ruby's Load Path: `$LOAD_PATH`
+## `require`, `$LOAD_PATH` and `Gem.path`
 
 Whenever you use a `require` statement, Ruby tries to find the
 specified file in its **load path**, which is a list of
@@ -83,12 +82,17 @@ directories. Its specific purpose is to maintain the list of
 directories through which Ruby will search when a `require` or `load`
 statement is run by the interpreter.
 
-The load path includes things like the files that make up Ruby's
-Standard Library as well as gems you have installed. You can always
-access it through the global variable `$LOAD_PATH`.
+The load path typically includes the directories that contain the
+source files for Ruby's default library. You can access it through the
+global variable `$LOAD_PATH`.
 
-The directory `'.'` (i.e. the current directory) is not in the load
-path. Funny enough, it used to be, but in Ruby 1.9.2, the
+If something is not found in the `$LOAD_PATH`, then Ruby next tries to
+see if we are requiring a gem. To do this, it looks at `Gem.path`,
+which contains the directories in which Gems and their source code
+lives.
+
+The directory `'.'` (i.e. the current directory) is not part of the
+`$LOAD_PATH`. Funny enough, it used to be, but in Ruby 1.9.2, the
 current directory was removed from the load path for security
 reasons. Oh well.
 
@@ -103,9 +107,12 @@ We have three options:
 ## Explicit paths
 
 Even if a file is not in a `$LOAD_PATH` directory, you can still load
-it if you give an explicit path to the file. For instance, you can
-write `require './board.rb'`, which will look for `board.rb` in the
-current directory (`.`).
+it if you give an explicit path to the file. This will direct Ruby not
+to look around in the `$LOAD_PATH` or `Gem.path`, but instead go
+directly to the file named.
+
+For instance, you can write `require './board.rb'`, which will look
+for `board.rb` in the current directory (`.`).
 
 There is on problem: the current directory is **the directory you are
 running ruby from**. So if you run:
@@ -115,14 +122,17 @@ running ruby from**. So if you run:
 `require './board.rb'` will look inside the current directory for
 `board.rb`; which is outside `lib`.
 
-To fix this problem, we often use `require_relative`.
+For that reason, it is often wrong to `require` an explicit path like
+this. The typical solution is to use `require_relative`.
 
 ## `require_relative`
 
-`require_relative` is `require`'s sometimes more helpful brother.  It
-does just what `require` does, but instead of looking up a file in the
-load path, it will use the directory of the current source file as the
-starting point:
+`require_relative` is `require`'s more helpful
+brother. `require_relative` expects an explicit path; it will not look
+in `$LOAD_PATH` or `Gem.spec` like `require` does. Moreover, it will
+use the directory of the current source file as the starting point,
+rather than the current directory (sometimes called `$PWD`; present
+working directory) of the Ruby interpreter.
 
 ```
 # lib/game.rb
@@ -137,7 +147,7 @@ end
 game = Game.new
 ```
 
-*in terminal*
+Now we can successfully write:
 
 ```
 $ ruby lib/game.rb
