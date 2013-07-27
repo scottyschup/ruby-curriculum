@@ -205,7 +205,7 @@
 + [Metaprogramming and Reflection][metaprogramming]
 + [load/require/require_relative][require]
 + [public/private/protected][privacy]
-+ **TODO**: [Class instance variables][class-instance-variables]
++ [Class instance variables][class-instance-variables]
 + **TODO**: Hash and the various equal methods
 + **TODO**: Write up Chess RSpec examples.
 + **TODO**: Write up how RSpec works document.
