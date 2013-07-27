@@ -195,7 +195,7 @@ describe Chess do
         board.make_move([6, 3], [2, 4])
       end
 
-      it 'should return false' do
+      it 'should return true' do
         expect(board.checkmate?(:black)).to be_true
       end
     end
