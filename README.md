@@ -209,9 +209,9 @@
 + [load/require/require_relative][require]
 + [public/private/protected][privacy]
 + [Class instance variables][class-instance-variables]
++ **TODO**: [How RSpec works document][how-rspec-works]
 + **TODO**: Hash and the various equal methods
 + **TODO**: Write up Chess RSpec examples.
-+ **TODO**: Write up how RSpec works document.
 + **TODO**: film debugging process
 + **TODO**: can we write a small reading on `Hash.new(0)` vs `Hash.new
   { |h, k| h[k] = [] }`?
@@ -221,3 +221,4 @@
 [require]: ./bonus/require.md
 [privacy]: ./bonus/privacy.md
 [class-instance-variables]: ./bonus/class-instance-variables.md
+[how-rspec-works]: ./bonus/how-rspec-works.md
