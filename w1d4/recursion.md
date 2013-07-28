@@ -194,10 +194,13 @@ Note that for recursion 2, you will need to square the results of
 need to do anything special to square a number, just calculate the value 
 and multiply it by itself.
 
-If the `n == 256`, about how many recursive steps will we run in the
-first case? About how many in the second? Keep in mind that the first
-reduces the exponent by one for each recursion, while the second
-reduces it by half.
+If the `n == 256`, about how many nested recursive steps will we run
+in the first case?
+
+How deep will we need to recurse for the second?  Keep in mind that
+the first reduces the exponent by one for each recursion, while the
+second reduces it by half. Even if we don't recurse as deeply, do we
+call `exp` using recursion 2 less often than using recursion 1?
 
 * The `#dup` method doesn't make a *deep copy*:
 
