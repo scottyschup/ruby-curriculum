@@ -90,11 +90,9 @@ Class variables (not class **instance** variables) are shared between
 super-class and subclass. Let's see this:
 
 ```ruby
-
-```ruby
 class Dog
   def self.all
-    @dogs ||= []
+    @@dogs ||= []
   end
   
   def initialize(name)
