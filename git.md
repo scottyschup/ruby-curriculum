@@ -117,8 +117,9 @@ repo, and then run:
     git config user.name "Ned Ruggeri and Kush Patel"
     git config user.email "ned+kush@appacademy.io"
 
-Now your commits will be attributed to the two of you working
-together. You're all set!
+Now your commits will be attributed to the two of you working together. Make
+sure you do this every day! Employers will look through your github repos when
+hiring!
 
 ## Additional material
 
