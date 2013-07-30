@@ -1,9 +1,9 @@
 # Privacy
 
-## `public`, `private`, `protected`.
+### `public`, `private`, `protected`.
 
 You may have seen the keywords `public`, `private`, and `protected` in
-class definitions like so:
+class definitions:
 
 ```ruby
 class Cat
@@ -29,7 +29,7 @@ class Cat
 end
 ```
 
-### `public`
+#### `public`
 
 From [Ruby-Doc][ruby-doc-protected] (on Access Control):
 
@@ -37,11 +37,11 @@ From [Ruby-Doc][ruby-doc-protected] (on Access Control):
 > control. Methods are public by default (except for initialize, which
 > is always private).
 
-There's not much to say here. But note that as `public` is the
-default, we didn't actually have to explicitly specify that `#meow`
+Note that as `public` is the default access level for methods, so in the 
+example from the last section we didn't have to specify that `#meow` 
 was public.
 
-### `private`
+#### `private`
 
 > * *private methods* cannot be called with an explicit
 > receiver. Because you cannot specify an object when using them,
@@ -81,8 +81,9 @@ Hello World
  NoMethodError: private method `private_thing' called for #<MyClass:0x007f9cfa064200>
 ```
 
-So not even `self` is okay as the explicit receiver! Note that private
-methods are inherited. So if we were to say:
+So not even `self` is okay as the explicit receiver! 
+
+Private methods are inherited as private. So if we say:
 
 ```
 class MyOtherClass < MyClass
@@ -104,7 +105,7 @@ Hello World
 This differs somewhat from languages like C++/Java, where private
 methods are inaccessible to subclasses.
 
-### `protected`
+#### `protected`
 
 > * *Protected methods* can be invoked only by objects of the defining
 > class and its subclasses. Access is kept within the family.
@@ -131,7 +132,7 @@ end
 This way members of the `Dog` class can access other dominance scores,
 but they are secret to everyone outside the `Dog` class.
 
-## Access controls are not about security
+### Access controls are not about security
 
 Note that these access modifiers are *not* for security. In fact,
 they're super easy to subvert. Check it out:
@@ -148,13 +149,12 @@ cat = Cat.new
 cat.send(:meow) # => prints meow!
 ```
 
-We'll cover `#send` another day; it allows you to pass in a symbol and
-string and call a method with that name. In particular, it ignores
-privacy levels.
+We'll cover `#send` another day; but for now you should know that 
+it allows you to pass in a symbol (or string) and call a method 
+with that name. In particular, it ignores privacy levels.
 
-All you need to know today is that it's easy to subvert the private
-access control. Instead of security, you should be using access
-controls to describe to other programmers reading your code:
+Instead of security, you should be using access controls to describe 
+to other programmers reading your code:
 
 0. What methods are the "interface" that they'll want to use, and what
    are underlying details they may wish to ignore.
