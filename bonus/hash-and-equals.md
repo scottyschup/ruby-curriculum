@@ -1,41 +1,40 @@
 # Equality in Ruby
 
 Here is a quick overview of the different equality operators in Ruby.
-The interested student should read about them in the
-[`Object` documentation][object-doc], and in this awesome
-[_Stack Overflow_ post][so-equality].
 
-## `#==`
+## `#==` (Value Equality)
 
 This is the most fundamental check for equality, it checks if two
 objects have the same value.
 
 In classes that you write, `#==` is inherited from the Object
-class. By default, it will return true check iff the two objects are
-literally the same object (pointer equality). It's default behavior is
-not particularly helpful, so you should always override it. This is your
-chance as the class author to decide what it means for two objects to
-have the same value.
+class. By default, it will return true iff the two objects are
+literally the same object (pointer equality). This default behavior is
+not particularly helpful, so you should override it. 
+
+This is your chance as the class author to decide what it means 
+for two objects to have the same value.
 
 
-## `#eql?`
-> `obj.eql? other` returns true if `obj` and `other` refer to the
-> same hash key.
+## `#eql?` (Hash Equality)
 
-`#eql?` is a generic equality comparison like `#==`, but it uses the
-objects' `#hash` method to assess equality. So `a.eql? b` is equivalent to
-`a.hash == b.hash`.
+Like `#==`, `#eql?` assesses general equality. Unlike most implementations of `#==`, 
+`#eql` uses the objects' `#hash` method to assess equality. So `a.eql? b` is 
+equivalent to `a.hash == b.hash`.
 
-To provide a meaningful `#eql?` method for your classes, you will need
-to override the `#hash` method.
+If you would like to provide a meaningful `#eql?` method for your classes, 
+you will need to override the `#hash` method.
 
-Because `Float#hash` and `Integer#hash` are different, `#==` performs
-type conversion (_e.g._ `Float` to `Integer`), but `#eql?` does not.
+As an example of "meaningful" `#eql?` methods `#==` performs
+type conversion amongst numerics (_e.g._ `Float` to `Integer`), 
+but `#eql?` does not.
 
 ```ruby
    3.0 == 3 #=> true
    3.0.eql? 3 #=> false
 ```
+
+This is because `Float#hash` and `Integer#hash` are not the same.
 
 Now that you know that `#eql?` is used by `Hash` to check if an object
 is a key in a hash, you should not be surprised by this _gotcha_:
@@ -46,7 +45,7 @@ some_hash[3.0] #=> nil
 some_hash[3] #=> 'the third'
 ```
 
-Also, as an exercise for the reader, I suggest playing with using
+As an exercise for the reader, I suggest playing with using
 Arrays and Hashes as the keys to a Hash, and seeing what happens when
 you modify the keys. See below:
 
@@ -57,20 +56,32 @@ some_array << 2
 some_hash[some_array] #=> ???
 ```
 
-## `#equal?`
+## `#equal?` (Identity Equality)
 
 `#equal?` does simple identity comparison (pointer comparison).
 _i.e._ `a.equal? b` if and only if `a` is the same object as `b`. This
 is identical to the default behavior of `#==` in the `Object` class.
 
-It should never be overridden.
+```ruby
+class Dog
+   # ...
+end
 
-## `#===`
+a = Dog.new
+b = Dog.new
+a = c
 
-Triple equals is referred to as case equality. It has the same
-behavior as `#==` for most classes (and by default for classes that
-you write). This is the method that `case` uses to determine which
-block to execute.
+a.equal? b #=> false
+a.equal? c #=> true
+```
+
+`#equal?` should _never_ be overridden.
+
+## `#===` (Case Equality)
+
+`#===` has the same behavior as `#==` for most classes 
+(and by default for classes that you write). This is the 
+method that `case` uses to determine which block to execute.
 
 ```ruby
 case a
@@ -119,6 +130,10 @@ tracking_service = case number
    when /^[HK].{10}$/ then :ups
 end
 ```
+## Further Reading
+The interested student should read more about them in the
+[`Object` documentation][object-doc], and in this awesome
+[_Stack Overflow_ post][so-equality].
 
 [so-equality]: http://stackoverflow.com/a/7157051
 [object-doc]: http://ruby-doc.org/core-2.0/Object.html
