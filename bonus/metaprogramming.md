@@ -1,5 +1,11 @@
 # Metaprogramming and Reflection
 
+**Goals**:
+
+* Learn how to use `send`
+* Learn how to use `define_method`
+* Learn how to use `method_missing`
+
 One of the powers of Ruby is *reflection* (also called
 *introspection*): the ability of the program to examine itself.
 
@@ -17,6 +23,15 @@ by name:
 ```ruby
 1.9.3p194 :003 > [].send(:count)
  => 0
+```
+
+When is something like send useful? Why not just call the method the
+normal way? Well, using `send` lets us write methods like this:
+
+```
+def do_three_times(object, method_name)
+  3.times { object.send(method_name) }
+end
 ```
 
 We can even define new methods dynamically:
