@@ -171,11 +171,11 @@ the object into the method. If you need to return a result from a
 method, it is typical to use `return` to pass it back. There is seldom
 a reason to store things globally.
 
-There are occasionally exceptions: sometimes an object will useful
+There are occasionally exceptions: sometimes an object will be useful
 throughout your entire program, in which case you may want to make it
 globally accessible. One classic example is the `$stdin` and `$stdout`
-variables, which contain `File` objects (technically, `IO` objects, but
-they're very similar) that you can use to read/write to the user.
+variables, which contain `File` objects (technically, `IO` objects,
+but they're very similar) that you can use to read/write to the user.
 
 Here's how `puts` and `gets` are defined:
 
