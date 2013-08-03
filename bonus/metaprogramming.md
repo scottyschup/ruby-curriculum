@@ -6,6 +6,8 @@
 * Learn how to use `define_method`
 * Learn how to use `method_missing`
 
+## `send` and `define_method`
+
 One of the powers of Ruby is *reflection* (also called
 *introspection*): the ability of the program to examine itself.
 
