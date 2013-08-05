@@ -72,8 +72,8 @@ end
 
 Let's think what happens when we run `Corgi.new("Linus")`. Per the
 definition of `initialize` in `Dog`, we will run `self.class.all <<
-self`. `self.class` is `Husky`; `Husky` will have an `all` method by
-virtue of inheriting from `Corgi`.
+self`. `self.class` is `Corgi`; `Corgi` will have an `all` method by
+virtue of inheriting from `Dog`.
 
 The `all` method will look in `Corgi` for a `@dogs` instance
 variable. Note that `Corgi` will not share the `@dogs` variable from
