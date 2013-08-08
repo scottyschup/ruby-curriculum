@@ -43,6 +43,9 @@ prior word. Then the word prior to that. Keep going back (collecting
 the prior words in an array) until you hit `nil`. That means you
 already collected the starting word, too.
 
+Make sure to request a code review from your TA once you can find
+adjacent words.
+
 Good luck!
 
 ## Dictionary File

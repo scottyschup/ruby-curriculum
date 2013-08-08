@@ -1,6 +1,7 @@
 # Minesweeper
 
-Everyone remembers [Minesweeper][minesweeper-wiki], right? Let's build it!
+Everyone remembers [Minesweeper][minesweeper-wiki], right? Let's build
+it!
 
 Support two grid sizes:
 
@@ -41,15 +42,20 @@ You decide how the user inputs their choice. I recommend a coordinate
 system. Perhaps they should prefix their choice with either "r" for
 reveal or "f" for flag.
 
+### Code Review
+
+After you have your UI working, request a code review from your
+TA. Take notes and refactor before moving on.
+
 ### Saving
 
-After you have your UI working, you should add save/load
-functionality. You should be able to save/load your minesweeper game
-to/from a file.
+OK, it's time to add save/load functionality. You should be able to
+save/load your minesweeper game to/from a file.
 
 As a bonus, you may also wish to track the time it takes for the user
-to solve the game, keeping track of the ten best times. You may want
-to keep separate lists for the different sizes.
+to solve the game. Perhaps keeping track of the ten best times in a
+leaderboard. You may want to keep separate lists for the different
+sizes.
 
 [minesweeper-wiki]: http://en.wikipedia.org/wiki/Minesweeper_(Windows)
 

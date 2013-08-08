@@ -1,7 +1,7 @@
 # Tic-tac-toe AI
 
-*You should have extended your TreeNode to have multiple children before
-you implement this.
+* You should have extended your TreeNode to have multiple children
+before you implement this.
 
 Extend your tic-tac-toe AI player so that is is unbeatable.
 
@@ -42,7 +42,10 @@ Final note: since the kind of search we're doing to evaluate
 `is_winning_node?` is a little sophisticated, it doesn't fit under DFS
 or BFS. That's okay; you'll have to figure out the proper recursion.
 
-Another note: when building the game tree, if you do not trim it, it could
-take upwards of 10 minutes (if not more). Think of ways to reduce branching. For example,
-if there is a winning move one could make, there is no way they would choose
-any other move.
+Another note: when building the game tree, if you do not trim it, it
+could take upwards of 10 minutes (if not more). Think of ways to
+reduce branching. For example, if there is a winning move one could
+make, there is no way they would choose any other move.
+
+One more thing...: make sure to request a code review from your TA
+once you can build a game tree.

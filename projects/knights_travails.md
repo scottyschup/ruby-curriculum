@@ -40,6 +40,9 @@ any position. Build your tree in a *breadth-first* manner. Find all
 the positions that are one move away, then all the ones that are two
 moves away, then three...
 
+Once you can build a move tree, make sure to get a code review from
+your TA.
+
 Now you are ready to write `#find_path(target_pos)`. Find path should
 search in your move tree for the `target_pos`. You should use either
 your `dfs` or `bfs` methods from the TreeNode exercises. This will
