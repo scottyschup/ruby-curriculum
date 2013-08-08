@@ -21,17 +21,17 @@ class; those concerns should be separated. You will want to write a
 `HumanPlayer` class. Don't implement a `ComputerPlayer`, but your
 design should allow that to be easily added at a later date.
 
-**Note**: Do not concern yourself with tricky moves like "en
-passant". Likewise, **don't implement castling, draws, or pawn
-promotion**; if you finish early work on other things. You should
-handle check and check mate, however.
-
-Here's a four-move sequence to get to checkmate from a starting board
-for your checkmate testing: 
-
- * f2, f3
- * e7, e5
- * g2, g4
- * d8, h4
+#### Notes
+* Do **not** concern yourself with tricky moves like "en
+  passant". Likewise, **don't implement castling, draws, or pawn
+  promotion**. You **should** handle check and check mate, however.
+* Once you get some of your pieces moving around the board, call over
+  your TA for a code-review.
+* Here's a four-move sequence to get to checkmate from a starting
+  board for your checkmate testing:
+  * f2, f3
+  * e7, e5
+  * g2, g4
+  * d8, h4
 
 [wiki-chess]: http://en.wikipedia.org/wiki/Chess

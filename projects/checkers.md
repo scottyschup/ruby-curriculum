@@ -12,6 +12,8 @@
   move. `perform_jump` should remove the jumped piece from the
   `Board`.
     * An illegal slide/jump should raise an `InvalidMoveError`.
+* Once you get `perform_slide` and `perform_jump` working, call over
+  your TA and have them take a look.
 * Write a method `Piece#perform_moves!(move_sequence)` that takes a
   sequence of moves. This can either be one slide, or one or more
   jumps.
