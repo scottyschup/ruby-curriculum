@@ -136,6 +136,7 @@
 
 ## Language Basics II, OO Design
 ### w2d1
++ Assessment01 [practice][assessment-practice]
 + [Serialization][serialization] (JSON and YAML)
 + [Gems and rvm][gems]
 + **Project**: [Minesweeper][minesweeper]
@@ -164,6 +165,7 @@
 [chess]: ./projects/chess.md
 
 ### w2d3
++ Assessment01 retake
 + Continue Chess.
 
 ### w2d4
