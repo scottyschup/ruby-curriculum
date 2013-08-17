@@ -136,12 +136,13 @@
 
 ## Language Basics II, OO Design
 ### w2d1
-+ Assessment01 [practice][assessment-practice]
++ **Assessment01** ([practice][assessment-practice])
 + [Serialization][serialization] (JSON and YAML)
 + [Gems and rvm][gems]
 + **Project**: [Minesweeper][minesweeper]
     * Use git. Here's a [git summary][git-summary].
 
+[assessment-practice]: https://github.com/appacademy/assessment-prep
 [serialization]: ./w2d1/serialization.md
 [gems]: ./w2d1/gems-and-rvm.md
 
@@ -165,7 +166,7 @@
 [chess]: ./projects/chess.md
 
 ### w2d3
-+ Assessment01 retake
++ **Assessment01 retake**
 + Continue Chess.
 
 ### w2d4
