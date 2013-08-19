@@ -598,7 +598,7 @@ And some extras:
 * Write a method `Course#conflicts_with?` which takes a second
   `Course` and returns true if they conflict.
 * Update `Student#enroll` so that you raise an error if a `Student`
-  enrolls in a new course that conflicts with an existing course.  time.
+  enrolls in a new course that conflicts with an existing course time.
 
 ### Tic-Tac-Toe
 Let's write a Tic-Tac-Toe game!
