@@ -357,6 +357,7 @@ Estimated time: 1hrs
 ## Resources
 * [Robert Sosinski on Blocks][sosinski-blocks]
 * [Skorks on Procs and Lambdas][skorks-blocks]
+* [The difference between curly braces and do end][stack-overflow-do-end] (Read the first answer!)
 
 ## Extra Credit
 * Read [Fizzbuzz written entirely with Procs][fizzbuzz-procs]
@@ -364,6 +365,7 @@ Estimated time: 1hrs
 
 [sosinski-blocks]: http://www.robertsosinski.com/2008/12/21/understanding-ruby-blocks-procs-and-lambdas
 [skorks-blocks]: http://www.skorks.com/2010/05/ruby-procs-and-lambdas-and-the-difference-between-them/
+[stack-overflow-do-end]: http://stackoverflow.com/questions/5587264/do-end-vs-curly-braces-for-blocks-in-ruby
 [so-spaceship]: http://stackoverflow.com/questions/827649/what-is-the-ruby-spaceship-operator
 [fizzbuzz-procs]: http://codon.com/programming-with-nothing
 [HN-fizzbuzz-procs]: http://news.ycombinator.com/item?id=3343205
