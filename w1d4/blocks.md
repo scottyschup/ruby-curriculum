@@ -308,6 +308,8 @@ symbolic_proc = :first_and_last.to_proc #=> #<Proc:0x007feb749b0070>
 symbolic_proc.call([1,2,3]) #=> [1,3]
 
 symbolic_proc.call("ABCD") #=> ["A","D"]
+
+["Hello","Goodbye"].map(&:first_and_last) # => [["H", "o"], ["G", "e"]]
 ```
 
 Note: In order to convert a symbol to a string you can use `#to_s` or `#to_sym`
