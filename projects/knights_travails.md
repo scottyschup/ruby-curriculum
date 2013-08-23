@@ -2,6 +2,7 @@
 
 In this problem we want to write a class that will find a path for a
 Chess Knight from a starting position to an end position.
+Both the starting and ending position should be on a standard 8x8 chess board.
 
 Write a class, `KnightPathFinder`. Initialize your `KnightPathFinder`
 with a starting position. For instance
