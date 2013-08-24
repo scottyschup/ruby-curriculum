@@ -288,7 +288,8 @@ more verbosely as:
 [1, 2, 5].select { |i| i.odd? }
 ```
 
-Here's an example of converting a `Symbol` into a `Proc`. Notice that we can call *the same Proc* on different data structures:
+Here's an example of converting a `Symbol` into a `Proc`. Notice that
+we can call *the same Proc* on different data structures:
 
 ```ruby
 class Array
@@ -304,11 +305,8 @@ class String
 end
 
 symbolic_proc = :first_and_last.to_proc #=> #<Proc:0x007feb749b0070>
-
-symbolic_proc.call([1,2,3]) #=> [1,3]
-
-symbolic_proc.call("ABCD") #=> ["A","D"]
-
+symbolic_proc.call([1,2,3]) #=> [1, 3]
+symbolic_proc.call("ABCD") #=> ["A", "D"]
 ["Hello","Goodbye"].map(&:first_and_last) # => [["H", "o"], ["G", "e"]]
 ```
 
