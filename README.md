@@ -217,7 +217,8 @@
 + **TODO**: Write up Chess RSpec examples.
 + **TODO**: film debugging process
 + **TODO**: can we write a small reading on `Hash.new(0)` vs `Hash.new
-  { |h, k| h[k] = [] }`?
+  { |h, k| h[k] = [] }`? 
+  + **TODO**: review section in [Hash][hash] about this difference.
 
 [modules]: ./bonus/modules.md
 [metaprogramming]: ./bonus/metaprogramming.md
