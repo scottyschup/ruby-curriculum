@@ -178,7 +178,7 @@ a[:s] # => :cow
 a[:t] # => :zebra
 ```
 
-This may give you results other than what you may expect. Consider you want a hash that looks like this: `{ :s => [:zebra, :frog, :kangaroo], :t => [:lion] }`. One might consider using `a = Hash.new([])`, don't be that one. Example:
+This may give you results other than what you may expect. Consider you want a hash that looks like this: `{ :s => [:zebra, :frog, :kangaroo], :t => [:lion] }`. One might consider using `a = Hash.new([])`.
 
 ```ruby
 a = Hash.new([])
