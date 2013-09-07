@@ -157,7 +157,7 @@ There are several ways to initialize a `Hash` using `Hash.new`. Let's compare an
 
 #### `a = Hash.new`
 
-This is the same as `{}` and will set the default return `value` of keys **not** found in the hash to `nil`. Example:
+This is the same as `{}` and will set the default return `value` of keys **not** found in the hash to `nil`.
 
 ```ruby
 a = Hash.new
@@ -168,7 +168,7 @@ a[:x] # => nil
 
 #### `a = Hash.new(obj)`
 
-Initializing a hash by passing an argument (`obj`) to `Hash.new` will set the default return value of keys **not** found in the hash to that `obj`. Example:
+Initializing a hash by passing an argument (`obj`) to `Hash.new` will set the default return value of keys **not** found in the hash to that `obj`.
 
 ```ruby
 a = Hash.new(:zebra)
@@ -195,7 +195,7 @@ a[:t] # => [:zebra, :frog, :kangaroo, :lion]
 
 #### `a = Hash.new { |hash, key| value }`
 
-This initialize method allows us to initialize an object for each new key value pair added to the hash. To achieve: `{ :s => [:zebra, :frog, :kangaroo], :t => [:lion] }`, one will want to initialize a seprate new instance of Array for each key. Example:
+This initialize method allows us to initialize an object for each new key value pair added to the hash. To achieve: `{ :s => [:zebra, :frog, :kangaroo], :t => [:lion] }`, one will want to initialize a seprate new instance of Array for each key.
 
 ```ruby
 a = Hash.new { |hash, key| hash[key] = [] }
