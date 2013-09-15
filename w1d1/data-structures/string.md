@@ -153,12 +153,17 @@ You can access substrings of a string much like you can access
 subarrays of an array.
 
 ```ruby
-"this is my sentence"[5..6]
+"this is my sentence"[5, 2]
 # => "is"
 ```
 
 Here five is the starting position of the substring, and two is the
-substring's length. As with arrays, you may also pass a range.
+substring's length. As with arrays, you may also pass a range of indexes.
+
+```ruby
+"this is my sentence"[5..6]
+# => "is"
+```
 
 ## Length
 
