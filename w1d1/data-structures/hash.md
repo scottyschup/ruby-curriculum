@@ -94,7 +94,7 @@ We can also merge two hashes together:
 
 ```ruby
 capitals = { 'New York' => 'Albany', 'California' => 'Sacramento' }
-more_capitals = { 'Texas' => 'Austin', 'Alaska' => 'Fairbanks' }
+more_capitals = { 'Texas' => 'Austin', 'Alaska' => 'Juneau' }
 
 capitals.merge(more_capitals)
 # => { 'New York' => 'Albany', 'California' => 'Sacramento', 'Texas' => 'Austin', 'Alaska' => 'Fairbanks' }
@@ -195,7 +195,7 @@ a[:t] # => [:zebra, :frog, :kangaroo, :lion]
 
 #### `a = Hash.new { |hash, key| value }`
 
-This initialize method allows us to initialize an object for each new key value pair added to the hash. To achieve: `{ :s => [:zebra, :frog, :kangaroo], :t => [:lion] }`, one will want to initialize a seprate new instance of Array for each key.
+This initialize method allows us to initialize an object for each new key value pair added to the hash. To achieve: `{ :s => [:zebra, :frog, :kangaroo], :t => [:lion] }`, one will want to initialize a separate new instance of Array for each key.
 
 ```ruby
 a = Hash.new { |hash, key| hash[key] = [] }
