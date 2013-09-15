@@ -107,7 +107,7 @@ ones in the calling Hash:
 
 ```ruby
 h1 = {:a => 'apple', :b => 'bat'}
-h2 = {:b => 'bravo', :c => 'charlie'}g
+h2 = {:b => 'bravo', :c => 'charlie'}
 
 h1.merge(h2) # => {:a => 'apple', :b => 'bravo', :c => 'charlie'}
 ```
