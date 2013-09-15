@@ -97,7 +97,7 @@ capitals = { 'New York' => 'Albany', 'California' => 'Sacramento' }
 more_capitals = { 'Texas' => 'Austin', 'Alaska' => 'Juneau' }
 
 capitals.merge(more_capitals)
-# => { 'New York' => 'Albany', 'California' => 'Sacramento', 'Texas' => 'Austin', 'Alaska' => 'Fairbanks' }
+# => { 'New York' => 'Albany', 'California' => 'Sacramento', 'Texas' => 'Austin', 'Alaska' => 'Juneau' }
 ```
 
 Notice that `hash1.merge(hash2)` is the same as `hash2.merge(hash1)`
@@ -107,7 +107,7 @@ ones in the calling Hash:
 
 ```ruby
 h1 = {:a => 'apple', :b => 'bat'}
-h2 = {:b => 'bravo', :c => 'charlie'}
+h2 = {:b => 'bravo', :c => 'charlie'}g
 
 h1.merge(h2) # => {:a => 'apple', :b => 'bravo', :c => 'charlie'}
 ```
