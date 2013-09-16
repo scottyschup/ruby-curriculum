@@ -24,7 +24,7 @@
 + **Bonus project**: Use Ruby to solve the
   [eight-queens problem][eight-queens].
 
-[day1-instructions]: https://github.com/appacademy/meta/blob/master/first-day-instructions.md
+[day1-instructions]: https://github.com/appacademy/meta/blob/master/first-day-instructions/README.md
 [keyboard-shortcuts]: ./w1d1/shortcuts.md
 [versions]: ./w1d1/versions.md
 
