@@ -86,7 +86,7 @@ variable; if no block is provided, `prc` is set to `nil`.
 
 ```ruby
 def amp_makes_block_a_proc(&prc)
-  puts &prc.class
+  puts prc.class
 end
 
 amp_makes_block_a_proc {|x| x+1}
