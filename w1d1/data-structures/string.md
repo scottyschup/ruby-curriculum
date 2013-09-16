@@ -277,7 +277,7 @@ restriction you might either:
 * Create a `Hash` where the keys are digit numbers and the values are the digit
   strings (for bases > 10 this will involve some characters; hex digits go up
   to `'F'`).
-    * Could use use an `Array` instead of a `Hash`? This is not a
+    * Could you use an `Array` instead of a `Hash`? This is not a
       trick question.
 
 ### Caesar cipher
