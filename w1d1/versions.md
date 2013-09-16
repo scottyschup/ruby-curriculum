@@ -13,4 +13,4 @@ The default version for this course is currently [Ruby
 You can read setup instructions for OS X
 [here][ruby-setup-instructions].
 
-[ruby-setup-instructions]: https://github.com/appacademy/meta/blob/master/ruby-setup-instructions.md
+[ruby-setup-instructions]: https://github.com/appacademy/meta/blob/master/setup/ruby.md
