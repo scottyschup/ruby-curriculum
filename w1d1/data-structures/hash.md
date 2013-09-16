@@ -215,7 +215,7 @@ Estimated time: 30min
 ### Set
 
 Ruby provides a class named `Set`. You can read all about it in the
-[ruby-doc][ruby-hash-doc]. Let's create a few methods that will manipulate
+[ruby-doc][ruby-set-doc]. Let's create a few methods that will manipulate
 a `Hash` as if it were a `Set`.  Like so:
 
 ```ruby
@@ -249,4 +249,4 @@ wrong_hash = { :a => "banana", :b => "cabbage", :c => "dental_floss", :d => "eel
 Write a method `correct_hash` that takes this wrong hash and returns
 the correct one.
 
-[ruby-hash-doc]: http://www.ruby-doc.org/core-1.9.3/Hash.html
+[ruby-set-doc]: http://www.ruby-doc.org/stdlib-1.9.3/libdoc/set/rdoc/Set.html
