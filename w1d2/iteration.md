@@ -360,7 +360,7 @@ end
 ## Exercises
 Time estimate: 1.5hrs
 
-* Loop through all the numbers, stopping when you encounter a number
+* Write a loop the finds the first number
   that is (a) >250 and (b) divisible by 7. Print this number down!
 * Write a method `factors` that prints out all the factors for an
   input.
