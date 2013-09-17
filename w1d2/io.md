@@ -187,11 +187,11 @@ call `$stdin.gets` and `$stdout.puts`.
 ## Command Line Arguments
 
 A user can pass arguments to your script from the command line. For 
-example, if your script counts a list of names, the user could 
-pass the name of a file that contains a list of names:
+example, if your script counts a list of cats, the user could 
+pass the name of a file that contains a list of cats:
 
 ```ruby
-$ ruby my_name_counter.rb list_of_names.txt
+$ ruby my_cat_counter.rb list_of_cats.txt
 ```
 
 To access the filename passed in, use ARGV in your script.
@@ -200,9 +200,9 @@ script name. Example:
 
 ```ruby
 puts ARGV 
-# returns ["list_of_names.txt"]
+# returns ["list_of_cats.txt"]
 puts ARGV[0]
-# prints "list_of_names.txt"
+# prints "list_of_cats.txt"
 ```
 
 ## Exercises
