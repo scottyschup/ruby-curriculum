@@ -10,6 +10,7 @@
   * Know how to read in all the lines from a file.
   * Know how to slurp in a whole file in one go.
 * Know when you have to close a file explicitly.
+* Know how to access arguments given to your script from the command line
 
 ## Standard IO
 
@@ -182,6 +183,27 @@ In Ruby, you can access standard input and output through the global
 variables `$stdout` and `$stdin`. These variables just hold typical
 `File` objects. In particular, `Kernel#gets` and `Kernel#puts` just
 call `$stdin.gets` and `$stdout.puts`.
+
+## Command Line Arguments
+
+A user can pass arguments to your script from the command line. For 
+example, if your script counts a list of names, the user could 
+pass the name of a file that contains a list of names:
+
+```ruby
+$ ruby my_name_counter.rb list_of_names.txt
+```
+
+To access the filename passed in, use ARGV in your script.
+[ARGV](http://www.ruby-doc.org/core-2.0.0/ARGF.html#method-i-argv) retuns an array of strings that were typed after your 
+script name. Example:
+
+```ruby
+puts ARGV 
+# returns ["list_of_names.txt"]
+puts ARGV[0]
+# prints "list_of_names.txt"
+```
 
 ## Exercises
 
