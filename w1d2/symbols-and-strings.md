@@ -94,6 +94,9 @@ def better_format_url(options = {})
     :query_hash => {}
   }
 
+  # this is not modifying the original options hash
+  # that was passed in, but rather creating a new hash
+  # and assigning it to `options`
   options = defaults.merge(options)
 
   # the query string is the part that comes after the '?' in a URL
