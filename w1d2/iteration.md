@@ -378,7 +378,9 @@ Time estimate: 1.5hrs
 > sort. Although the algorithm is simple, most other algorithms are
 > more efficient for sorting large lists.
 
+(Hint: Ruby has [parallel assignment][parallel-assignment] for easily switching values.)
 [wiki-bubble-sort]: http://en.wikipedia.org/wiki/bubble_sort
+[parallel-assignment]: http://rubyquicktips.com/post/384502538/easily-swap-two-variables-values
 
 * Write a method `substrings` that will take a `String` and return an
   array containing each of its substrings. Don't repeat substrings.
