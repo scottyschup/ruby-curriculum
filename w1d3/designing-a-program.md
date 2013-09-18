@@ -29,7 +29,7 @@ It's often helpful to start out with comments & pseudocode.
     to do
   * Use well-named, single responsibility helper methods liberally
   * Higher-level (i.e. more abstract) single-responsibility methods can
-    me composed of multiple lower-level (i.e. less abstract) helper
+    be composed of multiple lower-level (i.e. less abstract) helper
     methods
   * Classes can wrap up related data and behavior
   
