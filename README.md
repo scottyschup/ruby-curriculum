@@ -78,6 +78,10 @@
 + [Scope][scope]
 + **Project**: [Mastermind][mastermind]
 + **Project**: [Hangman][hangman]
++ **Bonus project**: [Maze solver][maze-project]
++ **Bonus project**: Use Ruby to solve the
+  [eight-queens problem][eight-queens].
+
 
 [program-design]: ./w1d3/designing-a-program.md
 [code-smells]: ./w1d3/refactoring.md
