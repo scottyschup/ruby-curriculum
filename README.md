@@ -72,7 +72,7 @@
 [classes]: ./w1d2/classes.md
 [pass-by-reference]: ./w1d2/pass-by-reference.md
 
-[microblogger]: http://tutorials.jumpstartlab.com/projects/microblogger.html
+[microblogger]: ./w1d2/microblogger.md
 
 ## Basic design
 
