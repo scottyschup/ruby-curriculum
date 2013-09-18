@@ -20,12 +20,12 @@ reassigns the variable so that it now refers to a new object.
 Here is another example of pass by reference:
 
 ```ruby
-def add_to_array(array, item)
+def add_to_array!(array, item)
   array << item
 end
 
 my_array = []
-add_to_array(my_array, "an item!")
+add_to_array!(my_array, "an item!")
 p my_array
 ```
 
