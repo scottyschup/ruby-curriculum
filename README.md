@@ -56,8 +56,6 @@
     + [Choosing good names][naming]
 + [Classes][classes]
 + [Pass by reference][pass-by-reference]
-+ **Project**: [MicroBlogger][microblogger]
-  * Don't do the Klout part.
 
 [methods]: ./w1d2/methods.md
 [iteration]: ./w1d2/iteration.md
@@ -71,8 +69,6 @@
 
 [classes]: ./w1d2/classes.md
 [pass-by-reference]: ./w1d2/pass-by-reference.md
-
-[microblogger]: ./w1d2/microblogger.md
 
 ## Basic design
 
