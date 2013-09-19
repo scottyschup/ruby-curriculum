@@ -333,10 +333,10 @@ Estimated time: 1hrs
 * Define your own `Array#my_sort!`: it should take in a block to
   perform the comparison:
 
-```ruby
-[1, 3, 5].my_sort! { |num1, num2| num1 <=> num2 } #sort ascending
-[1, 3, 5].my_sort! { |num1, num2| num2 <=> num1 } #sort descending
-```
+  ```ruby
+  [1, 3, 5].my_sort! { |num1, num2| num1 <=> num2 } #sort ascending
+  [1, 3, 5].my_sort! { |num1, num2| num2 <=> num1 } #sort descending
+  ```
 
   `#<=>` (the *spaceship* method)
   [compares objects][so-spaceship]. `x.<=>(y)` returns `-1` if `x` is
@@ -344,10 +344,10 @@ Estimated time: 1hrs
   `1`. You can define `<=>` on your own classes.
   
   **Don't use `my_each` for this one!**
-* Write a method that takes some arguments and a block. It should call
-  the block, passing all the arguments to the block at once using the
-  splat operator. If the user doesn't supply the block, it should
-  print out "NO BLOCK GIVEN!".
+* Write a `splat_me` method that takes some arguments and a block (not an
+  array method). It should call the block, passing all the arguments to the block at once (individually,
+  not as an array) using the splat operator. If the user doesn't supply the 
+  block, it should print out "NO BLOCK GIVEN!".
     * To take possibly multiple arguments, check out the Ruby
       [splat operator][splat-operator].
 
