@@ -1,7 +1,7 @@
 # Word Chains
 
 Read the [RubyQuiz][quiz]. It may be down, in which case use the
-WaybackMachine.
+[WaybackMachine][quiz-wayback].
 
 *NB: You don't have to use recursion for this one.*
 
@@ -55,4 +55,5 @@ file. Don't just save-as; tha will save an HTML version of the github
 page.
 
 [quiz]: http://www.rubyquiz.com/quiz44.html
+[quiz-wayback]: http://web.archive.org/web/20130215052516/http://rubyquiz.com/quiz44.html
 [dictionary]: ./dictionary.txt
