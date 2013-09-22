@@ -344,8 +344,9 @@ Estimated time: 1hrs
   `1`. You can define `<=>` on your own classes.
   
   **Don't use `my_each` for this one!**
-* Write a `splat_me` method that takes some arguments and a block (not an
-  array method). It should call the block, passing all the arguments to the block at once (individually,
+* Write a `eval_block` method that takes some arguments and a block.
+  (Note: this method is not part of the Array class; just write a stand-alone method.)
+  It should call the block, passing all the arguments to the block at once (individually,
   not as an array) using the splat operator. If the user doesn't supply the 
   block, it should print out "NO BLOCK GIVEN!".
     * To take possibly multiple arguments, check out the Ruby
