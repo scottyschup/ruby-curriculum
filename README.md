@@ -118,6 +118,7 @@
 ## Git
 ### w1d6-w1d7
 + [git][git]
++ [adding with git][git-add]
 + **Project**: [Git immersion][git-immersion]
 + **Project**: Do Hangman and Word chains again, using git this
   time. Do not refer to your old code.
@@ -125,6 +126,7 @@
 + **TODO**: cleanup these readings.
 
 [git]: https://github.com/appacademy/ruby-curriculum/blob/master/git.md
+[git-add]: https://github.com/appacademy/ruby-curriculum/blob/master/git-add.md
 [git-immersion]: http://gitimmersion.com/
 
 ## Language Basics II, OO Design
