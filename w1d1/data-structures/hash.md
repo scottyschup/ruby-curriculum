@@ -34,7 +34,7 @@ capitals = { 'New York' => 'Albany', 'California' => 'Sacramento' }
 capitals['New York'] # => 'Albany'
 ```
 
-### `Hash#.each`
+### `Hash#each`
 
 We can also *iterate* over the elements of the hash, just like we did
 with array:

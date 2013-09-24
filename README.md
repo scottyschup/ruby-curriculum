@@ -202,7 +202,7 @@
 [sql-curriculum]: https://github.com/appacademy/sql-curriculum
 
 ## Additional Bonus Topics
-+ **TODO**: schedule these on curriculum
++ [Hash Defaults][hash-defaults]
 + [Modules][modules]
 + [Metaprogramming and Reflection][metaprogramming]
 + [load/require/require_relative][require]
@@ -212,10 +212,8 @@
 + **TODO**: [Hash and Equals][hash-and-equals]
 + **TODO**: Write up Chess RSpec examples.
 + **TODO**: film debugging process
-+ **TODO**: can we write a small reading on `Hash.new(0)` vs `Hash.new
-  { |h, k| h[k] = [] }`? 
-  + **TODO**: review section in [Hash][hash] about this difference.
 
+[hash-defaults]: ./bonus/hash-defaults.md
 [modules]: ./bonus/modules.md
 [metaprogramming]: ./bonus/metaprogramming.md
 [require]: ./bonus/require.md
