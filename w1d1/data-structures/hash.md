@@ -11,10 +11,11 @@
 
 ## What's a Hash?
 
-A Hash is a collection of key-value pairs. You can think of a hash like an
-array, but instead of the keys being incrementing integer indices (i.e., 0, 1,
-2, 3, etc.), the keys are arbitrary, and can be any kind of object. From ruby 1.9.3
-onwards, Hashes enumerate their values in the order that the corresponding keys were inserted.
+A Hash is a collection of key-value pairs. You can think of a hash
+like an array, but instead of the keys being incrementing integer
+indices (i.e., 0, 1, 2, 3, etc.), the keys are arbitrary, and can be
+any kind of object. From ruby 1.9.3 onwards, Hashes enumerate their
+values in the order that the corresponding keys were inserted.
 
 You can create a hash a couple different ways:
 
@@ -164,48 +165,6 @@ a = Hash.new
 a[:y] = 5
 a[:y] # => 5
 a[:x] # => nil
-```
-
-#### `a = Hash.new(obj)`
-
-Initializing a hash by passing an argument (`obj`) to `Hash.new` will set the default return value of keys **not** found in the hash to that `obj`.
-
-```ruby
-a = Hash.new(:zebra)
-a[:s] # => :zebra
-a[:s] = :cow # see how this is using the `setter`, it's reasigning the value for key :s
-a[:s] # => :cow
-a[:t] # => :zebra
-```
-
-This may give you results other than what you may expect. Consider you want a hash that looks like this: `{ :s => [:zebra, :frog, :kangaroo], :t => [:lion] }`. One might consider using `a = Hash.new([])`.
-
-```ruby
-a = Hash.new([])
-a[:s] # => [] # This array is **NOT** unique to a[:s]!
-a[:s] << :zebra
-a[:s] << :frog
-a[:s] << :kangaroo
-a[:s] # => [:zebra, :frog, :kangaroo]
-a[:t] << :lion
-a[:t] # => [:zebra, :frog, :kangaroo, :lion]
-# unexpected?
-# When we call `<<` for on a[:t], a[:t] doesn't exist yet, so the default return value is the object the hash was initialized with (The same array as a[:s] is working with)
-```
-
-#### `a = Hash.new { |hash, key| value }`
-
-This initialize method allows us to initialize an object for each new key value pair added to the hash. To achieve: `{ :s => [:zebra, :frog, :kangaroo], :t => [:lion] }`, one will want to initialize a separate new instance of Array for each key.
-
-```ruby
-a = Hash.new { |hash, key| hash[key] = [] }
-a[:s] # => [] # This array **is** unique to a[:s]!
-a[:s] << :zebra
-a[:s] << :frog
-a[:s] << :kangaroo
-a[:s] # => [:zebra, :frog, :kangaroo]
-a[:t] << :lion
-a[:t] # => [:lion]
 ```
 
 ## Exercises
