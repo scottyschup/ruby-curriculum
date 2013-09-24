@@ -204,19 +204,15 @@
 
 ## Additional Bonus Topics
 + [Modules][modules]
-+ [Metaprogramming and Reflection][metaprogramming]
 + [load/require/require_relative][require]
 + [public/private/protected][privacy]
-+ [Class instance variables][class-instance-variables]
 + **TODO**: [How RSpec works document][how-rspec-works]
 + **TODO**: [Hash and Equals][hash-and-equals]
 + **TODO**: Write up Chess RSpec examples.
 + **TODO**: film debugging process
 
 [modules]: ./bonus/modules.md
-[metaprogramming]: ./bonus/metaprogramming.md
 [require]: ./bonus/require.md
 [privacy]: ./bonus/privacy.md
-[class-instance-variables]: ./bonus/class-instance-variables.md
 [how-rspec-works]: ./bonus/how-rspec-works.md
 [hash-and-equals]: ./bonus/hash-and-equals.md
