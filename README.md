@@ -122,8 +122,7 @@
 + **Project**: [Git immersion][git-immersion]
 + **Project**: Do Hangman and Word chains again, using git this
   time. Do not refer to your old code.
-+ Assessment Prep
-+ **TODO**: cleanup these readings.
++ Make sure to take the [practice assessment][assessment-practice]
 
 [git]: https://github.com/appacademy/ruby-curriculum/blob/master/git.md
 [git-add]: https://github.com/appacademy/ruby-curriculum/blob/master/git-add.md
