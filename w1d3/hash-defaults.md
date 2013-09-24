@@ -88,8 +88,6 @@ new values instead. `nil` is another example.
 
 ## Hash default values
 
-**TODO**: this duplicates somewhat a section in w1d1/data-structures/hash.md
-
 Providing a default value for a Hash has the same issues as with an
 Array:
 
