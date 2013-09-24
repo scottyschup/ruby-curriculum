@@ -76,16 +76,17 @@
 + [Designing a Program][program-design]
 + [Refactoring and Code Smells][code-smells]
 + [Scope][scope]
++ [Hash Defaults][hash-defaults]
 + **Project**: [Mastermind][mastermind]
 + **Project**: [Hangman][hangman]
 + **Bonus project**: [Maze solver][maze-project]
 + **Bonus project**: Use Ruby to solve the
   [eight-queens problem][eight-queens].
 
-
 [program-design]: ./w1d3/designing-a-program.md
 [code-smells]: ./w1d3/refactoring.md
 [scope]: ./w1d3/scope.md
+[hash-defaults]: ./w1d3/hash-defaults.md
 
 [mastermind]: ./projects/mastermind.md
 [hangman]: ./projects/hangman.md
@@ -201,7 +202,6 @@
 [sql-curriculum]: https://github.com/appacademy/sql-curriculum
 
 ## Additional Bonus Topics
-+ [Hash Defaults][hash-defaults]
 + [Modules][modules]
 + [Metaprogramming and Reflection][metaprogramming]
 + [load/require/require_relative][require]
@@ -212,7 +212,6 @@
 + **TODO**: Write up Chess RSpec examples.
 + **TODO**: film debugging process
 
-[hash-defaults]: ./bonus/hash-defaults.md
 [modules]: ./bonus/modules.md
 [metaprogramming]: ./bonus/metaprogramming.md
 [require]: ./bonus/require.md
