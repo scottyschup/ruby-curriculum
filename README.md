@@ -151,6 +151,7 @@
 + [Inheritance, Polymorphism and DRY][inheritance-design]
 + [Information hiding/encapsulation][hiding]
 + **Project**: [Chess][chess]
+    + Please read the project description the night before.
 
 [inheritance]: ./w2d2/inheritance.md
 [errors]: ./w2d2/errors.md
