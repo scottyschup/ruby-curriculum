@@ -6,7 +6,8 @@ read all through the various phases before proceeding.**
 ## Phase I: Pieces
 
 There are many different kinds of pieces in chess, and each moves a
-specific way. Based on their moves, they can be placed in three categories:
+specific way. 
+Based on their moves, they can be placed in three categories:
 
 0. Sliding pieces (Bishop/Rook/Queen)
 0. Stepping pieces (Knight/King)
@@ -59,7 +60,24 @@ write a `Piece#move_into_check?(pos)` method that will:
 
 To do this, you'll have to write a `Board#dup` method. Your `#dup`
 method should duplicate not only the `Board`, but the pieces on the
-`Board` (why?).
+`Board`. Why?
+
+#### A Note on Deep Duping your Board
+As we saw in one of the [recursion exercises][recursion-exercises], Ruby's native
+`.dup` method does not make a *deep copy*.  This means that 
+nested arrays **and any arrays stored in instance variables**
+will not be copied by the normal `.dup` method:
+
+```ruby
+# Example: if piece position is stored as an array
+queen = Queen.new([0, 1])
+queen_copy = queen.dup
+
+# shouldn't modify original queen
+queen_copy.position[0] = "CHANGED"
+# wtf?
+queen.position # => ["CHANGED", 1]
+```
 
 Note that another way to write `#valid_moves` would be to make the
 move on the original board, see if the player is in check, and then
@@ -113,3 +131,4 @@ relatively straightforward to add new player types at a later date.
   * d8, h4
 
 [wiki-chess]: http://en.wikipedia.org/wiki/Chess
+[recursion-exercises]: ../w1d4/recursion.md
