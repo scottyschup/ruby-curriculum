@@ -144,5 +144,5 @@ coding style, encapsulation, and exception handling.
 
 [wiki-chess]: http://en.wikipedia.org/wiki/Chess
 [recursion-exercises]: ../w1d4/recursion.md
-[colorize-gem]: http://rubygems.org/gems/colorize
+[colorize-gem]: https://github.com/fazibear/colorize
 [wiki-chess-unicode]: http://en.wikipedia.org/wiki/Chess_symbols_in_Unicode
