@@ -116,7 +116,7 @@ It is not a requirement to write a `ComputerPlayer`, but you may do
 this as a bonus. If you write your `Game` class cleanly, it should be 
 relatively straightforward to add new player types at a later date.
 
-## Notes
+## Tips
 
 * Do **not** concern yourself with tricky moves like "en
   passant". Don't implement castling, draws, or pawn promotion. You
@@ -130,5 +130,19 @@ relatively straightforward to add new player types at a later date.
   * g2, g4
   * d8, h4
 
+## The Final Phase: Hardening Your Code  
+
+After completing each phase of the project, please remember to go
+back and make your code truly stellar, practicing all you know about
+coding style, encapsulation, and exception handling.  
+ * DRY out your code
+ * Split your classes into separate files
+ * Use exception handling, and make sure to deal with bad user input
+ * Method decomposition (pull chunks of code into 'helper' methods)
+ * Make 'helper' methods private
+ * Jazz up your User Interface (UI) with [colorize][colorize-gem] and [unicode][wiki-chess-unicode]
+
 [wiki-chess]: http://en.wikipedia.org/wiki/Chess
 [recursion-exercises]: ../w1d4/recursion.md
+[colorize-gem]: http://rubygems.org/gems/colorize
+[wiki-chess-unicode]: http://en.wikipedia.org/wiki/Chess_symbols_in_Unicode
