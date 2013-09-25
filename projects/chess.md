@@ -1,18 +1,18 @@
 # Chess
 
-Write a [chess game][wiki-chess] in an object-oriented way. Please
-read through the various phases before proceeding.
+Write a [chess game][wiki-chess] in an object-oriented way. **Please
+read all through the various phases before proceeding.**
 
 ## Phase I: Pieces
 
 There are many different kinds of pieces in chess, and each moves a
-specific way. I think there are three main kinds of pieces:
+specific way. Based on their moves, they can be placed in three categories:
 
 0. Sliding pieces (Bishop/Rook/Queen)
 0. Stepping pieces (Knight/King)
 0. The pawn (do this last)
 
-I think you should have a `Piece` class which contains the
+Start by writing a `Piece` parent class which contains the
 functionality common to all pieces. A key method of `Piece` is
 `#moves`, which should return an array of places a `Piece` can move
 to. Of course, every piece will move differently, so you can't write
@@ -25,7 +25,7 @@ both). A subclass of `SlidingPiece` (`Bishop`/`Rook`/`Queen`) will
 need to implement a method `#move_dirs`, which `SlidingPiece#moves`
 will use.
 
-Your `Piece`s will need to (1) track its position and (2) hold a
+Your `Piece` will need to (1) track its position and (2) hold a
 reference to the `Board`. The `SlidingPiece` in particular needs the
 `Board` so it knows to stop sliding when blocked by another piece.
 
@@ -33,12 +33,12 @@ For now, do not worry if a move would leave a player in check.
 
 ## Phase II: `Board` and `Board#check(color)`
 
-Your `Board` class should hold a 2-dimensional array. Each position in
-the board either holds a `Piece`, or `nil` if no piece is present
-there.
+Your `Board` class should hold a 2-dimensional array (an array of arrays). 
+Each position in the board either holds a `Piece`, or `nil` if no piece 
+is present there.
 
 The `Board` class should have a method `#checked?(color)` that returns
-whether a player is in check. You can implement this by (2) finding
+whether a player is in check. You can implement this by (1) finding
 the position of the king on the board then (2) seeing if any of the
 opposing pieces can move to that position.
 
@@ -50,8 +50,8 @@ the piece cannot move to `end`.
 ## Phase III: `Piece#valid_moves`
 
 You will want a method on `Piece` that filters out the `#moves` of a
-`Piece` that would leave the player in check. I'd write a
-`Piece#move_into_check?(pos)` method that
+`Piece` that would leave the player in check. A good approach is to 
+write a `Piece#move_into_check?(pos)` method that will:
 
 0. For each move, duplicate the `Board` and perform the move.
 0. Look to see if the player is in check after the move
@@ -91,12 +91,12 @@ Write a `Game` class that constructs a board, that alternates between
 players (assume two human players for now) prompting them to move. The
 `Game` should handle exceptions from `Board#move` and report them.
 
-I wrote a `HumanPlayer` class with one method (`#play_turn`). My
-`Game#play` method just continuously calls `play_turn`.
+It is fine to write a `HumanPlayer` class with one method (`#play_turn`). 
+In that case, `Game#play` method just continuously calls `play_turn`.
 
-I didn't write a `ComputerPlayer`, but you may do this as a bonus. If
-you write your `Game` class cleanly, it should be relatively
-straightforward to add new player types at a later date.
+It is not a requirement to write a `ComputerPlayer`, but you may do 
+this as a bonus. If you write your `Game` class cleanly, it should be 
+relatively straightforward to add new player types at a later date.
 
 ## Notes
 
