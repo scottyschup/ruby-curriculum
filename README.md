@@ -164,11 +164,10 @@
 ### w2d3
 + **Assessment01 retake**
 + Continue Chess.
-    + As ever, read solutions. But more than usual, read my
-      [Chess solution][chess-solution] side-by-side with your own
-      code.
 
 ### w2d4
++ As ever, read solutions. But more than usual, read my
+  [Chess solution][chess-solution] side-by-side with your own code.
 + **Solo Project**: [Checkers][checkers-project]
 
 [chess-solution]: https://github.com/appacademy/solutions/tree/master/w2/w2d2-w2d3/lib
