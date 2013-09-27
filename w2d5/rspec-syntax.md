@@ -15,7 +15,9 @@ of both rspec-core and rspec-expectations are required reading.
 
 By convention, tests are kept in the `spec` folder and your application
 code will be kept in a `lib` folder. Tests for `hello.rb` will be
-written in a file called `hello_spec.rb`.
+written in a file called `hello_spec.rb`.  One shortcut you can use to 
+create some of the rspec structure: cd to the project folder and run
+`rspec --init`.
 
 ```
 lib/
