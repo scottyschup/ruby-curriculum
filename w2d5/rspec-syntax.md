@@ -282,7 +282,7 @@ that we could specify a particular file in the command line if we wanted
 to.
 
 Finally, we specify that the `:default` task is the `:spec` task, so
-no we can run `rake` without any arguments and it will run our specs
+now we can run `rake` without any arguments and it will run our specs
 for us. We could of course still call `rake spec`.
 
 ## Additional Notes
