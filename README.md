@@ -182,6 +182,7 @@
 + [`subject` and `let`][subject-and-let]
 + [guard-rspec][guard-rspec]
 + **Demo Reading**: read assessment00 and assessment01 spec files
++ **Demo Reading**: [OO Robot RSpec Example][robot-demo]
 + **Project**: [First TDD Projects][first-tdd-projects]
 + **Project**: [Poker][poker-project]
 
@@ -191,6 +192,8 @@
 [test-doubles]: ./w2d5/test-doubles.md
 [subject-and-let]: ./w2d5/subject-and-let.md
 [guard-rspec]: ./w2d5/guard-rspec.md
+
+[robot-demo]: ./w2d5/robot-rspec-demo
 
 [first-tdd-projects]: ./projects/first-tdd-projects.md
 [poker-project]: ./projects/poker.md
@@ -207,7 +210,6 @@
 + [public/private/protected][privacy]
 + **TODO**: [How RSpec works document][how-rspec-works]
 + **TODO**: [Hash and Equals][hash-and-equals]
-+ **TODO**: Write up Chess RSpec examples.
 + **TODO**: film debugging process
 
 [modules]: ./bonus/modules.md
