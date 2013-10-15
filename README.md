@@ -210,7 +210,6 @@
 + [public/private/protected][privacy]
 + **TODO**: [How RSpec works document][how-rspec-works]
 + **TODO**: [Hash and Equals][hash-and-equals]
-+ **TODO**: film debugging process
 
 [modules]: ./bonus/modules.md
 [require]: ./bonus/require.md
