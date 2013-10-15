@@ -125,8 +125,8 @@
   time. Do not refer to your old code.
 + Make sure to take the [practice assessment][assessment-practice]
 
-[git]: https://github.com/appacademy/ruby-curriculum/blob/master/git.md
-[git-add]: https://github.com/appacademy/ruby-curriculum/blob/master/git-add.md
+[git]: ./w1d6-w1d7/git.md
+[git-add]: ./w1d6-w1d7/git-add.md
 [git-immersion]: http://gitimmersion.com/
 
 ## Language Basics II, OO Design
@@ -142,7 +142,7 @@
 [gems]: ./w2d1/gems-and-rvm.md
 
 [minesweeper]: ./projects/minesweeper.md
-[git-summary]: ./git-summary.md
+[git-summary]: ./w1d6-w1d7/git-summary.md
 
 ### w2d2
 + [Class inheritance][inheritance]
