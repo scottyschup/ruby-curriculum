@@ -21,6 +21,6 @@ In this project, you'll implement the game
   or she has.
 * Game ends when user guesses the code, or out of turns.
 * Call your TA over and have them review your classes and
-  general implementation moving on.
+  general implementation before moving on.
 
 [wiki-mastermind]:http://en.wikipedia.org/wiki/Mastermind_(game)
