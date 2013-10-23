@@ -332,7 +332,7 @@ Estimated time: 1hrs
   `inject` is fancy (you can write `[1, 2, 3].inject(:+)` to shorten
   up `[1, 2, 3].inject { |sum, num| sum + num }`), but focus on the
   block (and not the symbol) version.
-* Define your own `Array#my_sort!`: it should take in a block to
+* **Don't use `my_each` for this one!** Define your own `Array#my_sort!`: it should take in a block to
   perform the comparison:
 
   ```ruby
@@ -345,7 +345,6 @@ Estimated time: 1hrs
   less than `y`. If `x` and `y` are equal, it returns `0`. If greater,
   `1`. You can define `<=>` on your own classes.
   
-  **Don't use `my_each` for this one!**
 * Write a `eval_block` method that takes some arguments and a block.
   (Note: this method is not part of the Array class; just write a stand-alone method.)
   It should call the block, passing all the arguments to the block at once (individually,
