@@ -277,11 +277,13 @@ In this case, Ruby gives us a shortcut:
 [1, 2, 5].select(&:odd?)
 ```
 
-When an item is passed to the block slot, it will have the method
-`#to_proc` called on it. In the case of a `Proc`, this does
-nothing. In the case of a `Symbol`, this returns a `Proc` which calls
-a method on the `Proc`'s argument. So the above could be rewritten
-more verbosely as:
+What's happening here? Using the `&` symbol calls `#to_proc` on the item 
+following the ampersand. For example, in the above code, [`#to_proc`][symbol-to-proc] is called 
+on the symbols `:upcase` and `:odd`.
+
+When `#to_proc` is called on a symbol, we get back a `Proc` object that just calls 
+a method with the same name as the symbol on its argument. Here's what the above is 
+"actually doing".
 
 ```ruby
 ["a", "b", "c"].map { |s| s.upcase }
@@ -354,6 +356,7 @@ Estimated time: 1hrs
 
 [peter-youtube-blocks]: http://www.youtube.com/watch?v=VBC-G6hahWA
 [splat-operator]: http://kconrails.com/2010/12/22/rubys-splat-operator/
+[symbol-to-proc]: http://ruby-doc.org/core-2.0.0/Symbol.html#method-i-to_proc
 
 ## Resources
 * [Robert Sosinski on Blocks][sosinski-blocks]
