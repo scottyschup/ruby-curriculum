@@ -55,7 +55,7 @@ Here's what a simple 'Hello, World!' spec might look like.
 
 ```
 require 'rspec'
-require './hello'
+require 'hello'
 
 describe "#hello_world" do
   it "returns 'Hello, World!'" do
