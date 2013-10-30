@@ -11,6 +11,7 @@ class Board
   end
 
   def [](pos)
+    # We expect position to be an array here.
     @grid[pos.first][pos.last]
   end
 
@@ -27,10 +28,10 @@ How do these work?
 ```ruby
 board = Board.new
 # => #<Board:0x007fd781d15690 @grid=[[1, 2, 3], [4, 5, 6]]>
-board.[]([0,0])
+board.[]([0, 0])
 # => 1
 
-board.[]=([0,0],"New Value!")
+board.[]=([0, 0], "New Value!")
 # => "New Value!"
 board
 # => #<Board:0x007fd781d15690 @grid=[["New Value!", 2, 3], [4, 5, 6]]>
@@ -45,12 +46,16 @@ Ruby will let us give the first argument to the methods `Board#[]` and `Board#[]
 ```ruby
 board = Board.new
 # => #<Board:0x007fd782a93c18 @grid=[[1, 2, 3], [4, 5, 6]]>
-board[[0,0]]
+board[[0, 0]]
 # => 1
-board[[0,0]] = "New value!"
+board[[0, 0]] = "New value!"
 # => "New value!"
 board
 # => #<Board:0x007fd782a93c18 @grid=[["New value!", 2, 3], [4, 5, 6]]>
 ```
 
 That's it!
+
+## What are they for?
+
+If you're passing around a `Board` object, it's annoying to access elements in that board's grid like this: `board.grid[0][1]`. These methods let us access like this: `board[[0,1]]`.
