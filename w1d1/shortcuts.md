@@ -1,7 +1,7 @@
 # Keyboard Shortcuts
 
 Developers like to stay on the keyboard as much as possible. You should
-limit your use of the mouse. Keep this page open (or find/make your own
+*limit your use of the mouse*. Keep this page open (or find/make your own
 keyboard shortcut cheatsheet) and refer to it often. Get practice
 with these commands.
 
