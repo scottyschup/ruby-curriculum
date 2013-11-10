@@ -123,11 +123,13 @@
 + **Project**: [Git immersion][git-immersion]
 + **Project**: Do Hangman and Word chains again, using git this
   time. Do not refer to your old code.
++ [Git Cheatsheet][git-cheatsheet]
 + Make sure to take the [practice assessment][assessment-practice]
 
 [git]: ./w1d6-w1d7/git.md
 [git-add]: ./w1d6-w1d7/git-add.md
 [git-immersion]: http://gitimmersion.com/
+[git-cheatsheet]: http://www.ndpsoftware.com/git-cheatsheet.html
 
 ## Language Basics II, OO Design
 ### w2d1
