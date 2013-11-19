@@ -570,14 +570,14 @@ Write a set of classes to model `Student`s and `Course`s.
 * `Student#enroll` should take a `Course` object, add it to the
   student's list of courses, and update the `Course`'s list of
   enrolled students.
-    * `enroll` should ignore attempts to re-enroll a student
+    * `enroll` should ignore attempts to re-enroll a student.
 * `Student#course_load` should return a hash of departments to # of
-  credits the student is taking in that department
+  credits the student is taking in that department.
 * `Course#initialize` should take the course name, department, and
   number of credits.
-* `Course#students` should return a list of the enrolled students
-* `Course#add_student` should add a student to the class
-  * It should protect against enrolling twice
+* `Course#students` should return a list of the enrolled students.
+* `Course#add_student` should add a student to the class.
+  * Probably can rely upon `Student#entroll`.
 
 And some extras:
 * Each course should also take a set of days of the week (`:mon`,
@@ -590,20 +590,27 @@ And some extras:
   `Course` and returns true if they conflict.
 * Update `Student#enroll` so that you raise an error if a `Student`
   enrolls in a new course that conflicts with an existing course time.
+    * May want to write a `Student#has_conflict?` method to help.
 
 ### Tic-Tac-Toe
+
 Let's write a Tic-Tac-Toe game!
 
-* The game should run in a master loop, called a *run loop*.
-* Each time around it should prompt both players for their move.
-* When someone wins, it should exit the loop.
-  * When checking for wins, you should be able to save some lines by
-    looping through the rows, columns, and diagonals.
-* Your tic tac toe game class should have a `#play` method that
-  contains the loop, only returning when the game has completed.
+* You should have a `Board` class and a `Game` class. The board should
+  have methods like `#won?`, `winner`, `empty?(pos)`, `place_mark(pos,
+  mark)`, etc.
+* The `Game` class should have a `play` method that loops, reading in
+  user moves. When the game is over, exit the loop.
 * You should have a class that represents a human player
   (`HumanPlayer`), and another class for a computer player
-  (`ComputerPlayer`).
-* You should be able to select 2, 1, or no human players.
+  (`ComputerPlayer`). Start with the human player first.
+* Both `HumanPlayer` and `ComputerPlayer` should have the same API;
+  they should have the same set of public methods. This means they
+  should be interchangeable.
+    * Your `Game` class should be passed two player objects on
+      instantiation; because both player classes have the same API,
+      the game should not know nor care what kind of players it is
+      given.
 * Keep the computer AI simple: make a winning move if available; else
   move randomly.
+* Get a TA to review your work and make suggestions!
