@@ -3,17 +3,16 @@
 ## Methods should be atomic
 
 **Each method should do one thing.** A method should do a single,
-atomic thing (we will often refer to this as the *Single
-Responsibility Principle*). This may be one line of code, or three,
-but rarely more than ten. **Methods should be short.** Let's take a
-look at an example of refactoring one long method into short, atomic
-methods.  We'll use an implementation of the Mixology exercise we
-worked on in the [methods][methods] section.
-
-[methods]: ../language-basics/methods.md
+atomic thing (this is sometimes called the *Single Responsibility
+Principle*). This may be one line of code, or three, but rarely more
+than ten. **Methods should be short.** Let's take a look at an example
+of refactoring one long method into short, atomic methods.  We'll use
+an implementation of the Mixology exercise we worked on in the
+methods section.
 
 Here's the problem description in case you don't remember it:
 
+```
 The method `remix` should take an array of ingredient arrays (one
 alcohol, one mixer) and return the same type of data structure, with
 the ingredient pairs mixed up. Assume that the first item in the pair
@@ -21,7 +20,6 @@ array is alcohol, and the second is a mixer. Don't pair an alcohol
 with an alcohol with or a mixer with a mixer. An example run of the
 program:
 
-```ruby
 remix([
   ["rum", "coke"],
   ["gin", "tonic"],
@@ -55,7 +53,7 @@ end
 ```
 
 Let's start breaking this method into smaller methods. What are the
-steps that we take in this one super long method?
+steps that we take in this one fairly long method?
 
 1. Split the drinks into arrays of alcohols and mixers
 2. Shuffle the alcohol and mixer arrays
@@ -185,18 +183,18 @@ Here's an example of something super terrible:
 
 ```ruby
 # create a global i variable
-i = nil
+$i = nil
 
 def square_then_add_two(num)
-  i = num
+  $i = num
   square
 
-  i = i + 2
+  $i = $i + 2
 end
 
 def square
   # get global variable, square it, and reset
-  i = i * i
+  $i = $i * $i
 
   nil
 end
@@ -212,7 +210,8 @@ communicates by setting a global variable. That is unnecessarily
 convoluted; just give the answer back directly.
 
 A general guideline, avoid global state. Don't use global variables to
-get around passing in arguments or return values.
+get around passing in arguments or return values. I basically never
+use `$` variables.
 
 ## Don't modify arguments
 
@@ -220,30 +219,33 @@ Callers do not typically expect you to modify an argument. For
 instance:
 
 ```ruby
-def sum(array)
-  result = 0
+def combine_ingredients(alcohols, mixers)
+  drinks = []
 
-  while array.length > 0
-    result += array.pop
+  alcohols.length.times do
+    drinks << [alcohols.pop, mixers.pop]
   end
 
-  result
+  drinks
 end
 ```
 
-This destroys the caller's array. Did they expect this? If modification
-of the argument is essential to what you're doing, fine, but otherwise
-don't do something potentially unexpected and dangerous like this.
+This destroys the caller's arrays. Did they expect this? If
+modification of the argument is essential to what you're doing, fine,
+but otherwise don't do something potentially unexpected and dangerous
+like this.
 
 Instead do something like:
 
 ```ruby
-def sum(array)
-  result = 0
+def combine_ingredients(alcohols, mixers)
+  drinks = []
 
-  array.each { |val| result += val }
+  alcohols.each_index do |i|
+    drinks << [alcohols[i], mixers[i]]
+  end
 
-  result
+  drinks
 end
 ```
 
