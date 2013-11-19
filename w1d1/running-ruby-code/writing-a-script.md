@@ -6,8 +6,9 @@ others are intended to be executed as a program (called *script*
 files).
 
 If you have a file `script.rb`, our goal is to invoke the file by
-typing `./script.rb`. The first step is to add a line which tells the
-"shell" (bash or zsh) to use the Ruby interpreter to run the code:
+typing `./script.rb` in the shell. The first step is to add a line
+which tells the "shell" (bash or zsh) to use the Ruby interpreter to
+run the code:
 
 ```ruby
 #!/usr/bin/env ruby
@@ -18,20 +19,21 @@ puts "Hello from Ruby!"
 The first line tells the shell to use the Ruby interpreter to run the
 program. If you had written `#!/usr/bin/env perl` it would run your
 program with the Perl interpreter. Without this, the shell will
-interpret your program as a shell script by default.
+interpret your program as a "shell script" (consisting of shell
+commands) by default.
 
 Next, we need to make the file *executable*, which tells the shell
 that the file is safe to execute as a program. For instance, you
-wouldn't want to run a Word document as a program. To do this, run
-`chmod +x script.rb` (the 'x' means *executable*).
+wouldn't want to run a Word document as a program. To make a program
+executable, run `chmod +x script.rb` (the 'x' means *executable*).
 
 You should now be able to run `./script.rb`.
 
 ### Conditional execution
 
 Sometimes you want to write a Ruby file that can be used as a library,
-but also invoked as a script. This is especially if you'd like to
-`require` your script to test out in irb.
+but also invoked as a script. This is especially useful if you'd like
+to `require` your script to test out in irb.
 
 ```ruby
 #!/usr/bin/env ruby
@@ -60,4 +62,4 @@ only the `say_hello` method will be defined.
 
 This is desirable, because if you just want to load your code in pry
 so you can test, you don't want your script code to start executing
-right away on you.
+right away.
