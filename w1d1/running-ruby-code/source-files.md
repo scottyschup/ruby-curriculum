@@ -10,9 +10,9 @@ definition of a single class.
 
 Your early files should probably contain just the code for the
 problems in the current chapter. You may wish to name them
-`object_exercises.rb`, `string_exercises.rb`, etc. The `.rb` is not
-vital, but it will signal to Textmate2 that it is dealing with a Ruby
-file.
+`object_exercises.rb`, `string_exercises.rb`, etc. The `.rb` is
+traditional; it will signal to Textmate2 that it is dealing with a
+Ruby file.
 
 Once your code is in files, you will want to be able to load them. Use
 the `require` method:
@@ -62,9 +62,10 @@ loaded; this can make it *substantially* faster. If you try to
 re-`require`, the method will return `false` to indicate what
 happened.
 
-The solution is to use `load`, which will always try to reload a
-file. You shouldn't only use this in the REPL; don't use load in your
-source files. But if you don't want to reload everything in the REPL,
-`load` is your solution.
+The solution, in the case you really do want to re-require a file, is
+to use `load`, which will always try to reload a file. You should only
+use this in the REPL; don't use load in your source files. You only
+need `load` if you are changing your code while you play with it in
+the REPL and then want to re-load the new version.
 
-Note that `load` expects and requires the `.rb` extension.
+Note that `load` expects and requires the `.rb` extension explicitly.
