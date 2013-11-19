@@ -23,9 +23,7 @@ of powerful methods on the basic types:
 
 ```ruby
 "to low a case".upcase # => "TO LOW A CASE"
-3.times do
-  puts "Three times round!" # print this three times
-end
+3.times { puts "Three times round!" } # print this three times
 (3.3).round # => 3
 ```
 
@@ -59,11 +57,9 @@ interpreter, or to print out debugging information:
 nil.inspect # => "nil"
 ```
 
-`inspect` returns valid Ruby code.
-
 ### `puts` vs `p`
 
-When printing to output using the `Kernel` methods `puts` and `p`, they call
+When printing to output using the methods `puts` and `p`, they call
 `to_s` and `inspect` on their argument for you. For instance
 
 ```ruby
@@ -78,9 +74,9 @@ puts nil # => prints a blank line
 p nil # => prints "nil"
 ```
 
-`puts` is the method to use when we're printing out the main result of
-the program. `p` is the method to use when printing out debugging
-information.
+`puts` is the method to use when we're printing output that the user
+(a non-programmer) wants to read. `p` is the method to use when
+printing out debugging information that a programmer wants to read.
 
 ### The `Kernel` module
 
@@ -191,18 +187,21 @@ class Fraction
     # first, check if we're comparing two fractions, comparing two
     # different types of objects should return false
     return false unless (other.is_a?(Fraction))
-    
-    (numerator.to_f / denominator.to_f) == (other.numerator.to_f / other.denominator.to_f)
+
+    (numerator.to_f / denominator.to_f) ==
+      (other.numerator.to_f / other.denominator.to_f)
   end
 end
 ```
 
 There are a number of other equality operations, but this is the most
-important one. You can read a good
+important one. We'll learn about the others in time. If you can't
+wait, you can read a good
 [write-up by Skorks][skorks-on-equality]. Also see [SO][so-equals].
 
 [skorks-on-equality]: http://www.skorks.com/2009/09/ruby-equality-and-object-comparison/
 [so-equals]: http://stackoverflow.com/questions/7156955/whats-the-difference-between-equal-eql-and/7157051#7157051
 
 ## Resources
+
 * [Ruby-Doc on Object](http://ruby-doc.org/core-1.9.3/Object.html)
