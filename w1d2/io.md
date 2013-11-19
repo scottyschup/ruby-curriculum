@@ -10,20 +10,25 @@
   * Know how to read in all the lines from a file.
   * Know how to slurp in a whole file in one go.
 * Know when you have to close a file explicitly.
-* Know how to access arguments given to your script from the command line
+* Know how to access arguments given to your script from the command
+  line
 
 ## Standard IO
 
-The most basic IO methods are [`Kernel#gets`](http://www.ruby-doc.org/core-2.0/IO.html) and [`Kernel#puts`](http://www.ruby-doc.org/core-2.0/IO.html):
+The most basic IO methods are [`Kernel#gets`][gets-doc] and
+[`Kernel#puts`][puts-doc]:
 
 ```ruby
 input = gets
 puts input # put it back out
 ```
 
-`gets` will read a line from the *standard input*, which is usually
+[gets-doc]: http://www.ruby-doc.org/core-2.0/IO.html
+[puts-doc]: http://www.ruby-doc.org/core-2.0/IO.html
+
+`gets` will read a line from the **standard input**, which is usually
 the terminal the user is typing into. It returns the string the user
-typed, including the *newline character* (newline character is the
+typed, including the **newline character** (newline character is the
 'return' character, written `"\n"`)
 
 ```ruby
@@ -66,7 +71,7 @@ puts "this" # => prints "this" with a newline
 ```
 
 Finally, there is the `Kernel#p` method, which is like `puts`, but is
-used for debugging and the REPL (REPL means *read-eval-print loop*;
+used for debugging and the REPL (REPL means **read-eval-print loop**;
 irb is the standard Ruby REPL). Instead of calling `Object#to_s`, `p`
 calls `Object#inspect`. The main difference is:
 
@@ -75,22 +80,18 @@ puts "this" # => prints "this" with a newline
 p "this" # => prints '"this"' with a newline; note the quotes
 ```
 
-Notice that `puts` adds newlines after each object in an array.
+Notice also that `puts` adds newlines after each object in an array.
 
 ```ruby
 puts [1, 2, 3] # => prints "1\n2\n3\n"
 ```
 
-If you want to print an array out on one line, you should probably use
-`p` (described next).
-
-## File IO
-
-You often want to read data in from files, rather than the console.
+If you want to print an array out on one line, you probably want `p`.
 
 ## Opening a file
 
-The typical way to open a file is as follows:
+You often want to read data in from files, rather than the
+console. The typical way to open a file is as follows:
 
 ```ruby
 File.open("movie-times.txt") do |f|
@@ -100,10 +101,9 @@ end
 ```
 
 The class method `File::open` opens a file. You pass a block, and the
-block will be called with `File` object passed in.
-
-To read data from a file, you can call `File#gets`, which works like
-`Kernel#gets`, but reads from the file, rather than console.
+block will be called with a `File` object passed in. To read data from
+a file, you can call `File#gets`, which works like `Kernel#gets`,
+except it reads from the file, rather than console.
 
 If, as is often the case, you want to do something once for each line:
 
@@ -120,12 +120,13 @@ you may write:
 contents = File.read("movie-times.txt")
 ```
 
-To read the lines individually, use readlines
-```ruby
-contents = File.readlines("movie-times.txt") ## gives an array, 
-   # with each element representing a line of "movie-times.txt"
-```
+To read the lines individually, use readlines:
 
+```ruby
+contents = File.readlines("movie-times.txt")
+# returns an array, with each element representing a line of
+# "movie-times.txt"
+```
 
 ## Writing a file
 
@@ -140,13 +141,16 @@ File.open("cool-things.txt", "w") do |f|
 end
 ```
 
-Note: `"w"` mode will create a new file or overwrite an existing file. If you wish
-append to an existing file, you will need to use `"a"`. For more file mode options 
-check [here] (http://stackoverflow.com/questions/3682359/what-are-the-ruby-file-open-modes-and-options?answertab=votes#tab-top)
+Note: `"w"` mode will create a new file or overwrite an existing
+file. If you wish append to an existing file, you will need to use
+`"a"`. For more file mode options check
+[this SO post][so-file-open-modes].
 
-### Closing files
+[file-open-modes]: http://stackoverflow.com/questions/3682359/what-are-the-ruby-file-open-modes-and-options?answertab=votes#tab-top
 
-The examples I've shown you have all automatically *closed* the file
+## Closing files
+
+The examples I've shown you have all automatically **closed** the file
 when done. It is important to close files when you are finished with
 them; this doesn't matter so much for reading (it is merely
 inefficient), but if you don't close a file you are writing to, then
@@ -186,24 +190,26 @@ call `$stdin.gets` and `$stdout.puts`.
 
 ## Command Line Arguments
 
-A user can pass arguments to your script from the command line. For 
-example, if your script counts a list of cats, the user could 
-pass the name of a file that contains a list of cats:
+A user can pass arguments to your script from the command line. For
+example, if your script counts a list of cats, the user could pass the
+name of a file that contains a list of cats:
 
-```ruby
+```
 $ ruby my_cat_counter.rb list_of_cats.txt
 ```
 
 To access the filename passed in, use ARGV in your script.
-[ARGV](http://www.ruby-doc.org/core-2.0.0/ARGF.html#method-i-argv) returns an array of strings that were typed after your 
-script name. Example:
+[ARGV][ARGF-doc]) returns an array of strings that were typed after
+your script name. Example:
 
 ```ruby
-puts ARGV 
+puts ARGV
 # returns ["list_of_cats.txt"]
 puts ARGV[0]
 # prints "list_of_cats.txt"
 ```
+
+[ARGF-doc]: http://www.ruby-doc.org/core-2.0.0/ARGF.html#method-i-argv
 
 ## Exercises
 
@@ -221,10 +227,11 @@ Estimated time: 3hrs
   line, in which case it opens and reads that file instead of reading
   user input.
     * See the `if __FILE__ == $PROGRAM_NAME` trick described in the
-      [debugger chapter](https://github.com/appacademy/ruby-curriculum/blob/6e23b216f6305e88b98322516069ce93752ba107/w1d1/debugging/debugger.md).
+      debugger chapter.
 * Write a program that prompts the user for a file name, reads that
   file, shuffles the lines, and saves it to the file
-  "#{input_name}-shuffled.txt". You could create a random number using the Random class, or you could use the .shuffle method in array  
+  "{input_name}-shuffled.txt". You could create a random number using
+  the Random class, or you could use the `shuffle` method in array.
 
 ## Resources
 
