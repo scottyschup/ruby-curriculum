@@ -50,7 +50,8 @@ some_fruits[0..1]
 # => ["pear", "apple"]
 ```
 
-Three periods - '...' - can also be used to define a Range, but this leaves off the last element in the return array.
+Three periods - '...' - can also be used to define a Range, but this
+leaves off the last element in the return array.
 
 ```ruby
 example = [1, 2, 3, 4, 5]
@@ -60,7 +61,8 @@ example[2...4]
 # => [3, 4]
 ```
 
-You can also use -1 as the end value (-2 as the second to last value, etc.) of a `Range` to specify the last index of the array:
+You can also use -1 as the end value (-2 as the second to last value,
+etc.) of a `Range` to specify the last index of the array:
 
 ```ruby
 example = [5, 3, 2, 1, 55]
@@ -68,11 +70,10 @@ example[2..-1]
 # => [2, 1, 55]
 ```
 
-
 ## Accessing elements in order
 
-We can also use an *iterator* if we want to access all of the elements
-of an array:
+We can *iterate* through an array if we want to do something with
+each of the elements of the array:
 
 ```ruby
 cool_things = ["race cars", "lasers", "aeroplanes"]
@@ -84,11 +85,9 @@ end
 #         I like aeroplanes!
 ```
 
-### Don't modify array while iterating
-
-**You must never modify an array while iterating through it**; strange
-things will happen. An analogous `while` iteration through the loop
-might help explain the problem:
+A **warning**: you should never modify an array while iterating
+through it; strange things will happen. An analogous `while` iteration
+through the loop might help explain the problem:
 
 ```ruby
 array = [0, 1, 2, 3]
@@ -106,10 +105,8 @@ deleted, and everything in the array shifts over one position; `array
 `array[1]`. But this is not the element `1`, but instead `2` because
 of the shifting.
 
-Likewise, if you modify items in an array you are iterating through,
-you are asking for pain and confusing errors. Don't do it.
-
-If you want to change an array's value while iterating, consider the map function.
+For this reason, don't add/remove elements to/from an array while you
+are iterating throug it.
 
 One alternative to delete multiple elements of an array without
 iteration is [`#delete_if`][rdoc-delete-if].
@@ -123,7 +120,7 @@ You can set the element at an index like so:
 ```ruby
 cool_things = ["race cars", "lasers", "aeroplanes"]
 cool_things[1] = "jets"
-puts cool_things
+p cool_things
 # => ["race cars", "jets", "aeroplanes"]
 ```
 
@@ -154,21 +151,26 @@ all_numbers = some_numbers + more_numbers
 
 Notice that the `+` method creates a new array; it doesn't modify
 either of the two other arrays. Broadly, there are two types of
-methods: ones which modify the object (like `<<`) and ones that create
-and return a new object (like `+`). When learning new methods,
+methods: some which modify the object (like `<<`) and others that
+create and return a new object (like `+`). When learning new methods,
 remember to note whether it returns a new object or modifies the
-existing object.
+existing object. (There are also some other methods, like `each`, that
+are used for their *side-effects*; they neither modify the object or
+return a new value.)
 
-Because of the overhead involved in creating a new array just to
-assign it to the same variable, if you just want to modify the
-original array, you may want to use the `concat` method which will do
-this for you. This isn't worth worrying about until you diagnose a
-real life performance problem, but it may help you understand how `+`
-works.
+It is somewhat wasteful for Ruby to create new objects when it is
+possible to instead modify an existing object. In the case of `+`,
+references to the elements of the two arrays need to be copied into a
+new array. You may want to use the `Array#concat` method, if possible,
+which will instead modify the first array by appending references to
+objects in the second array.
 
-(There are also some other methods, like `each`, that are used for
-their *side-effects*; they neither modify the object or return a new
-value.)
+Note that this involves much less copying if the left array is longand
+the right array small.
+
+Lastly, this digression isn't worth worrying too much about until you
+diagnose a real life performance problem, but it may help you
+understand how `+` works.
 
 ## Array size
 
@@ -182,22 +184,21 @@ There are two main ways to get an array's size, or length:
 ```
 
 Note that `arr.empty?` is equivalent to `arr.count == 0`. Why use
-`empty?`? Because it expresses the purpose of the statement more
+`#empty?`? Because it expresses the purpose of the statement more
 clearly and succinctly; always prefer code that is expressive.
 
-## push and popping
+## Pushing and popping
 
-It is often common to use arrays in a last-in, first-out (LIFO) way. This is
-called *pushing* (adding to the end of the array), and *popping* (removing
-from the end). To push an element into an array, use the shovel (`<<`); to pop
-an element from an array, use the `pop` method. Using Array's `push` and
-`pop`, we can treat an array like a
-[*stack*](http://stackoverflow.com/questions/3825050/what-do-push-and-pop-mean-for-stacks#answer-3825329),
-a data type that helps us solve problems that have LIFO features. One such
-problem is reverse polish calculation (remember the RPN calculator from Test
-First Ruby?):
+It is often common to use arrays in a last-in, first-out (LIFO)
+way. This is called *pushing* (adding to the end of the array), and
+*popping* (removing from the end). To push an element into an array,
+use `<<` (shovel) or `push`; to pop an element from an array, use the
+`pop` method. Using Array's `push` and `pop`, we can treat an array
+like a [*stack*][so-stack], a data type that helps us solve problems
+that have LIFO features. One such problem is reverse polish
+calculation (remember the RPN calculator from Test First Ruby?):
 
-
+[so-stack]: http://stackoverflow.com/questions/3825050/what-do-push-and-pop-mean-for-stacks#answer-3825329
 
 ```ruby
 # computes (1 (2 3 +) *)
@@ -211,12 +212,15 @@ nums << (nums.pop) + (nums.pop)
 nums << (nums.pop) * (nums.pop)
 ```
 
-## using array as a queue
+## Using an array as a queue
 
-It is sometimes useful to use arrays in a first-in, first-out way (FIFO). Usually
-this is called "queue" and "dequeue". Using Array's `push` and
-`delete_at(0)`, we can treat an array like a [*queue*](http://en.wikipedia.org/wiki/Queue_(abstract_data_type),
-a datatype that helps us solve problems with FIFO features.
+It is sometimes useful to use arrays in a first-in, first-out way
+(FIFO). Usually this is called "queue" and "dequeue". Using Array's
+`push` and `shift`, we can treat an array like a
+[*queue*][wiki-queue], a datatype that helps us solve problems with
+FIFO features.
+
+[wiki-queue]: http://en.wikipedia.org/wiki/Queue_(abstract_data_type)
 
 ```ruby
 nums = []
@@ -225,36 +229,14 @@ nums << 1
 nums << 2
 nums << 3
 
-nums.delete_at(0)
+nums.shift
 # => 1
 
 nums
 # => [2, 3]
 ```
 
-## shift and unshift
-
-Shift and unshift are the opposite of pop and push, respectively.
-Shift removes the first element from the array and returns that element.
-Unshift pushes a new element into the front of the array and returns the modified array.
-
-Example:
-```ruby
-array = [1,2,3,4]
-array.shift
-# => 1
-
-array
-# => [2,3,4]
-
-array.unshift(5)
-# => [5,2,3,4]
-```
-
-Can you use a stack to reverse a string? You will need `String#split`
-and `Array#join`.
-
-## Turning arrays to strings: join
+## Turning arrays to strings: `#join`
 
 It is very common to want to represent an array as a string.
 
@@ -275,7 +257,7 @@ The argument to `join` (`", "` in the example) is called the
 
 Elements are usually either accessed in order (`arr.each`), or by
 position (`arr[i]`). Less commonly, you may want to find whether an
-array contains an object:
+array contains an object at any position:
 
 ```ruby
 small_primes = [1, 2, 3, 5, 7, 11]
@@ -283,7 +265,7 @@ small_primes.include?(9)
 # => false
 ```
 
-The index method returns the position of the first occurrence of an
+The `#index` method returns the position of the first occurrence of an
 item in the array:
 
 ```ruby
@@ -295,9 +277,8 @@ small_primes.index(9)
 
 You may notice that the last example returns `nil`. Returning `nil` is
 idiomatic when no other value is appropriate; `nil` is Ruby's way to
-say "nothing". (Of course, this could be confusing if we put `nil`
-into the array ourselves; best to use `include?` to check for
-membership).
+say "nothing". In this case, 9 is not at any position in the array of
+small primes, so we return `nil`.
 
 ## Sorting an array
 
@@ -340,28 +321,33 @@ To shuffle an array in random order, use the `shuffle` method:
 # => [2, 1, 3]
 ```
 
+Of course, the order that the array is shuffled to is random.
+
 ##  Access first and last elem in arrays
 
-The `first` method selects the first elem in the array. The `last` method selects the last elem in the array. This can be pretty useful.
+The `first` method selects the first elem in the array. The `last`
+method selects the last elem in the array. This can be quicker to type
+than `arr[0]` and `arr[-1]`:
 
 ```ruby
+die = [1, 2, 3, 4, 5, 6]
 
-die = [1,2,3,4,5,6]
 die.first
 # => 1
 die.last
 # => 6
 ```
 
-##  Random (discrete uniform) sampling from arrays
+##  Random sampling from arrays
 
-The `sample` method selects an element at random from the array where each element has equal probability of begin selected.  This does not alter the array.
+The `sample` method selects an element at random from an array.
 
 ```ruby
 
-die = [1,2,3,4,5,6]
-roll1 = die.sample
-roll2 = die.sample
+die_faces = [1, 2, 3, 4, 5, 6]
+
+roll1 = die_faces.sample
+roll2 = die_faces.sample
 ```
 
 ## Naming arrays
@@ -376,6 +362,7 @@ variable with the singular form of the object.
 ```ruby
 fancy_car_brands = ["Maserati", "Porsche", "Tesla"]
 junk_models = ["Chevy Nova", "Ford Pinto"]
+
 fancy_car_brands.each do |fancy_car_brand|
   junk_models.each do |junk_model|
     puts "#{fancy_car_brand} would never make junk like the #{junk_model}"
@@ -389,6 +376,7 @@ improve code legibility. Compare to this:
 ```ruby
 fc = ["Maserati", "Porsche", "Tesla"]
 jc = ["Chevy Nova", "Ford Pinto"]
+
 fc.each do |c1|
   jc.each do |c2|
     puts "I like a #{c1} better than a #{c2}"
