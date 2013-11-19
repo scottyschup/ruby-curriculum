@@ -1,6 +1,7 @@
 # Iteration
 
 ## Goals
+
 * Know what an index variable is.
   * Know that index variables conventionally start at zero.
 * Know how to write a `while` loop.
@@ -21,11 +22,13 @@
 
 The most primitive loop is the `while` loop. It repeats a section of
 code repeatedly as long as a condition is true. For instance,
+
 ```ruby
 while true
   puts "Infinite loop!"
 end
 ```
+
 will spin round and around repeatedly, forever. Most loops eventually
 stop, however:
 
@@ -40,19 +43,21 @@ end
 
 puts "Merry Christmas, loop is over!"
 ```
-This is a very traditional loop. `i` is called the *index*, and it
+
+This is a very traditional loop. `i` is called the **index**, and it
 keeps track of how many times we've gone through the loop.
 
 `i` starts at zero, because we've gone through the loop zero
 times. The loop will keep running so long as `i < 5`; that is, we'll
 keep looping until we've executed the code block (the stuff between
-the while and the end lines) five times. Each time around, at the end
-of the loop block, one is added to `i`. After the first time through
-the block, `i` is set to one, and the program jumps back to the top of
-the `while`. Since one is still less than five, the loop repeats.
+the `while` and the `end` lines) five times. Each time around, at the
+end of the loop block, one is added to `i`. After the first time
+through the block, `i` is set to one, and the program jumps back to
+the top of the `while`. Since one is still less than five, the loop
+repeats.
 
-`i` takes on, or *iterates* through the values 0,1,2,3,4,5. After the
-fifth time around the loop, `i` is set to five (not four, not six;
+`i` takes on, or **iterates** through the values 0,1,2,3,4,5. After
+the fifth time around the loop, `i` is set to five (not four, not six;
 convince yourself of this).
 
 The loop finally comes back around for the *sixth* time to the while
@@ -73,7 +78,7 @@ i = 1
 while i <= 5
   puts "Repeat 5 times!"
   puts "This is time #: #{i}"
-  
+
   i += 1
 end
 ```
@@ -87,7 +92,7 @@ what other programmers are used to. It's also the range of array
 indices you'd want (the indices into an array of ten items is
 0-9).
 
-This is called an *idiom*; idioms are coding conventions that are
+This is called an **idiom**; idioms are coding conventions that are
 commonly used. They are a good thing, because conventions we've seen
 before are easier to understand when we see them again.
 
@@ -128,20 +133,20 @@ repeat...
 Let's search an array of numbers for a favorite number.
 
 ```ruby
-my_favorite_number = 42
-numbers_to_search = [1, 5, 7, 42, 8, 42]
+def contains_favorite_number?(my_favorite_number, numbers_to_search)
+  i = 0
+  while i < numbers_to_search.count
+    current_number = numbers_to_search[i]
 
-i = 0
-while i < numbers_to_search.count
-  current_number = numbers_to_search[i]
-  
-  if my_favorite_number == current_number
-    puts "List contains favorite number!"
-    break
-    # end the method once the break line is reached
+    if my_favorite_number == current_number
+      puts "List contains favorite number!"
+      break # jump out of the loop
+    end
+
+    i += 1
   end
 
-  i += 1
+  puts "If we found the number, you should know by now."
 end
 ```
 
@@ -174,10 +179,10 @@ musicians.each do |musician|
 end
 ```
 
-Here, you are *iterating* over the *elements* of the array. The lines
-between the `do` and `end` are the code block to repeat. For each
-element in the array, the `each` method sets the musician variable to
-the current element, then executes the code block.
+The lines between the `do` and `end` are a code block to repeat for
+each of the elements of the array. For each element in the array, the
+`each` method sets the musician variable to the current element, then
+executes the code block.
 
 The biggest advantage of `each` is that you don't have to keep track
 of an index variable. This may not seem like a big deal, but every
@@ -190,7 +195,7 @@ to increment the index variable each time:
 i = 0
 while i < 5
   puts "Do this five times"
-  
+
   # forgot: i += 1
 end
 ```
@@ -206,35 +211,13 @@ end
 ```
 
 For boring reasons, `for` is not recommended for use. You'll see
-plenty of Python code use `for` this way, but satisfy yourself with
-using `#each`.
-
-Boring reason: the iterator variable (*i.e.* `item` in the above `for` loop construct 
-example) is still bound after exiting the loop. This doesn't happen with `each`.
-[See this SO question.](http://stackoverflow.com/questions/3294509/for-vs-each-in-ruby)
+plenty of Python code use `for` this way, but in Ruby we'll satisfy
+ourselves with using `#each`.
 
 ## `each_with_index`
 
-`each` is cleaner than `while`, but sometimes you also
-need the index of each element. In a while loop, you can do this by referencing the iterator:
-
-```ruby
-my_favorite_number = 42
-numbers = [42, 3, 42, 5]
-
-favorite_indices = []
-
-i = 0
-while i < numbers.count
-  if numbers[i] == my_favorite_number
-    favorite_indices << i
-  end
-  
-  i += 1
-end
-```
-
-Instead, you should use `each_with_index`:
+`each` is cleaner than `while`, but sometimes you also need the index
+of each element. In this case, you should use `each_with_index`:
 
 ```ruby
 my_favorite_number = 42
@@ -248,8 +231,8 @@ numbers.each_with_index do |number, index|
 end
 ```
 
-`each_with_index` combines the simplicity of `each` with the ability to reference index.
-
+`each_with_index` combines the simplicity of `each` with the ability
+to reference an index.
 
 ## Iterating with times
 
@@ -258,7 +241,7 @@ If all you want to do is repeat some code several times, use Ruby's
 
 ```ruby
 5.times do
-  puts 'King of the streets; child at play'
+  puts "King of the streets; child at play"
 end
 ```
 
@@ -285,18 +268,12 @@ iterated over arrays:
 end
 ```
 
-Note that ranges cannot go from a larger value to a smaller value (i.e. 10..1).
+Note that ranges cannot go from a larger value to a smaller value
+(i.e. `10..1`).
 
 ```ruby
 (10..1).to_a
 => []
-```
-
-```ruby
-(10..1).each do |i|
-  puts i
-end
-# this example will not print anything
 ```
 
 One alternative is to convert the range to an array and reverse it:
@@ -307,20 +284,15 @@ One alternative is to convert the range to an array and reverse it:
 end
 ```
 
-Or you could use negative numbers and make them absolute:
+In thi case, it probably makes more sense to use
+[`Integer#downto`][downto-doc].
 
-```ruby
-(-10..-1).map(&:abs)
-=> [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
-```
-
-You can also use [`Integer#downto`](downto-doc).
 [downto-doc]: http://ruby-doc.org/core-1.9.3/Integer.html#method-i-downto
 
 ## Nesting loops
 
-Loops can be placed inside each other, or *nested*. Here are some nested
-loops that print out a times table:
+Loops can be placed inside each other, or *nested*. Here are some
+nested loops that print out a times table:
 
 ```ruby
 (1..10).each do |i|
@@ -328,7 +300,7 @@ loops that print out a times table:
   (1..10).each do |j|
     multiples << i * j
   end
-  
+
   p multiples
 end
 ```
@@ -358,12 +330,13 @@ end
 ```
 
 ## Exercises
+
 Time estimate: 1.5hrs
 
 * Write a loop the finds the first number
   that is (a) >250 and (b) divisible by 7. Print this number down!
-* Write a method `factors` that prints out all the factors for an
-  input.
+* Write a method `factors` that prints out all the factors of a given
+  number.
 * Implement [Bubble sort][wiki-bubble-sort] in a method `#bubble_sort`
   that takes an `Array` and modifies it so that it is in sorted order.
 
@@ -378,7 +351,9 @@ Time estimate: 1.5hrs
 > sort. Although the algorithm is simple, most other algorithms are
 > more efficient for sorting large lists.
 
-(Hint: Ruby has [parallel assignment][parallel-assignment] for easily switching values.)
+Hint: Ruby has [parallel assignment][parallel-assignment] for easily
+swapping values.
+
 [wiki-bubble-sort]: http://en.wikipedia.org/wiki/bubble_sort
 [parallel-assignment]: http://rubyquicktips.com/post/384502538/easily-swap-two-variables-values
 
@@ -389,16 +364,19 @@ Time estimate: 1.5hrs
 * Your `substrings` method returns many strings that are not true
   English words. Let's write a new method, `subwords` which will call
   `substrings`, but then filter it and return just the English words.
-  * To do this, we'll need a dictionary, you can download one
-    [here][dictionary-file].
-  * Learn how to read a file [here][opening-a-file].
-  * You may need to use `String#chomp` to strip newline characters;
-    see the [Input/Output](io.md) chapter for details.
+    * To do this, we'll need a dictionary, you can download one
+      [here][dictionary-file].
+    * Learn how to read a file [here][opening-a-file].
+    * You may need to use `String#chomp` to strip newline characters;
+      see the [Input/Output](./io.md) chapter for details.
 
 [dictionary-file]: ../projects/dictionary.txt
 [opening-a-file]: ./io.md#opening-a-file
 
 ## Resources
 
-* [Skorks on looping](http://www.skorks.com/2009/09/a-wealth-of-ruby-loops-and-iterators/)
-* More examples of loops on [tutorialspoint](http://www.tutorialspoint.com/ruby/ruby_loops.htm)
+* [Skorks on looping][skorks-loops]
+* More examples of loops on [tutorialspoint][tutorialspoint]
+
+[skorks-loops]: http://www.skorks.com/2009/09/a-wealth-of-ruby-loops-and-iterators
+[tutorialspoint]: http://www.tutorialspoint.com/ruby/ruby_loops.htm
