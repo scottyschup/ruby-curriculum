@@ -66,8 +66,8 @@ letters, and classes start with upper case letters.
 ### NoMethodError
 
 This is similar to NameError; in fact it's a subclass. This is thrown
-when it's clear the user wanted to call a method (didn't try to look up
-a variable) that doesn't exist:
+when it's clear the user wanted to call a method (didn't try to look
+up a variable) that doesn't exist:
 
 ```ruby
 [1] pry(main)> "my string".my_fantasy_method
@@ -147,7 +147,7 @@ There are two very common causes. Sometimes you are trying to load a
 file that is provided by a gem, but you haven't installed the gem yet.
 
 Another common cause is that you are trying to load another source
-file in your project, but you forgot the initial './'. "Relative"
+file in your project, but you forgot the initial './'. *Relative*
 includes are used to include files that are inside your project, you
 write them like this:
 
@@ -186,9 +186,9 @@ SyntaxError: /Users/ruggeri/test.rb:3: syntax error, unexpected $end, expecting 
         from: (pry):1:in `__pry__'
 ```
 
-Here '$end' means the end of the source file. Here Ruby is telling you
+Here `$end` means the end of the source file. Here Ruby is telling you
 that it didn't expect the end of the file ($end) before the keyword
-'end' ('keyword_end' in the error message).
+`end` (`keyword_end` in the error message).
 
 You can get a similar message with too many ends:
 
@@ -207,6 +207,6 @@ end # one too many
         from: (pry):2:in `load'
 ```
 
-This just reverses the prior message; we hit the keyword 'end' when we
+This just reverses the prior message; we hit the keyword `end` when we
 were expecting the end of the file; that is, when we weren't expecting
 one.
