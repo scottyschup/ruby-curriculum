@@ -3,12 +3,13 @@
 ## Goals
 
 * Always follow these most important rules:
-  * Indent your code.
-  * Limit lines to 80 chars.
-  * Avoid long methods and nesting more than two levels deep.
-  * Don't over-comment.
-* Use our Textmate config!
-    * https://github.com/appacademy/dotfiles/blob/master/Global.tmProperties
+    * Indent your code.
+    * Limit lines to 70 chars.
+    * Avoid long methods and nesting more than two levels deep.
+    * Don't over-comment.
+* Use our [Textmate config][textmate-config]!
+
+[textmate-config]: https://github.com/appacademy/dotfiles/blob/master/Global.tmProperties
 
 ## Style matters
 
@@ -18,8 +19,8 @@ conventions. They may seem arbitrary and silly; some of them
 are. Others really do represent common sense.
 
 It is very important to learn and follow style rules. If you write
-stylish code, it will make you look more professional and capable. If
-not, you'll look inexperienced.
+stylish code, it will make you look professional and capable. If not,
+you'll look inexperienced.
 
 Luckily it's easy to follow the rules; just make sure you start doing
 it now so that you start building the habit of stylish coding.
@@ -47,12 +48,12 @@ class CrazyClass
       # indent loops
       puts "Hello!"
     end
-  
+
     # count in
     4.times do |n|
       # indent blocks
       puts "#{n}!"
-      
+
       # see how the ends always align with the start of the start
       # of the indented section?
     end
@@ -61,12 +62,12 @@ end
 ```
 
 Indent with *two spaces*, not with tab
-stops. [Set Textmate to do this by default][textmate-prefs], so
-that the tab button inserts two spaces.
+stops. [Set Textmate to do this by default][textmate-prefs], so that
+the tab button inserts two spaces.
 
 ## Keep Lines Short
 
-Keep your lines <80 characters long. There are historical reasons to
+Keep your lines <70 characters long. There are historical reasons to
 do this; shorter lines are also (said to be) easier to read. Long
 lines make you look like a yahoo or, worse, a Java developer (I was a
 Java dev once).
@@ -102,8 +103,8 @@ Luckily, there's an [easy fix][easy-fix] for Textmate.
 We'll talk about it more in another chapter, but long methods are
 bad. If a method is >8 lines long, you should consider whether it
 might be broken into smaller methods. If your method is >20 lines
-long, it is getting pretty long. >40 lines and it's just too damn
-long, no ifs, ands, or buts.
+long, it is too long. >40 lines and it's a beast; you need to breka
+this up.
 
 New developers may write methods that are hundreds of lines. Don't do
 that.
@@ -137,7 +138,7 @@ i = 0
 while i < 100
   # print i
   puts i
-  
+
   # increment i
   i += 1
 end

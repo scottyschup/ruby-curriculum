@@ -8,8 +8,6 @@ principle as follows:
 
 In other words: don't repeat yourself!
 
-<center>![alt text](http://ardalis.com/files/media/image/WindowsLiveWriter/DRYDontRepeatYourselfMotivator_BA85/dontrepeatyourself_motivator_2.jpg "Don't Repeat Yourself, Don't Repeat Yourself")</center>
-
 The most common way to avoid repetition is to break duplicated code
 into methods.
 
@@ -32,11 +30,11 @@ end
 ```
 
 See how we've repeated the bit that checks that the zip code is valid?
-This is bad; if there was a bug with our zip code validation, we'd have
-to fix the code **in two places**. This is a pain, and we'll probably
-forget to fix the duplicated code everywhere, so it's also a source of
-bugs. For this reason, we want to find a way to eliminate the
-duplicated code:
+This is bad; if there werea bug with our zip code validation, we'd
+have to fix the code **in two places**. This is a pain, and we'll
+probably forget to fix the duplicated code everywhere, so it's also a
+source of bugs. For this reason, we want to find a way to eliminate
+the duplicated code:
 
 ```ruby
 def process_consumer_address_form(fields)
