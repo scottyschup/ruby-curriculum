@@ -10,15 +10,14 @@ From the [Wiki](http://en.wikipedia.org/wiki/Code_smell):
 > increasing the risk of bugs or failures in the future ... a code
 > smell is a driver for refactoring.
 
-We list a few here:
+We list a few kinds of smells here here:
 
-**Duplicated/similar code**: see [DRY](dry.md).
+**Duplicated/similar code**: see the section on DRY code.
 
-**Long methods**: see
-[method decomposition](method-decomposition.md).
+**Long methods**: see the section on method decomposition.
 
-**Too many parameters**: The more parameters a method has, the higher
-the chances that it is too coupled to code that invokes it. Many
+**Too many parameters**: The more parameters a method has, the greater
+the chance that it is too coupled to code that invokes it. Many
 parameters may also be a sign of an excessively complex method.
 
 **Data clump**: if you see a group of data always being passed around
@@ -28,8 +27,7 @@ into a `date_range` object.
 
 **Long method chains**: long method chains can often be a sign that
 you're violating the [Law of Demeter][wiki-demeter]: only talk to your
-"neighbors", only use one dot. (Another good resource on LoD is
-[here][informit-demeter].)
+"neighbors", only use one dot.
 
 ```ruby
 bicycle.front_tire.rotate
@@ -60,9 +58,9 @@ the public surface of the class; any change to the public surface will
 necessitate changes to interacting classes. Minimizing exposure will
 better enable change.
 
-[From the wiki page:][coupling-wiki] "Coupling (dependency) is the degree
-to which each program module relies on each one of the other modules."
-Here is an interesting analysis of [coupling][coupling-principles]:
+[From the wiki page:][coupling-wiki] "Coupling (dependency) is the
+degree to which each program module relies on each one of the other
+modules."
 
 Indecent exposure may result in coupling that is too tight. The more
 extensive your classes' interface, the more tightly other classes can
@@ -73,10 +71,10 @@ much. Probably there's an opportunity to break out responsibilities to
 other classes.
 
 We want to minimize the amount of coupling between our classes and
-objects. To understand how tightly coupled your classes are, ask yourself
-if you changed the internals of one class, would you have to change
-things in the other? If you do, you've likely coupled the two classes
-too tightly.
+objects. To understand how tightly coupled your classes are, ask
+yourself if you changed the internals of one class, would you have to
+change things in the other? If you do, you've likely coupled the two
+classes too tightly.
 
 [coupling-principles]:http://www.jasoncoffin.com/cohesion-and-coupling-principles-of-orthogonal-object-oriented-programming/
 [coupling-wiki]:http://en.wikipedia.org/wiki/Coupling_(computer_programming)
@@ -112,31 +110,15 @@ git soon!). Clean up after yourself!
 
 ## Clean Code
 
-Clean code is the mark of a good programmer. Getting things to work
-only gets you halfway. Making code clear and elegant (i.e. clean)
-will take you all the way home.
+When push comes to shove, sometimes you need to make compromises; when
+deadlines hit, we all ship code we aren't 100% proud of. Still,
+endeavor to write clean code. Pay attention to style. Pay attention to
+code organization. Pay attention to code smells. Refactor often and
+aggressively. Bask in the beauty of clean code. Take pride in it.
 
-Endeavor to write clean code. Pay attention to style. Pay attention
-to code organization. Pay attention to code smells. Refactor often
-and aggressively. Bask in the beauty of clean code. Take pride in
-it.
+## Further Reading
 
-## Refactoring: From Good to Great
-
-Watch Ben Orenstein's talk:
-[Refactoring: From Good to Great][refactoring-talk].
+* You may enjoy watching Ben Orenstein's classic talk:
+  [Refactoring: From Good to Great][refactoring-talk].
 
 [refactoring-talk]: http://www.confreaks.com/videos/1233-aloharuby2012-refactoring-from-good-to-great
-
-## Resources
-
-
-* [Atwood's list of code smells][atwood-code-smells]
-  * this is a pretty good list of smells
-* [How to write unmaintainable code][unmaintainable-code]
-  * this one is a super long list of smells; don't worry about reading
-    it all; we've already covered the most important smells.
-* [Ruby Refactoring Cheatsheet][ghendry-refactoring]
-[atwood-code-smells]: http://www.codinghorror.com/blog/2006/05/code-smells.html
-[unmaintainable-code]: http://thc.org/root/phun/unmaintain.html
-[ghendry-refactoring]:http://ghendry.net/refactor.html
