@@ -2,12 +2,14 @@
 
 ## Goals
 
-* Know what [side effects](http://en.wikipedia.org/wiki/Side_effect_(computer_science\)) and return values are.
+* Know what [side effects][wiki-side-effect] and return values are.
 * Know what an implicit return is, and that they are preferred.
 * Know some signs of a good method:
   * does one thing
   * short description, good name
   * <10 lines of code
+
+[wiki-side-effect]: http://en.wikipedia.org/wiki/Side_effect_(computer_science)
 
 ## Side-effects vs return values
 
@@ -34,17 +36,12 @@ early return, such as in the following method:
 ```ruby
 def go_home
   return unless can_go_home? && wants_to_go_home?
-  
+
   pack_bags
   get_tickets
   board_plane
 end
 ```
-
-See [this post][eriwen.com] for a similar example and why you
-might want to do this.
-
-[eriwen.com]: http://www.eriwen.com/ruby/more-readable-conditionals/
 
 There are also methods that return nothing; we just use for their
 side-effects. When we say side-effect, we mean some sort of
@@ -85,10 +82,10 @@ rps("Scissors") # => "Paper, Win"
 
 * Implement a Mixology game. The method `remix` should take an array
   of ingredient arrays (one alcohol, one mixer) and return the same
-  type of data structure, with the ingredient pairs randomly mixed up. Assume
-  that the first item in the pair array is alcohol, and the second is
-  a mixer. Don't pair an alcohol with an alcohol with or a mixer with
-  a mixer. An example run of the program:
+  type of data structure, with the ingredient pairs randomly mixed
+  up. Assume that the first item in the pair array is alcohol, and the
+  second is a mixer. Don't pair an alcohol with an alcohol with or a
+  mixer with a mixer. An example run of the program:
 
 ```ruby
 remix([
@@ -103,12 +100,12 @@ remix([
   that all the alcohols end up with a different mixer!
 
 ## Resources
-* [Wikipedia: Single Responsibility Principle](http://en.wikipedia.org/wiki/Single_responsibility_principle)
+* [Wikipedia: Single Responsibility Principle][wiki-srp]
 * [Wikipedia: Side effect][wiki-side-effects]
-* [StackExchange answer on side effecs](http://programmers.stackexchange.com/questions/40297/what-is-a-side-effect#answer-40314)
-* [Curly's Law](http://www.codinghorror.com/blog/2007/03/curlys-law-do-one-thing.html)
+* [StackExchange answer on side effecs][se-side-effects]
+* [Curly's Law][curlys-law]
 
 [wiki-side-effects]: http://en.wikipedia.org/wiki/Side_effect_(computer_science)
-
-## Credit
-Some exercises adapted from [RubySource](http://rubysource.com/ruby-golf/)
+[wiki-srp]: http://en.wikipedia.org/wiki/Single_responsibility_principle
+[se-side-effects]: http://programmers.stackexchange.com/questions/40297/what-is-a-side-effect#answer-40314
+[curlys-law]: http://www.codinghorror.com/blog/2007/03/curlys-law-do-one-thing.html
