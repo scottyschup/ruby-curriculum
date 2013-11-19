@@ -73,7 +73,6 @@
 ## Basic design
 
 ### w1d3
-+ [Designing a Program][program-design]
 + [Refactoring and Code Smells][code-smells]
 + [Scope][scope]
 + [Hash Defaults][hash-defaults]
@@ -83,7 +82,6 @@
 + **Bonus project**: Use Ruby to solve the
   [eight-queens problem][eight-queens].
 
-[program-design]: ./w1d3/designing-a-program.md
 [code-smells]: ./w1d3/refactoring.md
 [scope]: ./w1d3/scope.md
 [hash-defaults]: ./w1d3/hash-defaults.md
