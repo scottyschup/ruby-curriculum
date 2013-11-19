@@ -1,9 +1,9 @@
 # Debugging
 
-Any program of sufficient complexity is unlikely to work the first time.
-You will make mistakes. Skilled and unskilled developers write a similar
-number of bugs. The difference is that skilled developers are able to
-quickly identify and fix bugs.
+Any program of sufficient complexity is unlikely to work the first
+time.  You will make mistakes. Skilled and unskilled developers write
+a similar number of bugs. The difference is that skilled developers
+are able to quickly identify and fix bugs.
 
 A rule of thumb is that it takes 10x as long to debug code as
 to write it. Master debugging and you master programming.
@@ -24,7 +24,7 @@ an error occurs.
   * Error message
   * Line number on which the error occurred
   * Chain of methods that were called leading up to it
-    (referred to as the *stack trace*)
+    (referred to as the **stack trace**)
 
 If you encounter an error and you are unclear about what the error
 type and/or message is telling you, stop and ask an instructor to
@@ -38,31 +38,27 @@ but it usually won't give you the exact information you need to
 fix your bug. What it does tell you is the path your program took
 to get to wherever the error happened.
 
-Whenever you encounter a bug - something in your program that is not
-working as intended, whether it throws an error or not - your ability to
-track it down will be dependent on your ability to trace the logic of
-your own code.
+Whenever you encounter a bug your ability to track it down will be
+dependent on your ability to trace the logic of your own code.
 
 Interrogate your code actively. Why did the bug happen? What are the
 values of the key variables at key points in your program? What did
 each line evaluate to leading up to the bug?
 
-Do not passively stare at your code or simply assume that what you think
-happened is what actually happened (this is what got you in trouble
-in the first place!). Some active strategies include:
+Do not passively stare at your code or simply assume that what you
+think happened is what actually happened (this is what got you in
+trouble in the first place!). Some strategies include:
 
-* Break your code down into more testable chunks and actively run
-  each of those chunks to test if they're working
-* Use `p` statements often, sometimes opting for a shotgun approach,
-  and other times for a more targeted approach.
-* Use the debugger
-
-We'll cover some of these below.
+* Break your code down into more testable chunks and actively run each
+  of those chunks to test if they're working.
+* Use `p` statements often; use them to check what the values of
+  variables are, that methods are called as expected, etc.
+* Use the debugger.
 
 The key with bugs and errors is to really get into the mind of the
 machine. You must understand what is happening in the code. To do so,
-you must seek out helpful feedback from the program, constantly testing
-your assumptions about what is happening.
+you must seek out helpful feedback from the program, constantly
+testing your assumptions about what is happening.
 
 You are a programmer. You hunt bugs. Hunt well.
 
@@ -179,12 +175,15 @@ debt*. It's okay to take out debt like this, just like it's okay to
 take out financial debt. But the more debt you take out, the higher
 the payments in the form of your time.
 
+If you find yourself struggling with a tough bug in the midst of some
+poorly written code, admit that your debt has caught up with you, bite
+the bullet and refactor.
+
 ## Don't read the source
 
 We haven't found out what's wrong yet. You might be tempted to first
 look carefully at `prime?` and `primes`, try to reason through them,
-and spot the bug. You may be able to do this with my simple
-example.
+and spot the bug. You may be able to do this with my simple example.
 
 **Do not spend more than 1min doing this in real life**. Yes, many
 silly bugs can be spotted if you stare at the code, but many other
@@ -214,8 +213,8 @@ them to your home (`~`) directory and rename them with an initial
 dot. They should be picked up and used by Pry and the Ruby debugger
 automatically.
 
-[pryrc]: https://github.com/ruggeri/dotfiles/blob/master/pryrc
-[rdebugrc]: https://github.com/ruggeri/dotfiles/blob/master/rdebugrc
+[pryrc]: https://github.com/appacademy/dotfiles/blob/master/pryrc
+[rdebugrc]: https://github.com/appacademy/dotfiles/blob/master/rdebugrc
 
 ## Use the REPL to isolate the problem
 
@@ -500,14 +499,14 @@ This means the method failed. When an exception is thrown and no code
 catches and handles the exception, then the program stops (crashes)
 and the exception and plus stack trace are printed.
 
-The first line ("ArgumentError: wrong number of arguments (0 for 1)")
-is the exception type (`ArgumentError`) and message. This message says
-that we're passing the wrong number of arguments to a method: zero
-arguments instead of one argument.
+The first line `ArgumentError: wrong number of arguments (0 for 1)`
+states the exception type (`ArgumentError`) and the message. This
+message says that we're passing the wrong number of arguments to a
+method: zero arguments instead of one argument.
 
-Where did this happen? The following lines, called the *stack trace*
-tell us. The top line of the stack trace tells us what method
-(`primes`) and line of code (14) was executing when the error
+Where did this happen in the code? The following lines, called the
+*stack trace* tell us. The top line of the stack trace tells us what
+method (`primes`) and line of code (14) was executing when the error
 occured. The next line tells us what called `primes`; it looks like
 `primes` calls itself, on line 20. The next line starts with '(pry)';
 this is pry executing the code we gave us.
@@ -616,15 +615,16 @@ ps << num if prime?(num)
 
 We've gone to a lot of work testing that these methods work as they
 should. It would be good if we could record these tests so that they
-can be run later, to make sure new bugs have not snuck in. We'll talk
-later about RSpec, a way to write tests that can be automatically run
-by a system called Guard.
+can be run in the future, to make sure new bugs do not sneak in as we
+continue to develop the software. We'll talk later about RSpec, a way
+to write tests that can be automatically run by a system called Guard.
 
 When a bug is discovered, good practice is to write a new test that
 verifies we don't make that mistake again.
 
 ## Resources
-* Pivotal Labs [cheatsheet]
+
+* Pivotal Labs [cheatsheet][cheatsheet].
 * Comprehensive (very long) [debugger documentation][debugger-documentation]
 
 [cheatsheet]: http://pivotallabs.com/users/chad/blog/articles/366-ruby-debug-in-30-seconds-we-don-t-need-no-stinkin-gui
