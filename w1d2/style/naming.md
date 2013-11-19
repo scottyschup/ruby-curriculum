@@ -69,7 +69,8 @@ what the method returns. Names like `calculate_cosine` and
 `get_square_root` are overly verbose.
 
 **For methods that do have side-effects, try using a verb followed by
-a noun.** Describe what the method is doing, and to/with what. For example, `print_document` or `deposit_funds`.
+a noun.** Describe what the method is doing, and to/with what. For
+example, `print_document` or `deposit_funds`.
 
 **Establish conventions for common operations** If there is a
 prevailing convention for a common operation, defer to it. If not,
@@ -82,7 +83,8 @@ guideline for side-effect free methods).
 
 ## Ruby-specific naming guidelines:
 
-* Use `snake_case` (not `CamelCase`) when naming methods and variables.
+* Use `snake_case` (not `CamelCase`) when naming methods and
+  variables.
 * Use `CamelCase` for classes and modules.
 * Use `SCREAMING_SNAKE_CASE` for other constants.
 * Methods that return a boolean value (i.e. `true` or `false`) should
@@ -93,4 +95,6 @@ guideline for side-effect free methods).
 
 ## Resources
 
-* [Ruby Style Guide: Naming](https://github.com/bbatsov/ruby-style-guide#naming)
+* [Ruby Style Guide: Naming][naming-guide]
+
+[naming-guide]: https://github.com/bbatsov/ruby-style-guide#naming)
