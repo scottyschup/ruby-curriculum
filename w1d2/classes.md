@@ -10,7 +10,7 @@
   * Know that the instance should be fully setup by the end of
     `initialize`.
 * Know how we store data in an object.
-  * Know when we can/can't we access instance variables directly.
+  * Know when we can/can't access instance variables directly.
   * Know how to automatically create getters/setters.
 
 ## Packaging data in Hashes
@@ -146,9 +146,6 @@ cat1 = Cat.new("Breakfast", 8, "San Francisco")
 cat2 = Cat.new("Earl", 2, "San Francisco")
 ```
 
-Further reading about class and instance methods:
-http://www.railstips.org/blog/archives/2009/05/11/class-and-instance-methods-in-ruby/
-
 ### `initialize` and `new`
 
 Here's the start of our `Cat` class:
@@ -217,9 +214,8 @@ logic like this in a method called `run` (or something similar).
 
 ### Instance Methods
 
-Instance methods define the behavior to be exhibited by instances of
-the associated class. A class defines the behavior of the instance
-methods, which is common to all instances of the class.
+Instance methods define what an instance of the class can do. We can
+call an instance method on any instance of the class:
 
 ```ruby
 class Cat
@@ -250,8 +246,8 @@ Object state is stored in *instance variables*. Instance variable
 names are prefixed with an at-symbol (`@`). Each object instance has
 its own separate copies of the instance variables. The variables are
 stored for the life of the object. Just like we store information in a
-Hash under a key, we can set and look up data with an instance variable
-name.
+Hash under a key, we can set and look up data with an instance
+variable name.
 
 ```ruby
 class Cat
@@ -349,15 +345,6 @@ named `age` when you use `=`; that is its default assumption. Only if
 you say `self.age` does it realize that you really want to call a
 method. So beware of this common mistake.
 
-You can also create classes from `Struct`, used for quickly
-building out classes that store variables and contain reader
-and writer methods.
-
-```
-Course = Struct.new(:name, :department, :period)
-algorithms = Course.new("Algorithms 101", "Programming", 2)
-```
-
 ## Class and Instance methods
 
 We've mostly talked about instance methods; instance methods are
@@ -380,8 +367,8 @@ to any one object. For that reason, they cannot access instance
 variables; there is no object to get the instance variables from.
 
 A common use of class methods is to create new objects (this is what
-`new` does); methods that create new objects are called *factory
-methods*. Here's an example:
+`new` does); methods that create new objects are called **factory
+methods**. Here's an example:
 
 ```ruby
 class Asteroid
@@ -419,7 +406,7 @@ end
 In this example, `Asteroid::random_asteroid` is an example of a
 factory method. It is a class method that creates an `Asteroid`. Note
 that it is not called on an existing `Asteroid` instance. That makes
-sense since it's purpose is to *construct* a new `Asteroid`; it is not
+sense since its purpose is to *construct* a new `Asteroid`; it is not
 an *action* of an asteroid (like crashing into a planet is an action
 of an asteroid).
 
@@ -475,6 +462,10 @@ This is the preferred way to do things in Ruby. It can be confusing
 because it is not always clear that we want to call a method (instead
 of using a variable), but the advantage is concision.
 
+Recall that when using a setter method, the `self.` is not optional;
+Ruby will not understand you want to call a method instead of define a
+new local variable.
+
 ## Defining class methods
 
 Let's see how to define a class method. There are in fact a few ways,
@@ -505,7 +496,7 @@ end
 ```
 
 You may see this particularly when defining multiple class methods
-together.
+together. I find this syntax very odd and do not use it, myself.
 
 ## Calling class methods from class methods
 
@@ -560,8 +551,8 @@ Finally, note that class methods are just a special kind of instance
 method:
 
 ```ruby
-dog.bark # => calls `bark` method on a Dog instance
-Dog.new # => calls `new` method on a Class instance: Dog
+dog.bark # => calls `bark` method on a Dog instance: `dog`
+Dog.new # => calls `new` method on a Class instance: `Dog`
 ```
 
 ## Exercises
