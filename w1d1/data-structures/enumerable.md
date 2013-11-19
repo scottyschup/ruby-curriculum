@@ -10,27 +10,29 @@
 
 ## What is `Enumerable`?
 
-`Enumerable` is a Ruby module. A *module* is a collection of methods
-(and constants). Modules can be *mixed in* to other classes; this just
-means that the module's methods are available in the class that it is
-mixed into.
+`Enumerable` is a Ruby module. A **module** is a collection of methods
+(and constants). Modules can be **mixed in** to other classes; this
+just means that the module's methods are available in the class that
+it is mixed into. We will eventually write our own modules, but for
+now it suffices to know that we put methods in a module when we want
+to be able to use them in various different classes.
 
 `Enumerable` is one of the most powerful modules in Ruby; it holds
-killer methods such as *map* and *each*. Because `Enumerable` is mixed
+killer methods such as `map` and `each`. Because `Enumerable` is mixed
 into `Array` and `Hash` (as well as other classes), these Enumerable
 methods are available on both `Array` and `Hash`.
 
-Let's take a look at some of the most commonly used and powerful methods in
-the `Enumerable` module.
+Let's take a look at some of the most commonly used and powerful
+methods in the `Enumerable` module.
 
-### `each`:
+### `Enumerable#each`
 
 You've already seen this before! If you want a refresher, just look at
 the [Hash](hash.md) and [Array](array.md) pages. You'll want to use
 `each` when you want to run some block of code for each element in an
 Array (or Hash).
 
-### `map`
+### `Enumerable#map`
 
 `map` (less commonly known by its synonym, `collect`) returns a new
 array with the results of running the called block once for each
@@ -63,9 +65,9 @@ each_return_value # => [1, 2, 3, 4]
 
 Because `#each` just returns the old value, it is used for its
 *side-effect*. Use `#each` if all you want is a side-effect, use
-`#map` if you actually want to use the returned array.
+`#map` if you actually want to use the returned values.
 
-### `inject`
+### `Enumerable#inject`
 
 `inject` (less commonly known as `reduce`) is a little complicated. I
 am not personally in love with it, because it can make code harder to
@@ -82,23 +84,19 @@ end
 
 nums.inject(:+) # A cool shortcut that does the same as the above code. 
 
-nums.inject('') do |accum, element| # accum starts as an empty string
-  # some code
-end
-
 # Write a method that takes nums and, using inject, returns the
 # product of all of the elements.
 ```
 
 We pass `inject` an initial value and a block. The code block takes
-the current accumulator value and the next element in the
+the current **accumulator** value and the next element in the
 `Enumerable`. The block is run, and the accumulator value is updated
 with the block's result. When all elements have been processed, the
 accumulator value is returned.
 
 I personally would just use a loop.
 
-### `select`
+### `Enumerable#select`
 
 `select` (less commonly known as `find_all`) returns an array with all
 the elements for which the called code block returns true. Let's look
@@ -108,9 +106,7 @@ at an example:
 nums = (1..10)
 # nums is a Range. Ruby's Range class also mixes in Enumerable!
 
-nums.select do |i|
-  i % 3 == 0
-end
+nums.select { |i| i % 3 == 0 }
 # => [3, 6, 9]
 
 # Write a method that takes a range of the integers from 1 to 100
@@ -118,7 +114,7 @@ end
 # squares.
 ```
 
-### `count`
+### `Enumerable#count`
 
 `count` returns the number of items in the collection it's called on.
 For example:
@@ -133,7 +129,7 @@ elements.count # => 3
 
 In a hash, `count` returns the number of key-value pairs.
 
-### `include?`
+### `Enumerable#include?`
 
 `include?` takes an object as a parameter and returns true if any item
 in the collection is equal to that object. Let's see it in action:
@@ -145,7 +141,7 @@ nums.include?(3) # => false
 nums.include?(4) # => true
 ```
 
-### `any?`
+### `Enumerable#any?`
 
 `any?` returns true if the code block returns true for any of the
 members of the collection. Here's an example of how we can check to
@@ -154,9 +150,7 @@ see if a given array has any even numbers:
 ```ruby
 nums = [2, 3, 5, 7]
 
-nums.any? do |i|
-  i % 2 == 0
-end
+nums.any? { |i| i % 2 == 0 }
 # => true
 
 # Using any?, verify that the range of integers from 1 to 5 does
