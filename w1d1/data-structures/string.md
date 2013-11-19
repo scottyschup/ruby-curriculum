@@ -43,12 +43,14 @@ want to use the opposite form of quotes:
 
 ## Multiline and Complex Quotes
 
-One of the issues with quotes (both of the single and double variety) is that
-they can make for some unwieldy code for other programmers to read and maintain.
+One of the issues with quotes (both of the single and double variety)
+is that they can make for some unwieldy code for other programmers to
+read and maintain.
 
 Two problems usually come hand in hand for complex blocks of text:
 * They may be large, spanning multiple lines
-* They may contain specific spacing, inner quotes, and escape characters
+* They may contain specific spacing, inner quotes, and escape
+  characters
 
 ```ruby
 stomach_contents = "Bacon 'ipsum dolor' sit amet venison\n fatback pig, prosciutto/pork belly jowl.\n
@@ -57,8 +59,9 @@ Beef kielbasa leberkas, shank t-bone doner strip "steak" pork loin. Doner hambur
 
 Yikes! The example above won't compute properly.
 
-We've placed double quotes around steak and double quotes around the entire string.
-Ruby inteprets this as two strings separated by an undefined variable, steak.
+We've placed double quotes around steak and double quotes around the
+entire string.  Ruby inteprets this as two strings separated by an
+undefined variable, steak.
 
 Let's say we try single quotes to get the "steak" back in there.
 
@@ -67,18 +70,20 @@ stomach_contents = 'Bacon 'ipsum dolor' sit amet venison\n fatback pig, prosciut
 Beef kielbasa leberkas, shank t-bone doner strip "steak" pork loin. Doner hamburger'
 ```
 
-Now we're getting bit by 'ipsum dolor'.
-Notice also, that, having enclosed the string in single quotes, we can no longer access escape characters.
-The "\n" will be interpreted as just that, and not a newline as we intend.
+Now we're getting bit by 'ipsum dolor'.  Notice also, that, having
+enclosed the string in single quotes, we can no longer access escape
+characters.  The `\n` will be interpreted as just that, and not a
+newline as we intend.
 
-These are common problems with complex strings! Not to fret; there are several solutions.
+These are common problems with complex strings! Not to fret; there are
+several solutions.
 
-One classic way to handle ` " ` and ` ' ` and ` \ ` within strings is to make a double quoted string and use ` \ ` as an escape character.  Ex: ` "\"Pigs\" is double quoted, and this is a backslash \\" ` will print: "Pigs" is double quoted, and this is a backslash \
+One classic way to handle ` " ` and ` ' ` and ` \ ` within strings is
+to make a double quoted string and use ` \ ` as an escape character.
+Ex: ` "\"Pigs\" is double quoted, and this is a backslash \\" ` will
+print:
 
-(more to come)
-* %q
-* %Q
-* HEREDOC
+    "Pigs" is double quoted, and this is a backslash \
 
 ## Interpolation
 
@@ -90,9 +95,10 @@ worst_day = "Monday"
 # => "Mondays are the hardest."
 ```
 
-This technique is called *string interpolation*. Inside the `#{}`, you place
-ruby code; the code is executed, and the return value is inserted
-inside the string.
+This technique is called *string interpolation*. Inside the `#{}`, you
+place Ruby code; the code is executed, `#to_s` is called on the result
+to turn it into the string, and the stringified result is inserted
+into the containing string.
 
 The code inside the `#{}` should be very short; just one variable plus
 maybe a single method call; that keeps things easy to read and
@@ -107,8 +113,10 @@ murder = "redrum".reverse.upcase
 String interpolation can only be done with double quotes (""), and
 doesn't work with single quotes (''). For this reason, as well as
 because single quotes don't support as many
-[escape sequences](http://en.wikibooks.org/wiki/Ruby_Programming/Strings#Escape_sequences),
-double quotes are the preferred default.
+[escape sequences][wiki-escape-seq], double quotes are the preferred
+default.
+
+[wiki-escape-seq]: http://en.wikibooks.org/wiki/Ruby_Programming/Strings#Escape_sequences
 
 ## Concatenating and appending to strings
 
@@ -137,8 +145,8 @@ count_in = count_in + "two, "
 # ...
 ```
 
-It is preferred to use the shovel (`<<`) operator for this; you'll
-look cooler:
+It is preferred to use the shovel (`<<`) operator for this. This will
+avoid the creating new strings and instead will modify the original.
 
 ```ruby
 count_in = ""
@@ -158,7 +166,8 @@ subarrays of an array.
 ```
 
 Here five is the starting position of the substring, and two is the
-substring's length. As with arrays, you may also pass a range of indexes.
+substring's length. As with arrays, you may also pass a range of
+indexes.
 
 ```ruby
 "this is my sentence"[5..6]
@@ -197,7 +206,6 @@ ice_creams.split(", ")
 nil.to_s
 => ""
 ```
-
 
 ## Other Killer `String` Methods
 
