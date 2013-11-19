@@ -435,7 +435,7 @@ returns the unique elements in the order in which they first appeared:
 ```
 
 Write your own `uniq` method, called `my_uniq`; it should take in an
-Array and return a new array. It should not call `uniq`.
+Array and return a new array.
 
 One special feature of Ruby classes is that they are *open*; we can
 add new methods to existing classes. Here, add your `my_uniq` method
@@ -449,9 +449,7 @@ class Array
 end
 ```
 
-This is also called *monkey patching*, and it is often frowned upon
-to, after-the-fact, add new methods to a class. However, it is
-occasionally useful and interesting to try out.
+This is called *monkey patching*.
 
 ### Two sum
 
@@ -524,6 +522,7 @@ Write a method that takes an array of stock prices (prices on days 0,
 first buy the stock and then sell the stock.
 
 ## Resources
+
 * [Ruby Doc on Array](http://www.ruby-doc.org/core-1.9.3/Array.html)
 * [Ruby Monk Intro to Arrays](http://rubymonk.com/learning/books/1/chapters/1-arrays/lessons/2-arrays-introduction)
 * [Ruby Array Article](http://zetcode.com/lang/rubytutorial/arrays/)
