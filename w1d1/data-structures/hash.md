@@ -14,8 +14,7 @@
 A Hash is a collection of key-value pairs. You can think of a hash
 like an array, but instead of the keys being incrementing integer
 indices (i.e., 0, 1, 2, 3, etc.), the keys are arbitrary, and can be
-any kind of object. From ruby 1.9.3 onwards, Hashes enumerate their
-values in the order that the corresponding keys were inserted.
+any kind of object.
 
 You can create a hash a couple different ways:
 
@@ -78,17 +77,6 @@ puts capitals
 # => { 'New York' => 'Albany' }
 ```
 
-(Or we can opt to use the Hash#delete_if method to iterate through the hash while
-deleting everything that returns true for a given expression.)
-
-```ruby
-test_hash = {'a' => 100, 'b' => 25}
-test_hash.delete_if {|key, value| value <= 50}
-puts test_hash
-# => {'a'=>100}
-```
-
-
 ### `Hash#merge`
 
 We can also merge two hashes together:
@@ -111,11 +99,12 @@ h1 = {:a => 'apple', :b => 'bat'}
 h2 = {:b => 'bravo', :c => 'charlie'}
 
 h1.merge(h2) # => {:a => 'apple', :b => 'bravo', :c => 'charlie'}
+h2.merge(h1) # => {:a => 'apple', :b => 'bat', :c => 'charlie'}
 ```
 
 Note also that `merge` does not modify either of the hashes, it
 creates a new hash which contains the keys and values of both. There
-is a bang version (`merge!`) which will modify the hash.
+is a bang version (`merge!`) which will modify the method receiver.
 
 ### `Hash#keys`
 
@@ -152,21 +141,6 @@ capitals.has_key?('New York') # => true
 capitals.has_key?('France') # => false
 ```
 
-### `Hash::new`
-
-There are several ways to initialize a `Hash` using `Hash.new`. Let's compare and contrast.
-
-#### `a = Hash.new`
-
-This is the same as `{}` and will set the default return `value` of keys **not** found in the hash to `nil`.
-
-```ruby
-a = Hash.new
-a[:y] = 5
-a[:y] # => 5
-a[:x] # => nil
-```
-
 ## Exercises
 
 Estimated time: 30min
@@ -174,8 +148,8 @@ Estimated time: 30min
 ### Set
 
 Ruby provides a class named `Set`. You can read all about it in the
-[ruby-doc][ruby-set-doc]. Let's create a few methods that will manipulate
-a `Hash` as if it were a `Set`.  Like so:
+[ruby-doc][ruby-set-doc]. Let's create a few methods that will
+manipulate a `Hash` as if it were a `Set`.  Like so:
 
 ```ruby
 set_add_el({}, :x) # => make this return {:x => true}
