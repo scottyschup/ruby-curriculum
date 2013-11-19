@@ -233,9 +233,9 @@ Estimated time: 1hr
 
 ### Your own `to_s` method
 
-In this exercise, you will define a method `num_to_s(num, base)`, which will
-return a string representing the original number in a different base (up to
-base 16).
+In this exercise, you will define a method `num_to_s(num, base)`,
+which will return a string representing the original number in a
+different base (up to base 16).
 
 To refresh your memory, a few common base systems:
 
@@ -261,50 +261,50 @@ conversions above:
 
 ```ruby
 num_to_s(234, 10) #=> "234"
-(234 / 1)   % 10 #=> 4
-(234 / 10)  % 10 #=> 3
-(234 / 100) % 10 #=> 2
-                     ^
+(234 / 1)   % 10  #=> 4
+(234 / 10)  % 10  #=> 3
+(234 / 100) % 10  #=> 2
+                      ^
 
 num_to_s(234, 2) #=> "11101010"
-(234 / 1)   % 2 #=> 0
-(234 / 2)   % 2 #=> 1
-(234 / 4)   % 2 #=> 0
-(234 / 8)   % 2 #=> 1
-(234 / 16)  % 2 #=> 0
-(234 / 32)  % 2 #=> 1
-(234 / 64)  % 2 #=> 1
-(234 / 128) % 2 #=> 1
-                    ^
+(234 / 1)   % 2  #=> 0
+(234 / 2)   % 2  #=> 1
+(234 / 4)   % 2  #=> 0
+(234 / 8)   % 2  #=> 1
+(234 / 16)  % 2  #=> 0
+(234 / 32)  % 2  #=> 1
+(234 / 64)  % 2  #=> 1
+(234 / 128) % 2  #=> 1
+                     ^
 ```
 
-You should not call the built in `to_s` yourself. To get around this
-restriction you might either:
+The general idea is to each time divide by a greater power of `base`
+and the mod the result by `base` to get the next digit. Continue until
+`num / (base ** pow) == 0`.
 
-* Have a giant `case`/`when` switch (ugly; no!)
-* Create a `Hash` where the keys are digit numbers and the values are the digit
-  strings (for bases > 10 this will involve some characters; hex digits go up
-  to `'F'`).
-    * Could you use an `Array` instead of a `Hash`? This is not a
-      trick question.
+You'll get each digit as a number; you need to turn it into a
+character. Make a `Hash` where the keys are digit numbers (up to and
+including 15) and the values are the characters to use (up to and
+including `F`).
 
 ### Caesar cipher
 
-* Implement a [Caesar cipher](http://en.wikipedia.org/wiki/Caesar_cipher).
+* Implement a
+  [Caesar cipher](http://en.wikipedia.org/wiki/Caesar_cipher).
   Example: `caesar("hello", 3) # => "khoor"`
 * Assume the text is all lower case letters.
 * You'll probably want to map letters to numbers (so you can shift
-  them). You can do this mapping yourself, but you may also want to
-  use the [ASCII codes][wiki-ascii], which are accessible through
-  `String#each_byte`.
-* You may also want to use `String#ord` and `Fixnum#chr` which convert
-  a single-character string an ASCII code and back.
+  them). You could do this mapping yourself, but you will want to use
+  the [ASCII codes][wiki-ascii], which are accessible through
+  `String#ord` or `String#each_byte`. To convert back from an ASCII
+  code number to a character, use `Fixnum#chr`.
 * Important point: ASCII codes are all consecutive!
     * In particular, `"b".ord - "a".ord == 1`.
 * Lastly, be careful of the letters at the end of the alphabet, like
   `"z"`!
 
 ## Resources
-http://www.ruby-doc.org/core-1.9.3/String.html
+
+* http://www.ruby-doc.org/core-1.9.3/String.html
 
 [wiki-ascii]: http://en.wikipedia.org/wiki/Ascii
