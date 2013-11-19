@@ -1,21 +1,25 @@
 # Pass by reference
 
-The Ruby language is what is called a *pass by reference*
-language. This means that variables hold *references* to objects, but
-let me show you what that means.
+The Ruby language is what is called a **pass by reference**
+language. This means that variables hold **references** to objects,
+but let me show you what that means.
 
-    my_object = Object.new
-    # my_object now refers to a new instance of Object
-    my_object = Object.new
-    # a new Object instance is created, and the my_object variable is
-    # set so that it now refers to this object, rather than the old
-    # object
-    
-    # call `my_method` on the object that `my_object` refers to
-    my_object.my_method
+```ruby
+my_object = Object.new
+# my_object now refers to a new instance of Object
 
-One point is that `=` does not mutate or modify an object; it merely
-reassigns the variable so that it now refers to a new object.
+my_object = Object.new
+# a new Object instance is created, and the my_object variable is
+# reassigned so that it now refers to this object, rather than the old
+# object.
+
+# call `my_method` on the object that `my_object` refers to
+my_object.my_method
+```
+
+One point is that `=` does not **mutate** (modify) an object; it
+merely **reassigns** the variable so that it now refers to a new
+object.
 
 Here is another example of pass by reference:
 
@@ -49,14 +53,14 @@ my_hash[:key] = :value
 ```
 
 How does this work? Notice that we aren't just assigning to a
-variable; we're actually taking `my_hash` indexing by `:key`, and then
-assigning. This actually calls a ruby method, called `[]=` on the
-object. Here's how it might be defined:
+variable; we're asking to mutate `my_hash` so that `:key` will refer
+to `:value` now. To do this, Ruby calls the `[]=` method on the
+hash. Here's how it might be defined:
 
 ```ruby
 class Hash
   def []=(key, val)
-    # code to set key so that it maps to value
+    # code to set key so that it maps to value...
   end
 end
 ```
@@ -107,7 +111,9 @@ circuiting:
 
 Ruby is sort of lazy; it won't evaluate the right side if the left
 side of `||` is already true. That makes sense, because regardless of
-what the right side is, the whole or statement will always be true.
+what the right side is, the whole or statement will always be
+true. Ruby understands this, and so as a special rule won't execute
+more than it needs to.
 
 Ruby will return the first "truthy" value from the or:
 
