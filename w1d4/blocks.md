@@ -4,14 +4,16 @@
 
 * Know how to define a block, especially one that takes arguments.
 * Know how to write a method that takes a block.
-* Know the difference between `Block`s and [`Proc`](http://ruby-doc.org/core-2.0/Proc.html)s.
+* Know the difference between blocks and [`Proc`][proc-doc]s.
 * Know not to return from a block.
 * Know what `#to_proc` and `&` are used for.
+
+[proc-doc]: http://ruby-doc.org/core-2.0/Proc.html
 
 ## Blocks! Blocks! Blocks!
 
 Blocks, more than anything, are what makes Ruby unique. Blocks are
-chunks of code that get passed into methods. Methods then *call* the
+chunks of code that get passed into methods. Methods then **call** the
 block to customize their own behavior.
 
 For instance, take `Enumerable#map`:
@@ -71,7 +73,7 @@ maybe(true) { puts "Hello!" } # runs block, since passed true
 maybe(false) { puts "Goodbye!" } # doesn't run block
 ```
 
-Here's how we would define maybe:
+Here's how we could define `maybe`:
 
 ```ruby
 def maybe(flag, &prc)
@@ -82,7 +84,10 @@ end
 Notice the `&prc` argument? The ampersand is a special symbol that
 signifies that `prc` should hold a `Proc`. The block, if provided,
 gets turned into a `Proc` object, which is then stored in the `prc`
-variable; if no block is provided, `prc` is set to `nil`.
+variable; if no block is provided, `prc` is set to `nil`. We need to
+mark the variable with a `&` because procs are not passed like normal
+arguments; they don't appear inside the parens in the list of values
+to pass in.
 
 ```ruby
 def amp_makes_block_a_proc(&prc)
@@ -94,9 +99,10 @@ amp_makes_block_a_proc {|x| x+1}
 ```
 
 What's the difference between a block and a `Proc`? A block is the
-Ruby code you write; Ruby then creates an object that will store your
-block so that you can call it later, a `Proc`. You can create a `Proc` object
-yourself:
+Ruby code you write; it is not a real Ruby object.
+
+Ruby will create an object that will store your block so that you can
+call it later, a `Proc`. You can create a `Proc` object yourself:
 
 ```ruby
 my_proc = Proc.new { "Hey, friend!" }
@@ -112,30 +118,21 @@ my_new_proc = Proc.new { |name| puts "Hello #{name}" }
 my_new_proc.call("Zimmy")
 ```
 
-Takeaway: to store or use a block, it must first be turned into a
-`Proc`, either explicitly (`Proc::new`) or implicitly (`&prc`
-variable).
-
-It may be worth noting that you can take multiple blocks by explicitly 
-defining procs and then passing them into your method.
+The `&` way only allows you to pass a single block/proc to a
+method. If you want to pass multiple procs, you must pass them as
+normal arguments:
 
 ```ruby
 proc_add_1 = Proc.new {|num| puts num + 1}
 proc_add_2 = Proc.new {|num| puts num + 2}
 
-def adding_method(array, proc1, proc2, &proc3)
-  proc1.call(array[0])
-  proc2.call(array[1])
-  proc3.call(array[2])
+def adding_method(array, proc1, proc2, &proc3) do |num|
+  num + 3
 end
-
-adding_method([1,1,1,], proc_add_1, proc_add_2) do 
-  |num| puts num + 3 
-end
-#=> 2
-    3
-    4
 ```
+
+This passes in three procs; `proc_add_1`, `proc_add_2`, and then the
+third block after it has been procified.
 
 ## yield
 
@@ -148,6 +145,16 @@ def maybe(flag)
   yield if flag
 end
 ```
+
+I prefer to call the proc explicitly with `call`.
+
+If you want to check if a block is given, I use `prc.nil?`
+usually. Similar to `yield`, you can use the special method
+`block_given?` if you don't want to list the block in the argument
+list.
+
+I like to list the block in the argument list (`&` style) because it
+makes it clearer to a reader what arguments the method can take.
 
 ## Avoid return inside a block
 
@@ -176,9 +183,9 @@ not to use return in blocks!). You can skip the following if you
 like; if you are curious, you read on.
 
 ```ruby
-def wrap_block
+def wrap_block(&prc)
   puts "Started at #{Time.now}."
-  value = yield
+  value = prc.call
   puts "Ended at #{Time.now}."
 
   value
@@ -247,12 +254,16 @@ add_one = Proc.new { |i| i + 1}
 [1, 2, 3].map(add_one) # wrong number of arguments (1 for 0)
 ```
 
-We can ask a method to pass an argument into the block argument slot
-by using the '&' symbol:
+We have to make sure that Ruby understands we want to pass the proc in
+as the block/proc argument, not a normal argument. To do this, we use
+the `&` symbol again:
 
 ```ruby
 [1, 2, 3].map(&add_one) # => [2, 3, 4]
 ```
+
+Notice how this is kind of the flip-side of using `&` in the
+definition of a method.
 
 Of course, we get yelled at if we try to pass both a `Proc` this way
 in addition to a typical block:
@@ -277,13 +288,14 @@ In this case, Ruby gives us a shortcut:
 [1, 2, 5].select(&:odd?)
 ```
 
-What's happening here? Using the `&` symbol calls `#to_proc` on the item 
-following the ampersand. For example, in the above code, [`#to_proc`][symbol-to-proc] is called 
-on the symbols `:upcase` and `:odd`.
+What's happening here? Using the `&` symbol calls `#to_proc` on the
+item following the ampersand. For example, in the above code,
+[`#to_proc`][symbol-to-proc] is called on the symbols `:upcase` and
+`:odd`.
 
-When `#to_proc` is called on a symbol, we get back a `Proc` object that just calls 
-a method with the same name as the symbol on its argument. Here's what the above is 
-"actually doing".
+When `#to_proc` is called on a symbol, we get back a `Proc` object
+that just calls a method with the same name as the symbol on its
+argument. Here's what the above is "actually doing".
 
 ```ruby
 ["a", "b", "c"].map { |s| s.upcase }
@@ -296,30 +308,30 @@ we can call *the same Proc* on different data structures:
 ```ruby
 class Array
   def first_and_last
-    [self.first,self.last]
+    [self.first, self.last]
   end
 end
 
 class String
   def first_and_last
-    [self[0],self[-1]]
+    [self[0], self[-1]]
   end
 end
 
 symbolic_proc = :first_and_last.to_proc #=> #<Proc:0x007feb749b0070>
 symbolic_proc.call([1,2,3]) #=> [1, 3]
 symbolic_proc.call("ABCD") #=> ["A", "D"]
-["Hello","Goodbye"].map(&:first_and_last) # => [["H", "o"], ["G", "e"]]
+["Hello", "Goodbye"].map(&:first_and_last) # => [["H", "o"], ["G", "e"]]
 ```
 
-Note: In order to convert a symbol to a string you can use `#to_s` or `#to_sym`
-to go from string to symbol
+Note: In order to convert a symbol to a string you can use `#to_s` or
+`#to_sym` to go from string to symbol
 
 ## Required video
 
-* Watch Peter talk about [it all][peter-youtube-blocks].
+* Watch Peter's [Procs, Blocks and Lambdas][peter-youtube-blocks].
 
-## Exercises 
+## Exercises
 
 Estimated time: 1hrs
 
@@ -332,8 +344,9 @@ Estimated time: 1hrs
   `inject` is fancy (you can write `[1, 2, 3].inject(:+)` to shorten
   up `[1, 2, 3].inject { |sum, num| sum + num }`), but focus on the
   block (and not the symbol) version.
-* **Don't use `my_each` for this one!** Define your own `Array#my_sort!`: it should take in a block to
-  perform the comparison:
+* **Don't use `my_each` for this one!** Define your own
+  `Array#my_sort!`: it should take in a block to perform the
+  comparison:
 
   ```ruby
   [1, 3, 5].my_sort! { |num1, num2| num1 <=> num2 } #sort ascending
@@ -344,25 +357,28 @@ Estimated time: 1hrs
   [compares objects][so-spaceship]. `x.<=>(y)` returns `-1` if `x` is
   less than `y`. If `x` and `y` are equal, it returns `0`. If greater,
   `1`. You can define `<=>` on your own classes.
-  
+
 * Write a `eval_block` method that takes some arguments and a block.
-  (Note: this method is not part of the Array class; just write a stand-alone method.)
-  It should call the block, passing all the arguments to the block at once (individually,
-  not as an array) using the splat operator. If the user doesn't supply the 
-  block, it should print out "NO BLOCK GIVEN!".
+  (Note: this method is not part of the Array class; just write a
+  stand-alone method.)  It should call the block, passing all the
+  arguments to the block at once (individually, not as an array) using
+  the splat operator. If the user doesn't supply the block, it should
+  print out "NO BLOCK GIVEN!".
     * To take possibly multiple arguments, check out the Ruby
       [splat operator][splat-operator].
 
 [peter-youtube-blocks]: http://www.youtube.com/watch?v=VBC-G6hahWA
-[splat-operator]: http://kconrails.com/2010/12/22/rubys-splat-operator/
+[splat-operator]: http://kconrails.com/2010/12/22/rubys-splat-operator
 [symbol-to-proc]: http://ruby-doc.org/core-2.0.0/Symbol.html#method-i-to_proc
 
 ## Resources
+
 * [Robert Sosinski on Blocks][sosinski-blocks]
 * [Skorks on Procs and Lambdas][skorks-blocks]
 * [The difference between curly braces and do end][stack-overflow-do-end] (Read the first answer!)
 
 ## Extra Credit
+
 * Read [Fizzbuzz written entirely with Procs][fizzbuzz-procs]
   * [HN discussion on the above article][HN-fizzbuzz-procs]
 
