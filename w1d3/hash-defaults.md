@@ -61,6 +61,7 @@ arr2 = Array.new(3, 1)
 arr2[0] += 1
 arr2[0] == 2
 arr2[1] == 1
+arr2[2] == 1
 ```
 
 Does this contradict what we've just discussed about refernces and
@@ -76,7 +77,8 @@ Let's further break this into steps:
 0. Next, add one to this number. **This creates a new number
    object**. The `+` operation **does not** mutate the original
    object.
-0. Finally, assign a reference to the new object (`2`) to `arr[0]`.
+0. Finally, assign a reference to the new object (`2`) to position `0`
+   of `arr`.
 
 The trick is that we **never mutate** any number. We produce a new one
 and reset `arr2[0]` to refer to the new object. That's why none of the
@@ -100,8 +102,10 @@ Array:
 => {}
 ```
 
-Note how this doesn't assign a value to `"Devon"` through mere access
-of the key. To do that, we need something like:
+Providing an argument to `Hash.new` merely changes what is returned
+when we look up a key that isn't present in the hash. Note how this
+doesn't assign a value to `"Devon"` through mere access of the key. To
+do that, we can do something like:
 
 ```ruby
 [4] pry(main)> cats["Devon"] += ["Earl"]
@@ -114,28 +118,33 @@ of the key. To do that, we need something like:
 => {"Devon"=>["Earl", "Breakfast"]}
 ```
 
-Better. Notice that `+=` will cause a new array to be created (the `+`
-part) and then stored in the hash (the `=` part). But what about this:
+Better. `cats["Devon"] += ["Earl"]` means `cats["Devon"] =
+cats["Devon"] + ["Earl"]`. This constructs a new array and stores it
+for key `"Devon"`
+
+But what about this?
 
 ```ruby
+[7] pry(main)> cats = Hash.new([])
+=> {}
 [8] pry(main)> cats["John"] << "Kiki"
 => ["Kiki"]
 [9] pry(main)> cats
-=> {"Devon"=>["Earl", "Breakfast"]}
+=> {}
 [10] pry(main)> cats["Raul"]
 => ["Kiki"]
 ```
 
 Let's think through what's happening here. On line 8, we try to get a
 value for `cats["John"]`. `"John"` is not a key in the hash, so the
-default (an empty array) is returned. We then mutate this by adding
-`"Kiki"` to it.
+default (an empty array) is returned. We then mutate the default value
+by adding `"Kiki"` to it.
 
 We never set a value for `"John"` though, so this is not stored in the
 Hash (see the result of line 9).
 
 Later, when we try to access some other non-present key (`"Raul"`),
-the default value is returned. But since we mutated the value by
+the default value is returned again. But since we mutated the value by
 shovelling `"Kiki"` in, this is no longer empty. This is bad, because
 we never meant for `"Raul"` to own `"Kiki"`.
 
@@ -150,10 +159,12 @@ We can start to fix the problem as before:
 => []
 ```
 
-Because we pass a block that Hash can run to produce a default value,
-modifying the returned default won't affect future returned defaults.
+Hash will use the block to produce a new default value each
+time. Modifying the value won't have an affect on looking up other
+non-existent keys, since we create a new value each time, instead of
+reusing a single default object.
 
-But we have the other problem: we're still not setting a value:
+But we have the other problem again: we're still not setting a value.
 
 ```ruby
 [16] pry(main)> cats2
