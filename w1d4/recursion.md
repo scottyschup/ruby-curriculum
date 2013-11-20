@@ -2,16 +2,15 @@
 
 ## Recursive methods
 
-A *recursive* method is one that calls itself. Each time the method
-calls itself, it tries to solve a smaller *subproblem*. Think of this
-as breaking a large problem into smaller problems. Each of these may
-be divided again into still smaller subproblems.
+A **recursive** method is one that calls itself. Each time the method
+calls itself, it tries to solve a smaller **subproblem**. Think of
+this as breaking a large problem into smaller problems. Each of these
+may be divided again into still smaller subproblems.
 
 The subproblems keep getting smaller and smaller, until they are small
 enough to solve trivially and directly. These small subproblems are
-called *base cases*. When designing a recursive method, remember that
-the base case will always be returned as part of the calculation for the
-next level up in the method.
+called **base cases**. All recursive methods should eventually reach a
+base case, lest they just loop forever.
 
 The factorial operation is one example of a problem that can be solved
 recursively. Recall that five factorial is:
@@ -21,10 +20,11 @@ recursively. Recall that five factorial is:
 
 We can also define factorial *recursively*:
 
-    1! = 1
+    # this is math, not Ruby code.
+    0! = 1
     n! = n * (n - 1)!
 
-The first equation is the base case: `1!` is, trivially, `1`. For any
+The first equation is the base case: `0!` is, trivially, `1`. For any
 `n > 1`, we can use the second equation to break the problem into a
 smaller one.
 
@@ -59,7 +59,7 @@ is called *inductive reasoning*.
 Here's an example. I know that if I can count to `n`, I can count to
 `n+1` by (a) first counting to `n` and (b) then counting one more,
 `n+1`. Since I know how to count to `1` (just say "one"; the base
-case), I know that I can count to any number.
+case), I know that I can count to any number, no matter how large.
 
 The key to applying inductive reasoning to solve problems is to (a)
 identify how you can grow a smaller solution into a bigger solution,
@@ -121,51 +121,44 @@ SystemStackError: stack level too deep
         from: /Users/ruggeri/.rvm/gems/ruby-1.9.3-p194/gems/pry-0.9.10/lib/pry/pry_instance.rb:275
 ```
 
-Each nested method call you make adds to the *stack* of open method
+Each nested method call you make adds to the **stack** of open method
 calls; each time a method ends, the stack size decreases by one. The
-elements of the stack are called *stack frames*, and they contain the
-local variables used by that method.
+elements of the stack are called **stack frames**, and they contain
+the local variables used by that method.
 
 If you get caught in a recursive loop, the stack will grow infinitely
-until the system runs out of memory. This is because our methods depend
-on some method closing to close themselves (*i.e.* the base case) in the
-Fibonacci example. Running out of memory like this is called a *stack
-overflow*, and Ruby will tell you that the stack level got too deep.
+until the system runs out of memory. This is because our methods
+depend on some method closing to close themselves (i.e., the base
+case) in the Fibonacci example. Running out of memory like this is
+called a **stack overflow**, and Ruby will tell you that the stack
+level got too deep.
 
 ## Strategies for Programming Recursively
 
 It helps to have a general strategy with which to tackle recursive
 problems.
 
-* Map out a recursive decomposition
+**Map out a recursive decomposition**: Think about how the problem
+breaks down recursively. That is, how will you reduce the problem size
+towards the base case.  It's sometimes helpful to even sketch it out.
 
-  Think about how the problem breaks down recursively. That is,
-  how will you reduce the problem size towards the base case.
-  It's sometimes helpful to even sketch it out.
+**Identify the base case(s)**: The base case will be the case when the
+stack stops growing - that is, when the chain of deferred operations
+will begin to evaluate. What will your method return in the most
+trivial of cases? Your recursive decomposition should always be moving
+towards that trivial case.
 
-* Identify the base case(s)
+**Think one level up from the base case**: What will happen when you
+call your recursive method with a value that will require a single
+recursive call - that is, with a value one away from the base
+case. How will you have to manipulate that value in order to return
+the right thing? Ensure your manipulation generalizes.
 
-  The base case will be the case when the stack stops growing -
-  that is, when the chain of deferred operations will begin to
-  evaluate. What will your method return in the most trivial
-  of cases? Your recursive decomposition should be moving towards
-  that trivial case.
-
-* Think one level up from the base case
-
-  What will happen when you call your recursive method with a value
-  that will require a single recursive call - that is, with a value
-  one away from the base case. How will you have to manipulate
-  that value in order to return the right thing? Ensure your
-  manipulation generalizes.
-
-Other notes:
-
-* Ensure that your return values from any case (base case or
-  otherwise) are always of the same type. If you need an array
-  as the final return value then the intermediate return values
-  must also be arrays. Why? Because each of those intermediate values
-  are returning from the same method!
+**Ensure that your return values from any case (base case or
+otherwise) are always of the same type**. If you need an array as the
+final return value then the intermediate return values must also be
+arrays. Why? Because each of those intermediate values are returning
+from the same method!
 
 ## Exercises
 
