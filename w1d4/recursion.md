@@ -256,7 +256,8 @@ RubyQuiz: [Make change][make-change-mirror]. Make sure your solution
 works not only for our normal currency, but wonky currencies like
 `[10, 7, 1]`. This means trying every combination of coins.
 
-[make-chane-mirror]: http://web.archive.org/web/20130215052843/http://rubyquiz.com/quiz154.html
+[make-change-mirror]: http://web.archive.org/web/20130215052843/http://rubyquiz.com/quiz154.html
+
 
 ### Wrapping up: `merge_sort` and `subsets`
 
