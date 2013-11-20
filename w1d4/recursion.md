@@ -164,10 +164,15 @@ from the same method!
 
 Estimated time: 5hrs
 
+### Warmup
+
 * Write a recursive method, `range`, that takes a start and an end and
   returns an array of all numbers between.
 * Write both a recursive and iterative version of sum of an array.
-* Write two versions of exponent that use two different recursions:
+
+### Exponentiation
+
+Write two versions of exponent that use two different recursions:
 
 ```
 # this is math, not Ruby methods.
@@ -182,10 +187,10 @@ exp(b, n) = exp(b, n / 2) ** 2             [for even n]
 exp(b, n) = b * (exp(b, (n - 1) / 2) ** 2) [for odd n]
 ```
 
-Note that for recursion 2, you will need to square the results of 
+Note that for recursion 2, you will need to square the results of
 `exp(b, n / 2)` and `(exp(b, (n - 1) / 2) `. Remember that you don't
-need to do anything special to square a number, just calculate the value 
-and multiply it by itself.
+need to do anything special to square a number, just calculate the
+value and multiply it by itself.
 
 If the `n == 256`, about how many nested recursive steps will we run
 in the first case?
@@ -195,10 +200,16 @@ the first reduces the exponent by one for each recursion, while the
 second reduces it by half. Even if we don't recurse as deeply, do we
 call `exp` using recursion 2 less often than using recursion 1?
 
-* The `#dup` method doesn't make a *deep copy*:
+### Deep dup
+
+The `#dup` method doesn't make a *deep copy*:
 
 ```ruby
-robot_parts = [["nuts", "bolts", "washers"], ["capacitors", "resistors", "inductors"]]
+robot_parts = [
+  ["nuts", "bolts", "washers"],
+  ["capacitors", "resistors", "inductors"]
+]
+
 robot_parts_copy = robot_parts.dup
 
 # shouldn't modify robot_parts
@@ -222,23 +233,35 @@ strictly necessary. It's okay to iterate over array elements using
 
 You should be able to handle "mixed" arrays like `[1, [2], [3, [4]]]`.
 
-* Write a recursive and an iterative Fibonacci method. The method
-  should take in an integer `n` and return the first `n` Fibonacci
-  numbers in an array.
+### Fibonacci
 
-  You shouldn't have to pass any arrays between methods; you should be
-  able to do this just passing a single argument for the number of
-  Fibonacci numbers requested.
-* Write a recursive [binary search][wiki-binary-search]:
-  `bsearch(array, target)`. **Note that binary search only works on
-  sorted arrays**. Make sure to return the location of the found
-  object (or `nil` if not found!). Hint: you will probably want to use
-  subarrays.
-* RubyQuiz: [Make change](http://www.rubyquiz.com/quiz154.html) [(mirror)](http://web.archive.org/web/20130215052843/http://rubyquiz.com/quiz154.html)
-  * Whenever we assign a Ruby Quiz, after solving it, make sure to
-    look at a couple answers and make sure you understand them.
-  * Start out by solving the problem for sensible currencies like
-    `[25, 10, 5, 1]`. Bonus: solve the problem for currencies like `[10, 7, 1]`.
+Write a recursive and an iterative Fibonacci method. The method should
+take in an integer `n` and return the first `n` Fibonacci numbers in
+an array.
+
+You shouldn't have to pass any arrays between methods; you should be
+able to do this just passing a single argument for the number of
+Fibonacci numbers requested.
+
+### Binary Search
+
+Write a recursive [binary search][wiki-binary-search]: `bsearch(array,
+target)`. **Note that binary search only works on sorted
+arrays**. Make sure to return the location of the found object (or
+`nil` if not found!). Hint: you will probably want to use subarrays.
+
+### Make Change
+
+RubyQuiz: [Make change][make-change-mirror]
+
+* Start out by solving the problem for sensible currencies like
+  `[25, 10, 5, 1]`. Bonus: read the note and then solve the problem
+  for currencies like `[10, 7, 1]`.
+
+[make-chane-mirror]: http://web.archive.org/web/20130215052843/http://rubyquiz.com/quiz154.html
+
+### Wrapping up: `merge_sort` and `subsets`
+
 * Implement a method, [`merge_sort`][wiki-merge-sort] that sorts an
   `Array`. Hint: The base case for this sort is surprisingly simple.
 * Write a method, `subsets`, that will return all subsets of an array.
@@ -251,16 +274,11 @@ subsets([1, 2, 3]) # => [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
 # can also implement as an instance method
 ```
 
-
 [wiki-binary-search]: http://en.wikipedia.org/wiki/Binary_search
 [wiki-merge-sort]: http://en.wikipedia.org/wiki/Merge_sort
 
 ## Resources
 
 * [Wikipedia: Recursion][wiki-recursion]
-* [The Bastards Book of Ruby: Recursion][bastard-recursion]
 
 [wiki-recursion]: http://en.wikipedia.org/wiki/Recursion_(computer_science)
-[bastard-recursion]: http://ruby.bastardsbook.com/chapters/recursion/
-[Stirling]: http://en.wikipedia.org/wiki/Stirling_numbers_of_the_second_kind
-[Fib-Recursion]: http://courses.csail.mit.edu/6.01/spring07/lectures/lecture4.pdf
