@@ -120,16 +120,22 @@ tree. It should have the following interface:
 **Phase I:**
 
 * A `#parent` method to get the node's parent (if any).
-* Setters and getters for the `left` and `right` child nodes. When
-  setting `node1.left = node2`, make sure to also:
-    * If `node2` is a left child of `node2.parent`, set
-      `node2.parent.left = nil` (likewise for right). This means you
-      may need to track whether a node is a left or right child.
-    * If `node1.left` is not nil, set `node1.left.parent = nil`.
-    * Then set `node2.parent = node1`.
-    * Lastly, actually set the appropriate instance variable so that
-      `node1.left` is set appropriately.
+* To start, write simple setters and getters for the `left` and
+  `right` child nodes.
 * Write a setter and getter for the node's `value`.
+* I'd like to improve our `left=` and `right=` methods to (a) `detach`
+  the prior child and the new child from their current parents, (b)
+  set the new child's parent to the new parent, and (c) finally set
+  the new child as a child of parent.
+* To do this, start by writing a `detach` method that will set
+  `parent` to nil and remove the node as a child of `parent`. You'll
+  probably want to keep track of whether a node is a left or right
+  child (I called this property `position`).
+* Write a method `TreeNode#set_child(new_child, position)`. This
+  should detach the new child and the old child (if necessary). It
+  should record the position in the child, and connect the
+  parent/new child.
+* Write `left=` and `right=` specially to use `set_child`.
 
 **Phase II:**
 
