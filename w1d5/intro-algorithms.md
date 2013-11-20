@@ -117,43 +117,49 @@ Estimated time: 8hrs
 Write a class named `TreeNode` which represents a node in a binary
 tree. It should have the following interface:
 
-* A `#parent` method to get the node's parent (if any)
-* Setters and getters for the `left` and `right` child nodes
-  * `parent_node.left = child_node` should also set the
-    `child_node.parent` to `parent_node`
-  * if there was a previous `left` child node that was replaced, the
-    original `left` child should have its parent reset to `nil`
-* Setter and getters for the node's `value`
+**Phase I:**
+
+* A `#parent` method to get the node's parent (if any).
+* Setters and getters for the `left` and `right` child nodes. When
+  setting `node1.left = node2`, make sure to also:
+    * If `node2` is a left child of `node2.parent`, set
+      `node2.parent.left = nil` (likewise for right). This means you
+      may need to track whether a node is a left or right child.
+    * If `node1.left` is not nil, set `node1.left.parent = nil`.
+    * Then set `node2.parent = node1`.
+    * Lastly, actually set the appropriate instance variable so that
+      `node1.left` is set appropriately.
+* Write a setter and getter for the node's `value`.
+
+**Phase II:**
 
 * Write a method `dfs` which takes a value to search for and performs
-  the search.
-  * Write this recursively
-    * first check the value at this node
-    * next recursively check left node
-    * next recursively check the right node
-  * If a node's value matches the target value, return the node.
+  the search. Write this recursively.
+    * First, check the value at this node. If a node's value matches
+      the target value, return the node.
+    * Next, recursively check left node.
+    * Next, recursively check the right node.
+* Write a method `bfs` to implement breadth first search.
+    * You will use a local `Array` variable to implement this.
+    * First, insert the current node (`self`) into the array.
+    * Then, in a loop that lasts while the array is not empty:
+        * Remove the first node,
+        * Check its value,
+        * Push the node's children to the end of the array.
+* Prove to yourself that this will check the nodes in the right
+  order.
 
-* Write a method `bfs` to implement breadth first search
-  * You will use a local `Array` variable to implement this
-  * First insert the current node (`self`) into the array
-  * Then, in a loop that lasts while the array is not empty
-    * remove the first node
-    * check its value
-    * push the node's children to the end of the array
-  * Prove to yourself that this will check the nodes in the right
-    order
+**Phase III:**
 
-* Improve your `TreeNode` to handle an arbitrary number of children
+* Improve your `TreeNode` to handle an arbitrary number of children.
 * Improve your searches to optionally take a block that will return
-  true when an acceptable value is found (i.e., find the first node 
-  that makes the block return true.)
+  true when an acceptable value is found (i.e., find the first node
+  that makes the block return true).
 
 ## References
 
-* Wikipedia: [Data structure](http://en.wikipedia.org/wiki/Data_structure)
-* Wikipedia: [Algorithm](http://en.wikipedia.org/wiki/Algorithm)
-* Cool Ruby Algorithm Library: https://github.com/kanwei/algorithms
-* Wikipedia: [http://en.wikipedia.org/wiki/Minimax]
-* Depth First Youtube video [http://www.youtube.com/watch?v=CIm6RzdoPCI]
-* One Tree To Rule Them All (great page/tutorial on tree structure!) [http://ruby.about.com/od/textadventure/ss/One-Tree-To-Rule-Them-All.htm]
+* Wikipedia: [Data structure][wiki-data-structure]
+* Wikipedia: [Algorithm][wiki-algorithm]
 
+[wiki-data-structure]: http://en.wikipedia.org/wiki/Data_structure
+[wiki-algorithm]: http://en.wikipedia.org/wiki/Algorithm
