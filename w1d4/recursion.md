@@ -252,26 +252,29 @@ arrays**. Make sure to return the location of the found object (or
 
 ### Make Change
 
-RubyQuiz: [Make change][make-change-mirror]
-
-* Start out by solving the problem for sensible currencies like
-  `[25, 10, 5, 1]`. Bonus: read the note and then solve the problem
-  for currencies like `[10, 7, 1]`.
+RubyQuiz: [Make change][make-change-mirror]. Make sure your solution
+works not only for our normal currency, but wonky currencies like
+`[10, 7, 1]`. This means trying every combination of coins.
 
 [make-chane-mirror]: http://web.archive.org/web/20130215052843/http://rubyquiz.com/quiz154.html
 
 ### Wrapping up: `merge_sort` and `subsets`
 
 * Implement a method, [`merge_sort`][wiki-merge-sort] that sorts an
-  `Array`. Hint: The base case for this sort is surprisingly simple.
+  `Array`.
+    * Hint: The base case for this sort is surprisingly simple.
+    * You'll want to write a `merge` helper method to merge the sorted
+      halves.
 * Write a method, `subsets`, that will return all subsets of an array.
 
 ```ruby
 subsets([]) # => [[]]
 subsets([1]) # => [[], [1]]
 subsets([1, 2]) # => [[], [1], [2], [1, 2]]
-subsets([1, 2, 3]) # => [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
-# can also implement as an instance method
+subsets([1, 2, 3])
+# => [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
+
+# you can implement this as an Array method if you prefer.
 ```
 
 [wiki-binary-search]: http://en.wikipedia.org/wiki/Binary_search
