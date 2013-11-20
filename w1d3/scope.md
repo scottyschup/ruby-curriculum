@@ -1,10 +1,14 @@
 # Scope
 
-[Scope](http://en.wikipedia.org/wiki/Scope_(computer_science\)) is the context in which a variable name is valid and can be
-used.
+[Scope][wiki-scope] is the context in which a variable name is valid
+and can be used.
 
-A name is *in scope* (accessible) if the name has been previously defined in the current method (called a
-  *local variable*) or at a higher level of the current method. A new level starts whenever we begin a class, a method, or a block.
+[wiki-scope]: http://en.wikipedia.org/wiki/Scope_(computer_science)
+
+A name is **in scope** (accessible) if the name has been previously
+defined in the current method (called a **local variable**) or at a
+higher level of the current method. A new level starts whenever we
+begin a class, a method, or a block.
 
 We can't use a variable before it is defined:
 
@@ -16,7 +20,7 @@ def pow(base, exponent)
 
     i += 1
   end
-  
+
   result
 end
 ```
@@ -36,7 +40,7 @@ def extract_cat_age
   # creates a new local variable inside this method; won't add
   # variable to global scope; variable will be lost when method is
   # over
-  
+
   cat_age = cat[:age]
 end
 
@@ -44,7 +48,7 @@ extract_cat_age
 cat_age # ERROR: variable out of scope
 ```
 
-Sometimes things are subtle. 
+Sometimes things are subtle:
 
 ```ruby
 def fourth_power(i)
@@ -56,31 +60,19 @@ def square(i)
 end
 
 # Ah, but by the time we _call_ `fourth_power` and run the
-# interior code, `square` will have been defined
+# interior code, `square` will have been defined.
 
 fourth_power(2)
 ```
 
 ## Global variables
+
 ***NOTE:*** This last bit about global variables is not essential.
 
-While you shouldn't typically create global variables, you can do so with the `$` prefix.
-If you remember the trick to run a special `main()`-ish method in ruby: 
+While you shouldn't typically create global variables, you can do so
+with the `$` prefix.
 
-```
-if __FILE__ == $PROGRAM_NAME
-  # Put "main" code here
-end
-```
-Here `$PROGRAM_NAME` is an example of a special global variable which has an ever expansive scope. 
-'__FILE__' is the name of the file the code lives in.  See [this link][file].
-Even if you're loading in the contents of a library, you'll still have access to the `$`-globals defined within it.
-See [this link][rubyist-global-vars].  
-[rubyist-global-vars]: http://www.rubyist.net/~slagell/ruby/globalvars.html
-[file]: http://stackoverflow.com/questions/224379/what-does-file-mean-in-ruby
-
-## Credit
-
-[Wikipedia: Scope][wiki-scope]
-
-[wiki-scope]: http://en.wikipedia.org/wiki/Scope_(computer_science)
+You can also create file-local global variables by defining a variable
+without `$` at the top-level (outside any block, method,
+class). However, file-local global variable won't be accessible to
+other Ruby files that load the file.
