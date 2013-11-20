@@ -293,6 +293,8 @@ item following the ampersand. For example, in the above code,
 [`#to_proc`][symbol-to-proc] is called on the symbols `:upcase` and
 `:odd`.
 
+[symbol-to-proc]: http://ruby-doc.org/core-2.0.0/Symbol.html#method-i-to_proc
+
 When `#to_proc` is called on a symbol, we get back a `Proc` object
 that just calls a method with the same name as the symbol on its
 argument. Here's what the above is "actually doing".
@@ -331,34 +333,35 @@ Note: In order to convert a symbol to a string you can use `#to_s` or
 
 * Watch Peter's [Procs, Blocks and Lambdas][peter-youtube-blocks].
 
+[peter-youtube-blocks]: http://www.youtube.com/watch?v=VBC-G6hahWA
+
 ## Exercises
 
 Estimated time: 1hrs
 
 * Implement new `Array` methods `my_each`, `my_map`, `my_select`. Do
   it by monkey-patching the `Array` class. Don't use any of the
-  original versions when writing these. If you want to use `each` to
-  define some of the others (good idea!), use your `my_each` method.
+  original versions when writing these. You can use `my_each` to
+  define the others.
 * Implement a `my_inject` method. Your version shouldn't take an
   optional starting argument; just use the first element. Ruby's
   `inject` is fancy (you can write `[1, 2, 3].inject(:+)` to shorten
-  up `[1, 2, 3].inject { |sum, num| sum + num }`), but focus on the
-  block (and not the symbol) version.
-* **Don't use `my_each` for this one!** Define your own
-  `Array#my_sort!`: it should take in a block to perform the
-  comparison:
+  up `[1, 2, 3].inject { |sum, num| sum + num }`), but do the block
+  (and not the symbol) version.
+* Define your own `Array#my_sort!` (you don't need `my_each`
+  anymore). It should take in a block to perform the comparison:
 
   ```ruby
   [1, 3, 5].my_sort! { |num1, num2| num1 <=> num2 } #sort ascending
   [1, 3, 5].my_sort! { |num1, num2| num2 <=> num1 } #sort descending
   ```
 
-  `#<=>` (the *spaceship* method)
+  `#<=>` (the **spaceship** method)
   [compares objects][so-spaceship]. `x.<=>(y)` returns `-1` if `x` is
   less than `y`. If `x` and `y` are equal, it returns `0`. If greater,
   `1`. You can define `<=>` on your own classes.
 
-* Write a `eval_block` method that takes some arguments and a block.
+* Write an `eval_block` method that takes some arguments and a block.
   (Note: this method is not part of the Array class; just write a
   stand-alone method.)  It should call the block, passing all the
   arguments to the block at once (individually, not as an array) using
@@ -367,24 +370,13 @@ Estimated time: 1hrs
     * To take possibly multiple arguments, check out the Ruby
       [splat operator][splat-operator].
 
-[peter-youtube-blocks]: http://www.youtube.com/watch?v=VBC-G6hahWA
+[so-spaceship]: http://stackoverflow.com/questions/827649/what-is-the-ruby-spaceship-operator
 [splat-operator]: http://kconrails.com/2010/12/22/rubys-splat-operator
-[symbol-to-proc]: http://ruby-doc.org/core-2.0.0/Symbol.html#method-i-to_proc
 
 ## Resources
 
 * [Robert Sosinski on Blocks][sosinski-blocks]
 * [Skorks on Procs and Lambdas][skorks-blocks]
-* [The difference between curly braces and do end][stack-overflow-do-end] (Read the first answer!)
-
-## Extra Credit
-
-* Read [Fizzbuzz written entirely with Procs][fizzbuzz-procs]
-  * [HN discussion on the above article][HN-fizzbuzz-procs]
 
 [sosinski-blocks]: http://www.robertsosinski.com/2008/12/21/understanding-ruby-blocks-procs-and-lambdas
 [skorks-blocks]: http://www.skorks.com/2010/05/ruby-procs-and-lambdas-and-the-difference-between-them/
-[stack-overflow-do-end]: http://stackoverflow.com/questions/5587264/do-end-vs-curly-braces-for-blocks-in-ruby
-[so-spaceship]: http://stackoverflow.com/questions/827649/what-is-the-ruby-spaceship-operator
-[fizzbuzz-procs]: http://codon.com/programming-with-nothing
-[HN-fizzbuzz-procs]: http://news.ycombinator.com/item?id=3343205
