@@ -15,12 +15,12 @@ a word randomly. Interaction should look something like so:
     Secret word: h_ll_
 
 Next, add functionality to let the user pick a word; they only need to
-put in how long it is, not what the word is. The human player
+enter the word length, not what the word is. The human player
 shouldn't trust giving the word to the computer. The computer should,
 using its dictionary, start guessing. The human should tell the
-computer the positions (if any) where that letter occurs. While you're
+computer the positions (if any) where the guessed letter occurs. While you're
 getting this interaction working, you can have the computer
-temporarily guess random letters. Make sure to request a Code review
+temporarily guess random letters. Make sure to request a code review
 from your TA before you move on and improve your AI.
 
 The computer should try to be smart and guess letters from words of
