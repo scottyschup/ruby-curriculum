@@ -39,6 +39,17 @@ The `Game.new` method should take `guessing_player` and
 `checking_player` arguments; the game should not treat a computer
 player any differently than a human player.
 
+### API Thoughts
+
+Here are some methods of both `HumanPlayer` and `ComputerPlayer` that
+I implemented:
+
+* `pick_secret_word`
+* `receive_secret_length`
+* `guess`
+* `check_guess`
+* `handle_guess_response`
+
 ## Phase III: Computer Guesses Intelligently
 
 Next, the computer should try to be smart and guess letters from words
