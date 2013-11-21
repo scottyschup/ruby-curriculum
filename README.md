@@ -5,9 +5,6 @@
 ### w1d1
 
 + [First Day! **Read me!**][day1-instructions]
-+ Tips/Tricks
-    + [Keyboard Shortcuts][keyboard-shortcuts]
-    + [A note on Ruby versions][versions]
 + Primitive Ruby types (common methods)
     + [Array][array]
     + [String][string]
