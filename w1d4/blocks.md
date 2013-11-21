@@ -123,10 +123,18 @@ method. If you want to pass multiple procs, you must pass them as
 normal arguments:
 
 ```ruby
-proc_add_1 = Proc.new {|num| puts num + 1}
-proc_add_2 = Proc.new {|num| puts num + 2}
+proc_add_1 = Proc.new {|num| num + 1}
+proc_add_2 = Proc.new {|num| num + 2}
 
-def adding_method(array, proc1, proc2, &proc3) do |num|
+def chain_blocks(start_val, proc1, proc2, &proc3)
+  val1 = proc1.call(start_val)
+  val2 = proc2.call(val1)
+  val3 = proc3.call(val2)
+
+  val3
+end
+
+chain_blocks(1, proc_add_1, proc_add_2) do |num|
   num + 3
 end
 ```
