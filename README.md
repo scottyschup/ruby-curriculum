@@ -184,7 +184,7 @@
   [Chess solution][chess-solution] side-by-side with your own code.
 + **Solo Project**: [Checkers][checkers-project]
 
-[chess-solution]: https://github.com/appacademy/solutions/tree/master/w2/w2d2-w2d3/lib
+[chess-solution]: https://github.com/appacademy/solutions/tree/master/w2/w2d2-w2d3
 [checkers-project]: ./projects/w2d4-checkers.md
 
 ## RSpec
