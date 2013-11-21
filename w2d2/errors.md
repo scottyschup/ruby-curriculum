@@ -1,4 +1,5 @@
 # Exceptions
+
 ## Goal
 
 * Know when to use exceptions.
@@ -6,6 +7,7 @@
 * Know how to run some code regardless of an exception being thrown.
 
 ## Basics
+
 Things don't always work out the way you plan. Sometimes your code
 will experience an error. Exceptions are the means of telling the
 caller that your code can't do what was asked.
@@ -13,15 +15,15 @@ caller that your code can't do what was asked.
 ```ruby
 def sqrt(num)
   unless num >= 0
-    raise ArgumentError.new "Cannot take sqrt of negative number" 
+    raise ArgumentError.new "Cannot take sqrt of negative number"
   end
-  
+
   # code to calculate square root...
 end
 ```
 
-Since we can't take the square root of a negative number, we *raise*
-an *exception* instead of returning an answer. When an exception is
+Since we can't take the square root of a negative number, we **raise**
+an **exception** instead of returning an answer. When an exception is
 raised, the method stops executing. Instead of returning, an exception
 is thrown. The method's caller then gets a chance to handle the
 exception:
@@ -33,7 +35,7 @@ def main
     # get an integer from the user
     puts "Please input a number"
     num = gets.to_i
-    
+
     begin
       sqrt(num)
     rescue ArgumentError => e
@@ -45,21 +47,23 @@ end
 ```
 
 If the user feeds in a negative number, `sqrt` will raise an
-exception. Because main has wrapped this code in a begin/rescue/end
-block, the exception will be *caught*. The code will jump to the
+exception. Because `main` has wrapped this code in a begin/rescue/end
+block, the exception will be **caught**. The code will jump to the
 rescue block that anticipates an `ArgumentError`. It will save the
 exception in the variable `e`, then run the error handling code.
 
-If the calling method doesn't rescue (or *catch* or *handle*) an
-exception, it continues to *bubble up* the *call stack*. So the
-caller's caller gets a chance, then their caller, then...
+If the calling method doesn't rescue (we also say **catch** or
+**handle**) an exception, it continues to **bubble up** the **call
+stack**. So the caller's caller gets a chance, then their caller,
+then...
 
 If no method throughout the entire call stack catches the exception,
 the exception is printed to the user and the program exits.
 
 ## Ensure
+
 Sometimes there is important code that must be executed whether an
-exception is raised or otherwise. In this case, we can use "ensure".
+exception is raised or otherwise. In this case, we can use `ensure`.
 
 ```ruby
 begin
@@ -92,18 +96,18 @@ def prompt_name
   puts "Please input a name:"
   # split name on spaces
   name_parts = gets.chomp.split
-  
+
   if name_parts.count != 2
     raise "Uh-oh, finnicky parsing!"
   end
-  
+
   name_parts
 end
 
 def echo_name
   begin
     fname, lname = prompt_name
-    
+
     puts "Hello #{fname} of #{lname}"
   rescue
     puts "Please only use two names."
@@ -117,6 +121,7 @@ the beginning. It is useful for "looping" until an operation completes
 successfuly.
 
 ## Exception Hierarchy
+
 There are a number of predefined exception classes in Ruby. You can
 find them [here][exception-classes]. You should try to choose an
 appropriate class. One of the more common exceptions to use is
@@ -140,6 +145,7 @@ types (perhaps to handle them differently), you can extend
 ```ruby
 class EngineStalledError < StandardError
 end
+
 class CollisionOccurredError < StandardError
 end
 
@@ -159,6 +165,7 @@ end
 ```
 
 ## Don't go crazy
+
 Exceptions are a great tool for handling unexpected errors. But once
 you have a hammer, you may find yourself starting to look for nails.
 
@@ -193,6 +200,7 @@ because until you have a practical need for a feature, you're just
 trying to imagine how that feature should work.
 
 ## Exercises
+
 Estimated time: 30min.
 
 * Go back to your Mastermind, Hangman, and TreeNode projects to harden
@@ -200,6 +208,7 @@ Estimated time: 30min.
   rescue them.
 
 ## Resources
+
 * [Skorks on exceptions][skorks-exceptions]
 * [Ruby Patterns][Ruby-Patterns]
 
