@@ -1,51 +1,49 @@
 # Tic-tac-toe AI
 
-* You should have extended your TreeNode to have multiple children
-before you implement this.
+Let's extend your tic-tac-toe AI player so that is is unbeatable!
 
-Extend your tic-tac-toe AI player so that is is unbeatable.
+## Phase I: `TicTacToeNode`
 
-You can imagine representing the possibilities of the game in a
-tree. Each node has a value representing a grid. There would be one
-child node for each possible move. For convenience, we may want to
-also store who moves next in the `TreeNode`'s `value` (maybe we could
-use a hash `{:grid => grid, :next_move => :x}`).
+Let's create a class `TicTacToeNode`. This will represent a TTT
+game-state: it will store the current state of the `board` plus the
+`next_player` to move. Also, if given, store the `prev_move_pos` (this
+will come in handy later).
 
-The leaves of the tree are the winning, losing, and drawing grids.
+You don't have to reuse your previous `TreeNode` class for this.
 
-Let us define a *winning grid* for a player:
+Write a method `children` that returns nodes representing all the
+potential game states one move after the current node.
 
-* the grid is a complete game where the player has won
-* it is a grid that, no matter the opponent's move, the resulting
-  position is a winning grid
+Next, we want to characterize a node as either a
+`#losing_node?(player)` or `#winning_node?(player)`. A `#losing_node?`
+means:
 
-A winning move is one which leads to a winning grid. A losing move is
-one which allows the opponent to reply with a winning move.
+* The board is over and the opponent has won, OR
+* It is the player's turn, and all the children nodes are losing
+  boards for the player, OR
+* It is the opponent's turn, and one of the children nodes is a
+  losing board for the player.
 
-You should write your AI so that it
+Likewise, a winning node means either
 
-1. makes a winning move if possible
-2. avoids any losing moves
-3. otherwise moves randomly
+* The board is over and the player has won, OR
+* It is the player's turn, and one of the children nodes is a winning
+  board for the player, OR
+* It is the oppoenent's turn, and all of the children nodes are
+  winning nodes for the player.
 
-The crux of your task is in implementing a `is_winning_node?(node,
-player)`. Intuitively, this should check that every child (grid after
-opponent's move) has a child (grid after our next move) which
-`is_a_winning node?`. To be clear, a winning node is one that absolutely
-wins, regardless of what your opponent plays.
+Notice that `winning_node?` and `losting_node?` do a recursive search
+in the tree, but that neither is DFS or BFS exactly. That's cool; we
+can use trees outside of BFS/DFS.
 
-`is_losing_node?` should then be easy to define; none of the child
-nodes should be a winning node for the opponent. If a move results in
-your opponent having a winning node, you must trim that move.
+## Phase II: `SuperComputerPlayer`
 
-Final note: since the kind of search we're doing to evaluate
-`is_winning_node?` is a little sophisticated, it doesn't fit under DFS
-or BFS. That's okay; you'll have to figure out the proper recursion.
+Write a subclass of `ComputerPlayer`; we'll override the `#move`
+method to use our `TicTacToeNode`.
 
-Another note: when building the game tree, if you do not trim it, it
-could take upwards of 10 minutes (if not more). Think of ways to
-reduce branching. For example, if there is a winning move one could
-make, there is no way they would choose any other move.
+In the `#move` method, build a `TicTacToeNode` from the current
+board. Next, iterate through the children. If there is a winning node,
+pick that move. Else, try to avoid a losing node.
 
-One more thing...: make sure to request a code review from your TA
-once you can build a game tree.
+Run your TTT game with the `SuperComputerPlayer`. Make sure you can
+never win!
