@@ -1,8 +1,10 @@
 # Knight's Travails
 
 In this problem we want to write a class that will find a path for a
-Chess Knight from a starting position to an end position.
-Both the starting and ending position should be on a standard 8x8 chess board.
+Chess Knight from a starting position to an end position.  Both the
+starting and ending position should be on a standard 8x8 chess board.
+
+**NB**: this problem is a lot like word chains!
 
 Write a class, `KnightPathFinder`. Initialize your `KnightPathFinder`
 with a starting position. For instance
@@ -16,10 +18,11 @@ kpf.find_path([2, 1]) # => [[0, 0], [2, 1]]
 kpf.find_path([3, 3]) # => [[0, 0], [2, 1], [3, 3]]
 ```
 
-To help us find paths, we want to build a *move tree*. The values in
+To help us find paths, we want to build a **move tree**. The values in
 the tree will be positions. A parent is connected to a child if you
 can move from the parent position to the child position. The root of
-the tree should be the knight's starting position.
+the tree should be the knight's starting position. You will want to
+build on your `TreeNode` work.
 
 Write a method `KnightPathFinder#build_move_tree` to build the move
 tree and store it in an instance variable. Call this method in
