@@ -25,6 +25,8 @@ sure to find the *shortest path* through the maze.
 
 
 ## Resources
+**NB**: Try taking a naive approach first. Once you've got something working read on...
+
 * Reading Files [progzoo]
 * Simple-ish explanation for computer pathfinding, start at "Starting the Search" heading [policyalmanac]
 * Wikipedia: maze shortest path [wikipedia]
