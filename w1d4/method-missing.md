@@ -72,9 +72,9 @@ User.find_by_username_and_state("ruggeri", "California")
 
 Rather than create a method for every single possible way to search
 (which is almost infinite), Rails overrides the `#method_missing`
-method, and for `find_by_*` methods, it then parses the method name and
-figures out how it should perform the search. Here's how it might do
-this:
+method, and for `find_by_*` methods, it then parses the method name
+and figures out how it should perform the search. Here's how it might
+do this:
 
 ```ruby
 class User
@@ -87,10 +87,12 @@ class User
       # attribute_names is, e.g., ["first_name", "last_name"]
       attribute_names = attributes_string.split("_and_")
 
-      raise "unexpected # of arguments" unless attribute_names.length == args.length
+      unless attribute_names.length == args.length
+        raise "unexpected # of arguments"
+      end
 
       search_conditions = {}
-      attribute_names.length.times do |i|
+      attribute_names.each_index do |i|
         search_conditions[attribute_names[i]] = args[i]
       end
 
