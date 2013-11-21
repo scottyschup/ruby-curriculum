@@ -47,19 +47,19 @@ many types of employee.
 ```ruby
 class Employee
   def wage
-    20000
+    20_000
   end
 end
 
 class Manager < Employee
   def wage
-    50000
+    50_000
   end
 end
 
 class CEO < Manager
   def wage
-    1000000
+    1_000_000
   end
 end
 
@@ -81,10 +81,11 @@ Don't introduce subclasses before you need them. In the example of
 just one `Worker` class and a variable that held the `@wage` of the
 `Worker`.
 
-A good guideline to follow is not to introduce a new subclass until
-(1) you are facing two different subclasses of the base class, and (2)
-the two subclasses have substantially different behavior. In short,
-don't use inheritance until it serves a purpose like keeping your code
-DRY or helping code organization. (Remember that the point of DRY is to 
-minimize errors, speed up the debugging process and make your code easier
-to change or add to in the future.)
+A good guideline to follow is not to introduce a new subclass until:
+
+* You are facing two different subclasses of the base class, AND
+* The two subclasses have substantially different behavior.
+
+In short, don't use inheritance until it serves a purpose like keeping
+your code DRY or helping code organization. Needlessly complicated
+inheritance hierarchies are a common mistake of novice programmers.
