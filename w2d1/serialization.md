@@ -3,9 +3,12 @@
 ## Goals
 
 * Know what serialization and persistence are.
-* Know how to transfer between a Ruby object and a [JSON](http://en.wikipedia.org/wiki/JSON) or [YAML](http://en.wikipedia.org/wiki/Yaml)
-  representation.
+* Know how to transfer between a Ruby object and a [JSON][wiki-json]
+  or [YAML][wiki-yaml] representation.
 * Know how to save these to a file you might read again later.
+
+[wiki-json]: http://en.wikipedia.org/wiki/JSON
+[wiki-yaml]: http://en.wikipedia.org/wiki/Yaml
 
 ## Serialization
 
@@ -17,10 +20,11 @@ reloaded. You cannot do either of these things directly.
 
 To do this you need to first convert the Ruby object into a
 representation that can be saved to disk or sent over a network. This
-process is called *serialization*.
+process is called **serialization**.
 
-There are many, many serialization *formats*, or ways of representing
-data. Probably the most important in the web world is JSON:
+There are many, many serialization **formats**, or ways of
+representing data. Probably the most important in the web world is
+JSON:
 
 ```json
 { "fieldA": "valueA",
@@ -54,17 +58,14 @@ JSON doesn't know how to serialize more complicated classes though:
 
 You can fix this somewhat by defining a `to_json` method on your
 classes, but that involves you writing custom serialization code. It
-will also be a pain to do the opposite translation. Note: JSON can
-only parse objects that contain arrays and hashes. Strings and numbers
-must be converted inside a hash or array structure to be read as JSON
-input.
+will also be a pain to do the opposite translation.
 
 ## YAML
 
 YAML is meant to solve the problem of saving custom classes.
 
 ```
-> require 'yaml'
+[11] pry(main)> require 'yaml'
 [12] pry(main)> c = Cat.new("Breakfast", 8, "San Francisco")
 => #<Cat:0x007ff434926690 @age=8, @city="San Francisco", @name="Breakfast">
 [13] pry(main)> puts c.to_yaml
@@ -97,9 +98,3 @@ sending and receiving JSON data.
 
 In the world of client-side Ruby, YAML is the leader because of its
 better support for deserializing classes.
-
-## References
-
-* About.com: [YAML](http://ruby.about.com/od/advancedruby/ss/Serialization-In-Ruby-Yaml.htm)
-* About.com: [JSON Gem](http://ruby.about.com/od/tasks/a/The-Json-Gem.htm)
-* w3schools.com [JSON Tutorial](http://www.w3schools.com/json/default.asp)
