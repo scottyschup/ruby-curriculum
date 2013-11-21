@@ -1,14 +1,10 @@
 # Minesweeper
 
 Everyone remembers [Minesweeper][minesweeper-wiki], right? Let's build
-it!
+it! **Read all these instructions first**.
 
-Support two grid sizes:
-
-* 9x9 board with 10 mines
-* 16x16 board with 40 mines (do this later, should be easy)
-
-The user has two choices each turn.
+Start by supporing a single grid size: 9x9; randomly seed it with
+bombs. The user has two choices each turn:
 
 ### Reveal
 
@@ -18,9 +14,9 @@ contains a bomb, then all the adjacent neighbors are also revealed. If
 any of the neighbors have no adjacent bombs, they too are revealed. Et
 cetera.
 
-The "fringe" of the revealed area are squares all adjacent to a
-bomb. The fringe should be revealed, but should contain counts of how
-many adjacent bombs are nearby.
+The "fringe" of the revealed area are squares all adjacent to a bomb
+(or corner). The fringe should be revealed, but should contain counts
+of how many adjacent bombs are adjacent.
 
 ### Flag bomb
 
@@ -57,6 +53,14 @@ to solve the game. Perhaps keeping track of the ten best times in a
 leaderboard. You may want to keep separate lists for the different
 sizes.
 
-[minesweeper-wiki]: http://en.wikipedia.org/wiki/Minesweeper_(Windows)
+### Hints
 
-[minesweeper-images]: https://www.google.com/search?q=minesweeper&hl=en&source=lnms&tbm=isch&sa=X&ei=-YpIUbm4Ne3OigLqtoCQCA&ved=0CAoQ_AUoAQ&biw=1440&bih=718#imgrc=oVJxrNO_45jh2M%3A%3BDpsumKp3yEhDPM%3Bhttp%253A%252F%252Fimgsrv.worldstart.com%252Fct-images%252Fminesweeper_cheat.jpg%3Bhttp%253A%252F%252Fwww.worldstart.com%252Fminesweeper-secret%252F%3B400%3B287
+I think you should have a `Tile` class; there's a lot of information
+to track about a `Tile` (bombed? flagged? revealed?) and some helpful
+methods you could write (`#reveal`, `#neighbors`,
+`#neighbor_bomb_count`). I would also have a `Board` class.
+
+You should separate logic pertaining to Game UI and turn-taking from
+the `Tile`/`Board` classes.
+
+[minesweeper-wiki]: http://en.wikipedia.org/wiki/Minesweeper_(Windows)
