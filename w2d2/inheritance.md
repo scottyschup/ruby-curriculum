@@ -48,11 +48,11 @@ class SuperUser < User
 end
 ```
 
-Here we use '<' to denote that the `SuperUser` class *inherits* from
+Here we use `<` to denote that the `SuperUser` class **inherits** from
 the `User` class. That means that the `SuperUser` class gets all of
-the methods of the `User` class. We say that `User` is the *parent
-class* or *superclass*, and that `SuperUser` is the *child class* or
-*subclass*. So we can write code like so:
+the methods of the `User` class. We say that `User` is the **parent
+class** or **superclass**, and that `SuperUser` is the **child class**
+or **subclass**. So we can write code like so:
 
 ```ruby
 [13] pry(main)> load 'test.rb'
@@ -73,7 +73,7 @@ Die, Jamis Buck, die!
 => nil
 ```
 
-`SuperUser` *overrides* some of `User`'s methods: `initialize` and
+`SuperUser` **overrides** some of `User`'s methods: `initialize` and
 `upvote_article`. The definitions in `SuperUser` will be called
 instead.
 
@@ -84,6 +84,7 @@ original definition in `User`. This is done through the call of
 Calls to `super` are especially common when overriding `initialize`.
 
 ## Inheritance and Code Reuse
+
 Inheritance has allowed us to avoid duplicating the methods that are
 common to `User` and `SuperUser`. Here's another example:
 
@@ -135,7 +136,7 @@ end
 
 class Human < Animal
   attr_reader :name
-  
+
   def initialize(name)
     @name = name
   end
@@ -148,7 +149,7 @@ that:
 ```ruby
 class Human < Animal
   attr_reader :name
-  
+
   def initialize(name)
     # super calls the original definition of the method
     super("Human")
@@ -158,18 +159,18 @@ end
 ```
 
 ## Exercises
+
 Estimated time: 45min.
 
 ### Employee and Manager
+
 Write a class `Employee` that has attributes that return the
 employee's name, title, salary, and boss.
 
 Write another class, `Manager`, that extends `Employee`. `Manager`
 should have an attribute that holds an array of all employees assigned
-to the manager. Add a method to assign a new employee to a manager; it
-should set the employee's manager attribute and add the employee to
-the manager's employee list. Note that managers can be assigned to
-higher level managers, of course.
+to the manager. Note that managers can be assigned to higher level
+managers, of course.
 
 Add a method, `bonus(multiplier)` to `Employee`. Employees
 should get a bonus like this
