@@ -3,8 +3,9 @@
 ## Private Methods
 
 In Ruby, we can mark specific methods in our classes as
-*private*. When we do so, the only way to access those methods is from
-within the class itself. Here's an example of what that looks like:
+**private**. When we do so, the only way to access those methods is
+from within the class itself. Here's an example of what that looks
+like:
 
 ```ruby
 class Airplane
@@ -14,15 +15,14 @@ class Airplane
   end
 
   private
-    def start_engine
-      ...
-    end
+  def start_engine
+    ...
+  end
 end
 ```
 
 All methods after the [`private`][private-keyword] keyword are private
-to the class. Notice that we have indented the private code; this
-isn't required, but might help you remember that this code is private.
+to the class.
 
 What kind of methods should be `private`? Ones which users of the
 class should not call, either for safety reasons (user doesn't know
@@ -30,10 +30,10 @@ when they should `start_engine`) or because they're low-level details
 that don't concern them (user just wants to `fly`, doesn't want to
 know how that happens).
 
-Instance variables cannot be accessed outside the class so they are
-always "private" by default. You can however use
-[`attr_accessor`][attr-accessor] to expose instance variables and
-allow people to get or set them.
+Instance variables are always "private" in the sense that they are not
+even methods. You can expose instance variables to the outside world
+by making public getter/setter methods using
+[`attr_accessor`][attr-accessor] and the like.
 
 ## Shy Code
 
@@ -59,8 +59,8 @@ you expose.
 That said, if you miss a method that should be private but is instead
 public, it won't be a disaster. Myself, I focus on catching cases
 where a method is obviously internal to the workings of the
-class. Robust code ready to release to the outside world should be
-checked for this, though.
+class. Robust code ready to release to the outside world should
+eventually be checked for proper use of `private`, though.
 
 [private-keyword]: http://ruby-doc.org/core-2.0/Module.html#method-i-private
 [attr-accessor]: http://ruby-doc.org/core-2.0/Module.html#method-i-attr_accessor
