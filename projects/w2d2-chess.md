@@ -130,9 +130,9 @@ relatively straightforward to add new player types at a later date.
 
 ## Tips
 
-* Do **not** concern yourself with tricky moves like "en
-  passant". Don't implement castling, draws, or pawn promotion. You
-  **should** handle check and check mate, however.
+* Do not implement tricky moves like "en passant". Don't implement
+  castling, draws, or pawn promotion either. You **should** handle
+  check and check mate, however.
 * Once you get some of your pieces moving around the board, **call
   over your TA for a code-review**.
 * Here's a four-move sequence to get to checkmate from a starting
