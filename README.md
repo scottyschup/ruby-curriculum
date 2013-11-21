@@ -101,14 +101,14 @@
 + [Recursion][recursion]
 + **Project**: [Word chains][word-chains]
 + **Bonus Project**: [Test First Ruby][test-first-ruby] XML parser
-  (use [method_missing][method_missing])
+    * Bonus Reading: [`method_missing`][method-missing]
 
 [blocks]: ./w1d4/blocks.md
 [recursion]: ./w1d4/recursion.md
 
 [word-chains]:  ./projects/w1d4-word-chains.md
 [test-first-ruby]: https://github.com/alexch/learn_ruby
-[method_missing]: ./bonus/metaprogramming.md#method_missing
+[method-missing]: ./w1d4/method-missing.md
 
 ### w1d5
 
