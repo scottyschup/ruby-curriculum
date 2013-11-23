@@ -29,7 +29,7 @@ Likewise, a winning node means either
 * The board is over and the player has won, OR
 * It is the player's turn, and one of the children nodes is a winning
   board for the player, OR
-* It is the oppoenent's turn, and all of the children nodes are
+* It is the opponent's turn, and all of the children nodes are
   winning nodes for the player.
 
 Notice that `winning_node?` and `losting_node?` do a recursive search
