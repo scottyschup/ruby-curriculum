@@ -1,6 +1,7 @@
 # Tic-tac-toe AI
 
-Let's extend your tic-tac-toe AI player so that is is unbeatable!
+Let's extend my tic-tac-toe AI player so that is is unbeatable! Use my
+solution please.
 
 ## Phase I: `TicTacToeNode`
 
