@@ -119,23 +119,18 @@ tree. It should have the following interface:
 
 **Phase I:**
 
-* A `#parent` method to get the node's parent (if any).
-* To start, write simple setters and getters for the `left` and
-  `right` child nodes.
-* Write a setter and getter for the node's `value`.
-* I'd like to improve our `left=` and `right=` methods to (a) `detach`
-  the prior child and the new child from their current parents, (b)
-  set the new child's parent to the new parent, and (c) finally set
-  the new child as a child of parent.
-* To do this, start by writing a `detach` method that will set
-  `parent` to nil and remove the node as a child of `parent`. You'll
-  probably want to keep track of whether a node is a left or right
-  child (I called this property `position`).
-* Write a method `TreeNode#set_child(new_child, position)`. This
-  should detach the new child and the old child (if necessary). It
-  should record the position in the child, and connect the
-  parent/new child.
-* Write `left=` and `right=` specially to use `set_child`.
+* Write a class with three properties:
+    * A `parent` property to hold the parent node.
+    * A `children` property that holds children of the parent.
+    * `value` property to hold the value at the node.
+* Writea `TreeNode#remove_child(child_node)` method; it should remove
+  `child_node` from the `children` array and set `child_node.parent =
+  nil`.
+* You should have a method `add_child` to add a child to the children
+  array.
+    * Remove the child from its previous parent if necessary.
+    * Set the child's parent to its new parent.
+    * Add the child to the new parent's children array.
 
 **Phase II:**
 
@@ -143,8 +138,9 @@ tree. It should have the following interface:
   the search. Write this recursively.
     * First, check the value at this node. If a node's value matches
       the target value, return the node.
-    * Next, recursively check left node.
-    * Next, recursively check the right node.
+    * Next, check the value of the first child node.
+    * Next, check the value of the second child node.
+    * Continue checking all the nodes.
 * Write a method `bfs` to implement breadth first search.
     * You will use a local `Array` variable to implement this.
     * First, insert the current node (`self`) into the array.
@@ -154,13 +150,7 @@ tree. It should have the following interface:
         * Push the node's children to the end of the array.
 * Prove to yourself that this will check the nodes in the right
   order.
-
-**Phase III:**
-
-* Improve your `TreeNode` to handle an arbitrary number of children.
-* Improve your searches to optionally take a block that will return
-  true when an acceptable value is found (i.e., find the first node
-  that makes the block return true).
+* Get your TA to check your work!
 
 ## References
 
