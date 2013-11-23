@@ -40,17 +40,19 @@ if you don't keep track of visited positions, you will probably get
 caught in a loop (move back and forth between adjacent positions).
 
 You want to make sure your tree will represent the shortest paths to
-any position. Build your tree in a *breadth-first* manner. Find all
-the positions that are one move away, then all the ones that are two
-moves away, then three...
+any position. Build your tree in a *breadth-first* manner. Take
+inspiration from your BFS algorithm: use a queue to process nodes in
+FIFO. Start with a root node, then build ndoes representing positions
+one move away, add those to the queue. Then take the next node from
+the queue. Etc.
 
 Once you can build a move tree, make sure to get a code review from
 your TA.
 
 Now you are ready to write `#find_path(target_pos)`. Find path should
 search in your move tree for the `target_pos`. You should use either
-your `dfs` or `bfs` methods from the TreeNode exercises. This will
-return a tree node which is the final destination.
+your `dfs` or `bfs` methods from the TreeNode exercises; it doesn't
+matter. This will return a tree node which is the final destination.
 
 This gives us a node, but not a path. Lastly, add an instance method
 `TreeNode#path` to your `TreeNode` class. This should trace back from
