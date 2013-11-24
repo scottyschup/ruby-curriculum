@@ -1,7 +1,7 @@
 # Tic-tac-toe AI
 
-Let's extend my tic-tac-toe AI player so that is is unbeatable! Use my
-solution please.
+Let's extend my tic-tac-toe AI player so that is is unbeatable! **Use
+my TicTacToe solution please**.
 
 ## Phase I: `TicTacToeNode`
 
@@ -25,7 +25,7 @@ means:
 * It is the opponent's turn, and one of the children nodes is a
   losing board for the player.
 
-Likewise, a winning node means either
+Likewise, a winning node means either:
 
 * The board is over and the player has won, OR
 * It is the player's turn, and one of the children nodes is a winning
@@ -33,9 +33,8 @@ Likewise, a winning node means either
 * It is the opponent's turn, and all of the children nodes are
   winning nodes for the player.
 
-Notice that `winning_node?` and `losting_node?` do a recursive search
-in the tree, but that neither is DFS or BFS exactly. That's cool; we
-can use trees outside of BFS/DFS.
+Notice that `winning_node?` and `losing_node?` are defined
+recursively.
 
 ## Phase II: `SuperComputerPlayer`
 
