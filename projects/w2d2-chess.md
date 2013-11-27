@@ -17,7 +17,7 @@ Start by writing a `Piece` parent class which contains the
 functionality common to all pieces. A key method of `Piece` is
 `#moves`, which should return an array of places a `Piece` can move
 to. Of course, every piece will move differently, so you can't write
-(**implement**) the `#move` method of `Piece` without subclasses.
+(**implement**) the `#moves` method of `Piece` without subclasses.
 
 You can make subclasses for `SlidingPiece` and `SteppingPiece`. The
 `SlidingPiece` class can implement `#moves`, but it needs to know what
