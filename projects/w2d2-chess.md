@@ -63,7 +63,9 @@ write a `Piece#move_into_check?(pos)` method that will:
 
 To do this, you'll have to write a `Board#dup` method. Your `#dup`
 method should duplicate not only the `Board`, but the pieces on the
-`Board`.
+`Board`.  **Be aware**: Ruby's `#dup` method does not copy the instance 
+variables, so you may need to write a `#dup` method for your pieces
+as well!
 
 #### A Note on Deep Duping your Board
 
@@ -82,6 +84,8 @@ queen_copy.position[0] = "CHANGED"
 # wtf?
 queen.position # => ["CHANGED", 1]
 ```
+
+
 
 ### An alternative to duping?
 
