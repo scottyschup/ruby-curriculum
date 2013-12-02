@@ -140,6 +140,9 @@
 ### w2d1
 
 + **Assessment01** ([practice][assessment-practice])
+    + Please setup Ruby + RSpec on your own machine and bring it.
+    + If you need to use one of our machines, please just use a single
+      monitor.
 + [Serialization][serialization] (JSON and YAML)
 + [Gems and rvm][gems]
 + **Project**: [Minesweeper][minesweeper]
