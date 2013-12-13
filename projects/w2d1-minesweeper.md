@@ -63,4 +63,10 @@ methods you could write (`#reveal`, `#neighbors`,
 You should separate logic pertaining to Game UI and turn-taking from
 the `Tile`/`Board` classes.
 
+If you use command line arguments and `ARGV` to specify the name of
+the save file to load, you may be surprised to find that console input
+is broken. [This ruby-forum.com post][argv-description] explains how
+gets interacts with `ARGV`/`ARGF`.
+
 [minesweeper-wiki]: http://en.wikipedia.org/wiki/Minesweeper_(Windows)
+[argv-description]: https://www.ruby-forum.com/topic/185266#809660
