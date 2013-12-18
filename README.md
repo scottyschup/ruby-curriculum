@@ -226,8 +226,8 @@
 + [Modules][modules]
 + [load/require/require_relative][require]
 + [public/private/protected][privacy]
-+ **TODO**: [How RSpec works document][how-rspec-works]
-+ **TODO**: [Hash and Equals][hash-and-equals]
++ [How RSpec works document][how-rspec-works]
++ [Hash and Equals][hash-and-equals]
 
 [modules]: ./bonus/modules.md
 [require]: ./bonus/require.md
