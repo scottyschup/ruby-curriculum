@@ -126,7 +126,7 @@ tree. It should have the following interface:
 * Writea `TreeNode#remove_child(child_node)` method; it should remove
   `child_node` from the `children` array and set `child_node.parent =
   nil`.
-* You should have a method `add_child` to add a child to the children
+* You should have a method `TreeNode#add_child(child_node)` to add a child to the children
   array.
     * Remove the child from its previous parent if necessary.
     * Set the child's parent to its new parent.
@@ -134,14 +134,14 @@ tree. It should have the following interface:
 
 **Phase II:**
 
-* Write a method `dfs` which takes a value to search for and performs
+* Write a method `TreeNode#dfs(value)` which takes a value to search for and performs
   the search. Write this recursively.
     * First, check the value at this node. If a node's value matches
       the target value, return the node.
     * Next, check the value of the first child node.
     * Next, check the value of the second child node.
     * Continue checking all the nodes.
-* Write a method `bfs` to implement breadth first search.
+* Write a method `TreeNode#bfs(value)` to implement breadth first search.
     * You will use a local `Array` variable to implement this.
     * First, insert the current node (`self`) into the array.
     * Then, in a loop that lasts while the array is not empty:
