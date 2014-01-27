@@ -513,7 +513,18 @@ cols = [
 
 Write a method, `my_transpose`, which will convert between the
 row-oriented and column-oriented representations. You may assume
-square matrices for simplicity's sake.
+square matrices for simplicity's sake. Usage will look like the following:
+
+```ruby
+my_transpose([
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8]
+  ])
+ # => [[0, 3, 6],
+ #    [1, 4, 7],
+ #    [2, 5, 8]]
+```
 
 ### Stock Picker
 
