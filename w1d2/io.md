@@ -146,7 +146,7 @@ file. If you wish append to an existing file, you will need to use
 `"a"`. For more file mode options check
 [this SO post][so-file-open-modes].
 
-[file-open-modes]: http://stackoverflow.com/questions/3682359/what-are-the-ruby-file-open-modes-and-options?answertab=votes#tab-top
+[so-file-open-modes]: http://stackoverflow.com/questions/3682359/what-are-the-ruby-file-open-modes-and-options?answertab=votes#tab-top
 
 ## Closing files
 
