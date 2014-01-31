@@ -42,7 +42,7 @@ caught in a loop (move back and forth between adjacent positions).
 You want to make sure your tree will represent the shortest paths to
 any position. Build your tree in a *breadth-first* manner. Take
 inspiration from your BFS algorithm: use a queue to process nodes in
-FIFO. Start with a root node, then build ndoes representing positions
+FIFO. Start with a root node, then build nodes representing positions
 one move away, add those to the queue. Then take the next node from
 the queue. Etc.
 
