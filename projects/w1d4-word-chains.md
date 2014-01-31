@@ -28,7 +28,7 @@ strategy:
   it through `adjacent_words`, using the `@candidate_words` as the
   dictionary.
 * For each of the adjacent words, remove it from `@candidate_words`
-  (so that we don't return to it again, and add it to both
+  (so that we don't return to it again), and add it to both
   `@words_to_expand` and `@all_reachable_words`.
 * Continue looping until there are no words left to expand.
 
