@@ -1,7 +1,8 @@
 # Tic-tac-toe AI
 
 Let's extend my tic-tac-toe AI player so that is is unbeatable! **Use
-my TicTacToe solution please**.
+[my TicTacToe solution][ttt-sol] please**.
+[ttt-sol]: https://github.com/appacademy/solutions/blob/master/w1/w1d2/06_tic_tac_toe.rb
 
 ## Phase I: `TicTacToeNode`
 
