@@ -61,3 +61,11 @@ root, it should add each value to an array. `#path` should return the
 values in order from the root down to the node.
 
 Use `TreeNode#path` to finish up `KnightPathFinder#find_path`.
+
+Here are some example paths that you can use for testing purposes:
+(Yours might not be exactly the same, but should be the same number of steps.)
+
+```ruby
+kpf.find_path([7, 6]) # => [[0, 0], [1, 2], [2, 4], [3, 6], [5, 5], [7, 6]]
+kpf.find_path([6, 2]) # => [[0, 0], [1, 2], [2, 0], [4, 1], [6, 2]]
+```
