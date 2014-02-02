@@ -33,6 +33,8 @@ means:
 * It is the opponent's turn, and one of the children nodes is a
   losing board for the player.
 
+**NB: a draw (Board#tied?) is NOT a loss, if a node is a draw, losing_node? should return false**
+
 Likewise, a winning node means either:
 
 * The board is over and the player has won, OR
