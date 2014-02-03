@@ -101,14 +101,12 @@ Normally you have one SSH key per machine; each machine you work on,
 you push another SSH key to github. But we have many workstations, and
 you will work at different ones every day.
 
-We've already created an App Academy SSH key that is shared across all
-the workstations. To copy the public key (this is what you paste into
-the github website), run
-
-    $ cat ~/.ssh/id_rsa.pub | pbcopy
-
-You should now be authorized to push to your repo from any of our
-machines. Great!
+Rather than setting up SSH keys on the workstations, we would ask that 
+you push using HTTPS.  This method will ask for your github username 
+and password on the command line to authorize the push, and will send 
+that login securely using encryption.  To use HTTPS, set the url of 
+the remote repository starting with `https://github.com/your_username_here/repo_name.git`
+rather than `git@github.com:your_username_here/repo_name.git`.
 
 The next step is to configure your repo so that you are saving your
 commits under the right name. This is easy. Change directory into your
