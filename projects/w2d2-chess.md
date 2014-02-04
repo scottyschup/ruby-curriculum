@@ -158,7 +158,8 @@ style, encapsulation, and exception handling.
  * Method decomposition (pull chunks of code into helper methods)
  * Make helper methods private
  * Jazz up your User Interface (UI) with [colorize][colorize-gem] and
-   [unicode][wiki-chess-unicode].
+   [unicode][wiki-chess-unicode]. (Add the following to the top of your files 
+to allow ruby to parse unicode: `# encoding: utf-8` .)
 
 [wiki-chess]: http://en.wikipedia.org/wiki/Chess
 [recursion-exercises]: ../w1d4/recursion.md
