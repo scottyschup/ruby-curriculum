@@ -46,10 +46,10 @@ returns whether a player is in check. You can implement this by (1)
 finding the position of the king on the board then (2) seeing if any
 of the opposing pieces can move to that position.
 
-The `Board` class should have a `#move(start, end)` method. This
+The `Board` class should have a `#move(start, end_pos)` method. This
 should update the 2d grid and also the moved piece's position. You'll
 want to raise an exception if: (a) there is no piece at `start` or (b)
-the piece cannot move to `end`.
+the piece cannot move to `end_pos`.
 
 ## Phase III: `Piece#valid_moves`
 
