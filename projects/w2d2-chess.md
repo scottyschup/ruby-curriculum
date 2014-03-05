@@ -85,7 +85,8 @@ queen_copy.position[0] = "CHANGED"
 queen.position # => ["CHANGED", 1]
 ```
 
-
+### Caution on dupping pieces
+If your piece holds a reference to the original board, you will need to update this reference to the new dupped board. Failure to do so will cause your duped board to generate incorrect moves!
 
 ### An alternative to duping?
 
