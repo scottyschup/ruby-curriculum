@@ -64,27 +64,26 @@ provided in the correct order. But Ruby also has a means to let you
 pass arguments by *name*. An example is more easily understood:
 
 ```ruby
+require 'active_support/all'
 def brittle_format_url(scheme, host, path, query_hash)
-  # I'm using a hypothetical method `format_query_string` to turn
   # a hash to a query string.
-  query_string = format_query_string(query_hash)
-
-  "#{options[:scheme]}://#{options[:path]}?#{query_string}"
+  query_string = query_hash.to_query
+  "#{ scheme }://#{ host }/#{ path }?#{ query_string }"
 end
 
 # have to remember to supply arguments in order
 # no defaults. ugh.
-brittle_format_url(
+p brittle_format_url(
   "http",
   "www.google.com",
-  "/search",
+  "search",
   { :search_query => "mitt romney, how many sons?" }
 )
-
+# => "http://www.google.com/search?search_query=mitt+romney%2C+how+many+sons%3F"
 def better_format_url(options = {})
   defaults = {
     :scheme => "http",
-    :path => "/",
+    :path => "",
     :query_hash => {}
   }
 
@@ -93,22 +92,24 @@ def better_format_url(options = {})
   # and assigning it to `options`
   options = defaults.merge(options)
 
-  query_string = format_query_string(options[:query_hash])
+  query_string = options[:query_hash].to_query
 
-  "#{options[:scheme]}://#{options[:path]}?#{query_string}"
+  "#{ options[:scheme] }://#{ options[:host] }/#{ options[:path] }?#{ query_string }"
 end
 
-better_format_url({
+p better_format_url({
   :scheme => "http",
   :host => "www.google.com",
-  :path => "/search"
+  :path => "search",
   :query_hash => {
     :search_query => "mitt romney, how many sons?"
   }
 })
+#=> "http://www.google.com/search?search_query=mitt+romney%2C+how+many+sons%3F"
 
 # rely on defaults for scheme ("http"), path ("/"), query_hash ({})
-better_format_url({ :host => "www.nytimes.com" })
+p better_format_url({ :host => "www.nytimes.com" })
+#=> "http://www.nytimes.com/?"
 ```
 
 Hopefully it is clear that the `better_format_url` is more convenient
