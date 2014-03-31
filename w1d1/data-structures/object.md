@@ -188,8 +188,7 @@ class Fraction
     # different types of objects should return false
     return false unless (other.is_a?(Fraction))
 
-    (numerator.to_f / denominator.to_f) ==
-      (other.numerator.to_f / other.denominator.to_f)
+    (numerator * other.denominator) == (other.numerator * denominator)
   end
 end
 ```
