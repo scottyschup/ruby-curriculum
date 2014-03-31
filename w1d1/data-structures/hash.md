@@ -166,7 +166,7 @@ Note: true is just used as a placeholder value.
 
 We could have defined a class named `Set`, and these methods would
 have been instance methods. We don't define a new class here because I
-want you to see how you can do this with just methods, and hijack the
+want you to see how you can do this with just methods, and use the
 Ruby `Hash` class to represent your set.
 
 ### Hash offset
