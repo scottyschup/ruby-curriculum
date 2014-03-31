@@ -9,7 +9,7 @@ and an 'E' for an end point.
 [maze1]: mazes/maze1.txt
 
 You should write a program that will read in the maze, try to explore
-a path through it to the end, and then prints out a completed path
+a path through it to the end, and then print out a completed path
 [like so][maze1-soln]. If there is no such path, it should inform the
 user.
 

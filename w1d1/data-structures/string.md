@@ -279,7 +279,7 @@ num_to_s(234, 2) #=> "11101010"
 ```
 
 The general idea is to each time divide by a greater power of `base`
-and the mod the result by `base` to get the next digit. Continue until
+and then mod the result by `base` to get the next digit. Continue until
 `num / (base ** pow) == 0`.
 
 You'll get each digit as a number; you need to turn it into a

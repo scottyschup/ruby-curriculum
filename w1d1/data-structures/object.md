@@ -126,7 +126,7 @@ belong to, find what instance variables they hold. These methods can
 be handy, but they're an advanced feature you needn't be too concerned
 about right now.
 
-One helpful method, `class` can tell you what kind of object you're
+One helpful method, `class`, can tell you what kind of object you're
 dealing with:
 
 ```ruby

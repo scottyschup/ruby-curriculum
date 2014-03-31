@@ -9,7 +9,7 @@
   * how to set an item at an index
   * how to perform a block on each element
 * Know how to name arrays appropriately.
-* Know why not to mix items in an array.
+* Know why not to mix types in an array.
 
 ## Creating arrays
 
@@ -106,7 +106,7 @@ deleted, and everything in the array shifts over one position; `array
 of the shifting.
 
 For this reason, don't add/remove elements to/from an array while you
-are iterating throug it.
+are iterating through it.
 
 One alternative to delete multiple elements of an array without
 iteration is [`#delete_if`][rdoc-delete-if].
@@ -165,7 +165,7 @@ new array. You may want to use the `Array#concat` method, if possible,
 which will instead modify the first array by appending references to
 objects in the second array.
 
-Note that this involves much less copying if the left array is longand
+Note that this involves much less copying if the left array is long and
 the right array small.
 
 Lastly, this digression isn't worth worrying too much about until you
