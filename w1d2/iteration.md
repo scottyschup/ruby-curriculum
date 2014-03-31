@@ -284,7 +284,7 @@ One alternative is to convert the range to an array and reverse it:
 end
 ```
 
-In thi case, it probably makes more sense to use
+In this case, it probably makes more sense to use
 [`Integer#downto`][downto-doc].
 
 [downto-doc]: http://ruby-doc.org/core-1.9.3/Integer.html#method-i-downto
