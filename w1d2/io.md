@@ -200,7 +200,7 @@ $ ruby my_cat_counter.rb list_of_cats.txt
 ```
 
 To access the filename passed in, use ARGV in your script.
-[ARGV][ARGF-doc]) returns an array of strings that were typed after
+[ARGV][ARGF-doc] returns an array of strings that were typed after
 your script name. Example:
 
 ```ruby
