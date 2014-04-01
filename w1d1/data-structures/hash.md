@@ -147,9 +147,14 @@ Estimated time: 30min
 
 ### Set
 
-Ruby provides a class named `Set`. You can read all about it in the
-[ruby-doc][ruby-set-doc]. Let's create a few methods that will
-manipulate a `Hash` as if it were a `Set`.  Like so:
+Ruby provides a class named `Set`. A set is an unordered collection of values with no duplicates.
+You can read all about it in the [ruby-doc][ruby-set-doc]. Let's create a few methods that will
+manipulate a `Hash` as if it were a `Set`. A hash is a convenient data structure for mimicking a set,
+as a hash can only have one entry for a given key. For this exercise, you'll store elements as if
+they're in a set by adding them as keys to a hash (for this purpose, they key's actual value in the
+hash doesn't really matter).
+
+Like so:
 
 ```ruby
 set_add_el({}, :x) # => make this return {:x => true}
