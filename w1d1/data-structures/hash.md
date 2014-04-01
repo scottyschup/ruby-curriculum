@@ -185,6 +185,7 @@ wrong_hash = { :a => "banana", :b => "cabbage", :c => "dental_floss", :d => "eel
 ```
 
 Write a method `correct_hash` that takes this wrong hash and returns
-the correct one.
+the correct one. It should switch the keys so that they reflect
+each entry's first letter.
 
 [ruby-set-doc]: http://www.ruby-doc.org/stdlib-1.9.3/libdoc/set/rdoc/Set.html
