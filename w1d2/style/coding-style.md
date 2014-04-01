@@ -103,7 +103,7 @@ Luckily, there's an [easy fix][easy-fix] for Textmate.
 We'll talk about it more in another chapter, but long methods are
 bad. If a method is >8 lines long, you should consider whether it
 might be broken into smaller methods. If your method is >20 lines
-long, it is too long. >40 lines and it's a beast; you need to breka
+long, it is too long. >40 lines and it's a beast; you need to break
 this up.
 
 New developers may write methods that are hundreds of lines. Don't do
