@@ -151,8 +151,8 @@ Ruby provides a class named `Set`. A set is an unordered collection of values wi
 You can read all about it in the [ruby-doc][ruby-set-doc]. Let's create a few methods that will
 manipulate a `Hash` as if it were a `Set`. A hash is a convenient data structure for mimicking a set,
 as a hash can only have one entry for a given key. For this exercise, you'll store elements as if
-they're in a set by adding them as keys to a hash (for this purpose, they key's actual value in the
-hash doesn't really matter).
+they're in a set by adding them as keys to a hash (for this purpose, the actual value associated with
+the key in the hash doesn't really matter).
 
 Like so:
 
