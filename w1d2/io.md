@@ -126,6 +126,7 @@ To read the lines individually, use readlines:
 contents = File.readlines("movie-times.txt")
 # returns an array, with each element representing a line of
 # "movie-times.txt"
+# Note: Each element will end with '\n'
 ```
 
 ## Writing a file
