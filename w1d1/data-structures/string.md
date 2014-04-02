@@ -235,7 +235,8 @@ Estimated time: 1hr
 
 In this exercise, you will define a method `num_to_s(num, base)`,
 which will return a string representing the original number in a
-different base (up to base 16).
+different base (up to base 16). **Do not use the built in
+`#to_s(base)`**.
 
 To refresh your memory, a few common base systems:
 

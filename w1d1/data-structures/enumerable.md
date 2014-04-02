@@ -195,7 +195,8 @@ section to familiarize yourself with blocks.
   integers. If the array has an odd number of integers, return the
   middle item from the sorted array. If the array has an even number
   of integers, return the average of the middle two items from the
-  sorted array. (This one might not use any enumerable methods?)
+  sorted array. (You actually don't need to use any enumerable methods
+  for this).
 
 * Create a method that takes in an `Array` of `String`s and uses
   `inject` to return the concatenation of the strings.
