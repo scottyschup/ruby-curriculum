@@ -2,6 +2,8 @@
 
 In this project, we write a program to play [Hangman][wiki-hangman].
 
+**NB: Be sure to read the entire instructions BEFORE you start coding.**
+
 ## Phase I: Human Guesses Word
 
 You should have two modes. In the first mode, the computer player
