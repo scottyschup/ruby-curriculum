@@ -377,6 +377,25 @@ Estimated time: 1hrs
   print out "NO BLOCK GIVEN!".
     * To take possibly multiple arguments, check out the Ruby
       [splat operator][splat-operator].
+    * Note that the wonderful splat operator can allow a method to
+      take _any_ number of arguments. It *also* allows us to pass an array 
+      of arguments to a method _as seperate arguments_. *See the example below:*
+
+```
+  #ex1
+  my_neat_method(thing1, thing2, banana)
+  
+  #ex2
+  my_arg_array = [thing1, thing2, banana)
+
+  my_neat_method(*my_arg_array)
+  
+```
+* In the example above, `my_neat_method` gets the arguments in 
+  _exactly_ the same way in both `ex1` and `ex2`. It has 
+  _*no_idea*_ the the arguments were _ever_ in `my_arg_array`.
+  The splat operator passed in the individual arguments as
+  separate, distinct, discrete, un-array-ified arguments.
 
 [so-spaceship]: http://stackoverflow.com/questions/827649/what-is-the-ruby-spaceship-operator
 [splat-operator]: http://kconrails.com/2010/12/22/rubys-splat-operator
