@@ -252,9 +252,10 @@ arrays**. Make sure to return the location of the found object (or
 
 ### Make Change
 
-RubyQuiz: [Make change][make-change-mirror]. Make sure your solution
+RubyQuiz: [Make change][make-change-mirror]. **Make sure your solution
 works not only for our normal currency, but wonky currencies like
-`[10, 7, 1]`. This means trying every combination of coins.
+`[10, 7, 1]`**. This means trying every combination of coins. **Check
+with your TA to verify your solution**.
 
 [make-change-mirror]: http://web.archive.org/web/20130215052843/http://rubyquiz.com/quiz154.html
 
