@@ -6,158 +6,198 @@
 atomic thing (this is sometimes called the *Single Responsibility
 Principle*). This may be one line of code, or three, but rarely more
 than ten. **Methods should be short.** Let's take a look at an example
-of refactoring one long method into short, atomic methods.  We'll use
-an implementation of the Mixology exercise we worked on in the
-methods section.
+of refactoring one long method into short, atomic methods, **NB** this is 
+sometimes called "iterative stiffening".  We'll use an implementation of 
+the hanoi exercise we worked on in the array section.
 
 Here's the problem description in case you don't remember it:
 
 ```
-The method `remix` should take an array of ingredient arrays (one
-alcohol, one mixer) and return the same type of data structure, with
-the ingredient pairs mixed up. Assume that the first item in the pair
-array is alcohol, and the second is a mixer. Don't pair an alcohol
-with an alcohol with or a mixer with a mixer. An example run of the
-program:
+Write a Towers of Hanoi game.
 
-remix([
-  ["rum", "coke"],
-  ["gin", "tonic"],
-  ["scotch", "soda"]
-])
-#=> [["rum, "tonic"], ["gin", "soda"], ["scotch", "coke"]]
+Keep three arrays, which represents the piles of discs. Pick a representation 
+of the discs to store in the arrays; maybe just a number representing their size.
+
+In a loop, prompt the user (using gets) and ask what pile to select a disc 
+from, and where to put it.
+
+After each move, check to see if they have succeeded in moving all the discs, 
+to the final pile. If so, they win!
+
 ```
 
 Here's an example of a one-method solution:
 
 ```ruby
-def remix(drinks)
-  alcohols = []
-  mixers = []
-
-  drinks.each do |drink|
-    alcohols << drink.first
-    mixers << drink.last
+def hanoi
+  disks = (1..3).to_a.reverse
+  stacks = [disks, [], []]
+  until stacks[0].empty? && stacks[1..2].any?(&:empty?)
+    max_height = stacks.map(&:count).max
+    render_string = (max_height - 1).downto(0).map do |height|
+      stacks.map do |stack|
+        stack[height] || " "
+      end.join("\t")
+    end.join("\n")
+    puts render_string
+    move_hash = { "a" => 0, "b" => 1, "c" => 2 }
+    while true
+      print "Move From: "
+      from_stack_num = move_hash[gets.chomp]
+      break unless from_stack_num.nil?
+      puts "Invalid move!"
+    end
+    while true
+      print "Move To: "
+      to_stack_num = move_hash[gets.chomp]
+      break unless to_stack_num.nil?
+      puts "Invalid move!"
+    end
+    from_stack, to_stack = stacks.values_at(from_stack_num, to_stack_num)
+    raise "cannot move from empty stack" if from_stack.empty?
+    unless (to_stack.empty? || to_stack.last > from_stack.last)
+      raise "cannot move onto smaller disk"
+    end
+    to_stack.push(from_stack.pop)
   end
-
-  alcohols.shuffle!
-  mixers.shuffle!
-
-  remixed_drinks = []
-  alcohols.length.times do
-    remixed_drinks << [alcohols.pop, mixers.pop]
-  end
-
-  remixed_drinks
+  puts "You did it!"
 end
 ```
 
 Let's start breaking this method into smaller methods. What are the
 steps that we take in this one fairly long method?
 
-1. Split the drinks into arrays of alcohols and mixers
-2. Shuffle the alcohol and mixer arrays
-3. Zip the two arrays into a (now remixed) drinks array
-4. Return the remixed drinks array
+1. Set up a stack of disks
+2. Set up a set of 3 stacks
+3. Loop until its over
+4. Display the stacks
+5. Get move to position
+6. Get move from position
+7. Move the disk while checking to see if move is valid
 
 Now that we've listed the atomic steps, it will be easy to split the
 method into smaller methods. Let's go step by step, and start by
-extracting the `split_ingredients` method:
+extracting the `disks` method:
 
 ```ruby
-def remix(drinks)
-  alcohols, mixers = split_ingredients(drinks)
-
-  alcohols.shuffle!
-  mixers.shuffle!
-
-  remixed_drinks = []
-
-  alcohols.length.times do
-    remixed_drinks << [alcohols.pop, mixers.pop]
-  end
-
-  remixed_drinks
+def disks
+  (1..3).to_a.reverse
 end
 
-def split_ingredients(drinks)
-  alcohols = []
-  mixers = []
+def hanoi
+  stacks = [disks, [], []]
+  # ...
+```
+Notice that the `disks` method has *one* job of returning a stack of disks.
 
-  drinks.each do |drink|
-    alcohols << drink.first
-    mixers << drink.last
-  end
+Lets extract stacks into a method that builds the stacks using disks.
 
-  [alcohols, mixers]
+```ruby
+def disks
+  (1..3).to_a.reverse
 end
+
+def stacks
+  [disks, [], []]
+end
+
+def hanoi
+  until stacks[0].empty? && stacks[1..2].any?(&:empty?)
+  # ...
+```
+Notice that stacks has one job of building the stacks from the disks.
+
+Now we're looping until the game is over, but it looks like this over 
+condition is starting to get a bit complex. Lets break out over into its
+own method.
+
+```ruby
+def over?
+  stacks[0].empty? && stacks[1..2].any?(&:empty?)
+end
+
+def hanoi
+  until over?
+  # ...
 ```
 
-Notice that we're using parallel assignment (aka array destructuring),
-here: `split_ingredients` returns an array with `alcohols` and
-`mixers` subarrays. We use parallel assignment to assign these
-subarrays to `alcohols` and `mixers` variables that are local to the
-`remix` method.
-
-Shuffle is already an atomic method, so no need to refactor that step.
-Let's extract a method to build the shuffled drinks array.
+While we're taking turns moving disks we'll probably want to display the current
+state of the board each time. Extracting that block of code might look like this:
 
 ```ruby
-def remix(drinks)
-  alcohols, mixers = split_ingredients(drinks)
-
-  alcohols.shuffle!
-  mixers.shuffle!
-
-  combine_ingredients(alcohols, mixers)
+def display
+  max_height = stacks.map(&:count).max
+  render_string = (max_height - 1).downto(0).map do |height|
+    stacks.map do |stack|
+      stack[height] || " "
+    end.join("\t")
+  end.join("\n")
 end
 
-def split_ingredients(drinks)
-  alcohols = []
-  mixers = []
-
-  drinks.each do |drink|
-    alcohols << drink.first
-    mixers << drink.last
-   end
-
-  [alcohols, mixers]
-end
-
-def combine_ingredients(alcohols, mixers)
-  drinks = []
-
-  alcohols.length.times do
-    drinks << [alcohols.pop, mixers.pop]
-  end
-
-  drinks
-end
+def hanoi
+  until over?
+    puts display
+    # ...
 ```
 
-Notice that the return value of `combine_ingredients` is the `drinks`
-array, so we no longer need to explicitly return `remixed_drinks` in
-the `remix` method!
-
-Take a look at the `remix` method:
+The next step is to get the from and to stacks. This logic for getting a stack 
+is mostly the same, less the prompt. We can write a method that takes a prompt 
+as an argument.
 
 ```ruby
-def remix(drinks)
-  alcohols, mixers = split_ingredients(drinks)
+def get_stack(prompt)
+  move_hash = { "a" => 0, "b" => 1, "c" => 2 }
+  while true
+    print prompt
+    stack_num = move_hash[gets.chomp]
+    return stack_num unless stack_num.nil?
+    puts "Invalid move!"
+  end
+end
 
-  alcohols.shuffle!
-  mixers.shuffle!
+def hanoi
+  until over?
+    puts display
+    from_stack_num = get_stack("Move from: ")
+    to_stack_num = get_stack("Move to: ")
+    from_stack, to_stack = @stacks.values_at(from_stack_num, to_stack_num)
+    raise "cannot move from empty stack" if from_stack.empty?
+    unless (to_stack.empty? || to_stack.last > from_stack.last)
+      raise "cannot move onto smaller disk"
+    end
+    to_stack.push(from_stack.pop)
+  # ...
+```
 
-  combine_ingredients(alcohols, mixers)
+Our methods are starting to look leaner :). The next step is to extract the work
+of moving the disk into its own `move_disk` method.
+
+```ruby
+def move_disk(from_stack, to_stack)
+  from_stack, to_stack = @stacks.values_at(from_stack_num, to_stack_num)
+  raise "cannot move from empty stack" if from_stack.empty?
+  unless (to_stack.empty? || to_stack.last > from_stack.last)
+    raise "cannot move onto smaller disk"
+  end
+  to_stack.push(from_stack.pop)
+end
+
+def hanoi
+  until over?
+    puts display
+    from_stack = get_stack("Move from: ")
+    to_stack = get_stack("Move to: ")
+    move_disk(from_stack, to_stack)
+  end
 end
 ```
 
 **It reads like plain English.** Hiding away our implementation
 details in well-named helper methods both reduced the length of
-`remix` and made its structure more transparent. If somebody looks at
+`hanoi` and made its structure more transparent. If somebody looks at
 this code, they will immediately understand what is going on, even
-without reading the definitions of `split_ingredients` and
-`combine_ingredients`.  This makes it a lot easier to understand code.
+without reading the definitions of `get_stack` and
+`move_disk`.  This makes it a lot easier to understand code.
 
 If they are interested in the implementation of a *specific action*,
 they know where to find it: localized to an atomic, helper method.
