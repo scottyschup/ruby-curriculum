@@ -131,6 +131,8 @@ the array of children.
     * Remove the child from its previous parent if necessary.
     * Set the child's parent to its new parent.
     * Add the child to the new parent's children array.
+* **NB**: Keep it simple. Don't worry about making sure that children nodes are
+  ordered by value or adding the children of a removed node back into the tree.
 
 **Phase II:**
 
