@@ -19,7 +19,7 @@ potential game states one move after the current node. To create
 this method, it will be necessary to iterate through all positions
 that are `empty?` on the board object, make a mark
 using *other player's* mark (the one that's the opposite of `@mark`),
-and shovel into an array the a new node representing the mark made.
+and shovel into an array a new node representing the mark made.
 Return this array. It is essential that you pass in the position
 that you marked as `prev_move_pos` for reasons that will make sense
 when we use it later.
