@@ -97,8 +97,8 @@
 + [Blocks][blocks]
 + [Recursion][recursion]
 + **Project**: [Word chains][word-chains]
-+ **Bonus Project**: [Test First Ruby][test-first-ruby] XML parser
-    * Bonus Reading: [`method_missing`][method-missing]
++ **Bonus Project**: Read [`method_missing`][method-missing], then do [Test First Ruby][test-first-ruby] XML parser
+    
 
 [blocks]: ./w1d4/blocks.md
 [recursion]: ./w1d4/recursion.md
