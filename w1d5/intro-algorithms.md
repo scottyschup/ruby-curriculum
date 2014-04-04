@@ -110,7 +110,7 @@ An algorithm can be coded up in any langauge.
 
 ## Exercises
 
-Estimated time: 8hrs
+Estimated time: 2hrs
 
 ### Implement a TreeNode class
 
