@@ -17,11 +17,11 @@ through a chain from a given starting word. Call this
 `explore_words(source, dictionary)`. I would follow this general
 strategy:
 
-* Initialize a set `words_to_expand` that starts with just the
+* Initialize an array `words_to_expand` that starts with just the
   source.
 * Initialize a set `candidate_words` that includes all the dictionary
   words of the appropriate length.
-* Initialize a set `all_reachable_words` that will contain all the
+* Initialize an array `all_reachable_words` that will contain all the
   reachable words. This should in the beginning just contain the
   source.
 * Start looping. Each turn, remove a word from `words_to_expand`. Run
