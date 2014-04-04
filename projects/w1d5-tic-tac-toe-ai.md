@@ -20,7 +20,7 @@ this method, it will be necessary to iterate through all positions
 that are not `empty?` on the board object, make a mark
 using `next_player`, and shovel into an array the resulting node.
 Return this array. It is essential that you pass in the position
-that you makred as `prev_move_pos` for reasons that will make sense
+that you marked as `prev_move_pos` for reasons that will make sense
 when we use it later.
 
 Next, we want to characterize a node as either a
@@ -44,7 +44,7 @@ Likewise, a winning node means either:
   winning nodes for the player.
 
 Notice that `winning_node?` and `losing_node?` are defined
-recursively. This indicates that while a node itsself might not
+recursively. This indicates that while a node itself might not
 immediately result in victory, if anywhere down the line a victory
 is inevitable a node is still a winner. 
 
