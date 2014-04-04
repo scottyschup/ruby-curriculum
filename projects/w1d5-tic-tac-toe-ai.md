@@ -8,8 +8,8 @@ Let's extend my tic-tac-toe AI player so that is is unbeatable! **Use
 
 Let's create a class `TicTacToeNode`. This will represent a TTT
 game-state: it will store the current state of the `board` plus the
-`next_player` to move. Also, if given, store the `prev_move_pos` (this
-will come in handy later).
+`mark` of the player who's turn it is at the current point in the game.
+Also, if given, store the `prev_move_pos` (this will come in handy later).
 
 This doesn't use the `TreeNode` you made earlier. We are making a
 completely new class independent of the `TreeNode`.
@@ -17,8 +17,9 @@ completely new class independent of the `TreeNode`.
 Write a method `children` that returns nodes representing all the
 potential game states one move after the current node. To create
 this method, it will be necessary to iterate through all positions
-that are not `empty?` on the board object, make a mark
-using `next_player`, and shovel into an array the resulting node.
+that are `empty?` on the board object, make a mark
+using *other player's* mark (the one that's the opposite of `@mark`),
+and shovel into an array the a new node representing the mark made.
 Return this array. It is essential that you pass in the position
 that you marked as `prev_move_pos` for reasons that will make sense
 when we use it later.
