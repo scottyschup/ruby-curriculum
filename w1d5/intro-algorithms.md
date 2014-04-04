@@ -123,11 +123,11 @@ tree. It should have the following interface:
     * A `parent` property to hold the parent node.
     * A `children` property that holds children of the parent.
     * `value` property to hold the value at the node.
-* Writea `TreeNode#remove_child(child_node)` method; it should remove
+* Write a `TreeNode#remove_child(child_node)` method; it should remove
   `child_node` from the `children` array and set `child_node.parent =
   nil`.
-* You should have a method `TreeNode#add_child(child_node)` to add a child to the children
-  array.
+* You should have a method `TreeNode#add_child(child_node)` to add a child to 
+the array of children.
     * Remove the child from its previous parent if necessary.
     * Set the child's parent to its new parent.
     * Add the child to the new parent's children array.
