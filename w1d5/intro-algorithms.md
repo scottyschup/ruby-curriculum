@@ -114,7 +114,7 @@ Estimated time: 2hrs
 
 ### Implement a TreeNode class
 
-Write a class named `TreeNode` which represents a node in a binary
+Write a class named `TreeNode` which represents a node in a
 tree. It should have the following interface:
 
 **Phase I:**
