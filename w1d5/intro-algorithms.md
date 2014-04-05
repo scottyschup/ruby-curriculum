@@ -114,44 +114,101 @@ Estimated time: 2hrs
 
 ### Implement a TreeNode class
 
-Write a class named `TreeNode` which represents a node in a
-tree. It should have the following interface:
+Write a class named `PolyTreeNode` which represents a node in a
+tree. We'll write a tree node class that can have an arbitrary number
+of children (not just two left/right children). It should have the
+following interface:
 
 **Phase I:**
 
-* Write a class with three properties:
-    * A `parent` property to hold the parent node.
-    * A `children` property that holds children of the parent.
-    * `value` property to hold the value at the node.
-* Write a `TreeNode#remove_child(child_node)` method; it should remove
-  `child_node` from the `children` array and set `child_node.parent =
-  nil`.
-* You should have a method `TreeNode#add_child(child_node)` to add a child to 
-the array of children.
-    * Remove the child from its previous parent if necessary.
-    * Set the child's parent to its new parent.
-    * Add the child to the new parent's children array.
-* **NB**: Keep it simple. Don't worry about making sure that children nodes are
-  ordered by value or adding the children of a removed node back into the tree.
+* Write a class with three methods:
+    * An `#initialize(value)` method that sets the value, and starts
+      `parent` as nil, and `children` to an empty array.
+    * A `#parent` method that returns the node's parent.
+    * A `#children` method that returns an array of children of a
+      node.
+    * A `#value` method that returns the value stored at the node.
+* Write a `parent=` method which (1) sets the parent property and (2)
+  adds the node to there parent's array of children (unless we're
+  setting parent to `nil`).
+
+Test your code out. Try something like this:
+
+```ruby
+n1 = PolyTreeNode.new("root")
+n2 = PolyTreeNode.new("child1")
+n3 = PolyTreeNode.new("child2")
+
+n2.parent = n1
+raise "Bad parent=!" unless n2.parent == n1
+raise "Bad parent=!" unless n1.children == [n2]
+
+n3.parent = n1
+raise "Bad parent=!" unless n3.parent == n1
+raise "Bad parent=!" unless n1.children == [n2, n3]
+
+n3.parent = n1
+
+# Be careful not to "re-add" n3 to the array of n1.children. We don't
+# want `n1.children == [n2, n3, n3]`. In your `parent=` method, you
+# can just return immediately if we call `parent=` with the current
+# parent.
+raise "Bad parent=!" unless n1.children == [n2, n3]
+```
 
 **Phase II:**
 
-* Write a method `TreeNode#dfs(value)` which takes a value to search for and performs
-  the search. Write this recursively.
+Your `parent=` code likely leaves a mess when re-assigning a
+parent. Here's what I mean:
+
+```ruby
+n1 = PolyTreeNode.new("root1")
+n2 = PolyTreeNode.new("root2")
+n3 = PolyTreeNode.new("root3")
+
+# connect n3 to n1
+n3.parent = n1
+# connect n3 to n2
+n3.parent = n2
+
+# this should work
+raise "Bad parent=!" unless n3.parent == n2
+raise "Bad parent=!" unless n2.children == [n3]
+
+# this probably doesn't
+raise "Bad parent=!" unless n1.children == []
+```
+
+In addition to (1) re-assigning the parent attribute of the child and
+(2) adding it to the new parent's array of children, we should also
+**remove** the child from the **old** parent's list of children (if
+the old parent isn't `nil`). Modify your `parent=` method to do this.
+
+**Make sure the old and new tests work before proceeding!**
+
+**Phase III:**
+
+The easiest phase! Write `add_child(child_node)` and
+`remove_child(child)` methods. They should both be one-liners that
+call `#parent=`.
+
+**Phase IV:**
+
+* Write a `#dfs(value)` method which takes a value to search for and
+  performs the search. Write this recursively.
     * First, check the value at this node. If a node's value matches
       the target value, return the node.
-    * Next, check the value of the first child node.
-    * Next, check the value of the second child node.
-    * Continue checking all the nodes.
-* Write a method `TreeNode#bfs(value)` to implement breadth first search.
-    * You will use a local `Array` variable to implement this.
-    * First, insert the current node (`self`) into the array.
-    * Then, in a loop that lasts while the array is not empty:
-        * Remove the first node,
+    * If not, iterate through the `#children` and repeat.
+* Write a `#bfs(value)` method to implement breadth first search.
+    * You will use a local `Array` variable as a queue to implement
+      this.
+    * First, insert the current node (`self`) into the queue.
+    * Then, in a loop that runs until the array is not empty:
+        * Remove the first node from the queue,
         * Check its value,
         * Push the node's children to the end of the array.
 * Prove to yourself that this will check the nodes in the right
-  order.
+  order. Draw it out. **Show this explanation to your TA.**
 * Get your TA to check your work!
 
 ## References
