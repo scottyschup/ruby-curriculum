@@ -55,7 +55,7 @@ Write a subclass of `ComputerPlayer`; we'll override the `#move`
 method to use our `TicTacToeNode`.
 
 In the `#move` method, build a `TicTacToeNode` from the board stored
-stored in the `game` passed in as an argument. Next, iterate through
+in the `game` passed in as an argument. Next, iterate through
 the `children` of the node we just created. If any of the children
 is a `winning_node?` for the mark passed in to the `#move` method,
 `return` that node's `prev_move_pos` because that is the position
