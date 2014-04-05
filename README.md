@@ -45,6 +45,7 @@
 
 ### w1d2
 
++ Read yesterday's [solutions][solutions]
 + [Methods][methods]
 + [Iteration][iteration]
 + [Symbols, Strings, and Option Hashes][symbols-and-strings]
@@ -57,6 +58,7 @@
 + [Classes][classes]
 + [Pass by reference][pass-by-reference]
 
+[solutions]: https://github.com/appacademy/solutions
 [methods]: ./w1d2/methods.md
 [iteration]: ./w1d2/iteration.md
 [symbols-and-strings]: ./w1d2/symbols-and-strings.md
