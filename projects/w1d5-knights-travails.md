@@ -22,9 +22,9 @@ To help us find paths, we want to build a **move tree**. The values in
 the tree will be positions. A parent is connected to a child if you
 can move from the parent position to the child position. The root of
 the tree should be the knight's starting position. You will want to
-build on your `TreeNode` work, using `TreeNode` instances to represent
-each position. You will need to modify your `TreeNode` class so it can
-have multiple children.
+build on your `PolyTreeNode` work, using `PolyTreeNode` instances to
+represent each position. You will need to modify your `PolyTreeNode`
+class so it can have multiple children.
 
 Write a method `KnightPathFinder#build_move_tree` to build the move
 tree and store it in an instance variable. Call this method in
@@ -53,19 +53,21 @@ your TA.
 
 Now you are ready to write `#find_path(target_pos)`. Find path should
 search in your move tree for the `target_pos`. You should use either
-your `dfs` or `bfs` methods from the TreeNode exercises; it doesn't
-matter. This will return a tree node which is the final destination.
+your `dfs` or `bfs` methods from the PolyTreeNode exercises; it
+doesn't matter. This will return a tree node which is the final
+destination.
 
 This gives us a node, but not a path. Lastly, add an instance method
-`TreeNode#path` to your `TreeNode` class. This should trace back from
-the node to the root using `#parent`. As it goes up-and-up toward the
-root, it should add each value to an array. `#path` should return the
-values in order from the root down to the node.
+`PolyTreeNode#path` to your `PolyTreeNode` class. This should trace
+back from the node to the root using `#parent`. As it goes up-and-up
+toward the root, it should add each value to an array. `#path` should
+return the values in order from the root down to the node.
 
-Use `TreeNode#path` to finish up `KnightPathFinder#find_path`.
+Use `PolyTreeNode#path` to finish up `KnightPathFinder#find_path`.
 
 Here are some example paths that you can use for testing purposes:
-(Yours might not be exactly the same, but should be the same number of steps.)
+(Yours might not be exactly the same, but should be the same number of
+steps.)
 
 ```ruby
 kpf.find_path([7, 6]) # => [[0, 0], [1, 2], [2, 4], [3, 6], [5, 5], [7, 6]]
