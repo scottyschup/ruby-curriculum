@@ -226,7 +226,7 @@ but doesn't recursively `dup` any arrays contained therein. So the
 the original interior arrays.
 
 Sometimes you want a shallow dup and sometimes you want a deep
-dup. Ruby keeps things simple by give you shallow dup, and letting you
+dup. Ruby keeps things simple by giving you shallow dup, and letting you
 write deep dup yourself.
 
 **Using recursion and the `is_a?` method, write an `Array#deep_dup`
