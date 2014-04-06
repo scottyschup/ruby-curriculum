@@ -122,6 +122,13 @@ Have `#run` call `build_path` and return the array.
 **Make sure to request a code review from your TA once you can find
 adjacent words**.
 
+## Bonus Phase: Stop Early
+
+Your `run` method will build the entire set of reachable words. This
+is wasteful if the source is close to the target. We can stop early in
+that case. Modify `run` to stop looping when `@all_seen_words`
+contains the target.
+
 ## Dictionary File
 
 [Click through][dictionary], hit the "RAW" button, and save the text
