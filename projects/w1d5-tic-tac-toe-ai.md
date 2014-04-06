@@ -16,14 +16,13 @@ This doesn't use the `TreeNode` you made earlier. We are making a
 completely new class independent of the `TreeNode`.
 
 Write a method `children` that returns nodes representing all the
-potential game states one move after the current node. To create
-this method, it will be necessary to iterate through all positions
-that are `empty?` on the board object, make a mark
-using *other player's* mark (the one that's the opposite of `@mark`),
-and shovel into an array a new node representing the mark made.
-Return this array. It is essential that you pass in the position
-that you marked as `prev_move_pos` for reasons that will make sense
-when we use it later.
+potential game states one move after the current node. To create this
+method, it will be necessary to iterate through all positions that are
+`empty?` on the board object, make a mark using **other player's**
+mark (the one that's the opposite of `@mark`), and shovel into an
+array a new node representing the mark made.  Return this array. It is
+essential that you pass in the position that you marked as
+`prev_move_pos` for reasons that will make sense when we use it later.
 
 Next, we want to characterize a node as either a
 `#losing_node?(player)` or `#winning_node?(player)`. A `#losing_node?`
@@ -31,25 +30,29 @@ means:
 
 * The board is over and the opponent has won, OR
 * It is the player's turn, and all the children nodes are losing
-  boards for the player, OR
-* It is the opponent's turn, and one of the children nodes is a
-  losing board for the player.
+  boards for the player (anywhere they move they still lose), OR
+* It is the opponent's turn, and one of the children nodes is a losing
+  board for the player (assumes your opponent plays perfectly; they'll
+  force you to lose if they can).
 
 **NB: a draw (Board#tied?) is NOT a loss, if a node is a draw,
-losing_node? should return false**
+losing_node? should return false.**
 
 Likewise, a winning node means either:
 
 * The board is over and the player has won, OR
 * It is the player's turn, and one of the children nodes is a winning
-  board for the player, OR
-* It is the opponent's turn, and all of the children nodes are
-  winning nodes for the player.
+  board for the player (we'll be smart and take that move), OR
+* It is the opponent's turn, and all of the children nodes are winning
+  nodes for the player (even TicTacToeKasparov can't beat you from
+  here).
 
-Notice that `winning_node?` and `losing_node?` are defined
-recursively. This indicates that while a node itself might not
-immediately result in victory, if anywhere down the line a victory is
-inevitable a node is still a winner.
+Notice that `winning_node?` and `losing_node?` are both defined
+recursively. This is what makes them look at all the ways the game can
+play out. For instance, a node can be a winning node even though we
+won't win on the very next turn; it just requires that, assuming we
+play perfectly, eventually we'll beat the opponent no matter what they
+do.
 
 ## Phase II: `SuperComputerPlayer`
 
@@ -69,6 +72,9 @@ its `prev_move_pos`. That will prevent the opponent from ever winning,
 and that's almost as good. To make that even more clear: if a winner
 isn't found, pick one of the children of our node that returns `false`
 to `losing_node?`.
+
+Finally, `raise` an error if there are no non-losing nodes. In TTT, if
+we play perfectly, we should always be able to force a draw.
 
 Run your TTT game with the `SuperComputerPlayer` and weep tears of
 shame because you can't beat a robot at tic tac toe.
