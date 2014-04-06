@@ -57,7 +57,9 @@ ERROR:  While executing gem ... (Gem::FilePermissionError)
 This is because the built-in Ruby that comes with OS X installs gems
 in a system directory where you need superuser permissions to create
 files. You'll read in some places that you should use `sudo gem
-install awesome_print`; **don't do that**.
+install awesome_print`; [**don't do that**][no-sudo-dummy].
+
+[no-sudo-dummy]: http://stackoverflow.com/a/2119413/2501181
 
 Instead, setup RVM (it's described for w1d1). You should no longer get
 this error. You should not use `sudo gem install` when using RVM.
