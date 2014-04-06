@@ -91,7 +91,7 @@ well as recording the class of object that was saved.
 
 Note that `c` and `c2` are different objects; serialization and
 deserialization are sometimes used as a very lazy man's clone.
-Don't do this: it is inefficient spares you the valuable learning
+Don't do this: it is inefficient and spares you the valuable learning
 experience of figuring out how to properly create a deep copy 
 of an object.
 
