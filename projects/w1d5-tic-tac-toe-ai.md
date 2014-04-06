@@ -8,8 +8,9 @@ Let's extend my tic-tac-toe AI player so that is is unbeatable! **Use
 
 Let's create a class `TicTacToeNode`. This will represent a TTT
 game-state: it will store the current state of the `board` plus the
-`mark` of the player who's turn it is at the current point in the game.
-Also, if given, store the `prev_move_pos` (this will come in handy later).
+`mark` of the player who's turn it is at the current point in the
+game.  Also, if given, store the `prev_move_pos` (this will come in
+handy later).
 
 This doesn't use the `TreeNode` you made earlier. We are making a
 completely new class independent of the `TreeNode`.
@@ -34,7 +35,8 @@ means:
 * It is the opponent's turn, and one of the children nodes is a
   losing board for the player.
 
-**NB: a draw (Board#tied?) is NOT a loss, if a node is a draw, losing_node? should return false**
+**NB: a draw (Board#tied?) is NOT a loss, if a node is a draw,
+losing_node? should return false**
 
 Likewise, a winning node means either:
 
@@ -46,8 +48,8 @@ Likewise, a winning node means either:
 
 Notice that `winning_node?` and `losing_node?` are defined
 recursively. This indicates that while a node itself might not
-immediately result in victory, if anywhere down the line a victory
-is inevitable a node is still a winner. 
+immediately result in victory, if anywhere down the line a victory is
+inevitable a node is still a winner.
 
 ## Phase II: `SuperComputerPlayer`
 
@@ -64,9 +66,9 @@ that causes a certain victory! I told you we would use that later!
 If none of the `children` of the node we created are `winning_node?`s,
 that's ok. We can just pick one that isn't a `losing_node?` and return
 its `prev_move_pos`. That will prevent the opponent from ever winning,
-and that's almost as good. To make that even more clear: if a winner 
-isn't found, pick one of the children of our node that returns `false` 
+and that's almost as good. To make that even more clear: if a winner
+isn't found, pick one of the children of our node that returns `false`
 to `losing_node?`.
 
-Run your TTT game with the `SuperComputerPlayer` and weep tears of shame
-because you can't beat a robot at tic tac toe.
+Run your TTT game with the `SuperComputerPlayer` and weep tears of
+shame because you can't beat a robot at tic tac toe.
