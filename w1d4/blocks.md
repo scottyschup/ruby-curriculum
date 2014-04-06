@@ -349,13 +349,15 @@ Estimated time: 1hrs
 
 * Implement new `Array` methods `my_each`, `my_map`, `my_select`. Do
   it by monkey-patching the `Array` class. Don't use any of the
-  original versions when writing these. You can use `my_each` to
-  define the others.
+  original versions when writing these. Use your `my_each` to define
+  the others. Remember that `each`/`map`/`select` do not modify the
+  original array.
 * Implement a `my_inject` method. Your version shouldn't take an
   optional starting argument; just use the first element. Ruby's
   `inject` is fancy (you can write `[1, 2, 3].inject(:+)` to shorten
   up `[1, 2, 3].inject { |sum, num| sum + num }`), but do the block
-  (and not the symbol) version.
+  (and not the symbol) version. Again, use your `my_each` to define
+  `my_inject`. Again, do not modify the original array.
 * Define your own `Array#my_sort!` (you don't need `my_each`
   anymore). It should take in a block to perform the comparison:
 
@@ -369,33 +371,57 @@ Estimated time: 1hrs
   less than `y`. If `x` and `y` are equal, it returns `0`. If greater,
   `1`. You can define `<=>` on your own classes.
 
-* Write an `eval_block` method that takes some arguments and a block.
-  (Note: this method is not part of the Array class; just write a
-  stand-alone method.)  It should call the block, passing all the
-  arguments to the block at once (individually, not as an array) using
-  the splat operator. If the user doesn't supply the block, it should
-  print out "NO BLOCK GIVEN!".
-    * To take possibly multiple arguments, check out the Ruby
-      [splat operator][splat-operator].
-    * Note that the wonderful splat operator can allow a method to
-      take _any_ number of arguments. It *also* allows us to pass an array 
-      of arguments to a method _as seperate arguments_. *See the example below:*
+  Your `my_sort!` should modify the array. After writing `my_sort!`,
+  write a `my_sort` that does the same but doesn't modify the
+  original. Do this in two lines using `dup`.
 
-```
-  #ex1
-  my_neat_method(thing1, thing2, banana)
-  
-  #ex2
-  my_arg_array = [thing1, thing2, banana)
+### `eval_block`
 
-  my_neat_method(*my_arg_array)
-  
+Write an `eval_block` method that takes some arguments and a block.
+(Note: this method is not part of the Array class; just write a
+stand-alone method.)  It should call the block, passing all the
+arguments to the block at once (individually, not as an array) using
+the splat operator. If the user doesn't supply the block, it should
+print out "NO BLOCK GIVEN!".
+
+To take possibly multiple arguments, check out the Ruby
+[splat operator][splat-operator]. Note that the wonderful splat
+operator can allow a method to take **any** number of arguments. It
+**also** allows us to pass an array of arguments to a method **as
+seperate arguments**. See the example below:
+
+```ruby
+#ex1
+my_neat_method(thing1, thing2, banana)
+
+#ex2
+my_arg_array = [thing1, thing2, banana)
+my_neat_method(*my_arg_array)
 ```
-* In the example above, `my_neat_method` gets the arguments in 
-  _exactly_ the same way in both `ex1` and `ex2`. It has 
-  _*no_idea*_ the the arguments were _ever_ in `my_arg_array`.
-  The splat operator passed in the individual arguments as
-  separate, distinct, discrete, un-array-ified arguments.
+
+In the example above, `my_neat_method` gets the arguments in
+**exactly** the same way in both `ex1` and `ex2`. It has
+**no_idea** the the arguments were **ever** in `my_arg_array`.
+The splat operator passed in the individual arguments as
+separate, distinct, discrete, un-array-ified arguments.
+
+Examples of calling `eval_block`:
+
+```ruby
+# Example calls to eval_block
+eval_block("Kerry", "Washington", 23) do |fname, lname, score|
+  puts "#{lname}, #{fname} won #{score} votes."
+end
+# => Washington, Kerry won 23 votes.
+
+eval_block(1,2,3,4,5) do |*args|
+  args.inject(:+)
+end
+# => 15
+
+eval_block(1, 2, 3)
+# => "NO BLOCK GIVEN"
+```
 
 [so-spaceship]: http://stackoverflow.com/questions/827649/what-is-the-ruby-spaceship-operator
 [splat-operator]: http://kconrails.com/2010/12/22/rubys-splat-operator
