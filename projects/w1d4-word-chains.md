@@ -4,68 +4,123 @@ Read the [Word Chains RubyQuiz][quiz-wayback].
 
 **NB: You shouldn't have to use recursion for this one.**
 
-The general idea is this:
+**NB: Review the entire outline before beginning.**
 
-## Phase I: All reachable words
+## Phase I: Adjacent Words
 
-First, write a helper method `adjacent_words(word, dictionary)`. This
-should return all words in the dictionary one letter different than
-the current word.
+Let's write a class `WordChainer`.
 
-Next, let's generate the set of all the words that can be reached
-through a chain from a given starting word. Call this
-`explore_words(source, dictionary)`. I would follow this general
-strategy:
+Begin writing the `#initialize(dictionary_file_name)` method. Read in
+the dictionary file. Store the array of dictionary words in an
+instance variable (e.g., `@dictionary`).
 
-* Initialize an array `words_to_expand` that starts with just the
-  source.
-* Initialize a set `candidate_words` that includes all the dictionary
-  words of the appropriate length.
-* Initialize an array `all_reachable_words` that will contain all the
-  reachable words. This should in the beginning just contain the
-  source.
-* Start looping. Each turn, remove a word from `words_to_expand`. Run
-  it through `adjacent_words`, using the `candidate_words` as the
-  dictionary.
-* For each of the adjacent words, remove it from `candidate_words`
-  (so that we don't return to it again), and add it to both
-  `words_to_expand` and `all_reachable_words`.
-* Continue looping until there are no words left to expand.
+Next, write a helper class method `adjacent_words(word)`. This should
+return all words in the dictionary one letter different than the
+current word. Here `dictionary` is an array of words.
 
-## Phase II: Finding a chain
+Verify that your `adjacent_words` method is working.
 
-Let's copy the code of `explore_words` and rework it into a method
-called `find_chain(source, target, dictionary)`.
+**Hint**: To speed up your search greatly, store your dictionary as a
+`Set`. The `Set#include?` method is much faster than `Array#include?`,
+since the `Array` version needs to iterate through all the elements of
+the array, whereas `Set` uses a cool trick we'll learn about when we
+get to the algorithms curriculum.
 
-Do as you did before, but in this case we don't need to keep track of
-`all_reachable_words`. Instead, keep a hash called `parents`. Each
-time you expand `word1` and encounter a new word `word2`, set
-`parents[word2] = word1`. In this way, you keep track of where each
-word came from.
+## Phase IIa: Exploring all words
 
-Keep looping until you encounter `target`. At this point, information
-for getting from `word1` to `word2` exists in the hash.
+Next, let's begin writing a method `#run(source, target)`. Our
+strategy is:
 
-We need to rebuild the path, it's time to write another method
-`build_path_from_breadcrumbs`.
+* Keep a list of `@current_words`. Start this with just `[source]`.
+* Also keep a list of `@all_seen_words`. Start this with just
+  `[source]`.
+* Begin an outer loop which will run as long as `@current_words` is
+  not empty.
+* The first thing to do in the inner loop is to create a new, empty
+  list of `new_current_words`. We're going to fill this up with new
+  words (that aren't in `@all_seen_words`) that are adjacent (one step
+  away) from a word in `@current_words`.
+* To fill up new_current_words, begin an inner loop through
+  `@current_words`.
+* For each `current_word`, iterate through all
+  `adjacent_words(current_words)`. This is a triply nested loop.
+* For each `adjacent_word`, skip it if it's already in
+  `@all_seen_words`; we don't need to reconsider a word we've seen
+  before.
+* Otherwise, if it's a new word, add it to both `new_current_words`,
+  and `@all_seen_words` so we don't repeat it.
+* After we finish looping through all the `@current_words`, print out
+  `new_current_words`, and reset `@current_words` to
+  `new_current_words`.
+
+Test your word chainer to make sure it returns (1) first the words
+that are one letter away from `source`, (2) next words that are one
+letter away from words one letter away from `source` (i.e., two
+letters away from source), etc. This is a **breadth first**
+enumeration of words that you can reach from the `source`.
+
+Make sure your `run` method eventually terminates: it should
+eventually enumerate all the words that are reachable from `source`,
+at which point `new_current_words` will come out empty. After setting
+`@current_words = new_current_words`. The outermost loop should
+terminate.
+
+**Call your TA over to check your work**.
+
+## Phase IIb: Refactor
+
+Your code will contain a triply nested loop. Break out the inner loop
+that iterates through `@current_words` and builds and assigns the
+`new_current_words` to its own method: `#explore_current_words`.
+
+## Phase III: Keep Track of Prior Words
+
+So far we've written our program to build a set of `@all_seen_words`,
+adding new words in breadth-first order. However, we don't record
+enough information to construct a path of words from the `source` to
+the `target`.
+
+Let's change our program. For every new word we encounter, let's
+record which previous word we modified to get to the new word. To do
+this, instead of keeping an array of `@all_seen_words`, lets make it a
+hash, where the keys are new words, and the value is the word we
+modified to get to the new word.
+
+Let's start `@all_seen_words` out as `{ source => nil }`, since
+`source` didn't come from anywhere. Let's modify
+`explore_current_words` so that instead of merely adding an
+`adjacent_word` to the array, we record it as the key, where the value
+is the `current_word` we came from.
+
+Modify `explore_current_words` to print not just the new words, but
+where they came from. At the end of `explore_current_words`, iterate
+through `new_current_words`, and print out the new word and the word
+it came from (the value in the `@all_seen_words` hash). Make sure this
+output makes sense. You may want to use a longer word like `"market"`
+to reduce the verbosity of the output.
+
+**Check with your TA after this phase.**
 
 ## Phase III: Backtracking
 
-Let's work backward from `target`, going through the steps we took to
-get there. Lookup the parent of `target`: this is the second-to-last
-word in the chain. Look at the parent of `parent[target]`: this is
-the third-to-last word in the chain.
+Okay! Right now `#run` builds `@all_current_words`, but it never
+constructs the path from the source to the target. Let's use
+`@all_current_words` to do this.
 
-Keep going until you hit the source word. Then you've walked all the
-way back from `target` to `source`.
+Write a method named `#build_path(target)`. It should look up the
+target in `@all_current_words`. This is the word we were at before the
+final step to `target`. Then we need to look up the word we used to
+get the second to last word. Then the word before that.
 
-Now it's just a matter of collecting up the words along the way, and
-now you have your chain!
+Keep looking back and back in from `target` in
+`@all_current_words`. Each time, add the prior word to an array named
+`path`. Eventually you will reach `nil`, which means we've reached the
+end of the path back to `source`.
 
-Make sure to request a code review from your TA once you can find
-adjacent words.
+Have `#run` call `build_path` and return the array.
 
-Good luck!
+**Make sure to request a code review from your TA once you can find
+adjacent words**.
 
 ## Dictionary File
 
