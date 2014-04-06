@@ -90,7 +90,10 @@ Notice that YAML has saved the instance variables of the object, as
 well as recording the class of object that was saved.
 
 Note that `c` and `c2` are different objects; serialization and
-deserialization are sometimes used as a poor man's "clone".
+deserialization are sometimes used as a very lazy man's clone.
+Don't do this: it is inefficient spares you the valuable learning
+experience of figuring out how to properly create a deep copy 
+of an object.
 
 JSON is the dominant serialization technology on the web (XML is a
 close second); we'll write Rails apps which we can communicate with by
