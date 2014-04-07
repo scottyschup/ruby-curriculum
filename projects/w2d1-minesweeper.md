@@ -3,7 +3,7 @@
 Everyone remembers [Minesweeper][minesweeper-wiki], right? Let's build
 it! **Read all these instructions first**.
 
-Start by supporing a single grid size: 9x9; randomly seed it with
+Start by supporting a single grid size: 9x9; randomly seed it with
 bombs. The user has two choices each turn:
 
 ### Reveal
