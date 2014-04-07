@@ -184,7 +184,7 @@ exp(b, n) = b * exp(b, n - 1)
 
 # recursion 2
 exp(b, 0) = 1
-exp(b, 1) = 1
+exp(b, 1) = b
 exp(b, n) = exp(b, n / 2) ** 2             [for even n]
 exp(b, n) = b * (exp(b, (n - 1) / 2) ** 2) [for odd n]
 ```
