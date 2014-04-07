@@ -49,9 +49,9 @@ OK, it's time to add save/load functionality. You should be able to
 save/load your minesweeper game to/from a file.
 
 As a bonus, you may also wish to track the time it takes for the user
-to solve the game. Perhaps keeping track of the ten best times in a
-leaderboard. You may want to keep separate lists for the different
-sizes.
+to solve the game. Perhaps you might keep track of the ten best times
+in a leaderboard. You may want to keep separate lists for the
+different sizes. It's up to you!
 
 ### Hints
 
@@ -66,7 +66,7 @@ the `Tile`/`Board` classes.
 If you use command line arguments and `ARGV` to specify the name of
 the save file to load, you may be surprised to find that console input
 is broken. [This ruby-forum.com post][argv-description] explains how
-gets interacts with `ARGV`/`ARGF`.
+`gets` interacts with `ARGV`/`ARGF`.
 
 [minesweeper-wiki]: http://en.wikipedia.org/wiki/Minesweeper_(Windows)
 [argv-description]: https://www.ruby-forum.com/topic/185266#809660
