@@ -127,6 +127,7 @@
 
 + [git][git]
 + [adding with git][git-add]
++ [Fixing Git commit authorship][git-fix-authorship]
 + **Project**: [Git immersion][git-immersion]
 + **Project**: Do Hangman and Word chains again, using git this
   time. Do not refer to your old code.
@@ -137,6 +138,7 @@
 [git-add]: ./w1d6-w1d7/git-add.md
 [git-immersion]: http://gitimmersion.com/
 [git-cheatsheet]: http://www.ndpsoftware.com/git-cheatsheet.html
+[git-fix-authorship]: ./w1d6-w1d7/git-fix-authorship.md
 
 ## Language Basics II, OO Design
 
