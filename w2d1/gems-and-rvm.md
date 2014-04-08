@@ -29,7 +29,7 @@ me :-)
 ## Installing gems
 
 Let's check out [Awesome Print][awesome-print], a library that "pretty
-prints" Ruby output (NB: pry already prettifies output, so
+prints" Ruby output (**NB**: pry already prettifies output, so
 awesome_print won't seem as awesome as if we were using plain irb).
 
 [awesome-print]: https://github.com/michaeldv/awesome_print
@@ -37,15 +37,15 @@ awesome_print won't seem as awesome as if we were using plain irb).
 The Awesome Print GitHub shows us how to install the gem: `gem install
 awesome_print`. That's it!
 
-## `sudo gem install` and RVM
+## `sudo gem install` and rbenv
 
 > **This section is OS X and Linux specific**. Windows users cannot
-> install rvm: it's only for *nix systems. However,
+> install rbenv: it's only for *nix systems. However,
 > Windows users who have installed Ruby through RubyInstaller can
 > already install gems without using `sudo` and are already
 > using an up-to-date Ruby.
 
-If you aren't using RVM, you will run into an error like this:
+If you aren't using rbenv, you will run into an error like this:
 
 ```
 ~$ gem install awesome_print
@@ -61,9 +61,9 @@ install awesome_print`; [**don't do that**][no-sudo-dummy].
 
 [no-sudo-dummy]: http://stackoverflow.com/a/2119413/2501181
 
-Instead, setup RVM ([see Ruby Setup instructions][ruby-setup]). You
+Instead, setup rbenv ([see Ruby Setup instructions][ruby-setup]). You
 should no longer get this error. You should not use `sudo gem install`
-when using RVM.
+when using rbenv.
 
 [ruby-setup]: https://github.com/appacademy/meta/blob/master/setup/ruby.md
 
