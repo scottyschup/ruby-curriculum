@@ -123,11 +123,11 @@ methods in addition to the shared `editor` method.
 ## Calling a super method
 
 When overriding a method, it is common to call the original 
-implementation. We can call the superclass' implementation of any 
+implementation. We can call the superclass's implementation of any 
 method using the special `super` keyword. There are two major ways 
 in which `super` is called. If super is called without any arguments, 
 the arguments passed to the method will be implicitly passed on 
-to the parent class' implementation.
+to the parent class's implementation.
 
 ```ruby
 class Animal
