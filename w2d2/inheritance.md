@@ -121,9 +121,36 @@ Of course, the `Magazine` and `Book` classes may have their own
 methods in addition to the shared `editor` method.
 
 ## Calling a super method
-When overriding a method, it is common to call the original
-implementation. The most common method where this happens is
-`initialize`:
+
+When overriding a method, it is common to call the original 
+implementation. We can call the superclasses implementation of any 
+method using the special `super` keyword. There are two major ways 
+in which `super` is called. If super is called without any arguments, 
+the arguments passed to the method will be implicitly passed on 
+to the parent classes implementation.
+
+```ruby
+class Animal
+  def make_n_noises(n = 2)
+    n.times { print "Growl " }
+  end
+end
+
+class Liger
+  def make_n_noises(num = 4)
+    num.times { print "Roar " }
+    # here we'll call super without any arguments. This will pass on `num` 
+    # implicitly to super. You can think of this call to super as:
+    # `super(num)`
+    super
+  end
+end
+
+Liger.new.make_n_noises(3) # => Roar Roar Roar Growl Growl Growl
+```
+
+The most common method where this happens is `initialize`. Consider this 
+setup and try to spot the problem:
 
 ```ruby
 class Animal
@@ -144,14 +171,25 @@ end
 ```
 
 Uh-oh! When we call `Human.new`, this won't set the species! Let's fix
-that:
+that. Here is the second major way that super is called, passing 
+arguments explicitly:
 
 ```ruby
+class Animal
+  attr_reader :species
+
+  def initialize(species)
+    @species = species
+  end
+end
+
 class Human < Animal
   attr_reader :name
 
   def initialize(name)
     # super calls the original definition of the method
+    # If we hadn't passed "Human" to super, then `name` would have
+    # been passed by default.
     super("Human")
     @name = name
   end
