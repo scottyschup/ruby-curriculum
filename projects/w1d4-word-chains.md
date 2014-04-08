@@ -14,7 +14,7 @@ Begin writing the `#initialize(dictionary_file_name)` method. Read in
 the dictionary file. Store the array of dictionary words in an
 instance variable (e.g., `@dictionary`).
 
-Next, write a helper class method `adjacent_words(word)`. This should
+Next, write a helper method `adjacent_words(word)`. This should
 return all words in the dictionary one letter different than the
 current word. Here `dictionary` is an array of words.
 
