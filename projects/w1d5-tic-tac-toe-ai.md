@@ -2,15 +2,15 @@
 
 Let's extend my tic-tac-toe AI player so that is is unbeatable! **Use
 [my TicTacToe solution][ttt-sol] please**.
+
 [ttt-sol]: https://github.com/appacademy/solutions/blob/master/w1/w1d2/06_tic_tac_toe.rb
 
 ## Phase I: `TicTacToeNode`
 
 Let's create a class `TicTacToeNode`. This will represent a TTT
 game-state: it will store the current state of the `board` plus the
-`mark` of the player who's turn it is at the current point in the
-game.  Also, if given, store the `prev_move_pos` (this will come in
-handy later).
+`next_mover_mark` of the player who's will move next.  Also, if given,
+store the `prev_move_pos` (this will come in handy later).
 
 This doesn't use the `TreeNode` you made earlier. We are making a
 completely new class independent of the `TreeNode`.
@@ -18,11 +18,12 @@ completely new class independent of the `TreeNode`.
 Write a method `children` that returns nodes representing all the
 potential game states one move after the current node. To create this
 method, it will be necessary to iterate through all positions that are
-`empty?` on the board object, make a mark using **other player's**
-mark (the one that's the opposite of `@mark`), and shovel into an
-array a new node representing the mark made.  Return this array. It is
-essential that you pass in the position that you marked as
-`prev_move_pos` for reasons that will make sense when we use it later.
+`empty?` on the board object. For each empty position, create a node
+by duping the board and putting a `next_mover_mark` in the
+position. You'll want to alternate `next_mover_mark` so that next time
+the other player gets to move. Also, set `prev_move_pos` to the
+position you just marked, for reasons that will make sense when we use
+it later.
 
 Next, we want to characterize a node as either a
 `#losing_node?(player)` or `#winning_node?(player)`. A `#losing_node?`
