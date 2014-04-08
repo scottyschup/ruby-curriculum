@@ -149,13 +149,13 @@
     + If you need to use one of our machines, please just use a single
       monitor.
 + [Serialization][serialization] (JSON and YAML)
-+ [Gems and rvm][gems]
++ [Gems and rbenv][gems]
 + **Project**: [Minesweeper][minesweeper]
     * Use git. Here's a [git summary][git-summary].
 
 [assessment-practice]: https://github.com/appacademy/assessment-prep
 [serialization]: ./w2d1/serialization.md
-[gems]: ./w2d1/gems-and-rvm.md
+[gems]: ./w2d1/gems-and-rbenv.md
 
 [minesweeper]: ./projects/w2d1-minesweeper.md
 [git-summary]: ./w1d6-w1d7/git-summary.md
