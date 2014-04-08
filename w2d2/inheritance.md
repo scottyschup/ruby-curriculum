@@ -190,7 +190,7 @@ class Human < Animal
     # super calls the original definition of the method
     # If we hadn't passed "Human" to super, then `name` would have
     # been passed by default.
-    super("Human")
+    super("Homo Sapiens")
     @name = name
   end
 end
