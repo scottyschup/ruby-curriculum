@@ -1,5 +1,9 @@
 # Intro to Git (and Github)
 
+## Exercises
+
+* [Try Git][try-git], interactive 15 minute git introduction by GitHub and Code School.
+
 ## Readings
 The best intro to Git is Chacon's [Pro Git][pro-git]. Read the
 following sections:
@@ -140,7 +144,6 @@ return to Pro Git to read the following chapters on your own time:
   between workspace, index, local and upstream (remote).
 * A blog post on [`git add -p`][git-add-p-post]; this lets you
   interactively add changes to files, for more granular commits.
-* [Try Git][try-git], interactive 15 minute git introduction by github and code school.
 * A [note][commit-msgs] on writing good git commit messages.
 
 [aa-dotfiles]: https://github.com/app-academy/aa-dotfiles
