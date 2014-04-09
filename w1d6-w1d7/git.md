@@ -2,7 +2,7 @@
 
 ## Exercises
 
-* [Try Git][try-git], interactive 15 minute git introduction by GitHub and Code School.
+* [Try Git][try-git], interactive 15 minute Git introduction by GitHub and Code School.
 
 ## Readings
 The best intro to Git is Chacon's [Pro Git][pro-git]. Read the
@@ -15,9 +15,6 @@ following sections:
 * ch2 (skip 2.6)
   * Before section 2.5, sign up for a github account set up your ssh
     keys. See more below.
-* ch3.1
-* ch3.2
-* ch3.5
 
 Lastly, also watch this [video demo][vimeo-demo] of git being used for
 a project.
@@ -77,23 +74,6 @@ a project.
 * How do you add a remote repo? (`git remote add custom_repo_name https://github.com/appacademy/example.git`)
 * How do you fetch data from a remote?
 * How do you push your changes to a remote?
-  
-### ch3
-* What is a branch?
-* How do you create a new branch? `git branch new_branch_name`, or switch to the new branch as you're creating it with `git checkout -b new_branch_name`
-* How do you switch to another branch?
-* How do you list all the branches?
-  * How is the current branch indicated?
-* What is the name of the default (or first) branch?
-* How does Git know what branch you are currently on?
-* How do you merge another branch into your current branch? `git merge other_branch_name`
-* What is a fast-forward merge?
-* What is the workflow of a merge conflict? (`merge` command, resolve
-  conflicts, then `git commit`)
-* What is a remote branch?
-* Why can't we check those out or commit to those directly?
-* How do we check out a branch that tracks a remote branch?
-* How do we then push code to the remote?
 
 ## Github Keys
 
@@ -128,7 +108,7 @@ hiring!
 We've only assigned the essential chapters about git. You should
 return to Pro Git to read the following chapters on your own time:
 
-* Remainder of ch3 (ch3.3, ch3.4, ch3.6)
+* ch3
 * ch6.1-ch6.5
 
 ## Resources
