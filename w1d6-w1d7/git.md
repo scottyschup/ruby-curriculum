@@ -125,10 +125,15 @@ return to Pro Git to read the following chapters on your own time:
 * A blog post on [`git add -p`][git-add-p-post]; this lets you
   interactively add changes to files, for more granular commits.
 * A [note][commit-msgs] on writing good git commit messages.
+* [Learn Git Branching][learn-git-branching]: For when you advance to
+  using branches in your development workflow.
+* [Git Ignore Templates][git-ignore]: A collection of `.gitignore` templates
+  covering many languages and frameworks.
 
 [aa-dotfiles]: https://github.com/app-academy/aa-dotfiles
 [pro-git]: http://git-scm.com/book
 [ssh-guide]: https://help.github.com/articles/generating-ssh-keys
+[git-ignore]: https://github.com/github/gitignore
 [git-videos]: http://git-scm.com/videos
 [git-ref]: http://gitref.org/
 [gitready]: http://gitready.com
@@ -139,3 +144,4 @@ return to Pro Git to read the following chapters on your own time:
 [commit-msgs]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
 [Branching-Strategies]: http://nvie.com/posts/a-successful-git-branching-model/
 [Git Visualized]: http://www.wei-wang.com/ExplainGitWithD3/#
+[learn-git-branching]: http://pcottle.github.io/learnGitBranching/?NODEMO
