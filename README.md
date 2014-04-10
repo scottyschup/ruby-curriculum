@@ -233,9 +233,11 @@
 + [public/private/protected][privacy]
 + [How RSpec works document][how-rspec-works]
 + [Hash and Equals][hash-and-equals]
++ [Swap][swap]
 
 [modules]: ./bonus/modules.md
 [require]: ./bonus/require.md
 [privacy]: ./bonus/privacy.md
 [how-rspec-works]: ./bonus/how-rspec-works.md
 [hash-and-equals]: ./bonus/hash-and-equals.md
+[swap]: ./bonus/swap.md
