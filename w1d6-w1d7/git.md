@@ -124,21 +124,27 @@ return to Pro Git to read the following chapters on your own time:
   between workspace, index, local and upstream (remote).
 * A blog post on [`git add -p`][git-add-p-post]; this lets you
   interactively add changes to files, for more granular commits.
+* [Git, the Simple Guide][git-simple-guide]: A colorful summary of basic
+  Git knowledge.
 * A [note][commit-msgs] on writing good git commit messages.
 * [Learn Git Branching][learn-git-branching]: For when you advance to
   using branches in your development workflow.
 * [Git Ignore Templates][git-ignore]: A collection of `.gitignore` templates
   covering many languages and frameworks.
+* [Git Immersion][git-immersion]: A longer tutorial for when you have
+  some extra time.
 
 [aa-dotfiles]: https://github.com/app-academy/aa-dotfiles
 [pro-git]: http://git-scm.com/book
 [ssh-guide]: https://help.github.com/articles/generating-ssh-keys
 [git-ignore]: https://github.com/github/gitignore
+[git-immersion]: http://gitimmersion.com/
 [git-videos]: http://git-scm.com/videos
 [git-ref]: http://gitref.org/
 [gitready]: http://gitready.com
 [git-cheatsheet]: http://www.ndpsoftware.com/git-cheatsheet.html
 [git-add-p-post]: http://johnkary.net/git-add-p-the-most-powerful-git-feature-youre-not-using-yet/
+[git-simple-guide]: http://rogerdudler.github.io/git-guide/
 [git-tutorial]: http://www.vogella.com/articles/Git/article.html
 [try-git]: http://try.github.com/
 [commit-msgs]: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
