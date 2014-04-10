@@ -92,16 +92,24 @@ that login securely using encryption.  To use HTTPS, set the url of
 the remote repository starting with `https://github.com/your_username_here/repo_name.git`
 rather than `git@github.com:your_username_here/repo_name.git`.
 
+## Commit Attribution
+
 The next step is to configure your repo so that you are saving your
-commits under the right name. This is easy. Change directory into your
+commits under the right name. This is easy, though the downside is that
+each commit can only have one author. When working in a pair, pick one of
+you to put initially as the commit author. Change directory into your
 repo, and then run:
 
-    git config user.name "Ned Ruggeri and Kush Patel"
-    git config user.email "ned+kush@appacademy.io"
+    git config user.name "Ned Ruggeri"
+    git config user.email "ned@appacademy.io"
 
-Now your commits will be attributed to the two of you working together. Make
-sure you do this every day! Employers will look through your github repos when
-hiring!
+This will attribute all the commits to one of you. At the end of the day,
+the other one from your pair can copy the repository and
+[follow these instructions][git-fix-authorship] to rewrite the commits
+in the copy with her/his name and email.
+
+Make sure you do this every day! Employers will look through your github
+repos when hiring!
 
 ## Additional material
 
@@ -151,3 +159,4 @@ return to Pro Git to read the following chapters on your own time:
 [Branching-Strategies]: http://nvie.com/posts/a-successful-git-branching-model/
 [Git Visualized]: http://www.wei-wang.com/ExplainGitWithD3/#
 [learn-git-branching]: http://pcottle.github.io/learnGitBranching/?NODEMO
+[git-fix-authorship]: ./git-fix-authorship.md
