@@ -121,7 +121,7 @@ following interface:
 
 **Phase I:**
 
-* Write a class with three methods:
+* Write a class with four methods:
     * An `#initialize(value)` method that sets the value, and starts
       `parent` as nil, and `children` to an empty array.
     * A `#parent` method that returns the node's parent.
