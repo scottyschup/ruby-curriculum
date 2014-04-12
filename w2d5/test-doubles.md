@@ -34,10 +34,10 @@ describe Order
     Order.new(customer)
   end
 
-  it "should send email successfully" do
-    lambda do
+  it "sends email successfully" do
+    expect do
       subject.send_confirmation_email
-    end.should_not raise_exception
+    end.not_to raise_exception
   end
 end
 ```
@@ -78,12 +78,12 @@ describe Order
   let(:customer) { double("customer") }
   subject(:order) { Order.new(customer) }
 
-  it "should send email successfully" do
+  it "sends email successfully" do
     customer.stub(:email_address).and_return("ned@appacademy.io")
 
-    lambda do
+    expect do
       subject.send_confirmation_email
-    end.should_not raise_exception
+    end.to_not raise_exception
   end
 end
 ```
@@ -128,7 +128,7 @@ describe Order
   subject(:order) { Order.new(customer, product) }
 
   it "subtracts item cost from customer account" do
-    customer.should_receive(:debit_account).with(5.99)
+    expect(customer).to receive(:debit_account).with(5.99)
     order.charge_customer
   end
 end
