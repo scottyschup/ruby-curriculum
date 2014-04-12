@@ -132,28 +132,7 @@ following interface:
   adds the node to there parent's array of children (unless we're
   setting parent to `nil`).
 
-Test your code out. Try something like this:
-
-```ruby
-n1 = PolyTreeNode.new("root")
-n2 = PolyTreeNode.new("child1")
-n3 = PolyTreeNode.new("child2")
-
-n2.parent = n1
-raise "Bad parent=!" unless n2.parent == n1
-raise "Bad parent=!" unless n1.children == [n2]
-
-n3.parent = n1
-raise "Bad parent=!" unless n3.parent == n1
-raise "Bad parent=!" unless n1.children == [n2, n3]
-
-n3.parent = n1
-
-# Be careful not to "re-add" n3 to the array of n1.children. We don't
-# want `n1.children == [n2, n3, n3]`. In your `parent=` method, you
-# can just return immediately if we call `parent=` with the current
-# parent.
-raise "Bad parent=!" unless n1.children == [n2, n3]
+Test your code out with [this RSpec file][tree-node-rspec]
 ```
 
 **Phase II:**
@@ -184,7 +163,7 @@ In addition to (1) re-assigning the parent attribute of the child and
 **remove** the child from the **old** parent's list of children (if
 the old parent isn't `nil`). Modify your `parent=` method to do this.
 
-**Make sure the old and new tests work before proceeding!**
+**Make sure all the parent= specs pass before proceeding!**
 
 **Phase III:**
 
@@ -210,6 +189,7 @@ call `#parent=`.
 * Prove to yourself that this will check the nodes in the right
   order. Draw it out. **Show this explanation to your TA.**
 * Get your TA to check your work!
+* Make sure **all** the specs pass.
 
 ## References
 
@@ -218,3 +198,4 @@ call `#parent=`.
 
 [wiki-data-structure]: http://en.wikipedia.org/wiki/Data_structure
 [wiki-algorithm]: http://en.wikipedia.org/wiki/Algorithm
+[tree-node-rspec]: https://github.com/appacademy/solutions/blob/master/w1/w1d5/00_tree_node/00_tree_node_spec.rb
