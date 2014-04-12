@@ -133,7 +133,6 @@ following interface:
   setting parent to `nil`).
 
 Test your code out with [this RSpec file][tree-node-rspec]
-```
 
 **Phase II:**
 
