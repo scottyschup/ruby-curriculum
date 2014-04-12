@@ -1,20 +1,23 @@
 # `subject` and `let`
 
-## `subject`
+## `subject` and `it`
 
 To test a class, you will often want to instantiate an instance of the
-object to test it out. In this case, you may want to define a `subject`
-for your tests.
+object to test it out. In this case, you may want to define a
+`subject` for your tests.
 
 ```ruby
 describe Robot do
   subject(:robot) { Robot.new }
-  its(:position) { should eq [0, 0] }
+
+  it "position should start at [0, 0]" do
+    expect(robot.position).to eq([0, 0])
+  end
 
   describe "move methods" do
     it "moves left" do
       robot.move_left
-      robot.position.should eq([-1, 0])
+      expect(robot.position).to eq([-1, 0])
     end
   end
 end
@@ -24,23 +27,10 @@ The `subject` method is passed a name for the subject (`:robot`), as
 well as a block which constructs the subject. You can do any necessary
 setup inside the block.
 
-The `#position` test uses `its`, which takes a method and
-runs it on the `subject`, saying the returned value should be
-`[0, 0]`. For attributes and simple methods, this `its` syntax can be
-much cleaner and is preferred.
-
-*NB: `its` operates exclusively on `subject`*
-
-Other tests need to do more than test the initial value. For instance,
-the second test first moves the robot, then tests its
-position. You can't use the `its` method for this, but we can refer to
-the robot explicitly through the name we gave it.
-
-**Note that `subject` is defined outside of an `it` spec**. Neither
-`subject` nor `let` can be defined inside of a spec; they are defined
-outside specs and used within them.
-
-*Use `subject` and `its` where possible.*
+The `it` block is a test. It runs the code, and the test fails if the
+`expect` fails. In the first test, we `expect` that the position is
+`[0, 0]`. In the second test we move the robot, and then expect the
+position to have changed.
 
 ## `let`
 
@@ -58,7 +48,7 @@ describe Robot do
   let(:max_weight_item) { double("max_weight_item", :weight => 250) }
 
   describe "#pick_up" do
-    it "should not add item past maximum weight of 250" do
+    it "does not add item past maximum weight of 250" do
       robot.pick_up(max_weight_item)
 
       expect do
@@ -69,8 +59,8 @@ describe Robot do
 end
 ```
 
-`let` defines a method (e.g. `light_item`, `max_weight_item`) that runs
-the block provided once for each spec in which it is called.
+`let` defines a method (e.g. `light_item`, `max_weight_item`) that
+runs the block provided once for each spec in which it is called.
 
 You may see that you have the option of using instance variables in a
 `before` block to declare objects accessible to specs, but we'll
@@ -78,9 +68,9 @@ avoid defining instance variables in specs. Always prefer `let`.
 Here's a [SO post][stack-overflow-let] that clearly describes why
 that is.
 
-Here's a [blog post][dry-up-rspec] with some nice examples using `let` -
-note how the author uses it in conjunction with `subject` (some fancy
-and clean stuff).
+Here's a [blog post][dry-up-rspec] with some nice examples using
+`let` - note how the author uses it in conjunction with `subject`
+(some fancy and clean stuff).
 
 [stack-overflow-let]: http://stackoverflow.com/questions/5359558/when-to-use-rspec-let
 [dry-up-rspec]:http://benscheirman.com/2011/05/dry-up-your-rspec-files-with-subject-let-blocks/
@@ -90,8 +80,8 @@ and clean stuff).
 You might read that `let` memoizes its return value. Memoization means
 that the first time the method is invoked, the return value is cached
 and that same value is returned every subsequent time the method is
-invoked within the same scope. Since every `it` or `its` block is a
-different scope, `let` does not persist state between those specs.
+invoked within the same scope. Since every `it` is a different scope,
+`let` does not persist state between those specs.
 
 An example:
 
@@ -104,16 +94,18 @@ class Cat
   end
 end
 
-describe "let" do
+describe "Cat" do
   let(:cat) { Cat.new("Sennacy") }
 
-  it "returns something we can manipulate" do
-    cat.name = "Rocky"
-    cat.name.should == "Rocky"
-  end
+  describe "name property" do
+    it "returns something we can manipulate" do
+      cat.name = "Rocky"
+      expect(cat.name).to eq("Rocky")
+    end
 
-  it "does not persist state" do
-    cat.name.should == "Sennacy"
+    it "does not persist state" do
+      expect(cat.name).to eq("Sennacy")
+    end
   end
 end
 
