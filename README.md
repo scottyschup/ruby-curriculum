@@ -174,7 +174,7 @@
 [inheritance-design]: ./w2d2/inheritance-design.md
 [hiding]: ./w2d2/hiding.md
 
-[chess]: ./projects/w2d2-chess.md
+[chess]: ./projects/w2d2-chess/w2d2-chess.md
 
 ### w2d3
 
