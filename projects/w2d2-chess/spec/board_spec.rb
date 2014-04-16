@@ -5,12 +5,29 @@ require 'pieces'
 describe Board do
   subject(:b) { Board.new }
 
-  it 'has a [] getter method' do
-    expect(b).to respond_to(:[])
+  describe '#[]' do
+    it 'has a [] getter method' do
+      expect(b).to respond_to(:[])
+    end
+
+    it 'raises an exception if the position is invalid' do
+      expect do
+        b[[9, 9]]
+      end.to raise_exception('invalid position')
+    end
   end
 
-  it 'has a []= getter method' do
-    expect(b).to respond_to(:[]=)
+  describe '#[]=' do
+    it 'has a []= getter method' do
+      expect(b).to respond_to(:[]=)
+    end
+
+    it 'raises an exception if the position is invalid' do
+      expect do
+        pos = 9, 9
+        b[pos] = :blah
+      end.to raise_exception('invalid position')
+    end
   end
 
   describe '#in_check?' do
