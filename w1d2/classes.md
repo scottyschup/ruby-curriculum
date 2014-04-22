@@ -577,7 +577,7 @@ Write a set of classes to model `Student`s and `Course`s.
   number of credits.
 * `Course#students` should return a list of the enrolled students.
 * `Course#add_student` should add a student to the class.
-  * Probably can rely upon `Student#entroll`.
+  * Probably can rely upon `Student#enroll`.
 
 And some extras:
 * Each course should also take a set of days of the week (`:mon`,
