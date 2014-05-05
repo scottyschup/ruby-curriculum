@@ -156,10 +156,9 @@ in `@store`, storing `true` as the value. Write an `#include?(el)`
 method that sees if `el` has previously been `insert`ed by checking
 the `@store`; return `true` or `false`.
 
-Next, write a `#delete(el)` method to remove an item from the set. Add
-a method `#to_a` which returns an array of the items in the
-set. Return `true` if the item had been in the set, else return
-`false`.
+Next, write a `#delete(el)` method to remove an item from the set. 
+Return `true` if the item had been in the set, else return `false`.
+Add a method `#to_a` which returns an array of the items in the set.
 
 Next, write a method `set1#union(set2)` which returns a new set which
 includes all the elements in EITHER `set1` or `set2`. Write a
