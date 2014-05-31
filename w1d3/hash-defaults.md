@@ -64,7 +64,7 @@ arr2[1] == 1
 arr2[2] == 1
 ```
 
-Does this contradict what we've just discussed about refernces and
+Does this contradict what we've just discussed about references and
 mutations? Why isn't the change visible at position `1`?
 
 Let's unpack `arr2[0] += 1`. This is Ruby shorthand for:
