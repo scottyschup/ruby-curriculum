@@ -207,9 +207,11 @@ the method somewhere in the middle of the code.
 
 ## References
 
-Batsov's [style guide][bbatsov-style] is a good one to skim. I've
-already covered the main rules, but it's probably worth your looking
-over briefly. Don't obsess over every rule; they're not set in stone,
-and the ones I've listed are the most important.
+Batsov's [style guide][bbatsov-style] is a good one to skim. 
+
+Writing clean code is essential. Well formatted code is just
+as important as using proper grammar and punctuation.
+If you want people to understand your work and take you seriously
+as an engineer your code must look clean, consistent, and organized.
 
 [bbatsov-style]: https://github.com/bbatsov/ruby-style-guide
