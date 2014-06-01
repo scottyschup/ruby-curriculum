@@ -83,8 +83,8 @@ guideline for side-effect free methods).
 
 ## Ruby-specific naming guidelines:
 
-* Use `snake_case` (not `CamelCase`) when naming methods and
-  variables.
+* Use `snake_case` (not `CamelCase`) when naming methods,
+  variables, and files.
 * Use `CamelCase` for classes and modules.
 * Use `SCREAMING_SNAKE_CASE` for other constants.
 * Methods that return a boolean value (i.e. `true` or `false`) should
