@@ -215,3 +215,16 @@ If you want people to understand your work and take you seriously
 as an engineer your code must look clean, consistent, and organized.
 
 [bbatsov-style]: https://github.com/bbatsov/ruby-style-guide
+
+## Rubocop
+
+One good tool to help you learn Ruby's style conventions is
+[Rubocop][rubocop]. Based on Batsov's style guide, it provides
+you with the `rubocop` command you can run in the terminal
+against your Ruby files. It will provide you with a breakdown of
+where your code violates styling conventions. You can install it with:
+```bash
+gem install rubocop
+```
+
+[rubocop]: https://github.com/bbatsov/rubocop
