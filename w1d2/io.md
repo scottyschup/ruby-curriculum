@@ -229,6 +229,7 @@ Estimated time: 3hrs
   user input.
     * See the `if __FILE__ == $PROGRAM_NAME` trick described in the
       [debugger chapter][underscore_file_trick].
+    * `5 1 2 + 4 * + 3 -` should return `14`
 * Write a program that prompts the user for a file name, reads that
   file, shuffles the lines, and saves it to the file
   "{input_name}-shuffled.txt". You could create a random number using
