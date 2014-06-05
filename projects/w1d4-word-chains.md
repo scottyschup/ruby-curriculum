@@ -8,6 +8,8 @@ Read the [Word Chains RubyQuiz][quiz-wayback].
 
 ## Phase I: Adjacent Words
 
+**[Link to dictionary][dictionary]**
+
 Let's write a class `WordChainer`.
 
 Begin writing the `#initialize(dictionary_file_name)` method. Read in
@@ -129,11 +131,6 @@ is wasteful if the source is close to the target. We can stop early in
 that case. Modify `run` to stop looping when `@all_seen_words`
 contains the target.
 
-## Dictionary File
-
-[Click through][dictionary], hit the "RAW" button, and save the text
-file. Don't just save-as; tha will save an HTML version of the github
-page.
 
 [quiz-wayback]: http://web.archive.org/web/20130215052516/http://rubyquiz.com/quiz44.html
 [dictionary]: ./dictionary.txt
