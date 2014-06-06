@@ -37,22 +37,22 @@ describe Robot do
   describe "move methods" do
     it "moves left" do
       robot.move_left
-      robot.position.should eq([-1, 0])
+      expect(robot.position).to eq([-1, 0])
     end
 
     it "moves right" do
       robot.move_right
-      robot.position.should eq([1, 0])
+      expect(robot.position).to eq([1, 0])
     end
 
     it "moves up" do
       robot.move_up
-      robot.position.should eq([0, 1])
+      expect(robot.position).to eq([0, 1])
     end
 
     it "moves down" do
       robot.move_down
-      robot.position.should eq([0, -1])
+      expect(robot.position).to eq([0, -1])
     end
   end
 end
@@ -81,7 +81,7 @@ describe Robot do
   describe "#pick_up" do
     it "adds item to items" do
       robot.pick_up(item1)
-      robot.items.should include(item1)
+      expect(robot.items).to include(item1)
     end
   end
 
@@ -92,7 +92,7 @@ describe Robot do
       robot.pick_up(item1)
       robot.pick_up(item2)
 
-      robot.items_weight.should eq(40)
+      expect(robot.items_weight).to eq(40)
     end
   end
 
@@ -117,12 +117,12 @@ describe Robot do
   describe "#wound" do
     it "decreases health" do
       robot.wound(20)
-      robot.health.should eq(80)
+      expect(robot.health).to eq(80)
     end
 
     it "doesn't decrease health below 0" do
       robot.wound(150)
-      robot.health.should eq(0)
+      expect(robot.health).to eq(0)
     end
   end
 
@@ -130,19 +130,19 @@ describe Robot do
     it "increases health" do
       robot.wound(40)
       robot.heal(20)
-      robot.health.should eq(80)
+      expect(robot.health).to eq(80)
     end
 
     it "doesn't increase health over 100" do
       robot.heal(10)
-      robot.health.should eq(100)
+      expect(robot.health).to eq(100)
     end
   end
 
   describe "#attack" do
     it "wounds other robot with weak default attack" do
       robot2 = double("robot2")
-      robot2.should_receive(:wound).with(5)
+      expect(robot2).to receive(:wound).with(5)
 
       robot.attack(robot2)
     end
@@ -160,7 +160,7 @@ describe Bolts do
   describe "#feed" do
     it "heals the robots health 25pts" do
       robot = double("robot")
-      robot.should_receive(:heal).with(25)
+      expect(robot).to receive(:heal).with(25)
 
       bolts.feed(robot)
     end
@@ -180,7 +180,7 @@ describe Weapon do
     let(:robot) { double("robot") }
 
     it "hurts robot" do
-      robot.should_receive(:wound).with(45)
+      expect(robot).to receive(:wound).with(45)
       weapon.hit(robot)
     end
   end
@@ -216,7 +216,7 @@ describe Robot do
       weapon = double("weapon")
 
       robot.equipped_weapon = weapon
-      robot.equipped_weapon.should eq(weapon)
+      expect(robot.equipped_weapon).to eq(weapon)
     end
   end
 
@@ -227,7 +227,7 @@ describe Robot do
     it "uses the equipped weapon in attack" do
       robot.equipped_weapon = weapon
 
-      weapon.should_receive(:hit).with(robot2)
+      expect(weapon).to receive(:hit).with(robot2)
       robot.attack(robot2)
     end
   end
