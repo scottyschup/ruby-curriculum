@@ -181,7 +181,7 @@ call `#parent=`.
     * You will use a local `Array` variable as a queue to implement
       this.
     * First, insert the current node (`self`) into the queue.
-    * Then, in a loop that runs until the array is not empty:
+    * Then, in a loop that runs until the array is empty:
         * Remove the first node from the queue,
         * Check its value,
         * Push the node's children to the end of the array.
