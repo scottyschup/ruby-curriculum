@@ -63,6 +63,14 @@ methods you could write (`#reveal`, `#neighbors`,
 You should separate logic pertaining to Game UI and turn-taking from
 the `Tile`/`Board` classes.
 
+You'll want to pass the `Board` to the `Tile` on initialize so the
+`Tile` instance can use it to find its neighbors. But then if at some
+point you use `p` to print out a `Tile` instance, you'll get way more
+info than you need, as the data for the `Board` it holds will also be
+printed. You can fix this by overriding (defining) the `inspect` method
+in your `Tile` class, having it return a string that contains just the
+info you want (e.g. the `Tile`s position and bombed, flagged, etc. state).
+
 If you use command line arguments and `ARGV` to specify the name of
 the save file to load, you may be surprised to find that console input
 is broken. [This ruby-forum.com post][argv-description] explains how
