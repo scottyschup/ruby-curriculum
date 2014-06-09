@@ -27,14 +27,17 @@ position you just marked, for reasons that will make sense when we use
 it later.
 
 Next, we want to characterize a node as either a
-`#losing_node?(player)` or `#winning_node?(player)`. A `#losing_node?`
-means:
+`#losing_node?(player)` or `#winning_node?(player)`. 
+These methods are *not* optional, you will need them both.
 
-* The board is over and the opponent has won, OR
-* It is the player's turn, and all the children nodes are losing
-  boards for the player (anywhere they move they still lose), OR
+A `#losing_node?` is described in the following cases:
+
+* The board is `over?` and the opponent is the `winner` 
+  (return false if `player` won or board is `tied?`), OR
+* It is the player's turn, and all the children nodes are losers
+  for the player (anywhere they move they still lose), OR
 * It is the opponent's turn, and one of the children nodes is a losing
-  board for the player (assumes your opponent plays perfectly; they'll
+  node for the player (assumes your opponent plays perfectly; they'll
   force you to lose if they can).
 
 **NB: a draw (Board#tied?) is NOT a loss, if a node is a draw,
@@ -42,9 +45,10 @@ losing_node? should return false.**
 
 Likewise, a winning node means either:
 
-* The board is over and the player has won, OR
+* The board is over and the player has won 
+  (return false if the board is `over?` and game is `tied?` or opponent won) OR
 * It is the player's turn, and one of the children nodes is a winning
-  board for the player (we'll be smart and take that move), OR
+  node for the player (we'll be smart and take that move), OR
 * It is the opponent's turn, and all of the children nodes are winning
   nodes for the player (even TicTacToeKasparov can't beat you from
   here).
