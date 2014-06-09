@@ -105,17 +105,17 @@ to reduce the verbosity of the output.
 
 ## Phase III: Backtracking
 
-Okay! Right now `#run` builds `@all_current_words`, but it never
+Okay! Right now `#run` builds `@all_seen_words`, but it never
 constructs the path from the source to the target. Let's use
-`@all_current_words` to do this.
+`@all_seen_words` to do this.
 
 Write a method named `#build_path(target)`. It should look up the
-target in `@all_current_words`. This is the word we were at before the
+target in `@all_seen_words`. This is the word we were at before the
 final step to `target`. Then we need to look up the word we used to
 get the second to last word. Then the word before that.
 
 Keep looking back and back in from `target` in
-`@all_current_words`. Each time, add the prior word to an array named
+`@all_seen_words`. Each time, add the prior word to an array named
 `path`. Eventually you will reach `nil`, which means we've reached the
 end of the path back to `source`.
 
