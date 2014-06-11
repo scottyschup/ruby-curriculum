@@ -1,10 +1,17 @@
 # Tic-tac-toe AI
 
-Let's extend my tic-tac-toe AI player so that is is unbeatable! **Use
-[the TTT AI specs][ttt-spec] please**. You will also need **[the TTT solution][ttt-sol]**.
+We're going to write a computer AI that can't be beaten at
+TicTacToe. Go to the [TicTacToeAI Repo][ttt-repo] and **download the
+ZIP**. This has our TTT solution code, plus some stub classes for you
+to fill out. Check that you can run the specs:
 
-[ttt-spec]: https://github.com/appacademy-demos/TicTacToeAI
-[ttt-sol]: https://github.com/appacademy/solutions/raw/master/w1/w1d2/06_tic_tac_toe.rb
+    bundle exec rspec spec/01_tic_tac_toe_node_spec.rb
+    bundle exec rspec spec/02_super_computer_player_spec.rb
+
+Of course, they should be failing right now. Call your TA over if you
+have problems.
+
+[ttt-repo]: https://github.com/appacademy-demos/TicTacToeAI
 
 ## Phase I: `TicTacToeNode`
 
