@@ -136,7 +136,7 @@ class Animal
   end
 end
 
-class Liger
+class Liger < Animal
   def make_n_noises(num = 4)
     num.times { print "Roar " }
     # here we'll call super without any arguments. This will pass on `num` 
