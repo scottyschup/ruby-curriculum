@@ -39,26 +39,32 @@ These methods are *not* optional, you will need them both.
 
 A `#losing_node?` is described in the following cases:
 
-* The board is `over?` and the opponent is the `winner` 
-  (return false if `player` won or board is `tied?`), OR
-* It is the player's turn, and all the children nodes are losers
-  for the player (anywhere they move they still lose), OR
-* It is the opponent's turn, and one of the children nodes is a losing
-  node for the player (assumes your opponent plays perfectly; they'll
-  force you to lose if they can).
+* Base case: **the board is over** AND
+    * If `winner` is the opponent, this is a losing node.
+    * If `winner` is `nil` or us, this is not a losing node.
+* Recursive case:
+    * It is the player's turn, and all the children nodes are losers
+      for the player (anywhere they move they still lose), OR
+    * It is the opponent's turn, and one of the children nodes is a
+      losing node for the player (assumes your opponent plays
+      perfectly; they'll force you to lose if they can).
 
 **NB: a draw (Board#tied?) is NOT a loss, if a node is a draw,
 losing_node? should return false.**
 
 Likewise, a winning node means either:
 
-* The board is over and the player has won 
-  (return false if the board is `over?` and game is `tied?` or opponent won) OR
-* It is the player's turn, and one of the children nodes is a winning
-  node for the player (we'll be smart and take that move), OR
-* It is the opponent's turn, and all of the children nodes are winning
-  nodes for the player (even TicTacToeKasparov can't beat you from
-  here).
+* Base case: **the board is over** AND
+    * If `winner` is us, this is a winning node.
+    * If `winner` is `nil` or the opponent, this is not a winning
+      node.
+* Recursive case:
+    * It is the player's turn, and one of the children nodes is a
+      winning node for the player (we'll be smart and take that move),
+      OR
+    * It is the opponent's turn, and all of the children nodes are
+      winning nodes for the player (even TicTacToeKasparov can't beat
+      you from here).
 
 Notice that `winning_node?` and `losing_node?` are both defined
 recursively. This is what makes them look at all the ways the game can
