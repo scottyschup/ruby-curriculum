@@ -168,18 +168,4 @@ only those elements that are in BOTH `set1` and `set2`.
 Write a `set1#minus(set2)` method which returns a new set which
 includes all the items of `set1` that aren't in `set2`.
 
-### Hash offset
-
-Martha has created a hash with letter symbols as keys to represent
-items that start with their keys. However, she realized everything is
-off by one letter.
-
-```ruby
-wrong_hash = { :a => "banana", :b => "cabbage", :c => "dental_floss", :d => "eel_sushi" }
-```
-
-Write a method `correct_hash` that takes this wrong hash and returns
-the correct one. It should switch the keys so that they reflect
-each entry's first letter.
-
 [ruby-set-doc]: http://www.ruby-doc.org/stdlib-1.9.3/libdoc/set/rdoc/Set.html
