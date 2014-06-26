@@ -130,6 +130,71 @@ tracking_service = case number
    when /^[HK].{10}$/ then :ups
 end
 ```
+
+## Equality and Hash Keys
+
+If you want to use instances of a class as hash keys, you need to know how
+a Hash uses the `eql?` equality method. When you give a hash a key to look up
+its associated value, the hash first looks for an existing key object whose
+`hash` method returns a value equal to that returned by the given key's
+`hash` method. Next, it checks if `found_key_object.eql?(given_key_object)`,
+verifying that, in addition to having the same hash, the found key and the given
+key should be considered equal. Only if both these tests pass will the hash
+return the desired value instead of `nil`.
+
+Here's what's going on. Say we have a cat class with a name, and we simply
+use the hash of the string name as our cat hash value:
+
+```ruby
+class Cat
+  attr_reader :name
+
+  def initialize(name)
+    @name = name
+  end
+
+  def hash
+    @name.hash
+  end
+end
+```
+
+And say we create an entry in a hash using a `Cat` instance as a key:
+
+```ruby
+hash = {}
+cat1 = Cat.new('Fluffy')
+hash[cat1] = 'is the best cat'
+```
+
+If we create another `Cat` instance with the same name, then try to use it to
+look up the value stored with the first instance, the hash won't be able to find
+it. This is a problem, as we want two `Cat` instances with the same data (name)
+to be treated at the same key by the hash:
+
+```ruby
+hash[cat1] #=> 'is the best cat'
+cat2 = Cat.new('Fluffy')
+hash[cat2] #=> nil
+```
+
+This happens because our class inherits the default `eql?` method from `Object`,
+which simply tests for pointer equality. To get this working, we need to
+define `Cat#eql?` so it returns true if both cat instances have the same name:
+
+```ruby
+class Cat
+  def eql?(other)
+    self.name == other.name
+  end
+end
+
+hash[cat2] #=> 'is the best cat'
+```
+
+The takeaway is that if you have created a class and you want to use it as a
+key in a hash, you should define `#hash` and `#eql?`.
+
 ## Further Reading
 The interested student should read more about them in the
 [`Object` documentation][object-doc], and in this awesome
