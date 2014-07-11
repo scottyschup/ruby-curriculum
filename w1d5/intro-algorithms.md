@@ -129,7 +129,7 @@ following interface:
       node.
     * A `#value` method that returns the value stored at the node.
 * Write a `parent=` method which (1) sets the parent property and (2)
-  adds the node to there parent's array of children (unless we're
+  adds the node to their parent's array of children (unless we're
   setting parent to `nil`).
 
 Test your code out with [this RSpec file][tree-node-rspec]
