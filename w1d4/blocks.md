@@ -395,7 +395,7 @@ seperate arguments**. See the example below:
 my_neat_method(thing1, thing2, banana)
 
 #ex2
-my_arg_array = [thing1, thing2, banana)
+my_arg_array = [thing1, thing2, banana]
 my_neat_method(*my_arg_array)
 ```
 
