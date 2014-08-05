@@ -14,7 +14,8 @@ We list a few kinds of smells here here:
 
 **Duplicated/similar code**: see the [reading][dry-reading] on DRY code.
 
-**Long methods**: see the section on method decomposition.
+**Long methods**: see the [reading][method-decomp-reading] on method
+decomposition.
 
 **Too many parameters**: The more parameters a method has, the greater
 the chance that it is too coupled to code that invokes it. Many
@@ -48,7 +49,8 @@ LoD has disadvantages (see the wiki article); if taken too literally
 you end up with overly wide interfaces. However, the longer your
 method chains get, the more likely you should apply LoD.
 
-[dry-reading]: ../w1w2/style/dry.md
+[dry-reading]: ../w1d2/style/dry.md
+[method-decomp-reading]: ../w1d2/style/method-decomposition.md
 [wiki-demeter]: http://en.wikipedia.org/wiki/Law_Of_Demeter
 [informit-demeter]: http://www.informit.com/articles/article.aspx?p=1834700&seqNum=6
 
