@@ -12,7 +12,7 @@ From the [Wiki](http://en.wikipedia.org/wiki/Code_smell):
 
 We list a few kinds of smells here here:
 
-**Duplicated/similar code**: see the section on DRY code.
+**Duplicated/similar code**: see the [reading][dry-reading] on DRY code.
 
 **Long methods**: see the section on method decomposition.
 
@@ -48,6 +48,7 @@ LoD has disadvantages (see the wiki article); if taken too literally
 you end up with overly wide interfaces. However, the longer your
 method chains get, the more likely you should apply LoD.
 
+[dry-reading]: ../w1w2/style/dry.md
 [wiki-demeter]: http://en.wikipedia.org/wiki/Law_Of_Demeter
 [informit-demeter]: http://www.informit.com/articles/article.aspx?p=1834700&seqNum=6
 
