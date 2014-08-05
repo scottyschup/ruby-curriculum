@@ -97,4 +97,4 @@ guideline for side-effect free methods).
 
 * [Ruby Style Guide: Naming][naming-guide]
 
-[naming-guide]: https://github.com/bbatsov/ruby-style-guide#naming)
+[naming-guide]: https://github.com/bbatsov/ruby-style-guide#naming
