@@ -153,7 +153,7 @@ Estimated time: .25hrs
 Write a method `super_print` that takes a `String`. This method should
 take optional parameters `:times`, `:upcase`, and `:reverse`. Hardcode
 reasonable defaults in a `defaults` hash defined in the `super_print`
-method. Use `Hash#merge` to combine the defauls with any optional
+method. Use `Hash#merge` to combine the defaults with any optional
 parameters passed by the user. Do not modify the incoming options
 hash. For example:
 
