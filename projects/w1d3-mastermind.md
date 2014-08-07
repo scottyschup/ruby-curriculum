@@ -25,11 +25,18 @@ In this project, you'll implement the game
 
 ## Suggestions
 
-* You might want a `Code` class. You might want a `Code::parse` class
-  method to parse user input. You might want a `Code::random` method
-  to generate a random code sequence.
-* You might want a `Game` class. This could keep track of the number
-  of turns and have methods for reading user input and printing
-  output.
+I wrote a `Code` and a `Game` class. My `Code` class represented a
+sequence of four pegs. The `Game` kept track of how many turns has
+passed, the correct `Code`, prompt the user for input.
+
+I wrote a `Code::random` class method which builds a `Code` instance
+with random peg colors. I also wrote a `Code::parse(input)` method
+that took a user input string like `"RGBY"` and built a `Code`
+object. I made code objects for both (1) the secret code and (2) the
+user's guess of the code. I wrote methods like
+`Code#exact_matches(other_code)` and `Code#near_matches(other_code)`.
+
+I also wrote a `Game` class. This keeps track of the number of turns
+and have methods for reading user input and printing output.
 
 [wiki-mastermind]: http://en.wikipedia.org/wiki/Mastermind_(game)
