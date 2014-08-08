@@ -26,7 +26,7 @@ completely new class independent of the `TreeNode`.
 Write a method `children` that returns nodes representing all the
 potential game states one move after the current node. To create this
 method, it will be necessary to iterate through all positions that are
-`nil?` on the board object. For each empty position, create a node
+`empty?` on the board object. For each empty position, create a node
 by duping the board and putting a `next_mover_mark` in the
 position. You'll want to alternate `next_mover_mark` so that next time
 the other player gets to move. Also, set `prev_move_pos` to the
