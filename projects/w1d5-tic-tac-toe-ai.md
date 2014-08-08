@@ -17,7 +17,7 @@ have problems.
 
 Let's create a class `TicTacToeNode`. This will represent a TTT
 game-state: it will store the current state of the `board` plus the
-`next_mover_mark` of the player who's will move next.  Also, if given,
+`next_mover_mark` of the player who will move next.  Also, if given,
 store the `prev_move_pos` (this will come in handy later).
 
 This doesn't use the `TreeNode` you made earlier. We are making a
