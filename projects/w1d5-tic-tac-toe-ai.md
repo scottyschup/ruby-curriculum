@@ -11,7 +11,7 @@ to fill out. Check that you can run the specs:
 Of course, they should be failing right now. Call your TA over if you
 have problems.
 
-[ttt-repo]: https://github.com/appacademy-demos/TicTacToeAI/archive/master.zip
+[ttt-repo]: https://github.com/appacademy/TicTacToeAI/archive/master.zip
 
 ## Phase I: `TicTacToeNode`
 
