@@ -273,7 +273,7 @@ leaving out the biggest kind of coin.
 
 Next, instead of taking as many of the biggest you can, instead use
 only one of the biggest you can. When you make your recursive call for
-the remaining amoount, leave out the biggest kind of coin **only if
+the remaining amount, leave out the biggest kind of coin **only if
 you couldn't use any of them**. Note that this doesn't fix anything;
 it just makes you give out coins of a given type one-by-one.
 
