@@ -103,7 +103,7 @@ to reduce the verbosity of the output.
 
 **Check with your TA after this phase.**
 
-## Phase III: Backtracking
+## Phase IV: Backtracking
 
 Okay! Right now `#run` builds `@all_seen_words`, but it never
 constructs the path from the source to the target. Let's use
