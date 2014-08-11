@@ -1,9 +1,10 @@
 # Tic-tac-toe AI
 
 We're going to write a computer AI that can't be beaten at
-TicTacToe. Download the [TicTacToeAI Repo][ttt-repo] zip file
-to get started. This has our TTT solution code, plus some stub classes for you
-to fill out. Check that you can run the specs:
+TicTacToe. Clone the [TicTacToeAI Repo][ttt-repo] to get started; on
+the Github page you can click "download zip". This has our TTT
+solution code, plus some stub classes for you to fill out. Check that
+you can run the specs:
 
     bundle exec rspec spec/01_tic_tac_toe_node_spec.rb
     bundle exec rspec spec/02_super_computer_player_spec.rb
@@ -11,7 +12,7 @@ to fill out. Check that you can run the specs:
 Of course, they should be failing right now. Call your TA over if you
 have problems.
 
-[ttt-repo]: https://github.com/appacademy/TicTacToeAI/archive/master.zip
+[ttt-repo]: https://github.com/appacademy/TicTacToeAI
 
 ## Phase I: `TicTacToeNode`
 
