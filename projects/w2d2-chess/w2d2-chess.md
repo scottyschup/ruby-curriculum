@@ -29,8 +29,8 @@ will use.
 Your `Piece` will need to (1) track its position and (2) hold a
 reference to the `Board`. The `SlidingPiece` in particular needs the
 `Board` so it knows to stop sliding when blocked by another
-piece. Don't allow a piece to move into a square already occuppied the
-same color, or to move a sliding piece past a piece that blocks it.
+piece. Don't allow a piece to move into a square already occuppied by the
+same color piece, or to move a sliding piece past a piece that blocks it.
 
 For now, do not worry if a move would leave a player in check.
 
