@@ -45,7 +45,7 @@ strategy is:
 * To fill up new_current_words, begin an inner loop through
   `@current_words`.
 * For each `current_word`, iterate through all
-  `adjacent_words(current_words)`. This is a triply nested loop.
+  `adjacent_words(current_word)`. This is a triply nested loop.
 * For each `adjacent_word`, skip it if it's already in
   `@all_seen_words`; we don't need to reconsider a word we've seen
   before.
