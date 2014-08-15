@@ -2,8 +2,8 @@
 
 RSpec is distributed in a gem called 'rspec', which is actually a
 meta-gem that packages three other gems: rspec-core, rspec-expectations,
-and rspec-mocks. We'll spend most of our time on rspec-core and  rspec-
-expectations.
+and rspec-mocks. We'll spend most of our time on rspec-core and
+rspec-expectations.
 
 Some of the syntax and framing will be covered here, but the READMEs
 of both rspec-core and rspec-expectations are required reading.
@@ -16,7 +16,7 @@ of both rspec-core and rspec-expectations are required reading.
 By convention, tests are kept in the `spec` folder and your application
 code will be kept in a `lib` folder. Tests for `hello.rb` will be
 written in a file called `hello_spec.rb`.  Pro tip: cd to the project folder and run
-`rspec --init` to set up some of the structure. 
+`rspec --init` to set up some of the structure.
 
 ```
 lib/
