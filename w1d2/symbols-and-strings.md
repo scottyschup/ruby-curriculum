@@ -45,7 +45,7 @@ parameter: the content type of the upload is JSON. The last shows a
 call to `map` where we ask `#even?` to be called on each element
 (we'll see the `&`, or `to_proc` syntax, in a later chapter).
 
-Because `Symbol`s start with a `:`, they are require one less
+Because `Symbol`s start with a `:`, they require one less
 character than a string to type. They also make clear the intent of
 your program. You should use them whenever you aren't representing
 data that should be input or output.

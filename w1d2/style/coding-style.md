@@ -54,7 +54,7 @@ class CrazyClass
       # indent blocks
       puts "#{n}!"
 
-      # see how the ends always align with the start of the start
+      # see how the ends always align with the start 
       # of the indented section?
     end
   end

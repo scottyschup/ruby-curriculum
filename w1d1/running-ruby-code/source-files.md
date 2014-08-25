@@ -21,7 +21,7 @@ the `require` method:
 ~$ irb
 [1] pry(main)> require 'set'
 => true
-[2] pry(main)> Set.new([1, 2, 3]) # let's me use the `Set` class
+[2] pry(main)> Set.new([1, 2, 3]) # lets me use the `Set` class
 => #<Set: {1, 2, 3}>
 ```
 
