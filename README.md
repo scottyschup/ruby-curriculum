@@ -22,7 +22,7 @@
 + **Bonus project**: [Maze solver][maze-project]
 + **Bonus project**: Use Ruby to solve the
   [eight-queens problem][eight-queens].
-+ **Bonus project**: Work through as many [Project Euler][project-euler] problems as you can. (Project Euler itself is currently down, so I've linked to a page which lists many of the problems, as well as their solutions in Haskell. I don't think the Haskell solutions will help you too much.)
++ **Bonus project**: Work through as many [Project Euler][project-euler] problems as you can.
 
 [day1-instructions]: https://github.com/appacademy/meta/blob/master/first-day-instructions/README.md
 [keyboard-shortcuts]: ./w1d1/shortcuts.md
@@ -43,7 +43,7 @@
 [test-first-ruby]: https://github.com/alexch/learn_ruby
 [maze-project]: ./projects/w1d1-maze-solver.md
 [eight-queens]: http://en.wikipedia.org/wiki/Eight_queens_puzzle
-[project-euler]: http://www.haskell.org/haskellwiki/Euler_problems/1_to_10
+[project-euler]: https://projecteuler.net/problems
 
 ### w1d2
 
