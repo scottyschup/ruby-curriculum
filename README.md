@@ -110,7 +110,7 @@
 [word-chains]:  ./projects/w1d4-word-chains.md
 [test-first-ruby]: https://github.com/alexch/learn_ruby
 [method-missing]: ./w1d4/method-missing.md
-[bonus-recursion-practice]: https://github.com/mistakevin/recursion_exercises
+[bonus-recursion-practice]: https://github.com/appacademy/recursion_exercises
 
 ### w1d5
 
