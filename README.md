@@ -40,7 +40,7 @@
 [source-files]: ./w1d1/running-ruby-code/source-files.md
 [writing-a-script]: ./w1d1/running-ruby-code/writing-a-script.md
 
-[test-first-ruby]: https://github.com/alexch/learn_ruby
+[test-first-ruby]: https://github.com/appacademy/test-first-ruby
 [maze-project]: ./projects/w1d1-maze-solver.md
 [eight-queens]: http://en.wikipedia.org/wiki/Eight_queens_puzzle
 [project-euler]: https://projecteuler.net/problems
@@ -108,7 +108,7 @@
 [recursion]: ./w1d4/recursion.md
 
 [word-chains]:  ./projects/w1d4-word-chains.md
-[test-first-ruby]: https://github.com/alexch/learn_ruby
+[test-first-ruby]: https://github.com/appacademy/test-first-ruby
 [method-missing]: ./w1d4/method-missing.md
 [bonus-recursion-practice]: https://github.com/appacademy/recursion_exercises
 
