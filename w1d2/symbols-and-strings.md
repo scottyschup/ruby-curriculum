@@ -172,4 +172,4 @@ super_print("hello", options)
 
 * [About.com on options][about-options]
 
-[about-options]: http://ruby.about.com/od/advancedruby/qt/opthash.htm)
+[about-options]: http://ruby.about.com/od/advancedruby/qt/opthash.htm
