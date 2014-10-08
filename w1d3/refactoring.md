@@ -121,7 +121,7 @@ aggressively. Bask in the beauty of clean code. Take pride in it.
 
 ## Further Reading
 
-* You may enjoy watching Ben Orenstein's classic talk:
+* Enjoy watching Ben Orenstein's classic talk:
   [Refactoring: From Good to Great][refactoring-talk].
 
 [refactoring-talk]: http://www.confreaks.com/videos/1233-aloharuby2012-refactoring-from-good-to-great
