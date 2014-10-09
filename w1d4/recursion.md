@@ -32,7 +32,7 @@ Let's implement this recursive definition:
 
 ```ruby
 def factorial(n)
-  if n == 1 # the base case
+  if n == 0 # the base case
     1
   else # the recursive case
     n * factorial(n - 1)
