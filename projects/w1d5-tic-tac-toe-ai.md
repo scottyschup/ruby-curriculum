@@ -40,8 +40,9 @@ the other player gets to move. Also, set `prev_move_pos` to the
 position you just marked, for reasons that will make sense when we use
 it later.
 
-Next, we want to characterize a node as either a
-`#losing_node?(player)` or `#winning_node?(player)`. 
+Next, we want to characterize a node as either a winner or a loser for
+a particular mark (evaluator). We will write two methods:
+`#losing_node?(evaluator)` or `#winning_node?(evaluator)`. 
 These methods are *not* optional, you will need them both.
 
 A `#losing_node?` is described in the following cases:
