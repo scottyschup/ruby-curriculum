@@ -333,8 +333,6 @@ end
 
 Time estimate: 1.5hrs
 
-* Write a loop that finds the first number
-  that is (a) >250 and (b) divisible by 7. Print this number!
 * Write a method `factors` that prints out all the factors of a given
   number.
 * Implement [Bubble sort][wiki-bubble-sort] in a method `#bubble_sort`
