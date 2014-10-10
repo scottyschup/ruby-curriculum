@@ -2,9 +2,15 @@
 
 We're going to write a computer AI that can't be beaten at
 TicTacToe. Clone the [TicTacToeAI Repo][ttt-repo] to get started; on
-the Github page you can click "download zip". This has our TTT
-solution code, plus some stub classes for you to fill out. Check that
-you can run the specs:
+the Github page you can click "download zip". The TicTacToeAI Repo has
+a `skeleton` directory and a `solution` directory. We will be writing
+our AI code in the skeleton directory. In the skeletong directory is 
+a `tic_tac_toe.rb` file which contains the TTT solution from w1d2. 
+Today, we will be writing a TicTacToeNode class which utitlizes the `Board`
+class from the TTT solution. We will also be writing a `SuperComputerPlayer`
+class which builds on top of the `ComputerPlayer` class form the TTT solution.
+
+Once you've downloaded the files from the repo, check that you can run the specs:
 
     bundle exec rspec spec/01_tic_tac_toe_node_spec.rb
     bundle exec rspec spec/02_super_computer_player_spec.rb
