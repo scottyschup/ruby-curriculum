@@ -3,6 +3,10 @@
 Write a [chess game][wiki-chess] in an object-oriented way. **Please
 read all through the various phases before proceeding.**
 
+Please split your program into multiple files. Use `[require](http://www.ruby-doc.org/core-2.1.3/Kernel.html#method-i-require)`
+to load files. Make separate files for each class. Give files `snake_case`
+titles.
+
 ## Phase I: Pieces
 
 There are many different kinds of pieces in chess, and each moves a
@@ -154,13 +158,15 @@ and make your code truly stellar, practicing all you know about coding
 style, encapsulation, and exception handling.
 
  * DRY out your code
- * Split your classes into separate files
  * Use exception handling, and make sure to deal with bad user input
  * Method decomposition (pull chunks of code into helper methods)
  * Make helper methods private
  * Jazz up your User Interface (UI) with [colorize][colorize-gem] and
    [unicode][wiki-chess-unicode]. (Add the following to the top of your files 
-to allow ruby to parse unicode: `# encoding: utf-8` .)
+   to allow ruby to parse unicode: `# encoding: utf-8` .)
+ * Make a chess AI! Start with totally random moves. Next, capture pieces
+   when possible. When you have this functionality working start giving your pieces
+   some strategy! You can do it!
 
 [wiki-chess]: http://en.wikipedia.org/wiki/Chess
 [recursion-exercises]: ../w1d4/recursion.md
