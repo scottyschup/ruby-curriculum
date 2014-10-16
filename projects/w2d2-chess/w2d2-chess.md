@@ -3,7 +3,7 @@
 Write a [chess game][wiki-chess] in an object-oriented way. **Please
 read all through the various phases before proceeding.**
 
-Please split your program into multiple files. Use `[require](http://www.ruby-doc.org/core-2.1.3/Kernel.html#method-i-require)`
+Please split your program into multiple files. Use [require](http://www.ruby-doc.org/core-2.1.3/Kernel.html#method-i-require)
 to load files. Make separate files for each class. Give files `snake_case`
 titles.
 
