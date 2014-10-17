@@ -35,7 +35,7 @@ require the rspec gem.
 
 ```
 require 'rspec'
-require './hello'
+require 'hello'
 
 describe '#hello_world' do
 
