@@ -188,7 +188,7 @@ class Human < Animal
 
   def initialize(name)
     # super calls the original definition of the method
-    # If we hadn't passed "Human" to super, then `name` would have
+    # If we hadn't passed "Homo Sapiens" to super, then `name` would have
     # been passed by default.
     super("Homo Sapiens")
     @name = name
