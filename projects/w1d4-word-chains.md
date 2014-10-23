@@ -1,6 +1,6 @@
 # Word Chains
 
-Read the [Word Chains RubyQuiz][quiz-wayback].
+Read the [Word Chains RubyQuiz][quiz].
 
 **NB: You shouldn't have to use recursion for this one.**
 
@@ -131,6 +131,6 @@ is wasteful if the source is close to the target. We can stop early in
 that case. Modify `run` to stop looping when `@all_seen_words`
 contains the target.
 
-
+[quiz]: http://rubyquiz.com/quiz154.html
 [quiz-wayback]: http://web.archive.org/web/20130215052516/http://rubyquiz.com/quiz44.html
 [dictionary]: ./dictionary.txt
