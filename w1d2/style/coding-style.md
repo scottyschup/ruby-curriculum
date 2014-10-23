@@ -4,12 +4,9 @@
 
 * Always follow these most important rules:
     * Indent your code.
-    * Limit lines to 70 chars.
+    * Limit lines to 72 chars.
     * Avoid long methods and nesting more than two levels deep.
     * Don't over-comment.
-* Use our [Textmate config][textmate-config]!
-
-[textmate-config]: https://github.com/appacademy/dotfiles/blob/master/Global.tmProperties
 
 ## Style matters
 
@@ -61,13 +58,14 @@ class CrazyClass
 end
 ```
 
-Indent with *two spaces*, not with tab
-stops. [Set Textmate to do this by default][textmate-prefs], so that
-the tab button inserts two spaces.
+Indent with *two spaces*, not with tab stops. Set Atom to do this by
+default; in the Settings check **Soft Tabs** (which uses spaces
+instead of tabs) and **set Tab Length to 2** (use two spaces; four is
+too many!).
 
 ## Keep Lines Short
 
-Keep your lines <70 characters long. There are historical reasons to
+Keep your lines <72 characters long. There are historical reasons to
 do this; shorter lines are also (said to be) easier to read. Long
 lines make you look like a yahoo or, worse, a Java developer (I was a
 Java dev once).
@@ -83,20 +81,17 @@ class CrazyClass
 end
 ```
 
-Set Textmate to show a line (called a *rule*) at
-[80 columns][textmate-prefs].
-
-[textmate-prefs]: https://github.com/appacademy/dotfiles/blob/master/Global.tmProperties
+To help you, set **Preferred Line Length** in the Atom Settings
+to 72. You may also have to enable the **Wrap Guide** package. This
+should show a vertical line at 72 characters; don't write code past
+the vertical line.
 
 ### No trailing whitespace
 
-This one's minor, but super easy to avoid.
-
-Trailing whitespace (extra spaces at the end of a line) screws up git
-diffs (we'll learn about those later) and looks unprofessional.
-Luckily, there's an [easy fix][easy-fix] for Textmate.
-
-[easy-fix]: https://github.com/vigetlabs/whitespace-tmbundle
+Don't leave extraneous whitespace (spaces or tabs) at the ends of
+lines. Atom will help you by stripping trailing whitespace when you
+save. You can configure this in Settings, by searching for the
+**Whitespace** package.
 
 ## Avoid very long methods, deep nesting
 
@@ -215,16 +210,3 @@ If you want people to understand your work and take you seriously
 as an engineer your code must look clean, consistent, and organized.
 
 [bbatsov-style]: https://github.com/bbatsov/ruby-style-guide
-
-## Rubocop
-
-One good tool to help you learn Ruby's style conventions is
-[Rubocop][rubocop]. Based on Batsov's style guide, it provides
-you with the `rubocop` command you can run in the terminal
-against your Ruby files. It will provide you with a breakdown of
-where your code violates styling conventions. You can install it with:
-```bash
-gem install rubocop
-```
-
-[rubocop]: https://github.com/bbatsov/rubocop
