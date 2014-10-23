@@ -13,10 +13,10 @@ of both rspec-core and rspec-expectations are required reading.
 
 ## File Organization
 
-By convention, tests are kept in the `spec` folder and your application
-code will be kept in a `lib` folder. Tests for `hello.rb` will be
-written in a file called `hello_spec.rb`.  Pro tip: cd to the project folder and run
-`rspec --init` to set up some of the structure.
+By convention, tests are kept in the `spec` folder and your
+application code will be kept in a `lib` folder. Tests for `hello.rb`
+will be written in a file called `hello_spec.rb`.  Pro tip: cd to the
+project folder and run `rspec --init` to set up some of the structure.
 
 ```
 lib/
@@ -25,15 +25,16 @@ spec/
   hello_spec.rb
 Rakefile
 ```
+
 ## Requiring Dependencies
 
 Each spec will usually be limited to testing a single file and so
 will require the file at the top of the spec. It will also have to
 require the rspec gem.
 
-*hello_spec.rb*
-
 ```
+# hello_spec.rb
+
 require 'rspec'
 require 'hello'
 
@@ -51,9 +52,9 @@ This is another reason to follow the convention of using `lib/` and
 
 Here's what a simple 'Hello, World!' spec might look like.
 
-*hello_spec.rb*
-
 ```
+# hello_spec.rb
+
 require 'rspec'
 require 'hello'
 
@@ -66,16 +67,15 @@ end
 
 And the code that would make it pass:
 
-*hello.rb*
-
 ```
+# hello.rb
+
 def hello_world
   "Hello, World!"
 end
 ```
 
-### `describe` & `it`
----
+### `describe` and `it`
 
 `it` is RSpec's most basic test unit. All of your actual individual
 tests will go inside of an `it` block.
@@ -109,7 +109,6 @@ end
 ```
 
 ### `expect`
----
 
 `describe` and `it` organize your tests and give them descriptive
 labels. `expect` will actually be doing the work of testing your
@@ -175,7 +174,6 @@ attention to the variety of expectation matchers available to you.
 Head back here once you're done.
 
 ### `before`
----
 
 Welcome back! Hope you've learned a lot more about what RSpec allows
 you to do.
@@ -219,7 +217,6 @@ which specs are run).
 There are also `after(:each)` and `after(:all)` counterparts.
 
 ### Pending Specs
----
 
 Sometimes, you may want to write out a bunch of descriptions for specs
 without actually writing the bodies of those specs. If you simply
