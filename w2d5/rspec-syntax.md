@@ -15,15 +15,15 @@ of both rspec-core and rspec-expectations are required reading.
 
 By convention, tests are kept in the `spec` folder and your
 application code will be kept in a `lib` folder. Tests for `hello.rb`
-will be written in a file called `hello_spec.rb`.  Pro tip: cd to the
-project folder and run `rspec --init` to set up some of the structure.
+will be written in a file called `hello_spec.rb`. Your directory
+structure should look like this:
 
 ```
-lib/
-  hello.rb
-spec/
-  hello_spec.rb
-Rakefile
+my_cool_project
+  lib/
+    hello.rb
+  spec/
+    hello_spec.rb
 ```
 
 ## Requiring Dependencies
@@ -237,50 +237,6 @@ describe '#valid_move?' do
   it 'should return false for moves that put you in check'
 end
 ```
-
-## Rake
-
-Rake is a Ruby task runner. You can define tasks written in Ruby, and
-Rake will run them for you when you tell it to.
-
-Rake will look for a `Rakefile` in the directory in which it is called
-and run the specified task (i.e. `rake spec` will run the 'spec' task
-as it is defined in the Rakefile). If no argument is specified, `rake`
-will run whichever task has been specified as the default task.
-
-Let's take a look at a Rakefile we can use for testing:
-
-*Rakefile*
-
-```
-require 'rspec'
-require 'rspec/core/rake_task'
-
-RSpec::Core::RakeTask.new(:spec) do |t|
-  t.fail_on_error = false
-  t.rspec_opts = ["--format documentation", "--color", "--order=default"]
-  t.pattern = ARGV[1] || "spec/*_spec.rb"
-end
-
-task :default => :spec
-
-```
-
-Here, RSpec actually provides us with a way to construct Rake tasks
-through `RSpec::Core::RakeTask.new`. We pass it a symbol that
-corresponds to what we want to call the task, and it yields to us a
-configuration object `t` upon which we can set particular options.
-
-In this case, we're removing the stack trace (`t.fail_on_error =
-false`), setting some formatting options, and specifying the pattern of
-the files it should run (`"spec/*_spec.rb"`), which is all the files in
-the `spec/` folder that end in `_spec.rb`. The `ARGV[1]` makes it so
-that we could specify a particular file in the command line if we wanted
-to.
-
-Finally, we specify that the `:default` task is the `:spec` task, so
-now we can run `rake` without any arguments and it will run our specs
-for us. We could of course still call `rake spec`.
 
 ## Additional Notes
 
