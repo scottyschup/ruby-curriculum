@@ -31,7 +31,9 @@ describe Robot do
   subject(:robot) { Robot.new }
 
   describe "#position" do
-    its(:position) { should eq ([0, 0]) }
+    it "starts at the origin" do
+      expect(robot.position).to eq([0, 0])
+    end
   end
 
   describe "move methods" do
@@ -62,8 +64,10 @@ describe Item do
     Item.new("rubies", 20)
   end
 
-  its(:name) { should eq("rubies") }
-  its(:weight) { should eq(20) }
+  it "initializes with a name and weight" do
+    expect(item.name).to eq("rubies")
+    expect(item.weight).to eq(20)
+  end
 end
 
 describe Robot do
@@ -75,7 +79,9 @@ describe Robot do
   let(:max_weight_item) { double("max_weight_item", :weight => 250) }
 
   describe "#items" do
-    its(:items) { should eq([]) }
+    it "starts as an empty array" do
+      expect(robot.items).to eq([])
+    end
   end
 
   describe "#pick_up" do
@@ -86,7 +92,9 @@ describe Robot do
   end
 
   describe "#items_weight" do
-    its(:items_weight) { should eq(0) }
+    it "starts with a weight of zero" do
+      expect(robot.items_weight).to eq(0)
+    end
 
     it "should sum items weights" do
       robot.pick_up(item1)
@@ -111,7 +119,9 @@ describe Robot do
   subject(:robot) { Robot.new }
 
   describe "#health" do
-    its(:health) { should eq(100) }
+    it "starts at 100" do
+      expect(robot.health).to eq(100)
+    end
   end
 
   describe "#wound" do
@@ -152,10 +162,11 @@ end
 describe Bolts do
   subject(:bolts) { Bolts.new }
 
-  it { should be_an(Item) }
-
-  its(:name) { should eq("bolts") }
-  its(:weight) { should eq(25) }
+  it "initializes as an Item with the correct name and weight" do
+    expect(bolts).to be_an(Item)
+    expect(bolts.name).to eq("bolts")
+    expect(bolts.weight).to eq(25)
+  end
 
   describe "#feed" do
     it "heals the robots health 25pts" do
@@ -170,11 +181,12 @@ end
 describe Weapon do
   subject(:weapon) { Weapon.new("power_shock", 10, 45) }
 
-  it { should be_an(Item) }
-
-  its(:name) { should eq("power_shock") }
-  its(:weight) { should eq(10) }
-  its(:damage) { should eq(45) }
+  it "initializes as an Item with the correct name, weight, and damage" do
+    expect(weapon).to be_an(Item)
+    expect(weapon.name).to eq("power_shock")
+    expect(weapon.weight).to eq(10)
+    expect(weapon.damage).to eq(45)
+  end
 
   describe "#hit" do
     let(:robot) { double("robot") }
@@ -189,28 +201,32 @@ end
 describe Laser do
   subject(:laser) { Laser.new }
 
-  it { should be_an(Weapon) }
-
-  its(:name) { should eq("laser") }
-  its(:weight) { should eq(125) }
-  its(:damage) { should eq(25) }
+  it "initializes as a Weapon with the correct name, weight, and damage" do
+    expect(laser).to be_a(Weapon)
+    expect(laser.name).to eq("laser")
+    expect(laser.weight).to eq(125)
+    expect(laser.damage).to eq(25)
+  end
 end
 
 describe PlasmaCannon do
   subject(:plasma_cannon) { PlasmaCannon.new }
 
-  it { should be_an(Weapon) }
-
-  its(:name) { should eq("plasma_cannon") }
-  its(:weight) { should eq(200) }
-  its(:damage) { should eq(55) }
+  it "initializes as a Weapon with the correct name, weight, and damage" do
+    expect(plasma_cannon).to be_a(Weapon)
+    expect(plasma_cannon.name).to eq("plasma_cannon")
+    expect(plasma_cannon.weight).to eq(200)
+    expect(plasma_cannon.damage).to eq(55)
+  end
 end
 
 describe Robot do
   subject(:robot) { Robot.new }
 
   describe "#equipped_weapon" do
-    its(:equipped_weapon) { should eq(nil) }
+    it "starts with no weapon equipped" do
+      expect(robot.equipped_weapon).to eq(nil)
+    end
 
     it "sets equipped weapon" do
       weapon = double("weapon")

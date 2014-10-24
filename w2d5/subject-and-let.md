@@ -39,7 +39,7 @@ want to create other objects to interact with the subject. To do this,
 we use `let`. `let` works just like `subject`, but whereas `subject`
 is the focus of the test, `let` defines helper objects. Also, there
 can only be one `subject` (if you call it again, the subject is
-overriden), whereas you can define many helper objects through `let`.
+overridden), whereas you can define many helper objects through `let`.
 
 ```ruby
 describe Robot do

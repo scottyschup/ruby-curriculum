@@ -195,7 +195,7 @@ describe Chess do
       end
 
       it 'should return true' do
-        expect(board.checkmate?(:black)).to be_true
+        expect(board.checkmate?(:black)).to be true
       end
     end
   end
@@ -240,13 +240,13 @@ end
 
 ## Additional Notes
 
-Don't use `!=`.  Rspec does not support `actual.should != expected`.
-Instead use `actual.should_not eq expected` or `expect(actual).to_not eq
+Don't use `!=`.  Rspec does not support `expect(actual) != expected`.
+Instead use `expect(actual).to eq expected` or `expect(actual).to_not eq
 expected`.
 
 On predicate syntatic sugar: With all predicates, you can strip off the
 ? and tack on a "be_" to make an expectation.  For example,
-`Array.empty?.should == true` is equivalent to `Array.should be_empty`.
+`expect(Array.empty?).to be true` is equivalent to `expect(Array).to be_empty`.
 
 Note that RSpec changes the tense of predicate `has_key?`, so your test
 should look like `expect(Hash).to have_key :key`.

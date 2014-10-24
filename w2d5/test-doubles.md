@@ -50,7 +50,7 @@ there's a problem with `#email_address`, a spec for
 nothing to do with `#email_address`. This will clutter up your log of
 spec failures.
 
-Another problem is if a `Order` and `Customer` both have methods that
+Another problem is if `Order` and `Customer` both have methods that
 interact with the other. If we write the `Customer` specs and methods
 first, then we'll need a functioning `Order` object first for our
 `Customer` to interact with. But we're supposed to TDD `Order`; we'll
@@ -79,7 +79,7 @@ describe Order
   subject(:order) { Order.new(customer) }
 
   it "sends email successfully" do
-    customer.stub(:email_address).and_return("ned@appacademy.io")
+    allow(customer).to receive(:email_address).and_return("ned@appacademy.io")
 
     expect do
       subject.send_confirmation_email
@@ -95,9 +95,9 @@ add behaviors to it.
 
 A method *stub* stands in for a method; `Order` needs `customer`'s
 `email_address` method, so we create a stub to provide it. We do this
-by passing a symbol with the name of the method that we want to
-stub. The `and_return` method takes the return value that the
-stubbed method will return when called as its parameter.
+by calling `allow(double).to receive(:method)`, passing a symbol with the name
+of the method that we want to stub. The `and_return` method takes the return
+value that the stubbed method will return when called as its parameter.
 
 The `customer` double simulates the `Customer#email_address` method,
 without actually using any of the `Customer` code. This totally
