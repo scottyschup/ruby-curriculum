@@ -19,6 +19,8 @@ One of the simpler forms of Poker is [five card draw][five-card-draw].
 
 ## Design
 
+You'll want to use betterspecs as a cheatsheet/reference: http://betterspecs.org
+
 Classes you will want:
 
 * Card
