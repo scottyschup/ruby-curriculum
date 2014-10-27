@@ -198,8 +198,7 @@ variables `$stdout` and `$stdin`. These variables just hold typical
 call `$stdin.gets` and `$stdout.puts`.
 
 Remembering that `$stdin` is a `File` object and that `File` objects
-include `Enumerable` you'll realize that you can actually `#each`
-over input.
+include `Enumerable` you'll realize that you can `#each` over input.
 
 ```ruby
 $stdin.each do |input|
