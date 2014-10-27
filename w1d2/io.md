@@ -129,6 +129,14 @@ contents = File.readlines("movie-times.txt")
 # Note: Each element will end with '\n'
 ```
 
+The `File` class includes `Enumerable` adding all the power we know
+and love from arrays. Here's an example of using `#each`.
+
+```ruby
+f = File.new("todos")
+f.each {|line| puts "#{f.lineno}: #{line}" }
+```
+
 ## Writing a file
 
 To open a file for writing, you need to pass `"w"` to `File.open` for
@@ -188,6 +196,16 @@ In Ruby, you can access standard input and output through the global
 variables `$stdout` and `$stdin`. These variables just hold typical
 `File` objects. In particular, `Kernel#gets` and `Kernel#puts` just
 call `$stdin.gets` and `$stdout.puts`.
+
+Remembering that `$stdin` is a `File` object and that `File` objects
+include `Enumerable` you'll realize that you can actually `#each`
+over input.
+
+```ruby
+$stdin.each do |input|
+  puts "I was given: #{ input }"
+end
+```
 
 ## Command Line Arguments
 
