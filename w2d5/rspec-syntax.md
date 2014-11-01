@@ -162,8 +162,6 @@ expect('hello').to eq('hello') # => passes ('hello' == 'hello')
 expect('hello').to be('hello') # => fails (strings are different objects)
 ```
 
----
-
 At this point, you know the absolute basics of RSpec's syntax. Head on
 over to the GitHub pages and read both of the READMEs. Pay  particular
 attention to the variety of expectation matchers available to you.
@@ -248,8 +246,14 @@ On predicate syntatic sugar: With all predicates, you can strip off the
 ? and tack on a "be_" to make an expectation.  For example,
 `expect(Array.empty?).to be true` is equivalent to `expect(Array).to be_empty`.
 
-Note that RSpec changes the tense of predicate `has_key?`, so your test
-should look like `expect(Hash).to have_key :key`.
+Note that RSpec can eveb change the tense when necessary. For
+instance, to test that a Hash `has_key?`, you can simplify:
+
+    expect(my_hash.has_key?(my_key)).to eq(true)
+
+to:
+
+    expect(my_hash).to have_key(my_key)
 
 ## Intro Assessment Spec
 

@@ -1,6 +1,7 @@
 # Test Doubles
 
 ## A Preface of Great Interest
+
 When we write unit tests, we want each of our specs to test just one
 thing. This can be a little complicated when we write classes that
 interact with other classes. For example, imagine
@@ -12,7 +13,11 @@ class Order
   end
 
   def send_confirmation_email
-    email(:to => @customer.email_address, :subject => "Order Confirmation", :body => self.summary)
+    email(
+      to: @customer.email_address,
+      subject: "Order Confirmation",
+      body: self.summary
+    )
   end
 end
 ```
@@ -45,10 +50,10 @@ end
 This is troublesome because a spec for `#send_confirmation_email`
 should only test the `#send_confirmation_email` method, not
 `Customer#email_address`. But the way we've written this spec, if
-there's a problem with `#email_address`, a spec for
-`#send_confirmation_email` will also break, even though it should have
-nothing to do with `#email_address`. This will clutter up your log of
-spec failures.
+there's a problem with `Customer#email_address`, a spec for
+`Order#send_confirmation_email` will also break, even though it should
+have nothing to do with `Customer#email_address`. This will clutter up
+your log of spec failures.
 
 Another problem is if `Order` and `Customer` both have methods that
 interact with the other. If we write the `Customer` specs and methods
@@ -65,13 +70,14 @@ a `Customer` would have been sufficient.
 
 We want to write our tests in isolation of other classes: their bugs
 or whether they've even been implemented yet. The answer to this is to
-use *doubles*.
+use **doubles**.
 
 ## Test doubles
-A test double (also called a *mock*) is a fake object that we can use
-to create the desired isolation. A double takes the place of outside,
-interacting objects, such as `Customer`. We could write the example
-above like so:
+
+A test double (also called a **mock**) is a fake object that we can
+use to create the desired isolation. A double takes the place of
+outside, interacting objects, such as `Customer`. We could write the
+example above like so:
 
 ```ruby
 describe Order
@@ -82,7 +88,7 @@ describe Order
     allow(customer).to receive(:email_address).and_return("ned@appacademy.io")
 
     expect do
-      subject.send_confirmation_email
+      order.send_confirmation_email
     end.to_not raise_exception
   end
 end
@@ -93,11 +99,12 @@ a name for logging purposes). This creates an instance of
 `RSpec::Mocks::Mock`. The double is a blank slate, waiting for us to
 add behaviors to it.
 
-A method *stub* stands in for a method; `Order` needs `customer`'s
+A method **stub** stands in for a method; `Order` needs `customer`'s
 `email_address` method, so we create a stub to provide it. We do this
-by calling `allow(double).to receive(:method)`, passing a symbol with the name
-of the method that we want to stub. The `and_return` method takes the return
-value that the stubbed method will return when called as its parameter.
+by calling `allow(double).to receive(:method)`, passing a symbol with
+the name of the method that we want to stub. The `and_return` method
+takes the return value that the stubbed method will return when called
+as its parameter.
 
 The `customer` double simulates the `Customer#email_address` method,
 without actually using any of the `Customer` code. This totally
@@ -117,6 +124,7 @@ let(:customer) { double("customer", :email_address => "ned@appacademy.io") }
 ```
 
 ## Method Expectations
+
 If the tested object is supposed to call methods on other objects as
 part of its functionality, we should test that the proper methods are
 called. To do this, we use method expectations. Here's an example:
@@ -144,6 +152,7 @@ the `#charge_customer` method. Expectations need to be set up in
 advance.
 
 ## Integration tests
+
 Mocks let us write unit tests that isolate the functionality of a
 single class from other outside classes. This lets us live up to the
 philosophy of unit tests: in each spec, test one thing only.
@@ -168,7 +177,7 @@ We need a higher level of testing that's intended to verify that
 call the right method on `Customer`, which does the thing that `Order`
 expects.
 
-This kind of test is called an *integration test*. In integration
+This kind of test is called an **integration test**. In integration
 tests, we use real objects instead of mocks, so that we can verify
 that all the classes interact correctly. A thorough test suite will
 have both unit and integration tests. The unit tests are very specific
@@ -177,6 +186,7 @@ integration tests are larger in scope and are intended to check that
 objects interact properly.
 
 ## Resources
+
 * The double facilities are provided in the submodule of RSpec called
   rspec-mocks. You can check out their [github][rspec-mocks-github]
   which has a useful README.
