@@ -256,4 +256,5 @@ Estimated time: 3hrs
 
 ## Resources
 
+* *Beginning Ruby* (Ch. 9, p. 203 in the 2nd Edition)
 * [Ruby IO Class](http://ruby-doc.org/core-2.0/IO.html)
