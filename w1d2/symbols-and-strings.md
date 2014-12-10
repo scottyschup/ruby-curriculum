@@ -71,8 +71,7 @@ def brittle_format_url(scheme, host, path, query_hash)
   "#{ scheme }://#{ host }/#{ path }?#{ query_string }"
 end
 
-# have to remember to supply arguments in order
-# no defaults. ugh.
+# have to remember to supply arguments in order. boo.
 p brittle_format_url(
   "http",
   "www.google.com",
