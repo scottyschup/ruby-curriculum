@@ -36,7 +36,4 @@ object. I made code objects for both (1) the secret code and (2) the
 user's guess of the code. I wrote methods like
 `Code#exact_matches(other_code)` and `Code#near_matches(other_code)`.
 
-I also wrote a `Game` class. This keeps track of the number of turns
-and has methods for reading user input and printing output.
-
 [wiki-mastermind]: http://en.wikipedia.org/wiki/Mastermind_(game)
