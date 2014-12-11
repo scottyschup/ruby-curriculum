@@ -432,5 +432,5 @@ eval_block(1, 2, 3)
 * [Robert Sosinski on Blocks][sosinski-blocks]
 * [Skorks on Procs and Lambdas][skorks-blocks]
 
-[sosinski-blocks]: http://www.robertsosinski.com/2008/12/21/understanding-ruby-blocks-procs-and-lambdas
+[sosinski-blocks]: http://www.reactive.io/tips/2008/12/21/understanding-ruby-blocks-procs-and-lambdas/
 [skorks-blocks]: http://www.skorks.com/2010/05/ruby-procs-and-lambdas-and-the-difference-between-them/
