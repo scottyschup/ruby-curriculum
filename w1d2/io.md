@@ -83,7 +83,11 @@ p "this" # => prints '"this"' with a newline; note the quotes
 Notice also that `puts` adds newlines after each object in an array.
 
 ```ruby
-puts [1, 2, 3] # => prints "1\n2\n3\n"
+puts [1, 2, 3]
+# prints:
+# 1
+# 2
+# 3
 ```
 
 If you want to print an array out on one line, you probably want `p`.
