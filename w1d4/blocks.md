@@ -115,7 +115,7 @@ passed on to the block.
 
 ```ruby
 my_new_proc = Proc.new { |name| puts "Hello #{name}" }
-my_new_proc.call("Zimmy")
+my_new_proc.call("Zimmy") # prints "Hello Zimmy"
 ```
 
 The `&` way only allows you to pass a single block/proc to a
