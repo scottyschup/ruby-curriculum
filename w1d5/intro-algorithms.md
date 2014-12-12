@@ -167,7 +167,7 @@ the old parent isn't `nil`). Modify your `parent=` method to do this.
 **Phase III:**
 
 The easiest phase! Write `add_child(child_node)` and
-`remove_child(child)` methods. They should both be one-liners that
+`remove_child(child)` methods. These methods should be one- or two-liners that
 call `#parent=`.
 
 **Phase IV:**
