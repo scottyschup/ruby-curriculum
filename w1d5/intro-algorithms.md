@@ -132,7 +132,7 @@ following interface:
   adds the node to their parent's array of children (unless we're
   setting parent to `nil`).
 
-Test your code out with [this RSpec file][tree-node-rspec]
+Test your code out with [this RSpec file][tree-node-rspec]. You can run the spec with `rspec --color -fd 00_tree_node_spec.rb` to get nicely formatted output.
 
 **Phase II:**
 
