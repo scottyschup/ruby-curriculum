@@ -411,7 +411,7 @@ animals = [
 ]
 ```
 
-Collections of items should have some unifying principal: in the three
+Collections of items should have some unifying principle: in the three
 arrays here every element is a cool thing, or a lucky number, or an
 animal. Collections with heterogeneous types often lack a unifying
 idea.
