@@ -104,15 +104,13 @@ def prompt_name
   name_parts
 end
 
-def echo_name
-  begin
-    fname, lname = prompt_name
+def echo_name # this method uses an implicit begin block
+  fname, lname = prompt_name
 
-    puts "Hello #{fname} of #{lname}"
-  rescue
-    puts "Please only use two names."
-    retry
-  end
+  puts "Hello #{fname} of #{lname}"
+rescue
+  puts "Please only use two names."
+  retry
 end
 ```
 
