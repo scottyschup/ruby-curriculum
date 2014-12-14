@@ -99,5 +99,5 @@ JSON is the dominant serialization technology on the web (XML is a
 close second); we'll write Rails apps which we can communicate with by
 sending and receiving JSON data.
 
-In the world of client-side Ruby, YAML is the leader because of its
+In the world of server-side Ruby, YAML is the leader because of its
 better support for deserializing classes.
