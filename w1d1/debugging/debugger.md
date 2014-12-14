@@ -721,6 +721,6 @@ verifies we don't make that mistake again.
 * Pivotal Labs [cheatsheet][cheatsheet].
 * Comprehensive (very long) [debugger documentation][debugger-documentation]
 
-[cheatsheet]: http://pivotallabs.com/users/chad/blog/articles/366-ruby-debug-in-30-seconds-we-don-t-need-no-stinkin-gui
+[cheatsheet]: http://pivotallabs.com/ruby-debug-in-30-seconds-we-don-t-need-no-stinkin-gui/
 [debugger-documentation]: http://bashdb.sourceforge.net/ruby-debug.html
 [sitepoint]: http://www.sitepoint.com/rubyists-time-pry-irb/
