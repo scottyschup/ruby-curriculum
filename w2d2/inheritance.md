@@ -218,3 +218,22 @@ should get a bonus like this
 Managers should get a bonus based on the salary of their whole team:
 
     bonus = (total salary of all employees and sub employees) * multiplier
+
+#### Testing
+
+If we have a company structured like this:
+
+| Name   	| Salary     	| Title      	| Boss   	|
+|--------	|------------	|------------	|--------	|
+| Ned    	| $1,000,000 	| Founder    	| nil    	|
+| Darren 	| $78,000    	| TA Manager 	| Ned    	|
+| Shawna 	| $12,000    	| TA         	| Darren 	|
+| David  	| $10,000    	| TA         	| Darren 	|
+
+then we should have bonuses like this:
+
+```ruby
+ned.bonus(5) # => 500_000
+darren.bonus(4) # => 88_000
+david.bonus(3) # => 30_000
+```
