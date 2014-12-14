@@ -1,6 +1,6 @@
 # Minesweeper
 
-Everyone remembers [Minesweeper][minesweeper-wiki], right? Let's build
+Everyone remembers [Minesweeper][play-minesweeper] ([wiki][minesweeper-wiki]), right? Let's build
 it! **Read all these instructions first**.
 
 Start by supporting a single grid size: 9x9; randomly seed it with
@@ -76,5 +76,6 @@ the save file to load, you may be surprised to find that console input
 is broken. [This ruby-forum.com post][argv-description] explains how
 `gets` interacts with `ARGV`/`ARGF`.
 
+[play-minesweeper]: http://minesweeperonline.com/#beginner
 [minesweeper-wiki]: http://en.wikipedia.org/wiki/Minesweeper_(Windows)
 [argv-description]: https://www.ruby-forum.com/topic/185266#809660
