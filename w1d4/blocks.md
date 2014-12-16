@@ -346,20 +346,27 @@ The `&` can be tricky because it does several things:
 * Converts procs to blocks
 
 We have mostly seen the first two uses, but you should be aware of the third. 
-For example:
-```rb
+For example, assume we have a method `my_sort!` that takes a block argument, like this:
+
+```ruby
+animals = ['cats', 'dog', 'badgers']
+animals.my_sort! { |animal1, animal2| animal1.length <=> animal2.length }
+animals # => ['dog', 'cats', 'badgers']
+```
+
+We can easily define a non-bang version of this method like so:
+
+```ruby
 class Array
-  def my_sort(&blk)
-    self.dup.my_sort!(&blk)
+  def my_sort(&prc)
+    self.dup.my_sort!(&prc)
   end
 end
 ```
-While they may look like the same code, the outer and inner `&blk` arguments 
+While they may look like the same code, the first and second uses of `&prc` 
 are different: the first one calls `#to_proc` on a block argument, creating 
-an object that we can refer to with `blk`. But `#my_sort!` expects a block 
-argument, so we can't simply pass it `blk`; instead, we use the `&` again to 
-ensure that Ruby knows to interpret the proc `blk` as the block argument for 
-`#my_sort!`.
+a first-class proc object that we can refer to with `prc`. But `#my_sort!` expects a block 
+argument, not a proc, so we can't simply pass it `prc`. Instead, when we call `#my_sort!`, we use `&` again, but this time `&` means *the opposite* of what it meant in the previous line; now `&` is changing the proc back into a block.
 
 ## Required video
 
