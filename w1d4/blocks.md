@@ -337,6 +337,30 @@ symbolic_proc.call("ABCD") #=> ["A", "D"]
 Note: In order to convert a symbol to a string you can use `#to_s` or
 `#to_sym` to go from string to symbol
 
+## A Note on &
+
+You may have noticed that the `&` appears in many places in the examples above. 
+The `&` can be tricky because it does several things:
+* Converts blocks to procs
+* Converts method names (passed as symbols) to procs
+* Converts procs to blocks
+
+We have mostly seen the first two uses, but you should be aware of the third. 
+For example:
+```rb
+class Array
+  def my_sort(&blk)
+    self.dup.my_sort!(&blk)
+  end
+end
+```
+While they may look like the same code, the outer and inner `&blk` arguments 
+are different: the first one calls `#to_proc` on a block argument, creating 
+an object that we can refer to with `blk`. But `#my_sort!` expects a block 
+argument, so we can't simply pass it `blk`; instead, we use the `&` again to 
+ensure that Ruby knows to interpret the proc `blk` as the block argument for 
+`#my_sort!`.
+
 ## Required video
 
 * Watch Peter's [Procs, Blocks and Lambdas][peter-youtube-blocks].
