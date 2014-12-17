@@ -277,7 +277,7 @@ def primes
 **N.B.** Don't forget to `require 'byebug'` at the top of your file.
 
 Let's load our code into pry and call `primes?(2)` to start testing the `primes?` method.
-The `debugger` at the top of `prime?` will pause our code there.
+The `debugger` at the top of `prime?` will pause our code there. At this point, you are basically like [Neo][neo].
 
 ```ruby
 david ~/Dropbox/TA $
@@ -719,6 +719,7 @@ verifies we don't make that mistake again.
 * Pivotal Labs [cheatsheet][cheatsheet].
 * Comprehensive (very long) [debugger documentation][debugger-documentation]
 
+[neo]: http://img1.wikia.nocookie.net/__cb20131002032735/matrix/images/b/b5/Matrix-neo-stops-bullets-wallpaper.jpg
 [cheatsheet]: http://pivotallabs.com/ruby-debug-in-30-seconds-we-don-t-need-no-stinkin-gui/
 [debugger-documentation]: http://bashdb.sourceforge.net/ruby-debug.html
 [sitepoint]: http://www.sitepoint.com/rubyists-time-pry-irb/
