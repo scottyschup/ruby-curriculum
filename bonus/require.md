@@ -38,7 +38,7 @@ lib/game.rb:3:in `initialize': uninitialized constant Game::Board (NameError)
 
 Ruby doesn't know what `Board` is (because it's defined in another
 file that is never loaded). Therefore, Ruby throws an error when it
-sees the n ame `Board` and doesn't know what that means. We need to
+sees the name `Board` and doesn't know what that means. We need to
 instruct `lib/game.rb` to load `lib/board.rb`:
 
 Well, we know how to deal with this:
