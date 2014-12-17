@@ -12,7 +12,8 @@
     + [Enumerable][enumerable]
     + [Object][object]
 + Debugging
-    + [the pry REPL and the byebug debugger][pry-and-debugger]
+    + [the pry REPL and the byebug debugger][pry-and-byebug]
+        + [Bonus byebug commands: `display` and `where`][bonus-byebug] (optional)
     + [common error messages][common-error-messages]
 + Running/loading Ruby code
     + [Source files][source-files]
@@ -34,7 +35,8 @@
 [enumerable]: ./w1d1/data-structures/enumerable.md
 [object]: ./w1d1/data-structures/object.md
 
-[pry-and-debugger]: ./w1d1/debugging/debugger.md
+[pry-and-byebug]: ./w1d1/debugging/debugger.md
+[bonus-byebug]: ./w1d1/debugging/bonus-debugger.md
 [common-error-messages]: ./w1d1/debugging/common-exceptions.md
 
 [source-files]: ./w1d1/running-ruby-code/source-files.md
