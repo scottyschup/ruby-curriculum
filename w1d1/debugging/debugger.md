@@ -75,8 +75,8 @@ primes = []
 num = 1
 while primes.count < 100
   is_prime = true
-  (1..num).each do |i|
-    if (num % i) == 0
+  (1..num).each do |idx|
+    if num % idx == 0
       is_prime = false
       break
     end
@@ -109,8 +109,8 @@ level to kick things off.
 # primes.rb
 
 def prime?(num)
-  (1..num).each do |i|
-    if (num % i) == 0
+  (1..num).each do |idx|
+    if num % idx == 0
       return false
     end
   end
@@ -200,44 +200,26 @@ Yes, when debugging you should look at the source to familiarize
 yourself with the code. The bug may jump out at you. If not, don't
 worry. We're about to learn better techniques.
 
-## Pry and debugger
-
-We're going to use three gems.
-
-1. pry (`gem install pry`): this is a replacement
-for irb that adds some cool features (like syntax highlighting and the ability to `cd` between Ruby classes and objects and `ls` their methods and variables).
-
-1. byebug (`gem install byebug`): this gem gives us a debugger that works with Ruby version 2.0 and higher. A debugger lets us step through our code one line at a time, and interact with it 'live' (such as checking or even changing the values of variables).
-
-1. pry-byebug (`gem install pry-byebug`): this connects the first two gems
-
-You will navigate through your code with commands like `next`, `step`, and `continue`. To alias these as `n`, `s`, and `c`, create a file in your home directory called `.pryrc` and paste in this content:
-
-```rb
-if defined?(PryByebug)
-  Pry.commands.alias_command 'c', 'continue'
-  Pry.commands.alias_command 's', 'step'
-  Pry.commands.alias_command 'n', 'next'
-  Pry.commands.alias_command 'f', 'finish'
-end
-```
-
-[pryrc]: https://github.com/appacademy/dotfiles/blob/master/pryrc
-
-## Use the REPL to isolate the problem
+## Use a REPL to isolate the problem
 
 Now that we've broken the code up into testable bits, let's actually
 test those parts. That lets us quickly isolate the problem to a few
 lines.
 
-Type `pry` at your Bash prompt to open the Pry REPL.
+Open the Pry REPL. Make sure you have done `gem install pry` first.
+
+```bash
+david ~/Dropbox/TA $
+pry
+```
+
+Load your file and start testing.
 
 ```ruby
-[1] pry(main)> load './primes.rb'
+[1] pry(main)> load 'primes.rb'
 => true
 [2] pry(main)> prime?(2)
 => false
-
 ```
 
 Awesome. We've already found a *regression*; an input which produces
@@ -246,11 +228,31 @@ those when the underlying `prime?` method is broken.
 
 Decomposition for the win.
 
-## Use debugger to step through code
+Now we need to take a more fine-grained look at exactly what is wrong with our `prime?` method.
+
+## Use a debugger to zero in on the problem
+
+In Ruby versions 2.0 and greater, we use byebug for debugging:
+
+`gem install byebug`
+
+Byebug lets us do many cool things. We can step through our code one line at a time, and along the way...
+
+* check the value of our variables at any time (no `p` required!)
+* continuously watch the value of a variable, so that we can see when it changes
+* change the value of variables in the middle of program execution
+* set breakpoints so that we can pause whenever we reach a certain line in our code
+* examine the call stack to determine exactly which methods brought us to a certain line of code
+* execute short snippits of code to test an idea (just like in pry or irb)
+
+Note: a minor downside of the byebug gem is that it does not support colored syntax highlighting.
+However, I will apply coloring to the following examples so that they are easier to read.
+
+## Step through code
 
 Once you've isolated a bug to a small amount of code, the best way to
 uncover the problem is to single-step through the code, checking what
-the program does along the way. This is what a *debugger* does.
+the program does along the way. This is what a *debugger* (such as byebug) does.
 
 To start, we need to modify our program slightly so that we *drop
 into* the debugger when `prime?` is called:
@@ -259,56 +261,34 @@ into* the debugger when `prime?` is called:
 require 'byebug'
 
 def prime?(num)
-  debugger # drops us into the debugger at this point
+  debugger # drops us into the debugger right after this point
 
-  (1..num).each do |i|
-    if (num % i) == 0
+  (1..num).each do |idx|
+    if num % idx == 0
       return false
     end
   end
 end
+
+def primes
+  # ... etc.
 ```
 
 **N.B.** Don't forget to `require 'byebug'` at the top of your file.
 
-Let's kick the debugger off by calling the method:
+Let's load our code into pry and call `primes?(2)` to start testing the `primes?` method.
+The `debugger` at the top of `prime?` will pause our code there.
 
 ```ruby
-[david@david-air] ~/Dropbox/app-academy-TA  
-❯ pry
-[1] pry(main)> load './primes.rb'
+david ~/Dropbox/TA $
+pry
+[1] pry(main)> load 'primes.rb'
 => true
 [2] pry(main)> prime?(2)
 
-From: /home/david/Dropbox/app-academy-TA/primes.rb @ line 6 Object#prime?:
-
-    3: def prime?(num)
-    4:   debugger # drops us into the debugger right after this point
-    5:
-=>  6:   (1..num).each do |i|
-    7:     if (num % i) == 0
-    8:       return false
-    9:     end
-   10:   end
-   11: end
-
-  [1] pry(main)>
-
-  ```
-
-`debugger` pauses the execution of the method and drops us into the
-*debugger*. The debugger lets us step through our code one line at a
-time, testing the result along the way. The debugger prompt looks like
-`[1] pry(main)>`. Our position is indicated by the arrow; we're at
-line 6.
-
-On line 6 we are calling the `each` method on the range `(1..num)`, so to move into that method we type `step`, or `s` if you set up your aliases above. (There is a bug in Ruby 2.1 that causes us to stay on line 6 the first time we type `step`, so we'll have to `step` twice.)
-
-```ruby
-[1] pry(main)> step
-
-From: /home/david/Dropbox/app-academy-TA/primes.rb @ line 6 Object#prime?:
-
+[1, 10] in primes.rb
+    1: require 'byebug'
+    2:
     3: def prime?(num)
     4:   debugger # drops us into the debugger right after this point
     5:
@@ -317,12 +297,36 @@ From: /home/david/Dropbox/app-academy-TA/primes.rb @ line 6 Object#prime?:
     8:       return false
     9:     end
    10:   end
-   11: end
+(byebug)
+```
 
-[1] pry(main)> step
+We are now inside of the byebug debugger, inside of the pry REPL.
+(Note that the byebug debugger is not built into pry.
+If we didn't have `require 'byebug'` at the top of our file then pry would have raised an error when it came to line 4.)
+The debugger prompt looks like
+`(byebug)`. Our position is indicated by the arrow; we're at
+line 6.
 
-  From: /home/david/Dropbox/app-academy-TA/primes.rb @ line 7 Object#prime?:
+On line 6 we are calling the `each` method on the range `(1..num)`. `step` (or `s`) is the command that we use to step into a method call. There is a bug in Ruby 2.1 that causes us to get stuck on line 6 the first time we type `step`, so we'll have to `step` twice.
 
+```ruby
+(byebug) step
+
+[1, 10] in primes.rb
+    1: require 'byebug'
+    2:
+    3: def prime?(num)
+    4:   debugger # drops us into the debugger right after this point
+    5:
+=>  6:   (1..num).each do |idx|
+    7:     if num % idx == 0
+    8:       return false
+    9:     end
+   10:   end
+(byebug) step
+
+[2, 11] in primes.rb
+    2:
     3: def prime?(num)
     4:   debugger # drops us into the debugger right after this point
     5:
@@ -332,18 +336,16 @@ From: /home/david/Dropbox/app-academy-TA/primes.rb @ line 6 Object#prime?:
     9:     end
    10:   end
    11: end
-
-[1] pry(main)>
+(byebug)
 ```
 
 You can see how the arrow has advanced. Let's see what happens at this
 if statement. Since there is no method call on line 7, we advance with `next` (or `n`).
 
 ```ruby
-[1] pry(main)> next
+(byebug) next
 
-From: /home/david/Dropbox/app-academy-TA/primes.rb @ line 8 Object#prime?:
-
+[3, 12] in primes.rb
     3: def prime?(num)
     4:   debugger # drops us into the debugger right after this point
     5:
@@ -353,28 +355,29 @@ From: /home/david/Dropbox/app-academy-TA/primes.rb @ line 8 Object#prime?:
     9:     end
    10:   end
    11: end
-
-  [1] pry(main)>
-
+   12:
+(byebug)
 ```
 
 Wait; we entered the `if`? How? Let's check the values of `num` and
 `idx`:
 
 ```ruby
-[1] pry(main)> num
-=> 2
-[2] pry(main)> idx
-=> 1
+(byebug) num
+1
+(byebug) idx
+1
 ```
 
 Hmm... We shouldn't check for divisibility by one. Upon reflection, we
 shouldn't start the index at 1 at all; we should start at 2. We can
-quit out of the debugger by typing `!!!`, then edit the source.
+quit byebug by typing `exit`, then `y` to confirm.
+
+Let's fix our code:
 
 ```ruby
 def prime?(num)
-  debugger # let's leave this in a moment
+  debugger
 
   (2..num).each do |idx|
     if num % idx == 0
@@ -384,55 +387,71 @@ def prime?(num)
 end
 ```
 
-Let's restart the REPL and run again:
+Let's go back into pry and see if `prime?` works now:
 
 ```ruby
-[2] pry(main)> load './primes.rb'
+david ~/Dropbox/TA $
+pry
+[1] pry(main)> load 'primes.rb'
 => true
+[2] pry(main)> prime?(2)
+
+[1, 10] in primes.rb
+    1: require 'byebug'
+    2:
+    3: def prime?(num)
+    4:   debugger
+    5:
+=>  6:   (2..num).each do |idx|
+    7:     if num % idx == 0
+    8:       return false
+    9:     end
+   10:   end
+(byebug)
+```
+
+We still have our `debugger` on line 4, and so we stop at the next line of code (line 6).
+Right now, though, we don't want to debug step-by-step; we just want to see the result of calling `prime?(2)`.
+We can type `c` (for `continue`) to tell the debugger to keep running the code.
+
+```ruby
+    9:     end
+   10:   end
+(byebug) c
+=> false
+[3] pry(main)>
+```
+
+The code never brought us back to the debugger at line 4, so the method finished, and spit us back out at the pry prompt.
+We can see that our method returned false, though, so we still have work to do.
+
+The line we really want to focus on is line 8, because that's where we are erroneously returning `false`.
+So, let's add a breakpoint to line 8 with the `break` command. This tells byebug to make sure to stop when we hit line 8.
+I then tell the program to run freely until it hits a breakpoint (`c`, or `continue`), and
+shortly thereafter we arrive at line 8.
+
+```ruby
 [3] pry(main)> prime?(2)
 
-From: /home/david/Dropbox/app-academy-TA/primes.rb @ line 6 Object#prime?:
-
+[1, 10] in primes.rb
+    1: require 'byebug'
+    2:
     3: def prime?(num)
-    4:   debugger # let's leave this in a moment
+    4:   debugger
     5:
 =>  6:   (2..num).each do |idx|
     7:     if num % idx == 0
     8:       return false
     9:     end
    10:   end
-   11: end
+(byebug) break 8
+Created breakpoint 1 at primes.rb:8
+(byebug) c
+Stopped by breakpoint 1 at primes.rb:8
 
-[1] pry(main)> c
-=> false
-[4] pry(main)>
-```
-
-I used `c` (for `continue`) to tell the debugger to keep running the
-code; the code never told us to go back to the debugger, so the
-method finished and returned `false`. Looks like we have more work to
-do.
-
-Let's use a *breakpoint*:
-
-```ruby
-[6] pry(main)> prime?(2)
-
-From: /home/david/Dropbox/app-academy-TA/primes.rb @ line 6 Object#prime?:
-
+[3, 12] in primes.rb
     3: def prime?(num)
-    4:   debugger # let's leave this in a moment
-    5:
-=>  6:   (2..num).each do |idx|
-    7:     if num % idx == 0
-    8:       return false
-    9:     end
-   10:   end
-   11: end
-
-[1] pry(main)> break 8
-Breakpoint 1: /home/david/Dropbox/app-academy-TA/primes.rb @ 8 (Enabled) :
-
+    4:   debugger
     5:
     6:   (2..num).each do |idx|
     7:     if num % idx == 0
@@ -440,36 +459,16 @@ Breakpoint 1: /home/david/Dropbox/app-academy-TA/primes.rb @ 8 (Enabled) :
     9:     end
    10:   end
    11: end
-
-[2] pry(main)> c
-
-Breakpoint 1. First hit
-
-From: /home/david/Dropbox/app-academy-TA/primes.rb @ line 8 Object#prime?:
-
-    3: def prime?(num)
-    4:   debugger # let's leave this in a moment
-    5:
-    6:   (2..num).each do |idx|
-    7:     if num % idx == 0
-=>  8:       return false
-    9:     end
-   10:   end
-   11: end
+   12:
+(byebug)
 ```
-
-I add a breakpoint to line 8 with the `break` command. This tells the
-debugger to make sure to stop when I hit line 8. Since I know 2 is
-prime, it should help to put a breakpoint at 8 (where false is
-returned), so I can check out what the variables are at this point. I
-then tell the program to run freely (`c`, or `continue`), and
-eventually we arrive at line 8.
+Now we can have a look at the relevant variables.
 
 ```ruby
-[1] pry(main):1> idx
-=> 2
-[2] pry(main):1> num
-=> 2
+(byebug) num
+2
+(byebug) idx
+2
 ```
 
 Groan. We are testing whether `num` is divisible by itslf. That's
@@ -477,23 +476,22 @@ because `(2..num)` includes num; we wanted `(2...num)`. Fix and then
 reload:
 
 ```ruby
-[1] pry(main)> load './primes.rb'
+[1] pry(main)> load 'primes.rb'
 => true
 [2] pry(main)> prime?(2)
 
-From: /home/david/Dropbox/app-academy-TA/primes.rb @ line 6 Object#prime?:
-
+[1, 10] in primes.rb
+    1: require 'byebug'
+    2:
     3: def prime?(num)
-    4:   debugger # let's leave this in a moment
+    4:   debugger
     5:
 =>  6:   (2...num).each do |idx|
     7:     if num % idx == 0
     8:       return false
     9:     end
    10:   end
-   11: end
-
-[1] pry(main)> c
+(byebug) c
 => 2...2
 [3] pry(main)>
 ```
@@ -518,15 +516,15 @@ end
 Does it really work? We ought to check with a few values other than 2:
 
 ```ruby
-[7] pry(main)> load './primes.rb'
+[5] pry(main)> load 'primes.rb'
 => true
-[8] pry(main)> prime?(2)
+[6] pry(main)> prime?(2)
 => true
-[9] pry(main)> prime?(3)
+[7] pry(main)> prime?(3)
 => true
-[10] pry(main)> prime?(10)
+[8] pry(main)> prime?(10)
 => false
-[11] pry(main)> prime?(17)
+[9] pry(main)> prime?(17)
 => true
 ```
 
@@ -536,32 +534,31 @@ the REPL.
 ## Reading stack traces
 
 Now that `prime?` appears to be working, it's time to test
-`primes`. We've added a call to `debugger` at the start of
-`primes`. Again, we use the REPL:
+`primes`. I've put a call to `debugger` at the start of
+`primes`. Again, let's use pry:
 
 ```ruby
-[7] pry(main)> load './primes.rb'
+[10] pry(main)> load 'primes.rb'
 => true
-[8] pry(main)> primes(2)
+[11] pry(main)> primes(2)
 
-From: /home/david/Dropbox/app-academy-TA/primes.rb @ line 16 Object#primes:
-
-    13: def primes(num_primes)
-    14:   debugger
-    15:
-=>  16:   ps = []
-    17:   num = 1
-    18:   while ps.count < num_primes
-    19:     primes << num if prime?(num)
-    20:   end
-    21: end
-
-[1] pry(main)> c
+[11, 20] in primes.rb
+   11: end
+   12:
+   13: def primes(num_primes)
+   14:   debugger
+   15:
+=> 16:   ps = []
+   17:   num = 1
+   18:   while ps.count < num_primes
+   19:     primes << num if prime?(num)
+   20:   end
+(byebug) c
 ArgumentError: wrong number of arguments (0 for 1)
-from /home/david/Dropbox/app-academy-TA/primes.rb:13:in 'primes'
+from primes.rb:13:in 'primes'
 ```
 
-This means the method failed. When an exception is thrown and no code
+The method failed. When an exception is thrown and no code
 catches and handles the exception, then the program stops (crashes)
 and the exception and line where it occurred are printed.
 
@@ -570,7 +567,9 @@ states the exception type (`ArgumentError`) and the message. This
 message says that we're passing the wrong number of arguments to a
 method: zero arguments instead of one argument.
 
-Where did this happen in the code? The following line tells us. If we want more detail about just how we came to this line of code, we can type `wtf` to look at the *stack trace*. (You can also add question marks and exclamation points to get a longer stack trace: `wtf?`, `wtf?!!`, etc.)
+Where did this happen in the code? The subsequent line tells us: `from primes.rb:13:in 'primes'`.
+If we want more detail about just how we came to this line of code, we can type `wtf` to look at the *stack trace*.
+(You can also add question marks and exclamation points to get longer stack traces, like `wtf?`, `wtf?!!`, etc.)
 
 ```ruby
 [9] pry(main)> wtf
@@ -585,8 +584,8 @@ Exception: ArgumentError: wrong number of arguments (0 for 1)
 ```
 
 The top line of the stack trace tells us what
-method (`primes`) and line of code (13) was executing when the error
-occured. The next line tells us what called `primes`; it looks like
+method (`primes`) and line of code (13) were executing when the error
+occurred. The next line tells us what called `primes`; it looks like
 `primes` calls itself, on line 19. The next line starts with '(pry)';
 this is pry executing the code we gave it.
 
@@ -594,21 +593,20 @@ It's certainly odd that primes is calling itself. Let's check this
 out:
 
 ```ruby
-[1] pry(main)> load './primes.rb'
-=> true
-[2] pry(main)> primes(2)
+[12] pry(main)> primes(2)
 
-From: /home/david/Dropbox/app-academy-TA/primes.rb @ line 16 Object#primes:
-
-    13: def primes(num_primes)
-    14:   debugger
-    15:
-=>  16:   ps = []
-    17:   num = 1
-    18:   while ps.count < num_primes
-    19:     primes << num if prime?(num)
-    20:   end
-    21: end
+[11, 20] in primes.rb
+   11: end
+   12:
+   13: def primes(num_primes)
+   14:   debugger
+   15:
+=> 16:   ps = []
+   17:   num = 1
+   18:   while ps.count < num_primes
+   19:     primes << num if prime?(num)
+   20:   end
+(byebug)
 ```
 
 Ah. Line 19 says that if `prime?(num)`, then `primes << num`. This tries
@@ -619,46 +617,46 @@ clear that `primes` is calling a method (equivalent to `self.primes`).
 Fix this and restart `pry`.
 
 ```ruby
-[1] pry(main)> load './primes.rb'
+[13] pry(main)> load 'primes.rb'
 => true
-[2] pry(main)> primes(2)
+[14] pry(main)> primes(2)
 
-From: /home/david/Dropbox/app-academy-TA/primes.rb @ line 16 Object#primes:
-
-    13: def primes(num_primes)
-    14:   debugger
-    15:
-=>  16:   ps = []
-    17:   num = 1
-    18:   while ps.count < num_primes
-    19:     ps << num if prime?(num)
-    20:   end
-    21: end
-
-[1] pry(main)> c
+[11, 20] in primes.rb
+   11: end
+   12:
+   13: def primes(num_primes)
+   14:   debugger
+   15:
+=> 16:   ps = []
+   17:   num = 1
+   18:   while ps.count < num_primes
+   19:     ps << num if prime?(num)
+   20:   end
+(byebug) c
 => nil
+
 ```
 
 Oops. A few more simple bugs. You catch them.
 
 ## Step vs Next
 
-Here I have line by-line advanced through `primes`:
+Here, using `n`, I have line by-line advanced through `primes`:
 
 ```ruby
-[1] pry(main)> n
+[14, 23] in primes.rb
+   14:   debugger
+   15:
+   16:   ps = []
+   17:   num = 1
+   18:   while ps.count < num_primes
+=> 19:     ps << num if prime?(num)
+   20:   end
+   21: end
+   22:
+   23: if __FILE__ == $PROGRAM_NAME
+(byebug)
 
-From: /home/david/Dropbox/app-academy-TA/primes.rb @ line 19 Object#primes:
-
-    13: def primes(num_primes)
-    14:   debugger
-    15:
-    16:   ps = []
-    17:   num = 1
-    18:   while ps.count < num_primes
-=>  19:     ps << num if prime?(num)
-    20:   end
-    21: end
 ```
 
 I could type `n` to execute this line and advance (back to line 19,
@@ -666,11 +664,11 @@ actually). But what if I wanted to "step into" the call to `prime?`?
 To do this, I use `s` or `step`:
 
 ```ruby
+(byebug) step
 
-[1] pry(main)> s
-
-From: /home/david/Dropbox/app-academy-TA/primes.rb @ line 4 Object#prime?:
-
+[1, 10] in primes.rb
+    1: require 'byebug'
+    2:
     3: def prime?(num)
 =>  4:   (2...num).each do |idx|
     5:     if num % idx == 0
@@ -679,9 +677,7 @@ From: /home/david/Dropbox/app-academy-TA/primes.rb @ line 4 Object#prime?:
     8:   end
     9:
    10:   true
-   11: end
-
-[1] pry(main)>
+(byebug)
 ```
 
 This is handy when you want to go down into methods. If I'm no longer
@@ -689,19 +685,21 @@ interested in stepping through all of `prime?`, I can finish it and
 move up a level by using `finish`:
 
 ```ruby
-[6] pry(main)> finish
+(byebug) finish
 
-From: /home/david/Dropbox/app-academy-TA/primes.rb @ line 19 Object#primes:
+[14, 23] in primes.rb
+   14:   debugger
+   15:
+   16:   ps = []
+   17:   num = 1
+   18:   while ps.count < num_primes
+=> 19:     ps << num if prime?(num)
+   20:   end
+   21: end
+   22:
+   23: if __FILE__ == $PROGRAM_NAME
+(byebug)
 
-    13: def primes(num_primes)
-    14:   debugger
-    15:
-    16:   ps = []
-    17:   num = 1
-    18:   while ps.count < num_primes
-=>  19:     ps << num if prime?(num)
-    20:   end
-    21: end
 ```
 
 ## Debugging and Testing
