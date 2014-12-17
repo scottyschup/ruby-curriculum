@@ -12,7 +12,7 @@
     + [Enumerable][enumerable]
     + [Object][object]
 + Debugging
-    + [pry and debugger][pry-and-debugger]
+    + [the pry REPL and the byebug debugger][pry-and-debugger]
     + [common error messages][common-error-messages]
 + Running/loading Ruby code
     + [Source files][source-files]
