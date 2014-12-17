@@ -10,6 +10,7 @@ You should use Git's command line interface. When starting your project, there
 are two essential commands.
 
 `git init`
+
 `git remote add your_alias https://github.com/your_username/your_repo_name`
 
 Line by line:
@@ -42,13 +43,15 @@ repo, which you can reference with `your_alias`; time to start working.
 Now you've written some code and are ready to commit. You need three commands:
 
 `git add -A`
+
 `git commit -m "some comment"`
+
 `git push`
 
 Line by line:
 
 * `git add -A`: `git add` will stage file changes for commitment; `-A` is an
-option that [tells git what files to choose](git-add).
+option that [tells git what files to choose](git-add.md).
 
 So far, all we've done is told git to prepare to commit; nothing is persisted to
 the repository.
@@ -101,4 +104,4 @@ When you create a new Github repository in the browser, Github will provide a
 summary of the commands needed to connect it to a local repository.
 
 For common git commands, check out the
-[git summary](git-summary).
+[git summary](git-summary.md).
