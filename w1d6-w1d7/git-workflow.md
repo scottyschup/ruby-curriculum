@@ -45,6 +45,8 @@ Now you've written some code and are ready to commit. You need three commands:
 `git commit -m "some comment"`
 `git push`
 
+Line by line:
+
 * `git add -A`: `git add` will stage file changes for commitment; `-A` is an
 option that [tells git what files to choose](git-add).
 
@@ -52,12 +54,10 @@ So far, all we've done is told git to prepare to commit; nothing is persisted to
 the repository.
 
 * `git commit -m`: `git commit` takes currently staged files and stores them in
-the repository, creating a record. `-m` tells git which branch we want to commit
-this to: specifically, `-m` commits to the master branch, which exists for all
-projects. You will be required to enter a comment summarizing the commit; make
-these descriptive, so that someone reading your code can understand what you
-changed. They will also appear on Github, so write something you are willing to
-show the world.
+the repository. `-m` tells git which branch we want to commit to: specifically,
+`-m` commits to the master branch, which exists for all projects. You will be
+required to enter a comment summarizing the commit; makeit descriptive, so that
+someone reading your code can understand what you changed.
 
 At this point, our local repository has a record of the commit, but we haven't
 touched the remote repo.
@@ -68,37 +68,37 @@ The first time you run this, you need to run the command as
 the upstream (default) location for pushes; once you have set this up, you will
 be able to run `git push` and git will direct the push to the upstream repo. To
 push to a particular remote, use `git push remote_name branch_name` (for
-  example, `git push origin master`). You'll
+  example, `git push origin master`).
 
-  If you are using HTTPS, you will need to authenticate with Github when you push;
-  when using SSH, your computer and the server will use your SSH key to handle
-  this for you. For this reason, it is worth setting up SSH on your dev machine.
-  On App Academy machines, use HTTPS.
+If you are using HTTPS, you will need to authenticate with Github when you push;
+when using SSH, your computer and the server will use your SSH key to handle
+this for you. For this reason, it is worth setting up SSH on your dev machine.
+On App Academy machines, use HTTPS.
 
-  ## How Often to Commit and Push
+## How Often to Commit and Push
 
-  Frequently.
+Frequently.
 
-  Pushing to Github is one of the most useful features we have in Git. This is
-  because, ultimately, code problems are always fixable: if you can create a bug,
-  you can eliminate it through debugging alone (not that you shouldn't revert to
-  a previous commit if that is the best solution). Pushing to a remote does a few
-  additional things:
+Pushing to Github is one of the most useful features we have in Git. This is
+because, ultimately, code problems are always fixable: if you can create a bug,
+you can eliminate it through debugging alone (not that you shouldn't revert to
+a previous commit if that is the best solution). Pushing to a remote does a few
+additional things:
 
-  * Backs up your work
-  * Makes your code portable
-  * Gets you green squares
+* Backs up your work
+* Makes your code portable
+* Gets you green squares
 
-  A good rule of thumb is to commit whenever you make something and confirm that
-  it works (the second part is important; you don't want non-functional commits
-  cluttering your repos). Most commits will be small; this is good, as it reduces
-  the cost of reverting to a previous stage. You don't have to push every time you
-  commit, but there is usually no reason not to.
+A good rule of thumb is to commit whenever you make something and confirm that
+it works (the second part is important; you don't want non-functional commits
+cluttering your repos). Most commits will be small; this is good, as it reduces
+the cost of reverting to a previous stage. You don't have to push every time you
+commit, but there is usually no reason not to.
 
-  ## Reference
+## Reference
 
-  When you create a new Github repository in the browser, Github will provide a
-  summary of the commands needed to connect it to a local repository.
+When you create a new Github repository in the browser, Github will provide a
+summary of the commands needed to connect it to a local repository.
 
-  For common git commands, check out the
-  [git summary](git-summary).
+For common git commands, check out the
+[git summary](git-summary).
