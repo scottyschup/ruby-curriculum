@@ -8,7 +8,7 @@ This is the most fundamental check for equality, it checks if two
 objects have the same value.
 
 In classes that you write, `#==` is inherited from the Object
-class. By default, it will return true iff the two objects are
+class. By default, it will return true if and only if the two objects are
 literally the same object (pointer equality). This default behavior is
 not particularly helpful, so you should override it. 
 
