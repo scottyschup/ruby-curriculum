@@ -56,11 +56,13 @@ option that [tells git what files to choose](git-add.md).
 So far, all we've done is told git to prepare to commit; nothing is persisted to
 the repository.
 
-* `git commit -m`: `git commit` takes currently staged files and stores them in
-the repository. `-m` tells git which branch we want to commit to: specifically,
-`-m` commits to the master branch, which exists for all projects. You will be
-required to enter a comment summarizing the commit; makeit descriptive, so that
-someone reading your code can understand what you changed.
+* `git commit -m 'your commit message here'`: `git commit` takes currently staged
+files and stores them in the repository. `-m` is a flag indicating that we want
+to write our commit message on the command line. A commit message is a brief
+summary of the changes that we're committing. If we don't use the `-m` flag,
+then git will open our default editor so that we can compose our commit. Make
+your commit message descriptive, so that someone reading your commit history
+(maybe you!) can understand what you changed.
 
 At this point, our local repository has a record of the commit, but we haven't
 touched the remote repo.
