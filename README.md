@@ -204,9 +204,9 @@
 
 + [Introduction to RSpec][intro-rspec]
 + [RSpec Syntax][rspec-syntax]
++ [`subject` and `let`][subject-and-let]
 + [TDD][intro-tdd]
 + [Test doubles][test-doubles]
-+ [`subject` and `let`][subject-and-let]
 + [guard-rspec][guard-rspec]
 + **Demo Reading**: read assessment00 and assessment01 spec files
 + **Demo Reading**: [OO Robot RSpec Example][robot-demo]
