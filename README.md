@@ -131,6 +131,7 @@
 
 + [git][git]
 + [Git Workflow][git-workflow]
++ [faster Git with aliases][aliases]
 + [adding with git][git-add]
 + [Fixing Git commit authorship][git-fix-authorship]
 + **Project**: Do Hangman and Word chains again, using git this
@@ -143,6 +144,7 @@
 [git-cheatsheet]: http://www.ndpsoftware.com/git-cheatsheet.html
 [git-fix-authorship]: ./w1d6-w1d7/git-fix-authorship.md
 [git-workflow]: ./w1d6-w1d7/git-workflow.md
+[aliases]: ./w1d6-w1d7/alias.md
 
 ## Language Basics II, OO Design
 
