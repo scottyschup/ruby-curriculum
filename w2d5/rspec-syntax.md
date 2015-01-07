@@ -241,7 +241,7 @@ On predicate syntatic sugar: With all predicates, you can strip off the
 ? and tack on a "be_" to make an expectation.  For example,
 `expect(Array.empty?).to be true` is equivalent to `expect(Array).to be_empty`.
 
-Note that RSpec can even change the tense when necessary. For
+Note that RSpec can even conjugate verbs when necessary. For
 instance, to test that a Hash `has_key?`, you can simplify:
 
     expect(my_hash.has_key?(my_key)).to eq(true)
