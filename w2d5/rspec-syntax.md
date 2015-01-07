@@ -5,12 +5,6 @@ meta-gem that packages three other gems: rspec-core, rspec-expectations,
 and rspec-mocks. We'll spend most of our time on rspec-core and
 rspec-expectations.
 
-Some of the syntax and framing will be covered here, but the READMEs
-of both rspec-core and rspec-expectations are required reading.
-
-* [rspec-core][rspec-core]
-* [rspec-expectations][rspec-expectations]
-
 ## File Organization
 
 By convention, tests are kept in the `spec` folder and your
@@ -163,11 +157,12 @@ expect('hello').to be('hello') # => fails (strings are different objects)
 ```
 
 At this point, you know the absolute basics of RSpec's syntax. Head on
-over to the GitHub pages and read both of the READMEs. Pay  particular
-attention to the variety of expectation matchers available to you.
+over to the GitHub pages and read both of the READMEs. This is required
+reading.
 
 * [rspec-core][rspec-core]
-* [rspec-expectations][rspec-expectations]
+* [rspec-expectations][rspec-expectations] (note the variety of expectation
+  matchers available to you)
 
 Head back here once you're done.
 
