@@ -207,6 +207,7 @@
 + [`subject` and `let`][subject-and-let]
 + [TDD][intro-tdd]
 + [Test doubles][test-doubles]
++ [Order of RSpec methods][rspec-order]
 + [guard-rspec][guard-rspec]
 + **Demo Reading**: read assessment00 and assessment01 spec files
 + **Demo Reading**: [OO Robot RSpec Example][robot-demo]
@@ -219,6 +220,7 @@
 [test-doubles]: ./w2d5/test-doubles.md
 [subject-and-let]: ./w2d5/subject-and-let.md
 [guard-rspec]: ./w2d5/guard-rspec.md
+[rspec-order]: ./w2d5/rspec-order.md
 
 [robot-demo]: ./w2d5/robot-rspec-demo
 
