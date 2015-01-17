@@ -295,7 +295,7 @@ your solution**. You'll probably be wrong the first time :-)
 
 [make-change-mirror]: http://web.archive.org/web/20130215052843/http://rubyquiz.com/quiz154.html
 
-### Wrapping up: `merge_sort` and `subsets`
+### Wrapping up: `merge_sort` and `quicksort`
 
 * Implement a method, [`merge_sort`][wiki-merge-sort] that sorts an
   `Array`.
@@ -303,28 +303,13 @@ your solution**. You'll probably be wrong the first time :-)
       a length-two array as a base case. This is unnecessary.
     * You'll want to write a `merge` helper method to merge the sorted
       halves.
-* Write a method, `subsets`, that will return all subsets of an array.
-
-```ruby
-subsets([]) # => [[]]
-subsets([1]) # => [[], [1]]
-subsets([1, 2]) # => [[], [1], [2], [1, 2]]
-subsets([1, 2, 3])
-# => [[], [1], [2], [1, 2], [3], [1, 3], [2, 3], [1, 2, 3]]
-
-# you can implement this as an Array method if you prefer.
-```
-
-**Hint**: For `subsets([1, 2, 3])`, there are two kinds of subsets:
-
-* Those that do not contain `3` (all of these are subsets of
-  `[1, 2]`).
-* For every subset that does not contain `3`, there is also a
-  corresponding subset that is the same, except it also **does**
-  contain `3`.
+* Write a method, [`quicksort`][wiki-quicksort], that sorts an `Array`.
+    * As with `merge_sort`, arrays of length zero and one are the base case
+    * You shouldn't need a helper method for this one
 
 [wiki-binary-search]: http://en.wikipedia.org/wiki/Binary_search
 [wiki-merge-sort]: http://en.wikipedia.org/wiki/Merge_sort
+[wiki-quicksort]: http://en.wikipedia.org/wiki/Quicksort
 
 ## Resources
 
