@@ -38,9 +38,13 @@ alias.
 
 ## Adding aliases
 
-Whenever I find myself typing a command repeatedly, I create an alias for it. In
-this way, over time, you can build up your own custom set of aliases. Here's
-what [my ~./bash_profile][bash-profile] looks like.
+Whenever I find myself typing a command repeatedly, I create an alias
+for it. Here's (more or less) what [my ~./bash_profile][bash-profile]
+looks like. I have aliases for git commands, filesystem navigation, and
+Rails-related commands. (Don't worry if you don't understand what all of
+the commands do.) I don't recommend copying this file directly, though.
+It's better to build up your own personal set of aliases based on which
+commands you use frequently and which abbreviations make sense to you.
 
 I add shell aliases frequently enough that, somewhat recursively, I added an
 alias to open my shell configuration file, so that I can easily add a new alias:
