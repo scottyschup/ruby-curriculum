@@ -1,98 +1,116 @@
 ## Watching a variable
 
-Need to keep an eye on a variable's value? Try `display your_variable_name_here`.
+Suppose that you've figured out which variable is causing your program
+to misbehave. Good! Now you need to figure out when and why that
+variable is taking on unexpected values. Byebug's `display
+some_variable` command can help you with that.
+
+This simple demo program loops through the numbers 1-100 and calculates
+their squares and halves:
 
 ```ruby
-# display.rb
-second_num = nil
-third_num = nil
-
-(1..100).each do |first_num|
+# display_demo.rb
+(1..100).each do |num|
+  square = num ** 2
+  half = num / 2.0
   debugger
-  second_num = first_num ** 3
-  third_num = second_num - first_num if first_num.even?
 end
-
 ```
 
+Run the program, requiring byebug at the command line. We'll be dropped
+in just after our `debugger`.
+
+```ruby
+david ~/Dropbox/TA/debugging $ ruby -r byebug display_demo.rb
+
+[1, 5] in display.rb
+   1: (1..100).each do |num|
+   2:   square = num ** 2
+   3:   half = num / 2.0
+   4:   debugger
+=> 5: end
 ```
-david ~/Dropbox/TA $
-ruby -r byebug display.rb
 
-[1, 8] in display.rb
-   1: second_num = nil
-   2: third_num = nil
-   3:
-   4: (1..100).each do |first_num|
-   5:   debugger
-=> 6:   second_num = first_num ** 3
-   7:   third_num = second_num - first_num if first_num.even?
-   8: end
-(byebug) display second_num
-1: second_num = nil
+Let's watch the value of the `square` variable using `display`. Now,
+byebug will automatically print the value of `square` each time it
+pauses somewhere in our code (such as after we type `n`, or we arrive
+at a `debugger` or a breakpoint after `c`ontinuing.)
+
+```ruby
+(byebug) display square
+1: square = 1
 (byebug) c
-1: second_num = 1
+1: square = 4
 
-[1, 8] in display.rb
-   1: second_num = nil
-   2: third_num = nil
-   3:
-   4: (1..100).each do |first_num|
-   5:   debugger
-=> 6:   second_num = first_num ** 3
-   7:   third_num = second_num - first_num if first_num.even?
-   8: end
+[1, 5] in display.rb
+   1: (1..100).each do |num|
+   2:   square = num ** 2
+   3:   half = num / 2.0
+   4:   debugger
+=> 5: end
 (byebug) c
-1: second_num = 8
+1: square = 9
 
-[1, 8] in display.rb
-   1: second_num = nil
-   2: third_num = nil
-   3:
-   4: (1..100).each do |first_num|
-   5:   debugger
-=> 6:   second_num = first_num ** 3
-   7:   third_num = second_num - first_num if first_num.even?
-   8: end
+[1, 5] in display.rb
+   1: (1..100).each do |num|
+   2:   square = num ** 2
+   3:   half = num / 2.0
+   4:   debugger
+=> 5: end
 (byebug)
 ```
-You can add additional variables at any time.
 
-```
-(byebug) display third_num
-2: third_num = 6
+You can add additional variables at any time. By entering `display
+half`, we will now also see the value of the `half` variable each time
+we pause in our code.
+
+```ruby
+(byebug) display half
+2: half = 1.5
 (byebug) c
-1: second_num = 27
-2: third_num = 6
+1: square = 16
+2: half = 2.0
 
-[1, 8] in display.rb
-   1: second_num = nil
-   2: third_num = nil
-   3:
-   4: (1..100).each do |first_num|
-   5:   debugger
-=> 6:   second_num = first_num ** 3
-   7:   third_num = second_num - first_num if first_num.even?
-   8: end
+[1, 5] in display.rb
+   1: (1..100).each do |num|
+   2:   square = num ** 2
+   3:   half = num / 2.0
+   4:   debugger
+=> 5: end
+(byebug) c
+1: square = 25
+2: half = 2.5
+
+[1, 5] in display.rb
+   1: (1..100).each do |num|
+   2:   square = num ** 2
+   3:   half = num / 2.0
+   4:   debugger
+=> 5: end
 (byebug)
 ```
 
 ## Looking at the call stack: `where`
 
-Another handy byebug command is `where`.
-You have seen stack traces when an error is raised in your program. The `where` command allows you to view the stack trace without having to raise an error. This can be handy.
+You have seen stack traces when an error is raised in your program. The
+`where` command allows you to view the stack trace without having to
+raise an error. This can be handy.
 
 
-Suppose that you have a method that is called from different parts of your program.
-Usually the method works as expected, but every once in a while your method raises an error or produces an unexpected result.
-The method itself might be fine; the problem might have originated elsewhere.
-However, you don't want to go to all of the different places in your program where the method is called and put a `debugger`
-statement at each one to diagnose the problem, especially if the method calls are spread across different classes and files.
+Suppose that you have a method that is called from different parts of
+your program. Usually the method works as expected, but every once in a
+while your method raises an error or produces an unexpected result. The
+method itself might be fine, but maybe it's being called with bad
+parameters. However, you don't want to go to all of the different places
+in your program where the method is called and put a `debugger`
+statement at each one to diagnose the problem, especially if the method
+calls are spread across different classes and files.
 
-It would be much easier if we could put a single debugger within the method in question,
-and then *look back* to see where that method was actually called in the code.
-Then, once you know where the problem originated, you can fix it.
-With byebug, you can do just this. Using the `where` command.
+It would be much easier if we could put a single debugger within the
+method in question, and then *look back* to see where that method was
+actually called in the code. Then, once you know where the problem
+originated, you can fix it. With byebug, you can do just this, using the
+`where` command.
 
 Consider this program:
 
@@ -120,13 +138,16 @@ house.set_thermostat(200 * 0.5 - 40 + 30 / 2)
 house.set_thermostat(100 / 3 + 80 - -30 + 3)
 ```
 
-You notice that sometimes the house is getting too hot, but which part of your program is causing this problem?
+You notice that sometimes the house is getting too hot, but which part
+of your program is causing this problem?
 
-We can set up a *conditional debugger* (line 7 below) that will be triggered when the thermostat is being set too high. Then we can look back and see who was calling `set_thermostat` with an inappropriately high value.
+We can set up a *conditional debugger* (line 7 below) that will be
+triggered when the thermostat is being set too high. Then we can look
+back and see who was calling `set_thermostat` with an inappropriately
+high value.
 
-```
-david ~/Dropbox/TA $
-ruby -r byebug building.rb # you can require gems with the -r option
+```ruby
+david ~/Dropbox/TA $ ruby -r byebug building.rb
 
 [3, 12] in building.rb
     3:     @temperature = 70
@@ -140,13 +161,15 @@ ruby -r byebug building.rb # you can require gems with the -r option
    11:
    12: house = Building.new
 (byebug) where
-*** Byebug's stacksize (1) should be 2. This might be a bug in byebug or ruby's debugging API's
 
 --> #0  Building.set_thermostat(temp#Fixnum) at building.rb:8
     #1  <main> at building.rb:21
 (byebug)
 ```
-Ah ha! We entered the debugger because we met the condition `temp > 90`. Then `where` shows us the call stack. The top of the call stack shows where we are now (#0).
-Moving down, we move through the previous method calls.
-In this case, there is just one previous method call, originating at line 21 of `building.rb` (the third call to `set_thermostat`).
-How easily we have found the culprit!
+
+Ah ha! We entered the debugger because we met the condition `temp > 90`.
+Then `where` shows us the call stack. The top of the call stack shows
+where we are now (#0). Moving down, we move through the previous method
+calls. In this case, there is just one previous method call, originating
+at line 21 of `building.rb` (the third call to `set_thermostat`). How
+easily we have found the culprit!
