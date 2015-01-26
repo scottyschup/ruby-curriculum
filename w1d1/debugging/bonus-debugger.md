@@ -146,7 +146,7 @@ ruby -r byebug building.rb # you can require gems with the -r option
     #1  <main> at building.rb:21
 (byebug)
 ```
-Ah ha! We enetered the debugger because we met the condition `temp > 90`. Then `where` shows us the call stack. The top of the call stack shows where we are now (#0).
+Ah ha! We entered the debugger because we met the condition `temp > 90`. Then `where` shows us the call stack. The top of the call stack shows where we are now (#0).
 Moving down, we move through the previous method calls.
 In this case, there is just one previous method call, originating at line 21 of `building.rb` (the third call to `set_thermostat`).
 How easily we have found the culprit!
