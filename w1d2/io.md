@@ -23,8 +23,8 @@ input = gets
 puts input # put it back out
 ```
 
-[gets-doc]: http://www.ruby-doc.org/core-2.0/IO.html
-[puts-doc]: http://www.ruby-doc.org/core-2.0/IO.html
+[gets-doc]: http://www.ruby-doc.org/core-2.1.2/IO.html
+[puts-doc]: http://www.ruby-doc.org/core-2.1.2/IO.html
 
 `gets` will read a line from the **standard input**, which is usually
 the terminal the user is typing into. It returns the string the user
@@ -231,7 +231,7 @@ puts ARGV[0]
 # prints "list_of_cats.txt"
 ```
 
-[ARGF-doc]: http://www.ruby-doc.org/core-2.0.0/ARGF.html#method-i-argv
+[ARGF-doc]: http://www.ruby-doc.org/core-2.1.2/ARGF.html#method-i-argv
 
 ## Exercises
 
@@ -261,4 +261,4 @@ Estimated time: 3hrs
 ## Resources
 
 * *Beginning Ruby* (Ch. 9, p. 203 in the 2nd Edition)
-* [Ruby IO Class](http://ruby-doc.org/core-2.0/IO.html)
+* [Ruby IO Class](http://ruby-doc.org/core-2.1.2/IO.html)

@@ -218,14 +218,14 @@ Read up on 'em all:
 * [`#to_sym`][to_sym-doc]
 * [`#*`][times-doc]
 
-[chomp-doc]: http://www.ruby-doc.org/core-1.9.3/String.html#method-i-chomp
-[strip-doc]: http://www.ruby-doc.org/core-1.9.3/String.html#method-i-strip
-[gsub-doc]: http://www.ruby-doc.org/core-1.9.3/String.html#method-i-gsub
-[downcase-doc]: http://www.ruby-doc.org/core-1.9.3/String.html#method-i-downcase
-[upcase-doc]: http://www.ruby-doc.org/core-1.9.3/String.html#method-i-upcase
-[to_i-doc]: http://www.ruby-doc.org/core-1.9.3/String.html#method-i-to_i
-[to_sym-doc]: http://www.ruby-doc.org/core-1.9.3/String.html#method-i-to_sym
-[times-doc]: http://www.ruby-doc.org/core-1.9.3/String.html#method-i-2A
+[chomp-doc]: http://www.ruby-doc.org/core-2.1.2/String.html#method-i-chomp
+[strip-doc]: http://www.ruby-doc.org/core-2.1.2/String.html#method-i-strip
+[gsub-doc]: http://www.ruby-doc.org/core-2.1.2/String.html#method-i-gsub
+[downcase-doc]: http://www.ruby-doc.org/core-2.1.2/String.html#method-i-downcase
+[upcase-doc]: http://www.ruby-doc.org/core-2.1.2/String.html#method-i-upcase
+[to_i-doc]: http://www.ruby-doc.org/core-2.1.2/String.html#method-i-to_i
+[to_sym-doc]: http://www.ruby-doc.org/core-2.1.2/String.html#method-i-to_sym
+[times-doc]: http://www.ruby-doc.org/core-2.1.2/String.html#method-i-2A
 
 ## Exercises
 
@@ -306,6 +306,6 @@ including `F`).
 
 ## Resources
 
-* http://www.ruby-doc.org/core-1.9.3/String.html
+* http://www.ruby-doc.org/core-2.1.2/String.html
 
 [wiki-ascii]: http://en.wikipedia.org/wiki/Ascii

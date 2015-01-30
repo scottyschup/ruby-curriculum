@@ -287,7 +287,7 @@ end
 In this case, it probably makes more sense to use
 [`Integer#downto`][downto-doc].
 
-[downto-doc]: http://ruby-doc.org/core-1.9.3/Integer.html#method-i-downto
+[downto-doc]: http://ruby-doc.org/core-2.1.2/Integer.html#method-i-downto
 
 ## Nesting loops
 

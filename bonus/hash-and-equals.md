@@ -201,5 +201,5 @@ The interested student should read more about them in the
 [_Stack Overflow_ post][so-equality].
 
 [so-equality]: http://stackoverflow.com/a/7157051
-[object-doc]: http://ruby-doc.org/core-2.0/Object.html
+[object-doc]: http://ruby-doc.org/core-2.1.2/Object.html
 [regex-case]: http://stackoverflow.com/a/1735777

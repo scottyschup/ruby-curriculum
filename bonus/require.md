@@ -61,7 +61,7 @@ the trick:
 
 ```
 $ ruby lib/game.rb
-.../lib/ruby/site_ruby/1.9.1/rubygems/custom_require.rb:36:in `require':
+.../lib/ruby/site_ruby/2.1.2/rubygems/custom_require.rb:36:in `require':
 cannot load such file -- board (LoadError)
 ```
 

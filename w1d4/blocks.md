@@ -8,7 +8,7 @@
 * Know not to return from a block.
 * Know what `#to_proc` and `&` are used for.
 
-[proc-doc]: http://ruby-doc.org/core-2.0/Proc.html
+[proc-doc]: http://ruby-doc.org/core-2.1.2/Proc.html
 
 ## Blocks! Blocks! Blocks!
 
@@ -301,7 +301,7 @@ item following the ampersand. For example, in the above code,
 [`#to_proc`][symbol-to-proc] is called on the symbols `:upcase` and
 `:odd`.
 
-[symbol-to-proc]: http://ruby-doc.org/core-2.0.0/Symbol.html#method-i-to_proc
+[symbol-to-proc]: http://ruby-doc.org/core-2.1.2/Symbol.html#method-i-to_proc
 
 When `#to_proc` is called on a symbol, we get back a `Proc` object
 that just calls a method with the same name as the symbol on its

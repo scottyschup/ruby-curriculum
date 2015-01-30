@@ -203,4 +203,4 @@ wait, you can read a good
 
 ## Resources
 
-* [Ruby-Doc on Object](http://ruby-doc.org/core-1.9.3/Object.html)
+* [Ruby-Doc on Object](http://ruby-doc.org/core-2.1.2/Object.html)

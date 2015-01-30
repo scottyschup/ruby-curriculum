@@ -62,5 +62,5 @@ where a method is obviously internal to the workings of the
 class. Robust code ready to release to the outside world should
 eventually be checked for proper use of `private`, though.
 
-[private-keyword]: http://ruby-doc.org/core-2.0/Module.html#method-i-private
-[attr-accessor]: http://ruby-doc.org/core-2.0/Module.html#method-i-attr_accessor
+[private-keyword]: http://ruby-doc.org/core-2.1.2/Module.html#method-i-private
+[attr-accessor]: http://ruby-doc.org/core-2.1.2/Module.html#method-i-attr_accessor

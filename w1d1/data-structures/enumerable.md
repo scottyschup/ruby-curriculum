@@ -207,4 +207,4 @@ concatenate(["Yay ", "for ", "strings!"])
 ```
 
 ## Resources
-* [Ruby-Doc on Enumerable](http://ruby-doc.org/core-1.9.3/Enumerable.html)
+* [Ruby-Doc on Enumerable](http://ruby-doc.org/core-2.1.2/Enumerable.html)

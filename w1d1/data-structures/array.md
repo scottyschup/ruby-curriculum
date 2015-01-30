@@ -111,7 +111,7 @@ are iterating through it.
 One alternative to delete multiple elements of an array without
 iteration is [`#delete_if`][rdoc-delete-if].
 
-[rdoc-delete-if]: http://www.ruby-doc.org/core-1.9.3/Array.html#method-i-delete_if
+[rdoc-delete-if]: http://www.ruby-doc.org/core-2.1.2/Array.html#method-i-delete_if
 
 ## Setting and adding elements
 
@@ -534,6 +534,6 @@ first buy the stock and then sell the stock.
 
 ## Resources
 
-* [Ruby Doc on Array](http://www.ruby-doc.org/core-1.9.3/Array.html)
+* [Ruby Doc on Array](http://www.ruby-doc.org/core-2.1.2/Array.html)
 * [Ruby Monk Intro to Arrays](http://rubymonk.com/learning/books/1/chapters/1-arrays/lessons/2-arrays-introduction)
 * [Ruby Array Article](http://zetcode.com/lang/rubytutorial/arrays/)
