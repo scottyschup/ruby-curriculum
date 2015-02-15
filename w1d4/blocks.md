@@ -337,20 +337,24 @@ symbolic_proc.call("ABCD") #=> ["A", "D"]
 Note: In order to convert a symbol to a string you can use `#to_s` or
 `#to_sym` to go from string to symbol
 
-## A Note on &
+## The different uses of `&`
 
-You may have noticed that the `&` appears in many places in the examples above. 
-The `&` can be tricky because it does several things:
+You may have noticed that the `&` appears in many places in the examples
+above. The `&` can be tricky because it does several things:
+
 * Converts blocks to procs
 * Converts method names (passed as symbols) to procs
 * Converts procs to blocks
 
-We have mostly seen the first two uses, but you should be aware of the third. 
-For example, assume we have a method `my_sort!` that takes a block argument, like this:
+We have mostly seen the first two uses, but you should be aware of the
+third. For example, assume we have a method `my_sort!` that takes a
+block argument, like this:
 
 ```ruby
 animals = ['cats', 'dog', 'badgers']
-animals.my_sort! { |animal1, animal2| animal1.length <=> animal2.length }
+animals.my_sort! do |animal1, animal2|
+  animal1.length <=> animal2.length
+end
 animals # => ['dog', 'cats', 'badgers']
 ```
 
@@ -363,10 +367,14 @@ class Array
   end
 end
 ```
-While they may look like the same code, the first and second uses of `&prc` 
-are different: the first one calls `#to_proc` on a block argument, creating 
-a first-class proc object that we can refer to with `prc`. But `#my_sort!` expects a block 
-argument, not a proc, so we can't simply pass it `prc`. Instead, when we call `#my_sort!`, we use `&` again, but this time `&` means *the opposite* of what it meant in the previous line; now `&` is changing the proc back into a block.
+
+The two uses of `&` in the above example do different things: the first
+one calls `#to_proc` on a block argument, creating a first-class proc
+object that we can refer to with `prc`. But `#my_sort!` expects a block
+argument, not a proc, so we can't simply pass it `prc`. Instead, when we
+call `#my_sort!`, we use `&` again, but this time `&` means *the
+opposite* of what it meant in the previous line; now `&` is changing the
+proc back into a block.
 
 ## Required video
 

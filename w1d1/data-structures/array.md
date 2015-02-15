@@ -437,9 +437,10 @@ returns the unique elements in the order in which they first appeared:
 Write your own `uniq` method, called `my_uniq`; it should take in an
 Array and return a new array.
 
-One special feature of Ruby classes is that they are *open*; we can
-add new methods to existing classes. Here, add your `my_uniq` method
-to Array:
+One special feature of Ruby classes is that they are *open*; we can add
+new methods to existing classes. Take the `my_uniq` method that you just
+wrote and modify it slightly so that it can be called directly on an
+array:
 
 ```ruby
 class Array
@@ -466,22 +467,6 @@ sorted "dictionary-wise":
 
 * `[0, 2]` before `[2, 1]` (smaller first elements come first)
 * `[0, 1]` before `[0, 2]` (then smaller second elements come first)
-
-### Towers of Hanoi
-
-Write a
-[Towers of Hanoi](http://en.wikipedia.org/wiki/Towers_of_hanoi) game.
-
-Keep three arrays, which represents the piles of discs. Pick a
-representation of the discs to store in the arrays; maybe just a
-number representing their size.
-
-In a loop, prompt the user (using
-[gets](http://andreacfm.com/2011/06/11/learning-ruby-gets-and-chomp/))
-and ask what pile to select a disc from, and where to put it.
-
-After each move, check to see if they have succeeded in moving all the
-discs, to the final pile. If so, they win!
 
 ### My Transpose
 
@@ -531,6 +516,22 @@ my_transpose([
 Write a method that takes an array of stock prices (prices on days 0,
 1, ...), and outputs the most profitable pair of days on which to
 first buy the stock and then sell the stock.
+
+### Towers of Hanoi
+
+Write a
+[Towers of Hanoi](http://en.wikipedia.org/wiki/Towers_of_hanoi) game.
+
+Keep three arrays, which represents the piles of discs. Pick a
+representation of the discs to store in the arrays; maybe just a
+number representing their size.
+
+In a loop, prompt the user (using
+[gets](http://andreacfm.com/2011/06/11/learning-ruby-gets-and-chomp/))
+and ask what pile to select a disc from, and where to put it.
+
+After each move, check to see if they have succeeded in moving all the
+discs, to the final pile. If so, they win!
 
 ## Resources
 

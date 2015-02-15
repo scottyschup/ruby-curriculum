@@ -1,6 +1,6 @@
 # Mastermind
 
-Estimated time: 1hr.
+Estimated time: 1 hr
 
 In this project, you'll implement the game
 [Mastermind][wiki-mastermind].

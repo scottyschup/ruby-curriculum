@@ -259,6 +259,18 @@ arrays**. Make sure to return the location of the found object (or
 
 This your first problem which is half a PITA to solve iteratively.
 
+Make sure that these test cases are working:
+
+```rb
+bsearch([1, 2, 3], 1) # => 0
+bsearch([2, 3, 4, 5], 3) # => 1
+bsearch([2, 4, 6, 8, 10], 6) # => 2
+bsearch([1, 3, 4, 5, 9], 5) # => 3
+bsearch([1, 2, 3, 4, 5, 6], 6) # => 5
+bsearch([1, 2, 3, 4, 5, 6], 0) # => nil
+bsearch([1, 2, 3, 4, 5, 7], 6) # => nil
+```
+
 ### Make Change
 
 RubyQuiz: [Make change][make-change-mirror]. **Make sure your solution

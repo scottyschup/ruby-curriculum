@@ -363,7 +363,8 @@ swapping values.
   English words. Let's write a new method, `subwords` which will call
   `substrings`, but then filter it and return just the English words.
     * To do this, we'll need a dictionary, you can download one
-      [here][dictionary-file].
+      [here][dictionary-file]. Click the 'Raw' button, and then save the
+      file.
     * Learn how to read a file [here][opening-a-file].
     * You may need to use `String#chomp` to strip newline characters;
       see the [Input/Output](./io.md) chapter for details.

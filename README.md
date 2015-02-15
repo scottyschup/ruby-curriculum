@@ -13,8 +13,8 @@
     + [Object][object]
 + Debugging
     + [the pry REPL and the byebug debugger][pry-and-byebug]
-        + Bonus byebug commands: [`display` and `where`][bonus-byebug] (optional)
     + [common error messages][common-error-messages]
+    + More byebug commands: [`display` and `where`][bonus-byebug] (optional)
 + Running/loading Ruby code
     + [Source files][source-files]
     + [Writing a Ruby Script][writing-a-script]

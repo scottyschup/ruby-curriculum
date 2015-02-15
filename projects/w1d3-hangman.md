@@ -6,9 +6,10 @@ In this project, we write a program to play [Hangman][wiki-hangman].
 
 ## Phase I: Human Guesses Word
 
-You should have two modes. In the first mode, the computer player
-should read in a [dictionary file][dictionary]. It should choose
-a word randomly. Interaction should look something like so:
+We'll start out with the computer choosing the secret word and the human
+trying to guess it. The computer player should read in a [dictionary
+file][dictionary] and choose a word randomly. Interaction should look
+something like so:
 
     Secret word: _____
     > h
