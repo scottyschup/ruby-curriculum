@@ -6,10 +6,10 @@
 
 + [First Day! **Read me!**][day1-instructions]
 + Primitive Ruby types (common methods)
-    + [Array][array]
-    + [String][string]
-    + [Hash][hash]
-    + [Enumerable][enumerable]
+    + [Array][array] (exercises)
+    + [String][string] (exercises)
+    + [Hash][hash] (exercises)
+    + [Enumerable][enumerable] (exercises)
     + [Object][object]
 + Debugging
     + [the pry REPL and the byebug debugger][pry-and-byebug]
@@ -50,16 +50,16 @@
 ### w1d2
 
 + Read yesterday's [solutions][solutions]
-+ [Methods][methods]
-+ [Iteration][iteration]
-+ [Symbols, Strings, and Option Hashes][symbols-and-strings]
-+ [Input/Output][input-output]
++ [Methods][methods]  (exercises)
++ [Iteration][iteration] (exercises)
++ [Symbols, Strings, and Option Hashes][symbols-and-strings] (exercises)
++ [Input/Output][input-output] (exercises)
 + Style
     + [DRY: Don't Repeat Yourself][dry]
     + [Coding style][coding-style]
     + [Method decomposition][method-decomposition]
     + [Choosing good names][naming]
-+ [Classes][classes]
++ [Classes][classes] (exercises)
 + [Pass by reference][pass-by-reference]
 
 [solutions]: https://github.com/appacademy/solutions
@@ -100,8 +100,8 @@
 
 ### w1d4
 
-+ [Blocks][blocks]
-+ [Recursion][recursion]
++ [Blocks][blocks] (exercises)
++ [Recursion][recursion] (exercises)
 + **Project**: [Word chains][word-chains]
 + **Bonus Project**: Read [`method_missing`][method-missing], then do [Test First Ruby][test-first-ruby] XML parser
 * [Bonus Recursion Practice][bonus-recursion-practice]
@@ -116,7 +116,7 @@
 
 ### w1d5
 
-+ [Intro data structures][intro-data-structures]
++ [Intro data structures][intro-data-structures] (exercises)
 + **Project**: [Knight's Travails][knights-travails]
 + **Project**: [Tic-Tac-Toe AI][tic-tac-toe-ai]
 
@@ -168,8 +168,8 @@
 
 ### w2d2
 
-+ [Class inheritance][inheritance]
-+ [Exceptions, error handling][errors]
++ [Class inheritance][inheritance] (exercises)
++ [Exceptions, error handling][errors] (exercises)
 + [Decomposition into objects][object-decomposition]
 + [Inheritance, Polymorphism and DRY][inheritance-design]
 + [Information hiding/encapsulation][hiding]
