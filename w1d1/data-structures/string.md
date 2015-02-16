@@ -302,7 +302,7 @@ including `F`).
 * Important point: ASCII codes are all consecutive!
     * In particular, `"b".ord - "a".ord == 1`.
 * Lastly, be careful of the letters at the end of the alphabet, like
-  `"z"`!
+  `"z"`! Ex.: `caesar("zany", 2) # => "bcpa"`
 
 ## Resources
 

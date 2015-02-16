@@ -523,8 +523,9 @@ Write a
 [Towers of Hanoi](http://en.wikipedia.org/wiki/Towers_of_hanoi) game.
 
 Keep three arrays, which represents the piles of discs. Pick a
-representation of the discs to store in the arrays; maybe just a
-number representing their size.
+representation of the discs to store in the arrays; maybe just a number
+representing their size. Don't worry too much about making the user
+inteface pretty.
 
 In a loop, prompt the user (using
 [gets](http://andreacfm.com/2011/06/11/learning-ruby-gets-and-chomp/))
